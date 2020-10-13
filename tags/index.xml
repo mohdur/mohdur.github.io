@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on MOHDUR</title>
+    <link>https://mohdur.github.io/tags/</link>
+    <description>Recent content in Tags on MOHDUR</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 13 Oct 2020 20:40:55 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>vim</title>
+      <link>https://mohdur.github.io/tags/vim/</link>
+      <pubDate>Tue, 13 Oct 2020 20:40:55 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/tags/vim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shell</title>
+      <link>https://mohdur.github.io/tags/shell/</link>
+      <pubDate>Tue, 13 Oct 2020 20:27:39 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/tags/shell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>skrypty</title>
+      <link>https://mohdur.github.io/tags/skrypty/</link>
+      <pubDate>Tue, 13 Oct 2020 20:27:39 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/tags/skrypty/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
