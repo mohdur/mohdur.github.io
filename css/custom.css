@@ -14,6 +14,6 @@ code.noClass {
 }
 
 code {
-    font-size: inherit;
+    font-size: 1rem;
 	font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
 }
