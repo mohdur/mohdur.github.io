@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" data-figures="true" class="page" data-mode="dim">
   <head>
-<title>Zmiana hasła w kluczu prywatnym RSA (OpenVPN) | MOHDUR</title>
+<title>Mikrotik i Wireguard VPN | MOHDUR</title>
 <meta charset="utf-8">
 <meta name="generator" content="Hugo 0.76.4" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -10,13 +10,13 @@
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="Zmiana hasła w kluczu RSA (OpenVPN).">
+<meta name="description" content="Mikrotik i Wireguard VPN wersja beta">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="Zmiana hasła w kluczu prywatnym RSA (OpenVPN)" />
-<meta property="og:url" content="https://mohdur.github.io/post/zmiana-has%C5%82a-w-kluczu-prywatnym-rsa-openvpn/" />
-<meta property="og:title" content="Zmiana hasła w kluczu prywatnym RSA (OpenVPN)" />
-<meta property="og:description" content="Zmiana hasła w kluczu RSA (OpenVPN)." />
+<meta name="twitter:title" content="Mikrotik i Wireguard VPN" />
+<meta property="og:url" content="https://mohdur.github.io/post/mikrotik-i-wireguard-vpn/" />
+<meta property="og:title" content="Mikrotik i Wireguard VPN" />
+<meta property="og:description" content="Mikrotik i Wireguard VPN wersja beta" />
 <meta property="og:image" content="https://mohdur.github.io/images/thumbnail.png" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://mohdur.github.io/icons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://mohdur.github.io/icons/favicon-32x32.png'>
@@ -25,7 +25,7 @@
 <meta name="msapplication-TileColor" content="#002538">
 <meta name="theme-color" content="#002538">
 
-<link rel="canonical" href="https://mohdur.github.io/post/zmiana-has%C5%82a-w-kluczu-prywatnym-rsa-openvpn/">
+<link rel="canonical" href="https://mohdur.github.io/post/mikrotik-i-wireguard-vpn/">
 
     
 
@@ -100,29 +100,29 @@
   
 <div class="grid-inverse wrap content">
   <article class="post_content">
-    <h1 class="post_title">Zmiana hasła w kluczu prywatnym RSA (OpenVPN)</h1><div class="post_meta">
+    <h1 class="post_title">Mikrotik i Wireguard VPN</h1><div class="post_meta">
   <svg class="icon">
   <use xlink:href="#calendar"></use>
 </svg>
   <span class="post_date">
     Oct 14, 2020</span>
-    <a href='https://mohdur.github.io/tags/openssl' class="post_tag button button_translucent">openssl
-    </a>
-    <a href='https://mohdur.github.io/tags/security' class="post_tag button button_translucent">security
+    <a href='https://mohdur.github.io/tags/mikrotik' class="post_tag button button_translucent">mikrotik
     </a>
     <a href='https://mohdur.github.io/tags/vpn' class="post_tag button button_translucent">vpn
+    </a>
+    <a href='https://mohdur.github.io/tags/security' class="post_tag button button_translucent">security
     </a>
 </div>
 
     
 <div class="post_share">
   Share on:
-  <a href="https://twitter.com/intent/tweet?text=Zmiana%20has%c5%82a%20w%20kluczu%20prywatnym%20RSA%20%28OpenVPN%29&url=https%3a%2f%2fmohdur.github.io%2fpost%2fzmiana-has%25C5%2582a-w-kluczu-prywatnym-rsa-openvpn%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
+  <a href="https://twitter.com/intent/tweet?text=Mikrotik%20i%20Wireguard%20VPN&url=https%3a%2f%2fmohdur.github.io%2fpost%2fmikrotik-i-wireguard-vpn%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#twitter"></use>
 </svg>
   </a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fzmiana-has%25C5%2582a-w-kluczu-prywatnym-rsa-openvpn%2f&t=Zmiana%20has%c5%82a%20w%20kluczu%20prywatnym%20RSA%20%28OpenVPN%29" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fmikrotik-i-wireguard-vpn%2f&t=Mikrotik%20i%20Wireguard%20VPN" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#facebook"></use>
 </svg>
@@ -132,7 +132,7 @@
   <use xlink:href="#linkedin"></use>
 </svg>
   </a>
-  <a href="https://mohdur.github.io/post/zmiana-has%C5%82a-w-kluczu-prywatnym-rsa-openvpn/" title="Copy Link" class="link link_yank">
+  <a href="https://mohdur.github.io/post/mikrotik-i-wireguard-vpn/" title="Copy Link" class="link link_yank">
     <svg class="icon">
   <use xlink:href="#copy"></use>
 </svg>
@@ -140,8 +140,88 @@
 </div>
 
     
-    <p>Zmiana hasła za pomocą polecenia <code>openssl</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>openssl rsa -des3 -in oldkey.pem -out newkey.pem
+    <p>Od kilku tygodni jest dostępna wersja 7.1beta2 (Developmend) systemu RouterOS
+głównie przeznaczonych dla urządzeń Mikrotik. Od tej wersji istnieje wsparcie
+dla usługi Wireguard VPN. Należy zaznaczyć iż jest to wersja, której nie należy
+używać w środowisku produkcyjnym.</p>
+<p>Na razie w wersji 7.1beta2 nie ma możliwości zestawienia takiego połączenia
+za pomocą programu WinBox ani interfejsu WWW. Problem występuje w polu
+endpoint, które nie przyjmuje numeru portu dla zdalnego hosta. Jedyna możliwość
+to użyć linii komend.</p>
+<p>Dla celów testowych zestawimy tunel pomiędzy dwoma urządzeniami Mikrotik, które
+działają w tej samej sieci LAN.</p>
+<table>
+<thead>
+<tr>
+<th>Nazwa urządzenia</th>
+<th>Adres IP LAN</th>
+<th>Adres IP Wireguard</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MT-R1</td>
+<td>192.168.88.101</td>
+<td>10.0.0.101</td>
+</tr>
+<tr>
+<td>MT-R2</td>
+<td>192.168.88.102</td>
+<td>10.0.0.102</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dodanie-nowego-interfejsu-dla-usługi-wireguard">Dodanie nowego interfejsu dla usługi Wireguard</h2>
+<p>Po dodaniu interfejsu Wireguard zostaną automatycznie wygenerowane klucze. Klucz
+publiczny oraz prywatny.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>/interface wireguard add name=wireguard1
+</code></pre></div><h2 id="wyświetlenie-kluczy-szyfrujących">Wyświetlenie kluczy szyfrujących</h2>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>/interface wireguard print
+</code></pre></div><p>Żeby pobrać klucz publiczny / prywatny można użyć polecenia</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>:put [/interface/wireguard get wireguard1 private-key]
+<span class="ln">2</span>6N2Hv0qdOySLFUKRGafPmIhqVVRBZwXUFy3xMBYg71w=
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>:put [/interface/wireguard get wireguard1 public-key]
+<span class="ln">2</span>ywMIwjY18zPg2jO49uENgq/A2vP7hlhTFK68mcLnEVQ=
+</code></pre></div><h2 id="nadanie-adresu-ip-dla-interfejsu-wireguard1">Nadanie adresu IP dla interfejsu wireguard1</h2>
+<p>Jak już mamy interfejs wireguard, to kolejnym krokiem jest nadanie mu adresu IP.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>/ip address add address=10.0.0.X/24 interface=wireguard1 network=10.0.0.0
+</code></pre></div><h2 id="pełna-konfiguracja-urządzenia-mt-r1">Pełna konfiguracja urządzenia MT-R1</h2>
+<ul>
+<li>IP LAN - 192.168.88.101</li>
+<li>IP Wireguard - 10.0.0.101</li>
+<li>Klucz publiczny</li>
+<li>Klucz prywatny</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span>/interface wireguard add name=wireguard1
+<span class="ln"> 2</span>
+<span class="ln"> 3</span>/ip address add address=10.0.0.101/24 interface=wireguard1 network=10.0.0.0
+<span class="ln"> 4</span>
+<span class="ln"> 5</span>/interface wireguard
+<span class="ln"> 6</span>add listen-port=24680 mtu=1420 name=wireguard1 private-key=&#34;6N2Hv0qdOySLFUKRGafPmIhqVVRBZwXUFy3xMBYg71w=&#34;
+<span class="ln"> 7</span>
+<span class="ln"> 8</span>/interface wireguard peers
+<span class="ln"> 9</span>add allowed-address=10.0.0.0/24 endpoint=192.168.88.102:24680 interface=wireguard1 public-key=\
+<span class="ln">10</span>    &#34;ywMIwjY18zPg2jO49uENgq/A2vP7hlhTFK68mcLnEVQ=&#34;
+</code></pre></div><h2 id="pełna-konfiguracja-urządzenia-mt-r1-1">Pełna konfiguracja urządzenia MT-R1</h2>
+<ul>
+<li>IP LAN - 192.168.88.102</li>
+<li>IP Wireguard - 10.0.0.102</li>
+<li>Klucz publiczny</li>
+<li>Klucz prywatny</li>
+<li>Numer portu Wireguard - 24680/UDP</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span>/interface wireguard add name=wireguard1
+<span class="ln"> 2</span>
+<span class="ln"> 3</span>/ip address add address=10.0.0.102/24 interface=wireguard1 network=10.0.0.0
+<span class="ln"> 4</span>
+<span class="ln"> 5</span>/interface wireguard
+<span class="ln"> 6</span>add listen-port=24680 mtu=1420 name=wireguard1 private-key=&#34;6N2Hv0qdOySLFUKRGafPmIhqVVRBZwXUFy3xMBYg71w=&#34;
+<span class="ln"> 7</span>
+<span class="ln"> 8</span>/interface wireguard peers
+<span class="ln"> 9</span>add allowed-address=10.0.0.0/24 endpoint=192.168.88.101:24680 interface=wireguard1 public-key=\
+<span class="ln">10</span>    &#34;ywMIwjY18zPg2jO49uENgq/A2vP7hlhTFK68mcLnEVQ=&#34;
+</code></pre></div><h2 id="test-połączenia-można-wykonać-za-pomocą-polecenia-ping">Test połączenia można wykonać za pomocą polecenia ping</h2>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>/system ping 10.0.0.101
 </code></pre></div>
     
       
@@ -157,7 +237,7 @@
     <h2 class="mt-4">Featured Posts</h2>
     <ul>
       <li>
-        <a href="https://mohdur.github.io/post/mikrotik-i-wireguard-vpn/" class="nav-link">Mikrotik i Wireguard VPN</a>
+        <a href="https://mohdur.github.io/post/zmiana-has%C5%82a-w-kluczu-prywatnym-rsa-openvpn/" class="nav-link">Zmiana hasła w kluczu prywatnym RSA (OpenVPN)</a>
       </li>
       <li>
         <a href="https://mohdur.github.io/post/kompilacja-neomutt/" class="nav-link">Kompilacja Neomutt</a>
@@ -169,7 +249,7 @@
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
       <li>
-        <a href="https://mohdur.github.io/post/mikrotik-i-wireguard-vpn/" class="nav-link">Mikrotik i Wireguard VPN</a>
+        <a href="https://mohdur.github.io/post/zmiana-has%C5%82a-w-kluczu-prywatnym-rsa-openvpn/" class="nav-link">Zmiana hasła w kluczu prywatnym RSA (OpenVPN)</a>
       </li>
       <li>
         <a href="https://mohdur.github.io/post/kompilacja-neomutt/" class="nav-link">Kompilacja Neomutt</a>
