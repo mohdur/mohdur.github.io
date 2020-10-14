@@ -147,6 +147,8 @@ może potrwać do kilkudziesięciu minut w zależności od długości klucza ora
 mocy obliczeniowych procesora.</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>/ip ssh set host-key-size=4096
 <span class="ln">2</span>/ip ssh regenerate-host-key
+</code></pre></div><h2 id="wygenerowanie-klucza-rsa-w-systemie-linux">Wygenerowanie klucza RSA w systemie Linux</h2>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ ssh-keygen -t RSA -b 4096 -f mikrotik-rsa
 </code></pre></div><h2 id="autoryzacja-za-pomocą-klucza-rsa-i-hasła">Autoryzacja za pomocą klucza RSA i hasła</h2>
 <p>Najpierw należy wygenerować taki klucz, następnie przesłać na urządzenie
 i dopisać do konkretnego użytkownika. Ustawienie logowania za pomocą klucza
@@ -154,9 +156,7 @@ wyłącza możliwość logowania bez hasła. Istnieją dwa sposoby na rozwiązan
 tego problemu. Pierwszy to dodanie innego użytkownika z odpowiednio trudnym
 hasłem. Drugi sposób to ustawienie możliwości logowania za pomocą hasła
 pomimo ustawienia klucza RSA.</p>
-<p>Wygenerowanie klucza RSA w systemie Linux</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ ssh-keygen -t RSA -b 4096 -f mikrotik-rsa
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>/ip ssh set always-allow-password-login=yes
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>/ip ssh set always-allow-password-login=yes
 </code></pre></div><h2 id="ustawienie-autoryzacji-za-pomocą-klucza-rsa">Ustawienie autoryzacji za pomocą klucza RSA</h2>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>/usr ssh-keys import public-key-file=klucz-rsa.pub user admin
 </code></pre></div><p>Lista użytkowników z ustawionym kluczem RSA</p>
