@@ -140,7 +140,7 @@
     
     <p>Ukrycie procesów innych użytkowników wiąże się z ponownym zmapowaniem wirtualnej partycji <code>/proc</code>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sudo mount -o remount,rw,hidepid=2 /proc
-</code></pre></div><p>Żeby ukryć procesy permanentnie należy do pliku /etc/fstab dodać:</p>
+</code></pre></div><p>Żeby ukryć procesy permanentnie należy do pliku <code>/etc/fstab</code> dodać:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>proc    /proc   proc    defaults,hidepid=2  0   0
 </code></pre></div><p>Wartości jakie może przyjmować parametr <code>hidepid</code>:</p>
 <table>
