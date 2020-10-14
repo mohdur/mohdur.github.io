@@ -5,38 +5,17 @@
     <link>https://mohdur.github.io/</link>
     <description>Recent content on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 13 Oct 2020 20:40:55 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Oct 2020 08:00:37 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Vim podróże w czasie</title>
-      <link>https://mohdur.github.io/post/vim-podr%C3%B3%C5%BCe-w-czasie/</link>
-      <pubDate>Tue, 13 Oct 2020 20:40:55 +0200</pubDate>
+      <title>Ukrycie procesów innych użytkowników w systemie Linux</title>
+      <link>https://mohdur.github.io/post/ukrycie-proces%C3%B3w-innych-u%C5%BCytkownik%C3%B3w-w-systemie-linux/</link>
+      <pubDate>Wed, 14 Oct 2020 08:00:37 +0200</pubDate>
       
-      <guid>https://mohdur.github.io/post/vim-podr%C3%B3%C5%BCe-w-czasie/</guid>
-      <description>Edytor Vim posiada dwie komendy, które umożliwiają przejście do wersji z przed lub kilka sekund później, są to :earlier oraz :later. Jako parametr dodatkowy używamy ile sekund, minut godzin lub nawet dni chcemy się przenieść w czasie. Dodatkowo możemy przenieść się w czasie N zapisów pliku w czasie.
-Użycie tych dwóch poleceń bez podania w dodatkowym parametrze jednostki czasu przenosi nas o kilka stanów pliku. Stan można uważać za przejście pomiędzy trybami edycji.</description>
-    </item>
-    
-    <item>
-      <title>Uruchomienie skryptu po wykryciu zmian</title>
-      <link>https://mohdur.github.io/post/uruchomienie-skryptu-po-wykryciu-zmian/</link>
-      <pubDate>Tue, 13 Oct 2020 20:27:39 +0200</pubDate>
-      
-      <guid>https://mohdur.github.io/post/uruchomienie-skryptu-po-wykryciu-zmian/</guid>
-      <description>Za pomocą skryptu, który operuje na sumach kontrolnych, można monitorować wybrany plik. Jeśli monitorowany plik się zmieni lub zostanie zapisany, skrypt automatycznie go uruchomi, dzięki temu nie trzeba za każdym razem uruchomiać go podczas kodowania.
-Istnieją programy, które wykonują to samo, takie jak entr czy inotifywait, niesety trzeba je doinstalować, o ile nie chcemy używać ich dodatkowych funkcji, można korzystać z tego skryptu.
-Jako parametr należy podać nazwę pliku, który chcemy monitorować.</description>
-    </item>
-    
-    <item>
-      <title>Włączenie i wyłączenie edytora Vim</title>
-      <link>https://mohdur.github.io/post/w%C5%82%C4%85czenie-i-wy%C5%82%C4%85czenie-edytora-vim/</link>
-      <pubDate>Tue, 13 Oct 2020 20:01:15 +0200</pubDate>
-      
-      <guid>https://mohdur.github.io/post/w%C5%82%C4%85czenie-i-wy%C5%82%C4%85czenie-edytora-vim/</guid>
-      <description>Włączenie edytora vim
-1vim Włączenie edytora z edycją pliku
-1vim plik1.txt Włączenie edytora z edycją kilku plików
-1vim plik1.txt plik2.txt Wyłączenie edytora vim</description>
+      <guid>https://mohdur.github.io/post/ukrycie-proces%C3%B3w-innych-u%C5%BCytkownik%C3%B3w-w-systemie-linux/</guid>
+      <description>Ukrycie procesów innych użytkowników wiąże się z ponownym zmapowaniem wirtualnej partycji /proc.
+1sudo mount -o remount,rw,hidepid=2 /proc Żeby ukryć procesy permanentnie należy do pliku /etc/fstab dodać:
+1proc /proc proc defaults,hidepid=2 0 0 Wartości jakie może przyjmować parametr hidepid:
+   Value Meaning     0 Everybody may access all /proc/[pid] directories. This is the traditional behavior, and the default if this mount option is not specified.   1 Users may not access files and subdirectories inside any /proc/[pid] directories but their own (the /proc/[pid] directories themselves remain visible).</description>
     </item>
     
   </channel>

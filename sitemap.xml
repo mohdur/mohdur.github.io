@@ -4,62 +4,42 @@
   
   <url>
     <loc>https://mohdur.github.io/categories/</loc>
-    <lastmod>2020-10-13T20:40:55+02:00</lastmod>
+    <lastmod>2020-10-14T08:00:37+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/linux/</loc>
+    <lastmod>2020-10-14T08:00:37+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://mohdur.github.io/</loc>
-    <lastmod>2020-10-13T20:40:55+02:00</lastmod>
+    <lastmod>2020-10-14T08:00:37+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://mohdur.github.io/post/</loc>
-    <lastmod>2020-10-13T20:40:55+02:00</lastmod>
+    <lastmod>2020-10-14T08:00:37+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/security/</loc>
+    <lastmod>2020-10-14T08:00:37+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/categories/security/</loc>
+    <lastmod>2020-10-14T08:00:37+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://mohdur.github.io/tags/</loc>
-    <lastmod>2020-10-13T20:40:55+02:00</lastmod>
+    <lastmod>2020-10-14T08:00:37+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mohdur.github.io/tags/vim/</loc>
-    <lastmod>2020-10-13T20:40:55+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/categories/vim/</loc>
-    <lastmod>2020-10-13T20:40:55+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/post/vim-podr%C3%B3%C5%BCe-w-czasie/</loc>
-    <lastmod>2020-10-13T20:40:55+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/shell/</loc>
-    <lastmod>2020-10-13T20:27:39+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/categories/shell/</loc>
-    <lastmod>2020-10-13T20:27:39+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/skrypty/</loc>
-    <lastmod>2020-10-13T20:27:39+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/post/uruchomienie-skryptu-po-wykryciu-zmian/</loc>
-    <lastmod>2020-10-13T20:27:39+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/post/w%C5%82%C4%85czenie-i-wy%C5%82%C4%85czenie-edytora-vim/</loc>
-    <lastmod>2020-10-13T20:01:15+02:00</lastmod>
+    <loc>https://mohdur.github.io/post/ukrycie-proces%C3%B3w-innych-u%C5%BCytkownik%C3%B3w-w-systemie-linux/</loc>
+    <lastmod>2020-10-14T08:00:37+02:00</lastmod>
   </url>
   
   <url>

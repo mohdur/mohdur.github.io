@@ -103,82 +103,28 @@
   <div class="excerpt">
     <div class="excerpt_header">
       <h3 class="post_link">
-        <a href="https://mohdur.github.io/post/vim-podr%C3%B3%C5%BCe-w-czasie/">Vim podróże w czasie</a>
+        <a href="https://mohdur.github.io/post/ukrycie-proces%C3%B3w-innych-u%C5%BCytkownik%C3%B3w-w-systemie-linux/">Ukrycie procesów innych użytkowników w systemie Linux</a>
       </h3>
       <div class="post_meta">
   <svg class="icon">
   <use xlink:href="#calendar"></use>
 </svg>
   <span class="post_date">
-    Oct 13, 2020</span>
-    <a href='https://mohdur.github.io/tags/vim' class="post_tag button button_translucent">vim
+    Oct 14, 2020</span>
+    <a href='https://mohdur.github.io/tags/linux' class="post_tag button button_translucent">linux
+    </a>
+    <a href='https://mohdur.github.io/tags/security' class="post_tag button button_translucent">security
     </a>
 </div>
 
     </div>
       <div class="excerpt_footer">
         <div>
-          <p class="pale">Edytor Vim posiada dwie komendy, które umożliwiają przejście do wersji z przed lub kilka sekund później, są to :earlier oraz :later. Jako parametr dodatkowy używamy ile sekund, minut godzin lub nawet dni chcemy się przenieść w czasie. Dodatkowo możemy przenieść się w czasie N zapisów pliku w czasie.
-Użycie tych dwóch …</p>
-          <a href="https://mohdur.github.io/post/vim-podr%C3%B3%C5%BCe-w-czasie/" class="excerpt_more button">Read More</a>
-        </div>
-      </div>
-    </div>
-  </li>
-
-      <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://mohdur.github.io/post/uruchomienie-skryptu-po-wykryciu-zmian/">Uruchomienie skryptu po wykryciu zmian</a>
-      </h3>
-      <div class="post_meta">
-  <svg class="icon">
-  <use xlink:href="#calendar"></use>
-</svg>
-  <span class="post_date">
-    Oct 13, 2020</span>
-    <a href='https://mohdur.github.io/tags/shell' class="post_tag button button_translucent">shell
-    </a>
-    <a href='https://mohdur.github.io/tags/skrypty' class="post_tag button button_translucent">skrypty
-    </a>
-</div>
-
-    </div>
-      <div class="excerpt_footer">
-        <div>
-          <p class="pale">Za pomocą skryptu, który operuje na sumach kontrolnych, można monitorować wybrany plik. Jeśli monitorowany plik się zmieni lub zostanie zapisany, skrypt automatycznie go uruchomi, dzięki temu nie trzeba za każdym razem uruchomiać go podczas kodowania.
-Istnieją programy, które wykonują to samo, takie jak entr czy …</p>
-          <a href="https://mohdur.github.io/post/uruchomienie-skryptu-po-wykryciu-zmian/" class="excerpt_more button">Read More</a>
-        </div>
-      </div>
-    </div>
-  </li>
-
-      <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://mohdur.github.io/post/w%C5%82%C4%85czenie-i-wy%C5%82%C4%85czenie-edytora-vim/">Włączenie i wyłączenie edytora Vim</a>
-      </h3>
-      <div class="post_meta">
-  <svg class="icon">
-  <use xlink:href="#calendar"></use>
-</svg>
-  <span class="post_date">
-    Oct 13, 2020</span>
-    <a href='https://mohdur.github.io/tags/vim' class="post_tag button button_translucent">vim
-    </a>
-</div>
-
-    </div>
-      <div class="excerpt_footer">
-        <div>
-          <p class="pale">Włączenie edytora vim
-1vim Włączenie edytora z edycją pliku
-1vim plik1.txt Włączenie edytora z edycją kilku plików
-1vim plik1.txt plik2.txt Wyłączenie edytora vim</p>
-          <a href="https://mohdur.github.io/post/w%C5%82%C4%85czenie-i-wy%C5%82%C4%85czenie-edytora-vim/" class="excerpt_more button">Read More</a>
+          <p class="pale">Ukrycie procesów innych użytkowników wiąże się z ponownym zmapowaniem wirtualnej partycji /proc.
+1sudo mount -o remount,rw,hidepid=2 /proc Żeby ukryć procesy permanentnie należy do pliku /etc/fstab dodać:
+1proc /proc proc defaults,hidepid=2 0 0 Wartości jakie może przyjmować parametr hidepid:
+   Value Meaning     0 …</p>
+          <a href="https://mohdur.github.io/post/ukrycie-proces%C3%B3w-innych-u%C5%BCytkownik%C3%B3w-w-systemie-linux/" class="excerpt_more button">Read More</a>
         </div>
       </div>
     </div>
@@ -199,37 +145,20 @@ Istnieją programy, które wykonują to samo, takie jak entr czy …</p>
     <h2 class="mt-4">Featured Posts</h2>
     <ul>
       <li>
-        <a href="https://mohdur.github.io/post/vim-podr%C3%B3%C5%BCe-w-czasie/" class="nav-link">Vim podróże w czasie</a>
-      </li>
-      <li>
-        <a href="https://mohdur.github.io/post/uruchomienie-skryptu-po-wykryciu-zmian/" class="nav-link">Uruchomienie skryptu po wykryciu zmian</a>
-      </li>
-      <li>
-        <a href="https://mohdur.github.io/post/w%C5%82%C4%85czenie-i-wy%C5%82%C4%85czenie-edytora-vim/" class="nav-link">Włączenie i wyłączenie edytora Vim</a>
+        <a href="https://mohdur.github.io/post/ukrycie-proces%C3%B3w-innych-u%C5%BCytkownik%C3%B3w-w-systemie-linux/" class="nav-link">Ukrycie procesów innych użytkowników w systemie Linux</a>
       </li>
     </ul>
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
       <li>
-        <a href="https://mohdur.github.io/post/vim-podr%C3%B3%C5%BCe-w-czasie/" class="nav-link">Vim podróże w czasie</a>
-      </li>
-      <li>
-        <a href="https://mohdur.github.io/post/uruchomienie-skryptu-po-wykryciu-zmian/" class="nav-link">Uruchomienie skryptu po wykryciu zmian</a>
-      </li>
-      <li>
-        <a href="https://mohdur.github.io/post/w%C5%82%C4%85czenie-i-wy%C5%82%C4%85czenie-edytora-vim/" class="nav-link">Włączenie i wyłączenie edytora Vim</a>
+        <a href="https://mohdur.github.io/post/ukrycie-proces%C3%B3w-innych-u%C5%BCytkownik%C3%B3w-w-systemie-linux/" class="nav-link">Ukrycie procesów innych użytkowników w systemie Linux</a>
       </li>
     </ul>
     <div>
       <h2 class="mt-4 taxonomy" id="categories-section">Categories</h2>
       <nav class="tags_nav">
-        <a href='https://mohdur.github.io/categories/vim/' class="post_tag button button_translucent">
-          VIM
-          <span class="button_tally">2</span>
-        </a>
-        
-        <a href='https://mohdur.github.io/categories/shell/' class="post_tag button button_translucent">
-          SHELL
+        <a href='https://mohdur.github.io/categories/security/' class="post_tag button button_translucent">
+          SECURITY
           <span class="button_tally">1</span>
         </a>
         
@@ -239,18 +168,13 @@ Istnieją programy, które wykonują to samo, takie jak entr czy …</p>
     <div>
       <h2 class="mt-4 taxonomy" id="tags-section">Tags</h2>
       <nav class="tags_nav">
-        <a href='https://mohdur.github.io/tags/vim/' class="post_tag button button_translucent">
-          VIM
-          <span class="button_tally">2</span>
-        </a>
-        
-        <a href='https://mohdur.github.io/tags/shell/' class="post_tag button button_translucent">
-          SHELL
+        <a href='https://mohdur.github.io/tags/linux/' class="post_tag button button_translucent">
+          LINUX
           <span class="button_tally">1</span>
         </a>
         
-        <a href='https://mohdur.github.io/tags/skrypty/' class="post_tag button button_translucent">
-          SKRYPTY
+        <a href='https://mohdur.github.io/tags/security/' class="post_tag button button_translucent">
+          SECURITY
           <span class="button_tally">1</span>
         </a>
         
