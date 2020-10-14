@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mikrotik on MOHDUR</title>
-    <link>https://mohdur.github.io/tags/mikrotik/</link>
+    <link>https://mohdur.github.io/categories/mikrotik/</link>
     <description>Recent content in mikrotik on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 14 Oct 2020 21:01:41 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/mikrotik/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Oct 2020 21:01:41 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/categories/mikrotik/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Konfiguracja usługi SSH w RouterOS (Mikrotik)</title>
       <link>https://mohdur.github.io/post/konfiguracja-us%C5%82ugi-ssh-w-routeros-mikrotik/</link>
@@ -14,16 +14,6 @@
       <guid>https://mohdur.github.io/post/konfiguracja-us%C5%82ugi-ssh-w-routeros-mikrotik/</guid>
       <description>Ustawienie mocniejszej kryptografi i kluczy dla hosta o większej długości 1/ip ssh set strong-crypto=yes Zmiana długości klucza hosta wymaga wygenerowania ponownie klucza, ta operacja może potrwać do kilkudziesięciu minut w zależności od długości klucza oraz mocy obliczeniowych procesora.
 1/ip ssh set host-key-size=4096 2/ip ssh regenerate-host-key Autoryzacja za pomocą klucza RSA i hasła Najpierw należy wygenerować taki klucz, następnie przesłać na urządzenie i dopisać do konkretnego użytkownika. Ustawienie logowania za pomocą klucza wyłącza możliwość logowania bez hasła.</description>
-    </item>
-    
-    <item>
-      <title>Mikrotik i Wireguard VPN</title>
-      <link>https://mohdur.github.io/post/mikrotik-i-wireguard-vpn/</link>
-      <pubDate>Wed, 14 Oct 2020 14:03:25 +0200</pubDate>
-      
-      <guid>https://mohdur.github.io/post/mikrotik-i-wireguard-vpn/</guid>
-      <description>Od kilku tygodni jest dostępna wersja 7.1beta2 (Developmend) systemu RouterOS głównie przeznaczonych dla urządzeń Mikrotik. Od tej wersji istnieje wsparcie dla usługi Wireguard VPN. Należy zaznaczyć iż jest to wersja, której nie należy używać w środowisku produkcyjnym.
-Na razie w wersji 7.1beta2 nie ma możliwości zestawienia takiego połączenia za pomocą programu WinBox ani interfejsu WWW. Problem występuje w polu endpoint, które nie przyjmuje numeru portu dla zdalnego hosta. Jedyna możliwość to użyć linii komend.</description>
     </item>
     
   </channel>

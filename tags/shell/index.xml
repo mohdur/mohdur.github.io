@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>shell on MOHDUR</title>
+    <link>https://mohdur.github.io/tags/shell/</link>
+    <description>Recent content in shell on MOHDUR</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 14 Oct 2020 15:17:50 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nazwa pliku, wyśwetlanie nazwy i rozszerzenia</title>
+      <link>https://mohdur.github.io/post/nazwa-pliku-wy%C5%9Bwetlanie-nazwy-i-rozszerzenia/</link>
+      <pubDate>Wed, 14 Oct 2020 15:17:50 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/nazwa-pliku-wy%C5%9Bwetlanie-nazwy-i-rozszerzenia/</guid>
+      <description>Na podstawie prostego skryptu pokażę jak wyświetlić nazwę pliku bez katalogu oraz jak wyświetlić samą nazwę pliku bez rozszerzenia.
+1for i in katalog/*.txt 2do 3 plik=$(basename $i | cut -d &amp;#39;.&amp;#39; -f 1) 4 echo $plik 5done Pętla for pokazuje wszystkie pliki w katalogu katalog wraz nazwą tego katalogu np. katalog/nazwa-pliku.txt, chcąc uzyskać samą nazwę pliku użyjemy komendy basename.
+1$ basename katalog/plik.txt 2plik.txt Skoro mamy już samą nazwę pliku plik.txt, to teraz spróbujemy uzyskać nazwę pliku bez rozszerzenia.</description>
+    </item>
+    
+  </channel>
+</rss>

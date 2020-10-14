@@ -5,7 +5,28 @@
     <link>https://mohdur.github.io/post/</link>
     <description>Recent content in Posts on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 14 Oct 2020 14:03:25 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Oct 2020 21:01:41 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Konfiguracja usługi SSH w RouterOS (Mikrotik)</title>
+      <link>https://mohdur.github.io/post/konfiguracja-us%C5%82ugi-ssh-w-routeros-mikrotik/</link>
+      <pubDate>Wed, 14 Oct 2020 21:01:41 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/konfiguracja-us%C5%82ugi-ssh-w-routeros-mikrotik/</guid>
+      <description>Ustawienie mocniejszej kryptografi i kluczy dla hosta o większej długości 1/ip ssh set strong-crypto=yes Zmiana długości klucza hosta wymaga wygenerowania ponownie klucza, ta operacja może potrwać do kilkudziesięciu minut w zależności od długości klucza oraz mocy obliczeniowych procesora.
+1/ip ssh set host-key-size=4096 2/ip ssh regenerate-host-key Autoryzacja za pomocą klucza RSA i hasła Najpierw należy wygenerować taki klucz, następnie przesłać na urządzenie i dopisać do konkretnego użytkownika. Ustawienie logowania za pomocą klucza wyłącza możliwość logowania bez hasła.</description>
+    </item>
+    
+    <item>
+      <title>Nazwa pliku, wyśwetlanie nazwy i rozszerzenia</title>
+      <link>https://mohdur.github.io/post/nazwa-pliku-wy%C5%9Bwetlanie-nazwy-i-rozszerzenia/</link>
+      <pubDate>Wed, 14 Oct 2020 15:17:50 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/nazwa-pliku-wy%C5%9Bwetlanie-nazwy-i-rozszerzenia/</guid>
+      <description>Na podstawie prostego skryptu pokażę jak wyświetlić nazwę pliku bez katalogu oraz jak wyświetlić samą nazwę pliku bez rozszerzenia.
+1for i in katalog/*.txt 2do 3 plik=$(basename $i | cut -d &amp;#39;.&amp;#39; -f 1) 4 echo $plik 5done Pętla for pokazuje wszystkie pliki w katalogu katalog wraz nazwą tego katalogu np. katalog/nazwa-pliku.txt, chcąc uzyskać samą nazwę pliku użyjemy komendy basename.
+1$ basename katalog/plik.txt 2plik.txt Skoro mamy już samą nazwę pliku plik.txt, to teraz spróbujemy uzyskać nazwę pliku bez rozszerzenia.</description>
+    </item>
+    
     <item>
       <title>Mikrotik i Wireguard VPN</title>
       <link>https://mohdur.github.io/post/mikrotik-i-wireguard-vpn/</link>

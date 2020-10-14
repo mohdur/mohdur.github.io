@@ -5,11 +5,11 @@
     <link>https://mohdur.github.io/tags/</link>
     <description>Recent content in Tags on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 14 Oct 2020 14:03:25 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Oct 2020 21:01:41 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>mikrotik</title>
       <link>https://mohdur.github.io/tags/mikrotik/</link>
-      <pubDate>Wed, 14 Oct 2020 14:03:25 +0200</pubDate>
+      <pubDate>Wed, 14 Oct 2020 21:01:41 +0200</pubDate>
       
       <guid>https://mohdur.github.io/tags/mikrotik/</guid>
       <description></description>
@@ -18,9 +18,36 @@
     <item>
       <title>security</title>
       <link>https://mohdur.github.io/tags/security/</link>
-      <pubDate>Wed, 14 Oct 2020 14:03:25 +0200</pubDate>
+      <pubDate>Wed, 14 Oct 2020 21:01:41 +0200</pubDate>
       
       <guid>https://mohdur.github.io/tags/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ssh</title>
+      <link>https://mohdur.github.io/tags/ssh/</link>
+      <pubDate>Wed, 14 Oct 2020 21:01:41 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/tags/ssh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shell</title>
+      <link>https://mohdur.github.io/tags/shell/</link>
+      <pubDate>Wed, 14 Oct 2020 15:17:50 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/tags/shell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>skrypty</title>
+      <link>https://mohdur.github.io/tags/skrypty/</link>
+      <pubDate>Wed, 14 Oct 2020 15:17:50 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/tags/skrypty/</guid>
       <description></description>
     </item>
     
