@@ -12,3 +12,8 @@ code.noClass {
     display: inline;
     line-break: anywhere;
 }
+
+code {
+    font-size: inherit;
+	font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+}
