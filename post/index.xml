@@ -5,7 +5,17 @@
     <link>https://mohdur.github.io/post/</link>
     <description>Recent content in Posts on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 14 Oct 2020 08:13:55 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Oct 2020 09:03:56 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Zmiana hasła w kluczu prywatnym RSA (OpenVPN)</title>
+      <link>https://mohdur.github.io/post/zmiana-has%C5%82a-w-kluczu-prywatnym-rsa-openvpn/</link>
+      <pubDate>Wed, 14 Oct 2020 09:03:56 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/zmiana-has%C5%82a-w-kluczu-prywatnym-rsa-openvpn/</guid>
+      <description>Zmiana hasła za pomocą polecenia openssl.
+1openssl rsa -des3 -in oldkey.pem -out newkey.pem </description>
+    </item>
+    
     <item>
       <title>Kompilacja Neomutt</title>
       <link>https://mohdur.github.io/post/kompilacja-neomutt/</link>

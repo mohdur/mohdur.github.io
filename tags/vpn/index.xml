@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vpn on MOHDUR</title>
+    <link>https://mohdur.github.io/tags/vpn/</link>
+    <description>Recent content in vpn on MOHDUR</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 14 Oct 2020 09:03:56 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/vpn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Zmiana hasła w kluczu prywatnym RSA (OpenVPN)</title>
+      <link>https://mohdur.github.io/post/zmiana-has%C5%82a-w-kluczu-prywatnym-rsa-openvpn/</link>
+      <pubDate>Wed, 14 Oct 2020 09:03:56 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/zmiana-has%C5%82a-w-kluczu-prywatnym-rsa-openvpn/</guid>
+      <description>Zmiana hasła za pomocą polecenia openssl.
+1openssl rsa -des3 -in oldkey.pem -out newkey.pem </description>
+    </item>
+    
+  </channel>
+</rss>
