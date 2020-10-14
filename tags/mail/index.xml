@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mail on MOHDUR</title>
+    <link>https://mohdur.github.io/tags/mail/</link>
+    <description>Recent content in mail on MOHDUR</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 14 Oct 2020 08:13:55 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/mail/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kompilacja Neomutt</title>
+      <link>https://mohdur.github.io/post/kompilacja-neomutt/</link>
+      <pubDate>Wed, 14 Oct 2020 08:13:55 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/kompilacja-neomutt/</guid>
+      <description>Lista pakietów potrzebnych do kompilacji w systemu Fedora  docbook-utils docbook-style-xsl gpgme-devel cyrus-sasl-devel notmuch-devel gnutls-devel libidn-devel libdb4-devel libdb-devel compat-gdbm-devel lmdb-devel kyotocabinet-devel qdbm-devel krb5-devel  Kompilacja 1./configure --enable-ssl --enable-gpgme --notmuch \ 2--gnutls --enable-gss --sasl --bdb --gdbm \ 3--kyotocabinet --lmdb --qdbm 4 5make 6sudo make install </description>
+    </item>
+    
+  </channel>
+</rss>
