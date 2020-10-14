@@ -1,8 +1,6 @@
-code
-  font-family: 'Monaco', monospace
-  word-break: break-all
-  &.noClass
-    --inlineColor: rgb(77, 199, 255)
-    color: var(--inlineColor)
-    display: inline
-    line-break: anywhere
+code.noClass {
+    --inlineColor: rgb(77, 199, 255);
+    color: var(--inlineColor);
+    display: inline;
+    line-break: anywhere;
+}
