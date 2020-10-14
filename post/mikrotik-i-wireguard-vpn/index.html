@@ -222,7 +222,13 @@ publiczny oraz prywatny.</p>
 <span class="ln"> 9</span>add allowed-address=10.0.0.0/24 endpoint=192.168.88.101:24680 interface=wireguard1 public-key=\
 <span class="ln">10</span>    &#34;N5rCJmUwj2BrN87j5s2npyh/m6ZP8J0VGYbjVbNerkE=&#34;
 </code></pre></div><h2 id="test-połączenia-można-wykonać-za-pomocą-polecenia-ping">Test połączenia można wykonać za pomocą polecenia ping</h2>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>/system ping 10.0.0.101
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>/tool/ping 10.0.0.102 count=4 interface=wireguard1
+<span class="ln">2</span>  SEQ HOST                                     SIZE TTL TIME  STATUS
+<span class="ln">3</span>    0 10.0.0.102                                 56  64 1ms
+<span class="ln">4</span>    1 10.0.0.102                                 56  64 1ms
+<span class="ln">5</span>    2 10.0.0.102                                 56  64 1ms
+<span class="ln">6</span>    3 10.0.0.102                                 56  64 1ms
+<span class="ln">7</span>    sent=4 received=4 packet-loss=0% min-rtt=1ms avg-rtt=1ms max-rtt=1ms
 </code></pre></div>
     
       
