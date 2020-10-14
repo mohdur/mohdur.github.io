@@ -1,5 +1,5 @@
 code.noClass {
-    --inlineColor: rgb(77, 199, 255);
+    --inlineColor: rgb(14, 140, 200);
     color: var(--inlineColor);
     display: inline;
     line-break: anywhere;
