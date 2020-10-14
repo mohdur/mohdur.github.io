@@ -179,48 +179,48 @@ publiczny oraz prywatny.</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>/interface wireguard print
 </code></pre></div><p>Żeby pobrać klucz publiczny / prywatny można użyć polecenia</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>:put [/interface/wireguard get wireguard1 private-key]
-<span class="ln">2</span>6N2Hv0qdOySLFUKRGafPmIhqVVRBZwXUFy3xMBYg71w=
+<span class="ln">2</span>oGwMsty/RMY9oHUywxKsn9ov6cLh4W8xU8FpqQOkeFs=
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>:put [/interface/wireguard get wireguard1 public-key]
-<span class="ln">2</span>ywMIwjY18zPg2jO49uENgq/A2vP7hlhTFK68mcLnEVQ=
+<span class="ln">2</span>N5rCJmUwj2BrN87j5s2npyh/m6ZP8J0VGYbjVbNerkE=
 </code></pre></div><h2 id="nadanie-adresu-ip-dla-interfejsu-wireguard1">Nadanie adresu IP dla interfejsu wireguard1</h2>
 <p>Jak już mamy interfejs wireguard, to kolejnym krokiem jest nadanie mu adresu IP.</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>/ip address add address=10.0.0.X/24 interface=wireguard1 network=10.0.0.0
 </code></pre></div><h2 id="pełna-konfiguracja-urządzenia-mt-r1">Pełna konfiguracja urządzenia MT-R1</h2>
 <ul>
-<li>IP LAN - 192.168.88.101</li>
-<li>IP Wireguard - 10.0.0.101</li>
-<li>Klucz publiczny</li>
-<li>Klucz prywatny</li>
-<li>Numer portu Wireguard - 24680/UDP</li>
+<li>IP LAN: 192.168.88.101</li>
+<li>IP Wireguard: 10.0.0.101</li>
+<li>Klucz prywatny: <code>oGwMsty/RMY9oHUywxKsn9ov6cLh4W8xU8FpqQOkeFs=</code></li>
+<li>Klucz publiczny: <code>N5rCJmUwj2BrN87j5s2npyh/m6ZP8J0VGYbjVbNerkE=</code></li>
+<li>Numer portu Wireguard: 24680/UDP</li>
 </ul>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span>/interface wireguard add name=wireguard1
 <span class="ln"> 2</span>
 <span class="ln"> 3</span>/ip address add address=10.0.0.101/24 interface=wireguard1 network=10.0.0.0
 <span class="ln"> 4</span>
 <span class="ln"> 5</span>/interface wireguard
-<span class="ln"> 6</span>add listen-port=24680 mtu=1420 name=wireguard1 private-key=&#34;6N2Hv0qdOySLFUKRGafPmIhqVVRBZwXUFy3xMBYg71w=&#34;
+<span class="ln"> 6</span>add listen-port=24680 mtu=1420 name=wireguard1 private-key=&#34;oGwMsty/RMY9oHUywxKsn9ov6cLh4W8xU8FpqQOkeFs=&#34;
 <span class="ln"> 7</span>
 <span class="ln"> 8</span>/interface wireguard peers
 <span class="ln"> 9</span>add allowed-address=10.0.0.0/24 endpoint=192.168.88.102:24680 interface=wireguard1 public-key=\
-<span class="ln">10</span>    &#34;ywMIwjY18zPg2jO49uENgq/A2vP7hlhTFK68mcLnEVQ=&#34;
-</code></pre></div><h2 id="pełna-konfiguracja-urządzenia-mt-r1-1">Pełna konfiguracja urządzenia MT-R1</h2>
+<span class="ln">10</span>    &#34;hFAmrgxz4bDRmTaCbOyrvNQzVEwI4uctKyCy+zUJoGE=&#34;
+</code></pre></div><h2 id="pełna-konfiguracja-urządzenia-mt-r2">Pełna konfiguracja urządzenia MT-R2</h2>
 <ul>
-<li>IP LAN - 192.168.88.102</li>
-<li>IP Wireguard - 10.0.0.102</li>
-<li>Klucz publiczny</li>
-<li>Klucz prywatny</li>
-<li>Numer portu Wireguard - 24680/UDP</li>
+<li>IP LAN: 192.168.88.102</li>
+<li>IP Wireguard: 10.0.0.102</li>
+<li>Klucz prywatny: <code>YIRU+EYysLwHcQRWEoz4qjGIWjLvenTQ4WgjBbWVp0o=</code></li>
+<li>Klucz publiczny: <code>hFAmrgxz4bDRmTaCbOyrvNQzVEwI4uctKyCy+zUJoGE=</code></li>
+<li>Numer portu Wireguard: 24680/UDP</li>
 </ul>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span>/interface wireguard add name=wireguard1
 <span class="ln"> 2</span>
 <span class="ln"> 3</span>/ip address add address=10.0.0.102/24 interface=wireguard1 network=10.0.0.0
 <span class="ln"> 4</span>
 <span class="ln"> 5</span>/interface wireguard
-<span class="ln"> 6</span>add listen-port=24680 mtu=1420 name=wireguard1 private-key=&#34;6N2Hv0qdOySLFUKRGafPmIhqVVRBZwXUFy3xMBYg71w=&#34;
+<span class="ln"> 6</span>add listen-port=24680 mtu=1420 name=wireguard1 private-key=&#34;YIRU+EYysLwHcQRWEoz4qjGIWjLvenTQ4WgjBbWVp0o=&#34;
 <span class="ln"> 7</span>
 <span class="ln"> 8</span>/interface wireguard peers
 <span class="ln"> 9</span>add allowed-address=10.0.0.0/24 endpoint=192.168.88.101:24680 interface=wireguard1 public-key=\
-<span class="ln">10</span>    &#34;ywMIwjY18zPg2jO49uENgq/A2vP7hlhTFK68mcLnEVQ=&#34;
+<span class="ln">10</span>    &#34;N5rCJmUwj2BrN87j5s2npyh/m6ZP8J0VGYbjVbNerkE=&#34;
 </code></pre></div><h2 id="test-połączenia-można-wykonać-za-pomocą-polecenia-ping">Test połączenia można wykonać za pomocą polecenia ping</h2>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>/system ping 10.0.0.101
 </code></pre></div>
