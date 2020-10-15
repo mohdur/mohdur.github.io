@@ -143,22 +143,34 @@
 </span><span class="ln"> 2</span><span class="cp"></span>
 <span class="ln"> 3</span>curl -s https://api.github.com/repos/junegunn/fzf-bin/releases/latest <span class="se">\
 </span><span class="ln"> 4</span><span class="se"></span>    <span class="p">|</span> grep browser_download_url <span class="se">\
-</span><span class="ln"> 5</span><span class="se"></span>    <span class="p">|</span> grep linux-amd64 <span class="se">\
+</span><span class="ln"> 5</span><span class="se"></span>    <span class="p">|</span> grep linux_amd64 <span class="se">\
 </span><span class="ln"> 6</span><span class="se"></span>    <span class="p">|</span> cut -d <span class="s1">&#39;&#34;&#39;</span> -f <span class="m">4</span> <span class="se">\
 </span><span class="ln"> 7</span><span class="se"></span>    <span class="p">|</span> wget -O fzf-bin.tgz -qi -
 <span class="ln"> 8</span>
 <span class="ln"> 9</span>tar xf fzf-bin.tgz
 <span class="ln">10</span>rm fzf-bin.tgz
 </code></pre></div><h2 id="pobranie-źródeł">Pobranie źródeł</h2>
+<p>Pobranie śródeł kiedy są tworzone wydania</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="cp">#!/usr/bin/env bash
 </span><span class="ln">2</span><span class="cp"></span>
-<span class="ln">3</span>curl -s https://api.github.com/repos/junegunn/fzf/releases/latest <span class="se">\
+<span class="ln">3</span>curl -s https://api.github.com/repos/lotabout/skim/releases/latest <span class="se">\
 </span><span class="ln">4</span><span class="se"></span>    <span class="p">|</span> grep tarball_url <span class="se">\
 </span><span class="ln">5</span><span class="se"></span>    <span class="p">|</span> cut -d <span class="s1">&#39;&#34;&#39;</span> -f <span class="m">4</span> <span class="se">\
-</span><span class="ln">6</span><span class="se"></span>    <span class="p">|</span> wget -O fzf-src.tgz -qi -
+</span><span class="ln">6</span><span class="se"></span>    <span class="p">|</span> wget -O skim-src.tgz -qi -
 <span class="ln">7</span>
-<span class="ln">8</span>tar xf fzf-src.tgz
-<span class="ln">9</span>rm fzf-src.tgz
+<span class="ln">8</span>tar xf skim-src.tgz
+<span class="ln">9</span>rm skim-src.tgz
+</code></pre></div><p>Inna sytuacja ma miejsce, kiedy w repozytorium nie mamy wydań, ale są tagi tak
+jak w repozytorium FZF.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="cp">#!/usr/bin/bash
+</span><span class="ln">2</span><span class="cp"></span>
+<span class="ln">3</span>git ls-remote --tags https://github.com/junegunn/fzf <span class="se">\
+</span><span class="ln">4</span><span class="se"></span>  <span class="p">|</span> cut -f <span class="m">2</span> <span class="p">|</span> cut -f <span class="m">3</span> -d <span class="s1">&#39;/&#39;</span> <span class="p">|</span> sort -V <span class="p">|</span> head -n <span class="m">1</span> <span class="p">|</span> sed <span class="s1">&#39;s/\^{}//&#39;</span>
+</code></pre></div><p>lub jeśli w systemie mamy zainstalowany program <code>jq</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="cp">#!/usr/bin/env bash
+</span><span class="ln">2</span><span class="cp"></span>
+<span class="ln">3</span><span class="nv">TAG</span><span class="o">=</span><span class="k">$(</span>curl -s https://api.github.com/repos/junegunn/fzf/tags <span class="p">|</span> jq -r <span class="s2">&#34;.[0].name&#34;</span><span class="k">)</span>
+<span class="ln">4</span>wget -O fzf-src-<span class="nv">$TAG</span>.tgz -q https://github.com/junegunn/fzf/archive/<span class="nv">$TAG</span>.tar.gz
 </code></pre></div>
     
       
