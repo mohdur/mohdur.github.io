@@ -5,7 +5,16 @@
     <link>https://mohdur.github.io/categories/shell/</link>
     <description>Recent content in shell on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 14 Oct 2020 15:17:50 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/categories/shell/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Oct 2020 21:20:19 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/categories/shell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pobranie ostatniego wydania programu z repozytorium Github</title>
+      <link>https://mohdur.github.io/post/pobranie-ostatniego-wydania-programu-z-repozytorium-github/</link>
+      <pubDate>Thu, 15 Oct 2020 21:20:19 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/pobranie-ostatniego-wydania-programu-z-repozytorium-github/</guid>
+      <description>Pobranie wersji binarnej 1#!/usr/bin/env bash 2 3curl -s https://api.github.com/repos/junegunn/fzf-bin/releases/latest \ 4 | grep browser_download_url \ 5 | grep linux-amd64 \ 6 | cut -d &amp;#39;&amp;#34;&amp;#39; -f 4 \ 7 | wget -O fzf-bin.tgz -qi - 8 9tar xf fzf-bin.tgz 10rm fzf-bin.tgz Pobranie źródeł 1#!/usr/bin/env bash 2 3curl -s https://api.github.com/repos/junegunn/fzf/releases/latest \ 4 | grep tarball_url \ 5 | cut -d &amp;#39;&amp;#34;&amp;#39; -f 4 \ 6 | wget -O fzf-src.tgz -qi - 7 8tar xf fzf-src.</description>
+    </item>
+    
     <item>
       <title>Nazwa pliku, wyśwetlanie nazwy i rozszerzenia</title>
       <link>https://mohdur.github.io/post/nazwa-pliku-wy%C5%9Bwetlanie-nazwy-i-rozszerzenia/</link>
