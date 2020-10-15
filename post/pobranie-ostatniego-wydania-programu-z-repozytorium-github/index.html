@@ -164,8 +164,9 @@
 jak w repozytorium FZF.</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="cp">#!/usr/bin/bash
 </span><span class="ln">2</span><span class="cp"></span>
-<span class="ln">3</span>git ls-remote --tags https://github.com/junegunn/fzf <span class="se">\
-</span><span class="ln">4</span><span class="se"></span>  <span class="p">|</span> cut -f <span class="m">2</span> <span class="p">|</span> cut -f <span class="m">3</span> -d <span class="s1">&#39;/&#39;</span> <span class="p">|</span> sort -V <span class="p">|</span> head -n <span class="m">1</span> <span class="p">|</span> sed <span class="s1">&#39;s/\^{}//&#39;</span>
+<span class="ln">3</span><span class="nv">TAG</span><span class="o">=</span><span class="k">$(</span>git ls-remote --tags https://github.com/junegunn/fzf <span class="se">\
+</span><span class="ln">4</span><span class="se"></span>  <span class="p">|</span> cut -f <span class="m">2</span> <span class="p">|</span> cut -f <span class="m">3</span> -d <span class="s1">&#39;/&#39;</span> <span class="p">|</span> sort -V <span class="p">|</span> tail -n <span class="m">1</span> <span class="p">|</span> sed <span class="s1">&#39;s/\^{}//&#39;</span><span class="k">)</span>
+<span class="ln">5</span>wget -O fzf-src-<span class="nv">$TAG</span>.tgz -q https://github.com/junegunn/fzf/archive/<span class="nv">$TAG</span>.tar.gz
 </code></pre></div><p>lub jeśli w systemie mamy zainstalowany program <code>jq</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="cp">#!/usr/bin/env bash
 </span><span class="ln">2</span><span class="cp"></span>
