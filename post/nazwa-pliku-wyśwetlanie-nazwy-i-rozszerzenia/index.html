@@ -171,7 +171,7 @@ musimy znać rozszerzenie pliku.</p>
 </code></pre></div><h2 id="samo-rozszerzenie">Samo rozszerzenie</h2>
 <p>Jeśli chcemy wyświetlić samą nazwę rozszerzenia, to należy użyć polecenia <code>cut</code>,
 gdzie parametr <code>-f1</code> należy zastąpić <code>-f2</code> lub <code>-f2,3</code>.</p>
-<p>Dla powłoki <strong>BASH</strong> można użyć innego rozwiązania, (shell parameters expansion)[https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html#Shell-Parameter-Expansion],
+<p>Dla powłoki <strong>BASH</strong> można użyć innego rozwiązania, <a href="https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html#Shell-Parameter-Expansion">shell parameters expansion</a>,
 w zmiennej wyszukujemy wzoru np. <code>.*</code> a następnie cała reszta zostaje usunięta.</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="nv">FILE</span><span class="o">=</span>plik.conf
 <span class="ln">2</span><span class="nv">EXT</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">FILE</span><span class="p">##.*</span><span class="si">}</span><span class="s2">&#34;</span>
@@ -196,8 +196,8 @@ wszystko na prawo od wystąpienia cyfry.</p>
 <span class="ln">4</span>małaDuża
 </code></pre></div><p>Dodatkowe informacje:</p>
 <ul>
-<li>(Shell Parameter Expansion)[https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html]</li>
-<li>(Pattern Matching)[https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html]</li>
+<li><a href="https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html">Shell Parameter Expansion</a></li>
+<li><a href="https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html">Pattern Matching</a></li>
 </ul>
 
     
