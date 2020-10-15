@@ -22,9 +22,10 @@
       <pubDate>Wed, 14 Oct 2020 15:17:50 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/nazwa-pliku-wy%C5%9Bwetlanie-nazwy-i-rozszerzenia/</guid>
-      <description>Na podstawie prostego skryptu pokażę jak wyświetlić nazwę pliku bez katalogu oraz jak wyświetlić samą nazwę pliku bez rozszerzenia.
-1for i in katalog/*.txt 2do 3 plik=$(basename $i | cut -d &amp;#39;.&amp;#39; -f 1) 4 echo $plik 5done Pętla for pokazuje wszystkie pliki w katalogu katalog wraz nazwą tego katalogu np. katalog/nazwa-pliku.txt, chcąc uzyskać samą nazwę pliku użyjemy komendy basename.
-1$ basename katalog/plik.txt 2plik.txt Skoro mamy już samą nazwę pliku plik.txt, to teraz spróbujemy uzyskać nazwę pliku bez rozszerzenia.</description>
+      <description>Nazwa pliku bez ścieżki Na podstawie prostego skryptu pokażę jak wyświetlić nazwę pliku bez katalogu oraz jak wyświetlić samą nazwę pliku bez rozszerzenia.
+Pętla for pokazuje wszystkie pliki w katalogu katalog wraz z nazwą tego katalogu np. katalog/nazwa-pliku.txt, chcąc uzyskać samą nazwę pliku użyjemy komendy basename.
+1for i in katalog/*.txt 2do 3 PLIK=$(basename $i | cut -d &amp;#39;.&amp;#39; -f 1) 4 echo &amp;#34;$PLIK&amp;#34; 5done Inny przykład użycia komendy basename
+1VIMRC_DIR=&amp;#34;$HOME/.vim/vimrc&amp;#34; 2VIMRC=$(basename &amp;#34;$VIMRC_DIR&amp;#34;) 3echo $VIMRC 1vimrc Użycie komendy basename</description>
     </item>
     
     <item>
