@@ -5,7 +5,17 @@
     <link>https://mohdur.github.io/post/</link>
     <description>Recent content in Posts on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 21 Oct 2020 19:05:40 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Oct 2020 19:11:09 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vim uruchomienie polecenia z bufora</title>
+      <link>https://mohdur.github.io/post/vim-uruchomienie-polecenia-z-bufora/</link>
+      <pubDate>Wed, 21 Oct 2020 19:11:09 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/vim-uruchomienie-polecenia-z-bufora/</guid>
+      <description>Do skopiowania treści z bufora (edytowanego pliku) i wprowadzenie go do linii komend edytora Vim, użyjemy mechanizmu rejestrów, więcej na temat rejestrów można dowiedzieć się z pomocy :help registers. Żeby sprawdzić co mamy w rejestrze możemy użyć polecenia :registers lub :display w skrócie :reg i :dis. Standardowo pod znakiem &amp;quot; jest ostatni wpis. Żeby użyć polecenia z rejestru pod numerem 5 wprowadzamy następującą kombinację klawiszy:
+1:Ctrl+r5 Oto przykład użycia polecenia :reg</description>
+    </item>
+    
     <item>
       <title>Vim wysyłanie bieżącej linii do innego pliku</title>
       <link>https://mohdur.github.io/post/vim-wysy%C5%82anie-bie%C5%BC%C4%85cej-linii-do-innego-pliku/</link>
@@ -18,7 +28,7 @@ W tym wypadku zostanie zmapowana kombinacja klawiszy &amp;lt;leader&amp;gt;sv, k
     </item>
     
     <item>
-      <title>NMCLI I OpenVPN</title>
+      <title>NMCLI i OpenVPN</title>
       <link>https://mohdur.github.io/post/nmcli-i-openvpn/</link>
       <pubDate>Wed, 21 Oct 2020 14:43:50 +0200</pubDate>
       
