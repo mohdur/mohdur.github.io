@@ -5,7 +5,16 @@
     <link>https://mohdur.github.io/post/</link>
     <description>Recent content in Posts on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 22 Oct 2020 01:35:23 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Oct 2020 01:36:57 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ustawienie klawiatury w systemie linux</title>
+      <link>https://mohdur.github.io/post/ustawienie-klawiatury-w-systemie-linux/</link>
+      <pubDate>Thu, 22 Oct 2020 01:36:57 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/ustawienie-klawiatury-w-systemie-linux/</guid>
+      <description>1stty -ixon # wyłączenie Ctrl+s 2 3if [ $DISPLAY ]; then 4 setxkbmap -option caps:escape # ustawia caps lock jako ESC 5 xmodmap -e &amp;#34;keycode 62 = Shift_Lock&amp;#34; # ustawia prawy Shift jako Shift Lock 6fi 1# Ustawienie ESC na klawiszu CapsLock 2setxkbmap -option caps:escape 3# caps:none - wyłączenie 4# caps:escape - dodatkowy escape 5# caps:super - dodatkowy windows key 6# setxkbmap -option - zresetowanie ustawień 7# setxkbmap -query - sprawdzenie ustawień Po wyłączeniu Ctrl+s możemy użyć tego skrótu w Vim do zapisania pliku</description>
+    </item>
+    
     <item>
       <title>SED receptury</title>
       <link>https://mohdur.github.io/post/sed-receptury.md/</link>

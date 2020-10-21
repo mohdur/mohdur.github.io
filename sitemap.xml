@@ -3,13 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mohdur.github.io/tags/linux/</loc>
+    <lastmod>2020-10-22T01:36:57+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mohdur.github.io/</loc>
-    <lastmod>2020-10-22T01:35:23+02:00</lastmod>
+    <lastmod>2020-10-22T01:36:57+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://mohdur.github.io/post/</loc>
-    <lastmod>2020-10-22T01:35:23+02:00</lastmod>
+    <lastmod>2020-10-22T01:36:57+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/sprz%C4%99t/</loc>
+    <lastmod>2020-10-22T01:36:57+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/</loc>
+    <lastmod>2020-10-22T01:36:57+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/ustawienie-klawiatury-w-systemie-linux/</loc>
+    <lastmod>2020-10-22T01:36:57+02:00</lastmod>
   </url>
   
   <url>
@@ -28,17 +48,7 @@
   </url>
   
   <url>
-    <loc>https://mohdur.github.io/tags/</loc>
-    <lastmod>2020-10-22T01:35:23+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mohdur.github.io/post/generowanie-liczb-losowych/</loc>
-    <lastmod>2020-10-22T01:31:47+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/linux/</loc>
     <lastmod>2020-10-22T01:31:47+02:00</lastmod>
   </url>
   
@@ -120,11 +130,6 @@
   <url>
     <loc>https://mohdur.github.io/post/uruchomienie-skryptu-po-wykryciu-zmian/</loc>
     <lastmod>2020-10-21T21:56:55+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/sprz%C4%99t/</loc>
-    <lastmod>2020-10-21T21:52:41+02:00</lastmod>
   </url>
   
   <url>

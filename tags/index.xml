@@ -5,7 +5,25 @@
     <link>https://mohdur.github.io/tags/</link>
     <description>Recent content in Tags on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 22 Oct 2020 01:35:23 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Oct 2020 01:36:57 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux</title>
+      <link>https://mohdur.github.io/tags/linux/</link>
+      <pubDate>Thu, 22 Oct 2020 01:36:57 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sprzęt</title>
+      <link>https://mohdur.github.io/tags/sprz%C4%99t/</link>
+      <pubDate>Thu, 22 Oct 2020 01:36:57 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/tags/sprz%C4%99t/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>SED</title>
       <link>https://mohdur.github.io/tags/sed/</link>
@@ -21,15 +39,6 @@
       <pubDate>Thu, 22 Oct 2020 01:35:23 +0200</pubDate>
       
       <guid>https://mohdur.github.io/tags/shell/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://mohdur.github.io/tags/linux/</link>
-      <pubDate>Thu, 22 Oct 2020 01:31:47 +0200</pubDate>
-      
-      <guid>https://mohdur.github.io/tags/linux/</guid>
       <description></description>
     </item>
     
@@ -93,15 +102,6 @@
       <pubDate>Thu, 22 Oct 2020 01:22:38 +0200</pubDate>
       
       <guid>https://mohdur.github.io/tags/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Sprzęt</title>
-      <link>https://mohdur.github.io/tags/sprz%C4%99t/</link>
-      <pubDate>Wed, 21 Oct 2020 21:52:41 +0200</pubDate>
-      
-      <guid>https://mohdur.github.io/tags/sprz%C4%99t/</guid>
       <description></description>
     </item>
     

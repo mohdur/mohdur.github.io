@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" data-figures="true" class="page" data-mode="dim">
   <head>
-<title>Kompilacja Neomutt | MOHDUR</title>
+<title>Ustawienie klawiatury w systemie linux | MOHDUR</title>
 <meta charset="utf-8">
 <meta name="generator" content="Hugo 0.76.4" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -10,13 +10,13 @@
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="Kompilacja Neomutt">
+<meta name="description" content="Ustawienie klawiatury w systemie linux">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="Kompilacja Neomutt" />
-<meta property="og:url" content="https://mohdur.github.io/post/kompilacja-neomutt/" />
-<meta property="og:title" content="Kompilacja Neomutt" />
-<meta property="og:description" content="Kompilacja Neomutt" />
+<meta name="twitter:title" content="Ustawienie klawiatury w systemie linux" />
+<meta property="og:url" content="https://mohdur.github.io/post/ustawienie-klawiatury-w-systemie-linux/" />
+<meta property="og:title" content="Ustawienie klawiatury w systemie linux" />
+<meta property="og:description" content="Ustawienie klawiatury w systemie linux" />
 <meta property="og:image" content="https://mohdur.github.io/images/thumbnail.png" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://mohdur.github.io/icons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://mohdur.github.io/icons/favicon-32x32.png'>
@@ -25,7 +25,7 @@
 <meta name="msapplication-TileColor" content="#002538">
 <meta name="theme-color" content="#002538">
 
-<link rel="canonical" href="https://mohdur.github.io/post/kompilacja-neomutt/">
+<link rel="canonical" href="https://mohdur.github.io/post/ustawienie-klawiatury-w-systemie-linux/">
 
     
 
@@ -100,27 +100,27 @@
   
 <div class="grid-inverse wrap content">
   <article class="post_content">
-    <h1 class="post_title">Kompilacja Neomutt</h1><div class="post_meta">
+    <h1 class="post_title">Ustawienie klawiatury w systemie linux</h1><div class="post_meta">
   <svg class="icon">
   <use xlink:href="#calendar"></use>
 </svg>
   <span class="post_date">
-    Oct 14, 2020</span>
-    <a href='https://mohdur.github.io/tags/linux' class="post_tag button button_translucent">linux
+    Oct 22, 2020</span>
+    <a href='https://mohdur.github.io/tags/linux' class="post_tag button button_translucent">Linux
     </a>
-    <a href='https://mohdur.github.io/tags/mail' class="post_tag button button_translucent">mail
+    <a href='https://mohdur.github.io/tags/sprz%C4%99t' class="post_tag button button_translucent">Sprzęt
     </a>
 </div>
 
     
 <div class="post_share">
   Share on:
-  <a href="https://twitter.com/intent/tweet?text=Kompilacja%20Neomutt&url=https%3a%2f%2fmohdur.github.io%2fpost%2fkompilacja-neomutt%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
+  <a href="https://twitter.com/intent/tweet?text=Ustawienie%20klawiatury%20w%20systemie%20linux&url=https%3a%2f%2fmohdur.github.io%2fpost%2fustawienie-klawiatury-w-systemie-linux%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#twitter"></use>
 </svg>
   </a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fkompilacja-neomutt%2f&t=Kompilacja%20Neomutt" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fustawienie-klawiatury-w-systemie-linux%2f&t=Ustawienie%20klawiatury%20w%20systemie%20linux" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#facebook"></use>
 </svg>
@@ -130,7 +130,7 @@
   <use xlink:href="#linkedin"></use>
 </svg>
   </a>
-  <a href="https://mohdur.github.io/post/kompilacja-neomutt/" title="Copy Link" class="link link_yank">
+  <a href="https://mohdur.github.io/post/ustawienie-klawiatury-w-systemie-linux/" title="Copy Link" class="link link_yank">
     <svg class="icon">
   <use xlink:href="#copy"></use>
 </svg>
@@ -138,31 +138,27 @@
 </div>
 
     
-    <h2 id="lista-pakietów-potrzebnych-do-kompilacji-w-systemu-fedora">Lista pakietów potrzebnych do kompilacji w systemu Fedora</h2>
+    <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="ln">1</span>stty -ixon  <span class="c1"># wyłączenie Ctrl+s</span>
+<span class="ln">2</span>
+<span class="ln">3</span><span class="k">if</span> <span class="o">[</span> <span class="nv">$DISPLAY</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<span class="ln">4</span>    setxkbmap -option caps:escape         <span class="c1"># ustawia caps lock jako ESC</span>
+<span class="ln">5</span>    xmodmap -e <span class="s2">&#34;keycode 62 = Shift_Lock&#34;</span>  <span class="c1"># ustawia prawy Shift jako Shift Lock</span>
+<span class="ln">6</span><span class="k">fi</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span># Ustawienie ESC na klawiszu CapsLock
+<span class="ln">2</span>setxkbmap -option caps:escape
+<span class="ln">3</span># caps:none - wyłączenie
+<span class="ln">4</span># caps:escape - dodatkowy escape
+<span class="ln">5</span># caps:super - dodatkowy windows key
+<span class="ln">6</span># setxkbmap -option - zresetowanie ustawień
+<span class="ln">7</span># setxkbmap -query - sprawdzenie ustawień
+</code></pre></div><p>Po wyłączeniu Ctrl+s możemy użyć tego skrótu w Vim do zapisania pliku</p>
+<div class="highlight"><pre class="chroma"><code class="language-vim" data-lang="vim"><span class="ln">1</span><span class="nx">inore</span> <span class="p">&lt;</span><span class="nx">C</span><span class="p">-</span><span class="nx">s</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nx">esc</span><span class="p">&gt;</span>:<span class="nx">w</span><span class="p">&lt;</span><span class="nx">cr</span><span class="p">&gt;</span><span class="err">
+</span><span class="ln">2</span><span class="err"></span><span class="nx">nnore</span> <span class="p">&lt;</span><span class="nx">C</span><span class="p">-</span><span class="nx">s</span><span class="p">&gt;</span> :<span class="nx">w</span><span class="p">&lt;</span><span class="nx">cr</span><span class="p">&gt;</span><span class="err">
+</span></code></pre></div><h1 id="przydatne-linki">Przydatne linki</h1>
 <ul>
-<li>docbook-utils</li>
-<li>docbook-style-xsl</li>
-<li>gpgme-devel</li>
-<li>cyrus-sasl-devel</li>
-<li>notmuch-devel</li>
-<li>gnutls-devel</li>
-<li>libidn-devel</li>
-<li>libdb4-devel</li>
-<li>libdb-devel</li>
-<li>compat-gdbm-devel</li>
-<li>lmdb-devel</li>
-<li>kyotocabinet-devel</li>
-<li>qdbm-devel</li>
-<li>krb5-devel</li>
+<li><a href="http://xahlee.info/linux/linux_keybinding_index.html">http://xahlee.info/linux/linux_keybinding_index.html</a></li>
 </ul>
-<h2 id="kompilacja">Kompilacja</h2>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>./configure --enable-ssl --enable-gpgme --notmuch \
-<span class="ln">2</span>--gnutls --enable-gss --sasl --bdb --gdbm \
-<span class="ln">3</span>--kyotocabinet --lmdb --qdbm
-<span class="ln">4</span>
-<span class="ln">5</span>make
-<span class="ln">6</span>sudo make install
-</code></pre></div>
+
     
       
     
@@ -176,9 +172,6 @@
     <a href='https://mohdur.github.io/about/' class="button mt-1" role="button">Read More</a>
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
-      <li>
-        <a href="https://mohdur.github.io/post/ustawienie-klawiatury-w-systemie-linux/" class="nav-link">Ustawienie klawiatury w systemie linux</a>
-      </li>
       <li>
         <a href="https://mohdur.github.io/post/sed-receptury.md/" class="nav-link">SED receptury</a>
       </li>
@@ -199,6 +192,9 @@
       </li>
       <li>
         <a href="https://mohdur.github.io/post/aktualizacja-fedora-linux-do-nowego-wydania/" class="nav-link">Aktualizacja Fedora Linux do nowego wydania</a>
+      </li>
+      <li>
+        <a href="https://mohdur.github.io/post/formatowanie-daty-i-godziny/" class="nav-link">Formatowanie daty i godziny</a>
       </li>
     </ul>
     <div>
