@@ -5,7 +5,16 @@
     <link>https://mohdur.github.io/</link>
     <description>Recent content on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 21 Oct 2020 21:22:56 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Oct 2020 21:51:21 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>rsync receptury</title>
+      <link>https://mohdur.github.io/post/rsync-receptury/</link>
+      <pubDate>Wed, 21 Oct 2020 21:51:21 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/rsync-receptury/</guid>
+      <description>Synchronizacja przez SSH 1-e ssh | połączenie przez SSH np. -e &amp;#34;ssh -l ssh-user -p 22&amp;#34; 2-a | zastępuje kilka parametrów -r -l -p -t -g -o -D 3-v | wyświetla bieżącą operację 4-z | włącza kompresję 5--delete-before | kasuje pliki w docelowej lokalizacji jeśli te nie istnieją w źródłowej lokalizacji 6-n | --dry-run - testowa synchronizacja 7-r | synchronizuje podkatalogi 8-l | kopiuje linki symboliczne jako linki symboliczne 9-p | zachowuje uprawnienia 10-t | zachowuje uprawnienia dla grupy 11-o | zachowuje uprawnienia dla użytkownika 12-D | zachowuje pliki urządzeń (tylko root) 1cd ~/Nextcloud 2rsync -avz --delete-before -e ssh Instrukcje/ użytkownik@hostname:/opt/backup-rsync/Instrukcje 1cd ~/Książki 2rsync -avz --delete-before -e ssh .</description>
+    </item>
+    
     <item>
       <title>Vim praca z powłoką systemową</title>
       <link>https://mohdur.github.io/post/vim-praca-z-pow%C5%82ok%C4%85-systemow%C4%85/</link>

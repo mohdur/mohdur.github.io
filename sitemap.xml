@@ -3,18 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mohdur.github.io/tags/backup/</loc>
+    <lastmod>2020-10-21T21:51:21+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mohdur.github.io/</loc>
-    <lastmod>2020-10-21T21:22:56+02:00</lastmod>
+    <lastmod>2020-10-21T21:51:21+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://mohdur.github.io/post/</loc>
-    <lastmod>2020-10-21T21:22:56+02:00</lastmod>
+    <lastmod>2020-10-21T21:51:21+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/rsync/</loc>
+    <lastmod>2020-10-21T21:51:21+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/rsync-receptury/</loc>
+    <lastmod>2020-10-21T21:51:21+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://mohdur.github.io/tags/</loc>
-    <lastmod>2020-10-21T21:22:56+02:00</lastmod>
+    <lastmod>2020-10-21T21:51:21+02:00</lastmod>
   </url>
   
   <url>
