@@ -3,27 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mohdur.github.io/tags/backup/</loc>
+    <lastmod>2020-10-22T01:39:58+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/lokalna-kopia-zapasowa-z-wykorzystaniem-restic/</loc>
+    <lastmod>2020-10-22T01:39:58+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/</loc>
+    <lastmod>2020-10-22T01:39:58+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/</loc>
+    <lastmod>2020-10-22T01:39:58+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/restic/</loc>
+    <lastmod>2020-10-22T01:39:58+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/</loc>
+    <lastmod>2020-10-22T01:39:58+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mohdur.github.io/tags/linux/</loc>
     <lastmod>2020-10-22T01:36:57+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mohdur.github.io/</loc>
-    <lastmod>2020-10-22T01:36:57+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/post/</loc>
-    <lastmod>2020-10-22T01:36:57+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mohdur.github.io/tags/sprz%C4%99t/</loc>
-    <lastmod>2020-10-22T01:36:57+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/</loc>
     <lastmod>2020-10-22T01:36:57+02:00</lastmod>
   </url>
   
@@ -73,22 +88,12 @@
   </url>
   
   <url>
-    <loc>https://mohdur.github.io/tags/backup/</loc>
-    <lastmod>2020-10-22T01:24:15+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mohdur.github.io/post/kopia-zapasowa-minio-&#43;-restic/</loc>
     <lastmod>2020-10-22T01:24:15+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://mohdur.github.io/tags/minio/</loc>
-    <lastmod>2020-10-22T01:24:15+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/restic/</loc>
     <lastmod>2020-10-22T01:24:15+02:00</lastmod>
   </url>
   

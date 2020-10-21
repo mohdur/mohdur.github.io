@@ -5,7 +5,18 @@
     <link>https://mohdur.github.io/post/</link>
     <description>Recent content in Posts on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 22 Oct 2020 01:36:57 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Oct 2020 01:39:58 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lokalna kopia zapasowa z wykorzystaniem restic</title>
+      <link>https://mohdur.github.io/post/lokalna-kopia-zapasowa-z-wykorzystaniem-restic/</link>
+      <pubDate>Thu, 22 Oct 2020 01:39:58 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/lokalna-kopia-zapasowa-z-wykorzystaniem-restic/</guid>
+      <description>Restic jest programem do wykonywania kopii zapasowej na lokalnym dysku lub zdalnym zasobie np. Backblaze B2. Kopia zapasowa jest szyfrowana za pomocą klucza z hasłem.
+Przygotowanie nowego repozytorium Utworzenie repozytorium w katalogu /opt/restic-repo
+1restic init --repo /opt/restic-repo 2 3enter password for new repository: 4enter password again: 5created restic repository 4c5e0dc100 at /opt/restic-repo 6 7Please note that knowledge of your password is required to access 8the repository. Losing your password means that your data is 9irrecoverably lost.</description>
+    </item>
+    
     <item>
       <title>Ustawienie klawiatury w systemie linux</title>
       <link>https://mohdur.github.io/post/ustawienie-klawiatury-w-systemie-linux/</link>
