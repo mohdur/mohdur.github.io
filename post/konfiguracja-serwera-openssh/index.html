@@ -1,8 +1,8 @@
 
 <!DOCTYPE html>
-<html lang="en" data-figures="" data-mode="dim">
+<html lang="en" data-figures="true" class="page" data-mode="dim">
   <head>
-<title>OpenVPN | MOHDUR</title>
+<title>Konfiguracja serwera OpenSSH | MOHDUR</title>
 <meta charset="utf-8">
 <meta name="generator" content="Hugo 0.76.4" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -10,13 +10,13 @@
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="">
+<meta name="description" content="Konfiguracja serwera OpenSSH">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="OpenVPN" />
-<meta property="og:url" content="https://mohdur.github.io/tags/openvpn/" />
-<meta property="og:title" content="OpenVPN" />
-<meta property="og:description" content="" />
+<meta name="twitter:title" content="Konfiguracja serwera OpenSSH" />
+<meta property="og:url" content="https://mohdur.github.io/post/konfiguracja-serwera-openssh/" />
+<meta property="og:title" content="Konfiguracja serwera OpenSSH" />
+<meta property="og:description" content="Konfiguracja serwera OpenSSH" />
 <meta property="og:image" content="https://mohdur.github.io/images/thumbnail.png" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://mohdur.github.io/icons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://mohdur.github.io/icons/favicon-32x32.png'>
@@ -25,7 +25,7 @@
 <meta name="msapplication-TileColor" content="#002538">
 <meta name="theme-color" content="#002538">
 
-<link rel="canonical" href="https://mohdur.github.io/tags/openvpn/">
+<link rel="canonical" href="https://mohdur.github.io/post/konfiguracja-serwera-openssh/">
 
     
 
@@ -42,8 +42,9 @@
   
   
     
+    
   
-  <body data-code="7" data-lines="false" id="documentTop">
+  <body data-code="10" data-lines="false" id="documentTop">
 
 <header class="nav_header" >
   <nav class="nav">
@@ -96,45 +97,84 @@
 </header>
 
     <main>
-
+  
 <div class="grid-inverse wrap content">
-  <ul class="posts" id="posts">
-      <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://mohdur.github.io/post/nmcli-i-openvpn/">NMCLI i OpenVPN</a>
-      </h3>
-      <div class="post_meta">
+  <article class="post_content">
+    <h1 class="post_title">Konfiguracja serwera OpenSSH</h1><div class="post_meta">
   <svg class="icon">
   <use xlink:href="#calendar"></use>
 </svg>
   <span class="post_date">
-    Oct 21, 2020</span>
-    <a href='https://mohdur.github.io/tags/openvpn' class="post_tag button button_translucent">OpenVPN
+    Oct 22, 2020</span>
+    <a href='https://mohdur.github.io/tags/ssh' class="post_tag button button_translucent">SSH
     </a>
-    <a href='https://mohdur.github.io/tags/vpn' class="post_tag button button_translucent">VPN
+    <a href='https://mohdur.github.io/tags/fedora' class="post_tag button button_translucent">Fedora
     </a>
-    <a href='https://mohdur.github.io/tags/linux' class="post_tag button button_translucent">Linux
+    <a href='https://mohdur.github.io/tags/selinux' class="post_tag button button_translucent">SELinux
     </a>
 </div>
 
-    </div>
-      <div class="excerpt_footer">
-        <div>
-          <p class="pale">Import konfiguracji z pliku 1sudo nmcli connection import type openvpn file nazwa_pliku.ovpn Lista dostępnych połączeń 1nmcli connection show Podłączenie OpenVPN Jeśli klucz OpenVPN jest zabezpieczony hasłem należy dodać parametr --ask
-1nmcli connection up nazwa_vpn --ask Export połączenia OpenVPN 1nmcli connection …</p>
-          <a href="https://mohdur.github.io/post/nmcli-i-openvpn/" class="excerpt_more button">Read More</a>
-        </div>
-      </div>
-    </div>
-  </li>
+    
+<div class="post_share">
+  Share on:
+  <a href="https://twitter.com/intent/tweet?text=Konfiguracja%20serwera%20OpenSSH&url=https%3a%2f%2fmohdur.github.io%2fpost%2fkonfiguracja-serwera-openssh%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
+    <svg class="icon">
+  <use xlink:href="#twitter"></use>
+</svg>
+  </a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fkonfiguracja-serwera-openssh%2f&t=Konfiguracja%20serwera%20OpenSSH" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
+    <svg class="icon">
+  <use xlink:href="#facebook"></use>
+</svg>
+  </a>
+  <a href="#linkedinshare" id = "linkedinshare" class="linkedin" title="Share on LinkedIn" rel="nofollow">
+    <svg class="icon">
+  <use xlink:href="#linkedin"></use>
+</svg>
+  </a>
+  <a href="https://mohdur.github.io/post/konfiguracja-serwera-openssh/" title="Copy Link" class="link link_yank">
+    <svg class="icon">
+  <use xlink:href="#copy"></use>
+</svg>
+  </a>
+</div>
 
-    <li>
-
-
-    </li>
-  </ul>
+    
+    <h1 id="instalacja">Instalacja</h1>
+<p>Instalacja w systemie Fedora</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ sudo dnf install openssh-server
+</code></pre></div><h1 id="plik-konfiguracyjny">Plik konfiguracyjny</h1>
+<p>Znajduje się w <code>/etc/ssh/sshd_config</code></p>
+<h1 id="zmiana-numeru-portu">Zmiana numeru portu</h1>
+<p>Serwer SSH normalnie nasłuchuje na porcie 22, możemy to zmienić ustawiając parametr <code>Port</code>, parametr <code>Port</code> może występować kilkukrotnie, czyli serwer SSH może nasłuchiwać na wielu portach jednocześnie.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>Port 22
+<span class="ln">2</span>Port 23034
+</code></pre></div><p>Możemy użyć parametru <code>ListenAddress</code>, dzięki któremu możemy określić adres IP i port, na którym serwer SSH będzie nasłuchiwał.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>ListenAddress 0.0.0.0:22
+<span class="ln">2</span>ListenAddress 192.168.0.201:23034
+<span class="ln">3</span>ListenAddress 192.168.0.202:22222
+</code></pre></div><p>Po zmianie numeru portu w <code>/etc/ssh/sshd_config</code> na np. <code>23034</code>, musimy dodać regułę SELinux, oraz wpuścić połączenia przychodzące na firewallu na ten port.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ sudo semanage port -a -t ssh_port_t -p tcp 23034
+<span class="ln">2</span>$ sudo firewall-cmd --permanent --add-port=23034/tcp
+<span class="ln">3</span>$ sudo firewall-cmd --reload
+<span class="ln">4</span>$ sudo systemctl restart sshd
+</code></pre></div><h1 id="generowanie-kluczy-serwera-ssh">Generowanie kluczy serwera SSH</h1>
+<p>Jeśli przy próbie uruchomienia serwera SSH otrzymamy taki komunikat:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ sudo /usr/sbin/sshd 
+<span class="ln">2</span>Could not load host key: /etc/ssh/ssh_host_rsa_key
+<span class="ln">3</span>Could not load host key: /etc/ssh/ssh_host_dsa_key
+<span class="ln">4</span>Could not load host key: /etc/ssh/ssh_host_ecdsa_key
+<span class="ln">5</span>Disabling protocol version 2. Could not load host key
+<span class="ln">6</span>sshd: no hostkeys available -- exiting.
+</code></pre></div><p>Oznacza to, że brakuje kluczy RSA, DSA i ECDSA serwera</p>
+<p>Możemy je wygenerować używając polecenia <code>ssh-keygen</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ sudo ssh-keygen -A
+<span class="ln">2</span>ssh-keygen: generating new host keys: RSA DSA ECDSA ED25519
+</code></pre></div>
+    
+      
+    
+  </article>
 <aside class="sidebar">
   <section class="sidebar_inner">
     <h2>MOHDUR</h2>
@@ -144,9 +184,6 @@
     <a href='https://mohdur.github.io/about/' class="button mt-1" role="button">Read More</a>
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
-      <li>
-        <a href="https://mohdur.github.io/post/konfiguracja-serwera-openssh/" class="nav-link">Konfiguracja serwera OpenSSH</a>
-      </li>
       <li>
         <a href="https://mohdur.github.io/post/kopia-zapasowa-minio-&#43;-restic/" class="nav-link">Kopia zapasowa Minio &#43; Restic</a>
       </li>
@@ -167,6 +204,9 @@
       </li>
       <li>
         <a href="https://mohdur.github.io/post/naprawienie-ssh-too-many-authentication-failures/" class="nav-link">Naprawienie SSH Too Many Authentication Failures</a>
+      </li>
+      <li>
+        <a href="https://mohdur.github.io/post/uruchomienie-skryptu-po-wykryciu-zmian/" class="nav-link">Uruchomienie skryptu po wykryciu zmian</a>
       </li>
     </ul>
     <div>
@@ -344,8 +384,6 @@
 </aside>
 
 </div>
-
-
     </main><svg width="0" height="0" class="hidden">
   <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="facebook">
     <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h151V331h-60v-90h60v-61c0-49.629 40.371-90 90-90h91v90h-91v61h91l-15 90h-76v181h121c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zm0 0"></path>
