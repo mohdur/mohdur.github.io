@@ -3,32 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mohdur.github.io/</loc>
+    <lastmod>2020-10-22T01:35:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/</loc>
+    <lastmod>2020-10-22T01:35:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/sed/</loc>
+    <lastmod>2020-10-22T01:35:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/sed-receptury.md/</loc>
+    <lastmod>2020-10-22T01:35:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/shell/</loc>
+    <lastmod>2020-10-22T01:35:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/</loc>
+    <lastmod>2020-10-22T01:35:23+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mohdur.github.io/post/generowanie-liczb-losowych/</loc>
     <lastmod>2020-10-22T01:31:47+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://mohdur.github.io/tags/linux/</loc>
-    <lastmod>2020-10-22T01:31:47+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/</loc>
-    <lastmod>2020-10-22T01:31:47+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/post/</loc>
-    <lastmod>2020-10-22T01:31:47+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/shell/</loc>
-    <lastmod>2020-10-22T01:31:47+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/</loc>
     <lastmod>2020-10-22T01:31:47+02:00</lastmod>
   </url>
   

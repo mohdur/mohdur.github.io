@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SED on MOHDUR</title>
+    <link>https://mohdur.github.io/tags/sed/</link>
+    <description>Recent content in SED on MOHDUR</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 22 Oct 2020 01:35:23 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/sed/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SED receptury</title>
+      <link>https://mohdur.github.io/post/sed-receptury.md/</link>
+      <pubDate>Thu, 22 Oct 2020 01:35:23 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/sed-receptury.md/</guid>
+      <description>Wyświetlanie pierwszej linii pliku 1sed q test.txt Wyświetlenie ostatniej linii pliku 1sed -n &amp;#39;$p&amp;#39; test.txt Wyświetlenie 25 linii pliku 1sed -n &amp;#39;25p&amp;#39; test.txt Wyświetlenie 6 pierwszych linii pliku 1sed &amp;#39;6q&amp;#39; test.txt Wyświetlenie zakresu linii pliku Wyświetla linię z zakresu od 1 do 4 pliku test.txt
+1sed -n &amp;#39;1,4&amp;#39; test.txt Wyświetlenie dwóch różnych linii Wyświetlenie 4 i 6 linii pliku
+1sed -n &amp;#39;4p;6p&amp;#39; test.txt 24 | 36 lsadfjla Wyświetlenie linii od 3 do ostatniej 1sed -n &amp;#39;3,$p&amp;#39; test.</description>
+    </item>
+    
+  </channel>
+</rss>

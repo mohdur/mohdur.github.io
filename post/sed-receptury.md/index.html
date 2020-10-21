@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" data-figures="true" class="page" data-mode="dim">
   <head>
-<title>Aktualizacja Fedora Linux do nowego wydania | MOHDUR</title>
+<title>SED receptury | MOHDUR</title>
 <meta charset="utf-8">
 <meta name="generator" content="Hugo 0.76.4" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -10,13 +10,13 @@
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="Aktualizacja Fedora Linux do nowego wydania">
+<meta name="description" content="SED receptury">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="Aktualizacja Fedora Linux do nowego wydania" />
-<meta property="og:url" content="https://mohdur.github.io/post/aktualizacja-fedora-linux-do-nowego-wydania/" />
-<meta property="og:title" content="Aktualizacja Fedora Linux do nowego wydania" />
-<meta property="og:description" content="Aktualizacja Fedora Linux do nowego wydania" />
+<meta name="twitter:title" content="SED receptury" />
+<meta property="og:url" content="https://mohdur.github.io/post/sed-receptury.md/" />
+<meta property="og:title" content="SED receptury" />
+<meta property="og:description" content="SED receptury" />
 <meta property="og:image" content="https://mohdur.github.io/images/thumbnail.png" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://mohdur.github.io/icons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://mohdur.github.io/icons/favicon-32x32.png'>
@@ -25,7 +25,7 @@
 <meta name="msapplication-TileColor" content="#002538">
 <meta name="theme-color" content="#002538">
 
-<link rel="canonical" href="https://mohdur.github.io/post/aktualizacja-fedora-linux-do-nowego-wydania/">
+<link rel="canonical" href="https://mohdur.github.io/post/sed-receptury.md/">
 
     
 
@@ -100,27 +100,27 @@
   
 <div class="grid-inverse wrap content">
   <article class="post_content">
-    <h1 class="post_title">Aktualizacja Fedora Linux do nowego wydania</h1><div class="post_meta">
+    <h1 class="post_title">SED receptury</h1><div class="post_meta">
   <svg class="icon">
   <use xlink:href="#calendar"></use>
 </svg>
   <span class="post_date">
     Oct 22, 2020</span>
-    <a href='https://mohdur.github.io/tags/fedora' class="post_tag button button_translucent">Fedora
+    <a href='https://mohdur.github.io/tags/shell' class="post_tag button button_translucent">Shell
     </a>
-    <a href='https://mohdur.github.io/tags/linux' class="post_tag button button_translucent">Linux
+    <a href='https://mohdur.github.io/tags/sed' class="post_tag button button_translucent">SED
     </a>
 </div>
 
     
 <div class="post_share">
   Share on:
-  <a href="https://twitter.com/intent/tweet?text=Aktualizacja%20Fedora%20Linux%20do%20nowego%20wydania&url=https%3a%2f%2fmohdur.github.io%2fpost%2faktualizacja-fedora-linux-do-nowego-wydania%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
+  <a href="https://twitter.com/intent/tweet?text=SED%20receptury&url=https%3a%2f%2fmohdur.github.io%2fpost%2fsed-receptury.md%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#twitter"></use>
 </svg>
   </a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2faktualizacja-fedora-linux-do-nowego-wydania%2f&t=Aktualizacja%20Fedora%20Linux%20do%20nowego%20wydania" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fsed-receptury.md%2f&t=SED%20receptury" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#facebook"></use>
 </svg>
@@ -130,7 +130,7 @@
   <use xlink:href="#linkedin"></use>
 </svg>
   </a>
-  <a href="https://mohdur.github.io/post/aktualizacja-fedora-linux-do-nowego-wydania/" title="Copy Link" class="link link_yank">
+  <a href="https://mohdur.github.io/post/sed-receptury.md/" title="Copy Link" class="link link_yank">
     <svg class="icon">
   <use xlink:href="#copy"></use>
 </svg>
@@ -138,16 +138,125 @@
 </div>
 
     
-    <p>Aktualizacja do nowego wydania to kilka poleceń, pierwszy etap to pobranie
-niezbędnych pakietów, po czym wykonujemy restart systemu, podczas którego
-system zostanie zaktualizowany operacja może potrwać kilkanaście minut do
-kilkudziesięciu w zależności od konfiguracji sprzętowej oraz liczby pakietów.</p>
-<p>UWAGA! Po wykonaniu ostatniego polecenia <code>dnf system-upgrade reboot</code> system będzie
-przez dłuższy czas niedostępny.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>dnf upgrade --refresh
-<span class="ln">2</span>dnf install dnf-plugin-system-upgrade
-<span class="ln">3</span>dnf system-upgrade download --releasever=30
-<span class="ln">4</span>dnf system-upgrade reboot
+    <h1 id="wyświetlanie-pierwszej-linii-pliku">Wyświetlanie pierwszej linii pliku</h1>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed q test.txt
+</code></pre></div><h1 id="wyświetlenie-ostatniej-linii-pliku">Wyświetlenie ostatniej linii pliku</h1>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed -n &#39;$p&#39; test.txt
+</code></pre></div><h1 id="wyświetlenie-25-linii-pliku">Wyświetlenie 25 linii pliku</h1>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed -n &#39;25p&#39; test.txt
+</code></pre></div><h1 id="wyświetlenie-6-pierwszych-linii-pliku">Wyświetlenie 6 pierwszych linii pliku</h1>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed &#39;6q&#39; test.txt
+</code></pre></div><h1 id="wyświetlenie-zakresu-linii-pliku">Wyświetlenie zakresu linii pliku</h1>
+<p>Wyświetla linię z zakresu od 1 do 4 pliku <code>test.txt</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed -n &#39;1,4&#39; test.txt
+</code></pre></div><h1 id="wyświetlenie-dwóch-różnych-linii">Wyświetlenie dwóch różnych linii</h1>
+<p>Wyświetlenie 4 i 6 linii pliku</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed -n &#39;4p;6p&#39; test.txt
+<span class="ln">2</span>4 |
+<span class="ln">3</span>6 lsadfjla
+</code></pre></div><h1 id="wyświetlenie-linii-od-3-do-ostatniej">Wyświetlenie linii od 3 do ostatniej</h1>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed -n &#39;3,$p&#39; test.txt
+</code></pre></div><h1 id="wyświetlenie-linii-zawierającej-wyrażenie-regularne">Wyświetlenie linii zawierającej wyrażenie regularne</h1>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed -n &#39;/regexp/p&#39; test.txt
+</code></pre></div><h1 id="wyświetla-jedną-linię-przd-linią-zawierającą-wyrażenie-regularne">Wyświetla jedną linię przd linią zawierającą wyrażenie regularne</h1>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed -n &#39;/regexp/{g;1!p;};h&#39;
+</code></pre></div><h1 id="wyświetla-jedną-linię-po-lini-zawierającej-wyrażenie-regularne">Wyświetla jedną linię po lini zawierającej wyrażenie regularne</h1>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed -n &#39;/regexp/{n;p;}&#39;
+</code></pre></div><h1 id="wyświetla-jedną-linię-przed-i-po-zawierającej-wyrażenie-regularne">Wyświetla jedną linię przed i po zawierającej wyrażenie regularne</h1>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed -n -e &#39;/regexp/{=;x;1!p;g;$!N;p;D;}&#39; -e h
+</code></pre></div><h1 id="usunięcie-znaczników-html">Usunięcie znaczników HTML</h1>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed -e &#39;s/&lt;[^&gt;]*&gt;//g&#39; index.html
+</code></pre></div><h1 id="usunięcie-wybranej-linii-z-pliku">Usunięcie wybranej linii z pliku</h1>
+<p>Usunięcie pierwszej linii z pliku <code>.ssh/authorized_keys</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed -i &#39;1d&#39; .ssh/authorized_keys
+</code></pre></div><p>Usunięcie pierwszych 10 linii</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed -i &#39;1,10d&#39; test.txt
+</code></pre></div><p>Usunięcie ostatniej linii pliku</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed &#39;$d&#39; test.txt
+</code></pre></div><p>Usunięcie zakresu linii np. od linii 5 do 7 z pliku <code>.ssh/authorized_keys</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed -i &#39;5,7d&#39; .ssh/authorized_keys
+</code></pre></div><p>Usunięcie dwóch ostatnich linii pliku</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed &#39;N;$!P;$!D;$d&#39;
+</code></pre></div><h1 id="usunięcie-linii-zawierające-wyrażenie-regularne">Usunięcie linii zawierające wyrażenie regularne</h1>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed &#39;/regexp/d&#39; test.txt
+</code></pre></div><h1 id="usunięcie-spacji-lub-tabów-występujących-na-początku-linii">Usunięcie spacji lub tabów występujących na początku linii</h1>
+<p>Usuwa spację / tabulatory jeśli występują na początku linii</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed &#39;s/^[ \t]*//&#39; test.txt
+</code></pre></div><h1 id="usuwa-spacje--tabulatory-występujące-na-końcu-linii">Usuwa spacje / tabulatory występujące na końcu linii</h1>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed &#39;s/[ \t]*$//&#39; test.txt
+</code></pre></div><h1 id="usuwa-spacje--tabulatory-występujące-na-początku-i-na-końcu-linii">Usuwa spacje / tabulatory występujące na początku i na końcu linii</h1>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed &#39;s/^[ \t]*//;s/[ \t]*$//&#39; test.txt
+</code></pre></div><h1 id="dodanie-linii-na-początku-pliku">Dodanie linii na początku pliku</h1>
+<p>Dodanie linii <code>nowa pierwsza linia</code> na początku pliku <code>README.md</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed -i &#39;1s/^/nowa pierwsza linia\n/&#39; README.md
+</code></pre></div><h1 id="wstawia-tekst-na-początku--końcu-każdej-linii">Wstawia tekst na początku / końcu każdej linii</h1>
+<p>Wstawia <code>--- </code> na początku każdej linii</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed &#39;s/^/--- /&#39; test.txt
+</code></pre></div><p>Wstawia <code> ---</code> na końcu każdej linii</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed &#39;s/$/ ---/&#39; test.txt
+</code></pre></div><h1 id="dodanie-tekstu-na-końcu-pierwszej-linii">Dodanie tekstu na końcu pierwszej linii</h1>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span> sed &#39;1s/$/ koniec lini/&#39; test.txt
+<span class="ln">2</span>1 | koniec lini
+<span class="ln">3</span>2 |
+</code></pre></div><h1 id="dodanie-linii-na-końcu-pliku">Dodanie linii na końcu pliku</h1>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed &#39;$s/$/\nostatnia linia/&#39; test.txt
+<span class="ln">2</span>1 |
+<span class="ln">3</span>2 |
+<span class="ln">4</span>3 |
+<span class="ln">5</span>4 |
+<span class="ln">6</span>5
+<span class="ln">7</span>6 lsadfjla
+<span class="ln">8</span>ostatnia linia
+</code></pre></div><h1 id="zmiana-parametrów-w-pliku-etcsshsshd_config">Zmiana parametrów w pliku /etc/ssh/sshd_config</h1>
+<p>Umożliwienie logowania się przez użytkownika <code>root</code>, zamienia linię
+<code>#PermitRootLogin no</code> na <code>PermitRootLogin yes</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed -i &#39;s/#\(PermitRootLogin \).\+/\1yes/&#39; /etc/ssh/sshd_config
+</code></pre></div><h1 id="nazwa-użytkownika-pobrana-z-polecenia-id">Nazwa użytkownika pobrana z polecenia id</h1>
+<p>Polecenie <code>id</code> wyświetla coś takiego</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>uid=0(root) gid=0(wheel) groups=0(wheel), 2(kmem), 3(sys), 4(tty), 5(operator), 20(staff), 31(guest)
+</code></pre></div><p>Żeby wyświetlić nazwę użytkonika użyjemy polecenia <code>sed</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>id | sed &#39;s/^[^(]*(\([^)]*\)).*/\1/&#39;
+<span class="ln">2</span>root
+</code></pre></div><h1 id="usunięcie-ostatniego-znaku-z-wybranej-linii">Usunięcie ostatniego znaku z wybranej linii</h1>
+<p>Usuwa ostatni znak z linii numer 4 w pliku <code>test.txt</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed -i &#39;4s/.$//&#39; test.txt
+</code></pre></div><h1 id="usunięcie-pierwszgo-i-ostatniego-znaku-w-każdej-linii">Usunięcie pierwszgo i ostatniego znaku w każdej linii</h1>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed -i &#39;s/.//;s/.$//&#39; test.txt
+</code></pre></div><h1 id="usunięcie-dwóch-ostatnich-znaków">Usunięcie dwóch ostatnich znaków</h1>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>echo 1234 | sed &#39;s/.\{2\}$//&#39;
+<span class="ln">2</span>12
+</code></pre></div><h1 id="usunięcie-wszystkich-komentarzy">Usunięcie wszystkich komentarzy</h1>
+<p>Usuwa linie zaczynające się od znaku <code>#</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed &#39;/^#/d&#39; squid.conf
+</code></pre></div><h1 id="usunięcie-znaków-spacji-i-tabulacji-zaczynających-wiersz">Usunięcie znaków spacji i tabulacji zaczynających wiersz</h1>
+<p>Usunięcie znaków spacji oraz tabulacji</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>cat plik.txt | sed -e &#39;s/^[ \t]*//&#39;
+</code></pre></div><p>Usunięcie znaków spacji</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>cat plik.txt | sed -e &#39;s/^[ ]*//&#39;
+</code></pre></div><h1 id="usunięcie-pustych-linii">Usunięcie pustych linii</h1>
+<p>Usuwa puste linie z pliku <code>squid.conf</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed &#39;/^$/d&#39; squid.conf
+</code></pre></div><p>Ten sam efekt można uzyskać za pomocą polecenia <code>grep</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>cat squid.conf | grep &#39;.&#39;
+</code></pre></div><h1 id="usunięcie-komentarzy-i-pustych-linii">Usunięcie komentarzy i pustych linii</h1>
+<p>W tym wypadku są użyte dwa polecenia oddzielone znakiem <code>;</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed &#39;/^#/d; /^$/d&#39; squid.conf
+</code></pre></div><h1 id="zmiana-w-pliku-danych-z-użyciem-bsd-sed">Zmiana w pliku danych z użyciem BSD SED</h1>
+<p>Normalne systemy posiadają wersję <code>sed</code>, która nie posiada parametru <code>-i</code>,
+który zmienia szukany wzorzec w pliku i od razu go zapisuje.</p>
+<p>Dlatego użyjemy tutaj pliku tymczasowego a następnie zastąpimy nim oryginał.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed -e &#34;/^#\(PermitRootLogin\) yes/s//\1 no/&#34; &lt; /etc/ssh/sshd_config &gt; /tmp/sshd_config
+<span class="ln">2</span>mv /tmp/sshd_config /etc/ssh/sshd_config
+</code></pre></div><h1 id="wyświetlenie-komend-systemu-crontab">Wyświetlenie komend systemu crontab</h1>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>crontab -l | sed &#39;/^#/d&#39; | awk &#39;{ for (i=6; i&lt;=NF; i++) printf(&#34;%s &#34;, $i); printf(&#34;\n&#34;) }&#39; | sed &#39;/^$/d&#39;
+</code></pre></div><h1 id="oddzielenie-linii-pustą-linią">Oddzielenie linii pustą linią</h1>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed &#39;G&#39; test.txt
+<span class="ln">2</span>1 |
+<span class="ln">3</span>
+<span class="ln">4</span>2 |
+<span class="ln">5</span>
+<span class="ln">6</span>3 |
+<span class="ln">7</span>
 </code></pre></div>
     
       
@@ -163,9 +272,6 @@ przez dłuższy czas niedostępny.</p>
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
       <li>
-        <a href="https://mohdur.github.io/post/sed-receptury.md/" class="nav-link">SED receptury</a>
-      </li>
-      <li>
         <a href="https://mohdur.github.io/post/generowanie-liczb-losowych/" class="nav-link">Generowanie liczb losowych</a>
       </li>
       <li>
@@ -179,6 +285,9 @@ przez dłuższy czas niedostępny.</p>
       </li>
       <li>
         <a href="https://mohdur.github.io/post/aliasy-bash-zsh/" class="nav-link">Aliasy BASH ZSH</a>
+      </li>
+      <li>
+        <a href="https://mohdur.github.io/post/aktualizacja-fedora-linux-do-nowego-wydania/" class="nav-link">Aktualizacja Fedora Linux do nowego wydania</a>
       </li>
       <li>
         <a href="https://mohdur.github.io/post/formatowanie-daty-i-godziny/" class="nav-link">Formatowanie daty i godziny</a>

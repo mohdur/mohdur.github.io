@@ -5,22 +5,31 @@
     <link>https://mohdur.github.io/tags/</link>
     <description>Recent content in Tags on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 22 Oct 2020 01:31:47 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Oct 2020 01:35:23 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Linux</title>
-      <link>https://mohdur.github.io/tags/linux/</link>
-      <pubDate>Thu, 22 Oct 2020 01:31:47 +0200</pubDate>
+      <title>SED</title>
+      <link>https://mohdur.github.io/tags/sed/</link>
+      <pubDate>Thu, 22 Oct 2020 01:35:23 +0200</pubDate>
       
-      <guid>https://mohdur.github.io/tags/linux/</guid>
+      <guid>https://mohdur.github.io/tags/sed/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Shell</title>
       <link>https://mohdur.github.io/tags/shell/</link>
-      <pubDate>Thu, 22 Oct 2020 01:31:47 +0200</pubDate>
+      <pubDate>Thu, 22 Oct 2020 01:35:23 +0200</pubDate>
       
       <guid>https://mohdur.github.io/tags/shell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://mohdur.github.io/tags/linux/</link>
+      <pubDate>Thu, 22 Oct 2020 01:31:47 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/tags/linux/</guid>
       <description></description>
     </item>
     
