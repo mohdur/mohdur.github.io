@@ -3,6 +3,41 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mohdur.github.io/tags/firewall/</loc>
+    <lastmod>2020-10-22T01:53:14+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/</loc>
+    <lastmod>2020-10-22T01:53:14+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/openbsd/</loc>
+    <lastmod>2020-10-22T01:53:14+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/pf/</loc>
+    <lastmod>2020-10-22T01:53:14+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/pf_pfctl_cheat_sheet/</loc>
+    <lastmod>2020-10-22T01:53:14+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/</loc>
+    <lastmod>2020-10-22T01:53:14+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/</loc>
+    <lastmod>2020-10-22T01:53:14+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mohdur.github.io/post/konfiguracja-interfejsu-sieciowego-za-pomoc%C4%85-polecenia-ip-w-systemie-linux/</loc>
     <lastmod>2020-10-22T01:48:33+02:00</lastmod>
   </url>
@@ -13,22 +48,7 @@
   </url>
   
   <url>
-    <loc>https://mohdur.github.io/</loc>
-    <lastmod>2020-10-22T01:48:33+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/post/</loc>
-    <lastmod>2020-10-22T01:48:33+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mohdur.github.io/tags/sieci/</loc>
-    <lastmod>2020-10-22T01:48:33+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/</loc>
     <lastmod>2020-10-22T01:48:33+02:00</lastmod>
   </url>
   

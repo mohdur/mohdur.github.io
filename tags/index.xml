@@ -5,7 +5,34 @@
     <link>https://mohdur.github.io/tags/</link>
     <description>Recent content in Tags on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 22 Oct 2020 01:48:33 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Oct 2020 01:53:14 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Firewall</title>
+      <link>https://mohdur.github.io/tags/firewall/</link>
+      <pubDate>Thu, 22 Oct 2020 01:53:14 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/tags/firewall/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OpenBSD</title>
+      <link>https://mohdur.github.io/tags/openbsd/</link>
+      <pubDate>Thu, 22 Oct 2020 01:53:14 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/tags/openbsd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PF</title>
+      <link>https://mohdur.github.io/tags/pf/</link>
+      <pubDate>Thu, 22 Oct 2020 01:53:14 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/tags/pf/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Linux</title>
       <link>https://mohdur.github.io/tags/linux/</link>
