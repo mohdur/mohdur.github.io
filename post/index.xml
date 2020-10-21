@@ -5,7 +5,18 @@
     <link>https://mohdur.github.io/post/</link>
     <description>Recent content in Posts on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 21 Oct 2020 21:51:21 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Oct 2020 21:52:41 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Zmiana Rozdzielczości Ekranu</title>
+      <link>https://mohdur.github.io/post/zmiana-rozdzielczo%C5%9Bci-ekranu/</link>
+      <pubDate>Wed, 21 Oct 2020 21:52:41 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/zmiana-rozdzielczo%C5%9Bci-ekranu/</guid>
+      <description>Kiedy chcemy zmienić rozdzielczość, ale okazuje się, mimo że w specyfikacji nasz ekran obsługuje taką rozdzielczość to jej nie ma :( Ma to często miejsce przy wirtualizacji. Tak więc musimy taką rozdzielczość dodać do listy.
+Sprawdzamy ustawienia dla nowej rozdzielczości za pomocą polecenia gtf
+1$ gtf 1920 1080 60 2 3# 1920x1080 @ 60.00 Hz (GTF) hsync: 67.08 kHz; pclk: 172.80 MHz 4Modeline &amp;#34;1920x1080_60.00&amp;#34; 172.80 1920 2040 2248 2576 1080 1081 1084 1118 -HSync +Vsync Dodajemy nową rozdzielczość i ustawiamy ją na ekranie Virtual1</description>
+    </item>
+    
     <item>
       <title>rsync receptury</title>
       <link>https://mohdur.github.io/post/rsync-receptury/</link>
