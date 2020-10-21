@@ -13,7 +13,7 @@
       
       <guid>https://mohdur.github.io/post/pf_pfctl_cheat_sheet/</guid>
       <description>Pobrane z https://gist.github.com/tracphil/4353170
-1# basic pfctl control 2# == 3# Related: http://www.OpenBSD.org 4# Last update: Tue Dec 28, 2004 5# == 6# Note: 7# this document is only provided as a basic overview 8# for some common pfctl commands and is by no means 9# a replacement for the pfctl and pf manual pages. 10 11#### General PFCTL Commands #### 12# pfctl -d disable packet-filtering 13# pfctl -e enable packet-filtering 14# pfctl -q run quiet 15# pfctl -v -v run even more verbose 16 17#### Loading PF Rules #### 18# pfctl -f /etc/pf.</description>
+1basic pfctl control 2== 3Related: http://www.OpenBSD.org 4Last update: Tue Dec 28, 2004 5== 6Note: 7this document is only provided as a basic overview 8for some common pfctl commands and is by no means 9a replacement for the pfctl and pf manual pages. General PFCTL Commands 1# pfctl -d disable packet-filtering 2# pfctl -e enable packet-filtering 3# pfctl -q run quiet 4# pfctl -v -v run even more verbose Loading PF Rules 1# pfctl -f /etc/pf.</description>
     </item>
     
     <item>
