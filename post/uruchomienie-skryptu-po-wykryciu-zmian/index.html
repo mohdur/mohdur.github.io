@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" data-figures="true" class="page" data-mode="dim">
   <head>
-<title>Zmiana Rozdzielczości Ekranu | MOHDUR</title>
+<title>Uruchomienie skryptu po wykryciu zmian | MOHDUR</title>
 <meta charset="utf-8">
 <meta name="generator" content="Hugo 0.76.4" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -10,13 +10,13 @@
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="Article description.">
+<meta name="description" content="Uruchomienie skryptu po wykryciu zmian">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="Zmiana Rozdzielczości Ekranu" />
-<meta property="og:url" content="https://mohdur.github.io/post/zmiana-rozdzielczo%C5%9Bci-ekranu/" />
-<meta property="og:title" content="Zmiana Rozdzielczości Ekranu" />
-<meta property="og:description" content="Article description." />
+<meta name="twitter:title" content="Uruchomienie skryptu po wykryciu zmian" />
+<meta property="og:url" content="https://mohdur.github.io/post/uruchomienie-skryptu-po-wykryciu-zmian/" />
+<meta property="og:title" content="Uruchomienie skryptu po wykryciu zmian" />
+<meta property="og:description" content="Uruchomienie skryptu po wykryciu zmian" />
 <meta property="og:image" content="https://mohdur.github.io/images/thumbnail.png" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://mohdur.github.io/icons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://mohdur.github.io/icons/favicon-32x32.png'>
@@ -25,7 +25,7 @@
 <meta name="msapplication-TileColor" content="#002538">
 <meta name="theme-color" content="#002538">
 
-<link rel="canonical" href="https://mohdur.github.io/post/zmiana-rozdzielczo%C5%9Bci-ekranu/">
+<link rel="canonical" href="https://mohdur.github.io/post/uruchomienie-skryptu-po-wykryciu-zmian/">
 
     
 
@@ -100,29 +100,25 @@
   
 <div class="grid-inverse wrap content">
   <article class="post_content">
-    <h1 class="post_title">Zmiana Rozdzielczości Ekranu</h1><div class="post_meta">
+    <h1 class="post_title">Uruchomienie skryptu po wykryciu zmian</h1><div class="post_meta">
   <svg class="icon">
   <use xlink:href="#calendar"></use>
 </svg>
   <span class="post_date">
     Oct 21, 2020</span>
-    <a href='https://mohdur.github.io/tags/linux' class="post_tag button button_translucent">Linux
-    </a>
-    <a href='https://mohdur.github.io/tags/xwindow' class="post_tag button button_translucent">XWindow
-    </a>
-    <a href='https://mohdur.github.io/tags/sprz%C4%99t' class="post_tag button button_translucent">Sprzęt
+    <a href='https://mohdur.github.io/tags/shell' class="post_tag button button_translucent">Shell
     </a>
 </div>
 
     
 <div class="post_share">
   Share on:
-  <a href="https://twitter.com/intent/tweet?text=Zmiana%20Rozdzielczo%c5%9bci%20Ekranu&url=https%3a%2f%2fmohdur.github.io%2fpost%2fzmiana-rozdzielczo%25C5%259Bci-ekranu%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
+  <a href="https://twitter.com/intent/tweet?text=Uruchomienie%20skryptu%20po%20wykryciu%20zmian&url=https%3a%2f%2fmohdur.github.io%2fpost%2furuchomienie-skryptu-po-wykryciu-zmian%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#twitter"></use>
 </svg>
   </a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fzmiana-rozdzielczo%25C5%259Bci-ekranu%2f&t=Zmiana%20Rozdzielczo%c5%9bci%20Ekranu" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2furuchomienie-skryptu-po-wykryciu-zmian%2f&t=Uruchomienie%20skryptu%20po%20wykryciu%20zmian" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#facebook"></use>
 </svg>
@@ -132,7 +128,7 @@
   <use xlink:href="#linkedin"></use>
 </svg>
   </a>
-  <a href="https://mohdur.github.io/post/zmiana-rozdzielczo%C5%9Bci-ekranu/" title="Copy Link" class="link link_yank">
+  <a href="https://mohdur.github.io/post/uruchomienie-skryptu-po-wykryciu-zmian/" title="Copy Link" class="link link_yank">
     <svg class="icon">
   <use xlink:href="#copy"></use>
 </svg>
@@ -140,20 +136,38 @@
 </div>
 
     
-    <p>Kiedy chcemy zmienić rozdzielczość, ale okazuje się, mimo że w specyfikacji nasz
-ekran obsługuje taką rozdzielczość to jej nie ma :( Ma to często miejsce przy
-wirtualizacji. Tak więc musimy taką rozdzielczość dodać do listy.</p>
-<p>Sprawdzamy ustawienia dla nowej rozdzielczości za pomocą polecenia <code>gtf</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ gtf 1920 1080 60
-<span class="ln">2</span>
-<span class="ln">3</span># 1920x1080 @ 60.00 Hz (GTF) hsync: 67.08 kHz; pclk: 172.80 MHz
-<span class="ln">4</span>Modeline &#34;1920x1080_60.00&#34;  172.80  1920 2040 2248 2576  1080 1081 1084 1118  -HSync +Vsync
-</code></pre></div><p>Dodajemy nową rozdzielczość i ustawiamy ją na ekranie <code>Virtual1</code></p>
-<p>Pierwsza linia <code>--newmode</code> dodaje nową rozdzielczość i parametry, które
-uzyskaliśmy za pomocą polecenia <code>gtf</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>xrandr --newmode &#34;1920x1080_60.00&#34;  172.80  1920 2040 2248 2576  1080 1081 1084 1118  -HSync +Vsync
-<span class="ln">2</span>xrandr --addmode Virtual1 &#34;1920x1080_60.00&#34;
-<span class="ln">3</span>xrandr --output Virtual1 --primary --mode &#34;1920x1080_60.00&#34; --pos 0x0 --rotate normal
+    <p>Za pomocą skryptu, który operuje na sumach kontrolnych, można monitorować wybrany
+plik. Jeśli monitorowany plik się zmieni lub zostanie zapisany, skrypt automatycznie
+go uruchomi, dzięki temu nie trzeba za każdym razem uruchomiać go podczas kodowania.</p>
+<p>Istnieją programy, które wykonują to samo, takie jak <code>entr</code> czy <code>inotifywait</code>,
+niesety trzeba je doinstalować, o ile nie chcemy używać ich dodatkowych funkcji,
+można korzystać z tego skryptu.</p>
+<p>Jako parametr należy podać nazwę pliku, który chcemy monitorować.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="cp">#!/bin/bash
+</span><span class="ln"> 2</span><span class="cp"></span>
+<span class="ln"> 3</span><span class="c1"># zmienna TIME określa co ile sekund jest sprawdzany skrypt</span>
+<span class="ln"> 4</span><span class="nv">TIME</span><span class="o">=</span><span class="m">1</span>
+<span class="ln"> 5</span>
+<span class="ln"> 6</span><span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> -lt <span class="m">1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<span class="ln"> 7</span>    <span class="nb">echo</span> <span class="s2">&#34;Podaj nazwę skryptu do obserwacji.&#34;</span>
+<span class="ln"> 8</span>    <span class="nb">exit</span>
+<span class="ln"> 9</span><span class="k">fi</span>
+<span class="ln">10</span>
+<span class="ln">11</span><span class="nv">SCRIPT</span><span class="o">=</span><span class="k">$(</span>readlink -f <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span><span class="k">)</span>
+<span class="ln">12</span><span class="nb">echo</span> <span class="s2">&#34;Zaczynam monitorować plik </span><span class="nv">$SCRIPT</span><span class="s2">&#34;</span>
+<span class="ln">13</span>
+<span class="ln">14</span><span class="nv">SUM_OLD</span><span class="o">=</span><span class="k">$(</span>md5sum <span class="s2">&#34;</span><span class="nv">$SCRIPT</span><span class="s2">&#34;</span><span class="k">)</span>
+<span class="ln">15</span>
+<span class="ln">16</span><span class="k">while</span> <span class="nb">true</span>
+<span class="ln">17</span><span class="k">do</span>
+<span class="ln">18</span>    <span class="nv">SUM_NEW</span><span class="o">=</span><span class="k">$(</span>md5sum <span class="s2">&#34;</span><span class="nv">$SCRIPT</span><span class="s2">&#34;</span><span class="k">)</span>
+<span class="ln">19</span>
+<span class="ln">20</span>    <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$SUM_NEW</span><span class="s2">&#34;</span> !<span class="o">=</span> <span class="s2">&#34;</span><span class="nv">$SUM_OLD</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<span class="ln">21</span>        <span class="s2">&#34;</span><span class="nv">$SCRIPT</span><span class="s2">&#34;</span>
+<span class="ln">22</span>        <span class="nv">SUM_OLD</span><span class="o">=</span><span class="nv">$SUM_NEW</span>
+<span class="ln">23</span>    <span class="k">fi</span>
+<span class="ln">24</span>    sleep <span class="nv">$TIME</span>
+<span class="ln">25</span><span class="k">done</span>
 </code></pre></div>
     
       
@@ -169,7 +183,7 @@ uzyskaliśmy za pomocą polecenia <code>gtf</code>.</p>
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
       <li>
-        <a href="https://mohdur.github.io/post/uruchomienie-skryptu-po-wykryciu-zmian/" class="nav-link">Uruchomienie skryptu po wykryciu zmian</a>
+        <a href="https://mohdur.github.io/post/zmiana-rozdzielczo%C5%9Bci-ekranu/" class="nav-link">Zmiana Rozdzielczości Ekranu</a>
       </li>
       <li>
         <a href="https://mohdur.github.io/post/rsync-receptury/" class="nav-link">rsync receptury</a>

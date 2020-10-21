@@ -5,7 +5,18 @@
     <link>https://mohdur.github.io/</link>
     <description>Recent content on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 21 Oct 2020 21:52:41 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Oct 2020 21:56:55 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Uruchomienie skryptu po wykryciu zmian</title>
+      <link>https://mohdur.github.io/post/uruchomienie-skryptu-po-wykryciu-zmian/</link>
+      <pubDate>Wed, 21 Oct 2020 21:56:55 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/uruchomienie-skryptu-po-wykryciu-zmian/</guid>
+      <description>Za pomocą skryptu, który operuje na sumach kontrolnych, można monitorować wybrany plik. Jeśli monitorowany plik się zmieni lub zostanie zapisany, skrypt automatycznie go uruchomi, dzięki temu nie trzeba za każdym razem uruchomiać go podczas kodowania.
+Istnieją programy, które wykonują to samo, takie jak entr czy inotifywait, niesety trzeba je doinstalować, o ile nie chcemy używać ich dodatkowych funkcji, można korzystać z tego skryptu.
+Jako parametr należy podać nazwę pliku, który chcemy monitorować.</description>
+    </item>
+    
     <item>
       <title>Zmiana Rozdzielczości Ekranu</title>
       <link>https://mohdur.github.io/post/zmiana-rozdzielczo%C5%9Bci-ekranu/</link>

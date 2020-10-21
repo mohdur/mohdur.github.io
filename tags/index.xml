@@ -5,7 +5,16 @@
     <link>https://mohdur.github.io/tags/</link>
     <description>Recent content in Tags on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 21 Oct 2020 21:52:41 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Oct 2020 21:56:55 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>shell</title>
+      <link>https://mohdur.github.io/tags/shell/</link>
+      <pubDate>Wed, 21 Oct 2020 21:56:55 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/tags/shell/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>linux</title>
       <link>https://mohdur.github.io/tags/linux/</link>
@@ -84,15 +93,6 @@
       <pubDate>Thu, 15 Oct 2020 21:20:19 +0200</pubDate>
       
       <guid>https://mohdur.github.io/tags/github/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>shell</title>
-      <link>https://mohdur.github.io/tags/shell/</link>
-      <pubDate>Thu, 15 Oct 2020 21:20:19 +0200</pubDate>
-      
-      <guid>https://mohdur.github.io/tags/shell/</guid>
       <description></description>
     </item>
     
