@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>shell on MOHDUR</title>
+    <title>Shell on MOHDUR</title>
     <link>https://mohdur.github.io/tags/shell/</link>
-    <description>Recent content in shell on MOHDUR</description>
+    <description>Recent content in Shell on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 21 Oct 2020 21:56:55 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Oct 2020 01:20:20 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Aliasy BASH ZSH</title>
+      <link>https://mohdur.github.io/post/aliasy-bash-zsh/</link>
+      <pubDate>Thu, 22 Oct 2020 01:20:20 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/aliasy-bash-zsh/</guid>
+      <description>Część aliasów ma ustawione parametry dla polecenia np. alias ss=&#39;ss -tumanp&#39; jeśli będziemy chcieli pominąć te parametry należy podać pełną ścieżke do polecenia ss: /usr/sbin/ss.
+Ścieżki do katalogów 1[ -d ~/bin ] &amp;amp;&amp;amp; export PATH=$PATH:~/bin 2[ -d ~/.local/bin ] &amp;amp;&amp;amp; export PATH=$PATH:~/.local/bin 3[ -d ~/.cargo/bin ] &amp;amp;&amp;amp; export PATH=$PATH:~/.cargo/bin 4[ -d ~/go/bin ] &amp;amp;&amp;amp; export PATH=$PATH:~/go/bin 5[ -d ~/node_modules/.bin ] &amp;amp;&amp;amp; export PATH=$PATH:~/node_modules/.bin Aliasy podstawowe 1alias q=exit 2alias Q=exit 3alias more=less 4alias so=&amp;#39;source&amp;#39; 5alias psgrep=&amp;#39;ps ax | grep &amp;#39; 6alias cp=&amp;#34;cp -i&amp;#34; 7alias df=&amp;#39;df -h&amp;#39; 8alias free=&amp;#39;free -m&amp;#39; 9alias mountt=&amp;#39;mount | column -t&amp;#39; Aliasy narzędzi sieciowych 1alias ip=&amp;#39;sudo ip&amp;#39; 2alias ifconfig=&amp;#39;ip a s&amp;#39; 3alias myip=&amp;#39;ip-br -c a&amp;#39; 4alias arp=&amp;#39;ip n&amp;#39; 5alias iptraf=&amp;#39;sudo iptraf-ng&amp;#39; 6alias ss=&amp;#39;sudo ss -tumanp&amp;#39; 7alias netstat=&amp;#39;sudo netstat&amp;#39; 8alias nmap=&amp;#39;sudo nmap&amp;#39; 9alias lsof=&amp;#39;sudo lsof&amp;#39; Aliasy sudo 1alias cryptsetup=&amp;#39;sudo cryptsetup&amp;#39; 2alias fdisk=&amp;#39;sudo fdisk&amp;#39; 3alias cfdisk=&amp;#39;sudo cfdisk&amp;#39; 4alias mount=&amp;#39;sudo mount&amp;#39; 5alias m=&amp;#39;sudo mount&amp;#39; 6alias umount=&amp;#39;sudo umount&amp;#39; 7alias iotop=&amp;#39;sudo iotop&amp;#39; Aliasy ls 1alias ls=&amp;#39;ls --color=auto&amp;#39; 2alias ll=&amp;#39;ls -alFh&amp;#39; 3alias la=&amp;#39;ls -Ah&amp;#39; 4alias l=&amp;#39;ls -CFh&amp;#39; Katalogi 1alias b=&amp;#34;cd ~/Books&amp;#34; 2alias h=&amp;#34;cd ~&amp;#34; 3alias .</description>
+    </item>
+    
     <item>
       <title>Uruchomienie skryptu po wykryciu zmian</title>
       <link>https://mohdur.github.io/post/uruchomienie-skryptu-po-wykryciu-zmian/</link>

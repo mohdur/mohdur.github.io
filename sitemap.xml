@@ -3,6 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mohdur.github.io/post/aliasy-bash-zsh/</loc>
+    <lastmod>2020-10-22T01:20:20+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/</loc>
+    <lastmod>2020-10-22T01:20:20+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/</loc>
+    <lastmod>2020-10-22T01:20:20+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/shell/</loc>
+    <lastmod>2020-10-22T01:20:20+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/</loc>
+    <lastmod>2020-10-22T01:20:20+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mohdur.github.io/post/aktualizacja-fedora-linux-do-nowego-wydania/</loc>
     <lastmod>2020-10-22T01:16:44+02:00</lastmod>
   </url>
@@ -14,21 +39,6 @@
   
   <url>
     <loc>https://mohdur.github.io/tags/linux/</loc>
-    <lastmod>2020-10-22T01:16:44+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/</loc>
-    <lastmod>2020-10-22T01:16:44+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/post/</loc>
-    <lastmod>2020-10-22T01:16:44+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/</loc>
     <lastmod>2020-10-22T01:16:44+02:00</lastmod>
   </url>
   
@@ -55,11 +65,6 @@
   <url>
     <loc>https://mohdur.github.io/tags/ssh/</loc>
     <lastmod>2020-10-21T22:06:53+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/shell/</loc>
-    <lastmod>2020-10-21T21:56:55+02:00</lastmod>
   </url>
   
   <url>
