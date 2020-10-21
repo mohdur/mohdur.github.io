@@ -5,7 +5,18 @@
     <link>https://mohdur.github.io/tags/vim/</link>
     <description>Recent content in Vim on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 21 Oct 2020 19:11:09 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Oct 2020 21:22:56 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vim praca z powłoką systemową</title>
+      <link>https://mohdur.github.io/post/vim-praca-z-pow%C5%82ok%C4%85-systemow%C4%85/</link>
+      <pubDate>Wed, 21 Oct 2020 21:22:56 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/vim-praca-z-pow%C5%82ok%C4%85-systemow%C4%85/</guid>
+      <description>Edytor Vim potrafi korzystać z powłoki systemowej za pomocą polecenia :r ! czy też !. Polecenie r! pozwala odczytać standardowe wyjście polecenia i wstawić je do bufora. Polecenie ! po prostu wykonuje polecenie systemowe.
+Wstawienie wyjścia polecenia systemowego do bufora Polecenie ls -alh, wyświetlające wszystkie pliki w bieżącym katalogu, jednocześnie ustawia cztery kolumny w odpowiedniej kolejności: nazwa, rozmiar, data, godzina.
+1:r!ls -alh | awk &amp;#39;{ print &amp;#34; &amp;#34;, $8, &amp;#34; &amp;#34;, $5, &amp;#34; &amp;#34;, $6, &amp;#34; &amp;#34;, $7}&amp;#39; | column -t 2.</description>
+    </item>
+    
     <item>
       <title>Vim uruchomienie polecenia z bufora</title>
       <link>https://mohdur.github.io/post/vim-uruchomienie-polecenia-z-bufora/</link>
