@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" data-figures="true" class="page" data-mode="dim">
   <head>
-<title>Ukrycie procesów innych użytkowników w systemie Linux | MOHDUR</title>
+<title>NMCLI I OpenVPN | MOHDUR</title>
 <meta charset="utf-8">
 <meta name="generator" content="Hugo 0.76.4" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -10,13 +10,13 @@
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="Ukrycie procesów innych użytkowników w systemie Linux">
+<meta name="description" content="Article description.">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="Ukrycie procesów innych użytkowników w systemie Linux" />
-<meta property="og:url" content="https://mohdur.github.io/post/ukrycie-proces%C3%B3w-innych-u%C5%BCytkownik%C3%B3w-w-systemie-linux/" />
-<meta property="og:title" content="Ukrycie procesów innych użytkowników w systemie Linux" />
-<meta property="og:description" content="Ukrycie procesów innych użytkowników w systemie Linux" />
+<meta name="twitter:title" content="NMCLI I OpenVPN" />
+<meta property="og:url" content="https://mohdur.github.io/post/nmcli-i-openvpn/" />
+<meta property="og:title" content="NMCLI I OpenVPN" />
+<meta property="og:description" content="Article description." />
 <meta property="og:image" content="https://mohdur.github.io/images/thumbnail.png" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://mohdur.github.io/icons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://mohdur.github.io/icons/favicon-32x32.png'>
@@ -25,7 +25,7 @@
 <meta name="msapplication-TileColor" content="#002538">
 <meta name="theme-color" content="#002538">
 
-<link rel="canonical" href="https://mohdur.github.io/post/ukrycie-proces%C3%B3w-innych-u%C5%BCytkownik%C3%B3w-w-systemie-linux/">
+<link rel="canonical" href="https://mohdur.github.io/post/nmcli-i-openvpn/">
 
     
 
@@ -100,27 +100,27 @@
   
 <div class="grid-inverse wrap content">
   <article class="post_content">
-    <h1 class="post_title">Ukrycie procesów innych użytkowników w systemie Linux</h1><div class="post_meta">
+    <h1 class="post_title">NMCLI I OpenVPN</h1><div class="post_meta">
   <svg class="icon">
   <use xlink:href="#calendar"></use>
 </svg>
   <span class="post_date">
-    Oct 14, 2020</span>
-    <a href='https://mohdur.github.io/tags/linux' class="post_tag button button_translucent">linux
+    Oct 21, 2020</span>
+    <a href='https://mohdur.github.io/tags/openvpn' class="post_tag button button_translucent">OpenVPN
     </a>
-    <a href='https://mohdur.github.io/tags/security' class="post_tag button button_translucent">security
+    <a href='https://mohdur.github.io/tags/vpn' class="post_tag button button_translucent">VPN
     </a>
 </div>
 
     
 <div class="post_share">
   Share on:
-  <a href="https://twitter.com/intent/tweet?text=Ukrycie%20proces%c3%b3w%20innych%20u%c5%bcytkownik%c3%b3w%20w%20systemie%20Linux&url=https%3a%2f%2fmohdur.github.io%2fpost%2fukrycie-proces%25C3%25B3w-innych-u%25C5%25BCytkownik%25C3%25B3w-w-systemie-linux%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
+  <a href="https://twitter.com/intent/tweet?text=NMCLI%20I%20OpenVPN&url=https%3a%2f%2fmohdur.github.io%2fpost%2fnmcli-i-openvpn%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#twitter"></use>
 </svg>
   </a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fukrycie-proces%25C3%25B3w-innych-u%25C5%25BCytkownik%25C3%25B3w-w-systemie-linux%2f&t=Ukrycie%20proces%c3%b3w%20innych%20u%c5%bcytkownik%c3%b3w%20w%20systemie%20Linux" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fnmcli-i-openvpn%2f&t=NMCLI%20I%20OpenVPN" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#facebook"></use>
 </svg>
@@ -130,7 +130,7 @@
   <use xlink:href="#linkedin"></use>
 </svg>
   </a>
-  <a href="https://mohdur.github.io/post/ukrycie-proces%C3%B3w-innych-u%C5%BCytkownik%C3%B3w-w-systemie-linux/" title="Copy Link" class="link link_yank">
+  <a href="https://mohdur.github.io/post/nmcli-i-openvpn/" title="Copy Link" class="link link_yank">
     <svg class="icon">
   <use xlink:href="#copy"></use>
 </svg>
@@ -138,38 +138,16 @@
 </div>
 
     
-    <p>Ukrycie procesów innych użytkowników wiąże się z ponownym zmapowaniem wirtualnej partycji <code>/proc</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sudo mount -o remount,rw,hidepid=2 /proc
-</code></pre></div><p>Żeby ukryć procesy permanentnie należy do pliku <code>/etc/fstab</code> dodać:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>proc    /proc   proc    defaults,hidepid=2  0   0
-</code></pre></div><p>Wartości jakie może przyjmować parametr <code>hidepid</code>:</p>
-<table>
-<thead>
-<tr>
-<th>Value</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td>Everybody may access all <code>/proc/[pid]</code> directories. This is the traditional behavior, and the default if this mount option is not specified.</td>
-</tr>
-<tr>
-<td>1</td>
-<td>Users may not access files and subdirectories inside any <code>/proc/[pid]</code> directories but their own (the <code>/proc/[pid]</code> directories themselves remain visible). Sensitive files such as <code>/proc/[pid]/cmdline</code> and <code>/proc/[pid]/status</code> are now protected against other users. This makes it impossible to learn whether any user is running a specific program (so long as the program doesn’t otherwise reveal itself by its behavior).</td>
-</tr>
-<tr>
-<td>2</td>
-<td>As for mode 1, but in addition the <code>/proc/[pid]</code> directories belonging to other users become invisible. This means that <code>/proc/[pid]</code> entries can no longer be used to discover the PIDs on the system. This doesn’t hide the fact that a process with a specific PID value exists (it can be learned by other means, for example, by “kill -0 $PID”), but it hides a process’s UID and GID, which could otherwise be learned by employing stat(2) on a <code>/proc/[pid]</code> directory. This greatly complicates an attacker’s task of gathering information about running processes (e.g., discovering whether some daemon is running with elevated privileges, whether another user is running some sensitive program, whether other users are running any program at all, and so on).</td>
-</tr>
-</tbody>
-</table>
-<p>W przypadku komplikacji można dodać <code>git=admin</code>, będzie to grupa, której
-użytkownicy będą mogli przeglądać wszystkie procesy.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>proc /proc proc defaults,hidepid=2,gid=admin 0 0
-</code></pre></div><p>Więcej informacji: <a href="http://man7.org/linux/man-pages/man5/proc.5.html">http://man7.org/linux/man-pages/man5/proc.5.html</a></p>
-
+    <h2 id="import-konfiguracji-z-pliku">Import konfiguracji z pliku</h2>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sudo nmcli connection import type openvpn file nazwa_pliku.ovpn
+</code></pre></div><h2 id="lista-dostępnych-połączeń">Lista dostępnych połączeń</h2>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>nmcli connection show
+</code></pre></div><h2 id="podłączenie-openvpn">Podłączenie OpenVPN</h2>
+<p>Jeśli klucz OpenVPN jest zabezpieczony hasłem należy dodać parametr <code>--ask</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>nmcli connection up nazwa_vpn --ask
+</code></pre></div><h2 id="export-połączenia-openvpn">Export połączenia OpenVPN</h2>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>nmcli connection export nazwa_połączenia
+</code></pre></div>
     
       
     
@@ -183,9 +161,6 @@ użytkownicy będą mogli przeglądać wszystkie procesy.</p>
     <a href='https://mohdur.github.io/about/' class="button mt-1" role="button">Read More</a>
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
-      <li>
-        <a href="https://mohdur.github.io/post/nmcli-i-openvpn/" class="nav-link">NMCLI I OpenVPN</a>
-      </li>
       <li>
         <a href="https://mohdur.github.io/post/pobranie-ostatniego-wydania-programu-z-repozytorium-github/" class="nav-link">Pobranie ostatniego wydania programu z repozytorium Github</a>
       </li>
@@ -203,6 +178,9 @@ użytkownicy będą mogli przeglądać wszystkie procesy.</p>
       </li>
       <li>
         <a href="https://mohdur.github.io/post/kompilacja-neomutt/" class="nav-link">Kompilacja Neomutt</a>
+      </li>
+      <li>
+        <a href="https://mohdur.github.io/post/ukrycie-proces%C3%B3w-innych-u%C5%BCytkownik%C3%B3w-w-systemie-linux/" class="nav-link">Ukrycie procesów innych użytkowników w systemie Linux</a>
       </li>
     </ul>
     <div>
