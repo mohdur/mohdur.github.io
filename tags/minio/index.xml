@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Minio on MOHDUR</title>
+    <link>https://mohdur.github.io/tags/minio/</link>
+    <description>Recent content in Minio on MOHDUR</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 22 Oct 2020 01:24:15 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/minio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kopia zapasowa Minio &#43; Restic</title>
+      <link>https://mohdur.github.io/post/kopia-zapasowa-minio-&#43;-restic/</link>
+      <pubDate>Thu, 22 Oct 2020 01:24:15 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/kopia-zapasowa-minio-&#43;-restic/</guid>
+      <description>Kopie zapasową możemy przechowywać na serwerze MinIO https://min.io/, jest to serwer służący do przechowywania danych kompatybilny z Amazon S3.
+Serwer można uruchomić z pliku binarnego na lokalnymsystemie lub w dockerze.
+Uruchomienie serwera Po pobraniu pliku minio tworzymy katalog gdzie będą przechowywane dane:
+1mkdir data Uruchomieni serwera
+1minio server data 2Endpoint: http://192.168.122.1:9000 http://127.0.0.1:9000 3AccessKey: HWSZL5OL9X37S0DSC3EW 4SecretKey: d5ByBS50pffe90s9bKqWxxse4jBmEp9Zp5sv0c4c 5 6Browser Access: 7 http://192.168.122.1:9000 http://127.0.0.1:9000 8 9Command-line Access: https://docs.min.io/docs/minio-client-quickstart-guide 10 $ mc config host add myminio http://192.</description>
+    </item>
+    
+  </channel>
+</rss>

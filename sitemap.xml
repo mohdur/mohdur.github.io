@@ -3,27 +3,47 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mohdur.github.io/tags/backup/</loc>
+    <lastmod>2020-10-22T01:24:15+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/kopia-zapasowa-minio-&#43;-restic/</loc>
+    <lastmod>2020-10-22T01:24:15+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/minio/</loc>
+    <lastmod>2020-10-22T01:24:15+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/</loc>
+    <lastmod>2020-10-22T01:24:15+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/</loc>
+    <lastmod>2020-10-22T01:24:15+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/restic/</loc>
+    <lastmod>2020-10-22T01:24:15+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/</loc>
+    <lastmod>2020-10-22T01:24:15+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mohdur.github.io/tags/git/</loc>
     <lastmod>2020-10-22T01:22:38+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://mohdur.github.io/post/kopia-zapasowa-informacji-o-repozytoriach-git/</loc>
-    <lastmod>2020-10-22T01:22:38+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/</loc>
-    <lastmod>2020-10-22T01:22:38+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/post/</loc>
-    <lastmod>2020-10-22T01:22:38+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/</loc>
     <lastmod>2020-10-22T01:22:38+02:00</lastmod>
   </url>
   
@@ -59,11 +79,6 @@
   
   <url>
     <loc>https://mohdur.github.io/post/archiwizacja-plik%C3%B3w-za-pomoc%C4%85-polecenia-tar/</loc>
-    <lastmod>2020-10-22T00:15:27+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/backup/</loc>
     <lastmod>2020-10-22T00:15:27+02:00</lastmod>
   </url>
   
