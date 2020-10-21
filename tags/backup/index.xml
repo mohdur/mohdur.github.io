@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>backup on MOHDUR</title>
+    <title>Backup on MOHDUR</title>
     <link>https://mohdur.github.io/tags/backup/</link>
-    <description>Recent content in backup on MOHDUR</description>
+    <description>Recent content in Backup on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 21 Oct 2020 21:51:21 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/backup/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Oct 2020 00:15:27 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/backup/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Archiwizacja plików za pomocą polecenia tar</title>
+      <link>https://mohdur.github.io/post/archiwizacja-plik%C3%B3w-za-pomoc%C4%85-polecenia-tar/</link>
+      <pubDate>Thu, 22 Oct 2020 00:15:27 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/archiwizacja-plik%C3%B3w-za-pomoc%C4%85-polecenia-tar/</guid>
+      <description>Przydatne parametry polecenia tar 1-z - kompresuje gzip 2-j - kompresuje bzip2 3-J - kompresuje xz 4-a - dobiera sposób kompresji po rozszerzeniu pliku 5-f - plik wynikowy 6-x - dekompresuje 7-C - zmienia katalog przed rozpoczęciem archiwizacji Przykłady Tworzy archiwum pandoc.tgz katalogu pandoc 1tar -caf pandoc.tgz pandoc Przechodzi do katalogu pandoc i tworzy archiwum używając kompresji xz 1tar -C pandoc -caf pandoc.txz . Sprawdzenie wielkości archiwum przed i po kompresji 1gzip -l site-hugo.</description>
+    </item>
+    
     <item>
       <title>rsync receptury</title>
       <link>https://mohdur.github.io/post/rsync-receptury/</link>

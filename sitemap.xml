@@ -3,8 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mohdur.github.io/post/archiwizacja-plik%C3%B3w-za-pomoc%C4%85-polecenia-tar/</loc>
+    <lastmod>2020-10-22T00:15:27+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/backup/</loc>
+    <lastmod>2020-10-22T00:15:27+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/linux/</loc>
+    <lastmod>2020-10-22T00:15:27+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mohdur.github.io/</loc>
-    <lastmod>2020-10-21T22:06:53+02:00</lastmod>
+    <lastmod>2020-10-22T00:15:27+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/</loc>
+    <lastmod>2020-10-22T00:15:27+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/</loc>
+    <lastmod>2020-10-22T00:15:27+02:00</lastmod>
   </url>
   
   <url>
@@ -13,17 +38,7 @@
   </url>
   
   <url>
-    <loc>https://mohdur.github.io/post/</loc>
-    <lastmod>2020-10-21T22:06:53+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mohdur.github.io/tags/ssh/</loc>
-    <lastmod>2020-10-21T22:06:53+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/</loc>
     <lastmod>2020-10-21T22:06:53+02:00</lastmod>
   </url>
   
@@ -35,11 +50,6 @@
   <url>
     <loc>https://mohdur.github.io/post/uruchomienie-skryptu-po-wykryciu-zmian/</loc>
     <lastmod>2020-10-21T21:56:55+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/linux/</loc>
-    <lastmod>2020-10-21T21:52:41+02:00</lastmod>
   </url>
   
   <url>
@@ -55,11 +65,6 @@
   <url>
     <loc>https://mohdur.github.io/post/zmiana-rozdzielczo%C5%9Bci-ekranu/</loc>
     <lastmod>2020-10-21T21:52:41+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/backup/</loc>
-    <lastmod>2020-10-21T21:51:21+02:00</lastmod>
   </url>
   
   <url>
