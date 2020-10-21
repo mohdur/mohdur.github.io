@@ -3,27 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mohdur.github.io/tags/git/</loc>
+    <lastmod>2020-10-22T01:22:38+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/kopia-zapasowa-informacji-o-repozytoriach-git/</loc>
+    <lastmod>2020-10-22T01:22:38+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/</loc>
+    <lastmod>2020-10-22T01:22:38+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/</loc>
+    <lastmod>2020-10-22T01:22:38+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/</loc>
+    <lastmod>2020-10-22T01:22:38+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mohdur.github.io/post/aliasy-bash-zsh/</loc>
     <lastmod>2020-10-22T01:20:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mohdur.github.io/</loc>
-    <lastmod>2020-10-22T01:20:20+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/post/</loc>
-    <lastmod>2020-10-22T01:20:20+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mohdur.github.io/tags/shell/</loc>
-    <lastmod>2020-10-22T01:20:20+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/</loc>
     <lastmod>2020-10-22T01:20:20+02:00</lastmod>
   </url>
   

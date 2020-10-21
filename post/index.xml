@@ -5,7 +5,17 @@
     <link>https://mohdur.github.io/post/</link>
     <description>Recent content in Posts on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 22 Oct 2020 01:20:20 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Oct 2020 01:22:38 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kopia zapasowa informacji o repozytoriach Git</title>
+      <link>https://mohdur.github.io/post/kopia-zapasowa-informacji-o-repozytoriach-git/</link>
+      <pubDate>Thu, 22 Oct 2020 01:22:38 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/kopia-zapasowa-informacji-o-repozytoriach-git/</guid>
+      <description>Przygotowałem skrypt, który przeszukuje katalog ~/src i wykonuje kopię zapasową plików kompiluj.sh oraz adres url repozytorium. Całość ląduje w katalogu ~/src/src-repozytoria.
+1#!/bin/bash 2 3cd ~/src 4 5test -d src-repozytoria || mkdir src-repozytoria 6 7for dir in $(ls -d */); do 8 cd $dir 9 if [ -f ./kompiluj.sh ]; then 10 test -d ~/src/src-repozytoria/$dir || mkdir ~/src/src-repozytoria/$dir 11 cat ./kompiluj.sh &amp;gt; ~/src/src-repozytoria/$dir/kompiluj.sh 12 fi 13 if [ -f .git/config ]; then 14 test -d ~/src/src-repozytoria/$dir || mkdir ~/src/src-repozytoria/$dir 15 URL=$(grep url .</description>
+    </item>
+    
     <item>
       <title>Aliasy BASH ZSH</title>
       <link>https://mohdur.github.io/post/aliasy-bash-zsh/</link>
