@@ -3,12 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://mohdur.github.io/tags/linux/</loc>
-    <lastmod>2020-10-21T14:43:50+02:00</lastmod>
+    <loc>https://mohdur.github.io/</loc>
+    <lastmod>2020-10-21T19:05:40+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mohdur.github.io/</loc>
+    <loc>https://mohdur.github.io/post/</loc>
+    <lastmod>2020-10-21T19:05:40+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/</loc>
+    <lastmod>2020-10-21T19:05:40+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/vim/</loc>
+    <lastmod>2020-10-21T19:05:40+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/vim-wysy%C5%82anie-bie%C5%BC%C4%85cej-linii-do-innego-pliku/</loc>
+    <lastmod>2020-10-21T19:05:40+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/linux/</loc>
     <lastmod>2020-10-21T14:43:50+02:00</lastmod>
   </url>
   
@@ -19,16 +39,6 @@
   
   <url>
     <loc>https://mohdur.github.io/tags/openvpn/</loc>
-    <lastmod>2020-10-21T14:43:50+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/post/</loc>
-    <lastmod>2020-10-21T14:43:50+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/</loc>
     <lastmod>2020-10-21T14:43:50+02:00</lastmod>
   </url>
   

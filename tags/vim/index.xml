@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vim on MOHDUR</title>
+    <link>https://mohdur.github.io/tags/vim/</link>
+    <description>Recent content in Vim on MOHDUR</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 21 Oct 2020 19:05:40 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vim wysyłanie bieżącej linii do innego pliku</title>
+      <link>https://mohdur.github.io/post/vim-wysy%C5%82anie-bie%C5%BC%C4%85cej-linii-do-innego-pliku/</link>
+      <pubDate>Wed, 21 Oct 2020 19:05:40 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/vim-wysy%C5%82anie-bie%C5%BC%C4%85cej-linii-do-innego-pliku/</guid>
+      <description>Przy tej operacji użyjemy funkcji writefile oraz getreg, wysłanie bieżącej linii do innego pliku w tym wypadku oznacza usunięcie linii z bieżącego bufora i wklejenie jej do innego pliku.
+W tym wypadku zostanie zmapowana kombinacja klawiszy &amp;lt;leader&amp;gt;sv, która wyśle linię do pliku ~/todo/vim.md.
+1nnoremap &amp;lt;leader&amp;gt;sv :d&amp;lt;cr&amp;gt;:cd ~/todo/&amp;lt;cr&amp;gt;:call writefile(getreg(&amp;#39;@&amp;#39;, 1, 1), &amp;#39;vim.md&amp;#39;, &amp;#39;a&amp;#39;)&amp;lt;cr&amp;gt;:cd %:p:h&amp;lt;cr&amp;gt; Możemy wysłać kilka linii do innego pliku używając trybu VISUAL (Shift+v), także w tym przypadku jest zmapowana ta sama kombinacja klawiszy &amp;lt;leader&amp;gt;sv.</description>
+    </item>
+    
+  </channel>
+</rss>
