@@ -5,7 +5,16 @@
     <link>https://mohdur.github.io/tags/ssh/</link>
     <description>Recent content in ssh on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 14 Oct 2020 21:01:41 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Oct 2020 22:06:53 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Naprawienie SSH Too Many Authentication Failures</title>
+      <link>https://mohdur.github.io/post/naprawienie-ssh-too-many-authentication-failures/</link>
+      <pubDate>Wed, 21 Oct 2020 22:06:53 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/naprawienie-ssh-too-many-authentication-failures/</guid>
+      <description>Jeśli przy łączeniu się przez SSH uzyskamy komunikat o treści &amp;quot;SSH Too Many Authentication Failures&amp;quot;, to jasne jest, że próbująć łączyć się ze zdalnych hostem podaliśmy za dużo razy nieprawidłowe hasło. Taki sam komunikat może pokazać się w sytuacji kiedy do autoryzacji używamy klucza RSA/DSA. Okazuje się, że jeśli posiadamy zbyt dużą ilość kluczy, może okazać się, że otrzymamy taki komunikat, wynika to z tego że każde sprawdzenie klucza jest uznawane za kolejną próbę autoryzacji.</description>
+    </item>
+    
     <item>
       <title>Konfiguracja usługi SSH w RouterOS (Mikrotik)</title>
       <link>https://mohdur.github.io/post/konfiguracja-us%C5%82ugi-ssh-w-routeros-mikrotik/</link>
