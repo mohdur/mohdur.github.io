@@ -5,7 +5,19 @@
     <link>https://mohdur.github.io/tags/linux/</link>
     <description>Recent content in Linux on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 22 Oct 2020 00:15:27 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Oct 2020 00:21:03 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Formatowanie daty i godziny</title>
+      <link>https://mohdur.github.io/post/formatowanie-daty-i-godziny/</link>
+      <pubDate>Thu, 22 Oct 2020 00:21:03 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/formatowanie-daty-i-godziny/</guid>
+      <description>Standardowy wynik polecenia date bez formatowania
+1wto, 25 cze 2019, 13:03:54 CEST Formatowanie wyniku polecenia date odbywa się za pomocą parametrów występujących po znaku + np.
+1$ date +%F 22019-06-25 Wszystkie znaki formatujące można łączyć a także używać normalnych znaków np. date +%F-%T. Żeby uzyskać znak % należy użyć go dwukrotnie %%.
+Przydatne formatowanie    format opis     %F data w formacie 2019-06-25   %T godzina w formacie 13:04:57   %s czas w formacie EPOCH 1561460865    Data    format opis     %a skrócona nazwa dnia tygodnia wto   %A nazwa dnia tygodnia wtorek   %b skrócona nazwa miesiąca cze   %B nazwa miesiąca czerwca   %w 0 - dzień tygodnia 0-6 - 0 to niedziela   %y skrócony rok 19   %Y rok 2019   %m numer miesiąca 06   %d dzień miesiąca 25 od 01-31   %e dzień miesiąca 25 od 1-31    Czas    format opis     %T czas w formacie 13:04:57   %l godzina 1 od 1-12   %I godzina 01 od 01-12   %H godzina 13 od 00-23   %M minuta 26 od 00-59   %S sekunda 47 od 00-60   %p AM/PM PM   %Z strefa czasowa CEST   %j dzień roku 176 od 001-366    </description>
+    </item>
+    
     <item>
       <title>Archiwizacja plików za pomocą polecenia tar</title>
       <link>https://mohdur.github.io/post/archiwizacja-plik%C3%B3w-za-pomoc%C4%85-polecenia-tar/</link>
