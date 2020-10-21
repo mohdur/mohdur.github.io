@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fedora on MOHDUR</title>
+    <link>https://mohdur.github.io/tags/fedora/</link>
+    <description>Recent content in Fedora on MOHDUR</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 22 Oct 2020 01:16:44 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/fedora/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Aktualizacja Fedora Linux do nowego wydania</title>
+      <link>https://mohdur.github.io/post/aktualizacja-fedora-linux-do-nowego-wydania/</link>
+      <pubDate>Thu, 22 Oct 2020 01:16:44 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/aktualizacja-fedora-linux-do-nowego-wydania/</guid>
+      <description>Aktualizacja do nowego wydania to kilka poleceń, pierwszy etap to pobranie niezbędnych pakietów, po czym wykonujemy restart systemu, podczas którego system zostanie zaktualizowany operacja może potrwać kilkanaście minut do kilkudziesięciu w zależności od konfiguracji sprzętowej oraz liczby pakietów.
+UWAGA! Po wykonaniu ostatniego polecenia dnf system-upgrade reboot system będzie przez dłuższy czas niedostępny.
+1dnf upgrade --refresh 2dnf install dnf-plugin-system-upgrade 3dnf system-upgrade download --releasever=30 4dnf system-upgrade reboot </description>
+    </item>
+    
+  </channel>
+</rss>
