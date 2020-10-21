@@ -33,11 +33,6 @@
   </url>
   
   <url>
-    <loc>https://mohdur.github.io/categories/</loc>
-    <lastmod>2020-10-15T21:20:19+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mohdur.github.io/tags/github/</loc>
     <lastmod>2020-10-15T21:20:19+02:00</lastmod>
   </url>
@@ -53,22 +48,12 @@
   </url>
   
   <url>
-    <loc>https://mohdur.github.io/categories/shell/</loc>
-    <lastmod>2020-10-15T21:20:19+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mohdur.github.io/post/konfiguracja-us%C5%82ugi-ssh-w-routeros-mikrotik/</loc>
     <lastmod>2020-10-14T21:01:41+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://mohdur.github.io/tags/mikrotik/</loc>
-    <lastmod>2020-10-14T21:01:41+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/categories/mikrotik/</loc>
     <lastmod>2020-10-14T21:01:41+02:00</lastmod>
   </url>
   
@@ -98,17 +83,7 @@
   </url>
   
   <url>
-    <loc>https://mohdur.github.io/categories/vpn/</loc>
-    <lastmod>2020-10-14T14:03:25+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mohdur.github.io/tags/openssl/</loc>
-    <lastmod>2020-10-14T09:03:56+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/categories/security/</loc>
     <lastmod>2020-10-14T09:03:56+02:00</lastmod>
   </url>
   
@@ -128,11 +103,6 @@
   </url>
   
   <url>
-    <loc>https://mohdur.github.io/categories/linux/</loc>
-    <lastmod>2020-10-14T08:13:55+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mohdur.github.io/tags/mail/</loc>
     <lastmod>2020-10-14T08:13:55+02:00</lastmod>
   </url>
@@ -145,6 +115,10 @@
   <url>
     <loc>https://mohdur.github.io/about/</loc>
     <lastmod>2012-10-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/categories/</loc>
   </url>
   
 </urlset>
