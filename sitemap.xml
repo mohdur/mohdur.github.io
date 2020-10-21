@@ -3,6 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mohdur.github.io/post/generowanie-liczb-losowych/</loc>
+    <lastmod>2020-10-22T01:31:47+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/linux/</loc>
+    <lastmod>2020-10-22T01:31:47+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/</loc>
+    <lastmod>2020-10-22T01:31:47+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/</loc>
+    <lastmod>2020-10-22T01:31:47+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/shell/</loc>
+    <lastmod>2020-10-22T01:31:47+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/</loc>
+    <lastmod>2020-10-22T01:31:47+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mohdur.github.io/tags/fedora/</loc>
     <lastmod>2020-10-22T01:27:57+02:00</lastmod>
   </url>
@@ -13,27 +43,12 @@
   </url>
   
   <url>
-    <loc>https://mohdur.github.io/</loc>
-    <lastmod>2020-10-22T01:27:57+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/post/</loc>
-    <lastmod>2020-10-22T01:27:57+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mohdur.github.io/tags/selinux/</loc>
     <lastmod>2020-10-22T01:27:57+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://mohdur.github.io/tags/ssh/</loc>
-    <lastmod>2020-10-22T01:27:57+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/</loc>
     <lastmod>2020-10-22T01:27:57+02:00</lastmod>
   </url>
   
@@ -73,17 +88,7 @@
   </url>
   
   <url>
-    <loc>https://mohdur.github.io/tags/shell/</loc>
-    <lastmod>2020-10-22T01:20:20+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mohdur.github.io/post/aktualizacja-fedora-linux-do-nowego-wydania/</loc>
-    <lastmod>2020-10-22T01:16:44+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/linux/</loc>
     <lastmod>2020-10-22T01:16:44+02:00</lastmod>
   </url>
   

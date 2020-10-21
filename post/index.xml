@@ -5,7 +5,17 @@
     <link>https://mohdur.github.io/post/</link>
     <description>Recent content in Posts on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 22 Oct 2020 01:27:57 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Oct 2020 01:31:47 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Generowanie liczb losowych</title>
+      <link>https://mohdur.github.io/post/generowanie-liczb-losowych/</link>
+      <pubDate>Thu, 22 Oct 2020 01:31:47 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/generowanie-liczb-losowych/</guid>
+      <description>Wygenerowanie liczby losowej o określonej długości W tym wypadku jest to 20 cyfr
+1&amp;lt; /dev/urandom | tr -cd &amp;#39;[:digit:]&amp;#39; | head -c20; echo </description>
+    </item>
+    
     <item>
       <title>Konfiguracja serwera OpenSSH</title>
       <link>https://mohdur.github.io/post/konfiguracja-serwera-openssh/</link>
