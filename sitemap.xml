@@ -3,6 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mohdur.github.io/post/konfiguracja-interfejsu-sieciowego-za-pomoc%C4%85-polecenia-ip-w-systemie-linux/</loc>
+    <lastmod>2020-10-22T01:48:33+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/linux/</loc>
+    <lastmod>2020-10-22T01:48:33+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/</loc>
+    <lastmod>2020-10-22T01:48:33+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/</loc>
+    <lastmod>2020-10-22T01:48:33+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/sieci/</loc>
+    <lastmod>2020-10-22T01:48:33+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/</loc>
+    <lastmod>2020-10-22T01:48:33+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mohdur.github.io/tags/backup/</loc>
     <lastmod>2020-10-22T01:39:58+02:00</lastmod>
   </url>
@@ -13,28 +43,8 @@
   </url>
   
   <url>
-    <loc>https://mohdur.github.io/</loc>
-    <lastmod>2020-10-22T01:39:58+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/post/</loc>
-    <lastmod>2020-10-22T01:39:58+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mohdur.github.io/tags/restic/</loc>
     <lastmod>2020-10-22T01:39:58+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/</loc>
-    <lastmod>2020-10-22T01:39:58+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/linux/</loc>
-    <lastmod>2020-10-22T01:36:57+02:00</lastmod>
   </url>
   
   <url>
