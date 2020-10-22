@@ -147,8 +147,9 @@ W …</p>
     </div>
       <div class="excerpt_footer">
         <div>
-          <p class="pale">Dodajemy nową komendę FZFProj, która przeszukuje listę g:proj.
-1let g:proj = [&#39;~/git/&#39;,2 \ &#39;~/git/github&#39;,3 \ &#39;~/src&#39;]45command! FZFProj call fzf#run({6 \ &#39;source&#39;: g:proj,7 \ &#39;sink&#39;: &#39;e&#39;,8 \ &#39;options&#39;: &#39;-m -x +s&#39;,9 \ &#39;down&#39;: &#39;20%&#39;})</p>
+          <p class="pale">Funkcja do działania wymaga pluginu fzf.vim https://github.com/junegunn/fzf.vim
+Instalacja za pomocą menadżera vim-plug https://github.com/junegunn/vim-plug
+1Plug &#39;junegunn/fzf&#39;, { &#39;do&#39;: { -&gt; fzf#install() } }2Plug &#39;junegunn/fzf.vim&#39;Dodajemy nową komendę FZFProj, która przeszukuje listę …</p>
           <a href="https://mohdur.github.io/post/vim-lista-projekt%C3%B3w-i-fzf/" class="excerpt_more button">Read More</a>
         </div>
       </div>
