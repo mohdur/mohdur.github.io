@@ -3,22 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://mohdur.github.io/post/dodanie-konta-w-systemie-linux-skrypt/</loc>
-    <lastmod>2020-10-23T01:24:53+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mohdur.github.io/tags/linux/</loc>
-    <lastmod>2020-10-23T01:24:53+02:00</lastmod>
+    <lastmod>2020-10-23T01:30:07+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://mohdur.github.io/</loc>
-    <lastmod>2020-10-23T01:24:53+02:00</lastmod>
+    <lastmod>2020-10-23T01:30:07+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/podr%C4%99cznik-systemowy-man/</loc>
+    <lastmod>2020-10-23T01:30:07+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://mohdur.github.io/post/</loc>
+    <lastmod>2020-10-23T01:30:07+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/</loc>
+    <lastmod>2020-10-23T01:30:07+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/dodanie-konta-w-systemie-linux-skrypt/</loc>
     <lastmod>2020-10-23T01:24:53+02:00</lastmod>
   </url>
   
@@ -29,11 +39,6 @@
   
   <url>
     <loc>https://mohdur.github.io/tags/sysadm/</loc>
-    <lastmod>2020-10-23T01:24:53+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/</loc>
     <lastmod>2020-10-23T01:24:53+02:00</lastmod>
   </url>
   
