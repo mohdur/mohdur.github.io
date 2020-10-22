@@ -13,7 +13,7 @@
       
       <guid>https://mohdur.github.io/post/vim-lista-projekt%C3%B3w-i-fzf/</guid>
       <description>Dodajemy nową komendę FZFProj, która przeszukuje listę g:proj.
-1let g:proj = [&amp;#39;~/git/&amp;#39;,2 \ &amp;#39;~/git/github&amp;#39;,3 \ &amp;#39;~/src&amp;#39;]45command! FZFProj call fzf#run({6\ &amp;#39;source&amp;#39;: g:proj,7\ &amp;#39;sink&amp;#39;: &amp;#39;e&amp;#39;,8\ &amp;#39;options&amp;#39;: &amp;#39;-m -x +s&amp;#39;,9\ &amp;#39;down&amp;#39;: &amp;#39;20%&amp;#39;})</description>
+1let g:proj = [&amp;#39;~/git/&amp;#39;,2 \ &amp;#39;~/git/github&amp;#39;,3 \ &amp;#39;~/src&amp;#39;]45command! FZFProj call fzf#run({6 \ &amp;#39;source&amp;#39;: g:proj,7 \ &amp;#39;sink&amp;#39;: &amp;#39;e&amp;#39;,8 \ &amp;#39;options&amp;#39;: &amp;#39;-m -x +s&amp;#39;,9 \ &amp;#39;down&amp;#39;: &amp;#39;20%&amp;#39;})</description>
     </item>
     
     <item>
