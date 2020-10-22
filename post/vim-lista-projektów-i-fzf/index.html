@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" data-figures="true" class="page" data-mode="dim">
   <head>
-<title>Generowanie liczb losowych | MOHDUR</title>
+<title>Vim lista projektów i FZF | MOHDUR</title>
 <meta charset="utf-8">
 <meta name="generator" content="Hugo 0.76.4" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -10,13 +10,13 @@
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="Generowanie liczb losowych">
+<meta name="description" content="Vim lista projektów i FZF">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="Generowanie liczb losowych" />
-<meta property="og:url" content="https://mohdur.github.io/post/generowanie-liczb-losowych/" />
-<meta property="og:title" content="Generowanie liczb losowych" />
-<meta property="og:description" content="Generowanie liczb losowych" />
+<meta name="twitter:title" content="Vim lista projektów i FZF" />
+<meta property="og:url" content="https://mohdur.github.io/post/vim-lista-projekt%C3%B3w-i-fzf/" />
+<meta property="og:title" content="Vim lista projektów i FZF" />
+<meta property="og:description" content="Vim lista projektów i FZF" />
 <meta property="og:image" content="https://mohdur.github.io/images/thumbnail.png" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://mohdur.github.io/icons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://mohdur.github.io/icons/favicon-32x32.png'>
@@ -25,7 +25,7 @@
 <meta name="msapplication-TileColor" content="#002538">
 <meta name="theme-color" content="#002538">
 
-<link rel="canonical" href="https://mohdur.github.io/post/generowanie-liczb-losowych/">
+<link rel="canonical" href="https://mohdur.github.io/post/vim-lista-projekt%C3%B3w-i-fzf/">
 
     
 
@@ -100,27 +100,25 @@
   
 <div class="grid-inverse wrap content">
   <article class="post_content">
-    <h1 class="post_title">Generowanie liczb losowych</h1><div class="post_meta">
+    <h1 class="post_title">Vim lista projektów i FZF</h1><div class="post_meta">
   <svg class="icon">
   <use xlink:href="#calendar"></use>
 </svg>
   <span class="post_date">
     Oct 22, 2020</span>
-    <a href='https://mohdur.github.io/tags/shell' class="post_tag button button_translucent">Shell
-    </a>
-    <a href='https://mohdur.github.io/tags/linux' class="post_tag button button_translucent">Linux
+    <a href='https://mohdur.github.io/tags/vim' class="post_tag button button_translucent">Vim
     </a>
 </div>
 
     
 <div class="post_share">
   Share on:
-  <a href="https://twitter.com/intent/tweet?text=Generowanie%20liczb%20losowych&url=https%3a%2f%2fmohdur.github.io%2fpost%2fgenerowanie-liczb-losowych%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
+  <a href="https://twitter.com/intent/tweet?text=Vim%20lista%20projekt%c3%b3w%20i%20FZF&url=https%3a%2f%2fmohdur.github.io%2fpost%2fvim-lista-projekt%25C3%25B3w-i-fzf%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#twitter"></use>
 </svg>
   </a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fgenerowanie-liczb-losowych%2f&t=Generowanie%20liczb%20losowych" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fvim-lista-projekt%25C3%25B3w-i-fzf%2f&t=Vim%20lista%20projekt%c3%b3w%20i%20FZF" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#facebook"></use>
 </svg>
@@ -130,7 +128,7 @@
   <use xlink:href="#linkedin"></use>
 </svg>
   </a>
-  <a href="https://mohdur.github.io/post/generowanie-liczb-losowych/" title="Copy Link" class="link link_yank">
+  <a href="https://mohdur.github.io/post/vim-lista-projekt%C3%B3w-i-fzf/" title="Copy Link" class="link link_yank">
     <svg class="icon">
   <use xlink:href="#copy"></use>
 </svg>
@@ -138,10 +136,17 @@
 </div>
 
     
-    <h1 id="wygenerowanie-liczby-losowej-o-określonej-długości">Wygenerowanie liczby losowej o określonej długości</h1>
-<p>W tym wypadku jest to 20 cyfr</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>&lt; /dev/urandom | tr -cd &#39;[:digit:]&#39; | head -c20; echo
-</code></pre></div>
+    <p>Dodajemy nową komendę <code>FZFProj, która przeszukuje listę </code>g:proj`.</p>
+<div class="highlight"><pre class="chroma"><code class="language-vim" data-lang="vim"><span class="ln">1</span><span class="k">let</span> <span class="nx">g</span>:<span class="nx">proj</span> <span class="p">=</span> [<span class="s1">&#39;~/git/&#39;</span><span class="p">,</span><span class="err">
+</span><span class="ln">2</span><span class="err"></span>            \ <span class="s1">&#39;~/git/github&#39;</span><span class="p">,</span><span class="err">
+</span><span class="ln">3</span><span class="err"></span>            \ <span class="s1">&#39;~/src&#39;</span>]<span class="err">
+</span><span class="ln">4</span><span class="err">
+</span><span class="ln">5</span><span class="err"></span><span class="nx">command</span><span class="p">!</span> <span class="nx">FZFProj</span> <span class="nx">call</span> <span class="nx">fzf</span>#<span class="nx">run</span><span class="p">(</span>{<span class="err">
+</span><span class="ln">6</span><span class="err"></span>\  <span class="s1">&#39;source&#39;</span>:  <span class="nx">g</span>:<span class="nx">proj</span><span class="p">,</span><span class="err">
+</span><span class="ln">7</span><span class="err"></span>\  <span class="s1">&#39;sink&#39;</span>:    <span class="s1">&#39;e&#39;</span><span class="p">,</span><span class="err">
+</span><span class="ln">8</span><span class="err"></span>\  <span class="s1">&#39;options&#39;</span>: <span class="s1">&#39;-m -x +s&#39;</span><span class="p">,</span><span class="err">
+</span><span class="ln">9</span><span class="err"></span>\  <span class="s1">&#39;down&#39;</span>:    <span class="s1">&#39;20%&#39;</span>}<span class="p">)</span><span class="err">
+</span></code></pre></div>
     
       
     
@@ -155,9 +160,6 @@
     <a href='https://mohdur.github.io/about/' class="button mt-1" role="button">Read More</a>
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
-      <li>
-        <a href="https://mohdur.github.io/post/vim-lista-projekt%C3%B3w-i-fzf/" class="nav-link">Vim lista projektów i FZF</a>
-      </li>
       <li>
         <a href="https://mohdur.github.io/post/dodanie-konta-samba/" class="nav-link">Dodanie konta SAMBA</a>
       </li>
@@ -178,6 +180,9 @@
       </li>
       <li>
         <a href="https://mohdur.github.io/post/lokalna-kopia-zapasowa-z-wykorzystaniem-restic/" class="nav-link">Lokalna kopia zapasowa z wykorzystaniem restic</a>
+      </li>
+      <li>
+        <a href="https://mohdur.github.io/post/ustawienie-klawiatury-w-systemie-linux/" class="nav-link">Ustawienie klawiatury w systemie linux</a>
       </li>
     </ul>
     <div>

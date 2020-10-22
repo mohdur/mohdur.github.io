@@ -5,7 +5,16 @@
     <link>https://mohdur.github.io/tags/</link>
     <description>Recent content in Tags on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 22 Oct 2020 16:35:08 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Oct 2020 23:37:27 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vim</title>
+      <link>https://mohdur.github.io/tags/vim/</link>
+      <pubDate>Thu, 22 Oct 2020 23:37:27 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/tags/vim/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Linux</title>
       <link>https://mohdur.github.io/tags/linux/</link>
@@ -174,15 +183,6 @@
       <pubDate>Wed, 21 Oct 2020 21:51:21 +0200</pubDate>
       
       <guid>https://mohdur.github.io/tags/rsync/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Vim</title>
-      <link>https://mohdur.github.io/tags/vim/</link>
-      <pubDate>Wed, 21 Oct 2020 21:22:56 +0200</pubDate>
-      
-      <guid>https://mohdur.github.io/tags/vim/</guid>
       <description></description>
     </item>
     

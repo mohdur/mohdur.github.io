@@ -3,6 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mohdur.github.io/</loc>
+    <lastmod>2020-10-22T23:37:27+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/</loc>
+    <lastmod>2020-10-22T23:37:27+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/</loc>
+    <lastmod>2020-10-22T23:37:27+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/vim/</loc>
+    <lastmod>2020-10-22T23:37:27+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/vim-lista-projekt%C3%B3w-i-fzf/</loc>
+    <lastmod>2020-10-22T23:37:27+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mohdur.github.io/post/dodanie-konta-samba/</loc>
     <lastmod>2020-10-22T16:35:08+02:00</lastmod>
   </url>
@@ -13,22 +38,7 @@
   </url>
   
   <url>
-    <loc>https://mohdur.github.io/</loc>
-    <lastmod>2020-10-22T16:35:08+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/post/</loc>
-    <lastmod>2020-10-22T16:35:08+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mohdur.github.io/tags/samba/</loc>
-    <lastmod>2020-10-22T16:35:08+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/</loc>
     <lastmod>2020-10-22T16:35:08+02:00</lastmod>
   </url>
   
@@ -215,11 +225,6 @@
   <url>
     <loc>https://mohdur.github.io/post/rsync-receptury/</loc>
     <lastmod>2020-10-21T21:51:21+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/vim/</loc>
-    <lastmod>2020-10-21T21:22:56+02:00</lastmod>
   </url>
   
   <url>
