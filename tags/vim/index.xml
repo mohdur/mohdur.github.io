@@ -5,7 +5,17 @@
     <link>https://mohdur.github.io/tags/vim/</link>
     <description>Recent content in Vim on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 22 Oct 2020 23:37:27 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Oct 2020 23:50:24 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vim wstawienie makietki</title>
+      <link>https://mohdur.github.io/post/vim-wstawienie-makietki/</link>
+      <pubDate>Thu, 22 Oct 2020 23:50:24 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/vim-wstawienie-makietki/</guid>
+      <description>Katalog z makietkami ustawiamy w zmiennej g:templates_dir
+1let g:templates_dir = &amp;#39;~/.vim/templates&amp;#39;23function! s:read_template_into_buffer(template)4 execute &amp;#39;0r &amp;#39;.g:templates_dir.&amp;#39;/&amp;#39;.a:template5endfunction67command! -bang -nargs=* LoadTemplate call fzf#run({8 \ &amp;#39;source&amp;#39;: &amp;#39;ls -1 &amp;#39;.g:templates_dir,9 \ &amp;#39;down&amp;#39;: &amp;#39;20%&amp;#39;,10 \ &amp;#39;sink&amp;#39;: function(&amp;#39;&amp;lt;sid&amp;gt;read_template_into_buffer&amp;#39;)11 \ })</description>
+    </item>
+    
     <item>
       <title>Vim lista projektów i FZF</title>
       <link>https://mohdur.github.io/post/vim-lista-projekt%C3%B3w-i-fzf/</link>
