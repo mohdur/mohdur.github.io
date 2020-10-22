@@ -15,7 +15,7 @@
       <description>Funkcja do działania wymaga pluginu fzf.vim https://github.com/junegunn/fzf.vim
 Instalacja za pomocą menadżera vim-plug https://github.com/junegunn/vim-plug
 1Plug &amp;#39;junegunn/fzf&amp;#39;, { &amp;#39;do&amp;#39;: { -&amp;gt; fzf#install() } }2Plug &amp;#39;junegunn/fzf.vim&amp;#39;Katalog z makietkami ustawiamy w zmiennej g:templates_dir
-W funkcji s:read_template_into_buffer(template) możemy wprowadzić jedną modyfikację, jako, że makietek używa się do wstawienia typowej zawartości nagłówka pliku, to funkcja wstawia makietkę na początku pliku, za to jest odpowiedzialna linia execute &#39;0r &#39;.g:templates_dir.&#39;/&#39;.a:template, zmieniając w niej 0r na .r, makietka będzie wstawiana w bieżącej linii zamiast na początku pliku.</description>
+W funkcji s:read_template_into_buffer(template) możemy wprowadzić jedną modyfikację, jako, że makietek używa się do wstawienia typowej zawartości nagłówka pliku, to funkcja wstawia makietkę na początku pliku, za to odpowiedzialna jest linia (4) execute &#39;0r &#39;.g:templates_dir.&#39;/&#39;.a:template, zmieniając w niej 0r na .r, makietka będzie wstawiana w bieżącej linii zamiast na początku pliku.</description>
     </item>
     
     <item>

@@ -143,7 +143,7 @@
 </span></code></pre></div><p>Katalog z makietkami ustawiamy w zmiennej <code>g:templates_dir</code></p>
 <p>W funkcji <code>s:read_template_into_buffer(template)</code> możemy wprowadzić jedną modyfikację,
 jako, że makietek używa się do wstawienia typowej zawartości nagłówka pliku, to
-funkcja wstawia makietkę na początku pliku, za to jest odpowiedzialna linia
+funkcja wstawia makietkę na początku pliku, za to odpowiedzialna jest linia (4)
 <code>execute '0r '.g:templates_dir.'/'.a:template</code>, zmieniając w niej <code>0r</code> na <code>.r</code>, makietka
 będzie wstawiana w bieżącej linii zamiast na początku pliku.</p>
 <div class="highlight"><pre class="chroma"><code class="language-vim" data-lang="vim"><span class="ln"> 1</span><span class="k">let</span> <span class="nx">g</span>:<span class="nx">templates_dir</span> <span class="p">=</span> <span class="s1">&#39;~/.vim/templates&#39;</span><span class="err">
