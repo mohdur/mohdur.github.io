@@ -140,11 +140,11 @@
 jeśli będziemy chcieli pominąć te parametry należy podać pełną ścieżke do
 polecenia <code>ss</code>: <code>/usr/sbin/ss</code>.</p>
 <h1 id="ścieżki-do-katalogów">Ścieżki do katalogów</h1>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>[ -d ~/bin ] &amp;&amp; export PATH=$PATH:~/bin
-<span class="ln">2</span>[ -d ~/.local/bin ] &amp;&amp; export PATH=$PATH:~/.local/bin
-<span class="ln">3</span>[ -d ~/.cargo/bin ] &amp;&amp; export PATH=$PATH:~/.cargo/bin
-<span class="ln">4</span>[ -d ~/go/bin ] &amp;&amp; export PATH=$PATH:~/go/bin
-<span class="ln">5</span>[ -d ~/node_modules/.bin ] &amp;&amp; export PATH=$PATH:~/node_modules/.bin
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="ln">1</span><span class="o">[</span> -d ~/bin <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:~/bin
+<span class="ln">2</span><span class="o">[</span> -d ~/.local/bin <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:~/.local/bin
+<span class="ln">3</span><span class="o">[</span> -d ~/.cargo/bin <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:~/.cargo/bin
+<span class="ln">4</span><span class="o">[</span> -d ~/go/bin <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:~/go/bin
+<span class="ln">5</span><span class="o">[</span> -d ~/node_modules/.bin <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:~/node_modules/.bin
 </code></pre></div><h1 id="aliasy-podstawowe">Aliasy podstawowe</h1>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="ln">1</span><span class="nb">alias</span> <span class="nv">q</span><span class="o">=</span><span class="nb">exit</span>
 <span class="ln">2</span><span class="nb">alias</span> <span class="nv">Q</span><span class="o">=</span><span class="nb">exit</span>
@@ -156,15 +156,15 @@ polecenia <code>ss</code>: <code>/usr/sbin/ss</code>.</p>
 <span class="ln">8</span><span class="nb">alias</span> <span class="nv">free</span><span class="o">=</span><span class="s1">&#39;free -m&#39;</span>
 <span class="ln">9</span><span class="nb">alias</span> <span class="nv">mountt</span><span class="o">=</span><span class="s1">&#39;mount | column -t&#39;</span>
 </code></pre></div><h1 id="aliasy-narzędzi-sieciowych">Aliasy narzędzi sieciowych</h1>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>alias ip=&#39;sudo ip&#39;
-<span class="ln">2</span>alias ifconfig=&#39;ip a s&#39;
-<span class="ln">3</span>alias myip=&#39;ip-br -c a&#39;
-<span class="ln">4</span>alias arp=&#39;ip n&#39;
-<span class="ln">5</span>alias iptraf=&#39;sudo iptraf-ng&#39;
-<span class="ln">6</span>alias ss=&#39;sudo ss -tumanp&#39;
-<span class="ln">7</span>alias netstat=&#39;sudo netstat&#39;
-<span class="ln">8</span>alias nmap=&#39;sudo nmap&#39;
-<span class="ln">9</span>alias lsof=&#39;sudo lsof&#39;
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="ln">1</span><span class="nb">alias</span> <span class="nv">ip</span><span class="o">=</span><span class="s1">&#39;sudo ip&#39;</span>
+<span class="ln">2</span><span class="nb">alias</span> <span class="nv">ifconfig</span><span class="o">=</span><span class="s1">&#39;ip a s&#39;</span>
+<span class="ln">3</span><span class="nb">alias</span> <span class="nv">myip</span><span class="o">=</span><span class="s1">&#39;ip-br -c a&#39;</span>
+<span class="ln">4</span><span class="nb">alias</span> <span class="nv">arp</span><span class="o">=</span><span class="s1">&#39;ip n&#39;</span>
+<span class="ln">5</span><span class="nb">alias</span> <span class="nv">iptraf</span><span class="o">=</span><span class="s1">&#39;sudo iptraf-ng&#39;</span>
+<span class="ln">6</span><span class="nb">alias</span> <span class="nv">ss</span><span class="o">=</span><span class="s1">&#39;sudo ss -tumanp&#39;</span>
+<span class="ln">7</span><span class="nb">alias</span> <span class="nv">netstat</span><span class="o">=</span><span class="s1">&#39;sudo netstat&#39;</span>
+<span class="ln">8</span><span class="nb">alias</span> <span class="nv">nmap</span><span class="o">=</span><span class="s1">&#39;sudo nmap&#39;</span>
+<span class="ln">9</span><span class="nb">alias</span> <span class="nv">lsof</span><span class="o">=</span><span class="s1">&#39;sudo lsof&#39;</span>
 </code></pre></div><h1 id="aliasy-sudo">Aliasy sudo</h1>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="ln">1</span><span class="nb">alias</span> <span class="nv">cryptsetup</span><span class="o">=</span><span class="s1">&#39;sudo cryptsetup&#39;</span>
 <span class="ln">2</span><span class="nb">alias</span> <span class="nv">fdisk</span><span class="o">=</span><span class="s1">&#39;sudo fdisk&#39;</span>
@@ -179,18 +179,18 @@ polecenia <code>ss</code>: <code>/usr/sbin/ss</code>.</p>
 <span class="ln">3</span><span class="nb">alias</span> <span class="nv">la</span><span class="o">=</span><span class="s1">&#39;ls -Ah&#39;</span>
 <span class="ln">4</span><span class="nb">alias</span> <span class="nv">l</span><span class="o">=</span><span class="s1">&#39;ls -CFh&#39;</span>
 </code></pre></div><h1 id="katalogi">Katalogi</h1>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>alias b=&#34;cd ~/Books&#34;
-<span class="ln">2</span>alias h=&#34;cd ~&#34;
-<span class="ln">3</span>alias ..=&#34;cd ..&#34;
-<span class="ln">4</span>alias ...=&#34;cd ../..&#34;
-<span class="ln">5</span>alias o=&#34;cd -&#34;  # poprzedni katalog
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="ln">1</span><span class="nb">alias</span> <span class="nv">b</span><span class="o">=</span><span class="s2">&#34;cd ~/Books&#34;</span>
+<span class="ln">2</span><span class="nb">alias</span> <span class="nv">h</span><span class="o">=</span><span class="s2">&#34;cd ~&#34;</span>
+<span class="ln">3</span><span class="nb">alias</span> ..<span class="o">=</span><span class="s2">&#34;cd ..&#34;</span>
+<span class="ln">4</span><span class="nb">alias</span> ...<span class="o">=</span><span class="s2">&#34;cd ../..&#34;</span>
+<span class="ln">5</span><span class="nb">alias</span> <span class="nv">o</span><span class="o">=</span><span class="s2">&#34;cd -&#34;</span>  <span class="c1"># poprzedni katalog</span>
 </code></pre></div><h1 id="aliasy-git">Aliasy Git</h1>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>alias g=git
-<span class="ln">2</span>alias gl=&#39;git log&#39;
-<span class="ln">3</span>alias pu=&#39;git pull&#39;
-<span class="ln">4</span>alias pull=&#39;git pull&#39;
-<span class="ln">5</span>alias gp=~/bin/gp
-<span class="ln">6</span>alias ga=~/bin/ga
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="ln">1</span><span class="nb">alias</span> <span class="nv">g</span><span class="o">=</span>git
+<span class="ln">2</span><span class="nb">alias</span> <span class="nv">gl</span><span class="o">=</span><span class="s1">&#39;git log&#39;</span>
+<span class="ln">3</span><span class="nb">alias</span> <span class="nv">pu</span><span class="o">=</span><span class="s1">&#39;git pull&#39;</span>
+<span class="ln">4</span><span class="nb">alias</span> <span class="nv">pull</span><span class="o">=</span><span class="s1">&#39;git pull&#39;</span>
+<span class="ln">5</span><span class="nb">alias</span> <span class="nv">gp</span><span class="o">=</span>~/bin/gp
+<span class="ln">6</span><span class="nb">alias</span> <span class="nv">ga</span><span class="o">=</span>~/bin/ga
 </code></pre></div><h1 id="aliasy-fedora">Aliasy Fedora</h1>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="ln"> 1</span><span class="k">if</span> <span class="o">[</span> -f <span class="s2">&#34;/etc/fedora-release&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
 <span class="ln"> 2</span>    <span class="nb">alias</span> <span class="nv">dnf</span><span class="o">=</span><span class="s1">&#39;sudo dnf&#39;</span>
@@ -205,16 +205,16 @@ polecenia <code>ss</code>: <code>/usr/sbin/ss</code>.</p>
 <span class="ln">11</span>    <span class="nb">alias</span> <span class="nv">yum</span><span class="o">=</span><span class="s1">&#39;sudo yum&#39;</span>
 <span class="ln">12</span><span class="k">fi</span>
 </code></pre></div><h1 id="aliasy-arch">Aliasy Arch</h1>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span>if [ -f &#34;/etc/arch-release&#34; ]; then
-<span class="ln"> 2</span>    alias pacman=&#39;sudo pacman --color always&#39;
-<span class="ln"> 3</span>    alias p=&#39;sudo pacman --color always&#39;
-<span class="ln"> 4</span>    alias pi=&#39;sudo pacman -S&#39;
-<span class="ln"> 5</span>    alias y=&#39;yaourt&#39;
-<span class="ln"> 6</span>    alias pacup=&#39;sudo pacman -Syu&#39;
-<span class="ln"> 7</span>    alias aup=&#39;yaourt -Syu --aur&#39;
-<span class="ln"> 8</span>    alias upgrade=&#39;sudo pacman -Syu; yaourt -Syu --aur&#39;
-<span class="ln"> 9</span>    alias upgrade=&#39;pacman -Syyu &amp;&amp; yaourt -Syyu&#39;
-<span class="ln">10</span>fi
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="ln"> 1</span><span class="k">if</span> <span class="o">[</span> -f <span class="s2">&#34;/etc/arch-release&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<span class="ln"> 2</span>    <span class="nb">alias</span> <span class="nv">pacman</span><span class="o">=</span><span class="s1">&#39;sudo pacman --color always&#39;</span>
+<span class="ln"> 3</span>    <span class="nb">alias</span> <span class="nv">p</span><span class="o">=</span><span class="s1">&#39;sudo pacman --color always&#39;</span>
+<span class="ln"> 4</span>    <span class="nb">alias</span> <span class="nv">pi</span><span class="o">=</span><span class="s1">&#39;sudo pacman -S&#39;</span>
+<span class="ln"> 5</span>    <span class="nb">alias</span> <span class="nv">y</span><span class="o">=</span><span class="s1">&#39;yaourt&#39;</span>
+<span class="ln"> 6</span>    <span class="nb">alias</span> <span class="nv">pacup</span><span class="o">=</span><span class="s1">&#39;sudo pacman -Syu&#39;</span>
+<span class="ln"> 7</span>    <span class="nb">alias</span> <span class="nv">aup</span><span class="o">=</span><span class="s1">&#39;yaourt -Syu --aur&#39;</span>
+<span class="ln"> 8</span>    <span class="nb">alias</span> <span class="nv">upgrade</span><span class="o">=</span><span class="s1">&#39;sudo pacman -Syu; yaourt -Syu --aur&#39;</span>
+<span class="ln"> 9</span>    <span class="nb">alias</span> <span class="nv">upgrade</span><span class="o">=</span><span class="s1">&#39;pacman -Syyu &amp;&amp; yaourt -Syyu&#39;</span>
+<span class="ln">10</span><span class="k">fi</span>
 </code></pre></div>
     
       
