@@ -207,7 +207,8 @@
     </div>
       <div class="excerpt_footer">
         <div>
-          <p class="pale">1stty -ixon # wyłączenie Ctrl+s 2 3if [ $DISPLAY ]; then 4 setxkbmap -option caps:escape # ustawia caps lock jako ESC 5 xmodmap -e &#34;keycode 62 = Shift_Lock&#34; # ustawia prawy Shift jako Shift Lock 6fi 1# Ustawienie ESC na klawiszu CapsLock 2setxkbmap -option caps:escape 3# caps:none - wyłączenie 4# caps:escape - …</p>
+          <p class="pale">Taka zmiana jest przydatna szczególnie dla osób, które posługują się edytorem Vim lub podobnymi gdzie używa się dość często klawisza ESC, jako że klawisz CapsLock jest bardzo rzadko używany to można go wykorzystać jako klawisz ESC.
+1stty -ixon # wyłączenie Ctrl+s 2 3if [ $DISPLAY ]; then 4 setxkbmap -option caps:escape …</p>
           <a href="https://mohdur.github.io/post/ustawienie-klawiatury-w-systemie-linux/" class="excerpt_more button">Read More</a>
         </div>
       </div>
