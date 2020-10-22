@@ -136,7 +136,11 @@
 </div>
 
     
-    <p>Katalog z makietkami ustawiamy w zmiennej <code>g:templates_dir</code></p>
+    <p>Funkcja do działania wymaga pluginu <code>fzf.vim</code> <a href="https://github.com/junegunn/fzf.vim">https://github.com/junegunn/fzf.vim</a></p>
+<p>Instalacja za pomocą menadżera <code>vim-plug</code> <a href="https://github.com/junegunn/vim-plug">https://github.com/junegunn/vim-plug</a></p>
+<div class="highlight"><pre class="chroma"><code class="language-vim" data-lang="vim"><span class="ln">1</span><span class="nx">Plug</span> <span class="s1">&#39;junegunn/fzf&#39;</span><span class="p">,</span> { <span class="s1">&#39;do&#39;</span>: { <span class="p">-&gt;</span> <span class="nx">fzf</span>#<span class="nx">install</span><span class="p">()</span> } }<span class="err">
+</span><span class="ln">2</span><span class="err"></span><span class="nx">Plug</span> <span class="s1">&#39;junegunn/fzf.vim&#39;</span><span class="err">
+</span></code></pre></div><p>Katalog z makietkami ustawiamy w zmiennej <code>g:templates_dir</code></p>
 <p>W funkcji <code>s:read_template_into_buffer(template)</code> możemy wprowadzić jedną modyfikację,
 jako, że makietek używa się do wstawienia typowej zawartości nagłówka pliku, to
 funkcja wstawia makietkę na początku pliku, za to jest odpowiedzialna linia

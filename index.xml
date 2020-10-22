@@ -12,9 +12,10 @@
       <pubDate>Thu, 22 Oct 2020 23:50:24 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/vim-wstawienie-makietki/</guid>
-      <description>Katalog z makietkami ustawiamy w zmiennej g:templates_dir
-W funkcji s:read_template_into_buffer(template) możemy wprowadzić jedną modyfikację, jako, że makietek używa się do wstawienia typowej zawartości nagłówka pliku, to funkcja wstawia makietkę na początku pliku, za to jest odpowiedzialna linia execute &#39;0r &#39;.g:templates_dir.&#39;/&#39;.a:template, zmieniając w niej 0r na .r, makietka będzie wstawiana w bieżącej linii zamiast na początku pliku.
-1let g:templates_dir = &amp;#39;~/.vim/templates&amp;#39;23function! s:read_template_into_buffer(template)4 execute &amp;#39;0r &amp;#39;.g:templates_dir.&amp;#39;/&amp;#39;.a:template5endfunction67command! -bang -nargs=* LoadTemplate call fzf#run({8 \ &amp;#39;source&amp;#39;: &amp;#39;ls -1 &amp;#39;.</description>
+      <description>Funkcja do działania wymaga pluginu fzf.vim https://github.com/junegunn/fzf.vim
+Instalacja za pomocą menadżera vim-plug https://github.com/junegunn/vim-plug
+1Plug &amp;#39;junegunn/fzf&amp;#39;, { &amp;#39;do&amp;#39;: { -&amp;gt; fzf#install() } }2Plug &amp;#39;junegunn/fzf.vim&amp;#39;Katalog z makietkami ustawiamy w zmiennej g:templates_dir
+W funkcji s:read_template_into_buffer(template) możemy wprowadzić jedną modyfikację, jako, że makietek używa się do wstawienia typowej zawartości nagłówka pliku, to funkcja wstawia makietkę na początku pliku, za to jest odpowiedzialna linia execute &#39;0r &#39;.g:templates_dir.&#39;/&#39;.a:template, zmieniając w niej 0r na .r, makietka będzie wstawiana w bieżącej linii zamiast na początku pliku.</description>
     </item>
     
     <item>
