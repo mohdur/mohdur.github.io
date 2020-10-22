@@ -162,7 +162,8 @@ CapsLock jest bardzo rzadko używany to można go wykorzystać jako klawisz ESC.
 <span class="ln">4</span>layout:     pl
 <span class="ln">5</span>options:    caps:escape
 </code></pre></div><h1 id="wyłączenie-ctrl-s">Wyłączenie Ctrl-s</h1>
-<p>Po wyłączeniu Ctrl+s możemy użyć tego skrótu w Vim do zapisania pliku</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>stty -ixon
+</code></pre></div><p>Po wyłączeniu Ctrl+s możemy użyć tego skrótu w Vim do zapisania pliku</p>
 <div class="highlight"><pre class="chroma"><code class="language-vim" data-lang="vim"><span class="ln">1</span><span class="nx">inore</span> <span class="p">&lt;</span><span class="nx">C</span><span class="p">-</span><span class="nx">s</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nx">esc</span><span class="p">&gt;</span>:<span class="nx">w</span><span class="p">&lt;</span><span class="nx">cr</span><span class="p">&gt;</span><span class="err">
 </span><span class="ln">2</span><span class="err"></span><span class="nx">nnore</span> <span class="p">&lt;</span><span class="nx">C</span><span class="p">-</span><span class="nx">s</span><span class="p">&gt;</span> :<span class="nx">w</span><span class="p">&lt;</span><span class="nx">cr</span><span class="p">&gt;</span><span class="err">
 </span></code></pre></div><h1 id="przydatne-linki">Przydatne linki</h1>
