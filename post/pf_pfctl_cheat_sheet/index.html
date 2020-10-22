@@ -140,7 +140,7 @@
 </div>
 
     
-    <p>Pobrane z <a href="https://gist.github.com/tracphil/4353170">https://gist.github.com/tracphil/4353170</a></p>
+    <p>Pobrane z <a href="https://gist.github.com/tracphil/4353170">https://gist.github.com/tracphil/4353170</a> - <strong>Źródło niedostępne</strong></p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>basic pfctl control
 <span class="ln">2</span>==
 <span class="ln">3</span>Related: http://www.OpenBSD.org
@@ -151,48 +151,60 @@
 <span class="ln">8</span>for some common pfctl commands and is by no means
 <span class="ln">9</span>a replacement for the pfctl and pf manual pages.
 </code></pre></div><h2 id="general-pfctl-commands">General PFCTL Commands</h2>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span># pfctl -d disable packet-filtering
-<span class="ln">2</span># pfctl -e enable packet-filtering
-<span class="ln">3</span># pfctl -q run quiet
-<span class="ln">4</span># pfctl -v -v run even more verbose
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span># pfctl -d :: disable packet-filtering
+<span class="ln">2</span># pfctl -e :: enable packet-filtering
+<span class="ln">3</span># pfctl -q :: run quiet
+<span class="ln">4</span># pfctl -v :: -v run even more verbose
 </code></pre></div><h2 id="loading-pf-rules">Loading PF Rules</h2>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span># pfctl -f /etc/pf.conf load /etc/pf.conf
-<span class="ln">2</span># pfctl -n -f /etc/pf.conf parse /etc/pf.conf, but dont load it
-<span class="ln">3</span># pfctl -R -f /etc/pf.conf load only the FILTER rules
-<span class="ln">4</span># pfctl -N -f /etc/pf.conf load only the NAT rules
-<span class="ln">5</span># pfctl -O -f /etc/pf.conf load only the OPTION rules
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span># pfctl -f /etc/pf.conf    :: load /etc/pf.conf
+<span class="ln">2</span># pfctl -n -f /etc/pf.conf :: parse /etc/pf.conf, but dont load it
+<span class="ln">3</span># pfctl -R -f /etc/pf.conf :: load only the FILTER rules
+<span class="ln">4</span># pfctl -N -f /etc/pf.conf :: load only the NAT rules
+<span class="ln">5</span># pfctl -O -f /etc/pf.conf :: load only the OPTION rules
 </code></pre></div><h2 id="clearing-pf-rules--counters">Clearing PF Rules &amp; Counters</h2>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span># pfctl -F all flush ALL
-<span class="ln">2</span># pfctl -F rules flush only the RULES
-<span class="ln">3</span># pfctl -F queue flush only queue’s
-<span class="ln">4</span># pfctl -F nat flush only NAT
-<span class="ln">5</span># pfctl -F info flush all stats that are not part of any rule.
-<span class="ln">6</span># pfctl -z clear all counters
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span># pfctl -F all   :: flush ALL
+<span class="ln">2</span># pfctl -F rules :: flush only the RULES
+<span class="ln">3</span># pfctl -F queue :: flush only queue’s
+<span class="ln">4</span># pfctl -F nat   :: flush only NAT
+<span class="ln">5</span># pfctl -F info  :: flush all stats that are not part of any rule.
+<span class="ln">6</span># pfctl -z clear :: all counters
 </code></pre></div><p>note: flushing rules do not touch any existing stateful connections</p>
 <h2 id="output-pf-information">Output PF Information</h2>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span># pfctl -s rules show filter information
-<span class="ln"> 2</span># pfctl -v -s rules show filter information for what FILTER rules hit..
-<span class="ln"> 3</span># pfctl -vvsr show filter information as above and prepend rule numbers
-<span class="ln"> 4</span># pfctl -v -s nat show NAT information, for which NAT rules hit..
-<span class="ln"> 5</span># pfctl -s nat -i xl1 show NAT information for interface xl1
-<span class="ln"> 6</span># pfctl -s queue show QUEUE information
-<span class="ln"> 7</span># pfctl -s label show LABEL information
-<span class="ln"> 8</span># pfctl -s state show contents of the STATE table
-<span class="ln"> 9</span># pfctl -s info show statistics for state tables and packet normalization
-<span class="ln">10</span># pfctl -s all show everything
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span># pfctl -s rules      :: show filter information
+<span class="ln"> 2</span># pfctl -v -s rules   :: show filter information for what FILTER rules hit..
+<span class="ln"> 3</span># pfctl -vvsr         :: show filter information as above and prepend rule numbers
+<span class="ln"> 4</span># pfctl -v -s nat     :: show NAT information, for which NAT rules hit..
+<span class="ln"> 5</span># pfctl -s nat -i xl1 :: show NAT information for interface xl1
+<span class="ln"> 6</span># pfctl -s queue      :: show QUEUE information
+<span class="ln"> 7</span># pfctl -s label      :: show LABEL information
+<span class="ln"> 8</span># pfctl -s state      :: show contents of the STATE table
+<span class="ln"> 9</span># pfctl -s info       :: show statistics for state tables and packet normalization
+<span class="ln">10</span># pfctl -s all        :: show everything
 </code></pre></div><h2 id="maintaining-pf-tables">Maintaining PF Tables</h2>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span># pfctl -t addvhosts -T show show table addvhosts
-<span class="ln"> 2</span># pfctl -vvsTables view global information about all tables
-<span class="ln"> 3</span># pfctl -t addvhosts -T add 192.168.1.50 add entry to table addvhosts
-<span class="ln"> 4</span># pfctl -t addvhosts -T add 192.168.1.0/16 add a network to table addvhosts
-<span class="ln"> 5</span># pfctl -t addvhosts -T delete 192.168.1.0/16 delete nework from table addvhosts
-<span class="ln"> 6</span># pfctl -t addvhosts -T flush remove all entries from table addvhosts
-<span class="ln"> 7</span># pfctl -t addvhosts -T kill delete table addvhosts entirely
-<span class="ln"> 8</span># pfctl -t addvhosts -T replace -f /etc/addvhosts reload table addvhosts on the fly
-<span class="ln"> 9</span># pfctl -t addvhosts -T test 192.168.1.40 find ip address 192.168.1.40 in table addvhosts
-<span class="ln">10</span># pfctl -T load -f /etc/pf.conf load a new table definition
-<span class="ln">11</span># pfctl -t addvhosts -T show -v output stats for each ip address in table addvhosts
-<span class="ln">12</span># pfctl -t addvhosts -T zero reset all counters for table addvhosts
+<p>show table addvhosts</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span># pfctl -t addvhosts -T show
+</code></pre></div><p>view global information about all tables</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span># pfctl -vvsTables
+</code></pre></div><p>add entry to table addvhosts</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span># pfctl -t addvhosts -T add 192.168.1.50
+</code></pre></div><p>add a network to table addvhosts</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span># pfctl -t addvhosts -T add 192.168.1.0/16
+</code></pre></div><p>delete nework from table addvhosts</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span># pfctl -t addvhosts -T delete 192.168.1.0/16
+</code></pre></div><p>remove all entries from table addvhosts</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span># pfctl -t addvhosts -T flush
+</code></pre></div><p>delete table addvhosts entirely</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span># pfctl -t addvhosts -T kill
+</code></pre></div><p>reload table addvhosts on the fly</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span># pfctl -t addvhosts -T replace -f /etc/addvhosts
+</code></pre></div><p>find ip address 192.168.1.40 in table addvhosts</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span># pfctl -t addvhosts -T test 192.168.1.40
+</code></pre></div><p>load a new table definition</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span># pfctl -T load -f /etc/pf.conf
+</code></pre></div><p>stats for each ip address in table addvhosts</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span># pfctl -t addvhosts -T show -v output
+</code></pre></div><p>reset all counters for table addvhosts</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span># pfctl -t addvhosts -T zero
 </code></pre></div>
     
       
