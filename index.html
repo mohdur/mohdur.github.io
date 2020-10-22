@@ -121,7 +121,7 @@
       <div class="excerpt_footer">
         <div>
           <p class="pale">Katalog z makietkami ustawiamy w zmiennej g:templates_dir
-1let g:templates_dir = &#39;~/.vim/templates&#39;23function! s:read_template_into_buffer(template)4 execute &#39;0r &#39;.g:templates_dir.&#39;/&#39;.a:template5endfunction67command! -bang -nargs=* LoadTemplate call fzf#run({8 \ &#39;source&#39;: &#39;ls -1 …</p>
+W funkcji s:read_template_into_buffer(template) możemy wprowadzić jedną modyfikację, jako, że makietek używa się do wstawienia typowej zawartości nagłówka pliku, to funkcja wstawia makietkę na początku pliku, za to jest odpowiedzialna linia execute '0r …</p>
           <a href="https://mohdur.github.io/post/vim-wstawienie-makietki/" class="excerpt_more button">Read More</a>
         </div>
       </div>
