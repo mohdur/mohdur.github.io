@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" data-figures="" data-mode="dim">
   <head>
-<title>skrypty | MOHDUR</title>
+<title>Skrypty | MOHDUR</title>
 <meta charset="utf-8">
 <meta name="generator" content="Hugo 0.76.4" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -13,9 +13,9 @@
 <meta name="description" content="">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="skrypty" />
+<meta name="twitter:title" content="Skrypty" />
 <meta property="og:url" content="https://mohdur.github.io/tags/skrypty/" />
-<meta property="og:title" content="skrypty" />
+<meta property="og:title" content="Skrypty" />
 <meta property="og:description" content="" />
 <meta property="og:image" content="https://mohdur.github.io/images/thumbnail.png" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://mohdur.github.io/icons/apple-touch-icon.png'>
@@ -103,6 +103,37 @@
   <div class="excerpt">
     <div class="excerpt_header">
       <h3 class="post_link">
+        <a href="https://mohdur.github.io/post/dodanie-konta-w-systemie-linux-skrypt/">Dodanie konta w systemie Linux - skrypt</a>
+      </h3>
+      <div class="post_meta">
+  <svg class="icon">
+  <use xlink:href="#calendar"></use>
+</svg>
+  <span class="post_date">
+    Oct 23, 2020</span>
+    <a href='https://mohdur.github.io/tags/linux' class="post_tag button button_translucent">Linux
+    </a>
+    <a href='https://mohdur.github.io/tags/sysadm' class="post_tag button button_translucent">SysAdm
+    </a>
+    <a href='https://mohdur.github.io/tags/skrypty' class="post_tag button button_translucent">Skrypty
+    </a>
+</div>
+
+    </div>
+      <div class="excerpt_footer">
+        <div>
+          <p class="pale">Skrypt dodaje konto systemowe, oraz grupę o tej samej nazwie.
+1#!/bin/bash 2 3USERNAME=test1 4PASSWORD_PLAIN=test1 5PASSWORD=$(mkpasswd -m sha-512 -S $(&lt; /dev/urandom tr -cd &#34;[:alnum:]&#34; | head -c${1:-16}; echo) -s &lt;&lt;&lt; $PASSWORD_PLAIN) 6groupadd $USERNAME 7adduser -g $USERNAME -G wheel -m -p …</p>
+          <a href="https://mohdur.github.io/post/dodanie-konta-w-systemie-linux-skrypt/" class="excerpt_more button">Read More</a>
+        </div>
+      </div>
+    </div>
+  </li>
+
+      <li class="post_item">
+  <div class="excerpt">
+    <div class="excerpt_header">
+      <h3 class="post_link">
         <a href="https://mohdur.github.io/post/nazwa-pliku-wy%C5%9Bwetlanie-nazwy-i-rozszerzenia/">Nazwa pliku, wyśwetlanie nazwy i rozszerzenia</a>
       </h3>
       <div class="post_meta">
@@ -143,6 +174,9 @@ Pętla for pokazuje wszystkie pliki w katalogu katalog wraz z nazwą tego katalo
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
       <li>
+        <a href="https://mohdur.github.io/post/dodanie-konta-w-systemie-linux-skrypt/" class="nav-link">Dodanie konta w systemie Linux - skrypt</a>
+      </li>
+      <li>
         <a href="https://mohdur.github.io/post/vim-wstawienie-makietki/" class="nav-link">Vim wstawienie makietki</a>
       </li>
       <li>
@@ -163,16 +197,13 @@ Pętla for pokazuje wszystkie pliki w katalogu katalog wraz z nazwą tego katalo
       <li>
         <a href="https://mohdur.github.io/post/pf_pfctl_cheat_sheet/" class="nav-link">PF pfctl cheat sheet</a>
       </li>
-      <li>
-        <a href="https://mohdur.github.io/post/konfiguracja-interfejsu-sieciowego-za-pomoc%C4%85-polecenia-ip-w-systemie-linux/" class="nav-link">Konfiguracja interfejsu sieciowego za pomocą polecenia IP w systemie Linux</a>
-      </li>
     </ul>
     <div>
       <h2 class="mt-4 taxonomy" id="tags-section">Tags</h2>
       <nav class="tags_nav">
         <a href='https://mohdur.github.io/tags/linux/' class="post_tag button button_translucent">
           LINUX
-          <span class="button_tally">14</span>
+          <span class="button_tally">15</span>
         </a>
         
         <a href='https://mohdur.github.io/tags/shell/' class="post_tag button button_translucent">
@@ -230,14 +261,14 @@ Pętla for pokazuje wszystkie pliki w katalogu katalog wraz z nazwą tego katalo
           <span class="button_tally">2</span>
         </a>
         
-        <a href='https://mohdur.github.io/tags/sprz%C4%99t/' class="post_tag button button_translucent">
-          SPRZĘT
+        <a href='https://mohdur.github.io/tags/skrypty/' class="post_tag button button_translucent">
+          SKRYPTY
           <span class="button_tally">2</span>
         </a>
         
-        <a href='https://mohdur.github.io/tags/firewall/' class="post_tag button button_translucent">
-          FIREWALL
-          <span class="button_tally">1</span>
+        <a href='https://mohdur.github.io/tags/sprz%C4%99t/' class="post_tag button button_translucent">
+          SPRZĘT
+          <span class="button_tally">2</span>
         </a>
         
         
@@ -266,7 +297,7 @@ Pętla for pokazuje wszystkie pliki w katalogu katalog wraz z nazwą tego katalo
             </a>
             
             
-            <a href='https://mohdur.github.io/tags/linux/' class=" post_tag button button_translucent" data-position=14>LINUX<span class="button_tally">14</span>
+            <a href='https://mohdur.github.io/tags/linux/' class=" post_tag button button_translucent" data-position=15>LINUX<span class="button_tally">15</span>
             </a>
             
             
@@ -330,7 +361,7 @@ Pętla for pokazuje wszystkie pliki w katalogu katalog wraz z nazwą tego katalo
             </a>
             
             
-            <a href='https://mohdur.github.io/tags/skrypty/' class=" post_tag button button_translucent" data-position=1>SKRYPTY<span class="button_tally">1</span>
+            <a href='https://mohdur.github.io/tags/skrypty/' class=" post_tag button button_translucent" data-position=2>SKRYPTY<span class="button_tally">2</span>
             </a>
             
             
@@ -339,6 +370,10 @@ Pętla for pokazuje wszystkie pliki w katalogu katalog wraz z nazwą tego katalo
             
             
             <a href='https://mohdur.github.io/tags/ssh/' class=" post_tag button button_translucent" data-position=3>SSH<span class="button_tally">3</span>
+            </a>
+            
+            
+            <a href='https://mohdur.github.io/tags/sysadm/' class=" post_tag button button_translucent" data-position=1>SYSADM<span class="button_tally">1</span>
             </a>
             
             
