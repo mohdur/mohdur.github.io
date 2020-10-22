@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" data-figures="true" class="page" data-mode="dim">
   <head>
-<title>Zmiana rozdzielczości ekranu | MOHDUR</title>
+<title>Dodanie konta SAMBA | MOHDUR</title>
 <meta charset="utf-8">
 <meta name="generator" content="Hugo 0.76.4" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -10,13 +10,13 @@
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="Zmiana rozdzielczości ekranu">
+<meta name="description" content="Dodanie konta SAMBA">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="Zmiana rozdzielczości ekranu" />
-<meta property="og:url" content="https://mohdur.github.io/post/zmiana-rozdzielczo%C5%9Bci-ekranu/" />
-<meta property="og:title" content="Zmiana rozdzielczości ekranu" />
-<meta property="og:description" content="Zmiana rozdzielczości ekranu" />
+<meta name="twitter:title" content="Dodanie konta SAMBA" />
+<meta property="og:url" content="https://mohdur.github.io/post/dodanie-konta-samba/" />
+<meta property="og:title" content="Dodanie konta SAMBA" />
+<meta property="og:description" content="Dodanie konta SAMBA" />
 <meta property="og:image" content="https://mohdur.github.io/images/thumbnail.png" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://mohdur.github.io/icons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://mohdur.github.io/icons/favicon-32x32.png'>
@@ -25,7 +25,7 @@
 <meta name="msapplication-TileColor" content="#002538">
 <meta name="theme-color" content="#002538">
 
-<link rel="canonical" href="https://mohdur.github.io/post/zmiana-rozdzielczo%C5%9Bci-ekranu/">
+<link rel="canonical" href="https://mohdur.github.io/post/dodanie-konta-samba/">
 
     
 
@@ -100,29 +100,27 @@
   
 <div class="grid-inverse wrap content">
   <article class="post_content">
-    <h1 class="post_title">Zmiana rozdzielczości ekranu</h1><div class="post_meta">
+    <h1 class="post_title">Dodanie konta SAMBA</h1><div class="post_meta">
   <svg class="icon">
   <use xlink:href="#calendar"></use>
 </svg>
   <span class="post_date">
-    Oct 21, 2020</span>
+    Oct 22, 2020</span>
+    <a href='https://mohdur.github.io/tags/samba' class="post_tag button button_translucent">SAMBA
+    </a>
     <a href='https://mohdur.github.io/tags/linux' class="post_tag button button_translucent">Linux
-    </a>
-    <a href='https://mohdur.github.io/tags/xwindow' class="post_tag button button_translucent">XWindow
-    </a>
-    <a href='https://mohdur.github.io/tags/sprz%C4%99t' class="post_tag button button_translucent">Sprzęt
     </a>
 </div>
 
     
 <div class="post_share">
   Share on:
-  <a href="https://twitter.com/intent/tweet?text=Zmiana%20rozdzielczo%c5%9bci%20ekranu&url=https%3a%2f%2fmohdur.github.io%2fpost%2fzmiana-rozdzielczo%25C5%259Bci-ekranu%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
+  <a href="https://twitter.com/intent/tweet?text=Dodanie%20konta%20SAMBA&url=https%3a%2f%2fmohdur.github.io%2fpost%2fdodanie-konta-samba%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#twitter"></use>
 </svg>
   </a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fzmiana-rozdzielczo%25C5%259Bci-ekranu%2f&t=Zmiana%20rozdzielczo%c5%9bci%20ekranu" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fdodanie-konta-samba%2f&t=Dodanie%20konta%20SAMBA" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#facebook"></use>
 </svg>
@@ -132,7 +130,7 @@
   <use xlink:href="#linkedin"></use>
 </svg>
   </a>
-  <a href="https://mohdur.github.io/post/zmiana-rozdzielczo%C5%9Bci-ekranu/" title="Copy Link" class="link link_yank">
+  <a href="https://mohdur.github.io/post/dodanie-konta-samba/" title="Copy Link" class="link link_yank">
     <svg class="icon">
   <use xlink:href="#copy"></use>
 </svg>
@@ -140,20 +138,18 @@
 </div>
 
     
-    <p>Kiedy chcemy zmienić rozdzielczość, ale okazuje się, mimo że w specyfikacji nasz
-ekran obsługuje taką rozdzielczość to jej nie ma :( Ma to często miejsce przy
-wirtualizacji. Tak więc musimy taką rozdzielczość dodać do listy.</p>
-<p>Sprawdzamy ustawienia dla nowej rozdzielczości za pomocą polecenia <code>gtf</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ gtf 1920 1080 60
-<span class="ln">2</span>
-<span class="ln">3</span># 1920x1080 @ 60.00 Hz (GTF) hsync: 67.08 kHz; pclk: 172.80 MHz
-<span class="ln">4</span>Modeline &#34;1920x1080_60.00&#34;  172.80  1920 2040 2248 2576  1080 1081 1084 1118  -HSync +Vsync
-</code></pre></div><p>Dodajemy nową rozdzielczość i ustawiamy ją na ekranie <code>Virtual1</code></p>
-<p>Pierwsza linia <code>--newmode</code> dodaje nową rozdzielczość i parametry, które
-uzyskaliśmy za pomocą polecenia <code>gtf</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>xrandr --newmode &#34;1920x1080_60.00&#34;  172.80  1920 2040 2248 2576  1080 1081 1084 1118  -HSync +Vsync
-<span class="ln">2</span>xrandr --addmode Virtual1 &#34;1920x1080_60.00&#34;
-<span class="ln">3</span>xrandr --output Virtual1 --primary --mode &#34;1920x1080_60.00&#34; --pos 0x0 --rotate normal
+    <p>Skrypt dodający konto użytkownika, oraz tworzący katalog domowy</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> -eq <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<span class="ln"> 2</span>    <span class="nb">echo</span> Podaj nazwę konta, które chcesz dodać.
+<span class="ln"> 3</span>    <span class="nb">echo</span> <span class="nv">$0</span> nazwa_użytkownika
+<span class="ln"> 4</span>    <span class="nb">exit</span>
+<span class="ln"> 5</span><span class="k">fi</span>
+<span class="ln"> 6</span>
+<span class="ln"> 7</span>useradd -d /home/samba/<span class="nv">$1</span> -s /sbin/nologin <span class="nv">$1</span>
+<span class="ln"> 8</span>chmod <span class="m">0770</span> /home/samba/<span class="nv">$1</span>
+<span class="ln"> 9</span><span class="nb">cd</span> /home/samba/<span class="nv">$1</span>
+<span class="ln">10</span>ls -A /home/samba/<span class="nv">$1</span> <span class="p">|</span> xargs rm
+<span class="ln">11</span>smbpasswd -a <span class="nv">$1</span>
 </code></pre></div>
     
       
@@ -168,9 +164,6 @@ uzyskaliśmy za pomocą polecenia <code>gtf</code>.</p>
     <a href='https://mohdur.github.io/about/' class="button mt-1" role="button">Read More</a>
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
-      <li>
-        <a href="https://mohdur.github.io/post/dodanie-konta-samba/" class="nav-link">Dodanie konta SAMBA</a>
-      </li>
       <li>
         <a href="https://mohdur.github.io/post/kompilacja-xurls/" class="nav-link">Kompilacja xurls</a>
       </li>
@@ -191,6 +184,9 @@ uzyskaliśmy za pomocą polecenia <code>gtf</code>.</p>
       </li>
       <li>
         <a href="https://mohdur.github.io/post/ustawienie-klawiatury-w-systemie-linux/" class="nav-link">Ustawienie klawiatury w systemie linux</a>
+      </li>
+      <li>
+        <a href="https://mohdur.github.io/post/sed-receptury.md/" class="nav-link">SED receptury</a>
       </li>
     </ul>
     <div>

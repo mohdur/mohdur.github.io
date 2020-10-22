@@ -5,13 +5,22 @@
     <link>https://mohdur.github.io/tags/</link>
     <description>Recent content in Tags on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 22 Oct 2020 16:32:55 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Oct 2020 16:35:08 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux</title>
       <link>https://mohdur.github.io/tags/linux/</link>
-      <pubDate>Thu, 22 Oct 2020 16:32:55 +0200</pubDate>
+      <pubDate>Thu, 22 Oct 2020 16:35:08 +0200</pubDate>
       
       <guid>https://mohdur.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SAMBA</title>
+      <link>https://mohdur.github.io/tags/samba/</link>
+      <pubDate>Thu, 22 Oct 2020 16:35:08 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/tags/samba/</guid>
       <description></description>
     </item>
     
@@ -21,15 +30,6 @@
       <pubDate>Thu, 22 Oct 2020 16:32:55 +0200</pubDate>
       
       <guid>https://mohdur.github.io/tags/shell/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SAMBA</title>
-      <link>https://mohdur.github.io/tags/samba/</link>
-      <pubDate>Thu, 22 Oct 2020 02:15:28 +0200</pubDate>
-      
-      <guid>https://mohdur.github.io/tags/samba/</guid>
       <description></description>
     </item>
     

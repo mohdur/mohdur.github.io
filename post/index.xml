@@ -5,7 +5,17 @@
     <link>https://mohdur.github.io/post/</link>
     <description>Recent content in Posts on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 22 Oct 2020 16:32:55 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Oct 2020 16:35:08 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dodanie konta SAMBA</title>
+      <link>https://mohdur.github.io/post/dodanie-konta-samba/</link>
+      <pubDate>Thu, 22 Oct 2020 16:35:08 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/dodanie-konta-samba/</guid>
+      <description>Skrypt dodający konto użytkownika, oraz tworzący katalog domowy
+1if [ $# -eq 0 ]; then 2 echo Podaj nazwę konta, które chcesz dodać. 3 echo $0 nazwa_użytkownika 4 exit 5fi 6 7useradd -d /home/samba/$1 -s /sbin/nologin $1 8chmod 0770 /home/samba/$1 9cd /home/samba/$1 10ls -A /home/samba/$1 | xargs rm 11smbpasswd -a $1 </description>
+    </item>
+    
     <item>
       <title>Kompilacja xurls</title>
       <link>https://mohdur.github.io/post/kompilacja-xurls/</link>

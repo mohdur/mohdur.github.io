@@ -105,6 +105,35 @@
   <div class="excerpt">
     <div class="excerpt_header">
       <h3 class="post_link">
+        <a href="https://mohdur.github.io/post/dodanie-konta-samba/">Dodanie konta SAMBA</a>
+      </h3>
+      <div class="post_meta">
+  <svg class="icon">
+  <use xlink:href="#calendar"></use>
+</svg>
+  <span class="post_date">
+    Oct 22, 2020</span>
+    <a href='https://mohdur.github.io/tags/samba' class="post_tag button button_translucent">SAMBA
+    </a>
+    <a href='https://mohdur.github.io/tags/linux' class="post_tag button button_translucent">Linux
+    </a>
+</div>
+
+    </div>
+      <div class="excerpt_footer">
+        <div>
+          <p class="pale">Skrypt dodający konto użytkownika, oraz tworzący katalog domowy
+1if [ $# -eq 0 ]; then 2 echo Podaj nazwę konta, które chcesz dodać. 3 echo $0 nazwa_użytkownika 4 exit 5fi 6 7useradd -d /home/samba/$1 -s /sbin/nologin $1 8chmod 0770 /home/samba/$1 9cd /home/samba/$1 10ls -A /home/samba/$1 | xargs rm 11smbpasswd -a $1 </p>
+          <a href="https://mohdur.github.io/post/dodanie-konta-samba/" class="excerpt_more button">Read More</a>
+        </div>
+      </div>
+    </div>
+  </li>
+
+      <li class="post_item">
+  <div class="excerpt">
+    <div class="excerpt_header">
+      <h3 class="post_link">
         <a href="https://mohdur.github.io/post/kompilacja-xurls/">Kompilacja xurls</a>
       </h3>
       <div class="post_meta">
@@ -1021,6 +1050,9 @@ Na razie w wersji 7.1beta2 nie ma możliwości …</p>
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
       <li>
+        <a href="https://mohdur.github.io/post/dodanie-konta-samba/" class="nav-link">Dodanie konta SAMBA</a>
+      </li>
+      <li>
         <a href="https://mohdur.github.io/post/kompilacja-xurls/" class="nav-link">Kompilacja xurls</a>
       </li>
       <li>
@@ -1041,16 +1073,13 @@ Na razie w wersji 7.1beta2 nie ma możliwości …</p>
       <li>
         <a href="https://mohdur.github.io/post/ustawienie-klawiatury-w-systemie-linux/" class="nav-link">Ustawienie klawiatury w systemie linux</a>
       </li>
-      <li>
-        <a href="https://mohdur.github.io/post/sed-receptury.md/" class="nav-link">SED receptury</a>
-      </li>
     </ul>
     <div>
       <h2 class="mt-4 taxonomy" id="tags-section">Tags</h2>
       <nav class="tags_nav">
         <a href='https://mohdur.github.io/tags/linux/' class="post_tag button button_translucent">
           LINUX
-          <span class="button_tally">13</span>
+          <span class="button_tally">14</span>
         </a>
         
         <a href='https://mohdur.github.io/tags/shell/' class="post_tag button button_translucent">
@@ -1103,6 +1132,11 @@ Na razie w wersji 7.1beta2 nie ma możliwości …</p>
           <span class="button_tally">2</span>
         </a>
         
+        <a href='https://mohdur.github.io/tags/samba/' class="post_tag button button_translucent">
+          SAMBA
+          <span class="button_tally">2</span>
+        </a>
+        
         <a href='https://mohdur.github.io/tags/sprz%C4%99t/' class="post_tag button button_translucent">
           SPRZĘT
           <span class="button_tally">2</span>
@@ -1110,11 +1144,6 @@ Na razie w wersji 7.1beta2 nie ma możliwości …</p>
         
         <a href='https://mohdur.github.io/tags/firewall/' class="post_tag button button_translucent">
           FIREWALL
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='https://mohdur.github.io/tags/git/' class="post_tag button button_translucent">
-          GIT
           <span class="button_tally">1</span>
         </a>
         
@@ -1144,7 +1173,7 @@ Na razie w wersji 7.1beta2 nie ma możliwości …</p>
             </a>
             
             
-            <a href='https://mohdur.github.io/tags/linux/' class=" post_tag button button_translucent" data-position=13>LINUX<span class="button_tally">13</span>
+            <a href='https://mohdur.github.io/tags/linux/' class=" post_tag button button_translucent" data-position=14>LINUX<span class="button_tally">14</span>
             </a>
             
             
@@ -1184,7 +1213,7 @@ Na razie w wersji 7.1beta2 nie ma możliwości …</p>
             </a>
             
             
-            <a href='https://mohdur.github.io/tags/samba/' class=" post_tag button button_translucent" data-position=1>SAMBA<span class="button_tally">1</span>
+            <a href='https://mohdur.github.io/tags/samba/' class=" post_tag button button_translucent" data-position=2>SAMBA<span class="button_tally">2</span>
             </a>
             
             
