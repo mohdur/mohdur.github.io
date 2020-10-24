@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SMTP on MOHDUR</title>
+    <link>https://mohdur.github.io/tags/smtp/</link>
+    <description>Recent content in SMTP on MOHDUR</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 24 Oct 2020 19:48:57 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/smtp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Wysyłanie wiadomość za pomocą GMail i Python 3</title>
+      <link>https://mohdur.github.io/post/wysy%C5%82anie-wiadomo%C5%9B%C4%87-za-pomoc%C4%85-gmail-i-python-3/</link>
+      <pubDate>Sat, 24 Oct 2020 19:48:57 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/wysy%C5%82anie-wiadomo%C5%9B%C4%87-za-pomoc%C4%85-gmail-i-python-3/</guid>
+      <description>Wiadomości można wysyłać po utworzeniu hasła aplikacji lub zezwolenie na mniej bezpieczne logowanie w poczcie GMail.
+Skrypt wymaga biblioteki SMTPEmail
+1$ pip3 install smtpemail --user 1#!/usr/bin/env python3 2# coding=utf-8 3 4# File Name : mail.py 5# Creation Date : 2019-03-07 23:37:09 6# Last Modified : 2019-03-07 23:48:29 7 8 9import smtplib 10import ssl 11from email.mime.text import MIMEText 12from email.utils import COMMASPACE, formatdate 13 14smtp_server = &amp;#39;smtp.gmail.com&amp;#39; 15port = 587 16fromaddr = &amp;#34;user@gmail.</description>
+    </item>
+    
+  </channel>
+</rss>
