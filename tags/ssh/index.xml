@@ -5,7 +5,17 @@
     <link>https://mohdur.github.io/tags/ssh/</link>
     <description>Recent content in SSH on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 22 Oct 2020 01:27:57 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 15:22:01 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Praca z klientem OpenSSH</title>
+      <link>https://mohdur.github.io/post/praca-z-klientem-openssh/</link>
+      <pubDate>Sat, 24 Oct 2020 15:22:01 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/praca-z-klientem-openssh/</guid>
+      <description>Nawiązanie połączenia ze zdalnym hostem 1ssh user@nazwa_serwera Autoryzacja za pomocą klucza Dwiema podstawowymi metodami autoryzacji do serwera SSH jest hasło oraz klucz prywatny. Dzięki pary kluczy to znaczy klucza prywatnego oraz klucza publicznego można zwiększyć bezpieczeństwo serwera SSH. Klucz publiczny można udostępniać publicznie i nie stanowi to zagrożenia, natomiast klucz prywatny należy zabezpieczyć dobrym hasłem i przechowywać go zdala od ciekawskich.
+Generowanie pary kluczy 1ssh-keygen 1usage: ssh-keygen [-q] [-b bits] [-t dsa | ecdsa | ed25519 | rsa] 2 [-N new_passphrase] [-C comment] [-f output_keyfile] 3 ssh-keygen -p [-P old_passphrase] [-N new_passphrase] [-f keyfile] 4 ssh-keygen -i [-m key_format] [-f input_keyfile] 5 ssh-keygen -e [-m key_format] [-f input_keyfile] 6 ssh-keygen -y [-f input_keyfile] 7 ssh-keygen -c [-P passphrase] [-C comment] [-f keyfile] 8 ssh-keygen -l [-v] [-E fingerprint_hash] [-f input_keyfile] 9 ssh-keygen -B [-f input_keyfile] 10 ssh-keygen -D pkcs11 11 ssh-keygen -F hostname [-f known_hosts_file] [-l] 12 ssh-keygen -H [-f known_hosts_file] 13 ssh-keygen -R hostname [-f known_hosts_file] 14 ssh-keygen -r hostname [-f input_keyfile] [-g] 15 ssh-keygen -G output_file [-v] [-b bits] [-M memory] [-S start_point] 16 ssh-keygen -T output_file -f input_file [-v] [-a rounds] [-J num_lines] 17 [-j start_line] [-K checkpt] [-W generator] 18 ssh-keygen -s ca_key -I certificate_identity [-h] [-U] 19 [-D pkcs11_provider] [-n principals] [-O option] 20 [-V validity_interval] [-z serial_number] file .</description>
+    </item>
+    
     <item>
       <title>Konfiguracja serwera OpenSSH</title>
       <link>https://mohdur.github.io/post/konfiguracja-serwera-openssh/</link>

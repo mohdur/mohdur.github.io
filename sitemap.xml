@@ -3,17 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://mohdur.github.io/post/komenda-if-w-skryptach-bash.md/</loc>
-    <lastmod>2020-10-24T15:16:13+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mohdur.github.io/</loc>
-    <lastmod>2020-10-24T15:16:13+02:00</lastmod>
+    <lastmod>2020-10-24T15:22:01+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://mohdur.github.io/post/</loc>
+    <lastmod>2020-10-24T15:22:01+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/praca-z-klientem-openssh/</loc>
+    <lastmod>2020-10-24T15:22:01+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/ssh/</loc>
+    <lastmod>2020-10-24T15:22:01+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/</loc>
+    <lastmod>2020-10-24T15:22:01+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/komenda-if-w-skryptach-bash.md/</loc>
     <lastmod>2020-10-24T15:16:13+02:00</lastmod>
   </url>
   
@@ -24,11 +39,6 @@
   
   <url>
     <loc>https://mohdur.github.io/tags/skrypty/</loc>
-    <lastmod>2020-10-24T15:16:13+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/</loc>
     <lastmod>2020-10-24T15:16:13+02:00</lastmod>
   </url>
   
@@ -234,11 +244,6 @@
   
   <url>
     <loc>https://mohdur.github.io/tags/selinux/</loc>
-    <lastmod>2020-10-22T01:27:57+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/ssh/</loc>
     <lastmod>2020-10-22T01:27:57+02:00</lastmod>
   </url>
   
