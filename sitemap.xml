@@ -3,32 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mohdur.github.io/post/ignorowanie-zamkni%C4%99cia-ekranu-laptopa/</loc>
+    <lastmod>2020-10-24T19:28:13+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/linux/</loc>
+    <lastmod>2020-10-24T19:28:13+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/</loc>
+    <lastmod>2020-10-24T19:28:13+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/</loc>
+    <lastmod>2020-10-24T19:28:13+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/sprz%C4%99t/</loc>
+    <lastmod>2020-10-24T19:28:13+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/</loc>
+    <lastmod>2020-10-24T19:28:13+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mohdur.github.io/post/easy-rsa-openvpn-2-4/</loc>
     <lastmod>2020-10-24T19:25:13+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mohdur.github.io/tags/linux/</loc>
-    <lastmod>2020-10-24T19:25:13+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/</loc>
-    <lastmod>2020-10-24T19:25:13+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/post/</loc>
-    <lastmod>2020-10-24T19:25:13+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mohdur.github.io/tags/security/</loc>
-    <lastmod>2020-10-24T19:25:13+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/</loc>
     <lastmod>2020-10-24T19:25:13+02:00</lastmod>
   </url>
   
@@ -179,11 +189,6 @@
   
   <url>
     <loc>https://mohdur.github.io/post/polska-klawiatura-i-polonizacja-w-arch-linux/</loc>
-    <lastmod>2020-10-24T16:28:26+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/sprz%C4%99t/</loc>
     <lastmod>2020-10-24T16:28:26+02:00</lastmod>
   </url>
   

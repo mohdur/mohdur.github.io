@@ -5,7 +5,20 @@
     <link>https://mohdur.github.io/</link>
     <description>Recent content on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 19:25:13 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 19:28:13 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ignorowanie zamknięcia ekranu laptopa</title>
+      <link>https://mohdur.github.io/post/ignorowanie-zamkni%C4%99cia-ekranu-laptopa/</link>
+      <pubDate>Sat, 24 Oct 2020 19:28:13 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/ignorowanie-zamkni%C4%99cia-ekranu-laptopa/</guid>
+      <description>Standardowo przy zamknięciu klapy laptopa system przechodzi w stan uśpienia.
+Żeby zapobiec uśpienia systemu należy w pliku /etc/systemd/logind.conf odnaleść wpis: #HandleLidSwitch=suspend i usunąć znak #, następnie zmienić słowo suspend na ignore
+Tak powinien wyglądać prawidłowy wpis w pliku /etc/systemd/logind.conf
+1HandleLidSwitch=ignore Teraz pozostało zrestartować usługę systemd-logind, restart usługi spowoduje zamknięcie wszystkich programów i wylogowanie się z bieżącej sesji.
+1sudo systemctl restart systemd-logind Z uwagi na to że modyfikacji zachowania systemu, wiąże się z każdorazowym zamknięciem bieżącej sesji, nie jest to idealne rozwiązanie.</description>
+    </item>
+    
     <item>
       <title>Easy RSA i OpenVPN 2.4</title>
       <link>https://mohdur.github.io/post/easy-rsa-openvpn-2-4/</link>

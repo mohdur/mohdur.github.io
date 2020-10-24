@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" data-figures="true" class="page" data-mode="dim">
   <head>
-<title>Vim Otworzenie Pliku Pod Kursorem | MOHDUR</title>
+<title>Ignorowanie zamknięcia ekranu laptopa | MOHDUR</title>
 <meta charset="utf-8">
 <meta name="generator" content="Hugo 0.76.4" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -10,13 +10,13 @@
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="Article description.">
+<meta name="description" content="Ignorowanie zamknięcia ekranu laptopa">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="Vim Otworzenie Pliku Pod Kursorem" />
-<meta property="og:url" content="https://mohdur.github.io/post/vim-otworzenie-pliku-pod-kursorem/" />
-<meta property="og:title" content="Vim Otworzenie Pliku Pod Kursorem" />
-<meta property="og:description" content="Article description." />
+<meta name="twitter:title" content="Ignorowanie zamknięcia ekranu laptopa" />
+<meta property="og:url" content="https://mohdur.github.io/post/ignorowanie-zamkni%C4%99cia-ekranu-laptopa/" />
+<meta property="og:title" content="Ignorowanie zamknięcia ekranu laptopa" />
+<meta property="og:description" content="Ignorowanie zamknięcia ekranu laptopa" />
 <meta property="og:image" content="https://mohdur.github.io/images/thumbnail.png" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://mohdur.github.io/icons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://mohdur.github.io/icons/favicon-32x32.png'>
@@ -25,7 +25,7 @@
 <meta name="msapplication-TileColor" content="#002538">
 <meta name="theme-color" content="#002538">
 
-<link rel="canonical" href="https://mohdur.github.io/post/vim-otworzenie-pliku-pod-kursorem/">
+<link rel="canonical" href="https://mohdur.github.io/post/ignorowanie-zamkni%C4%99cia-ekranu-laptopa/">
 
     
 
@@ -100,25 +100,27 @@
   
 <div class="grid-inverse wrap content">
   <article class="post_content">
-    <h1 class="post_title">Vim Otworzenie Pliku Pod Kursorem</h1><div class="post_meta">
+    <h1 class="post_title">Ignorowanie zamknięcia ekranu laptopa</h1><div class="post_meta">
   <svg class="icon">
   <use xlink:href="#calendar"></use>
 </svg>
   <span class="post_date">
     Oct 24, 2020</span>
-    <a href='https://mohdur.github.io/tags/vim' class="post_tag button button_translucent">Vim
+    <a href='https://mohdur.github.io/tags/linux' class="post_tag button button_translucent">Linux
+    </a>
+    <a href='https://mohdur.github.io/tags/sprz%C4%99t' class="post_tag button button_translucent">Sprzęt
     </a>
 </div>
 
     
 <div class="post_share">
   Share on:
-  <a href="https://twitter.com/intent/tweet?text=Vim%20Otworzenie%20Pliku%20Pod%20Kursorem&url=https%3a%2f%2fmohdur.github.io%2fpost%2fvim-otworzenie-pliku-pod-kursorem%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
+  <a href="https://twitter.com/intent/tweet?text=Ignorowanie%20zamkni%c4%99cia%20ekranu%20laptopa&url=https%3a%2f%2fmohdur.github.io%2fpost%2fignorowanie-zamkni%25C4%2599cia-ekranu-laptopa%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#twitter"></use>
 </svg>
   </a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fvim-otworzenie-pliku-pod-kursorem%2f&t=Vim%20Otworzenie%20Pliku%20Pod%20Kursorem" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fignorowanie-zamkni%25C4%2599cia-ekranu-laptopa%2f&t=Ignorowanie%20zamkni%c4%99cia%20ekranu%20laptopa" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#facebook"></use>
 </svg>
@@ -128,7 +130,7 @@
   <use xlink:href="#linkedin"></use>
 </svg>
   </a>
-  <a href="https://mohdur.github.io/post/vim-otworzenie-pliku-pod-kursorem/" title="Copy Link" class="link link_yank">
+  <a href="https://mohdur.github.io/post/ignorowanie-zamkni%C4%99cia-ekranu-laptopa/" title="Copy Link" class="link link_yank">
     <svg class="icon">
   <use xlink:href="#copy"></use>
 </svg>
@@ -136,11 +138,85 @@
 </div>
 
     
-    <p>Przykład:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>/home/user/.bashrc
-</code></pre></div><p>Najerzdżając kursorem na nazwę pliku wciskamy skrót <code>gf</code> co otworzy plik w
-nowym buforze.</p>
-
+    <p>Standardowo przy zamknięciu klapy laptopa system przechodzi w stan uśpienia.</p>
+<p>Żeby zapobiec uśpienia systemu należy w pliku <code>/etc/systemd/logind.conf</code>
+odnaleść wpis: <code>#HandleLidSwitch=suspend</code> i usunąć znak <code>#</code>, następnie zmienić
+słowo <code>suspend</code> na <code>ignore</code></p>
+<p>Tak powinien wyglądać prawidłowy wpis w pliku <code>/etc/systemd/logind.conf</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>HandleLidSwitch=ignore
+</code></pre></div><p>Teraz pozostało zrestartować usługę systemd-logind, restart usługi spowoduje
+zamknięcie wszystkich programów i wylogowanie się z bieżącej sesji.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sudo systemctl restart systemd-logind
+</code></pre></div><p>Z uwagi na to że modyfikacji zachowania systemu, wiąże się z każdorazowym
+zamknięciem bieżącej sesji, nie jest to idealne rozwiązanie. Dlatego posłużymy
+się <code>acpid</code>.</p>
+<p>Najpierw zainstalujemy <code>acpid</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sudo dnf install acpid
+</code></pre></div><p>Po instalacji trzeba skonfigurować reguły monitorowania zmiany stanu przycisku
+zamknięcia ekranu.</p>
+<p>W pliku <code>/etc/acpi/events/lm_lid</code> dodajemy</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>event=button/lid.*
+<span class="ln">2</span>action=https://mohdur.github.io/etc/acpi/actions/lid.sh
+</code></pre></div><p>ACPI będzie monitorował pliki w <code>/proc/acpi/button/lid/</code>, jeśli zauważy zmianę
+to uruchomi skrypt <code>/etc/acpi/actions/lid.sh</code>.</p>
+<p>Przykładowy skrypt <code>/etc/acpi/actions/lid.sh</code></p>
+<p>Skrypt jest przygotowany dla systemów gdzie jest uruchomiona jedna sesja XWindow,
+jeśli Twój system przewiduje więcej niż jedną sesję jednocześnie warto
+zainteresować się poleceniem <code>loginctl list-sessions</code> oraz
+<code>loginctl show session #sesji</code>. Można też skorzystać z przykładowego skryptu
+<code>/etc/acpi/actions/power.sh</code>, w którym są użyte oba polecenia.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="cp">#!/usr/bin/env bash
+</span><span class="ln"> 2</span><span class="cp"></span>
+<span class="ln"> 3</span><span class="nv">USERNAME</span><span class="o">=</span>user
+<span class="ln"> 4</span>
+<span class="ln"> 5</span>grep -q closed /proc/acpi/button/lid/LID/state
+<span class="ln"> 6</span><span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> <span class="o">=</span> <span class="m">0</span> <span class="o">]</span>
+<span class="ln"> 7</span><span class="k">then</span>
+<span class="ln"> 8</span>    grep <span class="m">1</span> /home/<span class="nv">$USERNAME</span>/.config/suspend.conf
+<span class="ln"> 9</span>    <span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> <span class="o">=</span> <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<span class="ln">10</span>        systemctl <span class="nb">suspend</span>
+<span class="ln">11</span>    <span class="k">fi</span>
+<span class="ln">12</span><span class="k">fi</span>
+</code></pre></div><p>Skrypt przy uruchomieniu sprawdza czy ekran został zamknięty oraz wartość <code>[0|1]</code>
+w pliku <code>/home/$USERNAME/.config/suspend.conf</code> dla wartości <code>1</code> po zamknięciu
+ekranu system przejdzie w tryb suspend dla wartości <code>0</code> system działa dalej bez
+uśpienia.</p>
+<p>Teraz należy uruchomić <code>acpid</code>, tutaj jedna uwaga, w systemie Fedora po
+uruchomieniu <code>acpid</code> jako usługa, <code>acpid</code> nie monitoruje zmian prawidłowo,
+jednak jeśli uruchomimy <code>acpid</code> przy starcie sesji XWindow monitorowanie
+zmian działa prawidłowo.</p>
+<p>Dla i3 wm w pliku konfiguracyjnym dodajemy wpis:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>exec --no-startup-id sudo /uar/sbin/acpid
+</code></pre></div><p>Należy pamiętać żeby dostosować <code>sudo</code> do uruchamiania <code>/usr/sbin/acpid</code> bez
+hasła.</p>
+<p>No tak, ale może zamist grzebać w plikach, lepiej wykorzystać rofi do wprowadzania
+zmian wartości w pliku <code>.config/suspend.conf</code>. Skrypt umieścimy w <code>~/bin/menu</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="cp">#!/usr/bin/env bash
+</span><span class="ln"> 2</span><span class="cp"></span>
+<span class="ln"> 3</span><span class="nv">menu</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> -e <span class="s2">&#34;Ignoruj zamknięcie ekranu\nUśpij po zamknięciu ekranu\nMonitor Off\nEdit Menu&#34;</span> <span class="se">\
+</span><span class="ln"> 4</span><span class="se"></span>    <span class="p">|</span> rofi -lines <span class="m">19</span> -dmenu -i -p <span class="s2">&#34;Wybierz coś&#34;</span><span class="k">)</span>
+<span class="ln"> 5</span>
+<span class="ln"> 6</span><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Edit Menu&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<span class="ln"> 7</span>    st -e vim ~/bin/menu
+<span class="ln"> 8</span><span class="k">fi</span>
+<span class="ln"> 9</span>
+<span class="ln">10</span><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Monitor Off&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<span class="ln">11</span>    notify-send <span class="s2">&#34;Za kilka chwil wyłączę monitor...&#34;</span>
+<span class="ln">12</span>    sleep <span class="m">1</span>
+<span class="ln">13</span>    xset dpms force <span class="o">[[</span>off<span class="o">]]</span>
+<span class="ln">14</span><span class="k">fi</span>
+<span class="ln">15</span>
+<span class="ln">16</span><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Ignoruj zamknięcie ekranu&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<span class="ln">17</span>    <span class="nb">echo</span> <span class="m">0</span> &gt; ~/.config/suspend.conf
+<span class="ln">18</span><span class="k">fi</span>
+<span class="ln">19</span>
+<span class="ln">20</span><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Uśpij po zamknięciu ekranu&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<span class="ln">21</span>    <span class="nb">echo</span> <span class="m">1</span> &gt; ~/.config/suspend.conf
+<span class="ln">22</span><span class="k">fi</span>
+</code></pre></div><p>Jeśli używasz i3 WM, to można dodać skrót klawiszowy do uruchomienia menu, w pliku
+<code>.config/i3/config</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$mod+m  exec ~/bin/menu
+</code></pre></div>
     
       <div id="disqus_thread"></div>
 <script type="application/javascript">
@@ -174,9 +250,6 @@ nowym buforze.</p>
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
       <li>
-        <a href="https://mohdur.github.io/post/ignorowanie-zamkni%C4%99cia-ekranu-laptopa/" class="nav-link">Ignorowanie zamknięcia ekranu laptopa</a>
-      </li>
-      <li>
         <a href="https://mohdur.github.io/post/easy-rsa-openvpn-2-4/" class="nav-link">Easy RSA i OpenVPN 2.4</a>
       </li>
       <li>
@@ -190,6 +263,9 @@ nowym buforze.</p>
       </li>
       <li>
         <a href="https://mohdur.github.io/post/vim-r%C3%B3%C5%BCno%C5%9Bci/" class="nav-link">Vim Różności</a>
+      </li>
+      <li>
+        <a href="https://mohdur.github.io/post/vim-otworzenie-pliku-pod-kursorem/" class="nav-link">Vim Otworzenie Pliku Pod Kursorem</a>
       </li>
       <li>
         <a href="https://mohdur.github.io/post/generowanie-hase%C5%82/" class="nav-link">Generowanie haseł</a>
