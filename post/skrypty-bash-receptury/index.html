@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" data-figures="true" class="page" data-mode="dim">
   <head>
-<title>Generowanie liczb losowych | MOHDUR</title>
+<title>Skrypty BASH receptury | MOHDUR</title>
 <meta charset="utf-8">
 <meta name="generator" content="Hugo 0.76.4" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -10,13 +10,13 @@
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="Generowanie liczb losowych">
+<meta name="description" content="Skrypty BASH receptury">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="Generowanie liczb losowych" />
-<meta property="og:url" content="https://mohdur.github.io/post/generowanie-liczb-losowych/" />
-<meta property="og:title" content="Generowanie liczb losowych" />
-<meta property="og:description" content="Generowanie liczb losowych" />
+<meta name="twitter:title" content="Skrypty BASH receptury" />
+<meta property="og:url" content="https://mohdur.github.io/post/skrypty-bash-receptury/" />
+<meta property="og:title" content="Skrypty BASH receptury" />
+<meta property="og:description" content="Skrypty BASH receptury" />
 <meta property="og:image" content="https://mohdur.github.io/images/thumbnail.png" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://mohdur.github.io/icons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://mohdur.github.io/icons/favicon-32x32.png'>
@@ -25,7 +25,7 @@
 <meta name="msapplication-TileColor" content="#002538">
 <meta name="theme-color" content="#002538">
 
-<link rel="canonical" href="https://mohdur.github.io/post/generowanie-liczb-losowych/">
+<link rel="canonical" href="https://mohdur.github.io/post/skrypty-bash-receptury/">
 
     
 
@@ -44,7 +44,7 @@
     
     
   
-  <body data-code="10" data-lines="false" id="documentTop">
+  <body data-code="20" data-lines="false" id="documentTop">
 
 <header class="nav_header" >
   <nav class="nav">
@@ -100,27 +100,27 @@
   
 <div class="grid-inverse wrap content">
   <article class="post_content">
-    <h1 class="post_title">Generowanie liczb losowych</h1><div class="post_meta">
+    <h1 class="post_title">Skrypty BASH receptury</h1><div class="post_meta">
   <svg class="icon">
   <use xlink:href="#calendar"></use>
 </svg>
   <span class="post_date">
-    Oct 22, 2020</span>
+    Oct 24, 2020</span>
     <a href='https://mohdur.github.io/tags/shell' class="post_tag button button_translucent">Shell
     </a>
-    <a href='https://mohdur.github.io/tags/linux' class="post_tag button button_translucent">Linux
+    <a href='https://mohdur.github.io/tags/skrypty' class="post_tag button button_translucent">Skrypty
     </a>
 </div>
 
     
 <div class="post_share">
   Share on:
-  <a href="https://twitter.com/intent/tweet?text=Generowanie%20liczb%20losowych&url=https%3a%2f%2fmohdur.github.io%2fpost%2fgenerowanie-liczb-losowych%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
+  <a href="https://twitter.com/intent/tweet?text=Skrypty%20BASH%20receptury&url=https%3a%2f%2fmohdur.github.io%2fpost%2fskrypty-bash-receptury%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#twitter"></use>
 </svg>
   </a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fgenerowanie-liczb-losowych%2f&t=Generowanie%20liczb%20losowych" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fskrypty-bash-receptury%2f&t=Skrypty%20BASH%20receptury" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#facebook"></use>
 </svg>
@@ -130,7 +130,7 @@
   <use xlink:href="#linkedin"></use>
 </svg>
   </a>
-  <a href="https://mohdur.github.io/post/generowanie-liczb-losowych/" title="Copy Link" class="link link_yank">
+  <a href="https://mohdur.github.io/post/skrypty-bash-receptury/" title="Copy Link" class="link link_yank">
     <svg class="icon">
   <use xlink:href="#copy"></use>
 </svg>
@@ -138,9 +138,172 @@
 </div>
 
     
-    <h1 id="wygenerowanie-liczby-losowej-o-określonej-długości">Wygenerowanie liczby losowej o określonej długości</h1>
-<p>W tym wypadku jest to 20 cyfr</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>&lt; /dev/urandom | tr -cd &#39;[:digit:]&#39; | head -c20; echo
+    <h2 id="sprawdzenie-daty-ostatniej-modyfikaji-pliku">Sprawdzenie daty ostatniej modyfikaji pliku</h2>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ date -r nazwa_pliku.txt
+<span class="ln">2</span>Fri 19 Apr 2019 08:41:11 AM CEST
+</code></pre></div><p>Do wyświetlenia możemy użyć standardowego formatowania polecenia <code>data</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ date -r nazwa_pliku.txt &#34;+%F %s&#34;
+<span class="ln">2</span>2019-04-19 1555656071
+</code></pre></div><h2 id="działania-arytmetyczne-na-datach">Działania arytmetyczne na datach</h2>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>date_-d_&#34;09/27/2019_08:53:52_AM_CEST_+2_days_+2_hours&#34;_&#34;+%F_%T&#34;
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>date_-d_&#34;Tue_22_Oct_2019_08:53:52_AM_CEST_+2_days_+2_hours&#34;_&#34;+%F_%T&#34;
+</code></pre></div><h2 id="argumenty-wywołania-skryptu">Argumenty wywołania skryptu</h2>
+<table>
+<thead>
+<tr>
+<th>Identyfikator wywołania</th>
+<th>Opis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$0</code></td>
+<td>Nazwa skryptu</td>
+</tr>
+<tr>
+<td><code>$1</code>, <code>$2</code>, ...</td>
+<td>Kolejne argumenty przekazane do skryptu</td>
+</tr>
+<tr>
+<td><code>$#</code></td>
+<td>Liczba argumentów przekazanych do skryptu</td>
+</tr>
+<tr>
+<td><code>$@</code>, <code>$*</code></td>
+<td>Wszystkie argumenty przekazane do skryptu</td>
+</tr>
+</tbody>
+</table>
+<p>Przykłady:</p>
+<p>Wyświetlenie katalogu w którym znajduje się skrypt</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>dirname $(readlink -f $0)
+</code></pre></div><h2 id="porównanie-dwoch-ciągów-znaków">Porównanie dwoch ciągów znaków</h2>
+<p>Tutaj sprawdzenie czy wynik polecenia <code>type ls</code> zawiera słowo <code>alias</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="k">if</span> <span class="o">[[</span> <span class="k">$(</span><span class="nb">type</span> ls<span class="k">)</span> <span class="o">==</span> *<span class="s2">&#34;alias&#34;</span>* <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+<span class="ln">2</span>  <span class="nb">echo</span> <span class="nb">alias</span>
+<span class="ln">3</span><span class="k">fi</span>
+</code></pre></div><h2 id="wywołanie-konkretnej-funkcji-w-zależności-od-nazwy-skryptu">Wywołanie konkretnej funkcji w zależności od nazwy skryptu</h2>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="k">case</span> <span class="k">$(</span>basename <span class="nv">$0</span><span class="k">)</span> in
+<span class="ln"> 2</span>  bc2sd.mount<span class="o">)</span>
+<span class="ln"> 3</span>    mount_sd
+<span class="ln"> 4</span>    <span class="p">;;</span>
+<span class="ln"> 5</span>  bc2sd.umount<span class="o">)</span>
+<span class="ln"> 6</span>    umount_sd
+<span class="ln"> 7</span>    <span class="p">;;</span>
+<span class="ln"> 8</span>  bc2sd.include<span class="p">|</span>bc2sd.inc<span class="o">)</span>
+<span class="ln"> 9</span>    backup_sd include
+<span class="ln">10</span>    <span class="p">;;</span>
+<span class="ln">11</span>  bc2sd.exclude<span class="p">|</span>bc2sd.exc<span class="o">)</span>
+<span class="ln">12</span>    backup2sd exclude
+<span class="ln">13</span>    <span class="p">;;</span>
+<span class="ln">14</span>  bc2sd<span class="p">|</span>backup2sd<span class="p">|</span>backup2sd.sh<span class="o">)</span>
+<span class="ln">15</span>    run
+<span class="ln">16</span>    <span class="p">;;</span>
+<span class="ln">17</span><span class="k">esac</span>
+</code></pre></div><h2 id="usunięcie-rozszerzenia-pliku">Usunięcie rozszerzenia pliku</h2>
+<p>Polecenie <code>find</code> wyszukuje wszystkich plików w katalogu <code>~/.password-store/otp/</code> a następnie
+wyświetla znalezione pliki usuwając rozszerzenie <code>.gpg</code>. Polecenie wyświetla wyłącznie
+nazwę pliku.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>find ~/.password-store/otp/ -name &#34;.gpg&#34; -exec basename {} .gpg \;
+</code></pre></div><p>Wersja wyświetlająca pełną ścieżkę pliku</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>find ~/.password-store -name &#34;*.gpg&#34; -exec sh -c &#39;printf &#34;%s\n&#34; &#34;${0%.*}&#34;&#39; {} \;
+</code></pre></div><p>Ten sam efekt uzyskamy za pomocą komendy <code>sed</code>, pytanie co łatwiej zapamiętać :D</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>find ~/.password-store -type f -iname &#34;*.gpg&#34; | sed &#39;s/\.gpg$//1&#39;
+</code></pre></div><h2 id="rozszerzenie-i-nazwa-pliku-bez-rozszerzenia">Rozszerzenie i nazwa pliku bez rozszerzenia</h2>
+<p>Nazwa pliku</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>file=~/bin/backup2sd.config
+<span class="ln">2</span>echo ${file%.*}
+<span class="ln">3</span>&gt;&gt;&gt; /home/user/bin/backup2sd
+</code></pre></div><p>inny przykład</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>file=backup2sd.config
+<span class="ln">2</span>echo ${file%.*}
+<span class="ln">3</span>&gt;&gt;&gt; backup2sd
+</code></pre></div><p>Rozszerzenie pliku</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>file=~/bin/backup2sd.config
+<span class="ln">2</span>echo ${file##*.}
+<span class="ln">3</span>&gt;&gt;&gt; config
+</code></pre></div><h2 id="wyszukanie-plików-rekursywnie">Wyszukanie plików rekursywnie</h2>
+<p>Wyszukanie plików z rozszerzeniem <code>*.md</code> w bieżącej lokalizacji</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>find $PWD -type f -name &#34;*.md&#34;
+</code></pre></div><p>Wersja bez użycia parametru <code>-name</code></p>
+<p>Zapis <code>/*/</code> określa że w danej ścieżce bedą przetwarzane wszystkie podkatalogi, polecenie
+wyświetla pełną ścieżkę pliku np. <code>/home/user/.passord-store/email@example.pl</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>find ~/.password-store/*/*.gpg -type f
+</code></pre></div><h2 id="data-w-formacie-iso">Data w formacie ISO</h2>
+<p>Wyświetlenie daty w formacie YYYY-MM-DD</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>date +%F
+</code></pre></div><h2 id="warunkowe-utworzenie-katalogu">Warunkowe utworzenie katalogu</h2>
+<p>Polecenie <code>mkdir</code> zostaje wykonane jeśli podany katalog nie istnieje</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="nv">DATE</span><span class="o">=</span><span class="k">$(</span>date +%y%m%d<span class="k">)</span>
+<span class="ln">2</span><span class="o">[</span> -d /mnt/nfs/sarg/<span class="nv">$DATE</span> <span class="o">]</span> <span class="o">||</span> mkdir /mnt/nfs/sarg/<span class="nv">$DATE</span>
+</code></pre></div><h2 id="sprawdzenie-czy-użytkownikiem-wykonującym-skrypt-jest-root">Sprawdzenie czy użytkownikiem wykonującym skrypt jest root</h2>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="k">if</span> <span class="o">[[</span> <span class="nv">$EUID</span> -ne <span class="m">0</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+<span class="ln">2</span>  <span class="nb">echo</span> <span class="s2">&#34;Skrypt musi być uruchomiony z uprawnieniami użytkownika root&#34;</span> 1&gt;<span class="p">&amp;</span><span class="m">2</span>
+<span class="ln">3</span>  <span class="nb">exit</span> <span class="m">1</span>
+<span class="ln">4</span><span class="k">fi</span>
+</code></pre></div><p>lub wersja sprawdzająca czy skrypt jest wykonany za pomocą <code>sudo</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="k">if</span> <span class="o">[</span> <span class="k">$(</span>id -u<span class="k">)</span> <span class="o">=</span> <span class="m">0</span> <span class="o">]</span>
+<span class="ln"> 2</span><span class="k">then</span>
+<span class="ln"> 3</span>  <span class="k">if</span> <span class="o">[</span> ! -z <span class="nv">$SUDO_COMMAND</span> <span class="o">]</span>
+<span class="ln"> 4</span>  <span class="k">then</span>
+<span class="ln"> 5</span>    <span class="nb">echo</span> <span class="s1">&#39;---                                   ---&#39;</span>
+<span class="ln"> 6</span>    <span class="nb">echo</span> Skrypt uruchomiony za pomocą komendy sudo
+<span class="ln"> 7</span>    <span class="nb">echo</span> Uruchom skrypt jako użytkownik root
+<span class="ln"> 8</span>    <span class="nb">echo</span> <span class="s1">&#39;---                                   ---&#39;</span>
+<span class="ln"> 9</span>    <span class="nb">exit</span> <span class="m">1</span>
+<span class="ln">10</span>  <span class="k">fi</span>
+<span class="ln">11</span><span class="k">else</span>
+<span class="ln">12</span>  <span class="nb">echo</span> <span class="s1">&#39;---                              ---&#39;</span>
+<span class="ln">13</span>  <span class="nb">echo</span> Uruchom skrypt jako użytkownik root!
+<span class="ln">14</span>  <span class="nb">echo</span> <span class="s1">&#39;---                              ---&#39;</span>
+<span class="ln">15</span>  <span class="nb">exit</span> <span class="m">1</span>
+<span class="ln">16</span><span class="k">fi</span>
+</code></pre></div><h2 id="wyszukiwanie-kilku-wyrażeń-na-raz">Wyszukiwanie kilku wyrażeń na raz</h2>
+<p>Komenda wyświetli wszystkie wiersze zawierające ls oraz ntfs</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>ls /bin | grep -e ls -e ntfs
+</code></pre></div><h2 id="usunięcie-starszych-plików-niż-x-dni">Usunięcie starszych plików niż X dni</h2>
+<p><strong>Uwaga polecenie usuwa pliki rekursywnie</strong></p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>find /home/user/tmp/* -mtime +14 -exec rm {} \;
+</code></pre></div><h2 id="zapisanie-wyniku-polecenia-do-pliku-oraz-wyświetlenie-na-ekranie">Zapisanie wyniku polecenia do pliku oraz wyświetlenie na ekranie</h2>
+<p>Przykład użycia polecenia tee</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>watch -n 15 &#39;skrypty/proc_temp.sh | tee -a cpu_temp.txt &amp;&amp; date | tee -a cpu_temp.txt&#39;
+</code></pre></div><p>Wynik:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>Sat Mar 26 17:05:49 UTC 2019
+<span class="ln">2</span>temp=38.5&#39;C
+</code></pre></div><p>Wersja zapisująca wynik dwóch poleceń do pliku w jednej linii.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>watch -n 15 &#34;echo -n &#39;$(date): &#39; | tee -a cpu_temp.txt &amp;&amp; skrypty/proc_temp.sh | tee -a cpu_temp.txt&#34;
+</code></pre></div><p>Wynik:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>Sat Mar 26 17:10:58 UTC 2019: temp=39.0&#39;C
+</code></pre></div><h2 id="sprawdzanie-zawartości-pliku">Sprawdzanie zawartości pliku</h2>
+<p>Często w plikach systemowych jest zapisywana tylko wartość 0 lub 1 aby sprawdzić tą wartość
+można wykonać następujący test. W tym przykładzie sprawdzana jest zawartość pliku test.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="k">if</span> <span class="o">[</span> <span class="k">$(</span>&lt; <span class="nb">test</span><span class="k">)</span> <span class="o">==</span> <span class="m">0</span> <span class="o">]</span>
+<span class="ln">2</span><span class="k">then</span>
+<span class="ln">3</span>    <span class="nb">echo</span> Wartosc <span class="m">0</span>
+<span class="ln">4</span><span class="k">else</span>
+<span class="ln">5</span>    <span class="nb">echo</span> Inna wartosc
+<span class="ln">6</span><span class="k">fi</span>
+</code></pre></div><h2 id="usunięcie-zawartości-pliku">Usunięcie zawartości pliku</h2>
+<p>Ten rodzaj komendy nie działa w ZSH, a raczej wymaga naciśnięcia <code>Ctrl-d</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>&gt; plik.txt
+</code></pre></div><p>lub dłuższa wersja, działa również w ZSH</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>:&gt; plik.txt
+</code></pre></div><p>Za pomocą komendy <code>&gt;</code> lub <code>:&gt;</code> możemy nie tylko wyczyścić zawartość pliku, ale również
+utworzymy nowy plik.</p>
+<h2 id="wyszukanie-ostatnio-edytowanych-plików">Wyszukanie ostatnio edytowanych plików</h2>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>find $HOME/git -type f -mtime -12 -mtime +3
+</code></pre></div><h2 id="listy---wyświetlanie-elementów-w-osobnych-liniach">Listy - wyświetlanie elementów w osobnych liniach</h2>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="nv">LISTA</span> <span class="o">=</span> <span class="o">(</span>
+<span class="ln"> 2</span>  <span class="nv">$HOME</span>/.aliases
+<span class="ln"> 3</span>  <span class="nv">$HOME</span>/.config/alacritty/alacritty.yml
+<span class="ln"> 4</span>  <span class="nv">$HOME</span>/.bashrc
+<span class="ln"> 5</span>  <span class="nv">$HOME</span>/.ssh/config
+<span class="ln"> 6</span><span class="o">)</span>
+<span class="ln"> 7</span>
+<span class="ln"> 8</span><span class="nv">ZMIENNA</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span> <span class="s1">&#39;%s\n&#39;</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">LISTA</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">|</span>fzf<span class="k">)</span>
+<span class="ln"> 9</span><span class="k">if</span> <span class="o">[</span> <span class="nv">$ZMIENNA</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<span class="ln">10</span>  vim <span class="nv">$ZMIENNA</span>
+<span class="ln">11</span><span class="k">fi</span>
 </code></pre></div>
     
       
@@ -155,9 +318,6 @@
     <a href='https://mohdur.github.io/about/' class="button mt-1" role="button">Read More</a>
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
-      <li>
-        <a href="https://mohdur.github.io/post/skrypty-bash-receptury/" class="nav-link">Skrypty BASH receptury</a>
-      </li>
       <li>
         <a href="https://mohdur.github.io/post/polecenie-grep-w-przyk%C5%82adach/" class="nav-link">Polecenie grep w przykładach</a>
       </li>
@@ -178,6 +338,9 @@
       </li>
       <li>
         <a href="https://mohdur.github.io/post/vim-lista-projekt%C3%B3w-i-fzf/" class="nav-link">Vim lista projektów i FZF</a>
+      </li>
+      <li>
+        <a href="https://mohdur.github.io/post/dodanie-konta-samba/" class="nav-link">Dodanie konta SAMBA</a>
       </li>
     </ul>
     <div>

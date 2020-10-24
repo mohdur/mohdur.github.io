@@ -3,27 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mohdur.github.io/</loc>
+    <lastmod>2020-10-24T13:20:08+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/</loc>
+    <lastmod>2020-10-24T13:20:08+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/shell/</loc>
+    <lastmod>2020-10-24T13:20:08+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/skrypty/</loc>
+    <lastmod>2020-10-24T13:20:08+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/skrypty-bash-receptury/</loc>
+    <lastmod>2020-10-24T13:20:08+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/</loc>
+    <lastmod>2020-10-24T13:20:08+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mohdur.github.io/tags/linux/</loc>
     <lastmod>2020-10-24T13:17:22+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mohdur.github.io/</loc>
-    <lastmod>2020-10-24T13:17:22+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mohdur.github.io/post/polecenie-grep-w-przyk%C5%82adach/</loc>
-    <lastmod>2020-10-24T13:17:22+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/post/</loc>
-    <lastmod>2020-10-24T13:17:22+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/</loc>
     <lastmod>2020-10-24T13:17:22+02:00</lastmod>
   </url>
   
@@ -34,11 +49,6 @@
   
   <url>
     <loc>https://mohdur.github.io/post/pod%C5%82%C4%85czenie-dysku-po-identyfikatorze-uuid/</loc>
-    <lastmod>2020-10-24T13:12:32+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/skrypty/</loc>
     <lastmod>2020-10-24T13:12:32+02:00</lastmod>
   </url>
   
@@ -89,11 +99,6 @@
   
   <url>
     <loc>https://mohdur.github.io/post/kompilacja-xurls/</loc>
-    <lastmod>2020-10-22T16:32:55+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/shell/</loc>
     <lastmod>2020-10-22T16:32:55+02:00</lastmod>
   </url>
   
