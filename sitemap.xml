@@ -4,12 +4,27 @@
   
   <url>
     <loc>https://mohdur.github.io/</loc>
-    <lastmod>2020-10-24T13:20:08+02:00</lastmod>
+    <lastmod>2020-10-24T13:41:24+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://mohdur.github.io/post/</loc>
-    <lastmod>2020-10-24T13:20:08+02:00</lastmod>
+    <lastmod>2020-10-24T13:41:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/</loc>
+    <lastmod>2020-10-24T13:41:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/vim/</loc>
+    <lastmod>2020-10-24T13:41:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/vim-dzia%C5%82ania-arytmetyczne/</loc>
+    <lastmod>2020-10-24T13:41:24+02:00</lastmod>
   </url>
   
   <url>
@@ -24,11 +39,6 @@
   
   <url>
     <loc>https://mohdur.github.io/post/skrypty-bash-receptury/</loc>
-    <lastmod>2020-10-24T13:20:08+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/</loc>
     <lastmod>2020-10-24T13:20:08+02:00</lastmod>
   </url>
   
@@ -70,11 +80,6 @@
   <url>
     <loc>https://mohdur.github.io/tags/sysadm/</loc>
     <lastmod>2020-10-23T01:24:53+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/vim/</loc>
-    <lastmod>2020-10-22T23:50:24+02:00</lastmod>
   </url>
   
   <url>
