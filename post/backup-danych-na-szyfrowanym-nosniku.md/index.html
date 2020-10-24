@@ -140,7 +140,27 @@
 </div>
 
     
-    <p>Parametry wywołania skryptu</p>
+    
+    <h2>Overview</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#skrypt-wykonujący-kopię-zapasową-na-szyfrowanym-nośniku">Skrypt wykonujący kopię zapasową na szyfrowanym nośniku</a></li>
+    <li><a href="#skrypt-formatujący-nośnik-z-obsługą-szyfrowania">Skrypt formatujący nośnik z obsługą szyfrowania</a></li>
+  </ul>
+</nav>
+    <h2 id="skrypt-wykonujący-kopię-zapasową-na-szyfrowanym-nośniku">Skrypt wykonujący kopię zapasową na szyfrowanym nośniku</h2>
+<p>Skrypt wykonuje kopię zapasową wybranych katalogów z pominięciem katalogów
+zawartych w pliku <code>/home/user/bin/backup2sd.exclude</code> który jest ustawiony
+w zmiennej <code>ExcludeFile</code>, każdy katalog znajduje się w oddzielnej linii.</p>
+<p>Przykładowy plik <code>/home/user/bin/backup2sd.exclude</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>.Private
+<span class="ln">2</span>.PyCharmCE2017.3
+<span class="ln">3</span>.cmake
+<span class="ln">4</span>.cache
+<span class="ln">5</span>.dbus
+<span class="ln">6</span>.ecryptfs
+<span class="ln">7</span>.gimp-2.8
+</code></pre></div><p>Parametry wywołania skryptu</p>
 <ul>
 <li><code>-m</code> - podmontowanie nośnika</li>
 <li><code>-u</code> - odmontowanie nośnika</li>
@@ -277,6 +297,25 @@
 <span class="ln">127</span>    backup_sd
 <span class="ln">128</span>    <span class="p">;;</span>
 <span class="ln">129</span><span class="k">esac</span>
+</code></pre></div><h2 id="skrypt-formatujący-nośnik-z-obsługą-szyfrowania">Skrypt formatujący nośnik z obsługą szyfrowania</h2>
+<p>Skrypty używają jako nośnika kopii zapasowej karty SD: <code>/dev/mmcblk30</code>, jest
+on ustawiony w parametrze <code>Device</code> należy zmienić na właściwy dla swojego
+systemu.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="cp">#!/bin/bash
+</span><span class="ln"> 2</span><span class="cp"></span>
+<span class="ln"> 3</span><span class="nv">CryptoName</span><span class="o">=</span>CryptoSD
+<span class="ln"> 4</span><span class="nv">Device</span><span class="o">=</span>/dev/mmcblk30
+<span class="ln"> 5</span>
+<span class="ln"> 6</span><span class="k">if</span> <span class="o">[[</span> <span class="nv">$EUID</span> -ne <span class="m">0</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+<span class="ln"> 7</span>  <span class="nb">echo</span> <span class="s2">&#34;This program must be run as root&#34;</span> 1&gt;<span class="p">&amp;</span><span class="m">2</span>
+<span class="ln"> 8</span>  <span class="nb">exit</span> <span class="m">1</span>
+<span class="ln"> 9</span><span class="k">fi</span>
+<span class="ln">10</span>
+<span class="ln">11</span>cryptsetup luksFormat -s <span class="m">512</span> -h sha512 -i <span class="m">333</span> <span class="nv">$Device</span>
+<span class="ln">12</span>cryptsetup luksOpen <span class="nv">$Device</span> <span class="nv">$CryptoName</span>
+<span class="ln">13</span>mkfs.ext4 /dev/mapper/<span class="nv">$CryptoName</span>
+<span class="ln">14</span>sleep <span class="m">3</span>
+<span class="ln">15</span>cryptsetup close <span class="nv">$CryptoName</span>
 </code></pre></div>
     
       
