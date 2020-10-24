@@ -24,7 +24,7 @@
       <guid>https://mohdur.github.io/post/skrypt-u%C5%82atwiaj%C4%85cy-prac%C4%99-z-pluginem-vimwiki-i-dziennikiem/</guid>
       <description>Skrypt zainspirowany https://github.com/nickjj/notes/blob/master/notes
 Wymagania:  ripgrep skim (sk) fzf preview.sh część pluginu fzf.vim https://github.com/junegunn/fzf.vim/blob/master/bin/preview.sh vim plugin Vimwiki xclip  Opis użycia: W przypadku wyszukiwania z użyciem parametrów -s i -f, istnieje skrót Ctrl+p, który uruchamia skrypt preview.sh, służący do podglądania szukanych notatek. Skrypt preview.sh jest częścią pluginu fzf.vim.
-   1$ notes treść notatki -- dodaje treść notatki z wiersza poleceń 2$ xclip -o | notes -- wkleja zawartość schowka do notatki 3$ notes -- otwiera w edytorze dzisiejszą notatkę 4$ notes -s -- przeszukuje wszystkie notatek w $NOTES_DIRECTORY 5$ notes -f -- wyszukuje plików w $NOTES_DIRECTORY 6$ notes -d -- usuwa dzisiejszy notes 7$ notes -g -- generuje INDEKS dziennika $NOTES_DIARY_INDEX 8$ notes -i -- przechodzi do edycji $NOTES_DIARY_INDEX 1#!</description>
+1$ notes treść notatki -- dodaje treść notatki z wiersza poleceń 2$ xclip -o | notes -- wkleja zawartość schowka do notatki 3$ notes -- otwiera w edytorze dzisiejszą notatkę 4$ notes -s -- przeszukuje wszystkie notatek w $NOTES_DIRECTORY 5$ notes -f -- wyszukuje plików w $NOTES_DIRECTORY 6$ notes -d -- usuwa dzisiejszy notes 7$ notes -g -- generuje INDEKS dziennika $NOTES_DIARY_INDEX 8$ notes -i -- przechodzi do edycji $NOTES_DIARY_INDEX 1#!</description>
     </item>
     
     <item>
