@@ -5,7 +5,19 @@
     <link>https://mohdur.github.io/tags/security/</link>
     <description>Recent content in Security on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 18:08:03 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 19:25:13 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Easy RSA i OpenVPN 2.4</title>
+      <link>https://mohdur.github.io/post/easy-rsa-openvpn-2-4/</link>
+      <pubDate>Sat, 24 Oct 2020 19:25:13 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/easy-rsa-openvpn-2-4/</guid>
+      <description>Easy RSA 3 jest ciutkę inne od jego poprzednich wersji, powinieneś to przejść bez większych problemów.
+Zaczynamy od pobrania ostatniej wersji https://github.com/OpenVPN/easy-rsa/releases
+1# cd /etc/openvpn 2# tar zxvf EASY_RSA.tar.gz 3# cd Easy_RSA Skrypt tworzący CA Pierwszy skrypt 01_init tworzy CA
+1#!/bin/bash 2 3if [ $# -ne 1 ]; then 4 echo Podaj jako parametr nazwę certyfikatu dla serwera np. nazwę DNS lub adres IP. 5 exit 6fi 7 8echo Inicjuje PKI 9.</description>
+    </item>
+    
     <item>
       <title>Generowanie haseł</title>
       <link>https://mohdur.github.io/post/generowanie-hase%C5%82/</link>
