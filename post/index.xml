@@ -5,7 +5,18 @@
     <link>https://mohdur.github.io/post/</link>
     <description>Recent content in Posts on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 23 Oct 2020 01:30:07 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 13:12:32 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Podłączenie dysku po identyfikatorze UUID</title>
+      <link>https://mohdur.github.io/post/pod%C5%82%C4%85czenie-dysku-po-identyfikatorze-uuid/</link>
+      <pubDate>Sat, 24 Oct 2020 13:12:32 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/pod%C5%82%C4%85czenie-dysku-po-identyfikatorze-uuid/</guid>
+      <description>Skrypt montujący dysk po identyfikatorze UUID.
+Uzyskanie identyfikatora UUID dysku /dev/sdb1
+1# blkid /dev/sdb1 2/dev/sdb1: UUID=&amp;#34;359d90df-f17a-42f6-ab13-df13bf356de7&amp;#34; TYPE=&amp;#34;ext4&amp;#34; PARTUUID=&amp;#34;2a01&amp;#34; 1#!/bin/bash 2 3# przykładowy wpis w /etc/fstab 4# echo &amp;#34;UUID=359d90df-f17a-42f6-ab13-df13bf356de7 /disk2 ext4 errors=remount-ro 0 1&amp;#34; &amp;gt;&amp;gt; /etc/fstab 5 6BLKID=$(which blkid) 7 8# odświeżenie pamięci podręcznej blkid 9sudo $BLKID -g 10 11UUID=db979ede-d90f-4207-ac3e-e9efbe76f052 12 13DEVICE=$($BLKID -U $UUID) # nazwa urządzenia np. /dev/sda1 14 15montowanie() 16{ 17	mount | grep $DEVICE &amp;gt; /dev/null 18	if [ $?</description>
+    </item>
+    
     <item>
       <title>Podręcznik systemowy man</title>
       <link>https://mohdur.github.io/post/podr%C4%99cznik-systemowy-man/</link>

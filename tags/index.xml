@@ -5,11 +5,11 @@
     <link>https://mohdur.github.io/tags/</link>
     <description>Recent content in Tags on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 23 Oct 2020 01:30:07 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 13:12:32 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux</title>
       <link>https://mohdur.github.io/tags/linux/</link>
-      <pubDate>Fri, 23 Oct 2020 01:30:07 +0200</pubDate>
+      <pubDate>Sat, 24 Oct 2020 13:12:32 +0200</pubDate>
       
       <guid>https://mohdur.github.io/tags/linux/</guid>
       <description></description>
@@ -18,9 +18,18 @@
     <item>
       <title>Skrypty</title>
       <link>https://mohdur.github.io/tags/skrypty/</link>
-      <pubDate>Fri, 23 Oct 2020 01:24:53 +0200</pubDate>
+      <pubDate>Sat, 24 Oct 2020 13:12:32 +0200</pubDate>
       
       <guid>https://mohdur.github.io/tags/skrypty/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sprzęt</title>
+      <link>https://mohdur.github.io/tags/sprz%C4%99t/</link>
+      <pubDate>Sat, 24 Oct 2020 13:12:32 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/tags/sprz%C4%99t/</guid>
       <description></description>
     </item>
     
@@ -120,15 +129,6 @@
       <pubDate>Thu, 22 Oct 2020 01:39:58 +0200</pubDate>
       
       <guid>https://mohdur.github.io/tags/restic/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Sprzęt</title>
-      <link>https://mohdur.github.io/tags/sprz%C4%99t/</link>
-      <pubDate>Thu, 22 Oct 2020 01:36:57 +0200</pubDate>
-      
-      <guid>https://mohdur.github.io/tags/sprz%C4%99t/</guid>
       <description></description>
     </item>
     

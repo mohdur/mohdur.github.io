@@ -4,12 +4,37 @@
   
   <url>
     <loc>https://mohdur.github.io/tags/linux/</loc>
-    <lastmod>2020-10-23T01:30:07+02:00</lastmod>
+    <lastmod>2020-10-24T13:12:32+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://mohdur.github.io/</loc>
-    <lastmod>2020-10-23T01:30:07+02:00</lastmod>
+    <lastmod>2020-10-24T13:12:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/pod%C5%82%C4%85czenie-dysku-po-identyfikatorze-uuid/</loc>
+    <lastmod>2020-10-24T13:12:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/</loc>
+    <lastmod>2020-10-24T13:12:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/skrypty/</loc>
+    <lastmod>2020-10-24T13:12:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/sprz%C4%99t/</loc>
+    <lastmod>2020-10-24T13:12:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/</loc>
+    <lastmod>2020-10-24T13:12:32+02:00</lastmod>
   </url>
   
   <url>
@@ -18,22 +43,7 @@
   </url>
   
   <url>
-    <loc>https://mohdur.github.io/post/</loc>
-    <lastmod>2020-10-23T01:30:07+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/</loc>
-    <lastmod>2020-10-23T01:30:07+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mohdur.github.io/post/dodanie-konta-w-systemie-linux-skrypt/</loc>
-    <lastmod>2020-10-23T01:24:53+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/skrypty/</loc>
     <lastmod>2020-10-23T01:24:53+02:00</lastmod>
   </url>
   
@@ -135,11 +145,6 @@
   <url>
     <loc>https://mohdur.github.io/tags/restic/</loc>
     <lastmod>2020-10-22T01:39:58+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/sprz%C4%99t/</loc>
-    <lastmod>2020-10-22T01:36:57+02:00</lastmod>
   </url>
   
   <url>
