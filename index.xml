@@ -5,7 +5,19 @@
     <link>https://mohdur.github.io/</link>
     <description>Recent content on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 19:56:37 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 19:57:51 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Archiwizacja podkatalogów</title>
+      <link>https://mohdur.github.io/post/archiwizacja-podkatalogow/</link>
+      <pubDate>Sat, 24 Oct 2020 19:57:51 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/archiwizacja-podkatalogow/</guid>
+      <description>Skrypt przetwarza podkatalogi w bieżącej lokalizacji, tworząc archiwa tar a następnie usuwa przetworzony katalog.
+W pętli for możemy użyć maski zawężając wynik wyszukiwania np.
+1for i in *dump*; do lub użyć polecenia ls np.
+1for i in $(ls -A); do 1#!/usr/bin/env bash 2 3clear 4 5echo 6echo ----------------------------------------------- 7echo &amp;#34;Znajdujesz się w katalogu $PWD&amp;#34; 8echo 9echo &amp;#34;!!!UWAGA! Niebezpieczenstwo!!!&amp;#34; 10echo 11echo -n &amp;#34;Czy usunac katalogi po archiwizacji? [N/t]: &amp;#34; 12read usunac 13 14case &amp;#34;$usunac&amp;#34; in 15 &amp;#34;N&amp;#34;|&amp;#34;n&amp;#34;) usunac=false ;; 16 &amp;#34;T&amp;#34;|&amp;#34;t&amp;#34;) usunac=true ;; 17 *) usunac=false ;; 18esac 19 20if [ $# -gt 0 ]; then 21 case &amp;#34;$1&amp;#34; in 22 &amp;#34;tar&amp;#34;) ext=tar ;; 23 &amp;#34;tgz&amp;#34;|&amp;#34;tar.</description>
+    </item>
+    
     <item>
       <title>Zmiana częstotliwości powtarzania klawiszy</title>
       <link>https://mohdur.github.io/post/zmiana-cz%C4%99stotliwo%C5%9Bci-powtarzania-klawiszy/</link>

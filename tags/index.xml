@@ -5,13 +5,40 @@
     <link>https://mohdur.github.io/tags/</link>
     <description>Recent content in Tags on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 19:56:37 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 19:57:51 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Backup</title>
+      <link>https://mohdur.github.io/tags/backup/</link>
+      <pubDate>Sat, 24 Oct 2020 19:57:51 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/tags/backup/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Linux</title>
       <link>https://mohdur.github.io/tags/linux/</link>
-      <pubDate>Sat, 24 Oct 2020 19:56:37 +0200</pubDate>
+      <pubDate>Sat, 24 Oct 2020 19:57:51 +0200</pubDate>
       
       <guid>https://mohdur.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shell</title>
+      <link>https://mohdur.github.io/tags/shell/</link>
+      <pubDate>Sat, 24 Oct 2020 19:57:51 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/tags/shell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Skrypty</title>
+      <link>https://mohdur.github.io/tags/skrypty/</link>
+      <pubDate>Sat, 24 Oct 2020 19:57:51 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/tags/skrypty/</guid>
       <description></description>
     </item>
     
@@ -124,15 +151,6 @@
     </item>
     
     <item>
-      <title>Backup</title>
-      <link>https://mohdur.github.io/tags/backup/</link>
-      <pubDate>Sat, 24 Oct 2020 17:39:30 +0200</pubDate>
-      
-      <guid>https://mohdur.github.io/tags/backup/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>MySQL</title>
       <link>https://mohdur.github.io/tags/mysql/</link>
       <pubDate>Sat, 24 Oct 2020 17:39:30 +0200</pubDate>
@@ -156,24 +174,6 @@
       <pubDate>Sat, 24 Oct 2020 17:25:28 +0200</pubDate>
       
       <guid>https://mohdur.github.io/tags/fedora/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Skrypty</title>
-      <link>https://mohdur.github.io/tags/skrypty/</link>
-      <pubDate>Sat, 24 Oct 2020 16:44:02 +0200</pubDate>
-      
-      <guid>https://mohdur.github.io/tags/skrypty/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Shell</title>
-      <link>https://mohdur.github.io/tags/shell/</link>
-      <pubDate>Sat, 24 Oct 2020 16:34:48 +0200</pubDate>
-      
-      <guid>https://mohdur.github.io/tags/shell/</guid>
       <description></description>
     </item>
     
