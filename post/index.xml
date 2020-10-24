@@ -5,7 +5,18 @@
     <link>https://mohdur.github.io/post/</link>
     <description>Recent content in Posts on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 13:48:25 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 14:23:52 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vim kompilacja ze źrodeł</title>
+      <link>https://mohdur.github.io/post/vim-kompilacja-ze-zrodel/</link>
+      <pubDate>Sat, 24 Oct 2020 14:23:52 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/vim-kompilacja-ze-zrodel/</guid>
+      <description>Pobranie aktualnej wersji z repozytorium git
+1$ git clone https://github.com/vim/vim Skrypt do kompilacji.
+1#!/bin/env bash 2 3git pull 4 5make distclean 6 7./configure --prefix=/usr/local \ 8 --enable-python3interp=&amp;#39;dynamic&amp;#39; \ 9 --with-python3-command=&amp;#39;python3&amp;#39; \ 10 --with-x \ 11 --enable-gui=gtk3 \ 12 --enable-fontset \ 13 --enable-xim \ 14 --enable-gpm \ 15 --enable-acl \ 16 --enable-multibyte \ 17 --with-features=huge \ 18 --enable-cscope \ 19 --enable-luainterp=&amp;#39;dynamic&amp;#39; \ 20 --with-compiledby=&amp;#39;SebMD&amp;#39; | tee kompiluj.log 21 22echo 23read -p &amp;#34;Naciśnij [ENTER]&amp;#34; 24 25make 26sudo make install 27 28which ntfy &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 29if [ &amp;#34;$?</description>
+    </item>
+    
     <item>
       <title>Zmiana funkcjonalności przez zmianę nazwy skryptu</title>
       <link>https://mohdur.github.io/post/zmiana-funkcjonalno%C5%9Bci-przez-zmian%C4%99-nazwy-skryptu/</link>
