@@ -5,7 +5,18 @@
     <link>https://mohdur.github.io/tags/skrypty/</link>
     <description>Recent content in Skrypty on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 13:20:08 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/skrypty/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 13:48:25 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/skrypty/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Zmiana funkcjonalności przez zmianę nazwy skryptu</title>
+      <link>https://mohdur.github.io/post/zmiana-funkcjonalno%C5%9Bci-przez-zmian%C4%99-nazwy-skryptu/</link>
+      <pubDate>Sat, 24 Oct 2020 13:48:25 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/zmiana-funkcjonalno%C5%9Bci-przez-zmian%C4%99-nazwy-skryptu/</guid>
+      <description>Utworzymy skrypt o nazwie funkcje, jeśli uruchomimy skypt nic się nie stanie, ale tworząc link symboliczny o nazwie new lub delete zostaną wykonane odpowiednio funkcje nowy i delete.
+Skrypt zawiera instrukcję case, która operuje na nazwie skryptu za pomocą polecenia $(basename $0) gdzie $0 to nazwa skryptu, polecenie basename usuwa ./ z nazwy skryptu.
+Konstrukcja $(basename $0) jest opcjonalna, oznacza to, że jeśli skrypt znajduje się w ścieżce $PATH i można go wykonać wpisując jego nazwę beż podania ścieżki to możemy użyć case &amp;quot;$0&amp;quot; in</description>
+    </item>
+    
     <item>
       <title>Skrypty BASH receptury</title>
       <link>https://mohdur.github.io/post/skrypty-bash-receptury/</link>
