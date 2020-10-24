@@ -5,7 +5,18 @@
     <link>https://mohdur.github.io/</link>
     <description>Recent content on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 19:39:47 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 19:40:53 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vim zawijanie tekstu na 80 znaków</title>
+      <link>https://mohdur.github.io/post/vim-zawijanie-tekstu-na-80-znakow/</link>
+      <pubDate>Sat, 24 Oct 2020 19:40:53 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/vim-zawijanie-tekstu-na-80-znakow/</guid>
+      <description>Ustawiamy zawijanie na 80 znaków
+1:set textwidth=80 Teraz należy zaznaczyć tekst w trybie wizualnym za pomocą V
+Za pomocą skrótu gq zawijamy tekst.</description>
+    </item>
+    
     <item>
       <title>Vim wstawienie X znaków</title>
       <link>https://mohdur.github.io/post/vim-wstawienie-x-znak%C3%B3w/</link>
