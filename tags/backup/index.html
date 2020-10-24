@@ -103,6 +103,39 @@
   <div class="excerpt">
     <div class="excerpt_header">
       <h3 class="post_link">
+        <a href="https://mohdur.github.io/post/wykonanie-kopii-zapasowej-us%C5%82ugi-nextcloud/">Wykonanie kopii zapasowej usługi Nextcloud</a>
+      </h3>
+      <div class="post_meta">
+  <svg class="icon">
+  <use xlink:href="#calendar"></use>
+</svg>
+  <span class="post_date">
+    Oct 24, 2020</span>
+    <a href='https://mohdur.github.io/tags/backup' class="post_tag button button_translucent">Backup
+    </a>
+    <a href='https://mohdur.github.io/tags/web' class="post_tag button button_translucent">WEB
+    </a>
+    <a href='https://mohdur.github.io/tags/linux' class="post_tag button button_translucent">Linux
+    </a>
+    <a href='https://mohdur.github.io/tags/mysql' class="post_tag button button_translucent">MySQL
+    </a>
+</div>
+
+    </div>
+      <div class="excerpt_footer">
+        <div>
+          <p class="pale">Skrypt do wykonania kopii zapasowej Nextcloud, w celu zwiększenia bezpieczeństwa, hasło do bazy danych jest przechowywane w bazie programu pass.
+1tar --exclude=&#39;/var/www/html/nc/data&#39; -czvf nextcloud-$(date -I).tgz /var/www/html/nc 2mysqldump --hex-blob -u nextcloud -p$(pass show nc@mysql) nextcloud &gt; …</p>
+          <a href="https://mohdur.github.io/post/wykonanie-kopii-zapasowej-us%C5%82ugi-nextcloud/" class="excerpt_more button">Read More</a>
+        </div>
+      </div>
+    </div>
+  </li>
+
+      <li class="post_item">
+  <div class="excerpt">
+    <div class="excerpt_header">
+      <h3 class="post_link">
         <a href="https://mohdur.github.io/post/backup-danych-na-szyfrowanym-nosniku.md/">Backup danych na szyfrowanym nośniku</a>
       </h3>
       <div class="post_meta">
@@ -264,6 +297,9 @@ Uruchomienie serwera Po pobraniu pliku minio tworzymy katalog gdzie będą przec
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
       <li>
+        <a href="https://mohdur.github.io/post/wykonanie-kopii-zapasowej-us%C5%82ugi-nextcloud/" class="nav-link">Wykonanie kopii zapasowej usługi Nextcloud</a>
+      </li>
+      <li>
         <a href="https://mohdur.github.io/post/zarz%C4%85dzanie-pakietami-w-fedora-linux/" class="nav-link">Zarządzanie pakietami w Fedora Linux</a>
       </li>
       <li>
@@ -284,16 +320,13 @@ Uruchomienie serwera Po pobraniu pliku minio tworzymy katalog gdzie będą przec
       <li>
         <a href="https://mohdur.github.io/post/vim-podr%C3%B3%C5%BCe-w-czasie/" class="nav-link">Vim podróże w czasie</a>
       </li>
-      <li>
-        <a href="https://mohdur.github.io/post/polska-klawiatura-i-polonizacja-w-arch-linux/" class="nav-link">Polska klawiatura i polonizacja w Arch Linux</a>
-      </li>
     </ul>
     <div>
       <h2 class="mt-4 taxonomy" id="tags-section">Tags</h2>
       <nav class="tags_nav">
         <a href='https://mohdur.github.io/tags/linux/' class="post_tag button button_translucent">
           LINUX
-          <span class="button_tally">26</span>
+          <span class="button_tally">27</span>
         </a>
         
         <a href='https://mohdur.github.io/tags/vim/' class="post_tag button button_translucent">
@@ -313,7 +346,7 @@ Uruchomienie serwera Po pobraniu pliku minio tworzymy katalog gdzie będą przec
         
         <a href='https://mohdur.github.io/tags/backup/' class="post_tag button button_translucent">
           BACKUP
-          <span class="button_tally">5</span>
+          <span class="button_tally">6</span>
         </a>
         
         <a href='https://mohdur.github.io/tags/security/' class="post_tag button button_translucent">
@@ -371,7 +404,7 @@ Uruchomienie serwera Po pobraniu pliku minio tworzymy katalog gdzie będą przec
             </a>
             
             
-            <a href='https://mohdur.github.io/tags/backup/' class=" post_tag button button_translucent" data-position=5>BACKUP<span class="button_tally">5</span>
+            <a href='https://mohdur.github.io/tags/backup/' class=" post_tag button button_translucent" data-position=6>BACKUP<span class="button_tally">6</span>
             </a>
             
             
@@ -399,7 +432,7 @@ Uruchomienie serwera Po pobraniu pliku minio tworzymy katalog gdzie będą przec
             </a>
             
             
-            <a href='https://mohdur.github.io/tags/linux/' class=" post_tag button button_translucent" data-position=26>LINUX<span class="button_tally">26</span>
+            <a href='https://mohdur.github.io/tags/linux/' class=" post_tag button button_translucent" data-position=27>LINUX<span class="button_tally">27</span>
             </a>
             
             
@@ -416,6 +449,10 @@ Uruchomienie serwera Po pobraniu pliku minio tworzymy katalog gdzie będą przec
             
             
             <a href='https://mohdur.github.io/tags/minio/' class=" post_tag button button_translucent" data-position=1>MINIO<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://mohdur.github.io/tags/mysql/' class=" post_tag button button_translucent" data-position=1>MYSQL<span class="button_tally">1</span>
             </a>
             
             
@@ -500,6 +537,10 @@ Uruchomienie serwera Po pobraniu pliku minio tworzymy katalog gdzie będą przec
             
             
             <a href='https://mohdur.github.io/tags/vpn/' class=" post_tag button button_translucent" data-position=3>VPN<span class="button_tally">3</span>
+            </a>
+            
+            
+            <a href='https://mohdur.github.io/tags/web/' class=" post_tag button button_translucent" data-position=1>WEB<span class="button_tally">1</span>
             </a>
             
             

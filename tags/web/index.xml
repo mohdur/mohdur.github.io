@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WEB on MOHDUR</title>
+    <link>https://mohdur.github.io/tags/web/</link>
+    <description>Recent content in WEB on MOHDUR</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 24 Oct 2020 17:39:30 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Wykonanie kopii zapasowej usługi Nextcloud</title>
+      <link>https://mohdur.github.io/post/wykonanie-kopii-zapasowej-us%C5%82ugi-nextcloud/</link>
+      <pubDate>Sat, 24 Oct 2020 17:39:30 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/wykonanie-kopii-zapasowej-us%C5%82ugi-nextcloud/</guid>
+      <description>Skrypt do wykonania kopii zapasowej Nextcloud, w celu zwiększenia bezpieczeństwa, hasło do bazy danych jest przechowywane w bazie programu pass.
+1tar --exclude=&amp;#39;/var/www/html/nc/data&amp;#39; -czvf nextcloud-$(date -I).tgz /var/www/html/nc 2mysqldump --hex-blob -u nextcloud -p$(pass show nc@mysql) nextcloud &amp;gt; nextcloud-$(date -I).sql 3gzip -9 nextcloud-$(date -I).sql </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -3,27 +3,47 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://mohdur.github.io/tags/fedora/</loc>
-    <lastmod>2020-10-24T17:25:28+02:00</lastmod>
+    <loc>https://mohdur.github.io/tags/backup/</loc>
+    <lastmod>2020-10-24T17:39:30+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://mohdur.github.io/tags/linux/</loc>
-    <lastmod>2020-10-24T17:25:28+02:00</lastmod>
+    <lastmod>2020-10-24T17:39:30+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://mohdur.github.io/</loc>
-    <lastmod>2020-10-24T17:25:28+02:00</lastmod>
+    <lastmod>2020-10-24T17:39:30+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/mysql/</loc>
+    <lastmod>2020-10-24T17:39:30+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://mohdur.github.io/post/</loc>
-    <lastmod>2020-10-24T17:25:28+02:00</lastmod>
+    <lastmod>2020-10-24T17:39:30+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://mohdur.github.io/tags/</loc>
+    <lastmod>2020-10-24T17:39:30+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/web/</loc>
+    <lastmod>2020-10-24T17:39:30+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/wykonanie-kopii-zapasowej-us%C5%82ugi-nextcloud/</loc>
+    <lastmod>2020-10-24T17:39:30+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/fedora/</loc>
     <lastmod>2020-10-24T17:25:28+02:00</lastmod>
   </url>
   
@@ -160,11 +180,6 @@
   <url>
     <loc>https://mohdur.github.io/post/komenda-if-w-skryptach-bash.md/</loc>
     <lastmod>2020-10-24T15:16:13+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/backup/</loc>
-    <lastmod>2020-10-24T14:33:48+02:00</lastmod>
   </url>
   
   <url>
