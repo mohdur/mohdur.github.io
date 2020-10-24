@@ -293,7 +293,10 @@ utworzymy nowy plik.</p>
 <h2 id="wyszukanie-ostatnio-edytowanych-plików">Wyszukanie ostatnio edytowanych plików</h2>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>find $HOME/git -type f -mtime -12 -mtime +3
 </code></pre></div><h2 id="listy---wyświetlanie-elementów-w-osobnych-liniach">Listy - wyświetlanie elementów w osobnych liniach</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="nv">LISTA</span> <span class="o">=</span> <span class="o">(</span>
+<p>Za pomocą komendy <code>printf</code> możemy formatować wyświetlany tekst, tutaj dodajemy
+znak końca linii <code>\n</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="nb">printf</span> <span class="s1">&#39;%s\n&#39;</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">LISTA</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&#34;</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="nv">LISTA</span> <span class="o">=</span> <span class="o">(</span>
 <span class="ln"> 2</span>  <span class="nv">$HOME</span>/.aliases
 <span class="ln"> 3</span>  <span class="nv">$HOME</span>/.config/alacritty/alacritty.yml
 <span class="ln"> 4</span>  <span class="nv">$HOME</span>/.bashrc
