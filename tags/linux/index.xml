@@ -5,7 +5,18 @@
     <link>https://mohdur.github.io/tags/linux/</link>
     <description>Recent content in Linux on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 13:15:07 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 13:17:22 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Polecenie grep w przykładach</title>
+      <link>https://mohdur.github.io/post/polecenie-grep-w-przyk%C5%82adach/</link>
+      <pubDate>Sat, 24 Oct 2020 13:17:22 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/polecenie-grep-w-przyk%C5%82adach/</guid>
+      <description>Wyszukanie wszystkich pakietów zawierających słowa vim i common
+1dnf search vim | grep -wE &amp;#34;vim|common&amp;#34; Wyszukanie wszystkich pakietów zawierających słowa vim i common, ale pokaże również pakiety, którchy częścią nazwy jest słowo vim lub common np. neovim.
+1dnf search vim | grep -E &amp;#34;vim|common&amp;#34; </description>
+    </item>
+    
     <item>
       <title>Polecenie find w przykładach</title>
       <link>https://mohdur.github.io/post/polecenie-find-w-przyk%C5%82adach/</link>
