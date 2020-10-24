@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" data-figures="true" class="page" data-mode="dim">
   <head>
-<title>Konfiguracja serwera OpenSSH | MOHDUR</title>
+<title>Vim uzycie Ctrl-s do zapisania pliku | MOHDUR</title>
 <meta charset="utf-8">
 <meta name="generator" content="Hugo 0.76.4" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -10,13 +10,13 @@
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="Konfiguracja serwera OpenSSH">
+<meta name="description" content="Vim uzycie Ctrl-s do zapisania pliku">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="Konfiguracja serwera OpenSSH" />
-<meta property="og:url" content="https://mohdur.github.io/post/konfiguracja-serwera-openssh/" />
-<meta property="og:title" content="Konfiguracja serwera OpenSSH" />
-<meta property="og:description" content="Konfiguracja serwera OpenSSH" />
+<meta name="twitter:title" content="Vim uzycie Ctrl-s do zapisania pliku" />
+<meta property="og:url" content="https://mohdur.github.io/post/vim-uzycie-ctrl-s-do-zapisania-pliku/" />
+<meta property="og:title" content="Vim uzycie Ctrl-s do zapisania pliku" />
+<meta property="og:description" content="Vim uzycie Ctrl-s do zapisania pliku" />
 <meta property="og:image" content="https://mohdur.github.io/images/thumbnail.png" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://mohdur.github.io/icons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://mohdur.github.io/icons/favicon-32x32.png'>
@@ -25,7 +25,7 @@
 <meta name="msapplication-TileColor" content="#002538">
 <meta name="theme-color" content="#002538">
 
-<link rel="canonical" href="https://mohdur.github.io/post/konfiguracja-serwera-openssh/">
+<link rel="canonical" href="https://mohdur.github.io/post/vim-uzycie-ctrl-s-do-zapisania-pliku/">
 
     
 
@@ -44,7 +44,7 @@
     
     
   
-  <body data-code="10" data-lines="false" id="documentTop">
+  <body data-code="200" data-lines="false" id="documentTop">
 
 <header class="nav_header" >
   <nav class="nav">
@@ -100,29 +100,25 @@
   
 <div class="grid-inverse wrap content">
   <article class="post_content">
-    <h1 class="post_title">Konfiguracja serwera OpenSSH</h1><div class="post_meta">
+    <h1 class="post_title">Vim uzycie Ctrl-s do zapisania pliku</h1><div class="post_meta">
   <svg class="icon">
   <use xlink:href="#calendar"></use>
 </svg>
   <span class="post_date">
-    Oct 22, 2020</span>
-    <a href='https://mohdur.github.io/tags/ssh' class="post_tag button button_translucent">SSH
-    </a>
-    <a href='https://mohdur.github.io/tags/fedora' class="post_tag button button_translucent">Fedora
-    </a>
-    <a href='https://mohdur.github.io/tags/selinux' class="post_tag button button_translucent">SELinux
+    Oct 24, 2020</span>
+    <a href='https://mohdur.github.io/tags/vim' class="post_tag button button_translucent">Vim
     </a>
 </div>
 
     
 <div class="post_share">
   Share on:
-  <a href="https://twitter.com/intent/tweet?text=Konfiguracja%20serwera%20OpenSSH&url=https%3a%2f%2fmohdur.github.io%2fpost%2fkonfiguracja-serwera-openssh%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
+  <a href="https://twitter.com/intent/tweet?text=Vim%20uzycie%20Ctrl-s%20do%20zapisania%20pliku&url=https%3a%2f%2fmohdur.github.io%2fpost%2fvim-uzycie-ctrl-s-do-zapisania-pliku%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#twitter"></use>
 </svg>
   </a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fkonfiguracja-serwera-openssh%2f&t=Konfiguracja%20serwera%20OpenSSH" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fvim-uzycie-ctrl-s-do-zapisania-pliku%2f&t=Vim%20uzycie%20Ctrl-s%20do%20zapisania%20pliku" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#facebook"></use>
 </svg>
@@ -132,7 +128,7 @@
   <use xlink:href="#linkedin"></use>
 </svg>
   </a>
-  <a href="https://mohdur.github.io/post/konfiguracja-serwera-openssh/" title="Copy Link" class="link link_yank">
+  <a href="https://mohdur.github.io/post/vim-uzycie-ctrl-s-do-zapisania-pliku/" title="Copy Link" class="link link_yank">
     <svg class="icon">
   <use xlink:href="#copy"></use>
 </svg>
@@ -140,36 +136,16 @@
 </div>
 
     
-    <h1 id="instalacja">Instalacja</h1>
-<p>Instalacja w systemie Fedora</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ sudo dnf install openssh-server
-</code></pre></div><h1 id="plik-konfiguracyjny">Plik konfiguracyjny</h1>
-<p>Znajduje się w <code>/etc/ssh/sshd_config</code></p>
-<h1 id="zmiana-numeru-portu">Zmiana numeru portu</h1>
-<p>Serwer SSH normalnie nasłuchuje na porcie 22, możemy to zmienić ustawiając parametr <code>Port</code>, parametr <code>Port</code> może występować kilkukrotnie, czyli serwer SSH może nasłuchiwać na wielu portach jednocześnie.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>Port 22
-<span class="ln">2</span>Port 23034
-</code></pre></div><p>Możemy użyć parametru <code>ListenAddress</code>, dzięki któremu możemy określić adres IP i port, na którym serwer SSH będzie nasłuchiwał.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>ListenAddress 0.0.0.0:22
-<span class="ln">2</span>ListenAddress 192.168.0.201:23034
-<span class="ln">3</span>ListenAddress 192.168.0.202:22222
-</code></pre></div><p>Po zmianie numeru portu w <code>/etc/ssh/sshd_config</code> na np. <code>23034</code>, musimy dodać regułę SELinux, oraz wpuścić połączenia przychodzące na firewallu na ten port.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ sudo semanage port -a -t ssh_port_t -p tcp 23034
-<span class="ln">2</span>$ sudo firewall-cmd --permanent --add-port=23034/tcp
-<span class="ln">3</span>$ sudo firewall-cmd --reload
-<span class="ln">4</span>$ sudo systemctl restart sshd
-</code></pre></div><h1 id="generowanie-kluczy-serwera-ssh">Generowanie kluczy serwera SSH</h1>
-<p>Jeśli przy próbie uruchomienia serwera SSH otrzymamy taki komunikat:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ sudo /usr/sbin/sshd 
-<span class="ln">2</span>Could not load host key: /etc/ssh/ssh_host_rsa_key
-<span class="ln">3</span>Could not load host key: /etc/ssh/ssh_host_dsa_key
-<span class="ln">4</span>Could not load host key: /etc/ssh/ssh_host_ecdsa_key
-<span class="ln">5</span>Disabling protocol version 2. Could not load host key
-<span class="ln">6</span>sshd: no hostkeys available -- exiting.
-</code></pre></div><p>Oznacza to, że brakuje kluczy RSA, DSA i ECDSA serwera</p>
-<p>Możemy je wygenerować używając polecenia <code>ssh-keygen</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ sudo ssh-keygen -A
-<span class="ln">2</span>ssh-keygen: generating new host keys: RSA DSA ECDSA ED25519
+    <p>W systemie linux standardowo skrót <code>Ctrl-s</code> zatrzymuje wyświetlanie na ekranie
+terminala, <code>Ctrl-q</code> pozwala na dalsze wyświetlanie.</p>
+<p>Dlatego należy wyłączyć ten skrót, w pliku <code>.bashrc</code> lub w przypadku powłoki
+ZSH <code>.zshrc</code> dodajemy:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>stty -ixon
+</code></pre></div><p>Teraz należy przeładować konfigurację powłoki&quot;</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ source ~/.bashrc
+</code></pre></div><p>Teraz kolej na ustawienie edytora Vim, w pliku <code>.vimrc</code> dodajemy:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>nnoremap &lt;C-s&gt; &lt;Esc&gt;:w&lt;CR&gt;
+<span class="ln">2</span>imap &lt;C-s&gt; &lt;ESC&gt;:w&lt;CR&gt;
 </code></pre></div>
     
       <div id="disqus_thread"></div>
@@ -204,9 +180,6 @@
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
       <li>
-        <a href="https://mohdur.github.io/post/vim-uzycie-ctrl-s-do-zapisania-pliku/" class="nav-link">Vim uzycie Ctrl-s do zapisania pliku</a>
-      </li>
-      <li>
         <a href="https://mohdur.github.io/post/vim-szyfrowanie-za-pomoc%C4%85-pgp.md/" class="nav-link">Vim szyfrowanie za pomocą PGP</a>
       </li>
       <li>
@@ -226,6 +199,9 @@
       </li>
       <li>
         <a href="https://mohdur.github.io/post/zarz%C4%85dzanie-pakietami-w-fedora-linux/" class="nav-link">Zarządzanie pakietami w Fedora Linux</a>
+      </li>
+      <li>
+        <a href="https://mohdur.github.io/post/vim-okna/" class="nav-link">Vim okna</a>
       </li>
     </ul>
     <div>
