@@ -12,7 +12,7 @@
       <pubDate>Sat, 24 Oct 2020 16:34:48 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/skr%C3%B3ty-klawiszowe-zsh/</guid>
-      <description>   Skrót Opis     Ctrl+r Interaktywne przeszukiwanie historii komend    </description>
+      <description>   Skrót Opis     Tab Auto complete   ^a Beginning of line   ^e End of line   ^f Forward one character   ^b Back one character   ^h Delete one character (backw­ards)   %f Forward one word   %b Back one word   ^w Delete one word (backw­ards)   ^u Clear to beginning of line   ^k Clear to end of line   ^y Paste from Kill Ring   ^t Swap cursor with previous character   %t Swap cursor with previous word   ^p Previous line in history   ^n Next line in history   ^r Search backwards in history   ^l Clear screen   ^o Execute command but keep line   ^z Suspend process   fg restore process   bg continue process in background   ^c Kill current process   ^d Exit shell    </description>
     </item>
     
   </channel>
