@@ -5,7 +5,16 @@
     <link>https://mohdur.github.io/tags/linux/</link>
     <description>Recent content in Linux on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 19:30:00 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 19:31:54 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Przydatne programy dla systemu Linux</title>
+      <link>https://mohdur.github.io/post/przydatne-programy-dla-systemu-linux.md/</link>
+      <pubDate>Sat, 24 Oct 2020 19:31:54 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/przydatne-programy-dla-systemu-linux.md/</guid>
+      <description>Tworzenie dokumentacji  ronn - generowanie dokumentów man pandoc - konwertowanie dokumentów między innymi z formatu Markdown mdv - przeglądarka plików Markdown mdtohtml - konwertowanie dokumentów Markdown do HTML w języku Go  Wyszukiwanie i przeszukiwanie plików  fd - alternatywa dla polecenia find, (dnf install fd-find) the silver searcher - ag - alternatywa dla programu grep, (dnf install the_silver_searcher) fzf - fzf is a general-purpose command-line fuzzy finder ripgrep - rg - kolejny program zastępujący grep  Backup  minio - system przechowywania plików kompatybilny z AWS S3 restic - tworzenie backupów rclone - tworzenie backupów duplicity - tworzenie szyfrowanych backupów duply - front end to duplicity  Inne  HTTPie - klient HTTP bat - cat z kolorowaniem składni (dnf install bat)  Programy używane z i3wm / bspwm na stacji roboczej  arandr aspell-pl autossh bcyrpt blueman clipmenu https://github.</description>
+    </item>
+    
     <item>
       <title>Konfiguracja i praca z Tmux</title>
       <link>https://mohdur.github.io/post/konfiguracja-i-praca-z-tmux/</link>
