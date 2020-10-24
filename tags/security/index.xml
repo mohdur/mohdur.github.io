@@ -14,7 +14,7 @@
       <guid>https://mohdur.github.io/post/generowanie-kodu-qr-dla-autoryzacj-2fa/</guid>
       <description>Tak wygląda kod QR w postaci linku
 1otpauth://totp/mohdur%40github?secret=OAPICAFAI7PJKHVN&amp;amp;issuer=github/mohdur&amp;amp;algorithm=SHA512&amp;amp;digits=6&amp;amp;period=30 Generowanie kodu do pliku PNG
-1echo &amp;#34;otpauth://totp/mohdur%40github?secret=OAPICAFAI7PJKHVN&amp;amp;issuer=github/mohdur&amp;amp;algorithm=SHA512&amp;amp;digits=6&amp;amp;period=30&amp;#34; \ 2 | qrencode -t png -d 125 -lH -o qr.png [img/qr.png]</description>
+1echo &amp;#34;otpauth://totp/mohdur%40github?secret=OAPICAFAI7PJKHVN&amp;amp;issuer=github/mohdur&amp;amp;algorithm=SHA512&amp;amp;digits=6&amp;amp;period=30&amp;#34; \ 2 | qrencode -t png -d 125 -lH -o qr.png </description>
     </item>
     
     <item>
