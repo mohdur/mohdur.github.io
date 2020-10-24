@@ -5,7 +5,20 @@
     <link>https://mohdur.github.io/post/</link>
     <description>Recent content in Posts on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 13:41:24 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 13:46:08 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vim obiekty tekstowe</title>
+      <link>https://mohdur.github.io/post/vim-obiekty-tekstowe/</link>
+      <pubDate>Sat, 24 Oct 2020 13:46:08 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/vim-obiekty-tekstowe/</guid>
+      <description>Obiekt tekstowy to blok tekstu, obiektem może być wyraz, paragraf czy tekst pomiędzy nawiasami. Więcej na temat obiektów tekstowych w pomocy
+ http://vimdoc.sourceforge.net/htmldoc/motion.html#text-objects http://vimdoc.sourceforge.net/htmldoc/motion.html#operator  Obiekty tekstowe działają również w trybie VISUAL
+Vim pozwala na tworzenie własnych obiektów tekstowych, dzięki czemu jest sporo pluginów rozszerzających te wbudowane. Pluginem rozszerzającym obiekty tekstowe jest np. plugin Target - https://github.com/wellle/targets.vim
+Wbudowane obiekty tekstowe
+1w - wyraz 2W - wyraz, który nie jest oddzielony spacją np.</description>
+    </item>
+    
     <item>
       <title>Vim działania arytmetyczne</title>
       <link>https://mohdur.github.io/post/vim-dzia%C5%82ania-arytmetyczne/</link>
