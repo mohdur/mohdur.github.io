@@ -5,22 +5,40 @@
     <link>https://mohdur.github.io/tags/</link>
     <description>Recent content in Tags on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 15:39:57 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 15:50:31 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Arch</title>
-      <link>https://mohdur.github.io/tags/arch/</link>
-      <pubDate>Sat, 24 Oct 2020 15:39:57 +0200</pubDate>
+      <title>Docs</title>
+      <link>https://mohdur.github.io/tags/docs/</link>
+      <pubDate>Sat, 24 Oct 2020 15:50:31 +0200</pubDate>
       
-      <guid>https://mohdur.github.io/tags/arch/</guid>
+      <guid>https://mohdur.github.io/tags/docs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
       <link>https://mohdur.github.io/tags/linux/</link>
-      <pubDate>Sat, 24 Oct 2020 15:39:57 +0200</pubDate>
+      <pubDate>Sat, 24 Oct 2020 15:50:31 +0200</pubDate>
       
       <guid>https://mohdur.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pandoc</title>
+      <link>https://mohdur.github.io/tags/pandoc/</link>
+      <pubDate>Sat, 24 Oct 2020 15:50:31 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/tags/pandoc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Arch</title>
+      <link>https://mohdur.github.io/tags/arch/</link>
+      <pubDate>Sat, 24 Oct 2020 15:39:57 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/tags/arch/</guid>
       <description></description>
     </item>
     

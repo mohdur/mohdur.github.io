@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pandoc on MOHDUR</title>
+    <link>https://mohdur.github.io/tags/pandoc/</link>
+    <description>Recent content in Pandoc on MOHDUR</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 24 Oct 2020 15:50:31 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/pandoc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Konwertowanie Dokumentów Markdown Do PDF</title>
+      <link>https://mohdur.github.io/post/konwertowanie-dokument%C3%B3w-markdown-do-pdf/</link>
+      <pubDate>Sat, 24 Oct 2020 15:50:31 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/konwertowanie-dokument%C3%B3w-markdown-do-pdf/</guid>
+      <description>Skrypt do konwertowania dokumentów
+1#!/bin/bash 2 3nazwa=$(basename &amp;#34;$1&amp;#34; .md) 4 5pandoc -V geometry:margin=1.5cm &amp;#34;$1&amp;#34; --pdf-engine=xelatex \ 6--variable fontsize=10.5pt -s -o &amp;#34;$nazwa&amp;#34;.pdf --toc --toc-depth 2 </description>
+    </item>
+    
+  </channel>
+</rss>

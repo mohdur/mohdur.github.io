@@ -5,7 +5,17 @@
     <link>https://mohdur.github.io/post/</link>
     <description>Recent content in Posts on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 15:39:57 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 15:50:31 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Konwertowanie Dokumentów Markdown Do PDF</title>
+      <link>https://mohdur.github.io/post/konwertowanie-dokument%C3%B3w-markdown-do-pdf/</link>
+      <pubDate>Sat, 24 Oct 2020 15:50:31 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/konwertowanie-dokument%C3%B3w-markdown-do-pdf/</guid>
+      <description>Skrypt do konwertowania dokumentów
+1#!/bin/bash 2 3nazwa=$(basename &amp;#34;$1&amp;#34; .md) 4 5pandoc -V geometry:margin=1.5cm &amp;#34;$1&amp;#34; --pdf-engine=xelatex \ 6--variable fontsize=10.5pt -s -o &amp;#34;$nazwa&amp;#34;.pdf --toc --toc-depth 2 </description>
+    </item>
+    
     <item>
       <title>Arch różności</title>
       <link>https://mohdur.github.io/post/arch-r%C3%B3%C5%BCno%C5%9Bci/</link>
