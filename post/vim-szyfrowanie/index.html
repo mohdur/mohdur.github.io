@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" data-figures="true" class="page" data-mode="dim">
   <head>
-<title>Vim wysyłanie bieżącej linii do innego pliku | MOHDUR</title>
+<title>Vim szyfrowanie | MOHDUR</title>
 <meta charset="utf-8">
 <meta name="generator" content="Hugo 0.76.4" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -10,13 +10,13 @@
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="Vim wysyłanie bieżącej linii do innego pliku">
+<meta name="description" content="Vim szyfrowanie">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="Vim wysyłanie bieżącej linii do innego pliku" />
-<meta property="og:url" content="https://mohdur.github.io/post/vim-wysy%C5%82anie-bie%C5%BC%C4%85cej-linii-do-innego-pliku/" />
-<meta property="og:title" content="Vim wysyłanie bieżącej linii do innego pliku" />
-<meta property="og:description" content="Vim wysyłanie bieżącej linii do innego pliku" />
+<meta name="twitter:title" content="Vim szyfrowanie" />
+<meta property="og:url" content="https://mohdur.github.io/post/vim-szyfrowanie/" />
+<meta property="og:title" content="Vim szyfrowanie" />
+<meta property="og:description" content="Vim szyfrowanie" />
 <meta property="og:image" content="https://mohdur.github.io/images/thumbnail.png" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://mohdur.github.io/icons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://mohdur.github.io/icons/favicon-32x32.png'>
@@ -25,7 +25,7 @@
 <meta name="msapplication-TileColor" content="#002538">
 <meta name="theme-color" content="#002538">
 
-<link rel="canonical" href="https://mohdur.github.io/post/vim-wysy%C5%82anie-bie%C5%BC%C4%85cej-linii-do-innego-pliku/">
+<link rel="canonical" href="https://mohdur.github.io/post/vim-szyfrowanie/">
 
     
 
@@ -44,7 +44,7 @@
     
     
   
-  <body data-code="10" data-lines="false" id="documentTop">
+  <body data-code="200" data-lines="false" id="documentTop">
 
 <header class="nav_header" >
   <nav class="nav">
@@ -100,12 +100,12 @@
   
 <div class="grid-inverse wrap content">
   <article class="post_content">
-    <h1 class="post_title">Vim wysyłanie bieżącej linii do innego pliku</h1><div class="post_meta">
+    <h1 class="post_title">Vim szyfrowanie</h1><div class="post_meta">
   <svg class="icon">
   <use xlink:href="#calendar"></use>
 </svg>
   <span class="post_date">
-    Oct 21, 2020</span>
+    Oct 24, 2020</span>
     <a href='https://mohdur.github.io/tags/vim' class="post_tag button button_translucent">Vim
     </a>
 </div>
@@ -113,12 +113,12 @@
     
 <div class="post_share">
   Share on:
-  <a href="https://twitter.com/intent/tweet?text=Vim%20wysy%c5%82anie%20bie%c5%bc%c4%85cej%20linii%20do%20innego%20pliku&url=https%3a%2f%2fmohdur.github.io%2fpost%2fvim-wysy%25C5%2582anie-bie%25C5%25BC%25C4%2585cej-linii-do-innego-pliku%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
+  <a href="https://twitter.com/intent/tweet?text=Vim%20szyfrowanie&url=https%3a%2f%2fmohdur.github.io%2fpost%2fvim-szyfrowanie%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#twitter"></use>
 </svg>
   </a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fvim-wysy%25C5%2582anie-bie%25C5%25BC%25C4%2585cej-linii-do-innego-pliku%2f&t=Vim%20wysy%c5%82anie%20bie%c5%bc%c4%85cej%20linii%20do%20innego%20pliku" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fvim-szyfrowanie%2f&t=Vim%20szyfrowanie" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#facebook"></use>
 </svg>
@@ -128,7 +128,7 @@
   <use xlink:href="#linkedin"></use>
 </svg>
   </a>
-  <a href="https://mohdur.github.io/post/vim-wysy%C5%82anie-bie%C5%BC%C4%85cej-linii-do-innego-pliku/" title="Copy Link" class="link link_yank">
+  <a href="https://mohdur.github.io/post/vim-szyfrowanie/" title="Copy Link" class="link link_yank">
     <svg class="icon">
   <use xlink:href="#copy"></use>
 </svg>
@@ -136,17 +136,47 @@
 </div>
 
     
-    <p>Przy tej operacji użyjemy funkcji <code>writefile</code> oraz <code>getreg</code>, wysłanie bieżącej
-linii do innego pliku w tym wypadku oznacza usunięcie linii z bieżącego bufora
-i wklejenie jej do innego pliku.</p>
-<p>W tym wypadku zostanie zmapowana kombinacja klawiszy <code>&lt;leader&gt;sv</code>, która wyśle
-linię do pliku <code>~/todo/vim.md</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>nnoremap &lt;leader&gt;sv :d&lt;cr&gt;:cd ~/todo/&lt;cr&gt;:call writefile(getreg(&#39;@&#39;, 1, 1), &#39;vim.md&#39;, &#39;a&#39;)&lt;cr&gt;:cd %:p:h&lt;cr&gt;
-</code></pre></div><p>Możemy wysłać kilka linii do innego pliku używając trybu VISUAL (<code>Shift+v</code>),
-także w tym przypadku jest zmapowana ta sama kombinacja klawiszy <code>&lt;leader&gt;sv</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>vmap &lt;leader&gt;sv :d&lt;cr&gt;:cd ~/todo/&lt;cr&gt;:call writefile(getreg(&#39;@&#39;, 1, 1), &#39;vim.md&#39;, &#39;a&#39;)&lt;cr&gt;:cd %:p:h&lt;cr&gt;
-</code></pre></div><p>PS. Standardowo w edytorze Vim <code>&lt;leader&gt;</code> to klawisz <code>\</code></p>
-
+    <p>Vim posiada wbudowany mechanizm szyfrowania, do niedawna Vim potrafił
+szyfrować wyłącznie metodą <code>zip</code>, nowsze wersje potrafią szyfrować algorytmem
+<code>blowfish</code> a od wersji 7.4.399 ma możliwość szyfrowania metodą <code>blowfish2</code>,
+która jest najtrudniejszą do złamania. Nie zaleca się używania szyfrowania za
+pomocą metody <code>zip</code>. Szyfrowanie tą metodą nie jest możliwe w edytorze Neovim.</p>
+<p>W celu lepszego zabezpieczenia możemy użyć dodatkowo następujących komend</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>:set viminfo=
+<span class="ln">2</span>:set noswapfile noundofile nobackup
+<span class="ln">3</span>:edit tajny_plik.txt
+</code></pre></div><p>Żeby sprawdzić aktualną metodę szyfrowania należy wydać polecenie</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>:set cm?
+</code></pre></div><p>W pliku konfiguracyjnym <code>.vimrc</code> dodajemy</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>set cm=blowfish2
+</code></pre></div><h2 id="szyfrowanie">Szyfrowanie</h2>
+<p>Kiedy chcemy zaszyfrować plik należy uruchomić polecenie</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>:X
+<span class="ln">2</span>Enter encryption key: **********
+<span class="ln">3</span>Enter same key again: **********
+</code></pre></div><p>i podać dwukrotnie hasło, następnie trzeba zapisać plik</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>:w
+</code></pre></div><p>Plik zostanie zaszyfrowany, kiedy będziemy chcieli go ponownie edytować Vim sam
+poprosi o hasło do odszyfrowania pliku.</p>
+<p>Inną metodą jest uruchomienie edytora z parametrem <code>-x</code> parametr ten należy
+użyć wyłącznie przy szyfrowaniu. Ponowne otworzenie pliku z parametrem <code>-x</code>
+wyświetli zaszyfrowany wcześniej plik chyba że podamy poprzednio ustalone
+hasło.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ vim -x plik.txt
+</code></pre></div><h2 id="deszyfrowanie-plików">Deszyfrowanie plików</h2>
+<p>Odszyfrowanie pliku polega na wprowadzeniu komendy <code>:X</code> i podaniu dwukrotnie
+pustego hasła, czyli 2 x Enter, po tym należy zapisać plik <code>:w</code></p>
+<p>Jeśli zajdzie potrzeba wyrzucenia zawartości pliku na standardowe wyjście
+możemy skorzystać z metody którą znalazłem w wątku
+<a href="https://superuser.com/questions/1086598/print-decrypt-a-vim-encrypted-file">https://superuser.com/questions/1086598/print-decrypt-a-vim-encrypted-file</a>
+skrypt odrobinę zmodyfikowałem na własne potrzeby</p>
+<p>Skrypt <code>~/bin/cryptocat</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="cp">#!/usr/bin/env bash
+</span><span class="ln">2</span><span class="cp"></span>
+<span class="ln">3</span><span class="nv">filename</span><span class="o">=</span><span class="nv">$1</span>
+<span class="ln">4</span>
+<span class="ln">5</span>vim -R -c <span class="s2">&#34;:set key= | sav </span><span class="si">${</span><span class="nv">filename</span><span class="si">}</span><span class="s2">.plain | q&#34;</span> -- <span class="si">${</span><span class="nv">filename</span><span class="si">}</span> <span class="o">&amp;&amp;</span> cat <span class="si">${</span><span class="nv">filename</span><span class="si">}</span>.plain <span class="o">&amp;&amp;</span> shred <span class="si">${</span><span class="nv">filename</span><span class="si">}</span>.plain <span class="o">&amp;&amp;</span> rm <span class="si">${</span><span class="nv">filename</span><span class="si">}</span>.plain
+</code></pre></div>
     
       <div id="disqus_thread"></div>
 <script type="application/javascript">
@@ -180,9 +210,6 @@ także w tym przypadku jest zmapowana ta sama kombinacja klawiszy <code>&lt;lead
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
       <li>
-        <a href="https://mohdur.github.io/post/vim-szyfrowanie/" class="nav-link">Vim szyfrowanie</a>
-      </li>
-      <li>
         <a href="https://mohdur.github.io/post/vim-uzycie-ctrl-s-do-zapisania-pliku/" class="nav-link">Vim uzycie Ctrl-s do zapisania pliku</a>
       </li>
       <li>
@@ -202,6 +229,9 @@ także w tym przypadku jest zmapowana ta sama kombinacja klawiszy <code>&lt;lead
       </li>
       <li>
         <a href="https://mohdur.github.io/post/wykonanie-kopii-zapasowej-us%C5%82ugi-nextcloud/" class="nav-link">Wykonanie kopii zapasowej usługi Nextcloud</a>
+      </li>
+      <li>
+        <a href="https://mohdur.github.io/post/zarz%C4%85dzanie-pakietami-w-fedora-linux/" class="nav-link">Zarządzanie pakietami w Fedora Linux</a>
       </li>
     </ul>
     <div>

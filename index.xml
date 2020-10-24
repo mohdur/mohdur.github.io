@@ -5,7 +5,18 @@
     <link>https://mohdur.github.io/</link>
     <description>Recent content on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 19:19:42 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 19:20:49 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vim szyfrowanie</title>
+      <link>https://mohdur.github.io/post/vim-szyfrowanie/</link>
+      <pubDate>Sat, 24 Oct 2020 19:20:49 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/vim-szyfrowanie/</guid>
+      <description>Vim posiada wbudowany mechanizm szyfrowania, do niedawna Vim potrafił szyfrować wyłącznie metodą zip, nowsze wersje potrafią szyfrować algorytmem blowfish a od wersji 7.4.399 ma możliwość szyfrowania metodą blowfish2, która jest najtrudniejszą do złamania. Nie zaleca się używania szyfrowania za pomocą metody zip. Szyfrowanie tą metodą nie jest możliwe w edytorze Neovim.
+W celu lepszego zabezpieczenia możemy użyć dodatkowo następujących komend
+1:set viminfo= 2:set noswapfile noundofile nobackup 3:edit tajny_plik.txt Żeby sprawdzić aktualną metodę szyfrowania należy wydać polecenie</description>
+    </item>
+    
     <item>
       <title>Vim uzycie Ctrl-s do zapisania pliku</title>
       <link>https://mohdur.github.io/post/vim-uzycie-ctrl-s-do-zapisania-pliku/</link>
