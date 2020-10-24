@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" data-figures="true" class="page" data-mode="dim">
   <head>
-<title>Podłączenie do zasobu SAMBA | MOHDUR</title>
+<title>Arch różności | MOHDUR</title>
 <meta charset="utf-8">
 <meta name="generator" content="Hugo 0.76.4" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -10,13 +10,13 @@
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="Podłączenie do zasobu SAMBA">
+<meta name="description" content="Arch różności">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="Podłączenie do zasobu SAMBA" />
-<meta property="og:url" content="https://mohdur.github.io/post/pod%C5%82%C4%85czenie-do-zasobu-samba/" />
-<meta property="og:title" content="Podłączenie do zasobu SAMBA" />
-<meta property="og:description" content="Podłączenie do zasobu SAMBA" />
+<meta name="twitter:title" content="Arch różności" />
+<meta property="og:url" content="https://mohdur.github.io/post/arch-r%C3%B3%C5%BCno%C5%9Bci/" />
+<meta property="og:title" content="Arch różności" />
+<meta property="og:description" content="Arch różności" />
 <meta property="og:image" content="https://mohdur.github.io/images/thumbnail.png" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://mohdur.github.io/icons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://mohdur.github.io/icons/favicon-32x32.png'>
@@ -25,7 +25,7 @@
 <meta name="msapplication-TileColor" content="#002538">
 <meta name="theme-color" content="#002538">
 
-<link rel="canonical" href="https://mohdur.github.io/post/pod%C5%82%C4%85czenie-do-zasobu-samba/">
+<link rel="canonical" href="https://mohdur.github.io/post/arch-r%C3%B3%C5%BCno%C5%9Bci/">
 
     
 
@@ -100,27 +100,27 @@
   
 <div class="grid-inverse wrap content">
   <article class="post_content">
-    <h1 class="post_title">Podłączenie do zasobu SAMBA</h1><div class="post_meta">
+    <h1 class="post_title">Arch różności</h1><div class="post_meta">
   <svg class="icon">
   <use xlink:href="#calendar"></use>
 </svg>
   <span class="post_date">
-    Oct 22, 2020</span>
-    <a href='https://mohdur.github.io/tags/samba' class="post_tag button button_translucent">SAMBA
-    </a>
+    Oct 24, 2020</span>
     <a href='https://mohdur.github.io/tags/linux' class="post_tag button button_translucent">Linux
+    </a>
+    <a href='https://mohdur.github.io/tags/arch' class="post_tag button button_translucent">Arch
     </a>
 </div>
 
     
 <div class="post_share">
   Share on:
-  <a href="https://twitter.com/intent/tweet?text=Pod%c5%82%c4%85czenie%20do%20zasobu%20SAMBA&url=https%3a%2f%2fmohdur.github.io%2fpost%2fpod%25C5%2582%25C4%2585czenie-do-zasobu-samba%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
+  <a href="https://twitter.com/intent/tweet?text=Arch%20r%c3%b3%c5%bcno%c5%9bci&url=https%3a%2f%2fmohdur.github.io%2fpost%2farch-r%25C3%25B3%25C5%25BCno%25C5%259Bci%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#twitter"></use>
 </svg>
   </a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fpod%25C5%2582%25C4%2585czenie-do-zasobu-samba%2f&t=Pod%c5%82%c4%85czenie%20do%20zasobu%20SAMBA" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2farch-r%25C3%25B3%25C5%25BCno%25C5%259Bci%2f&t=Arch%20r%c3%b3%c5%bcno%c5%9bci" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#facebook"></use>
 </svg>
@@ -130,7 +130,7 @@
   <use xlink:href="#linkedin"></use>
 </svg>
   </a>
-  <a href="https://mohdur.github.io/post/pod%C5%82%C4%85czenie-do-zasobu-samba/" title="Copy Link" class="link link_yank">
+  <a href="https://mohdur.github.io/post/arch-r%C3%B3%C5%BCno%C5%9Bci/" title="Copy Link" class="link link_yank">
     <svg class="icon">
   <use xlink:href="#copy"></use>
 </svg>
@@ -138,8 +138,70 @@
 </div>
 
     
-    <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sudo mount.cifs //192.168.0.1/share /mnt/share -o user=nazwa-uzytkownika
-</code></pre></div>
+    <h2 id="aktualizacja-menu-grub">Aktualizacja menu grub</h2>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span># grub-mkconfig -o /boot/grub/grub/cfg
+</code></pre></div><h2 id="instalacja-qt4">Instalacja QT4</h2>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span># pacman -S qt4
+</code></pre></div><h2 id="sprawdzenie-zależności-pakietu-i-informacji">Sprawdzenie zależności pakietu i informacji</h2>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span># pacman -Qi vlc
+</code></pre></div><h2 id="lista-uruchomionych-usług">Lista uruchomionych usług</h2>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span>$ systemctl list-unit-files | grep enabled
+<span class="ln"> 2</span>autovt@.service                             enabled
+<span class="ln"> 3</span>cronie.service                              enabled
+<span class="ln"> 4</span>dbus-org.freedesktop.NetworkManager.service enabled
+<span class="ln"> 5</span>dbus-org.freedesktop.nm-dispatcher.service  enabled
+<span class="ln"> 6</span>display-manager.service                     enabled
+<span class="ln"> 7</span>getty@.service                              enabled
+<span class="ln"> 8</span>lightdm.service                             enabled
+<span class="ln"> 9</span>NetworkManager-dispatcher.service           enabled
+<span class="ln">10</span>NetworkManager.service                      enabled
+<span class="ln">11</span>sshd.service                                enabled
+<span class="ln">12</span>systemd-fsck-root.service                   enabled-runtime
+<span class="ln">13</span>remote-fs.target                            enabled
+<span class="ln">14</span>pamac-cleancache.timer                      enabled 
+</code></pre></div><h2 id="znalezienie-rozdzielczości-ekranu">Znalezienie rozdzielczości ekranu</h2>
+<p>Należy zainstalować pakiet <code>xorg-xrandr</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span># xrandr
+</code></pre></div><h2 id="wyświetlenie-tablicy-arp">Wyświetlenie tablicy ARP</h2>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span># ip neigh
+</code></pre></div><p>lub</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span># ip n
+</code></pre></div><h2 id="opis-wersji-kernela">Opis wersji Kernela</h2>
+<p><a href="https://wiki.archlinux.org/index.php/Kernels">https://wiki.archlinux.org/index.php/Kernels</a></p>
+<h1 id="instalacja-polecenia-cu">Instalacja polecenia cu</h1>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ yaourt -S uucp
+</code></pre></div><h2 id="instalacja-obsługi-laptopów-z-serii-thinkpad">Instalacja obsługi laptopów z serii Thinkpad</h2>
+<p>Do zarządzania procesem ładowania baterii i prędkością CPU na baterii służy program tlp <a href="https://wiki.archlinux.org/index.php/TLP">https://wiki.archlinux.org/index.php/TLP</a></p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span># pacman -S linux-headers tlp acpi_call
+</code></pre></div><h2 id="brak-komunikacji-z-pękiem-kluczy-w-gnome">Brak komunikacji z pękiem kluczy w Gnome</h2>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span># pacman -S libgnome-keyring
+</code></pre></div><h2 id="kompilacja-dodatkowych-paczek-za-pomocą-yaourt">Kompilacja dodatkowych paczek za pomocą Yaourt</h2>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ yaourt -S uucp
+</code></pre></div><h2 id="budowanie-binarnych-paczek-za-pomocą-yaourt">Budowanie binarnych paczek za pomocą Yaourt</h2>
+<p>Pobieranie <code>PKGBUILD</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ yaourt -G nazwa_pakiety
+</code></pre></div><p>Budowanie paczki</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ cd nazwa_pakietu
+<span class="ln">2</span>$ yaourt -P
+</code></pre></div><p>Możemy też zbudować paczkę za pomocą polecenia <code>makepkg</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ cd nazwa_pakietu
+<span class="ln">2</span>$ makepkg
+</code></pre></div><h2 id="lokalizacja-pobranych-pakietów">Lokalizacja pobranych pakietów</h2>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>/var/cache/pacman/pkg
+</code></pre></div><h2 id="wyłączenie-ipv6-w-arch-linux">Wyłączenie IPv6 w Arch Linux</h2>
+<p>Do pliku <code>/etc/default/grub</code> dodajemy <code>ipv6.disable=1</code> w wierszu <code>GRUB_CMDLINE_LINUX_DEFAULT=&quot; ipv6.disable=1 &quot;</code></p>
+<p>Aktualizacja grub</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ sudo grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre></div><p>Po restarcie możemy sprawdzić czy system obsługuje IPv6</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ test -f /proc/net/if_inet6 &amp;&amp; echo &#34;IPv6 supported&#34; || echo &#34;IPv6 not supported&#34;
+</code></pre></div><h2 id="własny-obraz-iso-z-graficznym-instalatorem">Własny obraz ISO z graficznym instalatorem</h2>
+<p>Przydatne projekty:</p>
+<ul>
+<li>archiso</li>
+<li>calamares - instalator graficzny</li>
+<li>cnchi - instalagor graficzny</li>
+</ul>
+
     
       <div id="disqus_thread"></div>
 <script type="application/javascript">
@@ -173,9 +235,6 @@
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
       <li>
-        <a href="https://mohdur.github.io/post/arch-r%C3%B3%C5%BCno%C5%9Bci/" class="nav-link">Arch różności</a>
-      </li>
-      <li>
         <a href="https://mohdur.github.io/post/praca-z-klientem-openssh/" class="nav-link">Praca z klientem OpenSSH</a>
       </li>
       <li>
@@ -195,6 +254,9 @@
       </li>
       <li>
         <a href="https://mohdur.github.io/post/vim-obiekty-tekstowe/" class="nav-link">Vim obiekty tekstowe</a>
+      </li>
+      <li>
+        <a href="https://mohdur.github.io/post/vim-dzia%C5%82ania-arytmetyczne/" class="nav-link">Vim działania arytmetyczne</a>
       </li>
     </ul>
     <div>

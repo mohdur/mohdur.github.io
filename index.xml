@@ -5,7 +5,17 @@
     <link>https://mohdur.github.io/</link>
     <description>Recent content on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 15:22:01 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 15:39:57 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Arch różności</title>
+      <link>https://mohdur.github.io/post/arch-r%C3%B3%C5%BCno%C5%9Bci/</link>
+      <pubDate>Sat, 24 Oct 2020 15:39:57 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/arch-r%C3%B3%C5%BCno%C5%9Bci/</guid>
+      <description>Aktualizacja menu grub 1# grub-mkconfig -o /boot/grub/grub/cfg Instalacja QT4 1# pacman -S qt4 Sprawdzenie zależności pakietu i informacji 1# pacman -Qi vlc Lista uruchomionych usług 1$ systemctl list-unit-files | grep enabled 2autovt@.service enabled 3cronie.service enabled 4dbus-org.freedesktop.NetworkManager.service enabled 5dbus-org.freedesktop.nm-dispatcher.service enabled 6display-manager.service enabled 7getty@.service enabled 8lightdm.service enabled 9NetworkManager-dispatcher.service enabled 10NetworkManager.service enabled 11sshd.service enabled 12systemd-fsck-root.service enabled-runtime 13remote-fs.target enabled 14pamac-cleancache.timer enabled Znalezienie rozdzielczości ekranu Należy zainstalować pakiet xorg-xrandr
+1# xrandr Wyświetlenie tablicy ARP 1# ip neigh lub</description>
+    </item>
+    
     <item>
       <title>Praca z klientem OpenSSH</title>
       <link>https://mohdur.github.io/post/praca-z-klientem-openssh/</link>
