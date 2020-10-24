@@ -5,7 +5,18 @@
     <link>https://mohdur.github.io/</link>
     <description>Recent content on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 16:51:34 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 17:00:15 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Generowanie kodu QR dla autoryzacj 2FA</title>
+      <link>https://mohdur.github.io/post/generowanie-kodu-qr-dla-autoryzacj-2fa/</link>
+      <pubDate>Sat, 24 Oct 2020 17:00:15 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/generowanie-kodu-qr-dla-autoryzacj-2fa/</guid>
+      <description>Tak wygląda kod QR w postaci linku
+1otpauth://totp/mohdur%40github?secret=OAPICAFAI7PJKHVN&amp;amp;issuer=github/mohdur&amp;amp;algorithm=SHA512&amp;amp;digits=6&amp;amp;period=30 Generowanie kodu do pliku PNG
+1echo &amp;#34;otpauth://totp/mohdur%40github?secret=OAPICAFAI7PJKHVN&amp;amp;issuer=github/mohdur&amp;amp;algorithm=SHA512&amp;amp;digits=6&amp;amp;period=30&amp;#34; \ 2 | qrencode -t png -d 125 -lH -o qr.png </description>
+    </item>
+    
     <item>
       <title>Wireshark zdalnie przez SSH</title>
       <link>https://mohdur.github.io/post/wireshark-zdalnie-przez-ssh/</link>

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" data-figures="true" class="page" data-mode="dim">
   <head>
-<title>Vim podróże w czasie | MOHDUR</title>
+<title>Generowanie kodu QR dla autoryzacj 2FA | MOHDUR</title>
 <meta charset="utf-8">
 <meta name="generator" content="Hugo 0.76.4" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -10,13 +10,13 @@
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="Vim podróże w czasie">
+<meta name="description" content="Generowanie kodu QR dla autoryzacj 2FA">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="Vim podróże w czasie" />
-<meta property="og:url" content="https://mohdur.github.io/post/vim-podr%C3%B3%C5%BCe-w-czasie/" />
-<meta property="og:title" content="Vim podróże w czasie" />
-<meta property="og:description" content="Vim podróże w czasie" />
+<meta name="twitter:title" content="Generowanie kodu QR dla autoryzacj 2FA" />
+<meta property="og:url" content="https://mohdur.github.io/post/generowanie-kodu-qr-dla-autoryzacj-2fa/" />
+<meta property="og:title" content="Generowanie kodu QR dla autoryzacj 2FA" />
+<meta property="og:description" content="Generowanie kodu QR dla autoryzacj 2FA" />
 <meta property="og:image" content="https://mohdur.github.io/images/thumbnail.png" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://mohdur.github.io/icons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://mohdur.github.io/icons/favicon-32x32.png'>
@@ -25,7 +25,7 @@
 <meta name="msapplication-TileColor" content="#002538">
 <meta name="theme-color" content="#002538">
 
-<link rel="canonical" href="https://mohdur.github.io/post/vim-podr%C3%B3%C5%BCe-w-czasie/">
+<link rel="canonical" href="https://mohdur.github.io/post/generowanie-kodu-qr-dla-autoryzacj-2fa/">
 
     
 
@@ -100,25 +100,25 @@
   
 <div class="grid-inverse wrap content">
   <article class="post_content">
-    <h1 class="post_title">Vim podróże w czasie</h1><div class="post_meta">
+    <h1 class="post_title">Generowanie kodu QR dla autoryzacj 2FA</h1><div class="post_meta">
   <svg class="icon">
   <use xlink:href="#calendar"></use>
 </svg>
   <span class="post_date">
     Oct 24, 2020</span>
-    <a href='https://mohdur.github.io/tags/vim' class="post_tag button button_translucent">Vim
+    <a href='https://mohdur.github.io/tags/security' class="post_tag button button_translucent">Security
     </a>
 </div>
 
     
 <div class="post_share">
   Share on:
-  <a href="https://twitter.com/intent/tweet?text=Vim%20podr%c3%b3%c5%bce%20w%20czasie&url=https%3a%2f%2fmohdur.github.io%2fpost%2fvim-podr%25C3%25B3%25C5%25BCe-w-czasie%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
+  <a href="https://twitter.com/intent/tweet?text=Generowanie%20kodu%20QR%20dla%20autoryzacj%202FA&url=https%3a%2f%2fmohdur.github.io%2fpost%2fgenerowanie-kodu-qr-dla-autoryzacj-2fa%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#twitter"></use>
 </svg>
   </a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fvim-podr%25C3%25B3%25C5%25BCe-w-czasie%2f&t=Vim%20podr%c3%b3%c5%bce%20w%20czasie" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fgenerowanie-kodu-qr-dla-autoryzacj-2fa%2f&t=Generowanie%20kodu%20QR%20dla%20autoryzacj%202FA" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#facebook"></use>
 </svg>
@@ -128,7 +128,7 @@
   <use xlink:href="#linkedin"></use>
 </svg>
   </a>
-  <a href="https://mohdur.github.io/post/vim-podr%C3%B3%C5%BCe-w-czasie/" title="Copy Link" class="link link_yank">
+  <a href="https://mohdur.github.io/post/generowanie-kodu-qr-dla-autoryzacj-2fa/" title="Copy Link" class="link link_yank">
     <svg class="icon">
   <use xlink:href="#copy"></use>
 </svg>
@@ -136,27 +136,11 @@
 </div>
 
     
-    <p>Edytor Vim posiada dwie komendy, które umożliwiają przejście do wersji z przed
-lub kilka sekund później, są to <code>:earlier</code> oraz <code>:later</code>. Jako parametr dodatkowy
-używamy ile sekund, minut godzin lub nawet dni chcemy się przenieść w czasie.
-Dodatkowo możemy przenieść się w czasie <strong>N</strong> zapisów pliku w czasie.</p>
-<p>Użycie tych dwóch poleceń bez podania w dodatkowym parametrze jednostki czasu
-przenosi nas o kilka stanów pliku. Stan można uważać za przejście pomiędzy
-trybami edycji.</p>
-<p>np. użycie polecenia <code>:later 30s</code> przeniesie nas w czasie 30 sekund później,
-oczywiście Vim nie jest w stanie przewidzieć co zrobimy za 30 sekund, ale
-w przypadku kiedy wcześniej użyjemy komendy <code>:earlier 1m</code> ma to sens.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>:later 30s
-</code></pre></div><p>Z pomocy <code>:help later</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>:later {count}		Go to newer text state {count} times.
-<span class="ln">2</span>:later {N}s		Go to newer text state about {N} seconds later.
-<span class="ln">3</span>:later {N}m		Go to newer text state about {N} minutes later.
-<span class="ln">4</span>:later {N}h		Go to newer text state about {N} hours later.
-<span class="ln">5</span>:later {N}d		Go to newer text state about {N} days later.
-<span class="ln">6</span>
-<span class="ln">7</span>:later {N}f		Go to newer text state {N} file writes later.
-<span class="ln">8</span>			When at the state of the last file write, &#34;:later 1f&#34;
-<span class="ln">9</span>			will go to the newest text state.
+    <p>Tak wygląda kod QR w postaci linku</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>otpauth://totp/mohdur%40github?secret=OAPICAFAI7PJKHVN&amp;issuer=github/mohdur&amp;algorithm=SHA512&amp;digits=6&amp;period=30
+</code></pre></div><p>Generowanie kodu do pliku PNG</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>echo &#34;otpauth://totp/mohdur%40github?secret=OAPICAFAI7PJKHVN&amp;issuer=github/mohdur&amp;algorithm=SHA512&amp;digits=6&amp;period=30&#34; \
+<span class="ln">2</span>  | qrencode -t png -d 125 -lH -o qr.png
 </code></pre></div>
     
       <div id="disqus_thread"></div>
@@ -191,9 +175,6 @@ w przypadku kiedy wcześniej użyjemy komendy <code>:earlier 1m</code> ma to sen
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
       <li>
-        <a href="https://mohdur.github.io/post/generowanie-kodu-qr-dla-autoryzacj-2fa/" class="nav-link">Generowanie kodu QR dla autoryzacj 2FA</a>
-      </li>
-      <li>
         <a href="https://mohdur.github.io/post/wireshark-zdalnie-przez-ssh/" class="nav-link">Wireshark zdalnie przez SSH</a>
       </li>
       <li>
@@ -201,6 +182,9 @@ w przypadku kiedy wcześniej użyjemy komendy <code>:earlier 1m</code> ma to sen
       </li>
       <li>
         <a href="https://mohdur.github.io/post/skr%C3%B3ty-klawiszowe-zsh/" class="nav-link">Skróty klawiszowe ZSH</a>
+      </li>
+      <li>
+        <a href="https://mohdur.github.io/post/vim-podr%C3%B3%C5%BCe-w-czasie/" class="nav-link">Vim podróże w czasie</a>
       </li>
       <li>
         <a href="https://mohdur.github.io/post/polska-klawiatura-i-polonizacja-w-arch-linux/" class="nav-link">Polska klawiatura i polonizacja w Arch Linux</a>

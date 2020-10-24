@@ -3,27 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mohdur.github.io/post/generowanie-kodu-qr-dla-autoryzacj-2fa/</loc>
+    <lastmod>2020-10-24T17:00:15+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/</loc>
+    <lastmod>2020-10-24T17:00:15+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/</loc>
+    <lastmod>2020-10-24T17:00:15+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/security/</loc>
+    <lastmod>2020-10-24T17:00:15+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/</loc>
+    <lastmod>2020-10-24T17:00:15+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mohdur.github.io/tags/linux/</loc>
     <lastmod>2020-10-24T16:51:34+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mohdur.github.io/</loc>
-    <lastmod>2020-10-24T16:51:34+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/post/</loc>
-    <lastmod>2020-10-24T16:51:34+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mohdur.github.io/tags/sieci/</loc>
-    <lastmod>2020-10-24T16:51:34+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/</loc>
     <lastmod>2020-10-24T16:51:34+02:00</lastmod>
   </url>
   
@@ -439,11 +449,6 @@
   
   <url>
     <loc>https://mohdur.github.io/tags/mikrotik/</loc>
-    <lastmod>2020-10-14T21:01:41+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/security/</loc>
     <lastmod>2020-10-14T21:01:41+02:00</lastmod>
   </url>
   
