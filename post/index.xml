@@ -5,7 +5,18 @@
     <link>https://mohdur.github.io/post/</link>
     <description>Recent content in Posts on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 15:50:31 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 15:52:11 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Generowanie klucza GnuPG / PGP</title>
+      <link>https://mohdur.github.io/post/generowanie-klucza-gnupg-pgp/</link>
+      <pubDate>Sat, 24 Oct 2020 15:52:11 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/generowanie-klucza-gnupg-pgp/</guid>
+      <description>Generowanie klucza PPG za pomocą komendy gpg lub gpg2, gpg --key-gen standardowa skrócona procedura, lepszą opcją jest wygenerowanie klucza za pomoca parametru --full-generate-key
+Pierwsza cześć to pytania o parametry klucza
+1gpg2 --full-generate-key 2gpg (GnuPG) 2.2.13; Copyright (C) 2019 Free Software Foundation, Inc. 3This is free software: you are free to change and redistribute it. 4There is NO WARRANTY, to the extent permitted by law. 5 6gpg: katalog ,,/home/testowy/.gnupg&amp;#39;&amp;#39; utworzony 7gpg: keybox ,,/home/testowy/.</description>
+    </item>
+    
     <item>
       <title>Konwertowanie Dokumentów Markdown Do PDF</title>
       <link>https://mohdur.github.io/post/konwertowanie-dokument%C3%B3w-markdown-do-pdf/</link>
