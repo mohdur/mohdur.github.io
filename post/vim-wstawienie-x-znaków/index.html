@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" data-figures="true" class="page" data-mode="dim">
   <head>
-<title>Generowanie liczb losowych | MOHDUR</title>
+<title>Vim wstawienie X znaków | MOHDUR</title>
 <meta charset="utf-8">
 <meta name="generator" content="Hugo 0.76.4" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -10,13 +10,13 @@
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="Generowanie liczb losowych">
+<meta name="description" content="Vim wstawienie X znaków">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="Generowanie liczb losowych" />
-<meta property="og:url" content="https://mohdur.github.io/post/generowanie-liczb-losowych/" />
-<meta property="og:title" content="Generowanie liczb losowych" />
-<meta property="og:description" content="Generowanie liczb losowych" />
+<meta name="twitter:title" content="Vim wstawienie X znaków" />
+<meta property="og:url" content="https://mohdur.github.io/post/vim-wstawienie-x-znak%C3%B3w/" />
+<meta property="og:title" content="Vim wstawienie X znaków" />
+<meta property="og:description" content="Vim wstawienie X znaków" />
 <meta property="og:image" content="https://mohdur.github.io/images/thumbnail.png" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://mohdur.github.io/icons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://mohdur.github.io/icons/favicon-32x32.png'>
@@ -25,7 +25,7 @@
 <meta name="msapplication-TileColor" content="#002538">
 <meta name="theme-color" content="#002538">
 
-<link rel="canonical" href="https://mohdur.github.io/post/generowanie-liczb-losowych/">
+<link rel="canonical" href="https://mohdur.github.io/post/vim-wstawienie-x-znak%C3%B3w/">
 
     
 
@@ -44,7 +44,7 @@
     
     
   
-  <body data-code="10" data-lines="false" id="documentTop">
+  <body data-code="200" data-lines="false" id="documentTop">
 
 <header class="nav_header" >
   <nav class="nav">
@@ -100,27 +100,25 @@
   
 <div class="grid-inverse wrap content">
   <article class="post_content">
-    <h1 class="post_title">Generowanie liczb losowych</h1><div class="post_meta">
+    <h1 class="post_title">Vim wstawienie X znaków</h1><div class="post_meta">
   <svg class="icon">
   <use xlink:href="#calendar"></use>
 </svg>
   <span class="post_date">
-    Oct 22, 2020</span>
-    <a href='https://mohdur.github.io/tags/shell' class="post_tag button button_translucent">Shell
-    </a>
-    <a href='https://mohdur.github.io/tags/linux' class="post_tag button button_translucent">Linux
+    Oct 24, 2020</span>
+    <a href='https://mohdur.github.io/tags/vim' class="post_tag button button_translucent">Vim
     </a>
 </div>
 
     
 <div class="post_share">
   Share on:
-  <a href="https://twitter.com/intent/tweet?text=Generowanie%20liczb%20losowych&url=https%3a%2f%2fmohdur.github.io%2fpost%2fgenerowanie-liczb-losowych%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
+  <a href="https://twitter.com/intent/tweet?text=Vim%20wstawienie%20X%20znak%c3%b3w&url=https%3a%2f%2fmohdur.github.io%2fpost%2fvim-wstawienie-x-znak%25C3%25B3w%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#twitter"></use>
 </svg>
   </a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fgenerowanie-liczb-losowych%2f&t=Generowanie%20liczb%20losowych" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fvim-wstawienie-x-znak%25C3%25B3w%2f&t=Vim%20wstawienie%20X%20znak%c3%b3w" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#facebook"></use>
 </svg>
@@ -130,7 +128,7 @@
   <use xlink:href="#linkedin"></use>
 </svg>
   </a>
-  <a href="https://mohdur.github.io/post/generowanie-liczb-losowych/" title="Copy Link" class="link link_yank">
+  <a href="https://mohdur.github.io/post/vim-wstawienie-x-znak%C3%B3w/" title="Copy Link" class="link link_yank">
     <svg class="icon">
   <use xlink:href="#copy"></use>
 </svg>
@@ -138,9 +136,82 @@
 </div>
 
     
-    <h1 id="wygenerowanie-liczby-losowej-o-określonej-długości">Wygenerowanie liczby losowej o określonej długości</h1>
-<p>W tym wypadku jest to 20 cyfr</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>&lt; /dev/urandom | tr -cd &#39;[:digit:]&#39; | head -c20; echo
+    <p>Wstawienie X razy dowolnego znaku w Vim wymaga następującej składni w trybie
+<strong>NORMAL</strong>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>[ilość][tryb][znak]&lt;ESC&gt;
+</code></pre></div><p>Tryby wprowadzania:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>i - wprowadza znak przed kursorem
+<span class="ln">2</span>a - wprowadza znak za kursorem
+<span class="ln">3</span>I - wprowadza znak na początku linii
+<span class="ln">4</span>A - wprowadza znak na końcu linii
+<span class="ln">5</span>o - wprowadza znak w kolejnych wierszach linię poniżej
+<span class="ln">6</span>O - wprowadza znak w kolejnych wierszach linię powyżej
+<span class="ln">7</span>r - zamiana znaku wybraną ilość razy
+</code></pre></div><p>Przykład wprowadzenia 80 znaków <code>=</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>80i=&lt;ESC&gt;
+<span class="ln">2</span>================================================================================
+</code></pre></div><p>Przykład wprowadzenia 3 znaków <code>=</code> w kolejnych liniach</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>3o=&lt;ESC&gt;
+<span class="ln">2</span>
+<span class="ln">3</span>=
+<span class="ln">4</span>=
+<span class="ln">5</span>=
+</code></pre></div><p>Wstawianie znaku dowolną ilość razy jest możliwe również w trybie <strong>VISUAL</strong>
+na przykład wstawienie znaku <code>|</code> w 6 kolejnych liniach.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>6o|&lt;ESC&gt;
+<span class="ln">2</span>
+<span class="ln">3</span>|
+<span class="ln">4</span>|
+<span class="ln">5</span>|
+<span class="ln">6</span>|
+<span class="ln">7</span>|
+<span class="ln">8</span>|
+</code></pre></div><p>Teraz w tych 6 wierszach dodajmy 78 spacji. Zaznaczamy wierwsze za pomocą
+<code>&lt;Ctrl-v&gt;</code>. W celu wizualizacji zamienimy znak spacji znakiem podkreślenia
+<code>_</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>&lt;Ctrl-v&gt;jjjjj78A&lt;spacja&gt;&lt;ESC&gt;
+<span class="ln">2</span>|______________________________________________________________________________
+<span class="ln">3</span>|______________________________________________________________________________
+<span class="ln">4</span>|______________________________________________________________________________
+<span class="ln">5</span>|______________________________________________________________________________
+<span class="ln">6</span>|______________________________________________________________________________
+<span class="ln">7</span>|______________________________________________________________________________
+</code></pre></div><p>Dodajmy na końcu każdego wiersza znak <code>|</code>. Przechodzimy na koniec pierwszej
+linii zapomocą <code>$</code>. Zaznaczamy wszystkie linie za pomocą <code>&lt;Ctrl-v&gt;</code> teraz
+użyjemy komedny <code>A</code> i znaku <code>|</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$&lt;Ctrl-v&gt;jjjjjA|&lt;ESC&gt;
+<span class="ln">2</span>|                                                                              |
+<span class="ln">3</span>|                                                                              |
+<span class="ln">4</span>|                                                                              |
+<span class="ln">5</span>|                                                                              |
+<span class="ln">6</span>|                                                                              |
+<span class="ln">7</span>|                                                                              |
+</code></pre></div><p>Zmiennmy spacje w pierwszej linii na znak <code>-</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>77r-
+<span class="ln">2</span>|------------------------------------------------------------------------------|
+<span class="ln">3</span>|                                                                              |
+<span class="ln">4</span>|                                                                              |
+<span class="ln">5</span>|                                                                              |
+<span class="ln">6</span>|                                                                              |
+<span class="ln">7</span>|                                                                              |
+</code></pre></div><p>Zamiana spacji w ostatniej linii na znak <code>=</code>, tutaj użyjemy komendy <code>s</code> do
+zamiany tekstu. Użycie komendy <code>s</code> należy wykonać będąc w linii, którą
+chcemy objąć tą komendą.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>:s/ /=/g&lt;ENTER&gt;
+<span class="ln">2</span>|------------------------------------------------------------------------------|
+<span class="ln">3</span>|                                                                              |
+<span class="ln">4</span>|                                                                              |
+<span class="ln">5</span>|                                                                              |
+<span class="ln">6</span>|                                                                              |
+<span class="ln">7</span>|==============================================================================|
+</code></pre></div><p>Ostatnim krokiem będzie podzielenie tabeli na dwie kolumny w trybie <strong>VISUAL</strong></p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>&lt;Ctrl-v&gt;jjjjjr|
+<span class="ln">2</span>|----------------------|-------------------------------------------------------|
+<span class="ln">3</span>|                      |                                                       |
+<span class="ln">4</span>|                      |                                                       |
+<span class="ln">5</span>|                      |                                                       |
+<span class="ln">6</span>|                      |                                                       |
+<span class="ln">7</span>|======================|=======================================================|
 </code></pre></div>
     
       <div id="disqus_thread"></div>
@@ -175,9 +246,6 @@
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
       <li>
-        <a href="https://mohdur.github.io/post/vim-wstawienie-x-znak%C3%B3w/" class="nav-link">Vim wstawienie X znaków</a>
-      </li>
-      <li>
         <a href="https://mohdur.github.io/post/sprawdzanie-pisowni-w-edytorze-vim/" class="nav-link">Sprawdzanie pisowni w edytorze Vim</a>
       </li>
       <li>
@@ -197,6 +265,9 @@
       </li>
       <li>
         <a href="https://mohdur.github.io/post/vim-uzycie-ctrl-s-do-zapisania-pliku/" class="nav-link">Vim uzycie Ctrl-s do zapisania pliku</a>
+      </li>
+      <li>
+        <a href="https://mohdur.github.io/post/vim-szyfrowanie-za-pomoc%C4%85-pgp.md/" class="nav-link">Vim szyfrowanie za pomocą PGP</a>
       </li>
     </ul>
     <div>

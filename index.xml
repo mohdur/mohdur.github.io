@@ -5,7 +5,18 @@
     <link>https://mohdur.github.io/</link>
     <description>Recent content on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 19:36:39 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 19:39:47 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vim wstawienie X znaków</title>
+      <link>https://mohdur.github.io/post/vim-wstawienie-x-znak%C3%B3w/</link>
+      <pubDate>Sat, 24 Oct 2020 19:39:47 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/vim-wstawienie-x-znak%C3%B3w/</guid>
+      <description>Wstawienie X razy dowolnego znaku w Vim wymaga następującej składni w trybie NORMAL.
+1[ilość][tryb][znak]&amp;lt;ESC&amp;gt; Tryby wprowadzania:
+1i - wprowadza znak przed kursorem 2a - wprowadza znak za kursorem 3I - wprowadza znak na początku linii 4A - wprowadza znak na końcu linii 5o - wprowadza znak w kolejnych wierszach linię poniżej 6O - wprowadza znak w kolejnych wierszach linię powyżej 7r - zamiana znaku wybraną ilość razy Przykład wprowadzenia 80 znaków =</description>
+    </item>
+    
     <item>
       <title>Sprawdzanie pisowni w edytorze Vim</title>
       <link>https://mohdur.github.io/post/sprawdzanie-pisowni-w-edytorze-vim/</link>
