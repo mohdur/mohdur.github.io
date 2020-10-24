@@ -5,7 +5,17 @@
     <link>https://mohdur.github.io/post/</link>
     <description>Recent content in Posts on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 16:44:02 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 16:51:34 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Wireshark zdalnie przez SSH</title>
+      <link>https://mohdur.github.io/post/wireshark-zdalnie-przez-ssh/</link>
+      <pubDate>Sat, 24 Oct 2020 16:51:34 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/wireshark-zdalnie-przez-ssh/</guid>
+      <description>Wirshark jest uruchomiony na systemie Linux natomiast odczytuje on dane z systemu OpenBSD
+1$ ssh root@192.168.6.66 tcpdump -l -i sis0 -w - &amp;#39;not port 22&amp;#39; | wireshark -k -i - Zapis not port 22 dotyczy polecenia tcpdump, jest to filtr dzięki czemu port 22 nie jest przekazywany do wiresharka.</description>
+    </item>
+    
     <item>
       <title>Skrypt ułatwiający pracę z pluginem Vimwiki i dziennikiem</title>
       <link>https://mohdur.github.io/post/skrypt-u%C5%82atwiaj%C4%85cy-prac%C4%99-z-pluginem-vimwiki-i-dziennikiem/</link>

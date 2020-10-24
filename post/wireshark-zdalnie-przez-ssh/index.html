@@ -1,23 +1,22 @@
 
 <!DOCTYPE html>
-<html lang="en" data-figures="" class="page" data-mode="dim">
+<html lang="en" data-figures="true" class="page" data-mode="dim">
   <head>
-<title>About | MOHDUR</title>
+<title>Wireshark zdalnie przez SSH | MOHDUR</title>
 <meta charset="utf-8">
 <meta name="generator" content="Hugo 0.76.4" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="HELLO  Klucz SSH Klucz PGP   ">
+<meta name="description" content="Wireshark zdalnie przez SSH">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="About" />
-<meta property="og:url" content="https://mohdur.github.io/about/" />
-<meta property="og:title" content="About" />
-<meta property="og:description" content="HELLO  Klucz SSH Klucz PGP   " />
+<meta name="twitter:title" content="Wireshark zdalnie przez SSH" />
+<meta property="og:url" content="https://mohdur.github.io/post/wireshark-zdalnie-przez-ssh/" />
+<meta property="og:title" content="Wireshark zdalnie przez SSH" />
+<meta property="og:description" content="Wireshark zdalnie przez SSH" />
 <meta property="og:image" content="https://mohdur.github.io/images/thumbnail.png" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://mohdur.github.io/icons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://mohdur.github.io/icons/favicon-32x32.png'>
@@ -26,7 +25,7 @@
 <meta name="msapplication-TileColor" content="#002538">
 <meta name="theme-color" content="#002538">
 
-<link rel="canonical" href="https://mohdur.github.io/about/">
+<link rel="canonical" href="https://mohdur.github.io/post/wireshark-zdalnie-przez-ssh/">
 
     
 
@@ -43,8 +42,9 @@
   
   
     
+    
   
-  <body data-code="7" data-lines="false" id="documentTop">
+  <body data-code="10" data-lines="false" id="documentTop">
 
 <header class="nav_header" >
   <nav class="nav">
@@ -100,23 +100,27 @@
   
 <div class="grid-inverse wrap content">
   <article class="post_content">
-    <h1 class="post_title">About</h1><div class="post_meta">
+    <h1 class="post_title">Wireshark zdalnie przez SSH</h1><div class="post_meta">
   <svg class="icon">
   <use xlink:href="#calendar"></use>
 </svg>
   <span class="post_date">
-    Oct 14, 2012</span>
+    Oct 24, 2020</span>
+    <a href='https://mohdur.github.io/tags/linux' class="post_tag button button_translucent">Linux
+    </a>
+    <a href='https://mohdur.github.io/tags/sieci' class="post_tag button button_translucent">Sieci
+    </a>
 </div>
 
     
 <div class="post_share">
   Share on:
-  <a href="https://twitter.com/intent/tweet?text=About&url=https%3a%2f%2fmohdur.github.io%2fabout%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
+  <a href="https://twitter.com/intent/tweet?text=Wireshark%20zdalnie%20przez%20SSH&url=https%3a%2f%2fmohdur.github.io%2fpost%2fwireshark-zdalnie-przez-ssh%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#twitter"></use>
 </svg>
   </a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fabout%2f&t=About" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fwireshark-zdalnie-przez-ssh%2f&t=Wireshark%20zdalnie%20przez%20SSH" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#facebook"></use>
 </svg>
@@ -126,7 +130,7 @@
   <use xlink:href="#linkedin"></use>
 </svg>
   </a>
-  <a href="https://mohdur.github.io/about/" title="Copy Link" class="link link_yank">
+  <a href="https://mohdur.github.io/post/wireshark-zdalnie-przez-ssh/" title="Copy Link" class="link link_yank">
     <svg class="icon">
   <use xlink:href="#copy"></use>
 </svg>
@@ -134,12 +138,11 @@
 </div>
 
     
-    <h1 id="hello">HELLO</h1>
-<ul>
-<li><a href="https://github.com/mohdur.keys">Klucz SSH</a></li>
-<li><a href="https://github.com/mohdur.gpg">Klucz PGP</a></li>
-</ul>
-<hr>
+    <p>Wirshark jest uruchomiony na systemie Linux natomiast odczytuje on dane
+z systemu OpenBSD</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ ssh root@192.168.6.66 tcpdump -l -i sis0 -w - &#39;not port 22&#39; | wireshark -k -i -
+</code></pre></div><p>Zapis <code>not port 22</code> dotyczy polecenia <code>tcpdump</code>, jest to filtr dzięki czemu
+port 22 nie jest przekazywany do wiresharka.</p>
 
     
       <div id="disqus_thread"></div>
@@ -174,9 +177,6 @@
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
       <li>
-        <a href="https://mohdur.github.io/post/wireshark-zdalnie-przez-ssh/" class="nav-link">Wireshark zdalnie przez SSH</a>
-      </li>
-      <li>
         <a href="https://mohdur.github.io/post/skrypt-u%C5%82atwiaj%C4%85cy-prac%C4%99-z-pluginem-vimwiki-i-dziennikiem/" class="nav-link">Skrypt ułatwiający pracę z pluginem Vimwiki i dziennikiem</a>
       </li>
       <li>
@@ -196,6 +196,9 @@
       </li>
       <li>
         <a href="https://mohdur.github.io/post/arch-r%C3%B3%C5%BCno%C5%9Bci/" class="nav-link">Arch różności</a>
+      </li>
+      <li>
+        <a href="https://mohdur.github.io/post/praca-z-klientem-openssh/" class="nav-link">Praca z klientem OpenSSH</a>
       </li>
     </ul>
     <div>

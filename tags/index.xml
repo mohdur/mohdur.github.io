@@ -5,7 +5,25 @@
     <link>https://mohdur.github.io/tags/</link>
     <description>Recent content in Tags on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 16:44:02 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 16:51:34 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux</title>
+      <link>https://mohdur.github.io/tags/linux/</link>
+      <pubDate>Sat, 24 Oct 2020 16:51:34 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sieci</title>
+      <link>https://mohdur.github.io/tags/sieci/</link>
+      <pubDate>Sat, 24 Oct 2020 16:51:34 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/tags/sieci/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Skrypty</title>
       <link>https://mohdur.github.io/tags/skrypty/</link>
@@ -21,15 +39,6 @@
       <pubDate>Sat, 24 Oct 2020 16:44:02 +0200</pubDate>
       
       <guid>https://mohdur.github.io/tags/vim/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://mohdur.github.io/tags/linux/</link>
-      <pubDate>Sat, 24 Oct 2020 16:34:48 +0200</pubDate>
-      
-      <guid>https://mohdur.github.io/tags/linux/</guid>
       <description></description>
     </item>
     
@@ -156,15 +165,6 @@
       <pubDate>Thu, 22 Oct 2020 16:35:08 +0200</pubDate>
       
       <guid>https://mohdur.github.io/tags/samba/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Sieci</title>
-      <link>https://mohdur.github.io/tags/sieci/</link>
-      <pubDate>Thu, 22 Oct 2020 02:13:12 +0200</pubDate>
-      
-      <guid>https://mohdur.github.io/tags/sieci/</guid>
       <description></description>
     </item>
     

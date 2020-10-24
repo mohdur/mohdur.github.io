@@ -5,7 +5,17 @@
     <link>https://mohdur.github.io/tags/sieci/</link>
     <description>Recent content in Sieci on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 22 Oct 2020 02:13:12 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/sieci/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 16:51:34 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/sieci/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Wireshark zdalnie przez SSH</title>
+      <link>https://mohdur.github.io/post/wireshark-zdalnie-przez-ssh/</link>
+      <pubDate>Sat, 24 Oct 2020 16:51:34 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/wireshark-zdalnie-przez-ssh/</guid>
+      <description>Wirshark jest uruchomiony na systemie Linux natomiast odczytuje on dane z systemu OpenBSD
+1$ ssh root@192.168.6.66 tcpdump -l -i sis0 -w - &amp;#39;not port 22&amp;#39; | wireshark -k -i - Zapis not port 22 dotyczy polecenia tcpdump, jest to filtr dzięki czemu port 22 nie jest przekazywany do wiresharka.</description>
+    </item>
+    
     <item>
       <title>Podłączenie się do sieci Wi-Fi</title>
       <link>https://mohdur.github.io/post/pod%C5%82%C4%85czenie-si%C4%99-do-sieci-wi-fi/</link>
