@@ -5,7 +5,19 @@
     <link>https://mohdur.github.io/tags/vim/</link>
     <description>Recent content in Vim on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 19:40:53 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 19:41:57 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vim jak zamienić dwukropek na znak równości</title>
+      <link>https://mohdur.github.io/post/vim_jak_zamienic_dwukropek_na_znak_rownosci/</link>
+      <pubDate>Sat, 24 Oct 2020 19:41:57 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/vim_jak_zamienic_dwukropek_na_znak_rownosci/</guid>
+      <description>Ciąg znaków mamy taki:
+1zmienna: 25 i chcemy go zamienić na:
+1zmienna=25 Jak to zrobić?
+1f:cf =  f: - wyszukuje znak : cf  - usuwa wszystko do znaku spacji i przechodzi w tryb wprowadzania = - wprowadza znak =  </description>
+    </item>
+    
     <item>
       <title>Vim zawijanie tekstu na 80 znaków</title>
       <link>https://mohdur.github.io/post/vim-zawijanie-tekstu-na-80-znakow/</link>
