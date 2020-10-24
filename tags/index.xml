@@ -5,7 +5,34 @@
     <link>https://mohdur.github.io/tags/</link>
     <description>Recent content in Tags on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 16:32:31 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 16:34:48 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux</title>
+      <link>https://mohdur.github.io/tags/linux/</link>
+      <pubDate>Sat, 24 Oct 2020 16:34:48 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shell</title>
+      <link>https://mohdur.github.io/tags/shell/</link>
+      <pubDate>Sat, 24 Oct 2020 16:34:48 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/tags/shell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ZSH</title>
+      <link>https://mohdur.github.io/tags/zsh/</link>
+      <pubDate>Sat, 24 Oct 2020 16:34:48 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/tags/zsh/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Vim</title>
       <link>https://mohdur.github.io/tags/vim/</link>
@@ -21,15 +48,6 @@
       <pubDate>Sat, 24 Oct 2020 16:28:26 +0200</pubDate>
       
       <guid>https://mohdur.github.io/tags/arch/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://mohdur.github.io/tags/linux/</link>
-      <pubDate>Sat, 24 Oct 2020 16:28:26 +0200</pubDate>
-      
-      <guid>https://mohdur.github.io/tags/linux/</guid>
       <description></description>
     </item>
     
@@ -93,15 +111,6 @@
       <pubDate>Sat, 24 Oct 2020 15:22:01 +0200</pubDate>
       
       <guid>https://mohdur.github.io/tags/ssh/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Shell</title>
-      <link>https://mohdur.github.io/tags/shell/</link>
-      <pubDate>Sat, 24 Oct 2020 15:16:13 +0200</pubDate>
-      
-      <guid>https://mohdur.github.io/tags/shell/</guid>
       <description></description>
     </item>
     

@@ -5,7 +5,16 @@
     <link>https://mohdur.github.io/tags/linux/</link>
     <description>Recent content in Linux on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 16:28:26 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 16:34:48 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Skróty klawiszowe ZSH</title>
+      <link>https://mohdur.github.io/post/skr%C3%B3ty-klawiszowe-zsh/</link>
+      <pubDate>Sat, 24 Oct 2020 16:34:48 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/skr%C3%B3ty-klawiszowe-zsh/</guid>
+      <description>   Skrót Opis     Ctrl+r Interaktywne przeszukiwanie historii komend    </description>
+    </item>
+    
     <item>
       <title>Polska klawiatura i polonizacja w Arch Linux</title>
       <link>https://mohdur.github.io/post/polska-klawiatura-i-polonizacja-w-arch-linux/</link>

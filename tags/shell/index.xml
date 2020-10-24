@@ -5,7 +5,16 @@
     <link>https://mohdur.github.io/tags/shell/</link>
     <description>Recent content in Shell on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 15:16:13 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 16:34:48 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Skróty klawiszowe ZSH</title>
+      <link>https://mohdur.github.io/post/skr%C3%B3ty-klawiszowe-zsh/</link>
+      <pubDate>Sat, 24 Oct 2020 16:34:48 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/skr%C3%B3ty-klawiszowe-zsh/</guid>
+      <description>   Skrót Opis     Ctrl+r Interaktywne przeszukiwanie historii komend    </description>
+    </item>
+    
     <item>
       <title>Komenda if w skryptach BASH</title>
       <link>https://mohdur.github.io/post/komenda-if-w-skryptach-bash.md/</link>

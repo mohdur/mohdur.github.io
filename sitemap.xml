@@ -3,18 +3,38 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mohdur.github.io/tags/linux/</loc>
+    <lastmod>2020-10-24T16:34:48+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mohdur.github.io/</loc>
-    <lastmod>2020-10-24T16:32:31+02:00</lastmod>
+    <lastmod>2020-10-24T16:34:48+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://mohdur.github.io/post/</loc>
-    <lastmod>2020-10-24T16:32:31+02:00</lastmod>
+    <lastmod>2020-10-24T16:34:48+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/shell/</loc>
+    <lastmod>2020-10-24T16:34:48+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/skr%C3%B3ty-klawiszowe-zsh/</loc>
+    <lastmod>2020-10-24T16:34:48+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://mohdur.github.io/tags/</loc>
-    <lastmod>2020-10-24T16:32:31+02:00</lastmod>
+    <lastmod>2020-10-24T16:34:48+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/zsh/</loc>
+    <lastmod>2020-10-24T16:34:48+02:00</lastmod>
   </url>
   
   <url>
@@ -29,11 +49,6 @@
   
   <url>
     <loc>https://mohdur.github.io/tags/arch/</loc>
-    <lastmod>2020-10-24T16:28:26+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/linux/</loc>
     <lastmod>2020-10-24T16:28:26+02:00</lastmod>
   </url>
   
@@ -99,11 +114,6 @@
   
   <url>
     <loc>https://mohdur.github.io/post/komenda-if-w-skryptach-bash.md/</loc>
-    <lastmod>2020-10-24T15:16:13+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/shell/</loc>
     <lastmod>2020-10-24T15:16:13+02:00</lastmod>
   </url>
   
