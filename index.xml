@@ -5,7 +5,18 @@
     <link>https://mohdur.github.io/</link>
     <description>Recent content on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 19:57:51 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 22:00:15 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Przyspieszenie procesu wyłączenia systemu Linux</title>
+      <link>https://mohdur.github.io/post/przyspieszenie-procesu-wy%C5%82%C4%85czenia-systemu-linux/</link>
+      <pubDate>Sat, 24 Oct 2020 22:00:15 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/przyspieszenie-procesu-wy%C5%82%C4%85czenia-systemu-linux/</guid>
+      <description>W pliku /etc/systemd/systemd.conf należy ustawić zmienną DefaultTimeoutStopSec na np 30s standardowa wartość to 90s
+1DefaultTimeoutStopSec=30s W pliku /etc/lvm/lvm.conf należy ustawić zmienną use_lvmetad na 0
+1use_lvmetad = 0 </description>
+    </item>
+    
     <item>
       <title>Archiwizacja podkatalogów</title>
       <link>https://mohdur.github.io/post/archiwizacja-podkatalogow/</link>

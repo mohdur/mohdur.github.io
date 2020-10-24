@@ -3,6 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mohdur.github.io/tags/linux/</loc>
+    <lastmod>2020-10-24T22:00:15+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/</loc>
+    <lastmod>2020-10-24T22:00:15+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/</loc>
+    <lastmod>2020-10-24T22:00:15+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/przyspieszenie-procesu-wy%C5%82%C4%85czenia-systemu-linux/</loc>
+    <lastmod>2020-10-24T22:00:15+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/</loc>
+    <lastmod>2020-10-24T22:00:15+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mohdur.github.io/post/archiwizacja-podkatalogow/</loc>
     <lastmod>2020-10-24T19:57:51+02:00</lastmod>
   </url>
@@ -13,32 +38,12 @@
   </url>
   
   <url>
-    <loc>https://mohdur.github.io/tags/linux/</loc>
-    <lastmod>2020-10-24T19:57:51+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/</loc>
-    <lastmod>2020-10-24T19:57:51+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/post/</loc>
-    <lastmod>2020-10-24T19:57:51+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mohdur.github.io/tags/shell/</loc>
     <lastmod>2020-10-24T19:57:51+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://mohdur.github.io/tags/skrypty/</loc>
-    <lastmod>2020-10-24T19:57:51+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/</loc>
     <lastmod>2020-10-24T19:57:51+02:00</lastmod>
   </url>
   

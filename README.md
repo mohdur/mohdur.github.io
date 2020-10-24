@@ -1,2 +1,1 @@
-# mohdur.github.io
-Strona WWW
+url: https://mohdur.github.io
