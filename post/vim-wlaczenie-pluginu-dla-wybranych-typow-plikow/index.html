@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" data-figures="true" class="page" data-mode="dim">
   <head>
-<title>Vim obiekty tekstowe | MOHDUR</title>
+<title>Vim włączenie pluginu dla wybranych typów plików | MOHDUR</title>
 <meta charset="utf-8">
 <meta name="generator" content="Hugo 0.76.4" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -10,13 +10,13 @@
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="Vim obiekty tekstowe">
+<meta name="description" content="Vim włączenie pluginu dla wybranych typów plików">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="Vim obiekty tekstowe" />
-<meta property="og:url" content="https://mohdur.github.io/post/vim-obiekty-tekstowe/" />
-<meta property="og:title" content="Vim obiekty tekstowe" />
-<meta property="og:description" content="Vim obiekty tekstowe" />
+<meta name="twitter:title" content="Vim włączenie pluginu dla wybranych typów plików" />
+<meta property="og:url" content="https://mohdur.github.io/post/vim-wlaczenie-pluginu-dla-wybranych-typow-plikow/" />
+<meta property="og:title" content="Vim włączenie pluginu dla wybranych typów plików" />
+<meta property="og:description" content="Vim włączenie pluginu dla wybranych typów plików" />
 <meta property="og:image" content="https://mohdur.github.io/images/thumbnail.png" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://mohdur.github.io/icons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://mohdur.github.io/icons/favicon-32x32.png'>
@@ -25,7 +25,7 @@
 <meta name="msapplication-TileColor" content="#002538">
 <meta name="theme-color" content="#002538">
 
-<link rel="canonical" href="https://mohdur.github.io/post/vim-obiekty-tekstowe/">
+<link rel="canonical" href="https://mohdur.github.io/post/vim-wlaczenie-pluginu-dla-wybranych-typow-plikow/">
 
     
 
@@ -100,7 +100,7 @@
   
 <div class="grid-inverse wrap content">
   <article class="post_content">
-    <h1 class="post_title">Vim obiekty tekstowe</h1><div class="post_meta">
+    <h1 class="post_title">Vim włączenie pluginu dla wybranych typów plików</h1><div class="post_meta">
   <svg class="icon">
   <use xlink:href="#calendar"></use>
 </svg>
@@ -113,12 +113,12 @@
     
 <div class="post_share">
   Share on:
-  <a href="https://twitter.com/intent/tweet?text=Vim%20obiekty%20tekstowe&url=https%3a%2f%2fmohdur.github.io%2fpost%2fvim-obiekty-tekstowe%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
+  <a href="https://twitter.com/intent/tweet?text=Vim%20w%c5%82%c4%85czenie%20pluginu%20dla%20wybranych%20typ%c3%b3w%20plik%c3%b3w&url=https%3a%2f%2fmohdur.github.io%2fpost%2fvim-wlaczenie-pluginu-dla-wybranych-typow-plikow%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#twitter"></use>
 </svg>
   </a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fvim-obiekty-tekstowe%2f&t=Vim%20obiekty%20tekstowe" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fvim-wlaczenie-pluginu-dla-wybranych-typow-plikow%2f&t=Vim%20w%c5%82%c4%85czenie%20pluginu%20dla%20wybranych%20typ%c3%b3w%20plik%c3%b3w" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#facebook"></use>
 </svg>
@@ -128,7 +128,7 @@
   <use xlink:href="#linkedin"></use>
 </svg>
   </a>
-  <a href="https://mohdur.github.io/post/vim-obiekty-tekstowe/" title="Copy Link" class="link link_yank">
+  <a href="https://mohdur.github.io/post/vim-wlaczenie-pluginu-dla-wybranych-typow-plikow/" title="Copy Link" class="link link_yank">
     <svg class="icon">
   <use xlink:href="#copy"></use>
 </svg>
@@ -136,69 +136,11 @@
 </div>
 
     
-    <p>Obiekt tekstowy to blok tekstu, obiektem może być wyraz, paragraf czy tekst
-pomiędzy nawiasami. Więcej na temat obiektów tekstowych w pomocy</p>
-<ul>
-<li><a href="http://vimdoc.sourceforge.net/htmldoc/motion.html#text-objects">http://vimdoc.sourceforge.net/htmldoc/motion.html#text-objects</a></li>
-<li><a href="http://vimdoc.sourceforge.net/htmldoc/motion.html#operator">http://vimdoc.sourceforge.net/htmldoc/motion.html#operator</a></li>
-</ul>
-<p>Obiekty tekstowe działają również w trybie <strong>VISUAL</strong></p>
-<p>Vim pozwala na tworzenie własnych obiektów tekstowych, dzięki czemu jest sporo
-pluginów rozszerzających te wbudowane. Pluginem rozszerzającym obiekty
-tekstowe jest np. plugin Target - <a href="https://github.com/wellle/targets.vim">https://github.com/wellle/targets.vim</a></p>
-<p>Wbudowane obiekty tekstowe</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span>w - wyraz
-<span class="ln"> 2</span>W - wyraz, który nie jest oddzielony spacją np. &#39;text.wyraz&#39;
-<span class="ln"> 3</span>s - zdanie
-<span class="ln"> 4</span>p - paragraf
-<span class="ln"> 5</span>b - blok zawarty w nawiasach () zamiennie można użyć ( lub )
-<span class="ln"> 6</span>B - blok zawarty w nawiasach {} zamiennie można użyć { lub }
-<span class="ln"> 7</span>t - blok zawarty w tagach typu &lt;tag&gt; &lt;/tag&gt;
-<span class="ln"> 8</span>&lt; - blok zawarty w nawiasach &lt;&gt;
-<span class="ln"> 9</span>[ - blok zawarty w nawiasach []
-<span class="ln">10</span>&#34; - blok zawarty pomiędzy znakami &#34;
-<span class="ln">11</span>&#39; - blok zawarty pomiędzy znakami &#39;
-<span class="ln">12</span>` - blok zawarty pomiędzy znakami `
-</code></pre></div><p>Teraz żeby z nimi pracować należy użyć komendy np. <code>d</code> czy <code>c</code> istnieje jeszcze
-dodatkowy znak <code>i</code> lub <code>a</code> oznaczający zaznaczenie wewnątrz lub na zewnątrz
-obiektu tekstowego.</p>
-<p><code>aw</code> - wyraz zawierający spacje go otaczające
-<code>iw</code> - wyraz bez spacji</p>
-<p>Kilka przykładów:</p>
-<table>
-<thead>
-<tr>
-<th>komenda</th>
-<th>opis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>d4aw</code></td>
-<td>usunięcie 4 wyrazów</td>
-</tr>
-<tr>
-<td><code>cis</code></td>
-<td>usuwa zdanie i przechodzi do trybu wprowadzania</td>
-</tr>
-<tr>
-<td><code>di(</code></td>
-<td>usuwa blok zawarty pomiędzy znakami <code>(</code> i <code>)</code></td>
-</tr>
-<tr>
-<td><code>da(</code></td>
-<td>usuwa blok zawarty pomiędzy nawiasami wraz z nimi</td>
-</tr>
-<tr>
-<td><code>yip</code></td>
-<td>kopiuje paragraf</td>
-</tr>
-<tr>
-<td><code>vip</code></td>
-<td>zaznacza paragraf</td>
-</tr>
-</tbody>
-</table>
+    <p>Dla menadżera pluginów Plug składnia wyląda w ten sposób</p>
+<div class="highlight"><pre class="chroma"><code class="language-vim" data-lang="vim"><span class="ln">1</span><span class="nx">Plug</span> <span class="s1">&#39;davidhalter/jedi-vim&#39;</span><span class="p">,</span> { <span class="s1">&#39;for&#39;</span>: <span class="s1">&#39;python&#39;</span> }<span class="err">
+</span></code></pre></div><p>Możemy też uruchomiać plugin dla wielu typów plików</p>
+<div class="highlight"><pre class="chroma"><code class="language-vim" data-lang="vim"><span class="ln">1</span><span class="nx">Plug</span> <span class="s1">&#39;kovisoft/paredit&#39;</span><span class="p">,</span> { <span class="s1">&#39;for&#39;</span>: [<span class="s1">&#39;clojure&#39;</span><span class="p">,</span> <span class="s1">&#39;scheme&#39;</span>] }<span class="err">
+</span></code></pre></div><p>Menadżer pluginów Plug jest dostępny na stronie <a href="https://github.com/junegunn/vim-plug">https://github.com/junegunn/vim-plug</a></p>
 
     
       
@@ -214,13 +156,13 @@ obiektu tekstowego.</p>
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
       <li>
-        <a href="https://mohdur.github.io/post/vim-wlaczenie-pluginu-dla-wybranych-typow-plikow/" class="nav-link">Vim włączenie pluginu dla wybranych typów plików</a>
-      </li>
-      <li>
         <a href="https://mohdur.github.io/post/vim-kompilacja-ze-zrodel/" class="nav-link">Vim kompilacja ze źrodeł</a>
       </li>
       <li>
         <a href="https://mohdur.github.io/post/zmiana-funkcjonalno%C5%9Bci-przez-zmian%C4%99-nazwy-skryptu/" class="nav-link">Zmiana funkcjonalności przez zmianę nazwy skryptu</a>
+      </li>
+      <li>
+        <a href="https://mohdur.github.io/post/vim-obiekty-tekstowe/" class="nav-link">Vim obiekty tekstowe</a>
       </li>
       <li>
         <a href="https://mohdur.github.io/post/vim-dzia%C5%82ania-arytmetyczne/" class="nav-link">Vim działania arytmetyczne</a>

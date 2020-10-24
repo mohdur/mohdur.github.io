@@ -5,7 +5,18 @@
     <link>https://mohdur.github.io/tags/vim/</link>
     <description>Recent content in Vim on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 14:23:52 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 14:28:33 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vim włączenie pluginu dla wybranych typów plików</title>
+      <link>https://mohdur.github.io/post/vim-wlaczenie-pluginu-dla-wybranych-typow-plikow/</link>
+      <pubDate>Sat, 24 Oct 2020 14:28:33 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/vim-wlaczenie-pluginu-dla-wybranych-typow-plikow/</guid>
+      <description>Dla menadżera pluginów Plug składnia wyląda w ten sposób
+1Plug &amp;#39;davidhalter/jedi-vim&amp;#39;, { &amp;#39;for&amp;#39;: &amp;#39;python&amp;#39; }Możemy też uruchomiać plugin dla wielu typów plików
+1Plug &amp;#39;kovisoft/paredit&amp;#39;, { &amp;#39;for&amp;#39;: [&amp;#39;clojure&amp;#39;, &amp;#39;scheme&amp;#39;] }Menadżer pluginów Plug jest dostępny na stronie https://github.com/junegunn/vim-plug</description>
+    </item>
+    
     <item>
       <title>Vim kompilacja ze źrodeł</title>
       <link>https://mohdur.github.io/post/vim-kompilacja-ze-zrodel/</link>
