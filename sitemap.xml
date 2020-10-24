@@ -3,6 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mohdur.github.io/</loc>
+    <lastmod>2020-10-24T19:12:38+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/</loc>
+    <lastmod>2020-10-24T19:12:38+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/</loc>
+    <lastmod>2020-10-24T19:12:38+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/vim/</loc>
+    <lastmod>2020-10-24T19:12:38+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/vim-otworzenie-pliku-pod-kursorem/</loc>
+    <lastmod>2020-10-24T19:12:38+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mohdur.github.io/post/generowanie-hase%C5%82/</loc>
     <lastmod>2020-10-24T18:08:03+02:00</lastmod>
   </url>
@@ -13,22 +38,7 @@
   </url>
   
   <url>
-    <loc>https://mohdur.github.io/</loc>
-    <lastmod>2020-10-24T18:08:03+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/post/</loc>
-    <lastmod>2020-10-24T18:08:03+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mohdur.github.io/tags/security/</loc>
-    <lastmod>2020-10-24T18:08:03+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/</loc>
     <lastmod>2020-10-24T18:08:03+02:00</lastmod>
   </url>
   
@@ -70,11 +80,6 @@
   <url>
     <loc>https://mohdur.github.io/post/zarz%C4%85dzanie-pakietami-w-fedora-linux/</loc>
     <lastmod>2020-10-24T17:25:28+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/vim/</loc>
-    <lastmod>2020-10-24T17:16:30+02:00</lastmod>
   </url>
   
   <url>

@@ -5,7 +5,17 @@
     <link>https://mohdur.github.io/post/</link>
     <description>Recent content in Posts on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 18:08:03 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 19:12:38 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vim Otworzenie Pliku Pod Kursorem</title>
+      <link>https://mohdur.github.io/post/vim-otworzenie-pliku-pod-kursorem/</link>
+      <pubDate>Sat, 24 Oct 2020 19:12:38 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/vim-otworzenie-pliku-pod-kursorem/</guid>
+      <description>Przykład:
+1/home/user/.bashrc Najerzdżając kursorem na nazwę pliku wciskamy skrót gf co otworzy plik w nowym buforze.</description>
+    </item>
+    
     <item>
       <title>Generowanie haseł</title>
       <link>https://mohdur.github.io/post/generowanie-hase%C5%82/</link>
