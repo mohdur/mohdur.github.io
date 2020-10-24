@@ -5,7 +5,17 @@
     <link>https://mohdur.github.io/tags/pgp/</link>
     <description>Recent content in PGP on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 19:17:24 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/pgp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 19:53:23 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/pgp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Zabezpieczenie kodów jednorazowych kluczem PGP</title>
+      <link>https://mohdur.github.io/post/zabezpieczenie-kod%C3%B3w-jednorazowych-kluczem-pgp/</link>
+      <pubDate>Sat, 24 Oct 2020 19:53:23 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/zabezpieczenie-kod%C3%B3w-jednorazowych-kluczem-pgp/</guid>
+      <description>Kody jednorazowe czyli One Time Password (OTP) służą jako dodatkowe zabezpieczenie np. konta e-mail. Do generowania kodów przeważnie używa się aplikacji na telefon typu Google Authenticator. Do wygenerowania kodu OTP jest potrzebny tajny kod w postaci ciągu znaków Base32 lub Hex.
+W systemmie Linux istnieje takie narzędzie jak oathtool, jednak za każdym razem trzeba podać tajny kod, wię jest to dość uciążliwe. Dlatego do przechowywania kodów użyjemy programu pass, który potrafi szyfrować hasła za pomocą klucza PGP.</description>
+    </item>
+    
     <item>
       <title>Vim szyfrowanie za pomocą PGP</title>
       <link>https://mohdur.github.io/post/vim-szyfrowanie-za-pomoc%C4%85-pgp.md/</link>
