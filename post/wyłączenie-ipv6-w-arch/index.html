@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" data-figures="true" class="page" data-mode="dim">
   <head>
-<title>Polska klawiatura i polonizacja w Arch Linux | MOHDUR</title>
+<title>Wyłączenie IPv6 w Arch | MOHDUR</title>
 <meta charset="utf-8">
 <meta name="generator" content="Hugo 0.76.4" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -10,13 +10,13 @@
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="Article description.">
+<meta name="description" content="Wyłączenie IPv6 w Arch">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="Polska klawiatura i polonizacja w Arch Linux" />
-<meta property="og:url" content="https://mohdur.github.io/post/polska-klawiatura-i-polonizacja-w-arch-linux/" />
-<meta property="og:title" content="Polska klawiatura i polonizacja w Arch Linux" />
-<meta property="og:description" content="Article description." />
+<meta name="twitter:title" content="Wyłączenie IPv6 w Arch" />
+<meta property="og:url" content="https://mohdur.github.io/post/wy%C5%82%C4%85czenie-ipv6-w-arch/" />
+<meta property="og:title" content="Wyłączenie IPv6 w Arch" />
+<meta property="og:description" content="Wyłączenie IPv6 w Arch" />
 <meta property="og:image" content="https://mohdur.github.io/images/thumbnail.png" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://mohdur.github.io/icons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://mohdur.github.io/icons/favicon-32x32.png'>
@@ -25,7 +25,7 @@
 <meta name="msapplication-TileColor" content="#002538">
 <meta name="theme-color" content="#002538">
 
-<link rel="canonical" href="https://mohdur.github.io/post/polska-klawiatura-i-polonizacja-w-arch-linux/">
+<link rel="canonical" href="https://mohdur.github.io/post/wy%C5%82%C4%85czenie-ipv6-w-arch/">
 
     
 
@@ -44,7 +44,7 @@
     
     
   
-  <body data-code="10" data-lines="false" id="documentTop">
+  <body data-code="200" data-lines="false" id="documentTop">
 
 <header class="nav_header" >
   <nav class="nav">
@@ -100,7 +100,7 @@
   
 <div class="grid-inverse wrap content">
   <article class="post_content">
-    <h1 class="post_title">Polska klawiatura i polonizacja w Arch Linux</h1><div class="post_meta">
+    <h1 class="post_title">Wyłączenie IPv6 w Arch</h1><div class="post_meta">
   <svg class="icon">
   <use xlink:href="#calendar"></use>
 </svg>
@@ -108,21 +108,19 @@
     Oct 24, 2020</span>
     <a href='https://mohdur.github.io/tags/linux' class="post_tag button button_translucent">Linux
     </a>
-    <a href='https://mohdur.github.io/tags/arch' class="post_tag button button_translucent">Arch
-    </a>
-    <a href='https://mohdur.github.io/tags/sprz%C4%99t' class="post_tag button button_translucent">Sprzęt
+    <a href='https://mohdur.github.io/tags/sieci' class="post_tag button button_translucent">Sieci
     </a>
 </div>
 
     
 <div class="post_share">
   Share on:
-  <a href="https://twitter.com/intent/tweet?text=Polska%20klawiatura%20i%20polonizacja%20w%20Arch%20Linux&url=https%3a%2f%2fmohdur.github.io%2fpost%2fpolska-klawiatura-i-polonizacja-w-arch-linux%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
+  <a href="https://twitter.com/intent/tweet?text=Wy%c5%82%c4%85czenie%20IPv6%20w%20Arch&url=https%3a%2f%2fmohdur.github.io%2fpost%2fwy%25C5%2582%25C4%2585czenie-ipv6-w-arch%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#twitter"></use>
 </svg>
   </a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fpolska-klawiatura-i-polonizacja-w-arch-linux%2f&t=Polska%20klawiatura%20i%20polonizacja%20w%20Arch%20Linux" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fwy%25C5%2582%25C4%2585czenie-ipv6-w-arch%2f&t=Wy%c5%82%c4%85czenie%20IPv6%20w%20Arch" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#facebook"></use>
 </svg>
@@ -132,7 +130,7 @@
   <use xlink:href="#linkedin"></use>
 </svg>
   </a>
-  <a href="https://mohdur.github.io/post/polska-klawiatura-i-polonizacja-w-arch-linux/" title="Copy Link" class="link link_yank">
+  <a href="https://mohdur.github.io/post/wy%C5%82%C4%85czenie-ipv6-w-arch/" title="Copy Link" class="link link_yank">
     <svg class="icon">
   <use xlink:href="#copy"></use>
 </svg>
@@ -140,20 +138,13 @@
 </div>
 
     
-    <h2 id="polska-klawiatura">Polska klawiatura</h2>
-<p>Do pliku <code>/etc/X11/xorg.conf.d/keyboard.conf</code> dodajemy:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>Section &#34;InputClass&#34;
-<span class="ln">2</span>    Identifier             &#34;Keyboard Defaults&#34;
-<span class="ln">3</span>    MatchIsKeyboard        &#34;yes&#34;
-<span class="ln">4</span>    Option                 &#34;XkbLayout&#34; &#34;pl&#34;
-<span class="ln">5</span>EndSection
-</code></pre></div><h2 id="polonizacja-systemu">Polonizacja systemu</h2>
-<p>w pliku <code>/etc/locale.conf</code> dodajemy</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>LANG=pl_PL.UTF-8
-</code></pre></div><p>W pliku <code>/etc/locale.gen</code> dodajemy</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>pl_PL.UTF-8 UTF-8
-</code></pre></div><p>Na koniec wydajemy polecenie</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span># locale-gen
+    <p>Wyłączenie IPv6 w Arch Linux
+Do pliku <code>/etc/default/grub</code> dodajemy <code>ipv6.disable=1</code> w wierszu
+<code>GRUB_CMDLINE_LINUX_DEFAULT=&quot; ipv6.disable=1 &quot;</code></p>
+<p>Aktualizacja grub</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sudo grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre></div><p>Po restarcie możemy sprawdzić czy system obsługuje IPv6</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>test -f /proc/net/if_inet6 &amp;&amp; echo &#34;IPv6 supported&#34; || echo &#34;IPv6 not supported&#34;
 </code></pre></div>
     
       <div id="disqus_thread"></div>
@@ -188,9 +179,6 @@
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
       <li>
-        <a href="https://mohdur.github.io/post/wy%C5%82%C4%85czenie-ipv6-w-arch/" class="nav-link">Wyłączenie IPv6 w Arch</a>
-      </li>
-      <li>
         <a href="https://mohdur.github.io/post/vim-otworzenie-pliku-tam-gdzie-sko%C5%84czyli%C5%9Bmy-prac%C4%99/" class="nav-link">Vim otworzenie pliku tam gdzie skończyliśmy pracę</a>
       </li>
       <li>
@@ -210,6 +198,9 @@
       </li>
       <li>
         <a href="https://mohdur.github.io/post/konfiguracja-i-praca-z-tmux/" class="nav-link">Konfiguracja i praca z Tmux</a>
+      </li>
+      <li>
+        <a href="https://mohdur.github.io/post/ignorowanie-zamkni%C4%99cia-ekranu-laptopa/" class="nav-link">Ignorowanie zamknięcia ekranu laptopa</a>
       </li>
     </ul>
     <div>

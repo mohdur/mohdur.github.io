@@ -5,7 +5,19 @@
     <link>https://mohdur.github.io/post/</link>
     <description>Recent content in Posts on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 19:43:27 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 19:45:13 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Wyłączenie IPv6 w Arch</title>
+      <link>https://mohdur.github.io/post/wy%C5%82%C4%85czenie-ipv6-w-arch/</link>
+      <pubDate>Sat, 24 Oct 2020 19:45:13 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/wy%C5%82%C4%85czenie-ipv6-w-arch/</guid>
+      <description>Wyłączenie IPv6 w Arch Linux Do pliku /etc/default/grub dodajemy ipv6.disable=1 w wierszu GRUB_CMDLINE_LINUX_DEFAULT=&amp;quot; ipv6.disable=1 &amp;quot;
+Aktualizacja grub
+1sudo grub-mkconfig -o /boot/grub/grub.cfg Po restarcie możemy sprawdzić czy system obsługuje IPv6
+1test -f /proc/net/if_inet6 &amp;amp;&amp;amp; echo &amp;#34;IPv6 supported&amp;#34; || echo &amp;#34;IPv6 not supported&amp;#34; </description>
+    </item>
+    
     <item>
       <title>Vim otworzenie pliku tam gdzie skończyliśmy pracę</title>
       <link>https://mohdur.github.io/post/vim-otworzenie-pliku-tam-gdzie-sko%C5%84czyli%C5%9Bmy-prac%C4%99/</link>
