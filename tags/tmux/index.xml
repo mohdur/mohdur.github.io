@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tmux on MOHDUR</title>
+    <link>https://mohdur.github.io/tags/tmux/</link>
+    <description>Recent content in Tmux on MOHDUR</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 24 Oct 2020 19:30:00 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/tmux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Konfiguracja i praca z Tmux</title>
+      <link>https://mohdur.github.io/post/konfiguracja-i-praca-z-tmux/</link>
+      <pubDate>Sat, 24 Oct 2020 19:30:00 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/konfiguracja-i-praca-z-tmux/</guid>
+      <description>Podstawowe informacje Tmux posiada trzy obiekty, tj. sesje, okna i panele, sesje są to osobne procesy, czyli każde kolejne uruchomienie programu tmux, które następnie możemy dzielić na okna a te na panele.
+Uruchomienie nowej sesji
+1$ tmux Więcej na temat tmux https://github.com/tmux/tmux/wiki
+Zmiana prefiksu ctrl-b na ctrl-a Tmux jako prefiks czyli skrót do uruchamiania poleceń używa Ctrl+b w odróżnieniu do programu screen, w którym używany jest skrót Ctrl+a. Pierwszą rzeczą jaką robię w konfiguracji tmux to właśnie zamiana Ctrl+b na Ctrl+a.</description>
+    </item>
+    
+  </channel>
+</rss>

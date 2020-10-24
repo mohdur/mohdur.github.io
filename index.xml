@@ -5,7 +5,19 @@
     <link>https://mohdur.github.io/</link>
     <description>Recent content on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 19:28:13 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 19:30:00 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Konfiguracja i praca z Tmux</title>
+      <link>https://mohdur.github.io/post/konfiguracja-i-praca-z-tmux/</link>
+      <pubDate>Sat, 24 Oct 2020 19:30:00 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/konfiguracja-i-praca-z-tmux/</guid>
+      <description>Podstawowe informacje Tmux posiada trzy obiekty, tj. sesje, okna i panele, sesje są to osobne procesy, czyli każde kolejne uruchomienie programu tmux, które następnie możemy dzielić na okna a te na panele.
+Uruchomienie nowej sesji
+1$ tmux Więcej na temat tmux https://github.com/tmux/tmux/wiki
+Zmiana prefiksu ctrl-b na ctrl-a Tmux jako prefiks czyli skrót do uruchamiania poleceń używa Ctrl+b w odróżnieniu do programu screen, w którym używany jest skrót Ctrl+a. Pierwszą rzeczą jaką robię w konfiguracji tmux to właśnie zamiana Ctrl+b na Ctrl+a.</description>
+    </item>
+    
     <item>
       <title>Ignorowanie zamknięcia ekranu laptopa</title>
       <link>https://mohdur.github.io/post/ignorowanie-zamkni%C4%99cia-ekranu-laptopa/</link>

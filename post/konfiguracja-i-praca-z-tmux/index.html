@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" data-figures="true" class="page" data-mode="dim">
   <head>
-<title>Konfiguracja serwera OpenSSH | MOHDUR</title>
+<title>Konfiguracja i praca z Tmux | MOHDUR</title>
 <meta charset="utf-8">
 <meta name="generator" content="Hugo 0.76.4" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -10,13 +10,13 @@
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="Konfiguracja serwera OpenSSH">
+<meta name="description" content="Konfiguracja i praca z Tmux">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="Konfiguracja serwera OpenSSH" />
-<meta property="og:url" content="https://mohdur.github.io/post/konfiguracja-serwera-openssh/" />
-<meta property="og:title" content="Konfiguracja serwera OpenSSH" />
-<meta property="og:description" content="Konfiguracja serwera OpenSSH" />
+<meta name="twitter:title" content="Konfiguracja i praca z Tmux" />
+<meta property="og:url" content="https://mohdur.github.io/post/konfiguracja-i-praca-z-tmux/" />
+<meta property="og:title" content="Konfiguracja i praca z Tmux" />
+<meta property="og:description" content="Konfiguracja i praca z Tmux" />
 <meta property="og:image" content="https://mohdur.github.io/images/thumbnail.png" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://mohdur.github.io/icons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://mohdur.github.io/icons/favicon-32x32.png'>
@@ -25,7 +25,7 @@
 <meta name="msapplication-TileColor" content="#002538">
 <meta name="theme-color" content="#002538">
 
-<link rel="canonical" href="https://mohdur.github.io/post/konfiguracja-serwera-openssh/">
+<link rel="canonical" href="https://mohdur.github.io/post/konfiguracja-i-praca-z-tmux/">
 
     
 
@@ -44,7 +44,7 @@
     
     
   
-  <body data-code="10" data-lines="false" id="documentTop">
+  <body data-code="200" data-lines="false" id="documentTop">
 
 <header class="nav_header" >
   <nav class="nav">
@@ -100,29 +100,27 @@
   
 <div class="grid-inverse wrap content">
   <article class="post_content">
-    <h1 class="post_title">Konfiguracja serwera OpenSSH</h1><div class="post_meta">
+    <h1 class="post_title">Konfiguracja i praca z Tmux</h1><div class="post_meta">
   <svg class="icon">
   <use xlink:href="#calendar"></use>
 </svg>
   <span class="post_date">
-    Oct 22, 2020</span>
-    <a href='https://mohdur.github.io/tags/ssh' class="post_tag button button_translucent">SSH
+    Oct 24, 2020</span>
+    <a href='https://mohdur.github.io/tags/linux' class="post_tag button button_translucent">Linux
     </a>
-    <a href='https://mohdur.github.io/tags/fedora' class="post_tag button button_translucent">Fedora
-    </a>
-    <a href='https://mohdur.github.io/tags/selinux' class="post_tag button button_translucent">SELinux
+    <a href='https://mohdur.github.io/tags/tmux' class="post_tag button button_translucent">Tmux
     </a>
 </div>
 
     
 <div class="post_share">
   Share on:
-  <a href="https://twitter.com/intent/tweet?text=Konfiguracja%20serwera%20OpenSSH&url=https%3a%2f%2fmohdur.github.io%2fpost%2fkonfiguracja-serwera-openssh%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
+  <a href="https://twitter.com/intent/tweet?text=Konfiguracja%20i%20praca%20z%20Tmux&url=https%3a%2f%2fmohdur.github.io%2fpost%2fkonfiguracja-i-praca-z-tmux%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#twitter"></use>
 </svg>
   </a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fkonfiguracja-serwera-openssh%2f&t=Konfiguracja%20serwera%20OpenSSH" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fkonfiguracja-i-praca-z-tmux%2f&t=Konfiguracja%20i%20praca%20z%20Tmux" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#facebook"></use>
 </svg>
@@ -132,7 +130,7 @@
   <use xlink:href="#linkedin"></use>
 </svg>
   </a>
-  <a href="https://mohdur.github.io/post/konfiguracja-serwera-openssh/" title="Copy Link" class="link link_yank">
+  <a href="https://mohdur.github.io/post/konfiguracja-i-praca-z-tmux/" title="Copy Link" class="link link_yank">
     <svg class="icon">
   <use xlink:href="#copy"></use>
 </svg>
@@ -140,36 +138,200 @@
 </div>
 
     
-    <h1 id="instalacja">Instalacja</h1>
-<p>Instalacja w systemie Fedora</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ sudo dnf install openssh-server
-</code></pre></div><h1 id="plik-konfiguracyjny">Plik konfiguracyjny</h1>
-<p>Znajduje się w <code>/etc/ssh/sshd_config</code></p>
-<h1 id="zmiana-numeru-portu">Zmiana numeru portu</h1>
-<p>Serwer SSH normalnie nasłuchuje na porcie 22, możemy to zmienić ustawiając parametr <code>Port</code>, parametr <code>Port</code> może występować kilkukrotnie, czyli serwer SSH może nasłuchiwać na wielu portach jednocześnie.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>Port 22
-<span class="ln">2</span>Port 23034
-</code></pre></div><p>Możemy użyć parametru <code>ListenAddress</code>, dzięki któremu możemy określić adres IP i port, na którym serwer SSH będzie nasłuchiwał.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>ListenAddress 0.0.0.0:22
-<span class="ln">2</span>ListenAddress 192.168.0.201:23034
-<span class="ln">3</span>ListenAddress 192.168.0.202:22222
-</code></pre></div><p>Po zmianie numeru portu w <code>/etc/ssh/sshd_config</code> na np. <code>23034</code>, musimy dodać regułę SELinux, oraz wpuścić połączenia przychodzące na firewallu na ten port.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ sudo semanage port -a -t ssh_port_t -p tcp 23034
-<span class="ln">2</span>$ sudo firewall-cmd --permanent --add-port=23034/tcp
-<span class="ln">3</span>$ sudo firewall-cmd --reload
-<span class="ln">4</span>$ sudo systemctl restart sshd
-</code></pre></div><h1 id="generowanie-kluczy-serwera-ssh">Generowanie kluczy serwera SSH</h1>
-<p>Jeśli przy próbie uruchomienia serwera SSH otrzymamy taki komunikat:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ sudo /usr/sbin/sshd 
-<span class="ln">2</span>Could not load host key: /etc/ssh/ssh_host_rsa_key
-<span class="ln">3</span>Could not load host key: /etc/ssh/ssh_host_dsa_key
-<span class="ln">4</span>Could not load host key: /etc/ssh/ssh_host_ecdsa_key
-<span class="ln">5</span>Disabling protocol version 2. Could not load host key
-<span class="ln">6</span>sshd: no hostkeys available -- exiting.
-</code></pre></div><p>Oznacza to, że brakuje kluczy RSA, DSA i ECDSA serwera</p>
-<p>Możemy je wygenerować używając polecenia <code>ssh-keygen</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ sudo ssh-keygen -A
-<span class="ln">2</span>ssh-keygen: generating new host keys: RSA DSA ECDSA ED25519
+    <h2 id="podstawowe-informacje">Podstawowe informacje</h2>
+<p>Tmux posiada trzy obiekty, tj. sesje, okna i panele, sesje są to osobne procesy, czyli każde kolejne uruchomienie programu tmux, które następnie możemy dzielić na okna a te na panele.</p>
+<p>Uruchomienie nowej sesji</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ tmux
+</code></pre></div><p>Więcej na temat tmux <a href="https://github.com/tmux/tmux/wiki">https://github.com/tmux/tmux/wiki</a></p>
+<h2 id="zmiana-prefiksu-ctrl-b-na-ctrl-a">Zmiana prefiksu ctrl-b na ctrl-a</h2>
+<p>Tmux jako prefiks czyli skrót do uruchamiania poleceń używa <code>Ctrl+b</code> w odróżnieniu do programu screen, w którym używany jest skrót <code>Ctrl+a</code>. Pierwszą rzeczą jaką robię w konfiguracji tmux to właśnie zamiana <code>Ctrl+b</code> na <code>Ctrl+a</code>.
+W pliku konfiguracyjnym <code>~/.tmux.conf</code> dodajemy na początku</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>set-option -g prefix C-a
+<span class="ln">2</span>unbind-key C-a
+<span class="ln">3</span>bind-key C-a send-prefix
+</code></pre></div><h2 id="zmiana-ustawień-klawiszy-na-vim-zamiast-emacs">Zmiana ustawień klawiszy na Vim zamiast Emacs</h2>
+<p>Szczególnie przydatne w trybie COPY
+W pliku konfiguracyjnym <code>~/.tmux.conf</code> dodajemy</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>setw -g mode-keys vi
+</code></pre></div><h2 id="tryb-copy">Tryb COPY</h2>
+<p>Tryb COPY umożliwia poruszanie się po buforze, czyli mówiąc inaczej przewijamy tekst oglądając wcześniej wykonane komendy. Wejście do trybu COPY <code>Copy-a-[</code>. Wyjście z trybu COPY <code>2 x ESC</code> lub <code>q</code></p>
+<p>Poruszanie się w trybie COPY</p>
+<p>Istnieją dwa tryby – tryb vi oraz tryb emacs zmianę trybu wykonujemy poleceniem</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>setw -g mode-keys vi
+</code></pre></div><p>Poruszanie się po trybie COPY w dwóch trybach vi i emacs</p>
+<table>
+<thead>
+<tr>
+<th>Funkcja</th>
+<th>vi</th>
+<th>emacs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wejście do trybu COPY</td>
+<td><code>Copy-a-[</code></td>
+<td><code>Copy-a-[</code></td>
+</tr>
+<tr>
+<td>Back to indentation</td>
+<td>^</td>
+<td>M-m</td>
+</tr>
+<tr>
+<td>Clear selection</td>
+<td>Escape</td>
+<td>C-g</td>
+</tr>
+<tr>
+<td>Copy selection</td>
+<td>Enter</td>
+<td>M-w</td>
+</tr>
+<tr>
+<td>Cursor down</td>
+<td>j</td>
+<td>Down</td>
+</tr>
+<tr>
+<td>Cursor left</td>
+<td>h</td>
+<td>Left</td>
+</tr>
+<tr>
+<td>Cursor right</td>
+<td>l</td>
+<td>Right</td>
+</tr>
+<tr>
+<td>Cursor to bottom line</td>
+<td>L</td>
+<td></td>
+</tr>
+<tr>
+<td>Cursor to middle line</td>
+<td>M</td>
+<td>M-r</td>
+</tr>
+<tr>
+<td>Cursor to top line</td>
+<td>H</td>
+<td>M-R</td>
+</tr>
+<tr>
+<td>Cursor up</td>
+<td>k</td>
+<td>Up</td>
+</tr>
+<tr>
+<td>Delete entire line</td>
+<td>d</td>
+<td>C-u</td>
+</tr>
+<tr>
+<td>Delete to end of line</td>
+<td>D</td>
+<td>C-k</td>
+</tr>
+<tr>
+<td>End of line</td>
+<td>$</td>
+<td>C-e</td>
+</tr>
+<tr>
+<td>Goto line</td>
+<td>:</td>
+<td>g</td>
+</tr>
+<tr>
+<td>Half page down</td>
+<td>C-d</td>
+<td>M-Down</td>
+</tr>
+<tr>
+<td>Half page up</td>
+<td>C-u</td>
+<td>M-Up</td>
+</tr>
+<tr>
+<td>Next page</td>
+<td>C-f</td>
+<td>Page down</td>
+</tr>
+<tr>
+<td>Next word</td>
+<td>w</td>
+<td>M-f</td>
+</tr>
+<tr>
+<td>Paste buffer</td>
+<td>p</td>
+<td>C-y</td>
+</tr>
+<tr>
+<td>Previous page</td>
+<td>C-b</td>
+<td>Page up</td>
+</tr>
+<tr>
+<td>Previous word</td>
+<td>b</td>
+<td>M-b</td>
+</tr>
+<tr>
+<td>Quit mode</td>
+<td>q</td>
+<td>Escape</td>
+</tr>
+<tr>
+<td>Scroll down</td>
+<td>C-Down or J</td>
+<td>C-Down</td>
+</tr>
+<tr>
+<td>Scroll up</td>
+<td>C-Up or K</td>
+<td>C-Up</td>
+</tr>
+<tr>
+<td>Search again</td>
+<td><code>n</code></td>
+<td><code>n</code></td>
+</tr>
+<tr>
+<td>Search backward</td>
+<td><code>?</code></td>
+<td><code>C-r</code></td>
+</tr>
+<tr>
+<td>Search forward</td>
+<td><code>/</code></td>
+<td><code>C-s</code></td>
+</tr>
+<tr>
+<td>Start of line</td>
+<td>0</td>
+<td>C-a</td>
+</tr>
+<tr>
+<td>Start selection</td>
+<td>Space</td>
+<td>C-Space</td>
+</tr>
+<tr>
+<td>Transpose chars</td>
+<td></td>
+<td>C-t</td>
+</tr>
+</tbody>
+</table>
+<p>Operacja kopiuj wklej w trybie COPY</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>- Wejście do trybu COPY   - Ctrl-a-[
+<span class="ln">2</span>- Zaznaczenie tekstu      - Ctrl-Space
+<span class="ln">3</span>- Skopiowanie tekstu      - Alt-w
+<span class="ln">4</span>- Wklejenie tekstu        - Ctrl-a-]
+</code></pre></div><h2 id="zamknięcie-wszystkich-sesji-tmux">Zamknięcie wszystkich sesji tmux</h2>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>tmux ls | grep : | cut -d. -f1 | awk &#39;{print substr($1, 0, length($1)-1)}&#39; | xargs kill
 </code></pre></div>
     
       <div id="disqus_thread"></div>
@@ -204,9 +366,6 @@
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
       <li>
-        <a href="https://mohdur.github.io/post/konfiguracja-i-praca-z-tmux/" class="nav-link">Konfiguracja i praca z Tmux</a>
-      </li>
-      <li>
         <a href="https://mohdur.github.io/post/ignorowanie-zamkni%C4%99cia-ekranu-laptopa/" class="nav-link">Ignorowanie zamknięcia ekranu laptopa</a>
       </li>
       <li>
@@ -226,6 +385,9 @@
       </li>
       <li>
         <a href="https://mohdur.github.io/post/vim-otworzenie-pliku-pod-kursorem/" class="nav-link">Vim Otworzenie Pliku Pod Kursorem</a>
+      </li>
+      <li>
+        <a href="https://mohdur.github.io/post/generowanie-hase%C5%82/" class="nav-link">Generowanie haseł</a>
       </li>
     </ul>
     <div>
