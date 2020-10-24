@@ -5,7 +5,16 @@
     <link>https://mohdur.github.io/tags/shell/</link>
     <description>Recent content in Shell on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 13:48:25 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 15:16:13 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Komenda if w skryptach BASH</title>
+      <link>https://mohdur.github.io/post/komenda-if-w-skryptach-bash.md/</link>
+      <pubDate>Sat, 24 Oct 2020 15:16:13 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/komenda-if-w-skryptach-bash.md/</guid>
+      <description>Porówanie Opis     &amp;lt;INTEGER1&amp;gt; -eq &amp;lt;INTEGER2&amp;gt; Prawda jeśli liczby są równe.   &amp;lt;INTEGER1&amp;gt; -ne &amp;lt;INTEGER2&amp;gt; Prawda jeśli liczby nie są równe.   &amp;lt;INTEGER1&amp;gt; -le &amp;lt;INTEGER2&amp;gt; Prawda jeśli pierwsza liczba jest mniejsza lub równa od drugiej.   &amp;lt;INTEGER1&amp;gt; -ge &amp;lt;INTEGER2&amp;gt; Prawda jeśli pierwsza liczba jest większa lub równa od drugiej.   &amp;lt;INTEGER1&amp;gt; -lt &amp;lt;INTEGER2&amp;gt; Prawda jeśli pierwsza liczba jest mniejsza od drugiej.</description>
+    </item>
+    
     <item>
       <title>Zmiana funkcjonalności przez zmianę nazwy skryptu</title>
       <link>https://mohdur.github.io/post/zmiana-funkcjonalno%C5%9Bci-przez-zmian%C4%99-nazwy-skryptu/</link>

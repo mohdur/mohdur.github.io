@@ -1,8 +1,8 @@
 
 <!DOCTYPE html>
-<html lang="en" data-figures="" data-mode="dim">
+<html lang="en" data-figures="true" class="page" data-mode="dim">
   <head>
-<title>mail | MOHDUR</title>
+<title>Komenda if w skryptach BASH | MOHDUR</title>
 <meta charset="utf-8">
 <meta name="generator" content="Hugo 0.76.4" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -10,13 +10,13 @@
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="">
+<meta name="description" content="Komenda if w skryptach BASH">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="mail" />
-<meta property="og:url" content="https://mohdur.github.io/tags/mail/" />
-<meta property="og:title" content="mail" />
-<meta property="og:description" content="" />
+<meta name="twitter:title" content="Komenda if w skryptach BASH" />
+<meta property="og:url" content="https://mohdur.github.io/post/komenda-if-w-skryptach-bash.md/" />
+<meta property="og:title" content="Komenda if w skryptach BASH" />
+<meta property="og:description" content="Komenda if w skryptach BASH" />
 <meta property="og:image" content="https://mohdur.github.io/images/thumbnail.png" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://mohdur.github.io/icons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://mohdur.github.io/icons/favicon-32x32.png'>
@@ -25,7 +25,7 @@
 <meta name="msapplication-TileColor" content="#002538">
 <meta name="theme-color" content="#002538">
 
-<link rel="canonical" href="https://mohdur.github.io/tags/mail/">
+<link rel="canonical" href="https://mohdur.github.io/post/komenda-if-w-skryptach-bash.md/">
 
     
 
@@ -42,8 +42,9 @@
   
   
     
+    
   
-  <body data-code="7" data-lines="false" id="documentTop">
+  <body data-code="10" data-lines="false" id="documentTop">
 
 <header class="nav_header" >
   <nav class="nav">
@@ -96,42 +97,292 @@
 </header>
 
     <main>
-
+  
 <div class="grid-inverse wrap content">
-  <ul class="posts" id="posts">
-      <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://mohdur.github.io/post/kompilacja-neomutt/">Kompilacja Neomutt</a>
-      </h3>
-      <div class="post_meta">
+  <article class="post_content">
+    <h1 class="post_title">Komenda if w skryptach BASH</h1><div class="post_meta">
   <svg class="icon">
   <use xlink:href="#calendar"></use>
 </svg>
   <span class="post_date">
-    Oct 14, 2020</span>
-    <a href='https://mohdur.github.io/tags/linux' class="post_tag button button_translucent">linux
+    Oct 24, 2020</span>
+    <a href='https://mohdur.github.io/tags/shell' class="post_tag button button_translucent">Shell
     </a>
-    <a href='https://mohdur.github.io/tags/mail' class="post_tag button button_translucent">mail
+    <a href='https://mohdur.github.io/tags/skrypty' class="post_tag button button_translucent">Skrypty
     </a>
 </div>
 
-    </div>
-      <div class="excerpt_footer">
-        <div>
-          <p class="pale">Lista pakietów potrzebnych do kompilacji w systemu Fedora  docbook-utils docbook-style-xsl gpgme-devel cyrus-sasl-devel notmuch-devel gnutls-devel libidn-devel libdb4-devel libdb-devel compat-gdbm-devel lmdb-devel kyotocabinet-devel qdbm-devel krb5-devel  Kompilacja 1./configure --enable-ssl --enable-gpgme --notmuch \ …</p>
-          <a href="https://mohdur.github.io/post/kompilacja-neomutt/" class="excerpt_more button">Read More</a>
-        </div>
-      </div>
-    </div>
-  </li>
+    
+<div class="post_share">
+  Share on:
+  <a href="https://twitter.com/intent/tweet?text=Komenda%20if%20w%20skryptach%20BASH&url=https%3a%2f%2fmohdur.github.io%2fpost%2fkomenda-if-w-skryptach-bash.md%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
+    <svg class="icon">
+  <use xlink:href="#twitter"></use>
+</svg>
+  </a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fkomenda-if-w-skryptach-bash.md%2f&t=Komenda%20if%20w%20skryptach%20BASH" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
+    <svg class="icon">
+  <use xlink:href="#facebook"></use>
+</svg>
+  </a>
+  <a href="#linkedinshare" id = "linkedinshare" class="linkedin" title="Share on LinkedIn" rel="nofollow">
+    <svg class="icon">
+  <use xlink:href="#linkedin"></use>
+</svg>
+  </a>
+  <a href="https://mohdur.github.io/post/komenda-if-w-skryptach-bash.md/" title="Copy Link" class="link link_yank">
+    <svg class="icon">
+  <use xlink:href="#copy"></use>
+</svg>
+  </a>
+</div>
 
-    <li>
+    
+    <table>
+<thead>
+<tr>
+<th>Porówanie</th>
+<th>Opis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;INTEGER1&gt; -eq &lt;INTEGER2&gt;</code></td>
+<td>Prawda jeśli liczby są równe.</td>
+</tr>
+<tr>
+<td><code>&lt;INTEGER1&gt; -ne &lt;INTEGER2&gt;</code></td>
+<td>Prawda jeśli liczby nie są równe.</td>
+</tr>
+<tr>
+<td><code>&lt;INTEGER1&gt; -le &lt;INTEGER2&gt;</code></td>
+<td>Prawda jeśli pierwsza liczba jest mniejsza lub równa od drugiej.</td>
+</tr>
+<tr>
+<td><code>&lt;INTEGER1&gt; -ge &lt;INTEGER2&gt;</code></td>
+<td>Prawda jeśli pierwsza liczba jest większa lub równa od drugiej.</td>
+</tr>
+<tr>
+<td><code>&lt;INTEGER1&gt; -lt &lt;INTEGER2&gt;</code></td>
+<td>Prawda jeśli pierwsza liczba jest mniejsza od drugiej.</td>
+</tr>
+<tr>
+<td><code>&lt;INTEGER1&gt; -gt &lt;INTEGER2&gt;</code></td>
+<td>Prawda jeśli pierwsza liczba jest większa od drugiej.</td>
+</tr>
+</tbody>
+</table>
+<p>przykład:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<span class="ln">2</span>    <span class="nb">echo</span> <span class="s2">&#34;Wystąpił błąd </span><span class="nv">$?</span><span class="s2">&#34;</span>
+<span class="ln">3</span><span class="k">fi</span>
+</code></pre></div><p>Testy na plikach</p>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Opis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-a &lt;FILE&gt;</code></td>
+<td>Prawda jeśli <code>&lt;FILE&gt;</code> istnieje. <code>:!:</code> nie rekomendowany, może kolidować z <code>-a</code> użytym jako <code>AND</code>.</td>
+</tr>
+<tr>
+<td><code>-e &lt;FILE&gt;</code></td>
+<td>Prawda jeśli <code>&lt;FILE&gt;</code> istnieje.</td>
+</tr>
+<tr>
+<td><code>-f &lt;FILE&gt;</code></td>
+<td>Prawda jeśli <code>&lt;FILE&gt;</code> istnieje i jest to zwykły plik.</td>
+</tr>
+<tr>
+<td><code>-d &lt;FILE&gt;</code></td>
+<td>Prawda jeśli <code>&lt;FILE&gt;</code> istnieje i jest katalogiem.</td>
+</tr>
+<tr>
+<td><code>-c &lt;FILE&gt;</code></td>
+<td>Prawda jeśli <code>&lt;FILE&gt;</code> istnieje i jest urządzeniem znakowym.</td>
+</tr>
+<tr>
+<td><code>-b &lt;FILE&gt;</code></td>
+<td>Prawda jeśli <code>&lt;FILE&gt;</code> istnieje i jest urządzeniem blokowym.</td>
+</tr>
+<tr>
+<td><code>-p &lt;FILE&gt;</code></td>
+<td>Prawda jeśli <code>&lt;FILE&gt;</code> istnieje i jest potokiem nazwanym (FIFO).</td>
+</tr>
+<tr>
+<td><code>-S &lt;FILE&gt;</code></td>
+<td>Prawda jeśli <code>&lt;FILE&gt;</code> istnieje i jest gniazdem (socket).</td>
+</tr>
+<tr>
+<td><code>-L &lt;FILE&gt;</code></td>
+<td>Prawda jeśli <code>&lt;FILE&gt;</code> istnieje i jest linkiem symbolicznym.</td>
+</tr>
+<tr>
+<td><code>-h &lt;FILE&gt;</code></td>
+<td>Prawda jeśli <code>&lt;FILE&gt;</code> istnieje i jest linkiem symbolicznym.</td>
+</tr>
+<tr>
+<td><code>-g &lt;FILE&gt;</code></td>
+<td>Prawda jeśli <code>&lt;FILE&gt;</code> istnieje i ma ustawiony <code>sgid</code> bit.</td>
+</tr>
+<tr>
+<td><code>-u &lt;FILE&gt;</code></td>
+<td>Prawda jeśli <code>&lt;FILE&gt;</code> istnieje i ma ustawiony <code>suid</code> bit.</td>
+</tr>
+<tr>
+<td><code>-r &lt;FILE&gt;</code></td>
+<td>Prawda jeśli <code>&lt;FILE&gt;</code> istnieje i można go odczytać.</td>
+</tr>
+<tr>
+<td><code>-w &lt;FILE&gt;</code></td>
+<td>Prawda jeśli <code>&lt;FILE&gt;</code> istnieje i można w nim zapisywać.</td>
+</tr>
+<tr>
+<td><code>-x &lt;FILE&gt;</code></td>
+<td>Prawda jeśli <code>&lt;FILE&gt;</code> istnieje i można go wykonać.</td>
+</tr>
+<tr>
+<td><code>-N &lt;FILE&gt;</code></td>
+<td>Prawda jeśli <code>&lt;FILE&gt;</code> istnieje i był zmieniany od ostatniego odczytu.</td>
+</tr>
+<tr>
+<td><code>-s &lt;FILE&gt;</code></td>
+<td>Prawda jeśli <code>&lt;FILE&gt;</code> istnieje i nie jest pusty.</td>
+</tr>
+<tr>
+<td><code>-t &lt;fd&gt;</code></td>
+<td>Prawda jeśli deskryptor pliku <code>&lt;fd&gt;</code> jest otwarty na terminalu.</td>
+</tr>
+<tr>
+<td><code>&lt;FILE1&gt; -nt &lt;FILE2&gt;</code></td>
+<td>Prawda jeśli <code>&lt;FILE1&gt;</code> jest nowszy od <code>&lt;FILE2&gt;</code> (mtime). <code>:!:</code></td>
+</tr>
+<tr>
+<td><code>&lt;FILE1&gt; -ot &lt;FILE2&gt;</code></td>
+<td>Prawda jeśli <code>&lt;FILE1&gt;</code> jest starszy od <code>&lt;FILE2&gt;</code> (mtime). <code>:!:</code></td>
+</tr>
+<tr>
+<td><code>&lt;FILE1&gt; -ef &lt;FILE2&gt;</code></td>
+<td>Prawda jeśli <code>&lt;FILE1&gt;</code> i <code>&lt;FILE2&gt;</code> odnoszą się do tego samego urządzenia i numeru inode. <code>:!:</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="k">function</span> create_symlinks<span class="o">()</span> <span class="o">{</span>
+<span class="ln"> 2</span>  <span class="nv">LINKI</span><span class="o">=</span><span class="s2">&#34;gp ds-grep new otp posts publish books&#34;</span>
+<span class="ln"> 3</span>  <span class="k">for</span> I in <span class="nv">$LINKI</span>
+<span class="ln"> 4</span>  <span class="k">do</span>
+<span class="ln"> 5</span>    <span class="k">if</span> <span class="o">[[</span> -f <span class="nv">$BIN</span>/<span class="nv">$I</span>  <span class="o">&amp;&amp;</span> ! -L <span class="nv">$BIN</span>/<span class="nv">$I</span> <span class="o">]]</span>
+<span class="ln"> 6</span>    <span class="k">then</span>
+<span class="ln"> 7</span>      <span class="nb">echo</span> <span class="s2">&#34;UWAGA! \&#34;</span><span class="nv">$BIN</span><span class="s2">/</span><span class="nv">$I</span><span class="s2">\&#34; istnieje i NIE jest linkiem.&#34;</span>
+<span class="ln"> 8</span>    <span class="k">elif</span> <span class="o">[</span> ! -L <span class="nv">$BIN</span>/<span class="nv">$I</span> <span class="o">]</span>
+<span class="ln"> 9</span>    <span class="k">then</span>
+<span class="ln">10</span>      ln -s <span class="nv">$BIN</span>/<span class="k">$(</span>basename <span class="nv">$0</span><span class="k">)</span> <span class="nv">$BIN</span>/<span class="nv">$I</span>
+<span class="ln">11</span>    <span class="k">elif</span> <span class="o">[</span> ! -e <span class="nv">$BIN</span>/<span class="nv">$I</span> <span class="o">]</span>   <span class="c1"># uszkodzony symlink</span>
+<span class="ln">12</span>    <span class="k">then</span>
+<span class="ln">13</span>      ln -sf <span class="nv">$BIN</span>/<span class="k">$(</span>basename <span class="nv">$0</span><span class="k">)</span> <span class="nv">$BIN</span>/<span class="nv">$I</span>
+<span class="ln">14</span>    <span class="k">fi</span>
+<span class="ln">15</span>  <span class="k">done</span>
+<span class="ln">16</span><span class="o">}</span>
+</code></pre></div><table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Opis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-z &lt;STRING&gt;</code></td>
+<td>Prawda jeśli <code>&lt;STRING&gt;</code> jest pusty.</td>
+</tr>
+<tr>
+<td><code>-n &lt;STRING&gt;</code></td>
+<td>Prawda jeśli <code>&lt;STRING&gt;</code> nie jest pusty.</td>
+</tr>
+<tr>
+<td><code>&lt;STRING1&gt; = &lt;STRING2&gt;</code></td>
+<td>Prawda jeśli <code>&lt;STRING1&gt;</code> i <code>&lt;STRING2&gt;</code> są identyczne.</td>
+</tr>
+<tr>
+<td><code>&lt;STRING1&gt; != &lt;STRING2&gt;</code></td>
+<td>Prawda jeśli <code>&lt;STRING1&gt;</code> i <code>&lt;STRING2&gt;</code> są różne.</td>
+</tr>
+<tr>
+<td><code>&lt;STRING1&gt; &lt; &lt;STRING2&gt;</code></td>
+<td>True if <code>&lt;STRING1&gt;</code> sorts before <code>&lt;STRING2&gt;</code> lexicographically (pure ASCII, not current locale!). Remember to escape! Use <code>\&lt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;STRING1&gt; &gt; &lt;STRING2&gt;</code></td>
+<td>True if <code>&lt;STRING1&gt;</code> sorts after <code>&lt;STRING2&gt;</code> lexicographically (pure ASCII, not current locale!). Remember to escape! Use <code>\&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Operator syntax</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;TEST1&gt; -a &lt;TEST2&gt;</code></td>
+<td>True, if <code>&lt;TEST1&gt;</code> and <code>&lt;TEST2&gt;</code> are true (AND). Note that <code>-a</code> also may be used as a file test (see above)</td>
+</tr>
+<tr>
+<td><code>&lt;TEST1&gt; -o &lt;TEST2&gt;</code></td>
+<td>True, if either <code>&lt;TEST1&gt;</code> or <code>&lt;TEST2&gt;</code> is true (OR).</td>
+</tr>
+<tr>
+<td><code>! &lt;TEST&gt;</code></td>
+<td>True, if <code>&lt;TEST&gt;</code> is false (NOT).</td>
+</tr>
+<tr>
+<td><code>( &lt;TEST&gt; )</code></td>
+<td>Group a test (for precedence). Attention: In normal shell-usage, the <code>&quot;(&quot;</code> and <code>&quot;)&quot;</code> must be escaped; use <code>&quot;\(&quot;</code> and <code>&quot;\)&quot;</code>!</td>
+</tr>
+<tr>
+<td><code>-o &lt;OPTION_NAME&gt;</code></td>
+<td>True, if the shell option <code>&lt;OPTION_NAME&gt;</code> is set.</td>
+</tr>
+<tr>
+<td><code>-v &lt;VARIABLENAME&gt;</code></td>
+<td>True if the variable <code>&lt;VARIABLENAME&gt;</code> has been set. Use <code>var[n]</code> for array elements.</td>
+</tr>
+<tr>
+<td><code>-R &lt;VARIABLENAME&gt;</code></td>
+<td>True if the variable <code>&lt;VARIABLENAME&gt;</code> has been set and is a nameref variable (since 4.3-alpha)</td>
+</tr>
+</tbody>
+</table>
 
-
-    </li>
-  </ul>
+    
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "mohdur-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+  </article>
 <aside class="sidebar">
   <section class="sidebar_inner">
     <h2>MOHDUR</h2>
@@ -141,9 +392,6 @@
     <a href='https://mohdur.github.io/about/' class="button mt-1" role="button">Read More</a>
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
-      <li>
-        <a href="https://mohdur.github.io/post/komenda-if-w-skryptach-bash.md/" class="nav-link">Komenda if w skryptach BASH</a>
-      </li>
       <li>
         <a href="https://mohdur.github.io/post/backup-danych-na-szyfrowanym-nosniku.md/" class="nav-link">Backup danych na szyfrowanym nośniku</a>
       </li>
@@ -164,6 +412,9 @@
       </li>
       <li>
         <a href="https://mohdur.github.io/post/skrypty-bash-receptury/" class="nav-link">Skrypty BASH receptury</a>
+      </li>
+      <li>
+        <a href="https://mohdur.github.io/post/polecenie-grep-w-przyk%C5%82adach/" class="nav-link">Polecenie grep w przykładach</a>
       </li>
     </ul>
     <div>
@@ -377,8 +628,6 @@
 </aside>
 
 </div>
-
-
     </main><svg width="0" height="0" class="hidden">
   <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="facebook">
     <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h151V331h-60v-90h60v-61c0-49.629 40.371-90 90-90h91v90h-91v61h91l-15 90h-76v181h121c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zm0 0"></path>
