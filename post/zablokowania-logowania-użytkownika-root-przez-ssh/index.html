@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" data-figures="true" class="page" data-mode="dim">
   <head>
-<title>Polecenie grep w przykładach | MOHDUR</title>
+<title>Zablokowania logowania użytkownika root przez SSH | MOHDUR</title>
 <meta charset="utf-8">
 <meta name="generator" content="Hugo 0.76.4" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -10,13 +10,13 @@
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="Polecenie grep w przykładach">
+<meta name="description" content="Zablokowania logowania użytkownika root przez SSH">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="Polecenie grep w przykładach" />
-<meta property="og:url" content="https://mohdur.github.io/post/polecenie-grep-w-przyk%C5%82adach/" />
-<meta property="og:title" content="Polecenie grep w przykładach" />
-<meta property="og:description" content="Polecenie grep w przykładach" />
+<meta name="twitter:title" content="Zablokowania logowania użytkownika root przez SSH" />
+<meta property="og:url" content="https://mohdur.github.io/post/zablokowania-logowania-u%C5%BCytkownika-root-przez-ssh/" />
+<meta property="og:title" content="Zablokowania logowania użytkownika root przez SSH" />
+<meta property="og:description" content="Zablokowania logowania użytkownika root przez SSH" />
 <meta property="og:image" content="https://mohdur.github.io/images/thumbnail.png" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://mohdur.github.io/icons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://mohdur.github.io/icons/favicon-32x32.png'>
@@ -25,7 +25,7 @@
 <meta name="msapplication-TileColor" content="#002538">
 <meta name="theme-color" content="#002538">
 
-<link rel="canonical" href="https://mohdur.github.io/post/polecenie-grep-w-przyk%C5%82adach/">
+<link rel="canonical" href="https://mohdur.github.io/post/zablokowania-logowania-u%C5%BCytkownika-root-przez-ssh/">
 
     
 
@@ -44,7 +44,7 @@
     
     
   
-  <body data-code="10" data-lines="false" id="documentTop">
+  <body data-code="200" data-lines="false" id="documentTop">
 
 <header class="nav_header" >
   <nav class="nav">
@@ -100,7 +100,7 @@
   
 <div class="grid-inverse wrap content">
   <article class="post_content">
-    <h1 class="post_title">Polecenie grep w przykładach</h1><div class="post_meta">
+    <h1 class="post_title">Zablokowania logowania użytkownika root przez SSH</h1><div class="post_meta">
   <svg class="icon">
   <use xlink:href="#calendar"></use>
 </svg>
@@ -108,17 +108,19 @@
     Oct 24, 2020</span>
     <a href='https://mohdur.github.io/tags/linux' class="post_tag button button_translucent">Linux
     </a>
+    <a href='https://mohdur.github.io/tags/ssh' class="post_tag button button_translucent">SSH
+    </a>
 </div>
 
     
 <div class="post_share">
   Share on:
-  <a href="https://twitter.com/intent/tweet?text=Polecenie%20grep%20w%20przyk%c5%82adach&url=https%3a%2f%2fmohdur.github.io%2fpost%2fpolecenie-grep-w-przyk%25C5%2582adach%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
+  <a href="https://twitter.com/intent/tweet?text=Zablokowania%20logowania%20u%c5%bcytkownika%20root%20przez%20SSH&url=https%3a%2f%2fmohdur.github.io%2fpost%2fzablokowania-logowania-u%25C5%25BCytkownika-root-przez-ssh%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#twitter"></use>
 </svg>
   </a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fpolecenie-grep-w-przyk%25C5%2582adach%2f&t=Polecenie%20grep%20w%20przyk%c5%82adach" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fzablokowania-logowania-u%25C5%25BCytkownika-root-przez-ssh%2f&t=Zablokowania%20logowania%20u%c5%bcytkownika%20root%20przez%20SSH" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#facebook"></use>
 </svg>
@@ -128,7 +130,7 @@
   <use xlink:href="#linkedin"></use>
 </svg>
   </a>
-  <a href="https://mohdur.github.io/post/polecenie-grep-w-przyk%C5%82adach/" title="Copy Link" class="link link_yank">
+  <a href="https://mohdur.github.io/post/zablokowania-logowania-u%C5%BCytkownika-root-przez-ssh/" title="Copy Link" class="link link_yank">
     <svg class="icon">
   <use xlink:href="#copy"></use>
 </svg>
@@ -136,13 +138,18 @@
 </div>
 
     
-    <p>Wyszukanie wszystkich pakietów zawierających słowa <code>vim</code> i <code>common</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>dnf search vim | grep -wE &#34;vim|common&#34;
-</code></pre></div><p>Wyszukanie wszystkich pakietów zawierających słowa <code>vim</code> i <code>common</code>, ale pokaże
-również pakiety, którchy częścią nazwy jest słowo <code>vim</code> lub <code>common</code> np.
-<code>neovim</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>dnf search vim | grep -E &#34;vim|common&#34;
-</code></pre></div>
+    <p>W pliku <code>/etc/ssh/sshd_config</code> należy dodać:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>PermitRootLogin no
+</code></pre></div><p>Dostępne opcje:</p>
+<ul>
+<li><code>yes</code></li>
+<li><code>prohibit-password</code></li>
+<li><code>forced-commands-only</code></li>
+<li><code>no</code></li>
+</ul>
+<p>Ustawienie parametru <code>prohibit-password</code> wyłącza opcję logowania się
+za pomocą hasła, natomiast można logować się za pomocą klucza.</p>
+
     
       <div id="disqus_thread"></div>
 <script type="application/javascript">
@@ -176,9 +183,6 @@ również pakiety, którchy częścią nazwy jest słowo <code>vim</code> lub <c
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
       <li>
-        <a href="https://mohdur.github.io/post/zablokowania-logowania-u%C5%BCytkownika-root-przez-ssh/" class="nav-link">Zablokowania logowania użytkownika root przez SSH</a>
-      </li>
-      <li>
         <a href="https://mohdur.github.io/post/wykonanie-kopii-zapasowej-us%C5%82ugi-nextcloud/" class="nav-link">Wykonanie kopii zapasowej usługi Nextcloud</a>
       </li>
       <li>
@@ -198,6 +202,9 @@ również pakiety, którchy częścią nazwy jest słowo <code>vim</code> lub <c
       </li>
       <li>
         <a href="https://mohdur.github.io/post/skr%C3%B3ty-klawiszowe-zsh/" class="nav-link">Skróty klawiszowe ZSH</a>
+      </li>
+      <li>
+        <a href="https://mohdur.github.io/post/vim-podr%C3%B3%C5%BCe-w-czasie/" class="nav-link">Vim podróże w czasie</a>
       </li>
     </ul>
     <div>
