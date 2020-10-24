@@ -5,7 +5,16 @@
     <link>https://mohdur.github.io/</link>
     <description>Recent content on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 19:12:38 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 19:14:34 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vim Różności</title>
+      <link>https://mohdur.github.io/post/vim-r%C3%B3%C5%BCno%C5%9Bci/</link>
+      <pubDate>Sat, 24 Oct 2020 19:14:34 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/vim-r%C3%B3%C5%BCno%C5%9Bci/</guid>
+      <description>Poruszanie się w trybie INSERT 1inoremap &amp;lt;C-h&amp;gt; &amp;lt;Left&amp;gt; &amp;#34; przemieszcza kursor w lewo2inoremap &amp;lt;C-j&amp;gt; &amp;lt;Down&amp;gt; &amp;#34; przemieszcza kursor w dół3inoremap &amp;lt;C-k&amp;gt; &amp;lt;Up&amp;gt; &amp;#34; przemieszcza kursor w górę4inoremap &amp;lt;C-l&amp;gt; &amp;lt;Right&amp;gt; &amp;#34; przemieszcza kursor w prawoPoruszanie się w trybie COMMAND 1cnoremap &amp;lt;C-h&amp;gt; &amp;lt;Left&amp;gt; &amp;#34; przemieszcza kursor w lewo2cnoremap &amp;lt;C-j&amp;gt; &amp;lt;Down&amp;gt; &amp;#34; przemieszcza kursor w dół3cnoremap &amp;lt;C-k&amp;gt; &amp;lt;Up&amp;gt; &amp;#34; przemieszcza kursor w górę4cnoremap &amp;lt;C-l&amp;gt; &amp;lt;Right&amp;gt; &amp;#34; przemieszcza kursor w prawoZapisanie pliku z użyciem sudo 1cnoremap sudow w !</description>
+    </item>
+    
     <item>
       <title>Vim Otworzenie Pliku Pod Kursorem</title>
       <link>https://mohdur.github.io/post/vim-otworzenie-pliku-pod-kursorem/</link>
