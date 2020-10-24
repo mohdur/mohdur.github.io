@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LUKS on MOHDUR</title>
+    <link>https://mohdur.github.io/tags/luks/</link>
+    <description>Recent content in LUKS on MOHDUR</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 24 Oct 2020 14:33:48 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/luks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Backup danych na szyfrowanym nośniku</title>
+      <link>https://mohdur.github.io/post/backup-danych-na-szyfrowanym-nosniku.md/</link>
+      <pubDate>Sat, 24 Oct 2020 14:33:48 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/backup-danych-na-szyfrowanym-nosniku.md/</guid>
+      <description>Parametry wywołania skryptu
+ -m - podmontowanie nośnika -u - odmontowanie nośnika -b - wykonanie kopii zapasowej -h - wyświetlenie pomocy  Wywołanie skryptu bez parametrów uruchamia wykonanie kopii zapasowej.
+1#!/bin/env bash 2 3CryptoName=CryptoSD 4Device=/dev/mmcblk0 5SRC=/home/user 6DST=/home/user/CryptoSD 7ExcludeFile=/home/user/skrypty/backup2sd.exclude 8 9root_chk() { 10 if [[ $EUID -ne 0 ]]; then 11 echo &amp;#34;Ten program musisz uruchomić jako root&amp;#34; 1&amp;gt;&amp;amp;2 12 exit 1 13 fi 14} 15 16pomoc() { 17 echo 18 echo 19 echo &amp;#34;Podmontowanie nośnika.</description>
+    </item>
+    
+  </channel>
+</rss>

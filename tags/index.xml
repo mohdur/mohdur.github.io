@@ -5,7 +5,34 @@
     <link>https://mohdur.github.io/tags/</link>
     <description>Recent content in Tags on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 14:28:33 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 14:33:48 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Backup</title>
+      <link>https://mohdur.github.io/tags/backup/</link>
+      <pubDate>Sat, 24 Oct 2020 14:33:48 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/tags/backup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>LUKS</title>
+      <link>https://mohdur.github.io/tags/luks/</link>
+      <pubDate>Sat, 24 Oct 2020 14:33:48 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/tags/luks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Skrypty</title>
+      <link>https://mohdur.github.io/tags/skrypty/</link>
+      <pubDate>Sat, 24 Oct 2020 14:33:48 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/tags/skrypty/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Vim</title>
       <link>https://mohdur.github.io/tags/vim/</link>
@@ -21,15 +48,6 @@
       <pubDate>Sat, 24 Oct 2020 13:48:25 +0200</pubDate>
       
       <guid>https://mohdur.github.io/tags/shell/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Skrypty</title>
-      <link>https://mohdur.github.io/tags/skrypty/</link>
-      <pubDate>Sat, 24 Oct 2020 13:48:25 +0200</pubDate>
-      
-      <guid>https://mohdur.github.io/tags/skrypty/</guid>
       <description></description>
     </item>
     
@@ -111,15 +129,6 @@
       <pubDate>Thu, 22 Oct 2020 01:53:14 +0200</pubDate>
       
       <guid>https://mohdur.github.io/tags/pf/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Backup</title>
-      <link>https://mohdur.github.io/tags/backup/</link>
-      <pubDate>Thu, 22 Oct 2020 01:39:58 +0200</pubDate>
-      
-      <guid>https://mohdur.github.io/tags/backup/</guid>
       <description></description>
     </item>
     
