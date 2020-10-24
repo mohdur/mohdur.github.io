@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" data-figures="true" class="page" data-mode="dim">
   <head>
-<title>Zablokowania logowania użytkownika root przez SSH | MOHDUR</title>
+<title>Generowanie haseł | MOHDUR</title>
 <meta charset="utf-8">
 <meta name="generator" content="Hugo 0.76.4" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -10,13 +10,13 @@
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="Zablokowania logowania użytkownika root przez SSH">
+<meta name="description" content="Generowanie haseł">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="Zablokowania logowania użytkownika root przez SSH" />
-<meta property="og:url" content="https://mohdur.github.io/post/zablokowania-logowania-u%C5%BCytkownika-root-przez-ssh/" />
-<meta property="og:title" content="Zablokowania logowania użytkownika root przez SSH" />
-<meta property="og:description" content="Zablokowania logowania użytkownika root przez SSH" />
+<meta name="twitter:title" content="Generowanie haseł" />
+<meta property="og:url" content="https://mohdur.github.io/post/generowanie-hase%C5%82/" />
+<meta property="og:title" content="Generowanie haseł" />
+<meta property="og:description" content="Generowanie haseł" />
 <meta property="og:image" content="https://mohdur.github.io/images/thumbnail.png" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://mohdur.github.io/icons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://mohdur.github.io/icons/favicon-32x32.png'>
@@ -25,7 +25,7 @@
 <meta name="msapplication-TileColor" content="#002538">
 <meta name="theme-color" content="#002538">
 
-<link rel="canonical" href="https://mohdur.github.io/post/zablokowania-logowania-u%C5%BCytkownika-root-przez-ssh/">
+<link rel="canonical" href="https://mohdur.github.io/post/generowanie-hase%C5%82/">
 
     
 
@@ -100,7 +100,7 @@
   
 <div class="grid-inverse wrap content">
   <article class="post_content">
-    <h1 class="post_title">Zablokowania logowania użytkownika root przez SSH</h1><div class="post_meta">
+    <h1 class="post_title">Generowanie haseł</h1><div class="post_meta">
   <svg class="icon">
   <use xlink:href="#calendar"></use>
 </svg>
@@ -108,19 +108,19 @@
     Oct 24, 2020</span>
     <a href='https://mohdur.github.io/tags/linux' class="post_tag button button_translucent">Linux
     </a>
-    <a href='https://mohdur.github.io/tags/ssh' class="post_tag button button_translucent">SSH
+    <a href='https://mohdur.github.io/tags/security' class="post_tag button button_translucent">Security
     </a>
 </div>
 
     
 <div class="post_share">
   Share on:
-  <a href="https://twitter.com/intent/tweet?text=Zablokowania%20logowania%20u%c5%bcytkownika%20root%20przez%20SSH&url=https%3a%2f%2fmohdur.github.io%2fpost%2fzablokowania-logowania-u%25C5%25BCytkownika-root-przez-ssh%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
+  <a href="https://twitter.com/intent/tweet?text=Generowanie%20hase%c5%82&url=https%3a%2f%2fmohdur.github.io%2fpost%2fgenerowanie-hase%25C5%2582%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#twitter"></use>
 </svg>
   </a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fzablokowania-logowania-u%25C5%25BCytkownika-root-przez-ssh%2f&t=Zablokowania%20logowania%20u%c5%bcytkownika%20root%20przez%20SSH" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fgenerowanie-hase%25C5%2582%2f&t=Generowanie%20hase%c5%82" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#facebook"></use>
 </svg>
@@ -130,7 +130,7 @@
   <use xlink:href="#linkedin"></use>
 </svg>
   </a>
-  <a href="https://mohdur.github.io/post/zablokowania-logowania-u%C5%BCytkownika-root-przez-ssh/" title="Copy Link" class="link link_yank">
+  <a href="https://mohdur.github.io/post/generowanie-hase%C5%82/" title="Copy Link" class="link link_yank">
     <svg class="icon">
   <use xlink:href="#copy"></use>
 </svg>
@@ -138,18 +138,22 @@
 </div>
 
     
-    <p>W pliku <code>/etc/ssh/sshd_config</code> należy dodać:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>PermitRootLogin no
-</code></pre></div><p>Dostępne opcje:</p>
-<ul>
-<li><code>yes</code></li>
-<li><code>prohibit-password</code></li>
-<li><code>forced-commands-only</code></li>
-<li><code>no</code></li>
-</ul>
-<p>Ustawienie parametru <code>prohibit-password</code> wyłącza opcję logowania się
-za pomocą hasła, natomiast można logować się za pomocą klucza.</p>
-
+    <p>Parametr <code>-S</code> to zarodek (salt), który jest generowany za pomocą polecenia
+<code>pwgen</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>mkpasswd -m sha-512 -S $(pwgen -n 16 | cut -f 1 -d &#39; &#39;) -s &lt;&lt;&lt; Hasło
+</code></pre></div><p>Wersja z wykorzystaniem urządzenia <code>/dev/urandom</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ mkpasswd -m sha-512 -S $(&lt; /dev/urandom tr -cd &#34;[:alnum:]&#34; | head -c${1:-16}; echo) -s &lt;&lt;&lt; hasło
+<span class="ln">2</span>$6$AnSw5avmi6cwpxzG$bnLa8cWs5FhdDU49jzdyxR4Fw0p3MGWcDLzwOd1x564I4iKJFmNwdq3BgkpBo/fSG1YCYbYMD9eE993GpTRQq0
+</code></pre></div><p>Generowanie hasła za pomocą <a href="OpenSSL">OpenSSL</a></p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>openssl rand -base64 36
+<span class="ln">2</span>3WC8BpncVVQyzdHHWlULV1VzW7LnHs0erGIuCHTZ+Zt9YU/t
+</code></pre></div><p>Użycie <code>dd</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>dd if=/dev/urandom bs=10 count=30 | tr -cd &#39;[:alnum:]&#39;
+<span class="ln">2</span>30+0 records in
+<span class="ln">3</span>30+0 records out
+<span class="ln">4</span>300 bytes (300 B) copied, 0.000336587 s, 891 kB/s
+<span class="ln">5</span>5VCT1sSL9MyviBTacEcAwUVFC4UeTIaMjPaPG5134LFNNHMgcBIoYsx1mDEFe76roWQO5tqL
+</code></pre></div>
     
       <div id="disqus_thread"></div>
 <script type="application/javascript">
@@ -183,7 +187,7 @@ za pomocą hasła, natomiast można logować się za pomocą klucza.</p>
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
       <li>
-        <a href="https://mohdur.github.io/post/generowanie-hase%C5%82/" class="nav-link">Generowanie haseł</a>
+        <a href="https://mohdur.github.io/post/zablokowania-logowania-u%C5%BCytkownika-root-przez-ssh/" class="nav-link">Zablokowania logowania użytkownika root przez SSH</a>
       </li>
       <li>
         <a href="https://mohdur.github.io/post/wykonanie-kopii-zapasowej-us%C5%82ugi-nextcloud/" class="nav-link">Wykonanie kopii zapasowej usługi Nextcloud</a>

@@ -5,7 +5,20 @@
     <link>https://mohdur.github.io/tags/linux/</link>
     <description>Recent content in Linux on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 17:41:40 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 18:08:03 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Generowanie haseł</title>
+      <link>https://mohdur.github.io/post/generowanie-hase%C5%82/</link>
+      <pubDate>Sat, 24 Oct 2020 18:08:03 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/generowanie-hase%C5%82/</guid>
+      <description>Parametr -S to zarodek (salt), który jest generowany za pomocą polecenia pwgen.
+1mkpasswd -m sha-512 -S $(pwgen -n 16 | cut -f 1 -d &amp;#39; &amp;#39;) -s &amp;lt;&amp;lt;&amp;lt; Hasło Wersja z wykorzystaniem urządzenia /dev/urandom
+1$ mkpasswd -m sha-512 -S $(&amp;lt; /dev/urandom tr -cd &amp;#34;[:alnum:]&amp;#34; | head -c${1:-16}; echo) -s &amp;lt;&amp;lt;&amp;lt; hasło 2$6$AnSw5avmi6cwpxzG$bnLa8cWs5FhdDU49jzdyxR4Fw0p3MGWcDLzwOd1x564I4iKJFmNwdq3BgkpBo/fSG1YCYbYMD9eE993GpTRQq0 Generowanie hasła za pomocą OpenSSL
+1openssl rand -base64 36 23WC8BpncVVQyzdHHWlULV1VzW7LnHs0erGIuCHTZ+Zt9YU/t Użycie dd
+1dd if=/dev/urandom bs=10 count=30 | tr -cd &amp;#39;[:alnum:]&amp;#39; 230+0 records in 330+0 records out 4300 bytes (300 B) copied, 0.</description>
+    </item>
+    
     <item>
       <title>Zablokowania logowania użytkownika root przez SSH</title>
       <link>https://mohdur.github.io/post/zablokowania-logowania-u%C5%BCytkownika-root-przez-ssh/</link>
