@@ -5,22 +5,40 @@
     <link>https://mohdur.github.io/tags/</link>
     <description>Recent content in Tags on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 15:52:11 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 16:28:26 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>GnuPG</title>
-      <link>https://mohdur.github.io/tags/gnupg/</link>
-      <pubDate>Sat, 24 Oct 2020 15:52:11 +0200</pubDate>
+      <title>Arch</title>
+      <link>https://mohdur.github.io/tags/arch/</link>
+      <pubDate>Sat, 24 Oct 2020 16:28:26 +0200</pubDate>
       
-      <guid>https://mohdur.github.io/tags/gnupg/</guid>
+      <guid>https://mohdur.github.io/tags/arch/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
       <link>https://mohdur.github.io/tags/linux/</link>
-      <pubDate>Sat, 24 Oct 2020 15:52:11 +0200</pubDate>
+      <pubDate>Sat, 24 Oct 2020 16:28:26 +0200</pubDate>
       
       <guid>https://mohdur.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sprzęt</title>
+      <link>https://mohdur.github.io/tags/sprz%C4%99t/</link>
+      <pubDate>Sat, 24 Oct 2020 16:28:26 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/tags/sprz%C4%99t/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GnuPG</title>
+      <link>https://mohdur.github.io/tags/gnupg/</link>
+      <pubDate>Sat, 24 Oct 2020 15:52:11 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/tags/gnupg/</guid>
       <description></description>
     </item>
     
@@ -57,15 +75,6 @@
       <pubDate>Sat, 24 Oct 2020 15:50:31 +0200</pubDate>
       
       <guid>https://mohdur.github.io/tags/pandoc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Arch</title>
-      <link>https://mohdur.github.io/tags/arch/</link>
-      <pubDate>Sat, 24 Oct 2020 15:39:57 +0200</pubDate>
-      
-      <guid>https://mohdur.github.io/tags/arch/</guid>
       <description></description>
     </item>
     
@@ -120,15 +129,6 @@
       <pubDate>Sat, 24 Oct 2020 14:28:33 +0200</pubDate>
       
       <guid>https://mohdur.github.io/tags/vim/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Sprzęt</title>
-      <link>https://mohdur.github.io/tags/sprz%C4%99t/</link>
-      <pubDate>Sat, 24 Oct 2020 13:12:32 +0200</pubDate>
-      
-      <guid>https://mohdur.github.io/tags/sprz%C4%99t/</guid>
       <description></description>
     </item>
     

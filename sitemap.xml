@@ -3,6 +3,41 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mohdur.github.io/tags/arch/</loc>
+    <lastmod>2020-10-24T16:28:26+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/linux/</loc>
+    <lastmod>2020-10-24T16:28:26+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/</loc>
+    <lastmod>2020-10-24T16:28:26+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/polska-klawiatura-i-polonizacja-w-arch-linux/</loc>
+    <lastmod>2020-10-24T16:28:26+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/</loc>
+    <lastmod>2020-10-24T16:28:26+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/sprz%C4%99t/</loc>
+    <lastmod>2020-10-24T16:28:26+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/</loc>
+    <lastmod>2020-10-24T16:28:26+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mohdur.github.io/post/generowanie-klucza-gnupg-pgp/</loc>
     <lastmod>2020-10-24T15:52:11+02:00</lastmod>
   </url>
@@ -13,32 +48,12 @@
   </url>
   
   <url>
-    <loc>https://mohdur.github.io/tags/linux/</loc>
-    <lastmod>2020-10-24T15:52:11+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/</loc>
-    <lastmod>2020-10-24T15:52:11+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mohdur.github.io/tags/pgp/</loc>
     <lastmod>2020-10-24T15:52:11+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mohdur.github.io/post/</loc>
-    <lastmod>2020-10-24T15:52:11+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mohdur.github.io/tags/szyfrowanie/</loc>
-    <lastmod>2020-10-24T15:52:11+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/</loc>
     <lastmod>2020-10-24T15:52:11+02:00</lastmod>
   </url>
   
@@ -55,11 +70,6 @@
   <url>
     <loc>https://mohdur.github.io/tags/pandoc/</loc>
     <lastmod>2020-10-24T15:50:31+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/arch/</loc>
-    <lastmod>2020-10-24T15:39:57+02:00</lastmod>
   </url>
   
   <url>
@@ -154,11 +164,6 @@
   
   <url>
     <loc>https://mohdur.github.io/post/pod%C5%82%C4%85czenie-dysku-po-identyfikatorze-uuid/</loc>
-    <lastmod>2020-10-24T13:12:32+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/sprz%C4%99t/</loc>
     <lastmod>2020-10-24T13:12:32+02:00</lastmod>
   </url>
   
