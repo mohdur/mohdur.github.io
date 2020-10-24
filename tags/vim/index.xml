@@ -5,7 +5,20 @@
     <link>https://mohdur.github.io/tags/vim/</link>
     <description>Recent content in Vim on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 19:20:49 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 19:36:39 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sprawdzanie pisowni w edytorze Vim</title>
+      <link>https://mohdur.github.io/post/sprawdzanie-pisowni-w-edytorze-vim/</link>
+      <pubDate>Sat, 24 Oct 2020 19:36:39 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/sprawdzanie-pisowni-w-edytorze-vim/</guid>
+      <description>Ustawienie języka
+1:set spell spellang=pl Włączenie sprawdzania pisowni
+1:set spell Zmapowanie sprawdzania pisowni pod klawiszem F7
+1set spell spellang=pl 2nnore &amp;lt;F7&amp;gt; :setlocal spell! spell?&amp;lt;CR&amp;gt; Klawiszologia
+ ]s – szuka kolejnego wystąpienia nieznanego słowa [s – szuka poprzedniego wystąpienia nieznanego słowa ]S - szuka kolejnego wystąpienia definitywnie źle napisanego słowa [S – szuka poprzedniego wystąpienia słowa definitywnie źle napisanego słowa z= - podaje sugestie zastąpienia słowa zg - dodaje słowo pod kursorem do lokalnego słownika  Więcej informacji w pomocy :help spell</description>
+    </item>
+    
     <item>
       <title>Vim szyfrowanie</title>
       <link>https://mohdur.github.io/post/vim-szyfrowanie/</link>
