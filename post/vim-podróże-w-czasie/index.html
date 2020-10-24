@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" data-figures="true" class="page" data-mode="dim">
   <head>
-<title>Lokalna kopia zapasowa z wykorzystaniem restic | MOHDUR</title>
+<title>Vim podróże w czasie | MOHDUR</title>
 <meta charset="utf-8">
 <meta name="generator" content="Hugo 0.76.4" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -10,13 +10,13 @@
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="Lokalna kopia zapasowa z wykorzystaniem restic">
+<meta name="description" content="Vim podróże w czasie">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="Lokalna kopia zapasowa z wykorzystaniem restic" />
-<meta property="og:url" content="https://mohdur.github.io/post/lokalna-kopia-zapasowa-z-wykorzystaniem-restic/" />
-<meta property="og:title" content="Lokalna kopia zapasowa z wykorzystaniem restic" />
-<meta property="og:description" content="Lokalna kopia zapasowa z wykorzystaniem restic" />
+<meta name="twitter:title" content="Vim podróże w czasie" />
+<meta property="og:url" content="https://mohdur.github.io/post/vim-podr%C3%B3%C5%BCe-w-czasie/" />
+<meta property="og:title" content="Vim podróże w czasie" />
+<meta property="og:description" content="Vim podróże w czasie" />
 <meta property="og:image" content="https://mohdur.github.io/images/thumbnail.png" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://mohdur.github.io/icons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://mohdur.github.io/icons/favicon-32x32.png'>
@@ -25,7 +25,7 @@
 <meta name="msapplication-TileColor" content="#002538">
 <meta name="theme-color" content="#002538">
 
-<link rel="canonical" href="https://mohdur.github.io/post/lokalna-kopia-zapasowa-z-wykorzystaniem-restic/">
+<link rel="canonical" href="https://mohdur.github.io/post/vim-podr%C3%B3%C5%BCe-w-czasie/">
 
     
 
@@ -100,27 +100,25 @@
   
 <div class="grid-inverse wrap content">
   <article class="post_content">
-    <h1 class="post_title">Lokalna kopia zapasowa z wykorzystaniem restic</h1><div class="post_meta">
+    <h1 class="post_title">Vim podróże w czasie</h1><div class="post_meta">
   <svg class="icon">
   <use xlink:href="#calendar"></use>
 </svg>
   <span class="post_date">
-    Oct 22, 2020</span>
-    <a href='https://mohdur.github.io/tags/backup' class="post_tag button button_translucent">Backup
-    </a>
-    <a href='https://mohdur.github.io/tags/restic' class="post_tag button button_translucent">Restic
+    Oct 24, 2020</span>
+    <a href='https://mohdur.github.io/tags/vim' class="post_tag button button_translucent">Vim
     </a>
 </div>
 
     
 <div class="post_share">
   Share on:
-  <a href="https://twitter.com/intent/tweet?text=Lokalna%20kopia%20zapasowa%20z%20wykorzystaniem%20restic&url=https%3a%2f%2fmohdur.github.io%2fpost%2flokalna-kopia-zapasowa-z-wykorzystaniem-restic%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
+  <a href="https://twitter.com/intent/tweet?text=Vim%20podr%c3%b3%c5%bce%20w%20czasie&url=https%3a%2f%2fmohdur.github.io%2fpost%2fvim-podr%25C3%25B3%25C5%25BCe-w-czasie%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#twitter"></use>
 </svg>
   </a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2flokalna-kopia-zapasowa-z-wykorzystaniem-restic%2f&t=Lokalna%20kopia%20zapasowa%20z%20wykorzystaniem%20restic" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fvim-podr%25C3%25B3%25C5%25BCe-w-czasie%2f&t=Vim%20podr%c3%b3%c5%bce%20w%20czasie" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#facebook"></use>
 </svg>
@@ -130,7 +128,7 @@
   <use xlink:href="#linkedin"></use>
 </svg>
   </a>
-  <a href="https://mohdur.github.io/post/lokalna-kopia-zapasowa-z-wykorzystaniem-restic/" title="Copy Link" class="link link_yank">
+  <a href="https://mohdur.github.io/post/vim-podr%C3%B3%C5%BCe-w-czasie/" title="Copy Link" class="link link_yank">
     <svg class="icon">
   <use xlink:href="#copy"></use>
 </svg>
@@ -138,70 +136,27 @@
 </div>
 
     
-    <p><a href="https://restic.readthedocs.io/en/latest/">Restic</a> jest programem do wykonywania kopii zapasowej na lokalnym dysku lub zdalnym
-zasobie np. <a href="https://www.backblaze.com/b2/cloud-storage.html">Backblaze B2</a>. Kopia
-zapasowa jest szyfrowana za pomocą klucza z hasłem.</p>
-<h1 id="przygotowanie-nowego-repozytorium">Przygotowanie nowego repozytorium</h1>
-<p>Utworzenie repozytorium w katalogu <code>/opt/restic-repo</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>restic init --repo /opt/restic-repo
-<span class="ln">2</span>
-<span class="ln">3</span>enter password for new repository:
-<span class="ln">4</span>enter password again:
-<span class="ln">5</span>created restic repository 4c5e0dc100 at /opt/restic-repo
+    <p>Edytor Vim posiada dwie komendy, które umożliwiają przejście do wersji z przed
+lub kilka sekund później, są to <code>:earlier</code> oraz <code>:later</code>. Jako parametr dodatkowy
+używamy ile sekund, minut godzin lub nawet dni chcemy się przenieść w czasie.
+Dodatkowo możemy przenieść się w czasie <strong>N</strong> zapisów pliku w czasie.</p>
+<p>Użycie tych dwóch poleceń bez podania w dodatkowym parametrze jednostki czasu
+przenosi nas o kilka stanów pliku. Stan można uważać za przejście pomiędzy
+trybami edycji.</p>
+<p>np. użycie polecenia <code>:later 30s</code> przeniesie nas w czasie 30 sekund później,
+oczywiście Vim nie jest w stanie przewidzieć co zrobimy za 30 sekund, ale
+w przypadku kiedy wcześniej użyjemy komendy <code>:earlier 1m</code> ma to sens.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>:later 30s
+</code></pre></div><p>Z pomocy <code>:help later</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>:later {count}		Go to newer text state {count} times.
+<span class="ln">2</span>:later {N}s		Go to newer text state about {N} seconds later.
+<span class="ln">3</span>:later {N}m		Go to newer text state about {N} minutes later.
+<span class="ln">4</span>:later {N}h		Go to newer text state about {N} hours later.
+<span class="ln">5</span>:later {N}d		Go to newer text state about {N} days later.
 <span class="ln">6</span>
-<span class="ln">7</span>Please note that knowledge of your password is required to access
-<span class="ln">8</span>the repository. Losing your password means that your data is
-<span class="ln">9</span>irrecoverably lost.
-</code></pre></div><h1 id="wykonanie-kopii-zapasowej">Wykonanie kopii zapasowej</h1>
-<p>Wykonanie kopii zapasowej katalogu <code>~/work</code> w repozytorium <code>/opt/restic-repo</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span>restic -r /opt/restic-repo --verbose backup ~/skrypty
-<span class="ln"> 2</span>
-<span class="ln"> 3</span>open repository
-<span class="ln"> 4</span>enter password for repository:
-<span class="ln"> 5</span>repository 4c5e0dc1 opened successfully, password is correct
-<span class="ln"> 6</span>created new cache in /home/user/.cache/restic
-<span class="ln"> 7</span>lock repository
-<span class="ln"> 8</span>load index files
-<span class="ln"> 9</span>start scan on [/home/user/skrypty]
-<span class="ln">10</span>start backup on [/home/user/skrypty]
-<span class="ln">11</span>scan finished in 0.377s: 1472 files, 5.572 GiB
-<span class="ln">12</span>
-<span class="ln">13</span>Files:        1472 new,     0 changed,     0 unmodified
-<span class="ln">14</span>Dirs:            2 new,     0 changed,     0 unmodified
-<span class="ln">15</span>Data Blobs:   1590 new
-<span class="ln">16</span>Tree Blobs:      3 new
-<span class="ln">17</span>Added to the repo: 605.453 MiB
-<span class="ln">18</span>
-<span class="ln">19</span>processed 1472 files, 5.572 GiB in 0:07
-<span class="ln">20</span>snapshot ecd12e27 saved
-</code></pre></div><h1 id="lista-kopii-zapasowych">Lista kopii zapasowych</h1>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span>restic -r /opt/restic-repo snapshots
-<span class="ln"> 2</span>
-<span class="ln"> 3</span>enter password for repository:
-<span class="ln"> 4</span>repository 4c5e0dc1 opened successfully, password is correct
-<span class="ln"> 5</span>ID        Time                 Host        Tags        Paths
-<span class="ln"> 6</span>-------------------------------------------------------------------------
-<span class="ln"> 7</span>ecd12e27  2019-05-01 21:28:47  x230.lan                /home/user/skrypty
-<span class="ln"> 8</span>ea90a14b  2019-05-01 21:31:08  x230.lan                /home/user/skrypty
-<span class="ln"> 9</span>d3162c73  2019-05-01 21:33:19  x230.lan                /home/user/bin
-<span class="ln">10</span>-------------------------------------------------------------------------
-<span class="ln">11</span>3 snapshots
-</code></pre></div><p>Lista kopii zapasowych wybranego katalogu</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span>restic -r /opt/restic-repo snapshots --path=&#34;/home/user/bin&#34;
-<span class="ln"> 2</span>
-<span class="ln"> 3</span>enter password for repository:
-<span class="ln"> 4</span>repository 4c5e0dc1 opened successfully, password is correct
-<span class="ln"> 5</span>ID        Time                 Host        Tags        Paths
-<span class="ln"> 6</span>---------------------------------------------------------------------
-<span class="ln"> 7</span>d3162c73  2019-05-01 21:33:19  x230.lan                /home/user/bin
-<span class="ln"> 8</span>---------------------------------------------------------------------
-<span class="ln"> 9</span>1 snapshots
-<span class="ln">10</span>
-</code></pre></div><h1 id="przywrócenie-plików-z-kopii-zapaswoej">Przywrócenie plików z kopii zapaswoej</h1>
-<p>Przywrócenie wybranej kopii zapasowej do katalogu <code>/tmp/restore-work</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>restic -r /opt/restic-repo restore 79766175 --target /tmp/restore-work
-</code></pre></div><p>Przywrócenie ostatniej kopii zapasowej</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>restic -r /srv/restic-repo restore latest --target /tmp/restore-art --path &#34;/home/art&#34;
+<span class="ln">7</span>:later {N}f		Go to newer text state {N} file writes later.
+<span class="ln">8</span>			When at the state of the last file write, &#34;:later 1f&#34;
+<span class="ln">9</span>			will go to the newest text state.
 </code></pre></div>
     
       <div id="disqus_thread"></div>
@@ -236,9 +191,6 @@ zapasowa jest szyfrowana za pomocą klucza z hasłem.</p>
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
       <li>
-        <a href="https://mohdur.github.io/post/vim-podr%C3%B3%C5%BCe-w-czasie/" class="nav-link">Vim podróże w czasie</a>
-      </li>
-      <li>
         <a href="https://mohdur.github.io/post/polska-klawiatura-i-polonizacja-w-arch-linux/" class="nav-link">Polska klawiatura i polonizacja w Arch Linux</a>
       </li>
       <li>
@@ -258,6 +210,9 @@ zapasowa jest szyfrowana za pomocą klucza z hasłem.</p>
       </li>
       <li>
         <a href="https://mohdur.github.io/post/backup-danych-na-szyfrowanym-nosniku.md/" class="nav-link">Backup danych na szyfrowanym nośniku</a>
+      </li>
+      <li>
+        <a href="https://mohdur.github.io/post/vim-wlaczenie-pluginu-dla-wybranych-typow-plikow/" class="nav-link">Vim włączenie pluginu dla wybranych typów plików</a>
       </li>
     </ul>
     <div>

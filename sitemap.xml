@@ -3,6 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mohdur.github.io/</loc>
+    <lastmod>2020-10-24T16:32:31+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/</loc>
+    <lastmod>2020-10-24T16:32:31+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/</loc>
+    <lastmod>2020-10-24T16:32:31+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/vim/</loc>
+    <lastmod>2020-10-24T16:32:31+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/vim-podr%C3%B3%C5%BCe-w-czasie/</loc>
+    <lastmod>2020-10-24T16:32:31+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mohdur.github.io/tags/arch/</loc>
     <lastmod>2020-10-24T16:28:26+02:00</lastmod>
   </url>
@@ -13,27 +38,12 @@
   </url>
   
   <url>
-    <loc>https://mohdur.github.io/</loc>
-    <lastmod>2020-10-24T16:28:26+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mohdur.github.io/post/polska-klawiatura-i-polonizacja-w-arch-linux/</loc>
     <lastmod>2020-10-24T16:28:26+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mohdur.github.io/post/</loc>
-    <lastmod>2020-10-24T16:28:26+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mohdur.github.io/tags/sprz%C4%99t/</loc>
-    <lastmod>2020-10-24T16:28:26+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/</loc>
     <lastmod>2020-10-24T16:28:26+02:00</lastmod>
   </url>
   
@@ -115,11 +125,6 @@
   <url>
     <loc>https://mohdur.github.io/tags/luks/</loc>
     <lastmod>2020-10-24T14:33:48+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/vim/</loc>
-    <lastmod>2020-10-24T14:28:33+02:00</lastmod>
   </url>
   
   <url>
