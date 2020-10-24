@@ -5,7 +5,16 @@
     <link>https://mohdur.github.io/tags/linux/</link>
     <description>Recent content in Linux on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 16:51:34 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 17:25:28 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Zarządzanie pakietami w Fedora Linux</title>
+      <link>https://mohdur.github.io/post/zarz%C4%85dzanie-pakietami-w-fedora-linux/</link>
+      <pubDate>Sat, 24 Oct 2020 17:25:28 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/zarz%C4%85dzanie-pakietami-w-fedora-linux/</guid>
+      <description>Instalacja pakietów 1sudo dnf install &amp;lt;nazwa-pakietu&amp;gt; 1sudo dnf install borgbackup 1Last metadata expiration check: 0:16:01 ago on Mon 25 Mar 2019 02:58:33 PM CET 2Dependencies resolved. 3============================================================================== 4 Package Architecture Version Repository Size 5============================================================================== 6Installing: 7 borgbackup x86_64 1.1.7-2.fc30 rawhide 980 k 8Installing dependencies: 9 python3-llfuse x86_64 1.3.5-2.fc30 rawhide 373 k 10 python3-msgpack x86_64 0.6.1-2.fc30 rawhide 90 k 11 12Transaction Summary 13============================================================================== 14Install 3 Packages 15 16Total download size: 1.4 M 17Installed size: 5.</description>
+    </item>
+    
     <item>
       <title>Wireshark zdalnie przez SSH</title>
       <link>https://mohdur.github.io/post/wireshark-zdalnie-przez-ssh/</link>

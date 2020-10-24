@@ -3,18 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mohdur.github.io/tags/fedora/</loc>
+    <lastmod>2020-10-24T17:25:28+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/linux/</loc>
+    <lastmod>2020-10-24T17:25:28+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mohdur.github.io/</loc>
-    <lastmod>2020-10-24T17:16:30+02:00</lastmod>
+    <lastmod>2020-10-24T17:25:28+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://mohdur.github.io/post/</loc>
-    <lastmod>2020-10-24T17:16:30+02:00</lastmod>
+    <lastmod>2020-10-24T17:25:28+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://mohdur.github.io/tags/</loc>
-    <lastmod>2020-10-24T17:16:30+02:00</lastmod>
+    <lastmod>2020-10-24T17:25:28+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/zarz%C4%85dzanie-pakietami-w-fedora-linux/</loc>
+    <lastmod>2020-10-24T17:25:28+02:00</lastmod>
   </url>
   
   <url>
@@ -35,11 +50,6 @@
   <url>
     <loc>https://mohdur.github.io/tags/security/</loc>
     <lastmod>2020-10-24T17:00:15+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/linux/</loc>
-    <lastmod>2020-10-24T16:51:34+02:00</lastmod>
   </url>
   
   <url>
@@ -320,11 +330,6 @@
   <url>
     <loc>https://mohdur.github.io/post/generowanie-liczb-losowych/</loc>
     <lastmod>2020-10-22T01:31:47+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/fedora/</loc>
-    <lastmod>2020-10-22T01:27:57+02:00</lastmod>
   </url>
   
   <url>
