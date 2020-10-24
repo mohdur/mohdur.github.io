@@ -5,7 +5,18 @@
     <link>https://mohdur.github.io/</link>
     <description>Recent content on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 19:53:23 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Oct 2020 19:56:37 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Zmiana częstotliwości powtarzania klawiszy</title>
+      <link>https://mohdur.github.io/post/zmiana-cz%C4%99stotliwo%C5%9Bci-powtarzania-klawiszy/</link>
+      <pubDate>Sat, 24 Oct 2020 19:56:37 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/zmiana-cz%C4%99stotliwo%C5%9Bci-powtarzania-klawiszy/</guid>
+      <description>Jeśli jesteś niecierpliwy i nie lubisz czekać, aż linia wypełni się jednym znakiem, lub skasujesz dużą część tekstu klawiszem Backspace, to pomoże Ci komenda xset, która potrafi zmienić częstotliwość powtarzania klawiszy, oraz czas do uruchomienia tej procedury.
+Składnia Ogólna składnia polecenia xset:
+1xset r rate [deleay [rate]] Kiedy przyciśniemy klawisz na klawiaturze i cały czas będziemy go trzymać, to po chwili przyciśnięty znak zacznie się powtarzać. Ten czas kiedy należy odczekać zanim znak zacznie się powtarzać można ustawić za pomocą parametru deleay komendy xset.</description>
+    </item>
+    
     <item>
       <title>Zabezpieczenie kodów jednorazowych kluczem PGP</title>
       <link>https://mohdur.github.io/post/zabezpieczenie-kod%C3%B3w-jednorazowych-kluczem-pgp/</link>
