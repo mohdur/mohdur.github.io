@@ -5,7 +5,16 @@
     <link>https://mohdur.github.io/post/</link>
     <description>Recent content in Posts on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 22:00:15 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Nov 2020 10:51:34 +0100</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Instalacja RPM Fusion W Fedora Linux</title>
+      <link>https://mohdur.github.io/post/instalacja-rpm-fusion-w-fedora-linux/</link>
+      <pubDate>Sun, 01 Nov 2020 10:51:34 +0100</pubDate>
+      
+      <guid>https://mohdur.github.io/post/instalacja-rpm-fusion-w-fedora-linux/</guid>
+      <description> Strona projektu https://rpmfusion.org/Configuration  1sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \ 2https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm </description>
+    </item>
+    
     <item>
       <title>Przyspieszenie procesu wyłączenia systemu Linux</title>
       <link>https://mohdur.github.io/post/przyspieszenie-procesu-wy%C5%82%C4%85czenia-systemu-linux/</link>
