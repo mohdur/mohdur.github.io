@@ -7,12 +7,12 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 04 Nov 2020 00:36:34 +0100</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Lista Zainstalowanych Czcionek</title>
+      <title>Lista zainstalowanych czcionek</title>
       <link>https://mohdur.github.io/post/lista-zainstalowanych-czcionek/</link>
       <pubDate>Wed, 04 Nov 2020 00:36:34 +0100</pubDate>
       
       <guid>https://mohdur.github.io/post/lista-zainstalowanych-czcionek/</guid>
-      <description>1fc-list : family style 2 3NotoSerif Nerd Font Mono:style=ExtraCondensed Medium Italic,Italic 4Lekton Nerd Font Mono:style=Bold 5NotoSansMono Nerd Font:style=SemiCondensed,Regular 6Ubuntu Nerd Font Mono:style=Book 7NotoSerifDisplay Nerd Font:style=Condensed SemiBold Italic,Italic 8NotoSansMono Nerd Font Mono:style=SemiCondensed,Regular 9Iosevka,Iosevka Nerd Font Mono:style=Medium,Regular 10URW Bookman:style=Light Italic 11Iosevka Term,Iosevka Nerd Font:style=Medium Italic,Italic 12NotoSerifDisplay Nerd Font Mono:style=Light,Regular 13Fira Code:style=Regular 14FantasqueSansMono Nerd Font Mono:style=Italic 15SauceCodePro Nerd Font Mono:style=Black,Regular 16Ubuntu Nerd Font Mono:style=Bold </description>
+      <description>1$ fc-list : family style 2 3NotoSerif Nerd Font Mono:style=ExtraCondensed Medium Italic,Italic 4Lekton Nerd Font Mono:style=Bold 5NotoSansMono Nerd Font:style=SemiCondensed,Regular 6Ubuntu Nerd Font Mono:style=Book 7NotoSerifDisplay Nerd Font:style=Condensed SemiBold Italic,Italic 8NotoSansMono Nerd Font Mono:style=SemiCondensed,Regular 9Iosevka,Iosevka Nerd Font Mono:style=Medium,Regular 10URW Bookman:style=Light Italic 11Iosevka Term,Iosevka Nerd Font:style=Medium Italic,Italic 12NotoSerifDisplay Nerd Font Mono:style=Light,Regular 13Fira Code:style=Regular 14FantasqueSansMono Nerd Font Mono:style=Italic 15SauceCodePro Nerd Font Mono:style=Black,Regular 16Ubuntu Nerd Font Mono:style=Bold </description>
     </item>
     
     <item>
