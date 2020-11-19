@@ -12,7 +12,7 @@
       <pubDate>Wed, 14 Oct 2020 08:13:55 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/kompilacja-neomutt/</guid>
-      <description>Lista pakietów potrzebnych do kompilacji w systemu Fedora  docbook-utils docbook-style-xsl gpgme-devel cyrus-sasl-devel notmuch-devel gnutls-devel libidn-devel libdb4-devel libdb-devel compat-gdbm-devel lmdb-devel kyotocabinet-devel qdbm-devel krb5-devel  Kompilacja 1./configure --enable-ssl --enable-gpgme --notmuch \ 2--gnutls --enable-gss --sasl --bdb --gdbm \ 3--kyotocabinet --lmdb --qdbm 4 5make 6sudo make install </description>
+      <description>Lista pakietów potrzebnych do kompilacji w systemu Fedora  docbook-utils docbook-style-xsl gpgme-devel cyrus-sasl-devel notmuch-devel gnutls-devel libidn-devel libdb4-devel libdb-devel compat-gdbm-devel lmdb-devel kyotocabinet-devel qdbm-devel krb5-devel  Instalacja pakietów 1sudo dnf install docbook-utils docbook-style-xsl gpgme-devel cyrus-sasl-devel \ 2 notmuch-devel gnutls-devel libidn-devel libdb4-devel libdb-devel \ 3 compat-gdbm-devel lmdb-devel kyotocabinet-devel qdbm-devel krb5-devel \ Pobranie źródeł 1#!/usr/bin/env bash 2 3URL=https://github.com/neomutt/neomutt 4NAME=neomutt 5 6TAG=$(git ls-remote --tags $URL \ 7 | cut -f 2 | cut -f 3 -d &amp;#39;/&amp;#39; | sort -V | tail -n 1 | sed &amp;#39;s/\^{}//&amp;#39;) 8wget -O $NAME.</description>
     </item>
     
   </channel>
