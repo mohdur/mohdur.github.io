@@ -162,15 +162,17 @@
 </code></pre></div><h2 id="pobranie-źródeł">Pobranie źródeł</h2>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="cp">#!/usr/bin/env bash
 </span><span class="ln"> 2</span><span class="cp"></span>
-<span class="ln"> 3</span><span class="nv">URL</span><span class="o">=</span>https://github.com/neomutt/neomutt
+<span class="ln"> 3</span><span class="nv">URL</span><span class="o">=</span>https://api.github.com/repos/neomutt/neomutt/releases/latest
 <span class="ln"> 4</span><span class="nv">NAME</span><span class="o">=</span>neomutt
 <span class="ln"> 5</span>
-<span class="ln"> 6</span><span class="nv">TAG</span><span class="o">=</span><span class="k">$(</span>git ls-remote --tags <span class="nv">$URL</span> <span class="se">\
-</span><span class="ln"> 7</span><span class="se"></span>  <span class="p">|</span> cut -f <span class="m">2</span> <span class="p">|</span> cut -f <span class="m">3</span> -d <span class="s1">&#39;/&#39;</span> <span class="p">|</span> sort -V <span class="p">|</span> tail -n <span class="m">1</span> <span class="p">|</span> sed <span class="s1">&#39;s/\^{}//&#39;</span><span class="k">)</span>
-<span class="ln"> 8</span>wget -O <span class="nv">$NAME</span>.tgz -q <span class="nv">$URL</span>/archive/<span class="nv">$TAG</span>.tar.gz
-<span class="ln"> 9</span>mkdir <span class="nv">$NAME</span>
-<span class="ln">10</span>tar zxvf <span class="nv">$NAME</span>.tgz -C <span class="nv">$NAME</span> --strip-components<span class="o">=</span><span class="m">1</span>
-<span class="ln">11</span>rm <span class="nv">$NAME</span>.tgz
+<span class="ln"> 6</span>mkdir <span class="nv">$NAME</span>
+<span class="ln"> 7</span>curl -s <span class="nv">$URL</span> <span class="se">\
+</span><span class="ln"> 8</span><span class="se"></span>  <span class="p">|</span> grep tarball_url <span class="se">\
+</span><span class="ln"> 9</span><span class="se"></span>  <span class="p">|</span> cut -d <span class="s1">&#39;&#34;&#39;</span> -f <span class="m">4</span> <span class="se">\
+</span><span class="ln">10</span><span class="se"></span>  <span class="p">|</span> wget -O <span class="nv">$NAME</span>.tgz -qi -
+<span class="ln">11</span>
+<span class="ln">12</span>tar zxvf <span class="nv">$NAME</span>.tgz -C <span class="nv">$NAME</span> --strip-components<span class="o">=</span><span class="m">1</span>
+<span class="ln">13</span>rm <span class="nv">$NAME</span>.tgz
 </code></pre></div><h2 id="kompilacja">Kompilacja</h2>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>./configure --enable-ssl --enable-gpgme --notmuch \
 <span class="ln">2</span>  --gnutls --enable-gss --sasl --bdb --gdbm \
