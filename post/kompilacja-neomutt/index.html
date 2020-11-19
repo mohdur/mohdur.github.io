@@ -173,11 +173,14 @@
 <span class="ln">11</span>rm <span class="nv">$NAME</span>.tgz
 </code></pre></div><h2 id="kompilacja">Kompilacja</h2>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>./configure --enable-ssl --enable-gpgme --notmuch \
-<span class="ln">2</span>--gnutls --enable-gss --sasl --bdb --gdbm \
-<span class="ln">3</span>--kyotocabinet --lmdb --qdbm
-<span class="ln">4</span>
-<span class="ln">5</span>make
-<span class="ln">6</span>sudo make install
+<span class="ln">2</span>  --gnutls --enable-gss --sasl --bdb --gdbm \
+<span class="ln">3</span>  --kyotocabinet --lmdb --qdbm --sqlite --autocrypt \
+<span class="ln">4</span>  --lua --homespool
+<span class="ln">5</span>
+<span class="ln">6</span>make clean
+<span class="ln">7</span>make
+<span class="ln">8</span>
+<span class="ln">9</span>sudo make install
 </code></pre></div>
     
       <div id="disqus_thread"></div>
