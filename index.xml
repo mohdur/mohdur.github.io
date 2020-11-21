@@ -5,7 +5,17 @@
     <link>https://mohdur.github.io/</link>
     <description>Recent content on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 04 Nov 2020 00:36:34 +0100</lastBuildDate><atom:link href="https://mohdur.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 21 Nov 2020 10:46:43 +0100</lastBuildDate><atom:link href="https://mohdur.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>KDE Caps Lock Jako ESC</title>
+      <link>https://mohdur.github.io/post/kde-caps-lock-jako-esc/</link>
+      <pubDate>Sat, 21 Nov 2020 10:46:43 +0100</pubDate>
+      
+      <guid>https://mohdur.github.io/post/kde-caps-lock-jako-esc/</guid>
+      <description>W środowisku KDE działanie klawisza Caps Lock można ustawić w różny sposób.
+Przechodzimy do System Settings następnie wyszukujemy Keyboard na zakładce Advanced wyszukujemy Caps Lock behavior tutaj mamy różne możliwości jedną z nich jest Make Caps Lock an additinal Esc.</description>
+    </item>
+    
     <item>
       <title>Lista zainstalowanych czcionek</title>
       <link>https://mohdur.github.io/post/lista-zainstalowanych-czcionek/</link>
