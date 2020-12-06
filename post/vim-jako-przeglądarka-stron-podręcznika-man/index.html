@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" data-figures="true" class="page" data-mode="dim">
   <head>
-<title>Vim Różności | MOHDUR</title>
+<title>Vim jako przeglądarka stron podręcznika man | MOHDUR</title>
 <meta charset="utf-8">
 <meta name="generator" content="Hugo 0.75.1" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -10,13 +10,13 @@
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="Article description.">
+<meta name="description" content="Vim jako przeglądarka stron podręcznika man">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="Vim Różności" />
-<meta property="og:url" content="https://mohdur.github.io/post/vim-r%C3%B3%C5%BCno%C5%9Bci/" />
-<meta property="og:title" content="Vim Różności" />
-<meta property="og:description" content="Article description." />
+<meta name="twitter:title" content="Vim jako przeglądarka stron podręcznika man" />
+<meta property="og:url" content="https://mohdur.github.io/post/vim-jako-przegl%C4%85darka-stron-podr%C4%99cznika-man/" />
+<meta property="og:title" content="Vim jako przeglądarka stron podręcznika man" />
+<meta property="og:description" content="Vim jako przeglądarka stron podręcznika man" />
 <meta property="og:image" content="https://mohdur.github.io/images/thumbnail.png" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://mohdur.github.io/icons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://mohdur.github.io/icons/favicon-32x32.png'>
@@ -25,7 +25,7 @@
 <meta name="msapplication-TileColor" content="#002538">
 <meta name="theme-color" content="#002538">
 
-<link rel="canonical" href="https://mohdur.github.io/post/vim-r%C3%B3%C5%BCno%C5%9Bci/">
+<link rel="canonical" href="https://mohdur.github.io/post/vim-jako-przegl%C4%85darka-stron-podr%C4%99cznika-man/">
 
     
 
@@ -100,25 +100,27 @@
   
 <div class="grid-inverse wrap content">
   <article class="post_content">
-    <h1 class="post_title">Vim Różności</h1><div class="post_meta">
+    <h1 class="post_title">Vim jako przeglądarka stron podręcznika man</h1><div class="post_meta">
   <svg class="icon">
   <use xlink:href="#calendar"></use>
 </svg>
   <span class="post_date">
-    Oct 24, 2020</span>
+    Dec 6, 2020</span>
     <a href='https://mohdur.github.io/tags/vim' class="post_tag button button_translucent">Vim
+    </a>
+    <a href='https://mohdur.github.io/tags/linux' class="post_tag button button_translucent">Linux
     </a>
 </div>
 
     
 <div class="post_share">
   Share on:
-  <a href="https://twitter.com/intent/tweet?text=Vim%20R%c3%b3%c5%bcno%c5%9bci&url=https%3a%2f%2fmohdur.github.io%2fpost%2fvim-r%25C3%25B3%25C5%25BCno%25C5%259Bci%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
+  <a href="https://twitter.com/intent/tweet?text=Vim%20jako%20przegl%c4%85darka%20stron%20podr%c4%99cznika%20man&url=https%3a%2f%2fmohdur.github.io%2fpost%2fvim-jako-przegl%25C4%2585darka-stron-podr%25C4%2599cznika-man%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#twitter"></use>
 </svg>
   </a>
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fvim-r%25C3%25B3%25C5%25BCno%25C5%259Bci%2f&t=Vim%20R%c3%b3%c5%bcno%c5%9bci" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmohdur.github.io%2fpost%2fvim-jako-przegl%25C4%2585darka-stron-podr%25C4%2599cznika-man%2f&t=Vim%20jako%20przegl%c4%85darka%20stron%20podr%c4%99cznika%20man" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
     <svg class="icon">
   <use xlink:href="#facebook"></use>
 </svg>
@@ -128,7 +130,7 @@
   <use xlink:href="#linkedin"></use>
 </svg>
   </a>
-  <a href="https://mohdur.github.io/post/vim-r%C3%B3%C5%BCno%C5%9Bci/" title="Copy Link" class="link link_yank">
+  <a href="https://mohdur.github.io/post/vim-jako-przegl%C4%85darka-stron-podr%C4%99cznika-man/" title="Copy Link" class="link link_yank">
     <svg class="icon">
   <use xlink:href="#copy"></use>
 </svg>
@@ -136,69 +138,31 @@
 </div>
 
     
-    <h2 id="poruszanie-się-w-trybie-insert">Poruszanie się w trybie INSERT</h2>
-<div class="highlight"><pre class="chroma"><code class="language-vim" data-lang="vim"><span class="ln">1</span><span class="nx">inoremap</span> <span class="p">&lt;</span><span class="nx">C</span><span class="p">-</span><span class="nx">h</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nx">Left</span><span class="p">&gt;</span>   <span class="c">&#34; przemieszcza kursor w lewo</span><span class="err">
-</span><span class="ln">2</span><span class="err"></span><span class="nx">inoremap</span> <span class="p">&lt;</span><span class="nx">C</span><span class="p">-</span><span class="nx">j</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nx">Down</span><span class="p">&gt;</span>   <span class="c">&#34; przemieszcza kursor w dół</span><span class="err">
-</span><span class="ln">3</span><span class="err"></span><span class="nx">inoremap</span> <span class="p">&lt;</span><span class="nx">C</span><span class="p">-</span><span class="nx">k</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nx">Up</span><span class="p">&gt;</span>     <span class="c">&#34; przemieszcza kursor w górę</span><span class="err">
-</span><span class="ln">4</span><span class="err"></span><span class="nx">inoremap</span> <span class="p">&lt;</span><span class="nx">C</span><span class="p">-</span><span class="nx">l</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nx">Right</span><span class="p">&gt;</span>  <span class="c">&#34; przemieszcza kursor w prawo</span><span class="err">
-</span></code></pre></div><h2 id="poruszanie-się-w-trybie-command">Poruszanie się w trybie COMMAND</h2>
-<div class="highlight"><pre class="chroma"><code class="language-vim" data-lang="vim"><span class="ln">1</span><span class="nx">cnoremap</span> <span class="p">&lt;</span><span class="nx">C</span><span class="p">-</span><span class="nx">h</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nx">Left</span><span class="p">&gt;</span>   <span class="c">&#34; przemieszcza kursor w lewo</span><span class="err">
-</span><span class="ln">2</span><span class="err"></span><span class="nx">cnoremap</span> <span class="p">&lt;</span><span class="nx">C</span><span class="p">-</span><span class="nx">j</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nx">Down</span><span class="p">&gt;</span>   <span class="c">&#34; przemieszcza kursor w dół</span><span class="err">
-</span><span class="ln">3</span><span class="err"></span><span class="nx">cnoremap</span> <span class="p">&lt;</span><span class="nx">C</span><span class="p">-</span><span class="nx">k</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nx">Up</span><span class="p">&gt;</span>     <span class="c">&#34; przemieszcza kursor w górę</span><span class="err">
-</span><span class="ln">4</span><span class="err"></span><span class="nx">cnoremap</span> <span class="p">&lt;</span><span class="nx">C</span><span class="p">-</span><span class="nx">l</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nx">Right</span><span class="p">&gt;</span>  <span class="c">&#34; przemieszcza kursor w prawo</span><span class="err">
-</span></code></pre></div><h2 id="zapisanie-pliku-z-użyciem-sudo">Zapisanie pliku z użyciem sudo</h2>
-<div class="highlight"><pre class="chroma"><code class="language-vim" data-lang="vim"><span class="ln">1</span><span class="nx">cnoremap</span> <span class="nx">sudow</span> <span class="nx">w</span> <span class="p">!</span><span class="nx">sudo</span> <span class="nx">tee</span> % <span class="p">&gt;</span><span class="sr">/dev/</span><span class="nx">null</span><span class="err">
-</span></code></pre></div><p>Teraz w trybie komand można użyć polecenia <code>sudow</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-vim" data-lang="vim"><span class="ln">1</span><span class="p">:</span><span class="nx">sudow</span><span class="err">
-</span></code></pre></div><h2 id="przeładowanie-pliku-konfiguracyjnego-vimvimrc">Przeładowanie pliku konfiguracyjnego <code>~/.vim/vimrc</code></h2>
-<div class="highlight"><pre class="chroma"><code class="language-vim" data-lang="vim"><span class="ln">1</span><span class="nx">map</span> <span class="p">&lt;</span><span class="nx">leader</span><span class="p">&gt;</span><span class="nx">r</span> :<span class="nx">so</span> <span class="p">~</span><span class="sr">/.vim/</span><span class="nx">vimrc</span><span class="p">&lt;</span><span class="nx">cr</span><span class="p">&gt;</span><span class="err">
-</span></code></pre></div><h2 id="utworzenie-katalogu-jeśli-go-nie-ma">Utworzenie katalogu jeśli go nie ma</h2>
-<div class="highlight"><pre class="chroma"><code class="language-vim" data-lang="vim"><span class="ln">1</span><span class="k">if</span> <span class="p">!</span><span class="nx">isdirectory</span><span class="p">(</span><span class="s1">&#39;~/.vim/viminfo&#39;</span><span class="p">)</span><span class="err">
-</span><span class="ln">2</span><span class="err"></span>    <span class="nx">call</span> <span class="nx">mkdir</span><span class="p">(</span>$<span class="nx">HOME</span> . <span class="s1">&#39;/.vim/viminfo&#39;</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">)</span><span class="err">
-</span><span class="ln">3</span><span class="err"></span><span class="k">endif</span><span class="err">
-</span></code></pre></div><h2 id="łatwiejsze-poruszanie-się-po-zawijanych-liniach">Łatwiejsze poruszanie się po zawijanych liniach</h2>
-<p>Zawijanie długich linii, rozkłada jedną linię na kilka linii, nieoddiezlonych znakiem końca linii, żeby poruszać się pomiędzy nimi można użyć klawiszy <code>gj</code> i <code>gk</code>, stąd zmapowanie tych skrótów do <code>j</code> i <code>k</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-vim" data-lang="vim"><span class="ln">1</span><span class="nx">nnore</span> <span class="nx">j</span> <span class="nx">gj</span><span class="err">
-</span><span class="ln">2</span><span class="err"></span><span class="nx">nnore</span> <span class="nx">k</span> <span class="nx">gk</span><span class="err">
-</span></code></pre></div><h2 id="usunięcie-tabów-z-pliku">Usunięcie Tabów z pliku</h2>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>:set expandtab
-<span class="ln">2</span>:retab
-</code></pre></div><h2 id="łatwiejszy-dostęp-do-trybu-komend">Łatwiejszy dostęp do trybu komend</h2>
-<p>Standardowo do trybu komend można dostać się za pomocą <code>:</code> czyli <code>&lt;Shift-;&gt;</code>
-ten <code>Shift</code> jest dodatkowym klawiszem, którego chcemy się pozbyć, dlatego
-zamiast <code>&lt;Shift-;&gt;</code> użyję <code>;</code>, tutaj pojawia się mała komplikacja, gdyż znak
-<code>;</code> jest używany do powtórzenia wyszukiwania w linii, za pomocą komend <code>f</code>,
-<code>t</code>, <code>F</code> i <code>T</code>, do tego zadania zmapuję kombinację klawiszy <code>f;</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>map ; :
-<span class="ln">2</span>noremap f; ;
-</code></pre></div><h2 id="less-vim">less vim</h2>
-<p>Polecenie <code>less</code> służy do przeglądania zawartości pliku, czyli możemy się
-poruszać po jego treści, co jeśli zdecydujemy się na edycję takiego pliku?
-Normalnie powinniśmy zakończyć pracę z programem <code>less</code> i uruchomić edycję
-pliku za pomocą edytora <code>Vim</code>. Jest jednak sposób żeby tego dokonać szybciej,
-wystarczy nacisnąć kombinację klawiszy <code>vi</code> i przejdziemy do edycji za pomocą
-standardowego edytora. To oznacza, że nie musi to być edytor <code>Vim</code> może to być
-na przykład edytor <code>nvi</code>. Standardowy edytor jest ustawiany w zmiennej
-<code>EDITOR</code>. W BASH ustawiamy w pliku <code>~/.bashrc</code> natomiast w powłoces ZSH
-zmienną należy ustawić w pliku <code>~/.zshrc</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>export EDITOR=vim
-</code></pre></div><p>żeby sprawdzić jaki edytor jest ustawiony jako domyślny można wyświetlić
-wartość zmiennej <code>EDITOR</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>echo $EDITOR
-</code></pre></div><p>Zawsze warto sprawdzić czy dany program istnieje zanim go użyjemy.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>[ -f /usr/bin/vim ] &amp;&amp; export EDITOR=/usr/bin/vim
-</code></pre></div><h2 id="kopiowanie-polecenia-z-bufora">Kopiowanie polecenia z bufora</h2>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>&#34; &lt;leader&gt;v - kopiuje bieżącą linię i wykonuje w linii komend
-<span class="ln">2</span>nnoremap &lt;leader&gt;v yy:@&#34;&lt;cr&gt;
-<span class="ln">3</span>
-<span class="ln">4</span>&#34; &lt;leader&gt;e - kopiuje bieżącą linię i uruchamia polecenie systemowe,
-<span class="ln">5</span>&#34; następnie wynik wkleja do bufora
-<span class="ln">6</span>nnoremap &lt;leader&gt;e !!$SHELL&lt;cr&gt;
-</code></pre></div><h2 id="skopiowanie-zawartości-linii-komend">Skopiowanie zawartości linii komend</h2>
-<p>Po wejściu w tryb komend <code>:</code>, naciskamy <code>&lt;Ctrl-f&gt;</code> i pokazuje się historia
-wykonanych komend wraz z bieżącą komendą, tutaj możemy użyć <code>yy</code>, żeby
-skopiować komendę. Do wyjścia z historii służy komenda <code>:q</code>.</p>
-
+    <p>Skrypt <code>$HOME/bin/man-vim.sh</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="cp">#!/usr/bin/env bash
+</span><span class="ln"> 2</span><span class="cp"></span>
+<span class="ln"> 3</span><span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> -eq <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<span class="ln"> 4</span>  /usr/bin/man
+<span class="ln"> 5</span><span class="k">else</span>
+<span class="ln"> 6</span>  <span class="k">if</span> man -w <span class="nv">$*</span> &gt;/dev/null 2&gt;/dev/null<span class="p">;</span> <span class="k">then</span>
+<span class="ln"> 7</span>    /usr/bin/man <span class="nv">$*</span> <span class="p">|</span>col -b<span class="p">|</span>vim -u <span class="nv">$HOME</span>/.vim/man.vim -
+<span class="ln"> 8</span>  <span class="k">else</span>
+<span class="ln"> 9</span>    <span class="nb">echo</span> <span class="s2">&#34;Brak strony: </span><span class="nv">$*</span><span class="s2">&#34;</span>
+<span class="ln">10</span>  <span class="k">fi</span>
+<span class="ln">11</span><span class="k">fi</span>
+</code></pre></div><p>Plik konfiguracyjny <code>$HOME/.vim/man.vim</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-vim" data-lang="vim"><span class="ln">1</span><span class="nx">source</span> $<span class="nx">VIMRUNTIME</span>/<span class="nx">defaults</span>.<span class="nx">vim</span><span class="err">
+</span><span class="ln">2</span><span class="err"></span><span class="nx">syntax</span> <span class="nx">on</span><span class="err">
+</span><span class="ln">3</span><span class="err"></span><span class="nx">set</span> <span class="nx">ft</span><span class="p">=</span><span class="nx">man</span><span class="err">
+</span><span class="ln">4</span><span class="err"></span><span class="nx">set</span> <span class="nx">nolist</span><span class="err">
+</span><span class="ln">5</span><span class="err"></span><span class="nx">set</span> <span class="nx">buftype</span><span class="p">=</span><span class="nx">nofile</span><span class="err">
+</span><span class="ln">6</span><span class="err"></span><span class="nx">nmap</span> <span class="nx">q</span> :<span class="nx">q</span><span class="p">&lt;</span><span class="nx">cr</span><span class="p">&gt;</span><span class="err">
+</span><span class="ln">7</span><span class="err"></span><span class="nx">nmap</span> <span class="nx">Q</span> :<span class="nx">q</span><span class="p">&lt;</span><span class="nx">cr</span><span class="p">&gt;</span><span class="err">
+</span><span class="ln">8</span><span class="err"></span><span class="nx">map</span> <span class="nx">n</span> <span class="nx">nzz</span><span class="err">
+</span><span class="ln">9</span><span class="err"></span><span class="nx">map</span> <span class="nx">N</span> <span class="nx">Nzz</span><span class="err">
+</span></code></pre></div><p>Alias</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="nb">alias</span> <span class="nv">man</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">/bin/man-vim.sh&#34;</span>
+</code></pre></div>
     
       <div id="disqus_thread"></div>
 <script type="application/javascript">
@@ -232,9 +196,6 @@ skopiować komendę. Do wyjścia z historii służy komenda <code>:q</code>.</p>
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
       <li>
-        <a href="https://mohdur.github.io/post/vim-jako-przegl%C4%85darka-stron-podr%C4%99cznika-man/" class="nav-link">Vim jako przeglądarka stron podręcznika man</a>
-      </li>
-      <li>
         <a href="https://mohdur.github.io/post/kde-caps-lock-jako-esc/" class="nav-link">KDE Caps Lock Jako ESC</a>
       </li>
       <li>
@@ -254,6 +215,9 @@ skopiować komendę. Do wyjścia z historii służy komenda <code>:q</code>.</p>
       </li>
       <li>
         <a href="https://mohdur.github.io/post/zabezpieczenie-kod%C3%B3w-jednorazowych-kluczem-pgp/" class="nav-link">Zabezpieczenie kodów jednorazowych kluczem PGP</a>
+      </li>
+      <li>
+        <a href="https://mohdur.github.io/post/wysy%C5%82anie-wiadomo%C5%9B%C4%87-za-pomoc%C4%85-gmail-i-python-3/" class="nav-link">Wysyłanie wiadomość za pomocą GMail i Python 3</a>
       </li>
     </ul>
     <div>

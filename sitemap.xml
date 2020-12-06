@@ -3,32 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mohdur.github.io/tags/linux/</loc>
+    <lastmod>2020-12-06T13:35:04+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/</loc>
+    <lastmod>2020-12-06T13:35:04+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/</loc>
+    <lastmod>2020-12-06T13:35:04+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/</loc>
+    <lastmod>2020-12-06T13:35:04+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/vim/</loc>
+    <lastmod>2020-12-06T13:35:04+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/post/vim-jako-przegl%C4%85darka-stron-podr%C4%99cznika-man/</loc>
+    <lastmod>2020-12-06T13:35:04+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mohdur.github.io/tags/kde/</loc>
     <lastmod>2020-11-21T10:46:43+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://mohdur.github.io/post/kde-caps-lock-jako-esc/</loc>
-    <lastmod>2020-11-21T10:46:43+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/linux/</loc>
-    <lastmod>2020-11-21T10:46:43+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/</loc>
-    <lastmod>2020-11-21T10:46:43+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/post/</loc>
-    <lastmod>2020-11-21T10:46:43+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/</loc>
     <lastmod>2020-11-21T10:46:43+01:00</lastmod>
   </url>
   
@@ -130,11 +140,6 @@
   <url>
     <loc>https://mohdur.github.io/post/wy%C5%82%C4%85czenie-ipv6-w-arch/</loc>
     <lastmod>2020-10-24T19:45:13+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/vim/</loc>
-    <lastmod>2020-10-24T19:43:27+02:00</lastmod>
   </url>
   
   <url>
