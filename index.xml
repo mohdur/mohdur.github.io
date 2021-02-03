@@ -331,7 +331,7 @@ Dlatego należy wyłączyć ten skrót, w pliku .bashrc lub w przypadku powłoki
       
       <guid>https://mohdur.github.io/post/vim-okna/</guid>
       <description>Skróty :h ^w
-1&amp;lt;c-w&amp;gt; o =&amp;gt; :only 2&amp;lt;c-w&amp;gt; c =&amp;gt; :close 3&amp;lt;c-w&amp;gt; &amp;lt;c-w&amp;gt; 4&amp;lt;c-w&amp;gt; h/j/k/l 5&amp;lt;c-w&amp;gt; H/J/K/L 6&amp;lt;c-w&amp;gt; +/- =&amp;gt; :resize +/-N 7&amp;lt;c-w&amp;gt; &amp;lt;/&amp;gt; =&amp;gt; :vertical resize +/-N 8&amp;lt;c-w&amp;gt; =    Skrót Opis     ctrl-w s dzieli okno w poziomie :split   ctrl-w v dzieli okno w pionie :vsplit   ctrl-w h przechodzi do okna po lewo   ctrl-w l przechodzi do okna po prawej   ctrl-w H przenosi aktywne okno na lewo   ctrl-w L przenosi aktywne okno na prawo    </description>
+   Skrót Opis     c-w w przeskakuje pomiędzy dwoma ostation używanymi oknami   c-w s dzieli okno w poziomie :split   c-w v dzieli okno w pionie :vsplit   c-w h przechodzi do okna po lewo   c-w l przechodzi do okna po prawej   c-w H przenosi aktywne okno na lewo   c-w L przenosi aktywne okno na prawo   c-w o ustawia aktywne okno jako jedyne widoczne   c-w c zamyka aktywne okno   c-w + zwiększa wysokość okna :resize +N   c-w - zmniejsza wysokość okna :resize -N   c-w &amp;lt; zmniejsza szerokość okna :vertical resize -N   c-w &amp;gt; zwiększa szerokość okna :vertical resize +N   c-w = wyrównuje wielkość okien    </description>
     </item>
     
     <item>
