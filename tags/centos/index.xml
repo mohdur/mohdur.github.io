@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CentOS on MOHDUR</title>
+    <link>https://mohdur.github.io/tags/centos/</link>
+    <description>Recent content in CentOS on MOHDUR</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 14 Mar 2021 22:25:04 +0100</lastBuildDate><atom:link href="https://mohdur.github.io/tags/centos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Budowanie własnego pakietu RPM</title>
+      <link>https://mohdur.github.io/post/budowanie-w%C5%82asnego-pakietu-rpm/</link>
+      <pubDate>Sun, 14 Mar 2021 22:25:04 +0100</pubDate>
+      
+      <guid>https://mohdur.github.io/post/budowanie-w%C5%82asnego-pakietu-rpm/</guid>
+      <description>Do budowy pakietu będzie potrzebny pakiet rpm-build.
+1sudo dnf install rpm-build Przygotowanie środowiska do budowy pakietów
+1mkdir -p rpmbuild/SPECS Najważniejszą częścią jest plik spec
+1touch SPECS/utils.spec Skrypt do budowy
+1#!/usr/bin/env bash 2 3sed -i -e &amp;#34;s/Version:.*/Version: 1.9_$(date +%s)/g&amp;#34; SPECS/utils.spec 4 5cd SPECS 6rpmbuild --target x86_64 -bb utils.spec </description>
+    </item>
+    
+  </channel>
+</rss>

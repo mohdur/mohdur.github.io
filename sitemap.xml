@@ -3,23 +3,38 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mohdur.github.io/post/budowanie-w%C5%82asnego-pakietu-rpm/</loc>
+    <lastmod>2021-03-14T22:25:04+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/centos/</loc>
+    <lastmod>2021-03-14T22:25:04+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mohdur.github.io/tags/fedora/</loc>
+    <lastmod>2021-03-14T22:25:04+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mohdur.github.io/tags/linux/</loc>
-    <lastmod>2020-12-06T13:35:04+01:00</lastmod>
+    <lastmod>2021-03-14T22:25:04+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://mohdur.github.io/</loc>
-    <lastmod>2020-12-06T13:35:04+01:00</lastmod>
+    <lastmod>2021-03-14T22:25:04+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://mohdur.github.io/post/</loc>
-    <lastmod>2020-12-06T13:35:04+01:00</lastmod>
+    <lastmod>2021-03-14T22:25:04+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://mohdur.github.io/tags/</loc>
-    <lastmod>2020-12-06T13:35:04+01:00</lastmod>
+    <lastmod>2021-03-14T22:25:04+01:00</lastmod>
   </url>
   
   <url>
@@ -45,11 +60,6 @@
   <url>
     <loc>https://mohdur.github.io/post/lista-zainstalowanych-czcionek/</loc>
     <lastmod>2020-11-04T00:36:34+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mohdur.github.io/tags/fedora/</loc>
-    <lastmod>2020-11-01T10:51:34+01:00</lastmod>
   </url>
   
   <url>
