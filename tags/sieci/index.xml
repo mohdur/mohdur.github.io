@@ -12,10 +12,18 @@
       <pubDate>Sat, 24 Oct 2020 19:45:13 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/wy%C5%82%C4%85czenie-ipv6-w-arch/</guid>
-      <description>Wyłączenie IPv6 w Arch Linux Do pliku /etc/default/grub dodajemy ipv6.disable=1 w wierszu GRUB_CMDLINE_LINUX_DEFAULT=&amp;quot; ipv6.disable=1 &amp;quot;
-Aktualizacja grub
-1sudo grub-mkconfig -o /boot/grub/grub.cfg Po restarcie możemy sprawdzić czy system obsługuje IPv6
-1test -f /proc/net/if_inet6 &amp;amp;&amp;amp; echo &amp;#34;IPv6 supported&amp;#34; || echo &amp;#34;IPv6 not supported&amp;#34; </description>
+      <description>
+        
+          &lt;p&gt;Wyłączenie IPv6 w Arch Linux
+Do pliku &lt;code&gt;/etc/default/grub&lt;/code&gt; dodajemy &lt;code&gt;ipv6.disable=1&lt;/code&gt; w wierszu
+&lt;code&gt;GRUB_CMDLINE_LINUX_DEFAULT=&amp;quot; ipv6.disable=1 &amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Aktualizacja grub&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo grub-mkconfig -o /boot/grub/grub.cfg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Po restarcie możemy sprawdzić czy system obsługuje IPv6&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;test -f /proc/net/if_inet6 &amp;amp;&amp;amp; echo &amp;#34;IPv6 supported&amp;#34; || echo &amp;#34;IPv6 not supported&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
     <item>
@@ -24,8 +32,16 @@ Aktualizacja grub
       <pubDate>Sat, 24 Oct 2020 16:51:34 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/wireshark-zdalnie-przez-ssh/</guid>
-      <description>Wirshark jest uruchomiony na systemie Linux natomiast odczytuje on dane z systemu OpenBSD
-1$ ssh root@192.168.6.66 tcpdump -l -i sis0 -w - &amp;#39;not port 22&amp;#39; | wireshark -k -i - Zapis not port 22 dotyczy polecenia tcpdump, jest to filtr dzięki czemu port 22 nie jest przekazywany do wiresharka.</description>
+      <description>
+        
+          &lt;p&gt;Wirshark jest uruchomiony na systemie Linux natomiast odczytuje on dane
+z systemu OpenBSD&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ ssh root@192.168.6.66 tcpdump -l -i sis0 -w - &amp;#39;not port 22&amp;#39; | wireshark -k -i -
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Zapis &lt;code&gt;not port 22&lt;/code&gt; dotyczy polecenia &lt;code&gt;tcpdump&lt;/code&gt;, jest to filtr dzięki czemu
+port 22 nie jest przekazywany do wiresharka.&lt;/p&gt;
+
+        
+      </description>
     </item>
     
     <item>
@@ -34,7 +50,26 @@ Aktualizacja grub
       <pubDate>Thu, 22 Oct 2020 02:13:12 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/pod%C5%82%C4%85czenie-si%C4%99-do-sieci-wi-fi/</guid>
-      <description>Wyświetlenie dostępnych sieci Wi-Fi 1sudo nmcli device wifi 1# nmcli radio 2WIFI-HW WIFI WWAN-HW WWAN 3enabled enabled enabled enabled 4# nmcli device 5DEVICE TYPE STATE CONNECTION 6wlan0 wifi disconnected -- 7eth0 ethernet unavailable -- 8lo loopback unmanaged -- 9 10# nmcli device wifi rescan 11# nmcli device wifi list 12# nmcli device wifi connect SSID-Name password wireless-password 13# nmcli -ask device wifi connect SSID-Name </description>
+      <description>
+        
+          &lt;h1 id=&#34;wyświetlenie-dostępnych-sieci-wi-fi&#34;&gt;Wyświetlenie dostępnych sieci Wi-Fi&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo nmcli device wifi
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;# nmcli radio
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;WIFI-HW  WIFI     WWAN-HW  WWAN
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;enabled  enabled  enabled  enabled
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;# nmcli device
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;DEVICE  TYPE      STATE         CONNECTION
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;wlan0   wifi      disconnected  --
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;eth0    ethernet  unavailable   --
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;lo      loopback  unmanaged     --
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;# nmcli device wifi rescan
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;# nmcli device wifi list
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;# nmcli device wifi connect SSID-Name password wireless-password
+&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;# nmcli -ask device wifi connect SSID-Name
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
     <item>
@@ -43,8 +78,29 @@ Aktualizacja grub
       <pubDate>Thu, 22 Oct 2020 01:48:33 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/konfiguracja-interfejsu-sieciowego-za-pomoc%C4%85-polecenia-ip-w-systemie-linux/</guid>
-      <description>Wyświetlenie informacji o interfejsach sieciowych 1ip addr Ustawienie połączenia sieciowego Pierwsze polecenie czyści tablicę routingu dla sieci 192.168.0.0/24 ip route flush default via 192.168.0.0/24
-1ip route flush default via 192.168.0.0/24 2ip link set dev enp4s0f2 up 3ip addr add 192.168.0.100/24 dev enp4s0f2 4ip route add 192.168.0.0/24 dev enp4s0f2 5ip route add default via 192.168.0.251 6echo &amp;#34;nameserver 8.8.8.8&amp;#34; &amp;gt; /etc/resolv.conf Wyświetlenie informacji o interfejsie sieciowym 1$ ip a show lo 21: lo: &amp;lt;LOOPBACK,UP,LOWER_UP&amp;gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000 3 link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00 4 inet 127.</description>
+      <description>
+        
+          &lt;h1 id=&#34;wyświetlenie-informacji-o-interfejsach-sieciowych&#34;&gt;Wyświetlenie informacji o interfejsach sieciowych&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ip addr
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;ustawienie-połączenia-sieciowego&#34;&gt;Ustawienie połączenia sieciowego&lt;/h1&gt;
+&lt;p&gt;Pierwsze polecenie czyści tablicę routingu dla sieci 192.168.0.0/24 &lt;code&gt;ip route flush default via 192.168.0.0/24&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ip route flush default via 192.168.0.0/24
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;ip link set dev enp4s0f2 up
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;ip addr add 192.168.0.100/24 dev enp4s0f2
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;ip route add 192.168.0.0/24 dev enp4s0f2
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;ip route add default via 192.168.0.251
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;echo &amp;#34;nameserver 8.8.8.8&amp;#34; &amp;gt; /etc/resolv.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;wyświetlenie-informacji-o-interfejsie-sieciowym&#34;&gt;Wyświetlenie informacji o interfejsie sieciowym&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ ip a show lo
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;1: lo: &amp;lt;LOOPBACK,UP,LOWER_UP&amp;gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;    inet 127.0.0.1/8 scope host lo
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;       valid_lft forever preferred_lft forever
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;    inet6 ::1/128 scope host
+&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;       valid_lft forever preferred_lft forever
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
     <item>
@@ -53,8 +109,20 @@ Aktualizacja grub
       <pubDate>Wed, 21 Oct 2020 14:43:50 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/nmcli-i-openvpn/</guid>
-      <description>Import konfiguracji z pliku 1sudo nmcli connection import type openvpn file nazwa_pliku.ovpn Lista dostępnych połączeń 1nmcli connection show Podłączenie OpenVPN Jeśli klucz OpenVPN jest zabezpieczony hasłem należy dodać parametr --ask
-1nmcli connection up nazwa_vpn --ask Export połączenia OpenVPN 1nmcli connection export nazwa_połączenia </description>
+      <description>
+        
+          &lt;h2 id=&#34;import-konfiguracji-z-pliku&#34;&gt;Import konfiguracji z pliku&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo nmcli connection import type openvpn file nazwa_pliku.ovpn
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;lista-dostępnych-połączeń&#34;&gt;Lista dostępnych połączeń&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;nmcli connection show
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;podłączenie-openvpn&#34;&gt;Podłączenie OpenVPN&lt;/h2&gt;
+&lt;p&gt;Jeśli klucz OpenVPN jest zabezpieczony hasłem należy dodać parametr &lt;code&gt;--ask&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;nmcli connection up nazwa_vpn --ask
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;export-połączenia-openvpn&#34;&gt;Export połączenia OpenVPN&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;nmcli connection export nazwa_połączenia
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
   </channel>

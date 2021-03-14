@@ -12,11 +12,60 @@
       <pubDate>Sun, 14 Mar 2021 22:25:04 +0100</pubDate>
       
       <guid>https://mohdur.github.io/post/budowanie-w%C5%82asnego-pakietu-rpm/</guid>
-      <description>Do budowy pakietu będzie potrzebny pakiet rpm-build.
-1sudo dnf install rpm-build Przygotowanie środowiska do budowy pakietów
-1mkdir -p rpmbuild/SPECS Najważniejszą częścią jest plik spec
-1touch SPECS/utils.spec Skrypt do budowy
-1#!/usr/bin/env bash 2 3sed -i -e &amp;#34;s/Version:.*/Version: 1.9_$(date +%s)/g&amp;#34; SPECS/utils.spec 4 5cd SPECS 6rpmbuild --target x86_64 -bb utils.spec </description>
+      <description>
+        
+          &lt;ul&gt;
+&lt;li&gt;RPM Packaging Guide &lt;a href=&#34;https://rpm-packaging-guide.github.io/&#34;&gt;https://rpm-packaging-guide.github.io/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Do budowy pakietu będzie potrzebny pakiet &lt;code&gt;rpm-build&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Dla systemu Fedora i CentOS 8&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo dnf install gcc rpm-build rpm-devel rpmlint make python bash coreutils \
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;diffutils patch rpmdevtools
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Dla systemu CentOS 7&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo yum install gcc rpm-build rpm-devel rpmlint make python bash coreutils \
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;diffutils patch rpmdevtools
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Przygotowanie środowiska do budowy pakietów&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;mkdir -p rpmbuild/SPECS
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Najważniejszą częścią jest plik &lt;code&gt;spec&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;touch SPECS/utils.spec
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Przykładowy plik &lt;code&gt;spec&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;Name:       hello-world
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;Version:    &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;Release:    &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;Summary:    Most simple RPM package
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;License:    FIXME
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;%description
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;This is my first RPM package, which does nothing.
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;%prep
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# we have no source, so nothing here&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;%build
+&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;cat &amp;gt; hello-world.sh &lt;span class=&#34;s&#34;&gt;&amp;lt;&amp;lt;EOF
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;15&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;#!/usr/bin/bash
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;16&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;echo Hello world
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;17&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;EOF&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;18&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;19&lt;/span&gt;%install
+&lt;span class=&#34;ln&#34;&gt;20&lt;/span&gt;mkdir -p %&lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;buildroot&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;/usr/bin/
+&lt;span class=&#34;ln&#34;&gt;21&lt;/span&gt;install -m &lt;span class=&#34;m&#34;&gt;755&lt;/span&gt; hello-world.sh %&lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;buildroot&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;/usr/bin/hello-world.sh
+&lt;span class=&#34;ln&#34;&gt;22&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;23&lt;/span&gt;%files
+&lt;span class=&#34;ln&#34;&gt;24&lt;/span&gt;/usr/bin/hello-world.sh
+&lt;span class=&#34;ln&#34;&gt;25&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;26&lt;/span&gt;%changelog
+&lt;span class=&#34;ln&#34;&gt;27&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# let&amp;#39;s skip this for now&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Skrypt do budowy&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#!/usr/bin/env bash
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt; 
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;sed -i -e &lt;span class=&#34;s2&#34;&gt;&amp;#34;s/Version:.*/Version: 1.9_&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;date +%s&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;/g&amp;#34;&lt;/span&gt; SPECS/utils.spec
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt; 
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; SPECS
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;rpmbuild --target x86_64 -bb utils.spec
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
     <item>
@@ -25,7 +74,16 @@
       <pubDate>Sun, 01 Nov 2020 10:51:34 +0100</pubDate>
       
       <guid>https://mohdur.github.io/post/instalacja-rpm-fusion-w-fedora-linux/</guid>
-      <description> Strona projektu https://rpmfusion.org/Configuration  1sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \ 2https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm </description>
+      <description>
+        
+          &lt;ul&gt;
+&lt;li&gt;Strona projektu &lt;a href=&#34;https://rpmfusion.org/Configuration&#34;&gt;https://rpmfusion.org/Configuration&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
     <item>
@@ -34,7 +92,178 @@
       <pubDate>Sat, 24 Oct 2020 17:25:28 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/zarz%C4%85dzanie-pakietami-w-fedora-linux/</guid>
-      <description>Instalacja pakietów 1sudo dnf install &amp;lt;nazwa-pakietu&amp;gt; 1sudo dnf install borgbackup 1Last metadata expiration check: 0:16:01 ago on Mon 25 Mar 2019 02:58:33 PM CET 2Dependencies resolved. 3============================================================================== 4 Package Architecture Version Repository Size 5============================================================================== 6Installing: 7 borgbackup x86_64 1.1.7-2.fc30 rawhide 980 k 8Installing dependencies: 9 python3-llfuse x86_64 1.3.5-2.fc30 rawhide 373 k 10 python3-msgpack x86_64 0.6.1-2.fc30 rawhide 90 k 11 12Transaction Summary 13============================================================================== 14Install 3 Packages 15 16Total download size: 1.4 M 17Installed size: 5.</description>
+      <description>
+        
+          &lt;h2 id=&#34;instalacja-pakietów&#34;&gt;Instalacja pakietów&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo dnf install &amp;lt;nazwa-pakietu&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo dnf install borgbackup
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;Last metadata expiration check: 0:16:01 ago on Mon 25 Mar 2019 02:58:33 PM CET
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;Dependencies resolved.
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;==============================================================================
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt; Package                Architecture  Version             Repository      Size
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;==============================================================================
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;Installing:
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt; borgbackup             x86_64        1.1.7-2.fc30        rawhide        980 k
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;Installing dependencies:
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt; python3-llfuse         x86_64        1.3.5-2.fc30        rawhide        373 k
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt; python3-msgpack        x86_64        0.6.1-2.fc30        rawhide         90 k
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;Transaction Summary
+&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;==============================================================================
+&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;Install  3 Packages
+&lt;span class=&#34;ln&#34;&gt;15&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;16&lt;/span&gt;Total download size: 1.4 M
+&lt;span class=&#34;ln&#34;&gt;17&lt;/span&gt;Installed size: 5.9 M
+&lt;span class=&#34;ln&#34;&gt;18&lt;/span&gt;Is this ok [y/N]: y
+&lt;span class=&#34;ln&#34;&gt;19&lt;/span&gt;Downloading Packages:
+&lt;span class=&#34;ln&#34;&gt;20&lt;/span&gt;(1/3): python3-msgpack-0.6.1-2.fc30.x86_64.rpm 276 kB/s |  90 kB     00:00
+&lt;span class=&#34;ln&#34;&gt;21&lt;/span&gt;(2/3): python3-llfuse-1.3.5-2.fc30.x86_64.rpm  438 kB/s | 373 kB     00:00
+&lt;span class=&#34;ln&#34;&gt;22&lt;/span&gt;(3/3): borgbackup-1.1.7-2.fc30.x86_64.rpm      901 kB/s | 980 kB     00:01
+&lt;span class=&#34;ln&#34;&gt;23&lt;/span&gt;------------------------------------------------------------------------------
+&lt;span class=&#34;ln&#34;&gt;24&lt;/span&gt;Total                                          661 kB/s | 1.4 MB     00:02
+&lt;span class=&#34;ln&#34;&gt;25&lt;/span&gt;Running transaction check
+&lt;span class=&#34;ln&#34;&gt;26&lt;/span&gt;Transaction check succeeded.
+&lt;span class=&#34;ln&#34;&gt;27&lt;/span&gt;Running transaction test
+&lt;span class=&#34;ln&#34;&gt;28&lt;/span&gt;Transaction test succeeded.
+&lt;span class=&#34;ln&#34;&gt;29&lt;/span&gt;Running transaction
+&lt;span class=&#34;ln&#34;&gt;30&lt;/span&gt;  Preparing        :                                                       1/1
+&lt;span class=&#34;ln&#34;&gt;31&lt;/span&gt;  Installing       : python3-msgpack-0.6.1-2.fc30.x86_64                   1/3
+&lt;span class=&#34;ln&#34;&gt;32&lt;/span&gt;  Installing       : python3-llfuse-1.3.5-2.fc30.x86_64                    2/3
+&lt;span class=&#34;ln&#34;&gt;33&lt;/span&gt;  Installing       : borgbackup-1.1.7-2.fc30.x86_64                        3/3
+&lt;span class=&#34;ln&#34;&gt;34&lt;/span&gt;  Running scriptlet: borgbackup-1.1.7-2.fc30.x86_64                        3/3
+&lt;span class=&#34;ln&#34;&gt;35&lt;/span&gt;  Verifying        : borgbackup-1.1.7-2.fc30.x86_64                        1/3
+&lt;span class=&#34;ln&#34;&gt;36&lt;/span&gt;  Verifying        : python3-llfuse-1.3.5-2.fc30.x86_64                    2/3
+&lt;span class=&#34;ln&#34;&gt;37&lt;/span&gt;  Verifying        : python3-msgpack-0.6.1-2.fc30.x86_64                   3/3
+&lt;span class=&#34;ln&#34;&gt;38&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;39&lt;/span&gt;Installed:
+&lt;span class=&#34;ln&#34;&gt;40&lt;/span&gt;  borgbackup-1.1.7-2.fc30.x86_64         python3-llfuse-1.3.5-2.fc30.x86_64
+&lt;span class=&#34;ln&#34;&gt;41&lt;/span&gt;  python3-msgpack-0.6.1-2.fc30.x86_64
+&lt;span class=&#34;ln&#34;&gt;42&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;43&lt;/span&gt;Complete!
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;instalacja-pakietów-z-pliku&#34;&gt;Instalacja pakietów z pliku&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo dnf install $(cat userinstalled.txt)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;usunięcie-pakietu&#34;&gt;Usunięcie pakietu&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo dnf remove borgbackup
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;Dependencies resolved.
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;=============================================================================
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt; Package               Architecture Version              Repository      Size
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;=============================================================================
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;Removing:
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt; borgbackup            x86_64       1.1.7-2.fc30         @rawhide       4.1 M
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;Removing unused dependencies:
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt; python3-llfuse        x86_64       1.3.5-2.fc30         @rawhide       1.5 M
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt; python3-msgpack       x86_64       0.6.1-2.fc30         @rawhide       283 k
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;Transaction Summary
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;=============================================================================
+&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;Remove  3 Packages
+&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;15&lt;/span&gt;Freed space: 5.9 M
+&lt;span class=&#34;ln&#34;&gt;16&lt;/span&gt;Is this ok [y/N]: y
+&lt;span class=&#34;ln&#34;&gt;17&lt;/span&gt;Running transaction check
+&lt;span class=&#34;ln&#34;&gt;18&lt;/span&gt;Transaction check succeeded.
+&lt;span class=&#34;ln&#34;&gt;19&lt;/span&gt;Running transaction test
+&lt;span class=&#34;ln&#34;&gt;20&lt;/span&gt;Transaction test succeeded.
+&lt;span class=&#34;ln&#34;&gt;21&lt;/span&gt;Running transaction
+&lt;span class=&#34;ln&#34;&gt;22&lt;/span&gt;  Preparing        :                                                      1/1
+&lt;span class=&#34;ln&#34;&gt;23&lt;/span&gt;  Erasing          : borgbackup-1.1.7-2.fc30.x86_64                       1/3
+&lt;span class=&#34;ln&#34;&gt;24&lt;/span&gt;  Erasing          : python3-llfuse-1.3.5-2.fc30.x86_64                   2/3
+&lt;span class=&#34;ln&#34;&gt;25&lt;/span&gt;  Erasing          : python3-msgpack-0.6.1-2.fc30.x86_64                  3/3
+&lt;span class=&#34;ln&#34;&gt;26&lt;/span&gt;  Running scriptlet: python3-msgpack-0.6.1-2.fc30.x86_64                  3/3
+&lt;span class=&#34;ln&#34;&gt;27&lt;/span&gt;  Verifying        : borgbackup-1.1.7-2.fc30.x86_64                       1/3
+&lt;span class=&#34;ln&#34;&gt;28&lt;/span&gt;  Verifying        : python3-llfuse-1.3.5-2.fc30.x86_64                   2/3
+&lt;span class=&#34;ln&#34;&gt;29&lt;/span&gt;  Verifying        : python3-msgpack-0.6.1-2.fc30.x86_64                  3/3
+&lt;span class=&#34;ln&#34;&gt;30&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;31&lt;/span&gt;Removed:
+&lt;span class=&#34;ln&#34;&gt;32&lt;/span&gt;  borgbackup-1.1.7-2.fc30.x86_64         python3-llfuse-1.3.5-2.fc30.x86_64
+&lt;span class=&#34;ln&#34;&gt;33&lt;/span&gt;  python3-msgpack-0.6.1-2.fc30.x86_64
+&lt;span class=&#34;ln&#34;&gt;34&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;35&lt;/span&gt;Complete!
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;wyszukanie-pakietu&#34;&gt;Wyszukanie pakietu&lt;/h2&gt;
+&lt;p&gt;Do wyszukiwania służy komenda &lt;code&gt;search&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;dnf search borg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;Fedora - Modular Rawhide - Dev 502 kB/s | 1.0 MB
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;Fedora - Rawhide - Developmental packages for the next Fe 1.5 MB/s |  61 MB     00:39
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;Last metadata expiration check: 0:00:01 ago on Mon 25 Mar 2019 11:50:32 AM CET.
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;============================== Name &amp;amp; Summary Matched: borg ==============================
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;borgmatic.x86_64 : Simple Python wrapper script for borgbackup
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;=================================== Name Matched: borg ===================================
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;borgbackup.x86_64 : A deduplicating backup program with compression and authenticated
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;                  : encryption
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;borgbackup.x86_64 : A deduplicating backup program with compression and authenticated
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;                  : encryption
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;informacje-o-wersji-pakietu-który-jest-zainstalowany-lub-chcemy-zainstalować&#34;&gt;Informacje o wersji pakietu, który jest zainstalowany lub chcemy zainstalować&lt;/h2&gt;
+&lt;p&gt;W tym przypadku musimy podać dokładną nazwę pakietu np. &lt;code&gt;borgbackup&lt;/code&gt; lub użyć
+wyrażeń regularnych np. &lt;code&gt;kernel-core*5.1*&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;dnf info borgbackup
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;Last metadata expiration check: 0:02:40 ago on Mon 25 Mar 2019 11:50:32 AM CET.
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;Installed Packages
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;Name         : borgbackup
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;Version      : 1.1.7
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;Release      : 2.fc30
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;Architecture : x86_64
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;Size         : 4.1 M
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;Source       : borgbackup-1.1.7-2.fc30.src.rpm
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;Repository   : @System
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;From repo    : rawhide
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;Summary      : A deduplicating backup program with compression and authenticated
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;             : encryption
+&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;URL          : https://borgbackup.readthedocs.org
+&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;License      : BSD
+&lt;span class=&#34;ln&#34;&gt;15&lt;/span&gt;Description  : BorgBackup (short: Borg) is a deduplicating backup program. Optionally, it
+&lt;span class=&#34;ln&#34;&gt;16&lt;/span&gt;             : supports compression and authenticated encryption.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;dnf info kernel-core*5.1*
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;Last metadata expiration check: 0:16:28 ago on Mon 25 Mar 2019 11:50:32 AM CET.
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;Installed Packages
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;Name         : kernel
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;Version      : 5.1.0
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;Release      : 0.rc1.git1.1.fc31
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;Architecture : x86_64
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;Size         : 0.0
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;Source       : kernel-5.1.0-0.rc1.git1.1.fc31.src.rpm
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;Repository   : @System
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;From repo    : rawhide
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;Summary      : The Linux kernel
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;URL          : https://www.kernel.org/
+&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;License      : GPLv2 and Redistributable, no modification permitted
+&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;Description  : The kernel meta package
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Komenda &lt;code&gt;list&lt;/code&gt; wyświetla mniej informacji, a mianowicie, czy pakiet jest
+zainstalowany czy po prostu dostępny, nazwę pakietu / architekturę, wersję oraz
+nazwę repozytorium, które zawiera ten pakiet.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;dnf list i3lock
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;Last metadata expiration check: 0:24:25 ago on Mon 25 Mar 2019 11:50:32 AM CET.
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;Available Packages
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;i3lock.x86_64                             2.11.1-2.fc30                             rawhide
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;dnf list dwm-user
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;Last metadata expiration check: 0:24:07 ago on Mon 25 Mar 2019 11:50:32 AM CET.
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;Installed Packages
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;dwm-user.x86_64               6.2-2.module_f31+3286+e6bdb11e               @rawhide-modular
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;lista-zainstalowanych-pakietów-przez-użytkownika-bez-zależności&#34;&gt;Lista zainstalowanych pakietów przez użytkownika bez zależności&lt;/h2&gt;
+&lt;h3 id=&#34;lista-pakietów-polecenie-wyświetla-wersję-zainstalowanych-pakietów&#34;&gt;Lista pakietów, polecenie wyświetla wersję zainstalowanych pakietów&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo dnf history userinstalled
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;lista-pakietów-polecenie-wyświetlana-tylko-nazwę-pakietu&#34;&gt;Lista pakietów, polecenie wyświetlana tylko nazwę pakietu&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo dnf repoquery --qf &amp;#34;%{name}&amp;#34; --userinstalled &amp;gt; userinstalled.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;lista-pakietów-w-repozytorium&#34;&gt;Lista pakietów w repozytorium&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo dnf repository-packages fedora-cisco-openh264 list
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;aktualizacja-po-jednym-pakiecie-na-raz&#34;&gt;Aktualizacja po jednym pakiecie na raz&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo dnf list updates | sed -n &amp;#39;3,$p&amp;#39; | awk &amp;#39;{ print $1 }&amp;#39; | xargs -I{} sudo dnf update -y {}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;aliasy-dla-komendy-dnf&#34;&gt;Aliasy dla komendy dnf&lt;/h2&gt;
+&lt;p&gt;Do pliku &lt;code&gt;.bashrc&lt;/code&gt; lub &lt;code&gt;.zshrc&lt;/code&gt; dodajemy&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; -f &lt;span class=&#34;s2&#34;&gt;&amp;#34;/etc/fedora-release&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;dnf&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;sudo dnf&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;di&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;sudo dnf install&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;dr&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;sudo dnf remove&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;ds&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;dnf search&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;dl&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;dnf list&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;ddep&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;dnf deplist&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;update&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;sudo dnf update --refresh&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;upgrade&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;update
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;rpm&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;sudo rpm&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;yum&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;sudo yum&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
     <item>
@@ -43,11 +272,41 @@
       <pubDate>Thu, 22 Oct 2020 01:27:57 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/konfiguracja-serwera-openssh/</guid>
-      <description>Instalacja Instalacja w systemie Fedora
-1$ sudo dnf install openssh-server Plik konfiguracyjny Znajduje się w /etc/ssh/sshd_config
-Zmiana numeru portu Serwer SSH normalnie nasłuchuje na porcie 22, możemy to zmienić ustawiając parametr Port, parametr Port może występować kilkukrotnie, czyli serwer SSH może nasłuchiwać na wielu portach jednocześnie.
-1Port 22 2Port 23034 Możemy użyć parametru ListenAddress, dzięki któremu możemy określić adres IP i port, na którym serwer SSH będzie nasłuchiwał.
-1ListenAddress 0.0.0.0:22 2ListenAddress 192.</description>
+      <description>
+        
+          &lt;h1 id=&#34;instalacja&#34;&gt;Instalacja&lt;/h1&gt;
+&lt;p&gt;Instalacja w systemie Fedora&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ sudo dnf install openssh-server
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;plik-konfiguracyjny&#34;&gt;Plik konfiguracyjny&lt;/h1&gt;
+&lt;p&gt;Znajduje się w &lt;code&gt;/etc/ssh/sshd_config&lt;/code&gt;&lt;/p&gt;
+&lt;h1 id=&#34;zmiana-numeru-portu&#34;&gt;Zmiana numeru portu&lt;/h1&gt;
+&lt;p&gt;Serwer SSH normalnie nasłuchuje na porcie 22, możemy to zmienić ustawiając parametr &lt;code&gt;Port&lt;/code&gt;, parametr &lt;code&gt;Port&lt;/code&gt; może występować kilkukrotnie, czyli serwer SSH może nasłuchiwać na wielu portach jednocześnie.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;Port 22
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;Port 23034
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Możemy użyć parametru &lt;code&gt;ListenAddress&lt;/code&gt;, dzięki któremu możemy określić adres IP i port, na którym serwer SSH będzie nasłuchiwał.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ListenAddress 0.0.0.0:22
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;ListenAddress 192.168.0.201:23034
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;ListenAddress 192.168.0.202:22222
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Po zmianie numeru portu w &lt;code&gt;/etc/ssh/sshd_config&lt;/code&gt; na np. &lt;code&gt;23034&lt;/code&gt;, musimy dodać regułę SELinux, oraz wpuścić połączenia przychodzące na firewallu na ten port.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ sudo semanage port -a -t ssh_port_t -p tcp 23034
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ sudo firewall-cmd --permanent --add-port=23034/tcp
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ sudo firewall-cmd --reload
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;$ sudo systemctl restart sshd
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;generowanie-kluczy-serwera-ssh&#34;&gt;Generowanie kluczy serwera SSH&lt;/h1&gt;
+&lt;p&gt;Jeśli przy próbie uruchomienia serwera SSH otrzymamy taki komunikat:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ sudo /usr/sbin/sshd 
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;Could not load host key: /etc/ssh/ssh_host_rsa_key
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;Could not load host key: /etc/ssh/ssh_host_dsa_key
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;Could not load host key: /etc/ssh/ssh_host_ecdsa_key
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;Disabling protocol version 2. Could not load host key
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;sshd: no hostkeys available -- exiting.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Oznacza to, że brakuje kluczy RSA, DSA i ECDSA serwera&lt;/p&gt;
+&lt;p&gt;Możemy je wygenerować używając polecenia &lt;code&gt;ssh-keygen&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ sudo ssh-keygen -A
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;ssh-keygen: generating new host keys: RSA DSA ECDSA ED25519
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
     <item>
@@ -56,9 +315,21 @@ Zmiana numeru portu Serwer SSH normalnie nasłuchuje na porcie 22, możemy to zm
       <pubDate>Thu, 22 Oct 2020 01:16:44 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/aktualizacja-fedora-linux-do-nowego-wydania/</guid>
-      <description>Aktualizacja do nowego wydania to kilka poleceń, pierwszy etap to pobranie niezbędnych pakietów, po czym wykonujemy restart systemu, podczas którego system zostanie zaktualizowany operacja może potrwać kilkanaście minut do kilkudziesięciu w zależności od konfiguracji sprzętowej oraz liczby pakietów.
-UWAGA! Po wykonaniu ostatniego polecenia dnf system-upgrade reboot system będzie przez dłuższy czas niedostępny.
-1dnf upgrade --refresh 2dnf install dnf-plugin-system-upgrade 3dnf system-upgrade download --releasever=30 4dnf system-upgrade reboot </description>
+      <description>
+        
+          &lt;p&gt;Aktualizacja do nowego wydania to kilka poleceń, pierwszy etap to pobranie
+niezbędnych pakietów, po czym wykonujemy restart systemu, podczas którego
+system zostanie zaktualizowany operacja może potrwać kilkanaście minut do
+kilkudziesięciu w zależności od konfiguracji sprzętowej oraz liczby pakietów.&lt;/p&gt;
+&lt;p&gt;UWAGA! Po wykonaniu ostatniego polecenia &lt;code&gt;dnf system-upgrade reboot&lt;/code&gt; system będzie
+przez dłuższy czas niedostępny.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;dnf upgrade --refresh
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;dnf install dnf-plugin-system-upgrade
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;dnf system-upgrade download --releasever=30
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;dnf system-upgrade reboot
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
   </channel>

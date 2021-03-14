@@ -12,10 +12,35 @@
       <pubDate>Sun, 06 Dec 2020 13:35:04 +0100</pubDate>
       
       <guid>https://mohdur.github.io/post/vim-jako-przegl%C4%85darka-stron-podr%C4%99cznika-man/</guid>
-      <description>Skrypt $HOME/bin/man-vim.sh
-1#!/usr/bin/env bash 2 3if [ $# -eq 0 ]; then 4 /usr/bin/man 5else 6 if man -w $* &amp;gt;/dev/null 2&amp;gt;/dev/null; then 7 /usr/bin/man $* |col -b|vim -u $HOME/.vim/man.vim - 8 else 9 echo &amp;#34;Brak strony: $*&amp;#34; 10 fi 11fi Plik konfiguracyjny $HOME/.vim/man.vim
-1source $VIMRUNTIME/defaults.vim2syntax on3set ft=man4set nolist5set buftype=nofile6nmap q :q&amp;lt;cr&amp;gt;7nmap Q :q&amp;lt;cr&amp;gt;8map n nzz9map N NzzAlias
-1alias man=&amp;#34;$HOME/bin/man-vim.sh&amp;#34; </description>
+      <description>
+        
+          &lt;p&gt;Skrypt &lt;code&gt;$HOME/bin/man-vim.sh&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#!/usr/bin/env bash
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$#&lt;/span&gt; -eq &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;  /usr/bin/man
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; man -w &lt;span class=&#34;nv&#34;&gt;$*&lt;/span&gt; &amp;gt;/dev/null 2&amp;gt;/dev/null&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;    /usr/bin/man &lt;span class=&#34;nv&#34;&gt;$*&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;col -b&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;vim -u &lt;span class=&#34;nv&#34;&gt;$HOME&lt;/span&gt;/.vim/man.vim -
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Brak strony: &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$*&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Plik konfiguracyjny &lt;code&gt;$HOME/.vim/man.vim&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;source&lt;/span&gt; $&lt;span class=&#34;nx&#34;&gt;VIMRUNTIME&lt;/span&gt;/&lt;span class=&#34;nx&#34;&gt;defaults&lt;/span&gt;.&lt;span class=&#34;nx&#34;&gt;vim&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;syntax&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;on&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;ft&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;man&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;nolist&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;buftype&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nofile&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nmap&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;q&lt;/span&gt; :&lt;span class=&#34;nx&#34;&gt;q&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nmap&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Q&lt;/span&gt; :&lt;span class=&#34;nx&#34;&gt;q&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;map&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;nzz&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;map&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;N&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Nzz&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Alias&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;man&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$HOME&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;/bin/man-vim.sh&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
     <item>
@@ -24,9 +49,18 @@
       <pubDate>Sat, 24 Oct 2020 19:43:27 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/vim-otworzenie-pliku-tam-gdzie-sko%C5%84czyli%C5%9Bmy-prac%C4%99/</guid>
-      <description>Żeby Vim pamiętał gdzie skończyliśmy pracę trzeba dodać do pliku .vimrc dwie linie:
-1au BufWinLeave * mkview 2au BufWinEnter * silent loadview Jeśli używasz edytora NeoVim to musisz dodać po słowie silent znak !.
-1au BufWinLeave * mkview 2au BufWinEnter * silent! loadview </description>
+      <description>
+        
+          &lt;p&gt;Żeby Vim pamiętał gdzie skończyliśmy pracę trzeba dodać do pliku &lt;code&gt;.vimrc&lt;/code&gt; dwie
+linie:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;au BufWinLeave * mkview
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;au BufWinEnter * silent loadview
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Jeśli używasz edytora NeoVim to musisz dodać po słowie &lt;code&gt;silent&lt;/code&gt; znak &lt;code&gt;!&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;au BufWinLeave * mkview
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;au BufWinEnter * silent! loadview
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
     <item>
@@ -35,10 +69,22 @@
       <pubDate>Sat, 24 Oct 2020 19:41:57 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/vim_jak_zamienic_dwukropek_na_znak_rownosci/</guid>
-      <description>Ciąg znaków mamy taki:
-1zmienna: 25 i chcemy go zamienić na:
-1zmienna=25 Jak to zrobić?
-1f:cf =  f: - wyszukuje znak : cf  - usuwa wszystko do znaku spacji i przechodzi w tryb wprowadzania = - wprowadza znak =  </description>
+      <description>
+        
+          &lt;p&gt;Ciąg znaków mamy taki:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;zmienna: 25
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;i chcemy go zamienić na:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;zmienna=25
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Jak to zrobić?&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;f:cf =
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;f:&lt;/code&gt; - wyszukuje znak &lt;code&gt;:&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cf &lt;/code&gt; - usuwa wszystko do znaku spacji i przechodzi w tryb wprowadzania&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;=&lt;/code&gt; - wprowadza znak &lt;code&gt;=&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+        
+      </description>
     </item>
     
     <item>
@@ -47,9 +93,15 @@
       <pubDate>Sat, 24 Oct 2020 19:40:53 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/vim-zawijanie-tekstu-na-80-znakow/</guid>
-      <description>Ustawiamy zawijanie na 80 znaków
-1:set textwidth=80 Teraz należy zaznaczyć tekst w trybie wizualnym za pomocą V
-Za pomocą skrótu gq zawijamy tekst.</description>
+      <description>
+        
+          &lt;p&gt;Ustawiamy zawijanie na 80 znaków&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:set textwidth=80
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Teraz należy zaznaczyć tekst w trybie wizualnym za pomocą &lt;code&gt;V&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Za pomocą skrótu &lt;code&gt;gq&lt;/code&gt; zawijamy tekst.&lt;/p&gt;
+
+        
+      </description>
     </item>
     
     <item>
@@ -58,9 +110,87 @@ Za pomocą skrótu gq zawijamy tekst.</description>
       <pubDate>Sat, 24 Oct 2020 19:39:47 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/vim-wstawienie-x-znak%C3%B3w/</guid>
-      <description>Wstawienie X razy dowolnego znaku w Vim wymaga następującej składni w trybie NORMAL.
-1[ilość][tryb][znak]&amp;lt;ESC&amp;gt; Tryby wprowadzania:
-1i - wprowadza znak przed kursorem 2a - wprowadza znak za kursorem 3I - wprowadza znak na początku linii 4A - wprowadza znak na końcu linii 5o - wprowadza znak w kolejnych wierszach linię poniżej 6O - wprowadza znak w kolejnych wierszach linię powyżej 7r - zamiana znaku wybraną ilość razy Przykład wprowadzenia 80 znaków =</description>
+      <description>
+        
+          &lt;p&gt;Wstawienie X razy dowolnego znaku w Vim wymaga następującej składni w trybie
+&lt;strong&gt;NORMAL&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;[ilość][tryb][znak]&amp;lt;ESC&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Tryby wprowadzania:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;i - wprowadza znak przed kursorem
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;a - wprowadza znak za kursorem
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;I - wprowadza znak na początku linii
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;A - wprowadza znak na końcu linii
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;o - wprowadza znak w kolejnych wierszach linię poniżej
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;O - wprowadza znak w kolejnych wierszach linię powyżej
+&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;r - zamiana znaku wybraną ilość razy
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Przykład wprowadzenia 80 znaków &lt;code&gt;=&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;80i=&amp;lt;ESC&amp;gt;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;================================================================================
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Przykład wprowadzenia 3 znaków &lt;code&gt;=&lt;/code&gt; w kolejnych liniach&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;3o=&amp;lt;ESC&amp;gt;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;=
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;=
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;=
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Wstawianie znaku dowolną ilość razy jest możliwe również w trybie &lt;strong&gt;VISUAL&lt;/strong&gt;
+na przykład wstawienie znaku &lt;code&gt;|&lt;/code&gt; w 6 kolejnych liniach.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;6o|&amp;lt;ESC&amp;gt;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;|
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;|
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;|
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;|
+&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;|
+&lt;span class=&#34;ln&#34;&gt;8&lt;/span&gt;|
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Teraz w tych 6 wierszach dodajmy 78 spacji. Zaznaczamy wierwsze za pomocą
+&lt;code&gt;&amp;lt;Ctrl-v&amp;gt;&lt;/code&gt;. W celu wizualizacji zamienimy znak spacji znakiem podkreślenia
+&lt;code&gt;_&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&amp;lt;Ctrl-v&amp;gt;jjjjj78A&amp;lt;spacja&amp;gt;&amp;lt;ESC&amp;gt;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;|______________________________________________________________________________
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;|______________________________________________________________________________
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;|______________________________________________________________________________
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;|______________________________________________________________________________
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;|______________________________________________________________________________
+&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;|______________________________________________________________________________
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Dodajmy na końcu każdego wiersza znak &lt;code&gt;|&lt;/code&gt;. Przechodzimy na koniec pierwszej
+linii zapomocą &lt;code&gt;$&lt;/code&gt;. Zaznaczamy wszystkie linie za pomocą &lt;code&gt;&amp;lt;Ctrl-v&amp;gt;&lt;/code&gt; teraz
+użyjemy komedny &lt;code&gt;A&lt;/code&gt; i znaku &lt;code&gt;|&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$&amp;lt;Ctrl-v&amp;gt;jjjjjA|&amp;lt;ESC&amp;gt;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;|                                                                              |
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;|                                                                              |
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;|                                                                              |
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;|                                                                              |
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;|                                                                              |
+&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;|                                                                              |
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Zmiennmy spacje w pierwszej linii na znak &lt;code&gt;-&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;77r-
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;|------------------------------------------------------------------------------|
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;|                                                                              |
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;|                                                                              |
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;|                                                                              |
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;|                                                                              |
+&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;|                                                                              |
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Zamiana spacji w ostatniej linii na znak &lt;code&gt;=&lt;/code&gt;, tutaj użyjemy komendy &lt;code&gt;s&lt;/code&gt; do
+zamiany tekstu. Użycie komendy &lt;code&gt;s&lt;/code&gt; należy wykonać będąc w linii, którą
+chcemy objąć tą komendą.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:s/ /=/g&amp;lt;ENTER&amp;gt;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;|------------------------------------------------------------------------------|
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;|                                                                              |
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;|                                                                              |
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;|                                                                              |
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;|                                                                              |
+&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;|==============================================================================|
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ostatnim krokiem będzie podzielenie tabeli na dwie kolumny w trybie &lt;strong&gt;VISUAL&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&amp;lt;Ctrl-v&amp;gt;jjjjjr|
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;|----------------------|-------------------------------------------------------|
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;|                      |                                                       |
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;|                      |                                                       |
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;|                      |                                                       |
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;|                      |                                                       |
+&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;|======================|=======================================================|
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
     <item>
@@ -69,11 +199,28 @@ Za pomocą skrótu gq zawijamy tekst.</description>
       <pubDate>Sat, 24 Oct 2020 19:36:39 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/sprawdzanie-pisowni-w-edytorze-vim/</guid>
-      <description>Ustawienie języka
-1:set spell spellang=pl Włączenie sprawdzania pisowni
-1:set spell Zmapowanie sprawdzania pisowni pod klawiszem F7
-1set spell spellang=pl 2nnore &amp;lt;F7&amp;gt; :setlocal spell! spell?&amp;lt;CR&amp;gt; Klawiszologia
- ]s – szuka kolejnego wystąpienia nieznanego słowa [s – szuka poprzedniego wystąpienia nieznanego słowa ]S - szuka kolejnego wystąpienia definitywnie źle napisanego słowa [S – szuka poprzedniego wystąpienia słowa definitywnie źle napisanego słowa z= - podaje sugestie zastąpienia słowa zg - dodaje słowo pod kursorem do lokalnego słownika  Więcej informacji w pomocy :help spell</description>
+      <description>
+        
+          &lt;p&gt;Ustawienie języka&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:set spell spellang=pl
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Włączenie sprawdzania pisowni&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:set spell
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Zmapowanie sprawdzania pisowni pod klawiszem F7&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;set spell spellang=pl
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;nnore &amp;lt;F7&amp;gt; :setlocal spell! spell?&amp;lt;CR&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Klawiszologia&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;]s&lt;/code&gt; – szuka kolejnego wystąpienia nieznanego słowa&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;[s&lt;/code&gt; – szuka poprzedniego wystąpienia nieznanego słowa&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;]S&lt;/code&gt; - szuka kolejnego wystąpienia definitywnie źle napisanego słowa&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;[S&lt;/code&gt; – szuka poprzedniego wystąpienia słowa definitywnie źle napisanego słowa&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;z=&lt;/code&gt; - podaje sugestie zastąpienia słowa&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;zg&lt;/code&gt; - dodaje słowo pod kursorem do lokalnego słownika&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Więcej informacji w pomocy &lt;code&gt;:help spell&lt;/code&gt;&lt;/p&gt;
+
+        
+      </description>
     </item>
     
     <item>
@@ -82,9 +229,51 @@ Za pomocą skrótu gq zawijamy tekst.</description>
       <pubDate>Sat, 24 Oct 2020 19:20:49 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/vim-szyfrowanie/</guid>
-      <description>Vim posiada wbudowany mechanizm szyfrowania, do niedawna Vim potrafił szyfrować wyłącznie metodą zip, nowsze wersje potrafią szyfrować algorytmem blowfish a od wersji 7.4.399 ma możliwość szyfrowania metodą blowfish2, która jest najtrudniejszą do złamania. Nie zaleca się używania szyfrowania za pomocą metody zip. Szyfrowanie tą metodą nie jest możliwe w edytorze Neovim.
-W celu lepszego zabezpieczenia możemy użyć dodatkowo następujących komend
-1:set viminfo= 2:set noswapfile noundofile nobackup 3:edit tajny_plik.txt Żeby sprawdzić aktualną metodę szyfrowania należy wydać polecenie</description>
+      <description>
+        
+          &lt;p&gt;Vim posiada wbudowany mechanizm szyfrowania, do niedawna Vim potrafił
+szyfrować wyłącznie metodą &lt;code&gt;zip&lt;/code&gt;, nowsze wersje potrafią szyfrować algorytmem
+&lt;code&gt;blowfish&lt;/code&gt; a od wersji 7.4.399 ma możliwość szyfrowania metodą &lt;code&gt;blowfish2&lt;/code&gt;,
+która jest najtrudniejszą do złamania. Nie zaleca się używania szyfrowania za
+pomocą metody &lt;code&gt;zip&lt;/code&gt;. Szyfrowanie tą metodą nie jest możliwe w edytorze Neovim.&lt;/p&gt;
+&lt;p&gt;W celu lepszego zabezpieczenia możemy użyć dodatkowo następujących komend&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:set viminfo=
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;:set noswapfile noundofile nobackup
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;:edit tajny_plik.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Żeby sprawdzić aktualną metodę szyfrowania należy wydać polecenie&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:set cm?
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;W pliku konfiguracyjnym &lt;code&gt;.vimrc&lt;/code&gt; dodajemy&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;set cm=blowfish2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;szyfrowanie&#34;&gt;Szyfrowanie&lt;/h2&gt;
+&lt;p&gt;Kiedy chcemy zaszyfrować plik należy uruchomić polecenie&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:X
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;Enter encryption key: **********
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;Enter same key again: **********
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;i podać dwukrotnie hasło, następnie trzeba zapisać plik&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:w
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Plik zostanie zaszyfrowany, kiedy będziemy chcieli go ponownie edytować Vim sam
+poprosi o hasło do odszyfrowania pliku.&lt;/p&gt;
+&lt;p&gt;Inną metodą jest uruchomienie edytora z parametrem &lt;code&gt;-x&lt;/code&gt; parametr ten należy
+użyć wyłącznie przy szyfrowaniu. Ponowne otworzenie pliku z parametrem &lt;code&gt;-x&lt;/code&gt;
+wyświetli zaszyfrowany wcześniej plik chyba że podamy poprzednio ustalone
+hasło.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ vim -x plik.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;deszyfrowanie-plików&#34;&gt;Deszyfrowanie plików&lt;/h2&gt;
+&lt;p&gt;Odszyfrowanie pliku polega na wprowadzeniu komendy &lt;code&gt;:X&lt;/code&gt; i podaniu dwukrotnie
+pustego hasła, czyli 2 x Enter, po tym należy zapisać plik &lt;code&gt;:w&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Jeśli zajdzie potrzeba wyrzucenia zawartości pliku na standardowe wyjście
+możemy skorzystać z metody którą znalazłem w wątku
+&lt;a href=&#34;https://superuser.com/questions/1086598/print-decrypt-a-vim-encrypted-file&#34;&gt;https://superuser.com/questions/1086598/print-decrypt-a-vim-encrypted-file&lt;/a&gt;
+skrypt odrobinę zmodyfikowałem na własne potrzeby&lt;/p&gt;
+&lt;p&gt;Skrypt &lt;code&gt;~/bin/cryptocat&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#!/usr/bin/env bash
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;filename&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;vim -R -c &lt;span class=&#34;s2&#34;&gt;&amp;#34;:set key= | sav &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;filename&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;.plain | q&amp;#34;&lt;/span&gt; -- &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;filename&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; cat &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;filename&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;.plain &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; shred &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;filename&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;.plain &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; rm &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;filename&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;.plain
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
     <item>
@@ -93,11 +282,21 @@ W celu lepszego zabezpieczenia możemy użyć dodatkowo następujących komend
       <pubDate>Sat, 24 Oct 2020 19:19:42 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/vim-uzycie-ctrl-s-do-zapisania-pliku/</guid>
-      <description>W systemie linux standardowo skrót Ctrl-s zatrzymuje wyświetlanie na ekranie terminala, Ctrl-q pozwala na dalsze wyświetlanie.
-Dlatego należy wyłączyć ten skrót, w pliku .bashrc lub w przypadku powłoki ZSH .zshrc dodajemy:
-1stty -ixon Teraz należy przeładować konfigurację powłoki&amp;quot;
-1$ source ~/.bashrc Teraz kolej na ustawienie edytora Vim, w pliku .vimrc dodajemy:
-1nnoremap &amp;lt;C-s&amp;gt; &amp;lt;Esc&amp;gt;:w&amp;lt;CR&amp;gt; 2imap &amp;lt;C-s&amp;gt; &amp;lt;ESC&amp;gt;:w&amp;lt;CR&amp;gt; </description>
+      <description>
+        
+          &lt;p&gt;W systemie linux standardowo skrót &lt;code&gt;Ctrl-s&lt;/code&gt; zatrzymuje wyświetlanie na ekranie
+terminala, &lt;code&gt;Ctrl-q&lt;/code&gt; pozwala na dalsze wyświetlanie.&lt;/p&gt;
+&lt;p&gt;Dlatego należy wyłączyć ten skrót, w pliku &lt;code&gt;.bashrc&lt;/code&gt; lub w przypadku powłoki
+ZSH &lt;code&gt;.zshrc&lt;/code&gt; dodajemy:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;stty -ixon
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Teraz należy przeładować konfigurację powłoki&amp;quot;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ source ~/.bashrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Teraz kolej na ustawienie edytora Vim, w pliku &lt;code&gt;.vimrc&lt;/code&gt; dodajemy:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;nnoremap &amp;lt;C-s&amp;gt; &amp;lt;Esc&amp;gt;:w&amp;lt;CR&amp;gt;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;imap &amp;lt;C-s&amp;gt; &amp;lt;ESC&amp;gt;:w&amp;lt;CR&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
     <item>
@@ -106,9 +305,53 @@ Dlatego należy wyłączyć ten skrót, w pliku .bashrc lub w przypadku powłoki
       <pubDate>Sat, 24 Oct 2020 19:17:24 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/vim-szyfrowanie-za-pomoc%C4%85-pgp.md/</guid>
-      <description>Szyfrowanie wybranej linii Tutaj zaszyfrujemy tekst z linii 117 za pomocą gpg i hasła tajnehaslo
-1Tekst niezaszyfrowany w linii 117 1:117 ! gpg -q -a -c - 2-----BEGIN PGP MESSAGE----- 3 4jA0EBwMC8MJMzMCMn+Lp0lcBi6dx1AYRx9OE/xXZSHWTpbi2Zy9Rt5AVw2IIjyYS 5n3hobFW418P8IDXL0swMT7ljaZBFujd/axC18CaGXixXfBgosIW4QcVoVhyOublG 62r4YGqJ0Ip8= 7=Dlnx 8-----END PGP MESSAGE----- Odszyfrowanie Spróbujmy to odszyfrować, tekst odszyfrowany pojawi się w miejscu zaszyfrowanego.
-1:121,127 ! gpg -q -d - 2gpg: dane zaszyfrowano za pomocą AES 3gpg: zaszyfrowane jednym hasłem 4Tekst niezaszyfrowany w linii 117 Zaszyfrowanie całego pliku Zaszyfrowanie całego pliku, efektem tego polecenia będzie plik o tej samej nazwie z rozszrzeniem asc</description>
+      <description>
+        
+          &lt;h2 id=&#34;szyfrowanie-wybranej-linii&#34;&gt;Szyfrowanie wybranej linii&lt;/h2&gt;
+&lt;p&gt;Tutaj zaszyfrujemy tekst z linii 117 za pomocą &lt;code&gt;gpg&lt;/code&gt; i hasła &lt;code&gt;tajnehaslo&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;Tekst niezaszyfrowany w linii 117
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:117 ! gpg -q -a -c -
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;-----BEGIN PGP MESSAGE-----
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;jA0EBwMC8MJMzMCMn+Lp0lcBi6dx1AYRx9OE/xXZSHWTpbi2Zy9Rt5AVw2IIjyYS
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;n3hobFW418P8IDXL0swMT7ljaZBFujd/axC18CaGXixXfBgosIW4QcVoVhyOublG
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;2r4YGqJ0Ip8=
+&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;=Dlnx
+&lt;span class=&#34;ln&#34;&gt;8&lt;/span&gt;-----END PGP MESSAGE-----
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;odszyfrowanie&#34;&gt;Odszyfrowanie&lt;/h2&gt;
+&lt;p&gt;Spróbujmy to odszyfrować, tekst odszyfrowany pojawi się w miejscu
+zaszyfrowanego.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:121,127 ! gpg -q -d -
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;gpg: dane zaszyfrowano za pomocą AES
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;gpg: zaszyfrowane jednym hasłem
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;Tekst niezaszyfrowany w linii 117
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;zaszyfrowanie-całego-pliku&#34;&gt;Zaszyfrowanie całego pliku&lt;/h2&gt;
+&lt;p&gt;Zaszyfrowanie całego pliku, efektem tego polecenia będzie plik o tej samej nazwie
+z rozszrzeniem &lt;code&gt;asc&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:!gpg -q -a -c %
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Oczywiście możemy go zaszyfrować i wstawić w tym pliku&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:r!gpg -q -a -c -o- %
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;-----BEGIN PGP MESSAGE-----
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;jA0EBwMCmYkAj1CGFMHp0uoBolAcFPD74Z4Qys7dxDbMrZcoOr1Z3ZBF/+w7LJrS
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;A3sn0Ak53nELNapZV6jwCnmo434Zb9gD2/HWTrOlHobzwClKOd86Ab+Xjtisky9g
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;...
+&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;NLS5j4KP7rXMHy1tmaZ8tG1C2vX0MKm79QwFpYfiPyeRcpSR5nLDYggzISPMeg==
+&lt;span class=&#34;ln&#34;&gt;8&lt;/span&gt;=Ad2e
+&lt;span class=&#34;ln&#34;&gt;9&lt;/span&gt;-----END PGP MESSAGE-----
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Teraz spróbujmy zaszyfrować inny plik i wstawić go w to miejsce&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:r!gpg -q -a -c -o- /etc/i3/config
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;-----BEGIN PGP MESSAGE-----
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;jA0EBwMCExkKVsCLc1Lp0usBCPZMKh0ifLBSJ7SFC9jQPOk+03IyJasyZJauhP4U
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;...
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;LBtyCuv0E2b3pWISP8qRo0+QLkecP1sofGnQu9ZUlszCaeL/VBpf8Sz6dm6Vecuh
+&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;DzEKXmBsQ1Dw
+&lt;span class=&#34;ln&#34;&gt;8&lt;/span&gt;=ipfY
+&lt;span class=&#34;ln&#34;&gt;9&lt;/span&gt;-----END PGP MESSAGE-----
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
     <item>
@@ -117,7 +360,73 @@ Dlatego należy wyłączyć ten skrót, w pliku .bashrc lub w przypadku powłoki
       <pubDate>Sat, 24 Oct 2020 19:14:34 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/vim-r%C3%B3%C5%BCno%C5%9Bci/</guid>
-      <description>Poruszanie się w trybie INSERT 1inoremap &amp;lt;C-h&amp;gt; &amp;lt;Left&amp;gt; &amp;#34; przemieszcza kursor w lewo2inoremap &amp;lt;C-j&amp;gt; &amp;lt;Down&amp;gt; &amp;#34; przemieszcza kursor w dół3inoremap &amp;lt;C-k&amp;gt; &amp;lt;Up&amp;gt; &amp;#34; przemieszcza kursor w górę4inoremap &amp;lt;C-l&amp;gt; &amp;lt;Right&amp;gt; &amp;#34; przemieszcza kursor w prawoPoruszanie się w trybie COMMAND 1cnoremap &amp;lt;C-h&amp;gt; &amp;lt;Left&amp;gt; &amp;#34; przemieszcza kursor w lewo2cnoremap &amp;lt;C-j&amp;gt; &amp;lt;Down&amp;gt; &amp;#34; przemieszcza kursor w dół3cnoremap &amp;lt;C-k&amp;gt; &amp;lt;Up&amp;gt; &amp;#34; przemieszcza kursor w górę4cnoremap &amp;lt;C-l&amp;gt; &amp;lt;Right&amp;gt; &amp;#34; przemieszcza kursor w prawoZapisanie pliku z użyciem sudo 1cnoremap sudow w !</description>
+      <description>
+        
+          &lt;h2 id=&#34;poruszanie-się-w-trybie-insert&#34;&gt;Poruszanie się w trybie INSERT&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;inoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;h&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Left&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;   &lt;span class=&#34;c&#34;&gt;&amp;#34; przemieszcza kursor w lewo&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;inoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Down&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;   &lt;span class=&#34;c&#34;&gt;&amp;#34; przemieszcza kursor w dół&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;inoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Up&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;     &lt;span class=&#34;c&#34;&gt;&amp;#34; przemieszcza kursor w górę&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;inoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Right&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;  &lt;span class=&#34;c&#34;&gt;&amp;#34; przemieszcza kursor w prawo&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;poruszanie-się-w-trybie-command&#34;&gt;Poruszanie się w trybie COMMAND&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;h&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Left&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;   &lt;span class=&#34;c&#34;&gt;&amp;#34; przemieszcza kursor w lewo&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Down&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;   &lt;span class=&#34;c&#34;&gt;&amp;#34; przemieszcza kursor w dół&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Up&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;     &lt;span class=&#34;c&#34;&gt;&amp;#34; przemieszcza kursor w górę&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Right&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;  &lt;span class=&#34;c&#34;&gt;&amp;#34; przemieszcza kursor w prawo&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;zapisanie-pliku-z-użyciem-sudo&#34;&gt;Zapisanie pliku z użyciem sudo&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cnoremap&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;sudow&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;w&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;tee&lt;/span&gt; % &lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;sr&#34;&gt;/dev/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Teraz w trybie komand można użyć polecenia &lt;code&gt;sudow&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;sudow&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;przeładowanie-pliku-konfiguracyjnego-vimvimrc&#34;&gt;Przeładowanie pliku konfiguracyjnego &lt;code&gt;~/.vim/vimrc&lt;/code&gt;&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;map&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;leader&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;r&lt;/span&gt; :&lt;span class=&#34;nx&#34;&gt;so&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;~&lt;/span&gt;&lt;span class=&#34;sr&#34;&gt;/.vim/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;vimrc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;utworzenie-katalogu-jeśli-go-nie-ma&#34;&gt;Utworzenie katalogu jeśli go nie ma&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;isdirectory&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;~/.vim/viminfo&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;call&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;mkdir&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;$&lt;span class=&#34;nx&#34;&gt;HOME&lt;/span&gt; . &lt;span class=&#34;s1&#34;&gt;&amp;#39;/.vim/viminfo&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;p&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;endif&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;łatwiejsze-poruszanie-się-po-zawijanych-liniach&#34;&gt;Łatwiejsze poruszanie się po zawijanych liniach&lt;/h2&gt;
+&lt;p&gt;Zawijanie długich linii, rozkłada jedną linię na kilka linii, nieoddiezlonych znakiem końca linii, żeby poruszać się pomiędzy nimi można użyć klawiszy &lt;code&gt;gj&lt;/code&gt; i &lt;code&gt;gk&lt;/code&gt;, stąd zmapowanie tych skrótów do &lt;code&gt;j&lt;/code&gt; i &lt;code&gt;k&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nnore&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;gj&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nnore&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;k&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;gk&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;usunięcie-tabów-z-pliku&#34;&gt;Usunięcie Tabów z pliku&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:set expandtab
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;:retab
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;łatwiejszy-dostęp-do-trybu-komend&#34;&gt;Łatwiejszy dostęp do trybu komend&lt;/h2&gt;
+&lt;p&gt;Standardowo do trybu komend można dostać się za pomocą &lt;code&gt;:&lt;/code&gt; czyli &lt;code&gt;&amp;lt;Shift-;&amp;gt;&lt;/code&gt;
+ten &lt;code&gt;Shift&lt;/code&gt; jest dodatkowym klawiszem, którego chcemy się pozbyć, dlatego
+zamiast &lt;code&gt;&amp;lt;Shift-;&amp;gt;&lt;/code&gt; użyję &lt;code&gt;;&lt;/code&gt;, tutaj pojawia się mała komplikacja, gdyż znak
+&lt;code&gt;;&lt;/code&gt; jest używany do powtórzenia wyszukiwania w linii, za pomocą komend &lt;code&gt;f&lt;/code&gt;,
+&lt;code&gt;t&lt;/code&gt;, &lt;code&gt;F&lt;/code&gt; i &lt;code&gt;T&lt;/code&gt;, do tego zadania zmapuję kombinację klawiszy &lt;code&gt;f;&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;map ; :
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;noremap f; ;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;less-vim&#34;&gt;less vim&lt;/h2&gt;
+&lt;p&gt;Polecenie &lt;code&gt;less&lt;/code&gt; służy do przeglądania zawartości pliku, czyli możemy się
+poruszać po jego treści, co jeśli zdecydujemy się na edycję takiego pliku?
+Normalnie powinniśmy zakończyć pracę z programem &lt;code&gt;less&lt;/code&gt; i uruchomić edycję
+pliku za pomocą edytora &lt;code&gt;Vim&lt;/code&gt;. Jest jednak sposób żeby tego dokonać szybciej,
+wystarczy nacisnąć kombinację klawiszy &lt;code&gt;vi&lt;/code&gt; i przejdziemy do edycji za pomocą
+standardowego edytora. To oznacza, że nie musi to być edytor &lt;code&gt;Vim&lt;/code&gt; może to być
+na przykład edytor &lt;code&gt;nvi&lt;/code&gt;. Standardowy edytor jest ustawiany w zmiennej
+&lt;code&gt;EDITOR&lt;/code&gt;. W BASH ustawiamy w pliku &lt;code&gt;~/.bashrc&lt;/code&gt; natomiast w powłoces ZSH
+zmienną należy ustawić w pliku &lt;code&gt;~/.zshrc&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;export EDITOR=vim
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;żeby sprawdzić jaki edytor jest ustawiony jako domyślny można wyświetlić
+wartość zmiennej &lt;code&gt;EDITOR&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;echo $EDITOR
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Zawsze warto sprawdzić czy dany program istnieje zanim go użyjemy.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;[ -f /usr/bin/vim ] &amp;amp;&amp;amp; export EDITOR=/usr/bin/vim
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;kopiowanie-polecenia-z-bufora&#34;&gt;Kopiowanie polecenia z bufora&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&amp;#34; &amp;lt;leader&amp;gt;v - kopiuje bieżącą linię i wykonuje w linii komend
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;nnoremap &amp;lt;leader&amp;gt;v yy:@&amp;#34;&amp;lt;cr&amp;gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&amp;#34; &amp;lt;leader&amp;gt;e - kopiuje bieżącą linię i uruchamia polecenie systemowe,
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;&amp;#34; następnie wynik wkleja do bufora
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;nnoremap &amp;lt;leader&amp;gt;e !!$SHELL&amp;lt;cr&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;skopiowanie-zawartości-linii-komend&#34;&gt;Skopiowanie zawartości linii komend&lt;/h2&gt;
+&lt;p&gt;Po wejściu w tryb komend &lt;code&gt;:&lt;/code&gt;, naciskamy &lt;code&gt;&amp;lt;Ctrl-f&amp;gt;&lt;/code&gt; i pokazuje się historia
+wykonanych komend wraz z bieżącą komendą, tutaj możemy użyć &lt;code&gt;yy&lt;/code&gt;, żeby
+skopiować komendę. Do wyjścia z historii służy komenda &lt;code&gt;:q&lt;/code&gt;.&lt;/p&gt;
+
+        
+      </description>
     </item>
     
     <item>
@@ -126,8 +435,15 @@ Dlatego należy wyłączyć ten skrót, w pliku .bashrc lub w przypadku powłoki
       <pubDate>Sat, 24 Oct 2020 19:12:38 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/vim-otworzenie-pliku-pod-kursorem/</guid>
-      <description>Przykład:
-1/home/user/.bashrc Najerzdżając kursorem na nazwę pliku wciskamy skrót gf co otworzy plik w nowym buforze.</description>
+      <description>
+        
+          &lt;p&gt;Przykład:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;/home/user/.bashrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Najerzdżając kursorem na nazwę pliku wciskamy skrót &lt;code&gt;gf&lt;/code&gt; co otworzy plik w
+nowym buforze.&lt;/p&gt;
+
+        
+      </description>
     </item>
     
     <item>
@@ -136,8 +452,78 @@ Dlatego należy wyłączyć ten skrót, w pliku .bashrc lub w przypadku powłoki
       <pubDate>Sat, 24 Oct 2020 17:16:30 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/vim-okna/</guid>
-      <description>Skróty :h ^w
-   Skrót Opis     c-w w przeskakuje pomiędzy dwoma ostation używanymi oknami   c-w s dzieli okno w poziomie :split   c-w v dzieli okno w pionie :vsplit   c-w h przechodzi do okna po lewo   c-w l przechodzi do okna po prawej   c-w H przenosi aktywne okno na lewo   c-w L przenosi aktywne okno na prawo   c-w o ustawia aktywne okno jako jedyne widoczne   c-w c zamyka aktywne okno   c-w + zwiększa wysokość okna :resize +N   c-w - zmniejsza wysokość okna :resize -N   c-w &amp;lt; zmniejsza szerokość okna :vertical resize -N   c-w &amp;gt; zwiększa szerokość okna :vertical resize +N   c-w = wyrównuje wielkość okien    </description>
+      <description>
+        
+          &lt;p&gt;Skróty &lt;code&gt;:h ^w&lt;/code&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Skrót&lt;/th&gt;
+&lt;th&gt;Opis&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;c-w w&lt;/td&gt;
+&lt;td&gt;przeskakuje pomiędzy dwoma ostation używanymi oknami&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;c-w s&lt;/td&gt;
+&lt;td&gt;dzieli okno w poziomie :split&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;c-w v&lt;/td&gt;
+&lt;td&gt;dzieli okno w pionie :vsplit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;c-w h&lt;/td&gt;
+&lt;td&gt;przechodzi do okna po lewo&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;c-w l&lt;/td&gt;
+&lt;td&gt;przechodzi do okna po prawej&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;c-w H&lt;/td&gt;
+&lt;td&gt;przenosi aktywne okno na lewo&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;c-w L&lt;/td&gt;
+&lt;td&gt;przenosi aktywne okno na prawo&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;c-w o&lt;/td&gt;
+&lt;td&gt;ustawia aktywne okno jako jedyne widoczne&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;c-w c&lt;/td&gt;
+&lt;td&gt;zamyka aktywne okno&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;c-w +&lt;/td&gt;
+&lt;td&gt;zwiększa wysokość okna :resize +N&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;c-w -&lt;/td&gt;
+&lt;td&gt;zmniejsza wysokość okna :resize -N&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;c-w &amp;lt;&lt;/td&gt;
+&lt;td&gt;zmniejsza szerokość okna :vertical resize -N&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;c-w &amp;gt;&lt;/td&gt;
+&lt;td&gt;zwiększa szerokość okna :vertical resize +N&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;c-w =&lt;/td&gt;
+&lt;td&gt;wyrównuje wielkość okien&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+        
+      </description>
     </item>
     
     <item>
@@ -146,9 +532,153 @@ Dlatego należy wyłączyć ten skrót, w pliku .bashrc lub w przypadku powłoki
       <pubDate>Sat, 24 Oct 2020 16:44:02 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/skrypt-u%C5%82atwiaj%C4%85cy-prac%C4%99-z-pluginem-vimwiki-i-dziennikiem/</guid>
-      <description>Skrypt zainspirowany https://github.com/nickjj/notes/blob/master/notes
-Wymagania:  ripgrep skim (sk) fzf preview.sh część pluginu fzf.vim https://github.com/junegunn/fzf.vim/blob/master/bin/preview.sh vim plugin Vimwiki xclip  Opis użycia: W przypadku wyszukiwania z użyciem parametrów -s i -f, istnieje skrót Ctrl+p, który uruchamia skrypt preview.sh, służący do podglądania szukanych notatek. Skrypt preview.sh jest częścią pluginu fzf.vim.
-1$ notes treść notatki -- dodaje treść notatki z wiersza poleceń 2$ xclip -o | notes -- wkleja zawartość schowka do notatki 3$ notes -- otwiera w edytorze dzisiejszą notatkę 4$ notes -s -- przeszukuje wszystkie notatek w $NOTES_DIRECTORY 5$ notes -f -- wyszukuje plików w $NOTES_DIRECTORY 6$ notes -d -- usuwa dzisiejszy notes 7$ notes -g -- generuje INDEKS dziennika $NOTES_DIARY_INDEX 8$ notes -i -- przechodzi do edycji $NOTES_DIARY_INDEX 1#!</description>
+      <description>
+        
+          &lt;p&gt;Skrypt zainspirowany &lt;a href=&#34;https://github.com/nickjj/notes/blob/master/notes&#34;&gt;https://github.com/nickjj/notes/blob/master/notes&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;wymagania&#34;&gt;Wymagania:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;ripgrep&lt;/li&gt;
+&lt;li&gt;skim (sk)&lt;/li&gt;
+&lt;li&gt;fzf&lt;/li&gt;
+&lt;li&gt;preview.sh część pluginu fzf.vim &lt;a href=&#34;https://github.com/junegunn/fzf.vim/blob/master/bin/preview.sh&#34;&gt;https://github.com/junegunn/fzf.vim/blob/master/bin/preview.sh&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;vim&lt;/li&gt;
+&lt;li&gt;plugin Vimwiki&lt;/li&gt;
+&lt;li&gt;xclip&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;opis-użycia&#34;&gt;Opis użycia:&lt;/h2&gt;
+&lt;p&gt;W przypadku wyszukiwania z użyciem parametrów &lt;code&gt;-s&lt;/code&gt; i &lt;code&gt;-f&lt;/code&gt;, istnieje skrót &lt;strong&gt;Ctrl+p&lt;/strong&gt;,
+który uruchamia skrypt &lt;code&gt;preview.sh&lt;/code&gt;, służący do podglądania szukanych notatek.
+Skrypt &lt;code&gt;preview.sh&lt;/code&gt; jest częścią pluginu &lt;code&gt;fzf.vim&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ notes treść notatki -- dodaje treść notatki z wiersza poleceń
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ xclip -o | notes    -- wkleja zawartość schowka do notatki
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ notes               -- otwiera w edytorze dzisiejszą notatkę
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;$ notes -s            -- przeszukuje wszystkie notatek w $NOTES_DIRECTORY
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;$ notes -f            -- wyszukuje plików w $NOTES_DIRECTORY
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;$ notes -d            -- usuwa dzisiejszy notes
+&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;$ notes -g            -- generuje INDEKS dziennika $NOTES_DIARY_INDEX
+&lt;span class=&#34;ln&#34;&gt;8&lt;/span&gt;$ notes -i            -- przechodzi do edycji $NOTES_DIARY_INDEX
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;  1&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;  2&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;  3&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# Skrypt zarządzający notatkami, dodatek do pluginu Vimwiki.&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;  4&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;  5&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# Nie rozróżnia wielkości liter np. w funkcji case in.&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;  6&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;shopt&lt;/span&gt; -s nocasematch
+&lt;span class=&#34;ln&#34;&gt;  7&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;  8&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# Ustawnienie zmiennych&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;  9&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;NOTES_DIRECTORY&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;~/vimwiki/diary
+&lt;span class=&#34;ln&#34;&gt; 10&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;NOTES_FILE&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;date +%Y-%m-%d&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;.md
+&lt;span class=&#34;ln&#34;&gt; 11&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;NOTES_PATH&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$NOTES_DIRECTORY&lt;/span&gt;/&lt;span class=&#34;nv&#34;&gt;$NOTES_FILE&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 12&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;NOTES_EDITOR&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;vim
+&lt;span class=&#34;ln&#34;&gt; 13&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;NOTES_HEADER&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;# &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;date +%Y-%m-%d&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 14&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;NOTES_TIME&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;date +%T&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 15&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;NOTES_DIARY_INDEX&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$NOTES_DIRECTORY&lt;/span&gt;/diary.md
+&lt;span class=&#34;ln&#34;&gt; 16&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;PREVIEW_SCRIPT&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;~/bin/preview.sh
+&lt;span class=&#34;ln&#34;&gt; 17&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;BASENAME&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;basename &lt;span class=&#34;nv&#34;&gt;$0&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 18&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 19&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;function&lt;/span&gt; HELP&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 20&lt;/span&gt;  &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 21&lt;/span&gt;  &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Użycie:&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 22&lt;/span&gt;  &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 23&lt;/span&gt;  &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;  &lt;/span&gt;$&lt;span class=&#34;s2&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$BASENAME&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt; treść notatki -- dodaje treść notatki z wiersza poleceń&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 24&lt;/span&gt;  &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;  &lt;/span&gt;$&lt;span class=&#34;s2&#34;&gt; xclip -o | &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$BASENAME&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;    -- wkleja zawartość schowka do notatki&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 25&lt;/span&gt;  &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;  &lt;/span&gt;$&lt;span class=&#34;s2&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$BASENAME&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;               -- otwiera w edytorze dzisiejszą notatkę&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 26&lt;/span&gt;  &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;  &lt;/span&gt;$&lt;span class=&#34;s2&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$BASENAME&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt; -s            -- przeszukuje wszystkie notatek w &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$NOTES_DIRECTORY&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 27&lt;/span&gt;  &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;  &lt;/span&gt;$&lt;span class=&#34;s2&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$BASENAME&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt; -f            -- wyszukuje plików w &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$NOTES_DIRECTORY&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 28&lt;/span&gt;  &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;  &lt;/span&gt;$&lt;span class=&#34;s2&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$BASENAME&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt; -d            -- usuwa dzisiejszy notes&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 29&lt;/span&gt;  &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;  &lt;/span&gt;$&lt;span class=&#34;s2&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$BASENAME&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt; -g            -- generuje INDEKS dziennika &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$NOTES_DIARY_INDEX&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 30&lt;/span&gt;  &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;  &lt;/span&gt;$&lt;span class=&#34;s2&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$BASENAME&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt; -i            -- przechodzi do edycji &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$NOTES_DIARY_INDEX&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 31&lt;/span&gt;  &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 32&lt;/span&gt;  &lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 33&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 34&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 35&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;function&lt;/span&gt; DELETE&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 36&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; -f &lt;span class=&#34;nv&#34;&gt;$NOTES_PATH&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 37&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;read&lt;/span&gt; -p &lt;span class=&#34;s2&#34;&gt;&amp;#34;Czy chcesz usunąć plik notatki &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;NOTES_PATH&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt; [t/N]: &amp;#34;&lt;/span&gt; ANS
+&lt;span class=&#34;ln&#34;&gt; 38&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;case&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$ANS&lt;/span&gt; in
+&lt;span class=&#34;ln&#34;&gt; 39&lt;/span&gt;      t&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;y&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 40&lt;/span&gt;        rm &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;NOTES_PATH&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 41&lt;/span&gt;        &lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 42&lt;/span&gt;        &lt;span class=&#34;p&#34;&gt;;;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 43&lt;/span&gt;      n&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 44&lt;/span&gt;        &lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 45&lt;/span&gt;        &lt;span class=&#34;p&#34;&gt;;;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 46&lt;/span&gt;      *&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 47&lt;/span&gt;        &lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 48&lt;/span&gt;        &lt;span class=&#34;p&#34;&gt;;;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 49&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;esac&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 50&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 51&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Brak pliku &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;NOTES_PATH&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;.&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 52&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 53&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 54&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 55&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 56&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;function&lt;/span&gt; FIND&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 57&lt;/span&gt;  &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$NOTES_DIRECTORY&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 58&lt;/span&gt;  &lt;span class=&#34;nv&#34;&gt;SEARCH&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;sk --ansi -i --bind &lt;span class=&#34;s2&#34;&gt;&amp;#34;ctrl-p:toggle-preview&amp;#34;&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 59&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    --preview &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$PREVIEW_SCRIPT&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt; {}&amp;#34;&lt;/span&gt; --preview-window&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;down:50%:hidden&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 60&lt;/span&gt;  &lt;span class=&#34;nv&#34;&gt;$NOTES_EDITOR&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$NOTES_DIRECTORY&lt;/span&gt;/&lt;span class=&#34;nv&#34;&gt;$SEARCH&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 61&lt;/span&gt;  &lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 62&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 63&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 64&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;function&lt;/span&gt; SEARCH&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 65&lt;/span&gt;  &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$NOTES_DIRECTORY&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 66&lt;/span&gt;  &lt;span class=&#34;nv&#34;&gt;SEARCH&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;sk --ansi -i -c &lt;span class=&#34;s1&#34;&gt;&amp;#39;rg --color=always --line-number &amp;#34;{}&amp;#34;&amp;#39;&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 67&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    --bind &lt;span class=&#34;s2&#34;&gt;&amp;#34;ctrl-p:toggle-preview&amp;#34;&lt;/span&gt; --preview &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$PREVIEW_SCRIPT&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt; {}&amp;#34;&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 68&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    --preview-window&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;down:50%:hidden&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 69&lt;/span&gt;  &lt;span class=&#34;nv&#34;&gt;FILE&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$SEARCH&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; cut -d : -f 1&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 70&lt;/span&gt;  &lt;span class=&#34;nv&#34;&gt;LINE&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$SEARCH&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; cut -d : -f 2&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 71&lt;/span&gt;  &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$FILE&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$LINE&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 72&lt;/span&gt;  &lt;span class=&#34;o&#34;&gt;[[&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$FILE&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$NOTES_EDITOR&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$NOTES_DIRECTORY&lt;/span&gt;/&lt;span class=&#34;nv&#34;&gt;$FILE&lt;/span&gt; +&lt;span class=&#34;nv&#34;&gt;$LINE&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 73&lt;/span&gt;  &lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 74&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 75&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 76&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;function&lt;/span&gt; GENERUJ_INDEX&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 77&lt;/span&gt;  &lt;span class=&#34;nv&#34;&gt;$NOTES_EDITOR&lt;/span&gt; -c :VimwikiDiaryGenerateLinks &lt;span class=&#34;nv&#34;&gt;$NOTES_DIARY_INDEX&lt;/span&gt; -c :wq
+&lt;span class=&#34;ln&#34;&gt; 78&lt;/span&gt;  &lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 79&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 80&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 81&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;function&lt;/span&gt; EDIT_INDEX&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 82&lt;/span&gt;  &lt;span class=&#34;nv&#34;&gt;$NOTES_EDITOR&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$NOTES_DIARY_INDEX&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 83&lt;/span&gt;  &lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 84&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 85&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 86&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;case&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt; in
+&lt;span class=&#34;ln&#34;&gt; 87&lt;/span&gt;  -g&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 88&lt;/span&gt;    GENERUJ_INDEX
+&lt;span class=&#34;ln&#34;&gt; 89&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;;;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 90&lt;/span&gt;  -s&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 91&lt;/span&gt;    SEARCH
+&lt;span class=&#34;ln&#34;&gt; 92&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;;;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 93&lt;/span&gt;  -f&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 94&lt;/span&gt;    FIND
+&lt;span class=&#34;ln&#34;&gt; 95&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;;;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 96&lt;/span&gt;  -d&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 97&lt;/span&gt;    DELETE
+&lt;span class=&#34;ln&#34;&gt; 98&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;;;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 99&lt;/span&gt;  -i&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;100&lt;/span&gt;    EDIT_INDEX
+&lt;span class=&#34;ln&#34;&gt;101&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;;;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;102&lt;/span&gt;  -h&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;--help&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;103&lt;/span&gt;    HELP
+&lt;span class=&#34;ln&#34;&gt;104&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;;;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;105&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;esac&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;106&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;107&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; ! -f &lt;span class=&#34;nv&#34;&gt;$NOTES_PATH&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;108&lt;/span&gt;  &lt;span class=&#34;nb&#34;&gt;printf&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;%s\n\n&amp;#34;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$NOTES_HEADER&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt; &amp;gt; &lt;span class=&#34;nv&#34;&gt;$NOTES_PATH&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;109&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;110&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;111&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;si&#34;&gt;${#}&lt;/span&gt; -eq &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;112&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; -p &lt;span class=&#34;s2&#34;&gt;&amp;#34;/dev/stdin&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;113&lt;/span&gt;    &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;printf&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;%s %s &amp;#34;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;-&amp;#34;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;NOTES_TIME&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; cat&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &amp;gt;&amp;gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;NOTES_PATH&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;114&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;115&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;eval&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;NOTES_EDITOR&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;NOTES_PATH&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;116&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;117&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;118&lt;/span&gt;  &lt;span class=&#34;nb&#34;&gt;printf&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;%s %s %s\n&amp;#34;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;-&amp;#34;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;NOTES_TIME&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;NOTES_PATH&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;119&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
     <item>
@@ -157,8 +687,32 @@ Wymagania:  ripgrep skim (sk) fzf preview.sh część pluginu fzf.vim https://gi
       <pubDate>Sat, 24 Oct 2020 16:32:31 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/vim-podr%C3%B3%C5%BCe-w-czasie/</guid>
-      <description>Edytor Vim posiada dwie komendy, które umożliwiają przejście do wersji z przed lub kilka sekund później, są to :earlier oraz :later. Jako parametr dodatkowy używamy ile sekund, minut godzin lub nawet dni chcemy się przenieść w czasie. Dodatkowo możemy przenieść się w czasie N zapisów pliku w czasie.
-Użycie tych dwóch poleceń bez podania w dodatkowym parametrze jednostki czasu przenosi nas o kilka stanów pliku. Stan można uważać za przejście pomiędzy trybami edycji.</description>
+      <description>
+        
+          &lt;p&gt;Edytor Vim posiada dwie komendy, które umożliwiają przejście do wersji z przed
+lub kilka sekund później, są to &lt;code&gt;:earlier&lt;/code&gt; oraz &lt;code&gt;:later&lt;/code&gt;. Jako parametr dodatkowy
+używamy ile sekund, minut godzin lub nawet dni chcemy się przenieść w czasie.
+Dodatkowo możemy przenieść się w czasie &lt;strong&gt;N&lt;/strong&gt; zapisów pliku w czasie.&lt;/p&gt;
+&lt;p&gt;Użycie tych dwóch poleceń bez podania w dodatkowym parametrze jednostki czasu
+przenosi nas o kilka stanów pliku. Stan można uważać za przejście pomiędzy
+trybami edycji.&lt;/p&gt;
+&lt;p&gt;np. użycie polecenia &lt;code&gt;:later 30s&lt;/code&gt; przeniesie nas w czasie 30 sekund później,
+oczywiście Vim nie jest w stanie przewidzieć co zrobimy za 30 sekund, ale
+w przypadku kiedy wcześniej użyjemy komendy &lt;code&gt;:earlier 1m&lt;/code&gt; ma to sens.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:later 30s
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Z pomocy &lt;code&gt;:help later&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:later {count}		Go to newer text state {count} times.
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;:later {N}s		Go to newer text state about {N} seconds later.
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;:later {N}m		Go to newer text state about {N} minutes later.
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;:later {N}h		Go to newer text state about {N} hours later.
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;:later {N}d		Go to newer text state about {N} days later.
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;:later {N}f		Go to newer text state {N} file writes later.
+&lt;span class=&#34;ln&#34;&gt;8&lt;/span&gt;			When at the state of the last file write, &amp;#34;:later 1f&amp;#34;
+&lt;span class=&#34;ln&#34;&gt;9&lt;/span&gt;			will go to the newest text state.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
     <item>
@@ -167,9 +721,16 @@ Użycie tych dwóch poleceń bez podania w dodatkowym parametrze jednostki czasu
       <pubDate>Sat, 24 Oct 2020 14:28:33 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/vim-wlaczenie-pluginu-dla-wybranych-typow-plikow/</guid>
-      <description>Dla menadżera pluginów Plug składnia wyląda w ten sposób
-1Plug &amp;#39;davidhalter/jedi-vim&amp;#39;, { &amp;#39;for&amp;#39;: &amp;#39;python&amp;#39; }Możemy też uruchomiać plugin dla wielu typów plików
-1Plug &amp;#39;kovisoft/paredit&amp;#39;, { &amp;#39;for&amp;#39;: [&amp;#39;clojure&amp;#39;, &amp;#39;scheme&amp;#39;] }Menadżer pluginów Plug jest dostępny na stronie https://github.com/junegunn/vim-plug</description>
+      <description>
+        
+          &lt;p&gt;Dla menadżera pluginów Plug składnia wyląda w ten sposób&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Plug&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;davidhalter/jedi-vim&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; { &lt;span class=&#34;s1&#34;&gt;&amp;#39;for&amp;#39;&lt;/span&gt;: &lt;span class=&#34;s1&#34;&gt;&amp;#39;python&amp;#39;&lt;/span&gt; }&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Możemy też uruchomiać plugin dla wielu typów plików&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Plug&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;kovisoft/paredit&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; { &lt;span class=&#34;s1&#34;&gt;&amp;#39;for&amp;#39;&lt;/span&gt;: [&lt;span class=&#34;s1&#34;&gt;&amp;#39;clojure&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;scheme&amp;#39;&lt;/span&gt;] }&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Menadżer pluginów Plug jest dostępny na stronie &lt;a href=&#34;https://github.com/junegunn/vim-plug&#34;&gt;https://github.com/junegunn/vim-plug&lt;/a&gt;&lt;/p&gt;
+
+        
+      </description>
     </item>
     
     <item>
@@ -178,9 +739,47 @@ Użycie tych dwóch poleceń bez podania w dodatkowym parametrze jednostki czasu
       <pubDate>Sat, 24 Oct 2020 14:23:52 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/vim-kompilacja-ze-zrodel/</guid>
-      <description>Pobranie aktualnej wersji z repozytorium git
-1$ git clone https://github.com/vim/vim Skrypt do kompilacji.
-1#!/bin/env bash 2 3git pull 4 5make distclean 6 7./configure --prefix=/usr/local \ 8 --enable-python3interp=&amp;#39;dynamic&amp;#39; \ 9 --with-python3-command=&amp;#39;python3&amp;#39; \ 10 --with-x \ 11 --enable-gui=gtk3 \ 12 --enable-fontset \ 13 --enable-xim \ 14 --enable-gpm \ 15 --enable-acl \ 16 --enable-multibyte \ 17 --with-features=huge \ 18 --enable-cscope \ 19 --enable-luainterp=&amp;#39;dynamic&amp;#39; \ 20 --with-compiledby=&amp;#39;MOHDUR&amp;#39; | tee kompiluj.log 21 22# echo 23# read -p &amp;#34;Naciśnij [ENTER]&amp;#34; 24 25make 26sudo make install 27 28which ntfy &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 29if [ &amp;#34;$?</description>
+      <description>
+        
+          &lt;p&gt;Pobranie aktualnej wersji z repozytorium git&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ git clone https://github.com/vim/vim
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Skrypt do kompilacji.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/env bash
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;git pull
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;make distclean
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;./configure --prefix&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/usr/local &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  --enable-python3interp&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;dynamic&amp;#39;&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  --with-python3-command&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;python3&amp;#39;&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  --with-x &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  --enable-gui&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;gtk3 &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  --enable-fontset &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  --enable-xim &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  --enable-gpm &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;15&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  --enable-acl &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;16&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  --enable-multibyte &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;17&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  --with-features&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;huge &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;18&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  --enable-cscope &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;19&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  --enable-luainterp&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;dynamic&amp;#39;&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;20&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  --with-compiledby&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;MOHDUR&amp;#39;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; tee kompiluj.log
+&lt;span class=&#34;ln&#34;&gt;21&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;22&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# echo&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;23&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# read -p &amp;#34;Naciśnij [ENTER]&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;24&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;25&lt;/span&gt;make
+&lt;span class=&#34;ln&#34;&gt;26&lt;/span&gt;sudo make install
+&lt;span class=&#34;ln&#34;&gt;27&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;28&lt;/span&gt;which ntfy &amp;gt; /dev/null 2&amp;gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;29&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$?&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;30&lt;/span&gt;    ntfy send &lt;span class=&#34;s2&#34;&gt;&amp;#34;Kompilacja zakończona&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;31&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;32&lt;/span&gt;    notify-send &lt;span class=&#34;s2&#34;&gt;&amp;#34;Kompilacja zakończona&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;33&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
     <item>
@@ -189,11 +788,74 @@ Użycie tych dwóch poleceń bez podania w dodatkowym parametrze jednostki czasu
       <pubDate>Sat, 24 Oct 2020 13:46:08 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/vim-obiekty-tekstowe/</guid>
-      <description>Obiekt tekstowy to blok tekstu, obiektem może być wyraz, paragraf czy tekst pomiędzy nawiasami. Więcej na temat obiektów tekstowych w pomocy
- http://vimdoc.sourceforge.net/htmldoc/motion.html#text-objects http://vimdoc.sourceforge.net/htmldoc/motion.html#operator  Obiekty tekstowe działają również w trybie VISUAL
-Vim pozwala na tworzenie własnych obiektów tekstowych, dzięki czemu jest sporo pluginów rozszerzających te wbudowane. Pluginem rozszerzającym obiekty tekstowe jest np. plugin Target - https://github.com/wellle/targets.vim
-Wbudowane obiekty tekstowe
-1w - wyraz 2W - wyraz, który nie jest oddzielony spacją np.</description>
+      <description>
+        
+          &lt;p&gt;Obiekt tekstowy to blok tekstu, obiektem może być wyraz, paragraf czy tekst
+pomiędzy nawiasami. Więcej na temat obiektów tekstowych w pomocy&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://vimdoc.sourceforge.net/htmldoc/motion.html#text-objects&#34;&gt;http://vimdoc.sourceforge.net/htmldoc/motion.html#text-objects&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://vimdoc.sourceforge.net/htmldoc/motion.html#operator&#34;&gt;http://vimdoc.sourceforge.net/htmldoc/motion.html#operator&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Obiekty tekstowe działają również w trybie &lt;strong&gt;VISUAL&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Vim pozwala na tworzenie własnych obiektów tekstowych, dzięki czemu jest sporo
+pluginów rozszerzających te wbudowane. Pluginem rozszerzającym obiekty
+tekstowe jest np. plugin Target - &lt;a href=&#34;https://github.com/wellle/targets.vim&#34;&gt;https://github.com/wellle/targets.vim&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Wbudowane obiekty tekstowe&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;w - wyraz
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;W - wyraz, który nie jest oddzielony spacją np. &amp;#39;text.wyraz&amp;#39;
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;s - zdanie
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;p - paragraf
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;b - blok zawarty w nawiasach () zamiennie można użyć ( lub )
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;B - blok zawarty w nawiasach {} zamiennie można użyć { lub }
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;t - blok zawarty w tagach typu &amp;lt;tag&amp;gt; &amp;lt;/tag&amp;gt;
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;&amp;lt; - blok zawarty w nawiasach &amp;lt;&amp;gt;
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;[ - blok zawarty w nawiasach []
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;&amp;#34; - blok zawarty pomiędzy znakami &amp;#34;
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;&amp;#39; - blok zawarty pomiędzy znakami &amp;#39;
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;` - blok zawarty pomiędzy znakami `
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Teraz żeby z nimi pracować należy użyć komendy np. &lt;code&gt;d&lt;/code&gt; czy &lt;code&gt;c&lt;/code&gt; istnieje jeszcze
+dodatkowy znak &lt;code&gt;i&lt;/code&gt; lub &lt;code&gt;a&lt;/code&gt; oznaczający zaznaczenie wewnątrz lub na zewnątrz
+obiektu tekstowego.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;aw&lt;/code&gt; - wyraz zawierający spacje go otaczające
+&lt;code&gt;iw&lt;/code&gt; - wyraz bez spacji&lt;/p&gt;
+&lt;p&gt;Kilka przykładów:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;komenda&lt;/th&gt;
+&lt;th&gt;opis&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;d4aw&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;usunięcie 4 wyrazów&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;cis&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;usuwa zdanie i przechodzi do trybu wprowadzania&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;di(&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;usuwa blok zawarty pomiędzy znakami &lt;code&gt;(&lt;/code&gt; i &lt;code&gt;)&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;da(&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;usuwa blok zawarty pomiędzy nawiasami wraz z nimi&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;yip&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;kopiuje paragraf&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;vip&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;zaznacza paragraf&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+        
+      </description>
     </item>
     
     <item>
@@ -202,9 +864,46 @@ Wbudowane obiekty tekstowe
       <pubDate>Sat, 24 Oct 2020 13:41:24 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/vim-dzia%C5%82ania-arytmetyczne/</guid>
-      <description>Zwiększanie, zmniejszanie liczby W trybie NORMAL przechodzimy kursorem na liczbę następnie
-   skrót opis     Ctrl-a zwiększa o 1   Ctrl-x zmniejsza o 1    Działania matematyczne w trybie komend W trybie COMMAND uruchamiamy sekwencje Ctrl-r + = następnie wprowadzamy działanie np. 2+2
-1:Ctrl-r = 2+2 2:4 Wstawienie wyniku działania matematycznego 1:put =(2+2)*2 Wstawienie zakresu liczb w kolumnie 1:put =range(11,15) wynikiem będzie lista liczb od 11 do 15</description>
+      <description>
+        
+          &lt;h2 id=&#34;zwiększanie-zmniejszanie-liczby&#34;&gt;Zwiększanie, zmniejszanie liczby&lt;/h2&gt;
+&lt;p&gt;W trybie NORMAL przechodzimy kursorem na liczbę następnie&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;skrót&lt;/th&gt;
+&lt;th&gt;opis&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl-a&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;zwiększa o 1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl-x&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;zmniejsza o 1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;działania-matematyczne-w-trybie-komend&#34;&gt;Działania matematyczne w trybie komend&lt;/h2&gt;
+&lt;p&gt;W trybie COMMAND uruchamiamy sekwencje &lt;code&gt;Ctrl-r&lt;/code&gt; + &lt;code&gt;=&lt;/code&gt; następnie wprowadzamy
+działanie np. &lt;code&gt;2+2&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:Ctrl-r = 2+2
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;:4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;wstawienie-wyniku-działania-matematycznego&#34;&gt;Wstawienie wyniku działania matematycznego&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:put =(2+2)*2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;wstawienie-zakresu-liczb-w-kolumnie&#34;&gt;Wstawienie zakresu liczb w kolumnie&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:put =range(11,15)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;wynikiem będzie lista liczb od 11 do 15&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;11
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;12
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;13
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;14
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;15
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
     <item>
@@ -213,10 +912,32 @@ Wbudowane obiekty tekstowe
       <pubDate>Thu, 22 Oct 2020 23:50:24 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/vim-wstawienie-makietki/</guid>
-      <description>Funkcja do działania wymaga pluginu fzf.vim https://github.com/junegunn/fzf.vim
-Instalacja za pomocą menadżera vim-plug https://github.com/junegunn/vim-plug
-1Plug &amp;#39;junegunn/fzf&amp;#39;, { &amp;#39;do&amp;#39;: { -&amp;gt; fzf#install() } }2Plug &amp;#39;junegunn/fzf.vim&amp;#39;Katalog z makietkami ustawiamy w zmiennej g:templates_dir
-W funkcji s:read_template_into_buffer(template) możemy wprowadzić jedną modyfikację, jako, że makietek używa się do wstawienia typowej zawartości nagłówka pliku, to funkcja wstawia makietkę na początku pliku, za to odpowiedzialna jest linia (4) execute &#39;0r &#39;.g:templates_dir.&#39;/&#39;.a:template, zmieniając w niej 0r na .r, makietka będzie wstawiana w bieżącej linii zamiast na początku pliku.</description>
+      <description>
+        
+          &lt;p&gt;Funkcja do działania wymaga pluginu &lt;code&gt;fzf.vim&lt;/code&gt; &lt;a href=&#34;https://github.com/junegunn/fzf.vim&#34;&gt;https://github.com/junegunn/fzf.vim&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Instalacja za pomocą menadżera &lt;code&gt;vim-plug&lt;/code&gt; &lt;a href=&#34;https://github.com/junegunn/vim-plug&#34;&gt;https://github.com/junegunn/vim-plug&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Plug&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;junegunn/fzf&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; { &lt;span class=&#34;s1&#34;&gt;&amp;#39;do&amp;#39;&lt;/span&gt;: { &lt;span class=&#34;p&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;fzf&lt;/span&gt;#&lt;span class=&#34;nx&#34;&gt;install&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; } }&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Plug&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;junegunn/fzf.vim&amp;#39;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Katalog z makietkami ustawiamy w zmiennej &lt;code&gt;g:templates_dir&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;W funkcji &lt;code&gt;s:read_template_into_buffer(template)&lt;/code&gt; możemy wprowadzić jedną modyfikację,
+jako, że makietek używa się do wstawienia typowej zawartości nagłówka pliku, to
+funkcja wstawia makietkę na początku pliku, za to odpowiedzialna jest linia (4)
+&lt;code&gt;execute &#39;0r &#39;.g:templates_dir.&#39;/&#39;.a:template&lt;/code&gt;, zmieniając w niej &lt;code&gt;0r&lt;/code&gt; na &lt;code&gt;.r&lt;/code&gt;, makietka
+będzie wstawiana w bieżącej linii zamiast na początku pliku.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;g&lt;/span&gt;:&lt;span class=&#34;nx&#34;&gt;templates_dir&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;~/.vim/templates&amp;#39;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;!&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;s&lt;/span&gt;:&lt;span class=&#34;nx&#34;&gt;read_template_into_buffer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;template&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;execute&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;0r &amp;#39;&lt;/span&gt;.&lt;span class=&#34;nx&#34;&gt;g&lt;/span&gt;:&lt;span class=&#34;nx&#34;&gt;templates_dir&lt;/span&gt;.&lt;span class=&#34;s1&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt;.&lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt;:&lt;span class=&#34;nx&#34;&gt;template&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;endfunction&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;command&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;!&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;bang&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nargs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;* &lt;span class=&#34;nx&#34;&gt;LoadTemplate&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;call&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;fzf&lt;/span&gt;#&lt;span class=&#34;nx&#34;&gt;run&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;{&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;    \   &lt;span class=&#34;s1&#34;&gt;&amp;#39;source&amp;#39;&lt;/span&gt;: &lt;span class=&#34;s1&#34;&gt;&amp;#39;ls -1 &amp;#39;&lt;/span&gt;.&lt;span class=&#34;nx&#34;&gt;g&lt;/span&gt;:&lt;span class=&#34;nx&#34;&gt;templates_dir&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;    \   &lt;span class=&#34;s1&#34;&gt;&amp;#39;down&amp;#39;&lt;/span&gt;: &lt;span class=&#34;s1&#34;&gt;&amp;#39;20%&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;    \   &lt;span class=&#34;s1&#34;&gt;&amp;#39;sink&amp;#39;&lt;/span&gt;: &lt;span class=&#34;k&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;sid&amp;gt;read_template_into_buffer&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;    \ }&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
     <item>
@@ -225,10 +946,25 @@ W funkcji s:read_template_into_buffer(template) możemy wprowadzić jedną modyf
       <pubDate>Thu, 22 Oct 2020 23:37:27 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/vim-lista-projekt%C3%B3w-i-fzf/</guid>
-      <description>Funkcja do działania wymaga pluginu fzf.vim https://github.com/junegunn/fzf.vim
-Instalacja za pomocą menadżera vim-plug https://github.com/junegunn/vim-plug
-1Plug &amp;#39;junegunn/fzf&amp;#39;, { &amp;#39;do&amp;#39;: { -&amp;gt; fzf#install() } }2Plug &amp;#39;junegunn/fzf.vim&amp;#39;Dodajemy nową komendę FZFProj, która przeszukuje listę g:proj.
-1let g:proj = [&amp;#39;~/git/&amp;#39;,2 \ &amp;#39;~/git/github&amp;#39;,3 \ &amp;#39;~/src&amp;#39;]45command! FZFProj call fzf#run({6 \ &amp;#39;source&amp;#39;: g:proj,7 \ &amp;#39;sink&amp;#39;: &amp;#39;e&amp;#39;,8 \ &amp;#39;options&amp;#39;: &amp;#39;-m -x +s&amp;#39;,9 \ &amp;#39;down&amp;#39;: &amp;#39;20%&amp;#39;})</description>
+      <description>
+        
+          &lt;p&gt;Funkcja do działania wymaga pluginu fzf.vim &lt;a href=&#34;https://github.com/junegunn/fzf.vim&#34;&gt;https://github.com/junegunn/fzf.vim&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Instalacja za pomocą menadżera vim-plug &lt;a href=&#34;https://github.com/junegunn/vim-plug&#34;&gt;https://github.com/junegunn/vim-plug&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Plug&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;junegunn/fzf&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; { &lt;span class=&#34;s1&#34;&gt;&amp;#39;do&amp;#39;&lt;/span&gt;: { &lt;span class=&#34;p&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;fzf&lt;/span&gt;#&lt;span class=&#34;nx&#34;&gt;install&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; } }&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Plug&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;junegunn/fzf.vim&amp;#39;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Dodajemy nową komendę &lt;code&gt;FZFProj&lt;/code&gt;, która przeszukuje listę &lt;code&gt;g:proj&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;g&lt;/span&gt;:&lt;span class=&#34;nx&#34;&gt;proj&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; [&lt;span class=&#34;s1&#34;&gt;&amp;#39;~/git/&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;            \ &lt;span class=&#34;s1&#34;&gt;&amp;#39;~/git/github&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;            \ &lt;span class=&#34;s1&#34;&gt;&amp;#39;~/src&amp;#39;&lt;/span&gt;]&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;command&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;!&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;FZFProj&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;call&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;fzf&lt;/span&gt;#&lt;span class=&#34;nx&#34;&gt;run&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;{&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;    \  &lt;span class=&#34;s1&#34;&gt;&amp;#39;source&amp;#39;&lt;/span&gt;:  &lt;span class=&#34;nx&#34;&gt;g&lt;/span&gt;:&lt;span class=&#34;nx&#34;&gt;proj&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;    \  &lt;span class=&#34;s1&#34;&gt;&amp;#39;sink&amp;#39;&lt;/span&gt;:    &lt;span class=&#34;s1&#34;&gt;&amp;#39;e&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;    \  &lt;span class=&#34;s1&#34;&gt;&amp;#39;options&amp;#39;&lt;/span&gt;: &lt;span class=&#34;s1&#34;&gt;&amp;#39;-m -x +s&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;    \  &lt;span class=&#34;s1&#34;&gt;&amp;#39;down&amp;#39;&lt;/span&gt;:    &lt;span class=&#34;s1&#34;&gt;&amp;#39;20%&amp;#39;&lt;/span&gt;}&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
     <item>
@@ -237,9 +973,163 @@ Instalacja za pomocą menadżera vim-plug https://github.com/junegunn/vim-plug
       <pubDate>Wed, 21 Oct 2020 21:22:56 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/vim-praca-z-pow%C5%82ok%C4%85-systemow%C4%85/</guid>
-      <description>Edytor Vim potrafi korzystać z powłoki systemowej za pomocą polecenia :r ! czy też !. Polecenie r! pozwala odczytać standardowe wyjście polecenia i wstawić je do bufora. Polecenie ! po prostu wykonuje polecenie systemowe.
-Wstawienie wyjścia polecenia systemowego do bufora Polecenie ls -alh, wyświetlające wszystkie pliki w bieżącym katalogu, jednocześnie ustawia cztery kolumny w odpowiedniej kolejności: nazwa, rozmiar, data, godzina.
-1:r!ls -alh | awk &amp;#39;{ print &amp;#34; &amp;#34;, $8, &amp;#34; &amp;#34;, $5, &amp;#34; &amp;#34;, $6, &amp;#34; &amp;#34;, $7}&amp;#39; | column -t 2.</description>
+      <description>
+        
+          &lt;p&gt;Edytor Vim potrafi korzystać z powłoki systemowej za pomocą polecenia &lt;code&gt;:r !&lt;/code&gt; czy
+też &lt;code&gt;!.&lt;/code&gt; Polecenie &lt;code&gt;r!&lt;/code&gt; pozwala odczytać standardowe wyjście polecenia
+i wstawić je do bufora. Polecenie ! po prostu wykonuje polecenie systemowe.&lt;/p&gt;
+&lt;h2 id=&#34;wstawienie-wyjścia-polecenia-systemowego-do-bufora&#34;&gt;Wstawienie wyjścia polecenia systemowego do bufora&lt;/h2&gt;
+&lt;p&gt;Polecenie &lt;code&gt;ls -alh&lt;/code&gt;, wyświetlające wszystkie pliki w bieżącym katalogu,
+jednocześnie ustawia cztery kolumny w odpowiedniej kolejności: nazwa, rozmiar,
+data, godzina.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;:r!ls -alh | awk &amp;#39;{ print &amp;#34; &amp;#34;, $8, &amp;#34; &amp;#34;, $5, &amp;#34; &amp;#34;, $6, &amp;#34; &amp;#34;, $7}&amp;#39; | column -t
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;.                  4,0K  06-29  14:30
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;..                 4,0K  06-29  13:21
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;_config.yml        1,6K  06-29  13:35
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;db.json            280K  06-29  19:42
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;drafts             12K   07-03  15:07
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;.git               4,0K  07-03  17:45
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;.gitignore         65    06-29  10:07
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;.gitlab-ci.yml     194   06-29  10:07
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;node_modules       44K   06-29  10:07
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;package.json       484   06-29  10:07
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;package-lock.json  134K  06-29  10:07
+&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;public             4,0K  06-29  14:45
+&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;README.md          2,8K  06-29  10:07
+&lt;span class=&#34;ln&#34;&gt;15&lt;/span&gt;scaffolds          4,0K  06-29  10:07
+&lt;span class=&#34;ln&#34;&gt;16&lt;/span&gt;source             4,0K  06-29  10:21
+&lt;span class=&#34;ln&#34;&gt;17&lt;/span&gt;themes             4,0K  06-29  10:47
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Podobne polecenie jak wyżej z tą różnicą, że listuje on plik, który właśnie
+edytuję. Jest on wskazany za pomocą znaku &lt;code&gt;%&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:r!ls -l % | awk &amp;#39;{ print &amp;#34; &amp;#34;, $8, &amp;#34; &amp;#34;, $5, &amp;#34; &amp;#34;, $6, &amp;#34; &amp;#34;, $7}&amp;#39; | column -t
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;source/_posts/Vim_praca_z_powloka_systemowa.md  929  07-03  18:00
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Teraz użyjemy formatowania za pomocą &lt;code&gt;awk&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;:r!ls -alh  | awk {&amp;#39;printf (&amp;#34;\%20s\t\%6s\%8s\%8s\n&amp;#34;, $8, $5, $6, $7)&amp;#39;}
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;                   .	  4,0K   06-29   14:30
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;                  ..	  4,0K   06-29   13:21
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;         _config.yml	  1,6K   06-29   13:35
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;             db.json	  280K   06-29   19:42
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;              drafts	   12K   07-03   15:07
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;                .git	  4,0K   07-03   17:45
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;          .gitignore	    65   06-29   10:07
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;      .gitlab-ci.yml	   194   06-29   10:07
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;        node_modules	   44K   06-29   10:07
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;        package.json	   484   06-29   10:07
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;   package-lock.json	  134K   06-29   10:07
+&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;              public	  4,0K   06-29   14:45
+&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;           README.md	  2,8K   06-29   10:07
+&lt;span class=&#34;ln&#34;&gt;15&lt;/span&gt;           scaffolds	  4,0K   06-29   10:07
+&lt;span class=&#34;ln&#34;&gt;16&lt;/span&gt;              source	  4,0K   06-29   10:21
+&lt;span class=&#34;ln&#34;&gt;17&lt;/span&gt;              themes	  4,0K   06-29   10:47
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;W ramach ćwiczeń z &lt;code&gt;awk&lt;/code&gt; jeszcze jedno rozwiązanie&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;:r!ls -alh | awk -v OFS=&amp;#39;\t&amp;#39; &amp;#39;{ print $8, $5, $6, $7 }&amp;#39; | column -t
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;.                  4,0K  06-29  14:30
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;..                 4,0K  06-29  13:21
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;_config.yml        1,6K  06-29  13:35
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;db.json            280K  06-29  19:42
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;drafts             12K   07-03  15:07
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;.git               4,0K  07-03  17:45
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;.gitignore         65    06-29  10:07
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;.gitlab-ci.yml     194   06-29  10:07
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;node_modules       44K   06-29  10:07
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;package.json       484   06-29  10:07
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;package-lock.json  134K  06-29  10:07
+&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;public             4,0K  06-29  14:45
+&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;README.md          2,8K  06-29  10:07
+&lt;span class=&#34;ln&#34;&gt;15&lt;/span&gt;scaffolds          4,0K  06-29  10:07
+&lt;span class=&#34;ln&#34;&gt;16&lt;/span&gt;source             4,0K  06-29  10:21
+&lt;span class=&#34;ln&#34;&gt;17&lt;/span&gt;themes             4,0K  06-29  10:47
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Kolejne polecenie z użyciem znaków specjalnych takich jak &lt;code&gt;%&lt;/code&gt;. W przypadku kiedy
+trzeba będzie użyć znaku &lt;code&gt;%&lt;/code&gt; należy go poprzedzić znakiem &lt;code&gt;\&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:r!date +\%F_\%T
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;2018-07-03_18:14:15
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Sprawdźmy ile wierszy ma nasz plik&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:r!wc -l % | cut -f 1 -d &amp;#39; &amp;#39;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;95
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Pobranie treści strony, używając &lt;code&gt;w3m&lt;/code&gt;, przeważnie strona będzie zawierała
+różnego rodzaju niepotrzebne informacje i trzeba będzie je usunąć.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:r!w3m https://sdym.gitlab.io/2018/07/03/Vim_uruchomienie_polecenia_z_bufora/
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;-dump
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;Vim uruchomienie polecenia z bufora
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;Notes
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;2018-07-03
+&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;vim
+&lt;span class=&#34;ln&#34;&gt;8&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;9&lt;/span&gt;...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Możemy też pracować na tekście, który znajduje się w buforze i przekazać go do
+zewnętrznego polecenia. Użyjemy do wyznaczenia linii lub zakresu. Jest to
+przydatne przy szyfrowaniu czy obliczeniu sumy kontrolnej.&lt;/p&gt;
+&lt;p&gt;Tutaj zaszyfrujemy tekst z linii 117 za pomocą &lt;code&gt;gpg&lt;/code&gt; i hasła &lt;code&gt;tajnehaslo&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;Tekst niezaszyfrowany w linii 117
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:117 ! gpg -a -c -
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;-----BEGIN PGP MESSAGE-----
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;jA0EBwMC8MJMzMCMn+Lp0lcBi6dx1AYRx9OE/xXZSHWTpbi2Zy9Rt5AVw2IIjyYS
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;n3hobFW418P8IDXL0swMT7ljaZBFujd/axC18CaGXixXfBgosIW4QcVoVhyOublG
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;2r4YGqJ0Ip8=
+&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;=Dlnx
+&lt;span class=&#34;ln&#34;&gt;8&lt;/span&gt;-----END PGP MESSAGE-----
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Spróbujmy to odszyfrować, tekst odszyfrowany pojawi się w miejscu
+zaszyfrowanego.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:121,127 ! gpg -d -
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;gpg: dane zaszyfrowano za pomocą AES
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;gpg: zaszyfrowane jednym hasłem
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;Tekst niezaszyfrowany w linii 117
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Zaszyfrowanie całego pliku, efektem tego polecenia będzie plik o tej samej
+nazwie z rozszrzeniem &lt;code&gt;asc&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:!gpg -a -c %
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Oczywiście możemy go zaszyfrować i wstawić w tym pliku&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;:r!gpg -a -c -o- %
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;-----BEGIN PGP MESSAGE-----
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;jA0EBwMCmYkAj1CGFMHp0uoBolAcFPD74Z4Qys7dxDbMrZcoOr1Z3ZBF/+w7LJrS
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;rWMOMER02Wz38ih9S0OR3mjwrtU//u9LHrHhVtEH9jnhvuOOM6lbNK7G7bF2wTSw
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;sNsotFws4wlnaXfHrHymN4HXdHI3LH4KSBOcLmbLWs8rDhYZvjEEF65dmuH+pA1t
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;...
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;djhK0ksMfjOe/FS8N3yy4zOPEwhZEbn+F6GvysHELdpfBICkamN3a6cF4xbt8aOy
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;NLS5j4KP7rXMHy1tmaZ8tG1C2vX0MKm79QwFpYfiPyeRcpSR5nLDYggzISPMeg==
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;=Ad2e
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;-----END PGP MESSAGE-----
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Teraz spróbujmy zaszyfrować inny plik i wstawić go w to miejsce&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;:r!gpg -a -c -o- /etc/i3/config
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;-----BEGIN PGP MESSAGE-----
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;jA0EBwMCExkKVsCLc1Lp0usBCPZMKh0ifLBSJ7SFC9jQPOk+03IyJasyZJauhP4U
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;8+PBaaVnbk7J9V+5Ig8gtKLKYMwd53LHgKdOKqMUcC6ou1mR/Bjc0JtHSO0hFpV5
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;9jtMhibT/FNRUv+6iANlCTahDZBtOpR4Gx4ZTJKJQbmKjlRBRs+jPzfihCTA70/C
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;...
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;LBtyCuv0E2b3pWISP8qRo0+QLkecP1sofGnQu9ZUlszCaeL/VBpf8Sz6dm6Vecuh
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;DzEKXmBsQ1Dw
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;=ipfY
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;-----END PGP MESSAGE-----
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Istnieje jeszcze inna możliwość uruchomienia polecenia i wstawienia wyniku do
+bufora jest to skrót &lt;code&gt;!!&lt;/code&gt; efektem czego będzie przejście do trybu komend z już
+wstawioną komendą &lt;code&gt;:.!&lt;/code&gt;, po której możemy wstawić swoje polecenie.&lt;/p&gt;
+&lt;p&gt;Na przykła d &lt;code&gt;!!&lt;/code&gt;, &lt;code&gt;:.!ls -alh&lt;/code&gt; czego efektem będzie wstawienie wyniku
+polecenia &lt;code&gt;ls -alh&lt;/code&gt; do bufora.&lt;/p&gt;
+&lt;p&gt;Kolejnym ciekawym rozwiązaniem jest uruchomienie polecenia znajdującego się
+w treści pliku.&lt;/p&gt;
+&lt;p&gt;Powiedzmy, że mamy plik o treści:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;du -sh /home/$USER
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Przechodzimy do linii gdzie znajduje się polecenie &lt;code&gt;du&lt;/code&gt; i tak jak poprzednio
+wciskamy &lt;code&gt;!!&lt;/code&gt; pojawia się nam &lt;code&gt;:.!&lt;/code&gt; teraz możemy użyć zmiennej &lt;code&gt;$SHELL&lt;/code&gt; do
+wykonania komendy lub innej powłoki systemowej np &lt;code&gt;sh&lt;/code&gt;, całość powinna wyglądać
+tak:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:.!$SHELL
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;lub&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:.!sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Można sobie zmapować skrót, ja używam &lt;code&gt;&amp;lt;leader&amp;gt;e:&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;nnoremap &amp;lt;leader&amp;gt;e !!sh&amp;lt;cr&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;uruchamianie-poleceń-z-edytora-vim&#34;&gt;Uruchamianie poleceń z edytora Vim&lt;/h2&gt;
+&lt;p&gt;Sprawdzenie bieżącego katalogu&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:!pwd
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;/home/user/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Konwersja pliku Markdown do HTML za pomocą &lt;code&gt;pandoc&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:!pandoc % -t html -o %.html
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
     <item>
@@ -248,8 +1138,73 @@ Wstawienie wyjścia polecenia systemowego do bufora Polecenie ls -alh, wyświetl
       <pubDate>Wed, 21 Oct 2020 19:11:09 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/vim-uruchomienie-polecenia-z-bufora/</guid>
-      <description>Do skopiowania treści z bufora (edytowanego pliku) i wprowadzenie go do linii komend edytora Vim, użyjemy mechanizmu rejestrów, więcej na temat rejestrów można dowiedzieć się z pomocy :help registers. Żeby sprawdzić co mamy w rejestrze możemy użyć polecenia :registers lub :display w skrócie :reg i :dis. Standardowo pod znakiem &amp;quot; jest ostatni wpis. Żeby użyć polecenia z rejestru pod numerem 5 wprowadzamy następującą kombinację klawiszy:
-1:Ctrl+r5 Oto przykład użycia polecenia :reg</description>
+      <description>
+        
+          &lt;p&gt;Do skopiowania treści z bufora (edytowanego pliku) i wprowadzenie go do linii
+komend edytora Vim, użyjemy mechanizmu rejestrów, więcej na temat
+rejestrów można dowiedzieć się z pomocy &lt;code&gt;:help registers&lt;/code&gt;. Żeby sprawdzić co mamy
+w rejestrze możemy użyć polecenia &lt;code&gt;:registers&lt;/code&gt; lub &lt;code&gt;:display&lt;/code&gt; w skrócie &lt;code&gt;:reg&lt;/code&gt;
+i &lt;code&gt;:dis&lt;/code&gt;. Standardowo pod znakiem &lt;code&gt;&amp;quot;&lt;/code&gt; jest ostatni wpis. Żeby użyć polecenia
+z rejestru pod numerem 5 wprowadzamy następującą kombinację klawiszy:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:Ctrl+r5
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Oto przykład użycia polecenia &lt;code&gt;:reg&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;:reg
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;--- Rejestry ---
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;&amp;#34;&amp;#34;   2
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;&amp;#34;0   date -u^J
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;&amp;#34;1   ^J
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;&amp;#34;2   ^J
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;&amp;#34;3   ^J
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;&amp;#34;4   #find ~/tmp -type l -ctime +2 | xargs rm -f^J
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;&amp;#34;5   #find ~/tmp -type d -mtime +2 -exec rm -rf &amp;#39;{}&amp;#39; \;^J
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;&amp;#34;6   #find ~/tmp -type f -atime +2 -mtime +2 | xargs rm -f ^J
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;&amp;#34;7   find ~/tmp -type f -atime +2 -mtime +2 -print^J
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;&amp;#34;8   ^J
+&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;&amp;#34;9   wto, 3 lip 2018, 12:12:07 UTC^J
+&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;&amp;#34;-   2
+&lt;span class=&#34;ln&#34;&gt;15&lt;/span&gt;clipboard: error: no buffers
+&lt;span class=&#34;ln&#34;&gt;16&lt;/span&gt;&amp;#34;/   tmp
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Przejdźmy do przykładu użycia rejestrów, powiedzmy że mamy plik o treści:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;date -u
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;i chcemy wykonać polecenie &lt;code&gt;date -u&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:!date -u
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Najpierw musimy skopiować linię zawierającą polecenie za pomocą skrótu &lt;code&gt;Y&lt;/code&gt;,
+następnie przechodzimy do wprowadzania komend:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Po wejściu w tryb komend wprowadzamy znak &lt;code&gt;!&lt;/code&gt;, który mówi o tym, że wszystko co
+po nim następuje jest poleceniem systemowym. Teraz należy użyć &lt;code&gt;Ctrl+r&lt;/code&gt; a po nim
+wprowadzić znak &lt;code&gt;&amp;quot;&lt;/code&gt;. Czego efektem powinno być automatyczne wprowadzenie
+polecenia w linię komend - &lt;code&gt;:!date -u&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:!&amp;#34;&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:!date -u
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Teraz możemy spróbować wkleić wynik polecenia do bufora&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:r !Ctrl+r&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;czyli&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:r !date -u
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;wynik powinien wyglądać mniej więcej tak:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;wto, 3 lip 2018, 12:13:32 UTC
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;wklejanie-z-rejestru-i-inne-skróty-dla-crtl-r&#34;&gt;Wklejanie z rejestru i inne skróty dla Crtl-r&lt;/h2&gt;
+&lt;p&gt;Przykładowy tekst:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;./configure --enable-ssl --enable-gpgme --notmuch \
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;  --gnutls --enable-gss --sasl --bdb --gdbm \
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;  --kyotocabinet --lmdb --qdbm
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Przechodzimy kursorem do &lt;code&gt;--enable-ssl&lt;/code&gt;, teraz wchodzimy w tryb komend :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;Ctrl-r&amp;gt;&amp;lt;Ctrl-w&amp;gt;&lt;/code&gt; - wkleji do linii komend &lt;code&gt;enable&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;Ctrl-r&amp;gt;&amp;lt;Ctrl-a&amp;gt;&lt;/code&gt; - wkleji &lt;code&gt;--enable-ssl&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;Ctrl-r&amp;gt;&amp;lt;Ctrl-l&amp;gt;&lt;/code&gt; - wkleji całą linię&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;Ctrl-r&amp;gt;&amp;lt;rejestr&amp;gt;&lt;/code&gt; - wkleji zawartość wybranego rejesru &lt;code&gt;:reg&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Więcej informacji można znaleźć w pomocy &lt;code&gt;:h c_ctrl-r&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;zamiana-słowa-pod-kursorem&#34;&gt;Zamiana słowa pod kursorem&lt;/h2&gt;
+&lt;p&gt;Komenda zmieniająca słowo pod kursorem za pomocą &lt;code&gt;&amp;lt;ctrl-r&amp;gt;&amp;lt;ctrl-w&amp;gt;&lt;/code&gt; na słowo foo
+w całym pliku&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:%s/&amp;lt;ctl-r&amp;gt;&amp;lt;ctl-w&amp;gt;/foo/g
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
     <item>
@@ -258,9 +1213,21 @@ Wstawienie wyjścia polecenia systemowego do bufora Polecenie ls -alh, wyświetl
       <pubDate>Wed, 21 Oct 2020 19:05:40 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/vim-wysy%C5%82anie-bie%C5%BC%C4%85cej-linii-do-innego-pliku/</guid>
-      <description>Przy tej operacji użyjemy funkcji writefile oraz getreg, wysłanie bieżącej linii do innego pliku w tym wypadku oznacza usunięcie linii z bieżącego bufora i wklejenie jej do innego pliku.
-W tym wypadku zostanie zmapowana kombinacja klawiszy &amp;lt;leader&amp;gt;sv, która wyśle linię do pliku ~/todo/vim.md.
-1nnoremap &amp;lt;leader&amp;gt;sv :d&amp;lt;cr&amp;gt;:cd ~/todo/&amp;lt;cr&amp;gt;:call writefile(getreg(&amp;#39;@&amp;#39;, 1, 1), &amp;#39;vim.md&amp;#39;, &amp;#39;a&amp;#39;)&amp;lt;cr&amp;gt;:cd %:p:h&amp;lt;cr&amp;gt; Możemy wysłać kilka linii do innego pliku używając trybu VISUAL (Shift+v), także w tym przypadku jest zmapowana ta sama kombinacja klawiszy &amp;lt;leader&amp;gt;sv.</description>
+      <description>
+        
+          &lt;p&gt;Przy tej operacji użyjemy funkcji &lt;code&gt;writefile&lt;/code&gt; oraz &lt;code&gt;getreg&lt;/code&gt;, wysłanie bieżącej
+linii do innego pliku w tym wypadku oznacza usunięcie linii z bieżącego bufora
+i wklejenie jej do innego pliku.&lt;/p&gt;
+&lt;p&gt;W tym wypadku zostanie zmapowana kombinacja klawiszy &lt;code&gt;&amp;lt;leader&amp;gt;sv&lt;/code&gt;, która wyśle
+linię do pliku &lt;code&gt;~/todo/vim.md&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;nnoremap &amp;lt;leader&amp;gt;sv :d&amp;lt;cr&amp;gt;:cd ~/todo/&amp;lt;cr&amp;gt;:call writefile(getreg(&amp;#39;@&amp;#39;, 1, 1), &amp;#39;vim.md&amp;#39;, &amp;#39;a&amp;#39;)&amp;lt;cr&amp;gt;:cd %:p:h&amp;lt;cr&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Możemy wysłać kilka linii do innego pliku używając trybu VISUAL (&lt;code&gt;Shift+v&lt;/code&gt;),
+także w tym przypadku jest zmapowana ta sama kombinacja klawiszy &lt;code&gt;&amp;lt;leader&amp;gt;sv&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;vmap &amp;lt;leader&amp;gt;sv :d&amp;lt;cr&amp;gt;:cd ~/todo/&amp;lt;cr&amp;gt;:call writefile(getreg(&amp;#39;@&amp;#39;, 1, 1), &amp;#39;vim.md&amp;#39;, &amp;#39;a&amp;#39;)&amp;lt;cr&amp;gt;:cd %:p:h&amp;lt;cr&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;PS. Standardowo w edytorze Vim &lt;code&gt;&amp;lt;leader&amp;gt;&lt;/code&gt; to klawisz &lt;code&gt;\&lt;/code&gt;&lt;/p&gt;
+
+        
+      </description>
     </item>
     
   </channel>

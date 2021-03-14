@@ -12,8 +12,72 @@
       <pubDate>Sat, 24 Oct 2020 19:53:23 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/zabezpieczenie-kod%C3%B3w-jednorazowych-kluczem-pgp/</guid>
-      <description>Kody jednorazowe czyli One Time Password (OTP) służą jako dodatkowe zabezpieczenie np. konta e-mail. Do generowania kodów przeważnie używa się aplikacji na telefon typu Google Authenticator. Do wygenerowania kodu OTP jest potrzebny tajny kod w postaci ciągu znaków Base32 lub Hex.
-W systemmie Linux istnieje takie narzędzie jak oathtool, jednak za każdym razem trzeba podać tajny kod, wię jest to dość uciążliwe. Dlatego do przechowywania kodów użyjemy programu pass, który potrafi szyfrować hasła za pomocą klucza PGP.</description>
+      <description>
+        
+          &lt;p&gt;Kody jednorazowe czyli One Time Password (OTP) służą jako dodatkowe
+zabezpieczenie np. konta e-mail. Do generowania kodów przeważnie używa się
+aplikacji na telefon typu Google Authenticator. Do wygenerowania kodu OTP
+jest potrzebny tajny kod w postaci ciągu znaków Base32 lub Hex.&lt;/p&gt;
+&lt;p&gt;W systemmie Linux istnieje takie narzędzie jak &lt;code&gt;oathtool&lt;/code&gt;, jednak za każdym
+razem trzeba podać tajny kod, wię jest to dość uciążliwe. Dlatego do
+przechowywania kodów użyjemy programu &lt;code&gt;pass&lt;/code&gt;, który potrafi szyfrować hasła
+za pomocą klucza PGP.&lt;/p&gt;
+&lt;p&gt;Instalacja niezbędnych programów&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;dnf install oathtool gnupg2 pass fzf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Jeśli posiadamy już klucz PGP możemy sprawdzić jego nazwę oraz jego ID w innym
+przypadku należy wygenerować klucz PGP za pomocą polecenia
+&lt;code&gt;gpg2 --full-generate-key&lt;/code&gt;. Proces generowania klucza jest opisany na stronie
+&lt;a href=&#34;https://sebmd.github.io/posts/generowanie-klucza-gnupg-pgp/&#34;&gt;https://sebmd.github.io/posts/generowanie-klucza-gnupg-pgp/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Sprawdźmy jakie posiadamy klucze za pomocą polecenia &lt;code&gt;gpg2 --list-secret-keys&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;gpg2 --list-secret-keys
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;/home/testowy/.gnupg/pubring.kbx
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;--------------------------------
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;sec   rsa2048 2019-04-19 [SC]
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;      4E70814B987ECB1AC675A5BD9B76BB5DDC8ADBE0
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;uid    [   absolutne   ] testowy (komentarz) &amp;lt;testowy@example.com&amp;gt;
+&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;ssb   rsa2048 2019-04-19 [E]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Inicjalizacja programu &lt;code&gt;pass&lt;/code&gt;, wymaga podania ID tajnego klucza PGP&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;pass init 4E70814B987ECB1AC675A5BD9B76BB5DDC8ADBE0
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;mkdir: utworzony katalog &amp;#39;/home/testowy/.password-store/&amp;#39;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;Password store initialized for 4E70814B987ECB1AC675A5BD9B76BB5DDC8ADBE0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Jak widać dane będą przechowywane w katalogu &lt;code&gt;~/.password-store/&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Dodanie konta do &lt;code&gt;pass&lt;/code&gt; najlepiej poprzedzić jakimś wyrazem np. &lt;code&gt;otp&lt;/code&gt; spowoduje to,
+że tajne klucze będą przechowywane w podkatalogu &lt;code&gt;otp&lt;/code&gt;, dzięki czemu można będzie
+łatwiej je znaleźć.&lt;/p&gt;
+&lt;p&gt;Dodanie konta &lt;a href=&#34;mailto:testowy@gmail.com&#34;&gt;testowy@gmail.com&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;pass edit otp/testowy@gmail.com
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Wyświetlenie hasła dla konta &lt;a href=&#34;mailto:testowy@gmail.com&#34;&gt;testowy@gmail.com&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;pass otp/testowy@gmail.com
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;RWNLFJJNKP2B2VS4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Wygenerowanie kodu jednorazowego dla tajnego klucza &lt;code&gt;RWNLFJJNKP2B2VS4&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;oathtool --base32 RWNLFJJNKP2B2VS4 --totp
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;091421
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Teraz złóżmy to wszystko razem:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;oathtool --base32 --totp &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;pass &lt;span class=&#34;s2&#34;&gt;&amp;#34;otp/&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;find ~/.password-store/otp/* -exec basename &lt;span class=&#34;o&#34;&gt;{}&lt;/span&gt; .gpg &lt;span class=&#34;se&#34;&gt;\;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; fzf&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Żeby było jeszcze łatwiej proponuję stworzyć aliasy &lt;code&gt;otp&lt;/code&gt; i &lt;code&gt;otp-add&lt;/code&gt; w pliku &lt;code&gt;~/.bashrc&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;otp&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;oathtool --base32 --totp &amp;#34;$(pass &amp;#34;otp/$(find ~/.password-store/otp/* -exec basename {} .gpg \; | fzf)&amp;#34;)&amp;#34;&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Dla aliasu &lt;code&gt;otp-add&lt;/code&gt; stworzymy funkcję o tej samej nazwie, dodatkową zaletą funkcji
+jest to, że jeśli podamy nazwę konta ze spacjami to zostaną one zastąpione znakiem &lt;code&gt;-&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;function&lt;/span&gt; otp-add&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; -z &lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;        &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;        &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; Podaj nazwę konta.
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;        &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;        &lt;span class=&#34;nv&#34;&gt;nazwa&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$@&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; tr &lt;span class=&#34;s1&#34;&gt;&amp;#39; &amp;#39;&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;-&amp;#39;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;        pass edit otp/&lt;span class=&#34;nv&#34;&gt;$nazwa&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; otp-add&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;otp-add
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;W skrócie działa to tak:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;pass&lt;/code&gt; przechowuje tajne kody zaszyfrowane kluczem PGP&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;oathtool&lt;/code&gt; generuje kody jednorazowe podawane przez &lt;code&gt;pass&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;fzf&lt;/code&gt; ułatwia wyszukiwanie&lt;/li&gt;
+&lt;/ul&gt;
+
+        
+      </description>
     </item>
     
     <item>
@@ -22,9 +86,53 @@ W systemmie Linux istnieje takie narzędzie jak oathtool, jednak za każdym raze
       <pubDate>Sat, 24 Oct 2020 19:17:24 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/vim-szyfrowanie-za-pomoc%C4%85-pgp.md/</guid>
-      <description>Szyfrowanie wybranej linii Tutaj zaszyfrujemy tekst z linii 117 za pomocą gpg i hasła tajnehaslo
-1Tekst niezaszyfrowany w linii 117 1:117 ! gpg -q -a -c - 2-----BEGIN PGP MESSAGE----- 3 4jA0EBwMC8MJMzMCMn+Lp0lcBi6dx1AYRx9OE/xXZSHWTpbi2Zy9Rt5AVw2IIjyYS 5n3hobFW418P8IDXL0swMT7ljaZBFujd/axC18CaGXixXfBgosIW4QcVoVhyOublG 62r4YGqJ0Ip8= 7=Dlnx 8-----END PGP MESSAGE----- Odszyfrowanie Spróbujmy to odszyfrować, tekst odszyfrowany pojawi się w miejscu zaszyfrowanego.
-1:121,127 ! gpg -q -d - 2gpg: dane zaszyfrowano za pomocą AES 3gpg: zaszyfrowane jednym hasłem 4Tekst niezaszyfrowany w linii 117 Zaszyfrowanie całego pliku Zaszyfrowanie całego pliku, efektem tego polecenia będzie plik o tej samej nazwie z rozszrzeniem asc</description>
+      <description>
+        
+          &lt;h2 id=&#34;szyfrowanie-wybranej-linii&#34;&gt;Szyfrowanie wybranej linii&lt;/h2&gt;
+&lt;p&gt;Tutaj zaszyfrujemy tekst z linii 117 za pomocą &lt;code&gt;gpg&lt;/code&gt; i hasła &lt;code&gt;tajnehaslo&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;Tekst niezaszyfrowany w linii 117
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:117 ! gpg -q -a -c -
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;-----BEGIN PGP MESSAGE-----
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;jA0EBwMC8MJMzMCMn+Lp0lcBi6dx1AYRx9OE/xXZSHWTpbi2Zy9Rt5AVw2IIjyYS
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;n3hobFW418P8IDXL0swMT7ljaZBFujd/axC18CaGXixXfBgosIW4QcVoVhyOublG
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;2r4YGqJ0Ip8=
+&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;=Dlnx
+&lt;span class=&#34;ln&#34;&gt;8&lt;/span&gt;-----END PGP MESSAGE-----
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;odszyfrowanie&#34;&gt;Odszyfrowanie&lt;/h2&gt;
+&lt;p&gt;Spróbujmy to odszyfrować, tekst odszyfrowany pojawi się w miejscu
+zaszyfrowanego.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:121,127 ! gpg -q -d -
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;gpg: dane zaszyfrowano za pomocą AES
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;gpg: zaszyfrowane jednym hasłem
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;Tekst niezaszyfrowany w linii 117
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;zaszyfrowanie-całego-pliku&#34;&gt;Zaszyfrowanie całego pliku&lt;/h2&gt;
+&lt;p&gt;Zaszyfrowanie całego pliku, efektem tego polecenia będzie plik o tej samej nazwie
+z rozszrzeniem &lt;code&gt;asc&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:!gpg -q -a -c %
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Oczywiście możemy go zaszyfrować i wstawić w tym pliku&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:r!gpg -q -a -c -o- %
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;-----BEGIN PGP MESSAGE-----
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;jA0EBwMCmYkAj1CGFMHp0uoBolAcFPD74Z4Qys7dxDbMrZcoOr1Z3ZBF/+w7LJrS
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;A3sn0Ak53nELNapZV6jwCnmo434Zb9gD2/HWTrOlHobzwClKOd86Ab+Xjtisky9g
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;...
+&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;NLS5j4KP7rXMHy1tmaZ8tG1C2vX0MKm79QwFpYfiPyeRcpSR5nLDYggzISPMeg==
+&lt;span class=&#34;ln&#34;&gt;8&lt;/span&gt;=Ad2e
+&lt;span class=&#34;ln&#34;&gt;9&lt;/span&gt;-----END PGP MESSAGE-----
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Teraz spróbujmy zaszyfrować inny plik i wstawić go w to miejsce&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:r!gpg -q -a -c -o- /etc/i3/config
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;-----BEGIN PGP MESSAGE-----
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;jA0EBwMCExkKVsCLc1Lp0usBCPZMKh0ifLBSJ7SFC9jQPOk+03IyJasyZJauhP4U
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;...
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;LBtyCuv0E2b3pWISP8qRo0+QLkecP1sofGnQu9ZUlszCaeL/VBpf8Sz6dm6Vecuh
+&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;DzEKXmBsQ1Dw
+&lt;span class=&#34;ln&#34;&gt;8&lt;/span&gt;=ipfY
+&lt;span class=&#34;ln&#34;&gt;9&lt;/span&gt;-----END PGP MESSAGE-----
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
     <item>
@@ -33,9 +141,157 @@ W systemmie Linux istnieje takie narzędzie jak oathtool, jednak za każdym raze
       <pubDate>Sat, 24 Oct 2020 15:52:11 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/generowanie-klucza-gnupg-pgp/</guid>
-      <description>Generowanie klucza PPG za pomocą komendy gpg lub gpg2, gpg --key-gen standardowa skrócona procedura, lepszą opcją jest wygenerowanie klucza za pomoca parametru --full-generate-key
-Pierwsza cześć to pytania o parametry klucza
-1gpg2 --full-generate-key 2gpg (GnuPG) 2.2.13; Copyright (C) 2019 Free Software Foundation, Inc. 3This is free software: you are free to change and redistribute it. 4There is NO WARRANTY, to the extent permitted by law. 5 6gpg: katalog ,,/home/testowy/.gnupg&amp;#39;&amp;#39; utworzony 7gpg: keybox ,,/home/testowy/.</description>
+      <description>
+        
+          &lt;p&gt;Generowanie klucza PPG za pomocą komendy &lt;code&gt;gpg&lt;/code&gt; lub &lt;code&gt;gpg2&lt;/code&gt;, &lt;code&gt;gpg --key-gen&lt;/code&gt;
+standardowa skrócona procedura, lepszą opcją jest wygenerowanie klucza za
+pomoca parametru &lt;code&gt;--full-generate-key&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Pierwsza cześć to pytania o parametry klucza&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;gpg2  --full-generate-key
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;gpg (GnuPG) 2.2.13; Copyright (C) 2019 Free Software Foundation, Inc.
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;This is free software: you are free to change and redistribute it.
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;There is NO WARRANTY, to the extent permitted by law.
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;gpg: katalog ,,/home/testowy/.gnupg&amp;#39;&amp;#39; utworzony
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;gpg: keybox ,,/home/testowy/.gnupg/pubring.kbx&amp;#39;&amp;#39; utworzony
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;Proszę wybrać rodzaj klucza:
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;   (1) RSA i RSA (domyślne) 1
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;   (2) DSA i Elgamala
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;   (3) DSA (tylko do podpisywania)
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;   (4) RSA (tylko do podpisywania)
+&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;Twój wybór? 1
+&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;Klucze RSA będą miały od 1024 do 4096 bitów długości.
+&lt;span class=&#34;ln&#34;&gt;15&lt;/span&gt;Jakiej długości klucz wygenerować? (2048) 2048
+&lt;span class=&#34;ln&#34;&gt;16&lt;/span&gt;Żądana długość klucza to 2048 bitów.
+&lt;span class=&#34;ln&#34;&gt;17&lt;/span&gt;Okres ważności klucza.
+&lt;span class=&#34;ln&#34;&gt;18&lt;/span&gt;         0 = klucz nie ma określonego terminu ważności
+&lt;span class=&#34;ln&#34;&gt;19&lt;/span&gt;      &amp;lt;n&amp;gt;  = termin ważności klucza upływa za n dni
+&lt;span class=&#34;ln&#34;&gt;20&lt;/span&gt;      &amp;lt;n&amp;gt;w = termin ważności klucza upływa za n tygodni
+&lt;span class=&#34;ln&#34;&gt;21&lt;/span&gt;      &amp;lt;n&amp;gt;m = termin ważności klucza upływa za n miesięcy
+&lt;span class=&#34;ln&#34;&gt;22&lt;/span&gt;      &amp;lt;n&amp;gt;y = termin ważności klucza upływa za n lat
+&lt;span class=&#34;ln&#34;&gt;23&lt;/span&gt;Okres ważności klucza? (0) 0
+&lt;span class=&#34;ln&#34;&gt;24&lt;/span&gt;Klucz nie wygaśnie w ogóle
+&lt;span class=&#34;ln&#34;&gt;25&lt;/span&gt;Czy wszystko się zgadza (t/N)? t
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Dalsza cześć to informacje o identyfikacji&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;GnuPG musi utworzyć identyfikator użytkownika do identyfikacji klucza.
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;Imię i nazwisko: testowy
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;Adres poczty elektronicznej: testowy@example.com
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;Komentarz: komentarz
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;Twój identyfikator użytkownika będzie wyglądał tak:
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;    &amp;#34;testowy (komentarz) &amp;lt;testowy@example.com&amp;gt;&amp;#34;
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;Zmienić (I)mię/nazwisko, (K)omentarz, adres (E)mail, przejść (D)alej,
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;czy (W)yjść z programu? d
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Po potwierdzeniu informacji, przejdziemy do podania przepustki (hasła) i
+wygenerowania klucza.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;┌─────────────────────────────────────────────────┐
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;│ Proszę wprowadzić hasło do                      │
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;│ zabezpieczenia swojego nowego klucza            │
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;│                                                 │
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;│ Hasło: ________________________________________ │
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;│                                                 │
+&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;│      &amp;lt;OK&amp;gt;                           &amp;lt;Anuluj&amp;gt;    │
+&lt;span class=&#34;ln&#34;&gt;8&lt;/span&gt;└─────────────────────────────────────────────────┘
+&lt;span class=&#34;ln&#34;&gt;9&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Generowanie klucza&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;Musimy wygenerować dużo losowych bajtów. Dobrym pomysłem aby pomóc komputerowi
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;podczas generowania liczb pierwszych jest wykonywanie w tym czasie innych
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;działań (pisanie na klawiaturze, poruszanie myszką, odwołanie się do dysków);
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;dzięki temu generator liczb losowych ma możliwość zebrania odpowiedniej ilości
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;entropii.
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;Musimy wygenerować dużo losowych bajtów. Dobrym pomysłem aby pomóc komputerowi
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;podczas generowania liczb pierwszych jest wykonywanie w tym czasie innych
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;działań (pisanie na klawiaturze, poruszanie myszką, odwołanie się do dysków);
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;dzięki temu generator liczb losowych ma możliwość zebrania odpowiedniej ilości
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;entropii.
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;gpg: /home/testowy/.gnupg/trustdb.gpg: baza zaufania utworzona
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;gpg: klucz 9B76BB5DDC8ADBE0 został oznaczony jako obdarzony absolutnym zaufaniem.
+&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;gpg: katalog ,,/home/testowy/.gnupg/openpgp-revocs.d&amp;#39;&amp;#39; utworzony
+&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;gpg: certyfikat unieważnienia został zapisany jako ,,/home/testowy/.gnupg/openpgp-revocs.d/4E70
+&lt;span class=&#34;ln&#34;&gt;15&lt;/span&gt;klucz publiczny i prywatny (tajny) zostały utworzone i podpisane.
+&lt;span class=&#34;ln&#34;&gt;16&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;17&lt;/span&gt;pub   rsa2048 2019-04-19 [SC]
+&lt;span class=&#34;ln&#34;&gt;18&lt;/span&gt;      4E70814B987ECB1AC675A5BD9B76BB5DDC8ADBE0
+&lt;span class=&#34;ln&#34;&gt;19&lt;/span&gt;uid                      testowy (komentarz) &amp;lt;testowy@example.com&amp;gt;
+&lt;span class=&#34;ln&#34;&gt;20&lt;/span&gt;sub   rsa2048 2019-04-19 [E]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;lista-kluczy&#34;&gt;Lista kluczy&lt;/h2&gt;
+&lt;h3 id=&#34;lista-kluczy-publicznych&#34;&gt;Lista kluczy publicznych&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;gpg2 --list-keys
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;gpg: sprawdzanie bazy zaufania
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;gpg: marginals needed: 3  completes needed: 1  trust model: pgp
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;gpg: poziom: 0 poprawnych:   1 podpisanych:   0 zaufanie: 0-,0q,0n,0m,0f,1u
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;/home/testowy/.gnupg/pubring.kbx
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;--------------------------------
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;pub   rsa2048 2019-04-19 [SC]
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;      4E70814B987ECB1AC675A5BD9B76BB5DDC8ADBE0
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;uid    [   absolutne   ] testowy (komentarz) &amp;lt;testowy@example.com&amp;gt;
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;sub   rsa2048 2019-04-19 [E]
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;lista-kluczy-tajnych&#34;&gt;Lista kluczy tajnych&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;gpg2 --list-secret-keys
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;/home/testowy/.gnupg/pubring.kbx
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;--------------------------------
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;sec   rsa2048 2019-04-19 [SC]
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;      4E70814B987ECB1AC675A5BD9B76BB5DDC8ADBE0
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;uid    [   absolutne   ] testowy (komentarz) &amp;lt;testowy@example.com&amp;gt;
+&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;ssb   rsa2048 2019-04-19 [E]
+&lt;span class=&#34;ln&#34;&gt;8&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;eksport-klucza-publicznego&#34;&gt;Eksport klucza publicznego&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;gpg2 --export -a testowy
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;-----BEGIN PGP PUBLIC KEY BLOCK-----
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;mQENBFy5vYABCADIeD0thtCgF+PnMxmGkowpCb6aMZ7L4b2O81PQetljx/z0AhmM
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;UmRcxHLcBixrmF6GfSjrL0LDi/XLmsYrDKQLSWrDUTqkR+02zRp8MIT/u7IJQWrr
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;vBuShFisCZpmaObQLVjTnaIn08kMHGjr8NRReo8FSBOsCjqMnDcBRBoyCh/vVJjS
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;acKqYy6Kjo8Bcua2yr8lJL3XYhGJfe5xArZF22PnQ+GXVbYVtnRL6uYTL9Qtk95g
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;nX6IjnnZwKRixfYUC6+CD39agyaw2hn/qga+yo3Cjax4jiv9ExPi3LPAuBuSCe0w
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;...
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;K2MqZRgCaALaoilVy1kV8C4kKMF5dOSfW2/rSrkBDQRcub2AAQgA0ehLzWOeYTZu
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;irZtZeHXZbNfc5kDdpNkbxkSu/gy7vUNY4gQH47r2Zy/i7iZ4CR1siBXPIz9Z4JB
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;zmxDjbff0fbQnI1QxKeZ19eXsYr8B0DyArvIDZiovJVhLfu/wF1guxd1x1TbSE/N
+&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;+C51O2jsLWI72ThKWVo97Mze7c5OpjUkc6RHX9e1ycgV1PbNlBait7rwq9Y+iy67
+&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;hDzDmZDiwIriBxQiL3Xu7HFv4aoNfFFI383kho6fid5mVDwR1yxWGEmaZmXTmhOv
+&lt;span class=&#34;ln&#34;&gt;15&lt;/span&gt;0AQwbxilE3jmzNS8wrRRDzE4IprsdJebJPf/wyA7Esfm/+M5XjOqQg+LxUVwU3Xb
+&lt;span class=&#34;ln&#34;&gt;16&lt;/span&gt;ex1SWDMM2QARAQABiQE2BBgBCAAgFiEETnCBS5h+yxrGdaW9m3a7XdyK2+AFAly5
+&lt;span class=&#34;ln&#34;&gt;17&lt;/span&gt;vYACGwwACgkQm3a7XdyK2+CI9QgAuUcX1rBFV76JyuBmFSLmTHpVAAzirjEqXjej
+&lt;span class=&#34;ln&#34;&gt;18&lt;/span&gt;zP0j0suw0Ej0JvO2a0MzlIdYn/1LhWrFbo856RTLmsxpKY6f3XHjAPeEtpdG2jEz
+&lt;span class=&#34;ln&#34;&gt;19&lt;/span&gt;5+QX4Rg7Sni9kl76bMOOl+9OpkZlnbgSfl0VHEHTmVr6T0K3fXrJ+EVIQN60Au1t
+&lt;span class=&#34;ln&#34;&gt;20&lt;/span&gt;kc1sAG0KmedrvCC4vpjzd9sH1rqigV7UfNlcMz28h14RF7YMzBO/S9CHW7SA5kR1
+&lt;span class=&#34;ln&#34;&gt;21&lt;/span&gt;yHsI8wCosWVb/3AItHMh3K9Nji2HCS3WFwXmIKjBS2Hm2Lgy4YTquw0m9gwtBivi
+&lt;span class=&#34;ln&#34;&gt;22&lt;/span&gt;T28LXFzSNuaG9BudTSxqnOS6CXUdDRgRC9IOvchmGHR9LvEFXA==
+&lt;span class=&#34;ln&#34;&gt;23&lt;/span&gt;=utwF
+&lt;span class=&#34;ln&#34;&gt;24&lt;/span&gt;-----END PGP PUBLIC KEY BLOCK-----
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;eksport-klucza-tajnego&#34;&gt;Eksport klucza tajnego&lt;/h2&gt;
+&lt;p&gt;Do wyeksportwania klucza tajnego będzie potrzebne hasło&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;gpg2 --export-secret-key -a testowy
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;-----BEGIN PGP PRIVATE KEY BLOCK-----
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;lQPGBFy5vYABCADIeD0thtCgF+PnMxmGkowpCb6aMZ7L4b2O81PQetljx/z0AhmM
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;UmRcxHLcBixrmF6GfSjrL0LDi/XLmsYrDKQLSWrDUTqkR+02zRp8MIT/u7IJQWrr
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;vBuShFisCZpmaObQLVjTnaIn08kMHGjr8NRReo8FSBOsCjqMnDcBRBoyCh/vVJjS
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;acKqYy6Kjo8Bcua2yr8lJL3XYhGJfe5xArZF22PnQ+GXVbYVtnRL6uYTL9Qtk95g
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;NuJEZZ+422jTA+HCKDxEsLDLRUqTzSGjPdzMOLPmAEoQvKjba0aZZTb9UTFWs8k+
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;o+WQuHAd//eMEXlznrcGT3fEbGTjXd6KOhpt02+LtuDKSDTudwPQ9oNwgj/KK7q+
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;s0iOMA/Nmfg7NbjYZU6vtSQOiMyZmOOSM2U5W/0IQ6pStMS4vwXZp2qFh7F6GFj/
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;...
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;qy6mSW9ILFueabk1wdYP6tfvu6aYZwyzwSnrSc6iFZT+hsnxwG2z2gff2njHgmmx
+&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;SUmZOzZfLAs4TPn+ZgoWcK61PHYveZ8RLt6CI/Z8RcW4ErXYR+dSzA07QfpbUDnq
+&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;riH54894q/qkm6qT77vp72mWbDqilArJWQJg5Mjtpcmli0bFU2O9Tzl6rBZ8w+GL
+&lt;span class=&#34;ln&#34;&gt;15&lt;/span&gt;eRpiO7yF0T4cStj8CsJoa/UCxlEmWajhQTOx8vRgDCoKKELbIcnNHCW6DjpbBZbQ
+&lt;span class=&#34;ln&#34;&gt;16&lt;/span&gt;CzzYXyQq1sImE1yvZyOJATYEGAEIACAWIQROcIFLmH7LGsZ1pb2bdrtd3Irb4AUC
+&lt;span class=&#34;ln&#34;&gt;17&lt;/span&gt;XLm9gAIbDAAKCRCbdrtd3Irb4Ij1CAC5RxfWsEVXvonK4GYVIuZMelUADOKuMSpe
+&lt;span class=&#34;ln&#34;&gt;18&lt;/span&gt;N6PM/SPSy7DQSPQm87ZrQzOUh1if/UuFasVujznpFMuazGkpjp/dceMA94S2l0ba
+&lt;span class=&#34;ln&#34;&gt;19&lt;/span&gt;MTPn5BfhGDtKeL2SXvpsw46X706mRmWduBJ+XRUcQdOZWvpPQrd9esn4RUhA3rQC
+&lt;span class=&#34;ln&#34;&gt;20&lt;/span&gt;7W2RzWwAbQqZ52u8ILi+mPN32wfWuqKBXtR82VwzPbyHXhEXtgzME79L0IdbtIDm
+&lt;span class=&#34;ln&#34;&gt;21&lt;/span&gt;RHXIewjzAKixZVv/cAi0cyHcr02OLYcJLdYXBeYgqMFLYebYuDLhhOq7DSb2DC0G
+&lt;span class=&#34;ln&#34;&gt;22&lt;/span&gt;K+JPbwtcXNI25ob0G51NLGqc5LoJdR0NGBEL0g69yGYYdH0u8QVc
+&lt;span class=&#34;ln&#34;&gt;23&lt;/span&gt;=GJgF
+&lt;span class=&#34;ln&#34;&gt;24&lt;/span&gt;-----END PGP PRIVATE KEY BLOCK-----
+&lt;span class=&#34;ln&#34;&gt;25&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
   </channel>

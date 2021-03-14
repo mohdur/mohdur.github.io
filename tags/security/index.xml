@@ -12,10 +12,90 @@
       <pubDate>Sat, 24 Oct 2020 19:25:13 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/easy-rsa-openvpn-2-4/</guid>
-      <description>Easy RSA 3 jest ciutkę inne od jego poprzednich wersji, powinieneś to przejść bez większych problemów.
-Zaczynamy od pobrania ostatniej wersji https://github.com/OpenVPN/easy-rsa/releases
-1# cd /etc/openvpn 2# tar zxvf EASY_RSA.tar.gz 3# cd Easy_RSA Skrypt tworzący CA Pierwszy skrypt 01_init tworzy CA
-1#!/bin/bash 2 3if [ $# -ne 1 ]; then 4 echo Podaj jako parametr nazwę certyfikatu dla serwera np. nazwę DNS lub adres IP. 5 exit 6fi 7 8echo Inicjuje PKI 9.</description>
+      <description>
+        
+          &lt;p&gt;Easy RSA 3 jest ciutkę inne od jego poprzednich wersji, powinieneś to przejść
+bez większych problemów.&lt;/p&gt;
+&lt;p&gt;Zaczynamy od pobrania ostatniej wersji &lt;a href=&#34;https://github.com/OpenVPN/easy-rsa/releases&#34;&gt;https://github.com/OpenVPN/easy-rsa/releases&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;# cd /etc/openvpn
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;# tar zxvf EASY_RSA.tar.gz
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;# cd Easy_RSA
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;skrypt-tworzący-ca&#34;&gt;Skrypt tworzący CA&lt;/h2&gt;
+&lt;p&gt;Pierwszy skrypt &lt;code&gt;01_init&lt;/code&gt; tworzy CA&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$#&lt;/span&gt; -ne &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; Podaj jako parametr nazwę certyfikatu dla serwera np. nazwę DNS lub adres IP.
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; Inicjuje PKI
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;./easyrsa init-pki
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; Generuje CA
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;./easyrsa build-ca
+&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; Generuje request dla serwera &lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;15&lt;/span&gt;./easyrsa gen-req &lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt; nopass
+&lt;span class=&#34;ln&#34;&gt;16&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;17&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; Kopiuję plik ./vars
+&lt;span class=&#34;ln&#34;&gt;18&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; ! -e ./vars &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;19&lt;/span&gt;    cp ./vars.example ./vars
+&lt;span class=&#34;ln&#34;&gt;20&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;21&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;22&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; Ustawiam parametry w ./vars
+&lt;span class=&#34;ln&#34;&gt;23&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# Ustawia parametry&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;24&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# set_var EASYRSA_KEY_SIZE        4096&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;25&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# set_var EASYRSA_CRL_DAYS        3650&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;26&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# set_var EASYRSA_DIGEST          &amp;#34;sha512&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;27&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;28&lt;/span&gt;sed -e &lt;span class=&#34;s2&#34;&gt;&amp;#34;/^#\(set_var EASYRSA_KEY_SIZE\)\t2048/s//\1\t4096/&amp;#34;&lt;/span&gt; &amp;lt; ./vars &amp;gt; ./vars_0
+&lt;span class=&#34;ln&#34;&gt;29&lt;/span&gt;sed -e &lt;span class=&#34;s2&#34;&gt;&amp;#34;/^#\(set_var EASYRSA_CRL_DAYS\)\t180/s//\1\t3650/&amp;#34;&lt;/span&gt; &amp;lt; ./vars_0 &amp;gt; ./vars_1
+&lt;span class=&#34;ln&#34;&gt;30&lt;/span&gt;sed -e &lt;span class=&#34;s2&#34;&gt;&amp;#34;/^#\(set_var EASYRSA_DIGEST\)\t\t\&amp;#34;sha256\&amp;#34;/s//\1\t\t\&amp;#34;sha512\&amp;#34;/&amp;#34;&lt;/span&gt; &amp;lt; ./vars_1 &amp;gt; ./vars_2
+&lt;span class=&#34;ln&#34;&gt;31&lt;/span&gt;mv ./vars_2 ./vars
+&lt;span class=&#34;ln&#34;&gt;32&lt;/span&gt;rm ./vars_*
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;generujemy-certyfikat-dla-serwera&#34;&gt;Generujemy certyfikat dla serwera&lt;/h2&gt;
+&lt;p&gt;Drugi skrypt &lt;code&gt;02_gen-server&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$#&lt;/span&gt; -ne &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; Podaj jako parametr nazwę certyfikatu dla serwera np. nazwę DNS lub adres IP.
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;8&lt;/span&gt;./easyrsa sign-req server &lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt; nopass
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;generowanie-crl&#34;&gt;Generowanie CRL&lt;/h2&gt;
+&lt;p&gt;Skrypt &lt;code&gt;04_gen-crl&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;./easyrsa gen-crl
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;generowanie-dh&#34;&gt;Generowanie DH&lt;/h2&gt;
+&lt;p&gt;Skrypt &lt;code&gt;05_gen_dh&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;./easyrsa gen-dh
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# openssl dhparam -out pki/dh.pem 4096&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;generowanie-ta&#34;&gt;Generowanie TA&lt;/h2&gt;
+&lt;p&gt;Skrypt &lt;code&gt;06_gen-ta&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;openvpn --genkey --secret pki/ta.key
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;kopiowanie-plików&#34;&gt;Kopiowanie plików&lt;/h2&gt;
+&lt;p&gt;Skrypt &lt;code&gt;07_copy-files&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; ! -d /etc/openvpn/ssl &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;  mkdir /etc/openvpn/ssl
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;cp pki/ca.crt /etc/openvpn/ssl/
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;cp pki/issued/domena.org.crt /etc/openvpn/ssl/
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;cp pki/private/domena.org.key /etc/openvpn/ssl/
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;cp pki/crl.pem /etc/openvpn/ssl/
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;cp pki/ta.key /etc/openvpn/ssl/
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;cp pki/dh.pem /etc/openvpn/ssl/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
     <item>
@@ -24,11 +104,26 @@ Zaczynamy od pobrania ostatniej wersji https://github.com/OpenVPN/easy-rsa/relea
       <pubDate>Sat, 24 Oct 2020 18:08:03 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/generowanie-hase%C5%82/</guid>
-      <description>Parametr -S to zarodek (salt), który jest generowany za pomocą polecenia pwgen.
-1mkpasswd -m sha-512 -S $(pwgen -n 16 | cut -f 1 -d &amp;#39; &amp;#39;) -s &amp;lt;&amp;lt;&amp;lt; Hasło Wersja z wykorzystaniem urządzenia /dev/urandom
-1$ mkpasswd -m sha-512 -S $(&amp;lt; /dev/urandom tr -cd &amp;#34;[:alnum:]&amp;#34; | head -c${1:-16}; echo) -s &amp;lt;&amp;lt;&amp;lt; hasło 2$6$AnSw5avmi6cwpxzG$bnLa8cWs5FhdDU49jzdyxR4Fw0p3MGWcDLzwOd1x564I4iKJFmNwdq3BgkpBo/fSG1YCYbYMD9eE993GpTRQq0 Generowanie hasła za pomocą OpenSSL
-1openssl rand -base64 36 23WC8BpncVVQyzdHHWlULV1VzW7LnHs0erGIuCHTZ+Zt9YU/t Użycie dd
-1dd if=/dev/urandom bs=10 count=30 | tr -cd &amp;#39;[:alnum:]&amp;#39; 230+0 records in 330+0 records out 4300 bytes (300 B) copied, 0.</description>
+      <description>
+        
+          &lt;p&gt;Parametr &lt;code&gt;-S&lt;/code&gt; to zarodek (salt), który jest generowany za pomocą polecenia
+&lt;code&gt;pwgen&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;mkpasswd -m sha-512 -S $(pwgen -n 16 | cut -f 1 -d &amp;#39; &amp;#39;) -s &amp;lt;&amp;lt;&amp;lt; Hasło
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Wersja z wykorzystaniem urządzenia &lt;code&gt;/dev/urandom&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ mkpasswd -m sha-512 -S $(&amp;lt; /dev/urandom tr -cd &amp;#34;[:alnum:]&amp;#34; | head -c${1:-16}; echo) -s &amp;lt;&amp;lt;&amp;lt; hasło
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$6$AnSw5avmi6cwpxzG$bnLa8cWs5FhdDU49jzdyxR4Fw0p3MGWcDLzwOd1x564I4iKJFmNwdq3BgkpBo/fSG1YCYbYMD9eE993GpTRQq0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Generowanie hasła za pomocą &lt;a href=&#34;OpenSSL&#34;&gt;OpenSSL&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;openssl rand -base64 36
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;3WC8BpncVVQyzdHHWlULV1VzW7LnHs0erGIuCHTZ+Zt9YU/t
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Użycie &lt;code&gt;dd&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;dd if=/dev/urandom bs=10 count=30 | tr -cd &amp;#39;[:alnum:]&amp;#39;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;30+0 records in
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;30+0 records out
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;300 bytes (300 B) copied, 0.000336587 s, 891 kB/s
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;5VCT1sSL9MyviBTacEcAwUVFC4UeTIaMjPaPG5134LFNNHMgcBIoYsx1mDEFe76roWQO5tqL
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
     <item>
@@ -37,10 +132,19 @@ Zaczynamy od pobrania ostatniej wersji https://github.com/OpenVPN/easy-rsa/relea
       <pubDate>Sat, 24 Oct 2020 17:00:15 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/generowanie-kodu-qr-dla-autoryzacj-2fa/</guid>
-      <description>Instalacja pakietu qrencode
-1sudo dnf install qrencode Tak wygląda kod QR w postaci linku
-1otpauth://totp/mohdur%40github?secret=OAPICAFAI7PJKHVN&amp;amp;issuer=github/mohdur&amp;amp;algorithm=SHA512&amp;amp;digits=6&amp;amp;period=30 Generowanie kodu do pliku PNG
-1echo &amp;#34;otpauth://totp/mohdur%40github?secret=OAPICAFAI7PJKHVN&amp;amp;issuer=github/mohdur&amp;amp;algorithm=SHA512&amp;amp;digits=6&amp;amp;period=30&amp;#34; \ 2 | qrencode -t png -d 125 -lH -o qr.png </description>
+      <description>
+        
+          &lt;p&gt;Instalacja pakietu qrencode&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo dnf install qrencode
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Tak wygląda kod QR w postaci linku&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;otpauth://totp/mohdur%40github?secret=OAPICAFAI7PJKHVN&amp;amp;issuer=github/mohdur&amp;amp;algorithm=SHA512&amp;amp;digits=6&amp;amp;period=30
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Generowanie kodu do pliku PNG&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;echo &amp;#34;otpauth://totp/mohdur%40github?secret=OAPICAFAI7PJKHVN&amp;amp;issuer=github/mohdur&amp;amp;algorithm=SHA512&amp;amp;digits=6&amp;amp;period=30&amp;#34; \
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;  | qrencode -t png -d 125 -lH -o qr.png
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://mohdur.github.io/images/qr.png&#34; alt=&#34;kod qr&#34;&gt;&lt;/p&gt;
+
+        
+      </description>
     </item>
     
     <item>
@@ -49,8 +153,39 @@ Zaczynamy od pobrania ostatniej wersji https://github.com/OpenVPN/easy-rsa/relea
       <pubDate>Wed, 14 Oct 2020 21:01:41 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/konfiguracja-us%C5%82ugi-ssh-w-routeros-mikrotik/</guid>
-      <description>Ustawienie mocniejszej kryptografi i kluczy dla hosta o większej długości 1/ip ssh set strong-crypto=yes Zmiana długości klucza hosta wymaga wygenerowania ponownie klucza, ta operacja może potrwać do kilkudziesięciu minut w zależności od długości klucza oraz mocy obliczeniowych procesora.
-1/ip ssh set host-key-size=4096 2/ip ssh regenerate-host-key Wygenerowanie klucza RSA w systemie Linux 1$ ssh-keygen -t RSA -b 4096 -f mikrotik-rsa Autoryzacja za pomocą klucza RSA i hasła Najpierw należy wygenerować taki klucz, następnie przesłać na urządzenie i dopisać do konkretnego użytkownika.</description>
+      <description>
+        
+          &lt;h2 id=&#34;ustawienie-mocniejszej-kryptografi-i-kluczy-dla-hosta-o-większej-długości&#34;&gt;Ustawienie mocniejszej kryptografi i kluczy dla hosta o większej długości&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;/ip ssh set strong-crypto=yes
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Zmiana długości klucza hosta wymaga wygenerowania ponownie klucza, ta operacja
+może potrwać do kilkudziesięciu minut w zależności od długości klucza oraz
+mocy obliczeniowych procesora.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;/ip ssh set host-key-size=4096
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;/ip ssh regenerate-host-key
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;wygenerowanie-klucza-rsa-w-systemie-linux&#34;&gt;Wygenerowanie klucza RSA w systemie Linux&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ ssh-keygen -t RSA -b 4096 -f mikrotik-rsa
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;autoryzacja-za-pomocą-klucza-rsa-i-hasła&#34;&gt;Autoryzacja za pomocą klucza RSA i hasła&lt;/h2&gt;
+&lt;p&gt;Najpierw należy wygenerować taki klucz, następnie przesłać na urządzenie
+i dopisać do konkretnego użytkownika. Ustawienie logowania za pomocą klucza
+wyłącza możliwość logowania bez hasła. Istnieją dwa sposoby na rozwiązanie
+tego problemu. Pierwszy to dodanie innego użytkownika z odpowiednio trudnym
+hasłem. Drugi sposób to ustawienie możliwości logowania za pomocą hasła
+pomimo ustawienia klucza RSA.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;/ip ssh set always-allow-password-login=yes
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;ustawienie-autoryzacji-za-pomocą-klucza-rsa&#34;&gt;Ustawienie autoryzacji za pomocą klucza RSA&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;/usr ssh-keys import public-key-file=klucz-rsa.pub user admin
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Lista użytkowników z ustawionym kluczem RSA&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;/user ssh-keys print
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;wyświetlenie-ustawień-serwera-ssh&#34;&gt;Wyświetlenie ustawień serwera SSH&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;/ip ssh print
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;           forwarding-enabled: no
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;  always-allow-password-login: yes
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;                strong-crypto: yes
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;            allow-none-crypto: no
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;                host-key-size: 4096
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
     <item>
@@ -59,8 +194,100 @@ Zaczynamy od pobrania ostatniej wersji https://github.com/OpenVPN/easy-rsa/relea
       <pubDate>Wed, 14 Oct 2020 14:03:25 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/mikrotik-i-wireguard-vpn/</guid>
-      <description>Od kilku tygodni jest dostępna wersja 7.1beta2 (Developmend) systemu RouterOS głównie przeznaczonych dla urządzeń Mikrotik. Od tej wersji istnieje wsparcie dla usługi Wireguard VPN. Należy zaznaczyć iż jest to wersja, której nie należy używać w środowisku produkcyjnym.
-Na razie w wersji 7.1beta2 nie ma możliwości zestawienia takiego połączenia za pomocą programu WinBox ani interfejsu WWW. Problem występuje w polu endpoint, które nie przyjmuje numeru portu dla zdalnego hosta. Jedyna możliwość to użyć linii komend.</description>
+      <description>
+        
+          &lt;p&gt;Od kilku tygodni jest dostępna wersja 7.1beta2 (Developmend) systemu RouterOS
+głównie przeznaczonych dla urządzeń Mikrotik. Od tej wersji istnieje wsparcie
+dla usługi Wireguard VPN. Należy zaznaczyć iż jest to wersja, której nie należy
+używać w środowisku produkcyjnym.&lt;/p&gt;
+&lt;p&gt;Na razie w wersji 7.1beta2 nie ma możliwości zestawienia takiego połączenia
+za pomocą programu WinBox ani interfejsu WWW. Problem występuje w polu
+endpoint, które nie przyjmuje numeru portu dla zdalnego hosta. Jedyna możliwość
+to użyć linii komend.&lt;/p&gt;
+&lt;p&gt;Dla celów testowych zestawimy tunel pomiędzy dwoma urządzeniami Mikrotik, które
+działają w tej samej sieci LAN.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Nazwa urządzenia&lt;/th&gt;
+&lt;th&gt;Adres IP LAN&lt;/th&gt;
+&lt;th&gt;Adres IP Wireguard&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;MT-R1&lt;/td&gt;
+&lt;td&gt;192.168.88.101&lt;/td&gt;
+&lt;td&gt;10.0.0.101&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MT-R2&lt;/td&gt;
+&lt;td&gt;192.168.88.102&lt;/td&gt;
+&lt;td&gt;10.0.0.102&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;dodanie-nowego-interfejsu-dla-usługi-wireguard&#34;&gt;Dodanie nowego interfejsu dla usługi Wireguard&lt;/h2&gt;
+&lt;p&gt;Po dodaniu interfejsu Wireguard zostaną automatycznie wygenerowane klucze. Klucz
+publiczny oraz prywatny.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;/interface wireguard add name=wireguard1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;wyświetlenie-kluczy-szyfrujących&#34;&gt;Wyświetlenie kluczy szyfrujących&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;/interface wireguard print
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Żeby pobrać klucz publiczny / prywatny można użyć polecenia&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:put [/interface/wireguard get wireguard1 private-key]
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;oGwMsty/RMY9oHUywxKsn9ov6cLh4W8xU8FpqQOkeFs=
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:put [/interface/wireguard get wireguard1 public-key]
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;N5rCJmUwj2BrN87j5s2npyh/m6ZP8J0VGYbjVbNerkE=
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;nadanie-adresu-ip-dla-interfejsu-wireguard1&#34;&gt;Nadanie adresu IP dla interfejsu wireguard1&lt;/h2&gt;
+&lt;p&gt;Jak już mamy interfejs wireguard, to kolejnym krokiem jest nadanie mu adresu IP.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;/ip address add address=10.0.0.X/24 interface=wireguard1 network=10.0.0.0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;pełna-konfiguracja-urządzenia-mt-r1&#34;&gt;Pełna konfiguracja urządzenia MT-R1&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;IP LAN: 192.168.88.101&lt;/li&gt;
+&lt;li&gt;IP Wireguard: 10.0.0.101&lt;/li&gt;
+&lt;li&gt;Klucz prywatny: &lt;code&gt;oGwMsty/RMY9oHUywxKsn9ov6cLh4W8xU8FpqQOkeFs=&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Klucz publiczny: &lt;code&gt;N5rCJmUwj2BrN87j5s2npyh/m6ZP8J0VGYbjVbNerkE=&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Numer portu Wireguard: 24680/UDP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;/interface wireguard add name=wireguard1
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;/ip address add address=10.0.0.101/24 interface=wireguard1 network=10.0.0.0
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;/interface wireguard
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;add listen-port=24680 mtu=1420 name=wireguard1 private-key=&amp;#34;oGwMsty/RMY9oHUywxKsn9ov6cLh4W8xU8FpqQOkeFs=&amp;#34;
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;/interface wireguard peers
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;add allowed-address=10.0.0.0/24 endpoint=192.168.88.102:24680 interface=wireguard1 public-key=\
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;    &amp;#34;hFAmrgxz4bDRmTaCbOyrvNQzVEwI4uctKyCy+zUJoGE=&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;pełna-konfiguracja-urządzenia-mt-r2&#34;&gt;Pełna konfiguracja urządzenia MT-R2&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;IP LAN: 192.168.88.102&lt;/li&gt;
+&lt;li&gt;IP Wireguard: 10.0.0.102&lt;/li&gt;
+&lt;li&gt;Klucz prywatny: &lt;code&gt;YIRU+EYysLwHcQRWEoz4qjGIWjLvenTQ4WgjBbWVp0o=&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Klucz publiczny: &lt;code&gt;hFAmrgxz4bDRmTaCbOyrvNQzVEwI4uctKyCy+zUJoGE=&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Numer portu Wireguard: 24680/UDP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;/interface wireguard add name=wireguard1
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;/ip address add address=10.0.0.102/24 interface=wireguard1 network=10.0.0.0
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;/interface wireguard
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;add listen-port=24680 mtu=1420 name=wireguard1 private-key=&amp;#34;YIRU+EYysLwHcQRWEoz4qjGIWjLvenTQ4WgjBbWVp0o=&amp;#34;
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;/interface wireguard peers
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;add allowed-address=10.0.0.0/24 endpoint=192.168.88.101:24680 interface=wireguard1 public-key=\
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;    &amp;#34;N5rCJmUwj2BrN87j5s2npyh/m6ZP8J0VGYbjVbNerkE=&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;test-połączenia-można-wykonać-za-pomocą-polecenia-ping&#34;&gt;Test połączenia można wykonać za pomocą polecenia ping&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;/tool/ping 10.0.0.102 count=4 interface=wireguard1
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;  SEQ HOST                                     SIZE TTL TIME  STATUS
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;    0 10.0.0.102                                 56  64 1ms
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;    1 10.0.0.102                                 56  64 1ms
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;    2 10.0.0.102                                 56  64 1ms
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;    3 10.0.0.102                                 56  64 1ms
+&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;    sent=4 received=4 packet-loss=0% min-rtt=1ms avg-rtt=1ms max-rtt=1ms
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
     <item>
@@ -69,8 +296,13 @@ Na razie w wersji 7.1beta2 nie ma możliwości zestawienia takiego połączenia 
       <pubDate>Wed, 14 Oct 2020 09:03:56 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/zmiana-has%C5%82a-w-kluczu-prywatnym-rsa-openvpn/</guid>
-      <description>Zmiana hasła za pomocą polecenia openssl.
-1openssl rsa -des3 -in oldkey.pem -out newkey.pem </description>
+      <description>
+        
+          &lt;p&gt;Zmiana hasła za pomocą polecenia &lt;code&gt;openssl&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;openssl rsa -des3 -in oldkey.pem -out newkey.pem
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
     <item>
@@ -79,10 +311,42 @@ Na razie w wersji 7.1beta2 nie ma możliwości zestawienia takiego połączenia 
       <pubDate>Wed, 14 Oct 2020 08:00:37 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/ukrycie-proces%C3%B3w-innych-u%C5%BCytkownik%C3%B3w-w-systemie-linux/</guid>
-      <description>Ukrycie procesów innych użytkowników wiąże się z ponownym zmapowaniem wirtualnej partycji /proc.
-1sudo mount -o remount,rw,hidepid=2 /proc Żeby ukryć procesy permanentnie należy do pliku /etc/fstab dodać:
-1proc /proc proc defaults,hidepid=2 0 0 Wartości jakie może przyjmować parametr hidepid:
-   Value Meaning     0 Everybody may access all /proc/[pid] directories. This is the traditional behavior, and the default if this mount option is not specified.   1 Users may not access files and subdirectories inside any /proc/[pid] directories but their own (the /proc/[pid] directories themselves remain visible).</description>
+      <description>
+        
+          &lt;p&gt;Ukrycie procesów innych użytkowników wiąże się z ponownym zmapowaniem wirtualnej partycji &lt;code&gt;/proc&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo mount -o remount,rw,hidepid=2 /proc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Żeby ukryć procesy permanentnie należy do pliku &lt;code&gt;/etc/fstab&lt;/code&gt; dodać:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;proc    /proc   proc    defaults,hidepid=2  0   0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Wartości jakie może przyjmować parametr &lt;code&gt;hidepid&lt;/code&gt;:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Value&lt;/th&gt;
+&lt;th&gt;Meaning&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;Everybody may access all &lt;code&gt;/proc/[pid]&lt;/code&gt; directories. This is the traditional behavior, and the default if this mount option is not specified.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;Users may not access files and subdirectories inside any &lt;code&gt;/proc/[pid]&lt;/code&gt; directories but their own (the &lt;code&gt;/proc/[pid]&lt;/code&gt; directories themselves remain visible). Sensitive files such as &lt;code&gt;/proc/[pid]/cmdline&lt;/code&gt; and &lt;code&gt;/proc/[pid]/status&lt;/code&gt; are now protected against other users. This makes it impossible to learn whether any user is running a specific program (so long as the program doesn’t otherwise reveal itself by its behavior).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;As for mode 1, but in addition the &lt;code&gt;/proc/[pid]&lt;/code&gt; directories belonging to other users become invisible. This means that &lt;code&gt;/proc/[pid]&lt;/code&gt; entries can no longer be used to discover the PIDs on the system. This doesn’t hide the fact that a process with a specific PID value exists (it can be learned by other means, for example, by “kill -0 $PID”), but it hides a process’s UID and GID, which could otherwise be learned by employing stat(2) on a &lt;code&gt;/proc/[pid]&lt;/code&gt; directory. This greatly complicates an attacker’s task of gathering information about running processes (e.g., discovering whether some daemon is running with elevated privileges, whether another user is running some sensitive program, whether other users are running any program at all, and so on).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;W przypadku komplikacji można dodać &lt;code&gt;git=admin&lt;/code&gt;, będzie to grupa, której
+użytkownicy będą mogli przeglądać wszystkie procesy.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;proc /proc proc defaults,hidepid=2,gid=admin 0 0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Więcej informacji: &lt;a href=&#34;http://man7.org/linux/man-pages/man5/proc.5.html&#34;&gt;http://man7.org/linux/man-pages/man5/proc.5.html&lt;/a&gt;&lt;/p&gt;
+
+        
+      </description>
     </item>
     
   </channel>

@@ -12,7 +12,77 @@
       <pubDate>Wed, 21 Oct 2020 21:51:21 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/rsync-receptury/</guid>
-      <description>Synchronizacja przez SSH 1-e ssh | połączenie przez SSH np. -e &amp;#34;ssh -l ssh-user -p 22&amp;#34; 2-a | zastępuje kilka parametrów -r -l -p -t -g -o -D 3-v | wyświetla bieżącą operację 4-z | włącza kompresję 5--delete-before | kasuje pliki w docelowej lokalizacji jeśli te nie istnieją w źródłowej lokalizacji 6-n | --dry-run - testowa synchronizacja 7-r | synchronizuje podkatalogi 8-l | kopiuje linki symboliczne jako linki symboliczne 9-p | zachowuje uprawnienia 10-t | zachowuje uprawnienia dla grupy 11-o | zachowuje uprawnienia dla użytkownika 12-D | zachowuje pliki urządzeń (tylko root) 1cd ~/Nextcloud 2rsync -avz --delete-before -e ssh Instrukcje/ użytkownik@hostname:/opt/backup-rsync/Instrukcje 1cd ~/Książki 2rsync -avz --delete-before -e ssh .</description>
+      <description>
+        
+          &lt;h1 id=&#34;synchronizacja-przez-ssh&#34;&gt;Synchronizacja przez SSH&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;-e ssh          | połączenie przez SSH np. -e &amp;#34;ssh -l ssh-user -p 22&amp;#34;
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;-a              | zastępuje kilka parametrów -r -l -p -t -g -o -D
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;-v              | wyświetla bieżącą operację
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;-z              | włącza kompresję
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;--delete-before | kasuje pliki w docelowej lokalizacji jeśli te nie istnieją w źródłowej lokalizacji
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;-n              | --dry-run - testowa synchronizacja
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;-r              | synchronizuje podkatalogi
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;-l              | kopiuje linki symboliczne jako linki symboliczne
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;-p              | zachowuje uprawnienia
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;-t              | zachowuje uprawnienia dla grupy
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;-o              | zachowuje uprawnienia dla użytkownika
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;-D              | zachowuje pliki urządzeń (tylko root)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;cd ~/Nextcloud
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;rsync -avz --delete-before -e ssh Instrukcje/ użytkownik@hostname:/opt/backup-rsync/Instrukcje
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;cd ~/Książki
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;rsync -avz --delete-before -e ssh . użytkownik@hostname:/opt/backup-rsync/Books
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Oprócz oczywistej różnicy pomiędzy tymi dwoma poleceniami, jest jeszcze taka
+mniej oczywista, mianowicie znak &lt;code&gt;/&lt;/code&gt; na końcu źródłowego katalogu:
+&lt;code&gt;Instrukcje/&lt;/code&gt;, można uznać, że taki zapis oznacza użycie polecenia &lt;code&gt;cd Instrukcje&lt;/code&gt; a następnie przejść do synchronizacji.&lt;/p&gt;
+&lt;h1 id=&#34;synchronizacja-na-zewnętrznym-udziale-samba-plików-utworzonych-po-wybranej-dacie&#34;&gt;Synchronizacja na zewnętrznym udziale SAMBA plików utworzonych po wybranej dacie&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Skrypt synchronizuje dane na zewnętrznym udziale sieciowym podłączanym na żądanie.&lt;/li&gt;
+&lt;li&gt;Jest użyte polecenie &lt;code&gt;find&lt;/code&gt; w celu odnalezienia plików utworzonych po wybranej dacie.&lt;/li&gt;
+&lt;li&gt;Dodatkowo skrypt jest zabezpieczony przed kilkukrotnym uruchomieniem, za pomocą pliku PID.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Źródło skryptu:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;SKRYPT&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;basename &lt;span class=&#34;nv&#34;&gt;$0&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;PIDFILE&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/var/run/user/&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;id -u&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;/&lt;span class=&#34;nv&#34;&gt;$SKRYPT&lt;/span&gt;.pid
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;#PID=&amp;#34;$(&amp;lt;&amp;#34;$PIDFILE&amp;#34;)&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; -f &lt;span class=&#34;nv&#34;&gt;$PIDFILE&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;9999999&lt;/span&gt; &amp;gt; &lt;span class=&#34;nv&#34;&gt;$PIDFILE&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;PID_OLD&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;pgrep -F &lt;span class=&#34;nv&#34;&gt;$PIDFILE&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$?&lt;/span&gt; -eq &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; Poprzedni proces skryptu &lt;span class=&#34;se&#34;&gt;\&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$SKRYPT&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\&amp;#34;&lt;/span&gt; nadal działa.
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;15&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt; &amp;gt; &lt;span class=&#34;nv&#34;&gt;$PIDFILE&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;16&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;17&lt;/span&gt;umount /mnt/wd-nowy
+&lt;span class=&#34;ln&#34;&gt;18&lt;/span&gt;mount.cifs //10.1.1.223/udzial /mnt/wd-nowy -o &lt;span class=&#34;nv&#34;&gt;user&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;uzytkownik,passwd&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;tajne-haslo
+&lt;span class=&#34;ln&#34;&gt;19&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;20&lt;/span&gt;mount &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep /mnt/wd-nowy &amp;gt; /dev/null
+&lt;span class=&#34;ln&#34;&gt;21&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$?&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;22&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; Dysk sieciowy nie jest podłączony!
+&lt;span class=&#34;ln&#34;&gt;23&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;24&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;25&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;26&lt;/span&gt;find /home/user/ -newermt &lt;span class=&#34;s2&#34;&gt;&amp;#34;2018-11-10 00:00:00&amp;#34;&lt;/span&gt; -type f -print0 &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; rsync -a -0 -stats --files-from&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;- / /mnt/wd-nowy
+&lt;span class=&#34;ln&#34;&gt;27&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;28&lt;/span&gt;sleep &lt;span class=&#34;m&#34;&gt;12&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;29&lt;/span&gt;umount /mnt/wd-nowy
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;rsync-z-pominięciem-wybranych-plików-lub-katalogów&#34;&gt;rsync z pominięciem wybranych plików lub katalogów&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;do wykluczeń jest używany parametr &lt;code&gt;--exclude&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;DATA=$(date +%F-%T)
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;rsync -avz -e &amp;#39;ssh -p 12345&amp;#39; /home/samba/ root@192.168.0.222:/home/samba \
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;    --exclude=samba.tar --exclude=backup \
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;    --log-file=rsync-samba-$DATA.log
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
   </channel>

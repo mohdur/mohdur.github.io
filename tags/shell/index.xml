@@ -12,10 +12,63 @@
       <pubDate>Sat, 24 Oct 2020 19:57:51 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/archiwizacja-podkatalogow/</guid>
-      <description>Skrypt przetwarza podkatalogi w bieżącej lokalizacji, tworząc archiwa tar a następnie usuwa przetworzony katalog.
-W pętli for możemy użyć maski zawężając wynik wyszukiwania np.
-1for i in *dump*; do lub użyć polecenia ls np.
-1for i in $(ls -A); do 1#!/usr/bin/env bash 2 3clear 4 5echo 6echo ----------------------------------------------- 7echo &amp;#34;Znajdujesz się w katalogu $PWD&amp;#34; 8echo 9echo &amp;#34;!!!UWAGA! Niebezpieczenstwo!!!&amp;#34; 10echo 11echo -n &amp;#34;Czy usunac katalogi po archiwizacji? [N/t]: &amp;#34; 12read usunac 13 14case &amp;#34;$usunac&amp;#34; in 15 &amp;#34;N&amp;#34;|&amp;#34;n&amp;#34;) usunac=false ;; 16 &amp;#34;T&amp;#34;|&amp;#34;t&amp;#34;) usunac=true ;; 17 *) usunac=false ;; 18esac 19 20if [ $# -gt 0 ]; then 21 case &amp;#34;$1&amp;#34; in 22 &amp;#34;tar&amp;#34;) ext=tar ;; 23 &amp;#34;tgz&amp;#34;|&amp;#34;tar.</description>
+      <description>
+        
+          &lt;p&gt;Skrypt przetwarza podkatalogi w bieżącej lokalizacji, tworząc archiwa &lt;code&gt;tar&lt;/code&gt;
+a następnie usuwa przetworzony katalog.&lt;/p&gt;
+&lt;p&gt;W pętli &lt;code&gt;for&lt;/code&gt; możemy użyć maski zawężając wynik wyszukiwania np.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; i in *dump*&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;lub użyć polecenia &lt;code&gt;ls&lt;/code&gt; np.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; i in &lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;ls -A&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#!/usr/bin/env bash
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;clear
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; -----------------------------------------------
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Znajdujesz się w katalogu &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$PWD&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;!!!UWAGA! Niebezpieczenstwo!!!&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; -n &lt;span class=&#34;s2&#34;&gt;&amp;#34;Czy usunac katalogi po archiwizacji? [N/t]: &amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;read&lt;/span&gt; usunac
+&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;case&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$usunac&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt; in
+&lt;span class=&#34;ln&#34;&gt;15&lt;/span&gt;    &lt;span class=&#34;s2&#34;&gt;&amp;#34;N&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;n&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;usunac&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;false&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;;;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;16&lt;/span&gt;    &lt;span class=&#34;s2&#34;&gt;&amp;#34;T&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;t&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;usunac&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;;;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;17&lt;/span&gt;    *&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;       &lt;span class=&#34;nv&#34;&gt;usunac&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;false&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;;;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;18&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;esac&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;19&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;20&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$#&lt;/span&gt; -gt &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;21&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;case&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt; in
+&lt;span class=&#34;ln&#34;&gt;22&lt;/span&gt;        &lt;span class=&#34;s2&#34;&gt;&amp;#34;tar&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;                  &lt;span class=&#34;nv&#34;&gt;ext&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;tar &lt;span class=&#34;p&#34;&gt;;;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;23&lt;/span&gt;        &lt;span class=&#34;s2&#34;&gt;&amp;#34;tgz&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;tar.gz&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;         &lt;span class=&#34;nv&#34;&gt;ext&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;tgz &lt;span class=&#34;p&#34;&gt;;;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;24&lt;/span&gt;        &lt;span class=&#34;s2&#34;&gt;&amp;#34;tbz&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;tbz2&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;tar.bz2&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;ext&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;tbz &lt;span class=&#34;p&#34;&gt;;;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;25&lt;/span&gt;        &lt;span class=&#34;s2&#34;&gt;&amp;#34;txz&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;tar.xz&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;         &lt;span class=&#34;nv&#34;&gt;ext&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;txz &lt;span class=&#34;p&#34;&gt;;;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;26&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;esac&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;27&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;28&lt;/span&gt;    &lt;span class=&#34;nv&#34;&gt;ext&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;tar
+&lt;span class=&#34;ln&#34;&gt;29&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;30&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;31&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; i in *
+&lt;span class=&#34;ln&#34;&gt;32&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;do&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;33&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; -d &lt;span class=&#34;nv&#34;&gt;$i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;34&lt;/span&gt;        &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; Archiwizuje &lt;span class=&#34;nv&#34;&gt;$i&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;35&lt;/span&gt;        tar -cavf &lt;span class=&#34;nv&#34;&gt;$i&lt;/span&gt;.&lt;span class=&#34;nv&#34;&gt;$ext&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$i&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;36&lt;/span&gt;        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$?&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;37&lt;/span&gt;            &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$usunac&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;true&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;38&lt;/span&gt;                &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;!!! Usuwam: &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$i&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;39&lt;/span&gt;                rm -rf &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$i&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;40&lt;/span&gt;            &lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;41&lt;/span&gt;        &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;42&lt;/span&gt;            &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Wystąpił BŁĄD: &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$?&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;43&lt;/span&gt;            &lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;44&lt;/span&gt;        &lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;45&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;46&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;done&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
     <item>
@@ -24,7 +77,117 @@ W pętli for możemy użyć maski zawężając wynik wyszukiwania np.
       <pubDate>Sat, 24 Oct 2020 16:34:48 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/skr%C3%B3ty-klawiszowe-zsh/</guid>
-      <description>   Skrót Opis     Tab Auto complete   ^a Beginning of line   ^e End of line   ^f Forward one character   ^b Back one character   ^h Delete one character (backw­ards)   %f Forward one word   %b Back one word   ^w Delete one word (backw­ards)   ^u Clear to beginning of line   ^k Clear to end of line   ^y Paste from Kill Ring   ^t Swap cursor with previous character   %t Swap cursor with previous word   ^p Previous line in history   ^n Next line in history   ^r Search backwards in history   ^l Clear screen   ^o Execute command but keep line   ^z Suspend process   fg restore process   bg continue process in background   ^c Kill current process   ^d Exit shell    </description>
+      <description>
+        
+          &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Skrót&lt;/th&gt;
+&lt;th&gt;Opis&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Tab&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Auto complete&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;^a&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Beginning of line&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;^e&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;End of line&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;^f&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Forward one character&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;^b&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Back one character&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;^h&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Delete one character (backw­ards)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;%f&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Forward one word&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;%b&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Back one word&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;^w&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Delete one word (backw­ards)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;^u&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Clear to beginning of line&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;^k&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Clear to end of line&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;^y&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Paste from Kill Ring&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;^t&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Swap cursor with previous character&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;%t&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Swap cursor with previous word&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;^p&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Previous line in history&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;^n&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Next line in history&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;^r&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Search backwards in history&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;^l&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Clear screen&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;^o&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Execute command but keep line&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;^z&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Suspend process&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;fg&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;restore process&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;bg&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;continue process in background&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;^c&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Kill current process&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;^d&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Exit shell&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+        
+      </description>
     </item>
     
     <item>
@@ -33,7 +196,232 @@ W pętli for możemy użyć maski zawężając wynik wyszukiwania np.
       <pubDate>Sat, 24 Oct 2020 15:16:13 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/komenda-if-w-skryptach-bash.md/</guid>
-      <description>Porówanie Opis     &amp;lt;INTEGER1&amp;gt; -eq &amp;lt;INTEGER2&amp;gt; Prawda jeśli liczby są równe.   &amp;lt;INTEGER1&amp;gt; -ne &amp;lt;INTEGER2&amp;gt; Prawda jeśli liczby nie są równe.   &amp;lt;INTEGER1&amp;gt; -le &amp;lt;INTEGER2&amp;gt; Prawda jeśli pierwsza liczba jest mniejsza lub równa od drugiej.   &amp;lt;INTEGER1&amp;gt; -ge &amp;lt;INTEGER2&amp;gt; Prawda jeśli pierwsza liczba jest większa lub równa od drugiej.   &amp;lt;INTEGER1&amp;gt; -lt &amp;lt;INTEGER2&amp;gt; Prawda jeśli pierwsza liczba jest mniejsza od drugiej.</description>
+      <description>
+        
+          &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Porówanie&lt;/th&gt;
+&lt;th&gt;Opis&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;lt;INTEGER1&amp;gt; -eq &amp;lt;INTEGER2&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Prawda jeśli liczby są równe.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;lt;INTEGER1&amp;gt; -ne &amp;lt;INTEGER2&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Prawda jeśli liczby nie są równe.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;lt;INTEGER1&amp;gt; -le &amp;lt;INTEGER2&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Prawda jeśli pierwsza liczba jest mniejsza lub równa od drugiej.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;lt;INTEGER1&amp;gt; -ge &amp;lt;INTEGER2&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Prawda jeśli pierwsza liczba jest większa lub równa od drugiej.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;lt;INTEGER1&amp;gt; -lt &amp;lt;INTEGER2&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Prawda jeśli pierwsza liczba jest mniejsza od drugiej.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;lt;INTEGER1&amp;gt; -gt &amp;lt;INTEGER2&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Prawda jeśli pierwsza liczba jest większa od drugiej.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;przykład:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$?&lt;/span&gt; -ne &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Wystąpił błąd &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$?&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Testy na plikach&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Test&lt;/th&gt;
+&lt;th&gt;Opis&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;-a &amp;lt;FILE&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Prawda jeśli &lt;code&gt;&amp;lt;FILE&amp;gt;&lt;/code&gt; istnieje. &lt;code&gt;:!:&lt;/code&gt; nie rekomendowany, może kolidować z &lt;code&gt;-a&lt;/code&gt; użytym jako &lt;code&gt;AND&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;-e &amp;lt;FILE&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Prawda jeśli &lt;code&gt;&amp;lt;FILE&amp;gt;&lt;/code&gt; istnieje.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;-f &amp;lt;FILE&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Prawda jeśli &lt;code&gt;&amp;lt;FILE&amp;gt;&lt;/code&gt; istnieje i jest to zwykły plik.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;-d &amp;lt;FILE&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Prawda jeśli &lt;code&gt;&amp;lt;FILE&amp;gt;&lt;/code&gt; istnieje i jest katalogiem.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;-c &amp;lt;FILE&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Prawda jeśli &lt;code&gt;&amp;lt;FILE&amp;gt;&lt;/code&gt; istnieje i jest urządzeniem znakowym.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;-b &amp;lt;FILE&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Prawda jeśli &lt;code&gt;&amp;lt;FILE&amp;gt;&lt;/code&gt; istnieje i jest urządzeniem blokowym.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;-p &amp;lt;FILE&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Prawda jeśli &lt;code&gt;&amp;lt;FILE&amp;gt;&lt;/code&gt; istnieje i jest potokiem nazwanym (FIFO).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;-S &amp;lt;FILE&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Prawda jeśli &lt;code&gt;&amp;lt;FILE&amp;gt;&lt;/code&gt; istnieje i jest gniazdem (socket).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;-L &amp;lt;FILE&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Prawda jeśli &lt;code&gt;&amp;lt;FILE&amp;gt;&lt;/code&gt; istnieje i jest linkiem symbolicznym.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;-h &amp;lt;FILE&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Prawda jeśli &lt;code&gt;&amp;lt;FILE&amp;gt;&lt;/code&gt; istnieje i jest linkiem symbolicznym.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;-g &amp;lt;FILE&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Prawda jeśli &lt;code&gt;&amp;lt;FILE&amp;gt;&lt;/code&gt; istnieje i ma ustawiony &lt;code&gt;sgid&lt;/code&gt; bit.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;-u &amp;lt;FILE&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Prawda jeśli &lt;code&gt;&amp;lt;FILE&amp;gt;&lt;/code&gt; istnieje i ma ustawiony &lt;code&gt;suid&lt;/code&gt; bit.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;-r &amp;lt;FILE&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Prawda jeśli &lt;code&gt;&amp;lt;FILE&amp;gt;&lt;/code&gt; istnieje i można go odczytać.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;-w &amp;lt;FILE&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Prawda jeśli &lt;code&gt;&amp;lt;FILE&amp;gt;&lt;/code&gt; istnieje i można w nim zapisywać.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;-x &amp;lt;FILE&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Prawda jeśli &lt;code&gt;&amp;lt;FILE&amp;gt;&lt;/code&gt; istnieje i można go wykonać.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;-N &amp;lt;FILE&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Prawda jeśli &lt;code&gt;&amp;lt;FILE&amp;gt;&lt;/code&gt; istnieje i był zmieniany od ostatniego odczytu.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;-s &amp;lt;FILE&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Prawda jeśli &lt;code&gt;&amp;lt;FILE&amp;gt;&lt;/code&gt; istnieje i nie jest pusty.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;-t &amp;lt;fd&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Prawda jeśli deskryptor pliku &lt;code&gt;&amp;lt;fd&amp;gt;&lt;/code&gt; jest otwarty na terminalu.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;lt;FILE1&amp;gt; -nt &amp;lt;FILE2&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Prawda jeśli &lt;code&gt;&amp;lt;FILE1&amp;gt;&lt;/code&gt; jest nowszy od &lt;code&gt;&amp;lt;FILE2&amp;gt;&lt;/code&gt; (mtime). &lt;code&gt;:!:&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;lt;FILE1&amp;gt; -ot &amp;lt;FILE2&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Prawda jeśli &lt;code&gt;&amp;lt;FILE1&amp;gt;&lt;/code&gt; jest starszy od &lt;code&gt;&amp;lt;FILE2&amp;gt;&lt;/code&gt; (mtime). &lt;code&gt;:!:&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;lt;FILE1&amp;gt; -ef &amp;lt;FILE2&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Prawda jeśli &lt;code&gt;&amp;lt;FILE1&amp;gt;&lt;/code&gt; i &lt;code&gt;&amp;lt;FILE2&amp;gt;&lt;/code&gt; odnoszą się do tego samego urządzenia i numeru inode. &lt;code&gt;:!:&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;function&lt;/span&gt; create_symlinks&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;  &lt;span class=&#34;nv&#34;&gt;LINKI&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;gp ds-grep new otp posts publish books&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; I in &lt;span class=&#34;nv&#34;&gt;$LINKI&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[[&lt;/span&gt; -f &lt;span class=&#34;nv&#34;&gt;$BIN&lt;/span&gt;/&lt;span class=&#34;nv&#34;&gt;$I&lt;/span&gt;  &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; ! -L &lt;span class=&#34;nv&#34;&gt;$BIN&lt;/span&gt;/&lt;span class=&#34;nv&#34;&gt;$I&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]]&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;      &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;UWAGA! \&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$BIN&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$I&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;\&amp;#34; istnieje i NIE jest linkiem.&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;elif&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; ! -L &lt;span class=&#34;nv&#34;&gt;$BIN&lt;/span&gt;/&lt;span class=&#34;nv&#34;&gt;$I&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;      ln -s &lt;span class=&#34;nv&#34;&gt;$BIN&lt;/span&gt;/&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;basename &lt;span class=&#34;nv&#34;&gt;$0&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$BIN&lt;/span&gt;/&lt;span class=&#34;nv&#34;&gt;$I&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;elif&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; ! -e &lt;span class=&#34;nv&#34;&gt;$BIN&lt;/span&gt;/&lt;span class=&#34;nv&#34;&gt;$I&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;# uszkodzony symlink&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;      ln -sf &lt;span class=&#34;nv&#34;&gt;$BIN&lt;/span&gt;/&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;basename &lt;span class=&#34;nv&#34;&gt;$0&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$BIN&lt;/span&gt;/&lt;span class=&#34;nv&#34;&gt;$I&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;15&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;done&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;16&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Test&lt;/th&gt;
+&lt;th&gt;Opis&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;-z &amp;lt;STRING&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Prawda jeśli &lt;code&gt;&amp;lt;STRING&amp;gt;&lt;/code&gt; jest pusty.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;-n &amp;lt;STRING&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Prawda jeśli &lt;code&gt;&amp;lt;STRING&amp;gt;&lt;/code&gt; nie jest pusty.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;lt;STRING1&amp;gt; = &amp;lt;STRING2&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Prawda jeśli &lt;code&gt;&amp;lt;STRING1&amp;gt;&lt;/code&gt; i &lt;code&gt;&amp;lt;STRING2&amp;gt;&lt;/code&gt; są identyczne.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;lt;STRING1&amp;gt; != &amp;lt;STRING2&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Prawda jeśli &lt;code&gt;&amp;lt;STRING1&amp;gt;&lt;/code&gt; i &lt;code&gt;&amp;lt;STRING2&amp;gt;&lt;/code&gt; są różne.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;lt;STRING1&amp;gt; &amp;lt; &amp;lt;STRING2&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;True if &lt;code&gt;&amp;lt;STRING1&amp;gt;&lt;/code&gt; sorts before &lt;code&gt;&amp;lt;STRING2&amp;gt;&lt;/code&gt; lexicographically (pure ASCII, not current locale!). Remember to escape! Use &lt;code&gt;\&amp;lt;&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;lt;STRING1&amp;gt; &amp;gt; &amp;lt;STRING2&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;True if &lt;code&gt;&amp;lt;STRING1&amp;gt;&lt;/code&gt; sorts after &lt;code&gt;&amp;lt;STRING2&amp;gt;&lt;/code&gt; lexicographically (pure ASCII, not current locale!). Remember to escape! Use &lt;code&gt;\&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Operator syntax&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;lt;TEST1&amp;gt; -a &amp;lt;TEST2&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;True, if &lt;code&gt;&amp;lt;TEST1&amp;gt;&lt;/code&gt; and &lt;code&gt;&amp;lt;TEST2&amp;gt;&lt;/code&gt; are true (AND). Note that &lt;code&gt;-a&lt;/code&gt; also may be used as a file test (see above)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;lt;TEST1&amp;gt; -o &amp;lt;TEST2&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;True, if either &lt;code&gt;&amp;lt;TEST1&amp;gt;&lt;/code&gt; or &lt;code&gt;&amp;lt;TEST2&amp;gt;&lt;/code&gt; is true (OR).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;! &amp;lt;TEST&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;True, if &lt;code&gt;&amp;lt;TEST&amp;gt;&lt;/code&gt; is false (NOT).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;( &amp;lt;TEST&amp;gt; )&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Group a test (for precedence). Attention: In normal shell-usage, the &lt;code&gt;&amp;quot;(&amp;quot;&lt;/code&gt; and &lt;code&gt;&amp;quot;)&amp;quot;&lt;/code&gt; must be escaped; use &lt;code&gt;&amp;quot;\(&amp;quot;&lt;/code&gt; and &lt;code&gt;&amp;quot;\)&amp;quot;&lt;/code&gt;!&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;-o &amp;lt;OPTION_NAME&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;True, if the shell option &lt;code&gt;&amp;lt;OPTION_NAME&amp;gt;&lt;/code&gt; is set.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;-v &amp;lt;VARIABLENAME&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;True if the variable &lt;code&gt;&amp;lt;VARIABLENAME&amp;gt;&lt;/code&gt; has been set. Use &lt;code&gt;var[n]&lt;/code&gt; for array elements.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;-R &amp;lt;VARIABLENAME&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;True if the variable &lt;code&gt;&amp;lt;VARIABLENAME&amp;gt;&lt;/code&gt; has been set and is a nameref variable (since 4.3-alpha)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+        
+      </description>
     </item>
     
     <item>
@@ -42,9 +430,55 @@ W pętli for możemy użyć maski zawężając wynik wyszukiwania np.
       <pubDate>Sat, 24 Oct 2020 13:48:25 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/zmiana-funkcjonalno%C5%9Bci-przez-zmian%C4%99-nazwy-skryptu/</guid>
-      <description>Utworzymy skrypt o nazwie funkcje, jeśli uruchomimy skypt nic się nie stanie, ale tworząc link symboliczny o nazwie new lub delete zostaną wykonane odpowiednio funkcje nowy i delete.
-Skrypt zawiera instrukcję case, która operuje na nazwie skryptu za pomocą polecenia $(basename $0) gdzie $0 to nazwa skryptu, polecenie basename usuwa ./ z nazwy skryptu.
-Konstrukcja $(basename $0) jest opcjonalna, oznacza to, że jeśli skrypt znajduje się w ścieżce $PATH i można go wykonać wpisując jego nazwę beż podania ścieżki to możemy użyć case &amp;quot;$0&amp;quot; in</description>
+      <description>
+        
+          &lt;p&gt;Utworzymy skrypt o nazwie &lt;code&gt;funkcje&lt;/code&gt;, jeśli uruchomimy skypt nic się nie stanie,
+ale tworząc link symboliczny o nazwie &lt;code&gt;new&lt;/code&gt; lub &lt;code&gt;delete&lt;/code&gt; zostaną wykonane odpowiednio
+funkcje &lt;code&gt;nowy&lt;/code&gt; i &lt;code&gt;delete&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Skrypt zawiera instrukcję &lt;code&gt;case&lt;/code&gt;, która operuje na nazwie skryptu za pomocą
+polecenia &lt;code&gt;$(basename $0)&lt;/code&gt; gdzie &lt;code&gt;$0&lt;/code&gt; to nazwa skryptu, polecenie &lt;code&gt;basename&lt;/code&gt;
+usuwa &lt;code&gt;./&lt;/code&gt; z nazwy skryptu.&lt;/p&gt;
+&lt;p&gt;Konstrukcja &lt;code&gt;$(basename $0)&lt;/code&gt; jest opcjonalna, oznacza to, że jeśli skrypt
+znajduje się w ścieżce &lt;code&gt;$PATH&lt;/code&gt; i można go wykonać wpisując jego nazwę beż podania
+ścieżki to możemy użyć &lt;code&gt;case &amp;quot;$0&amp;quot; in&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Standardowo skrypty umieszczam w katalogu &lt;code&gt;bin&lt;/code&gt; w katalogu domowym, następnie
+katalog &lt;code&gt;bin&lt;/code&gt; dodaję w pliku stardowym powłoki do zmiennej &lt;code&gt;$PATH&lt;/code&gt;. W przypadku
+powłoki &lt;strong&gt;bash&lt;/strong&gt; jest to plik &lt;code&gt;.bashrc&lt;/code&gt; a dla powłoki &lt;strong&gt;zsh&lt;/strong&gt; jest to plik &lt;code&gt;.zshrc&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Dobrym zwyczajem jest sprawdzenie, czy katalog &lt;code&gt;~/bin&lt;/code&gt; istnieje zanim go dodamy
+do ścieżki.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; -d ~/bin &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;PATH&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$PATH&lt;/span&gt;:~/bin
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;można to zapisać w jednej linii bez konstrukcji &lt;code&gt;if&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; -d ~/bin &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;PATH&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$PATH&lt;/span&gt;:~/bin
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Skrypt &lt;code&gt;funkcje&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;function&lt;/span&gt; nowy&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; funkcja nowy
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;function&lt;/span&gt; delete&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; funkcja delete
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;case&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;basename &lt;span class=&#34;nv&#34;&gt;$0&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt; in
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;    new&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;        nowy
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;        &lt;span class=&#34;p&#34;&gt;;;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;    delete&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;        delete
+&lt;span class=&#34;ln&#34;&gt;15&lt;/span&gt;        &lt;span class=&#34;p&#34;&gt;;;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;16&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;esac&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Utworzenie linków symbolicznych:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ ln -s funkcje new
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ ln -s funkcje delete
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Wywołanie skryptu&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ ./new
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;funkcja nowy
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ ./delete
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;funkcja delete
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
     <item>
@@ -53,8 +487,180 @@ Konstrukcja $(basename $0) jest opcjonalna, oznacza to, że jeśli skrypt znajdu
       <pubDate>Sat, 24 Oct 2020 13:20:08 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/skrypty-bash-receptury/</guid>
-      <description>Sprawdzenie daty ostatniej modyfikaji pliku 1$ date -r nazwa_pliku.txt 2Fri 19 Apr 2019 08:41:11 AM CEST Do wyświetlenia możemy użyć standardowego formatowania polecenia data.
-1$ date -r nazwa_pliku.txt &amp;#34;+%F %s&amp;#34; 22019-04-19 1555656071 Działania arytmetyczne na datach 1date_-d_&amp;#34;09/27/2019_08:53:52_AM_CEST_+2_days_+2_hours&amp;#34;_&amp;#34;+%F_%T&amp;#34; 1date_-d_&amp;#34;Tue_22_Oct_2019_08:53:52_AM_CEST_+2_days_+2_hours&amp;#34;_&amp;#34;+%F_%T&amp;#34; Argumenty wywołania skryptu    Identyfikator wywołania Opis     $0 Nazwa skryptu   $1, $2, ... Kolejne argumenty przekazane do skryptu   $# Liczba argumentów przekazanych do skryptu   $@, $* Wszystkie argumenty przekazane do skryptu    Przykłady:</description>
+      <description>
+        
+          &lt;h2 id=&#34;sprawdzenie-daty-ostatniej-modyfikaji-pliku&#34;&gt;Sprawdzenie daty ostatniej modyfikaji pliku&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ date -r nazwa_pliku.txt
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;Fri 19 Apr 2019 08:41:11 AM CEST
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Do wyświetlenia możemy użyć standardowego formatowania polecenia &lt;code&gt;data&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ date -r nazwa_pliku.txt &amp;#34;+%F %s&amp;#34;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;2019-04-19 1555656071
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;działania-arytmetyczne-na-datach&#34;&gt;Działania arytmetyczne na datach&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;date_-d_&amp;#34;09/27/2019_08:53:52_AM_CEST_+2_days_+2_hours&amp;#34;_&amp;#34;+%F_%T&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;date_-d_&amp;#34;Tue_22_Oct_2019_08:53:52_AM_CEST_+2_days_+2_hours&amp;#34;_&amp;#34;+%F_%T&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;argumenty-wywołania-skryptu&#34;&gt;Argumenty wywołania skryptu&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Identyfikator wywołania&lt;/th&gt;
+&lt;th&gt;Opis&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;$0&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Nazwa skryptu&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;$1&lt;/code&gt;, &lt;code&gt;$2&lt;/code&gt;, ...&lt;/td&gt;
+&lt;td&gt;Kolejne argumenty przekazane do skryptu&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;$#&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Liczba argumentów przekazanych do skryptu&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;$@&lt;/code&gt;, &lt;code&gt;$*&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Wszystkie argumenty przekazane do skryptu&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Przykłady:&lt;/p&gt;
+&lt;p&gt;Wyświetlenie katalogu w którym znajduje się skrypt&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;dirname $(readlink -f $0)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;porównanie-dwoch-ciągów-znaków&#34;&gt;Porównanie dwoch ciągów znaków&lt;/h2&gt;
+&lt;p&gt;Tutaj sprawdzenie czy wynik polecenia &lt;code&gt;type ls&lt;/code&gt; zawiera słowo &lt;code&gt;alias&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[[&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;type&lt;/span&gt; ls&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; *&lt;span class=&#34;s2&#34;&gt;&amp;#34;alias&amp;#34;&lt;/span&gt;* &lt;span class=&#34;o&#34;&gt;]]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;  &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;wywołanie-konkretnej-funkcji-w-zależności-od-nazwy-skryptu&#34;&gt;Wywołanie konkretnej funkcji w zależności od nazwy skryptu&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;case&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;basename &lt;span class=&#34;nv&#34;&gt;$0&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt; in
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;  bc2sd.mount&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;    mount_sd
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;;;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;  bc2sd.umount&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;    umount_sd
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;;;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;  bc2sd.include&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;bc2sd.inc&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;    backup_sd include
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;;;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;  bc2sd.exclude&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;bc2sd.exc&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;    backup2sd exclude
+&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;;;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;  bc2sd&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;backup2sd&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;backup2sd.sh&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;15&lt;/span&gt;    run
+&lt;span class=&#34;ln&#34;&gt;16&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;;;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;17&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;esac&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;usunięcie-rozszerzenia-pliku&#34;&gt;Usunięcie rozszerzenia pliku&lt;/h2&gt;
+&lt;p&gt;Polecenie &lt;code&gt;find&lt;/code&gt; wyszukuje wszystkich plików w katalogu &lt;code&gt;~/.password-store/otp/&lt;/code&gt; a następnie
+wyświetla znalezione pliki usuwając rozszerzenie &lt;code&gt;.gpg&lt;/code&gt;. Polecenie wyświetla wyłącznie
+nazwę pliku.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;find ~/.password-store/otp/ -name &amp;#34;.gpg&amp;#34; -exec basename {} .gpg \;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Wersja wyświetlająca pełną ścieżkę pliku&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;find ~/.password-store -name &amp;#34;*.gpg&amp;#34; -exec sh -c &amp;#39;printf &amp;#34;%s\n&amp;#34; &amp;#34;${0%.*}&amp;#34;&amp;#39; {} \;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ten sam efekt uzyskamy za pomocą komendy &lt;code&gt;sed&lt;/code&gt;, pytanie co łatwiej zapamiętać :D&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;find ~/.password-store -type f -iname &amp;#34;*.gpg&amp;#34; | sed &amp;#39;s/\.gpg$//1&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;rozszerzenie-i-nazwa-pliku-bez-rozszerzenia&#34;&gt;Rozszerzenie i nazwa pliku bez rozszerzenia&lt;/h2&gt;
+&lt;p&gt;Nazwa pliku&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;file=~/bin/backup2sd.config
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;echo ${file%.*}
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&amp;gt;&amp;gt;&amp;gt; /home/user/bin/backup2sd
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;inny przykład&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;file=backup2sd.config
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;echo ${file%.*}
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&amp;gt;&amp;gt;&amp;gt; backup2sd
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Rozszerzenie pliku&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;file=~/bin/backup2sd.config
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;echo ${file##*.}
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&amp;gt;&amp;gt;&amp;gt; config
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;wyszukanie-plików-rekursywnie&#34;&gt;Wyszukanie plików rekursywnie&lt;/h2&gt;
+&lt;p&gt;Wyszukanie plików z rozszerzeniem &lt;code&gt;*.md&lt;/code&gt; w bieżącej lokalizacji&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;find $PWD -type f -name &amp;#34;*.md&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Wersja bez użycia parametru &lt;code&gt;-name&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Zapis &lt;code&gt;/*/&lt;/code&gt; określa że w danej ścieżce bedą przetwarzane wszystkie podkatalogi, polecenie
+wyświetla pełną ścieżkę pliku np. &lt;code&gt;/home/user/.passord-store/email@example.pl&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;find ~/.password-store/*/*.gpg -type f
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;data-w-formacie-iso&#34;&gt;Data w formacie ISO&lt;/h2&gt;
+&lt;p&gt;Wyświetlenie daty w formacie YYYY-MM-DD&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;date +%F
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;warunkowe-utworzenie-katalogu&#34;&gt;Warunkowe utworzenie katalogu&lt;/h2&gt;
+&lt;p&gt;Polecenie &lt;code&gt;mkdir&lt;/code&gt; zostaje wykonane jeśli podany katalog nie istnieje&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;DATE&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;date +%y%m%d&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; -d /mnt/nfs/sarg/&lt;span class=&#34;nv&#34;&gt;$DATE&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;||&lt;/span&gt; mkdir /mnt/nfs/sarg/&lt;span class=&#34;nv&#34;&gt;$DATE&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;sprawdzenie-czy-użytkownikiem-wykonującym-skrypt-jest-root&#34;&gt;Sprawdzenie czy użytkownikiem wykonującym skrypt jest root&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[[&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$EUID&lt;/span&gt; -ne &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;  &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Skrypt musi być uruchomiony z uprawnieniami użytkownika root&amp;#34;&lt;/span&gt; 1&amp;gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;2&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;  &lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;lub wersja sprawdzająca czy skrypt jest wykonany za pomocą &lt;code&gt;sudo&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;id -u&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; ! -z &lt;span class=&#34;nv&#34;&gt;$SUDO_COMMAND&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;---                                   ---&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; Skrypt uruchomiony za pomocą komendy sudo
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; Uruchom skrypt jako użytkownik root
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;---                                   ---&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;  &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;---                              ---&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;  &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; Uruchom skrypt jako użytkownik root!
+&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;  &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;---                              ---&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;15&lt;/span&gt;  &lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;16&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;wyszukiwanie-kilku-wyrażeń-na-raz&#34;&gt;Wyszukiwanie kilku wyrażeń na raz&lt;/h2&gt;
+&lt;p&gt;Komenda wyświetli wszystkie wiersze zawierające ls oraz ntfs&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ls /bin | grep -e ls -e ntfs
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;usunięcie-starszych-plików-niż-x-dni&#34;&gt;Usunięcie starszych plików niż X dni&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Uwaga polecenie usuwa pliki rekursywnie&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;find /home/user/tmp/* -mtime +14 -exec rm {} \;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;zapisanie-wyniku-polecenia-do-pliku-oraz-wyświetlenie-na-ekranie&#34;&gt;Zapisanie wyniku polecenia do pliku oraz wyświetlenie na ekranie&lt;/h2&gt;
+&lt;p&gt;Przykład użycia polecenia tee&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;watch -n 15 &amp;#39;skrypty/proc_temp.sh | tee -a cpu_temp.txt &amp;amp;&amp;amp; date | tee -a cpu_temp.txt&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Wynik:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;Sat Mar 26 17:05:49 UTC 2019
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;temp=38.5&amp;#39;C
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Wersja zapisująca wynik dwóch poleceń do pliku w jednej linii.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;watch -n 15 &amp;#34;echo -n &amp;#39;$(date): &amp;#39; | tee -a cpu_temp.txt &amp;amp;&amp;amp; skrypty/proc_temp.sh | tee -a cpu_temp.txt&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Wynik:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;Sat Mar 26 17:10:58 UTC 2019: temp=39.0&amp;#39;C
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;sprawdzanie-zawartości-pliku&#34;&gt;Sprawdzanie zawartości pliku&lt;/h2&gt;
+&lt;p&gt;Często w plikach systemowych jest zapisywana tylko wartość 0 lub 1 aby sprawdzić tą wartość
+można wykonać następujący test. W tym przykładzie sprawdzana jest zawartość pliku test.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;&amp;lt; &lt;span class=&#34;nb&#34;&gt;test&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; Wartosc &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; Inna wartosc
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;usunięcie-zawartości-pliku&#34;&gt;Usunięcie zawartości pliku&lt;/h2&gt;
+&lt;p&gt;Ten rodzaj komendy nie działa w ZSH, a raczej wymaga naciśnięcia &lt;code&gt;Ctrl-d&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&amp;gt; plik.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;lub dłuższa wersja, działa również w ZSH&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:&amp;gt; plik.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Za pomocą komendy &lt;code&gt;&amp;gt;&lt;/code&gt; lub &lt;code&gt;:&amp;gt;&lt;/code&gt; możemy nie tylko wyczyścić zawartość pliku, ale również
+utworzymy nowy plik.&lt;/p&gt;
+&lt;h2 id=&#34;wyszukanie-ostatnio-edytowanych-plików&#34;&gt;Wyszukanie ostatnio edytowanych plików&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;find $HOME/git -type f -mtime -12 -mtime +3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;listy---wyświetlanie-elementów-w-osobnych-liniach&#34;&gt;Listy - wyświetlanie elementów w osobnych liniach&lt;/h2&gt;
+&lt;p&gt;Za pomocą komendy &lt;code&gt;printf&lt;/code&gt; możemy formatować wyświetlany tekst, tutaj dodajemy
+znak końca linii &lt;code&gt;\n&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;printf&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;%s\n&amp;#39;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;LISTA&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[@]&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;LISTA&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;  &lt;span class=&#34;nv&#34;&gt;$HOME&lt;/span&gt;/.aliases
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;  &lt;span class=&#34;nv&#34;&gt;$HOME&lt;/span&gt;/.config/alacritty/alacritty.yml
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;  &lt;span class=&#34;nv&#34;&gt;$HOME&lt;/span&gt;/.bashrc
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;  &lt;span class=&#34;nv&#34;&gt;$HOME&lt;/span&gt;/.ssh/config
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;ZMIENNA&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;printf&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;%s\n&amp;#39;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;LISTA&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[@]&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;fzf&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$ZMIENNA&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;  vim &lt;span class=&#34;nv&#34;&gt;$ZMIENNA&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
     <item>
@@ -63,10 +669,18 @@ Konstrukcja $(basename $0) jest opcjonalna, oznacza to, że jeśli skrypt znajdu
       <pubDate>Thu, 22 Oct 2020 16:32:55 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/kompilacja-xurls/</guid>
-      <description>xurls to projekt, dzięki któremu będzie możliwe odnalezienie wszystkich adresów WWW w pliku lub strumieniu.
-Źródła możemy pobrać ze strony https://github.com/mvdan/xurls.git następnie przechodzimy do katalogu cmd/xurls i wydajemy polecenie:
-1go build -ldflags=&amp;#39;-w -s&amp;#39; Przykład wykorzystania
-1cat plik.md | xurls </description>
+      <description>
+        
+          &lt;p&gt;xurls to projekt, dzięki któremu będzie możliwe odnalezienie
+wszystkich adresów WWW w pliku lub strumieniu.&lt;/p&gt;
+&lt;p&gt;Źródła możemy pobrać ze strony &lt;a href=&#34;https://github.com/mvdan/xurls.git&#34;&gt;https://github.com/mvdan/xurls.git&lt;/a&gt;
+następnie przechodzimy do katalogu cmd/xurls i wydajemy polecenie:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;go build -ldflags=&amp;#39;-w -s&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Przykład wykorzystania&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;cat plik.md | xurls
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
     <item>
@@ -75,9 +689,130 @@ Konstrukcja $(basename $0) jest opcjonalna, oznacza to, że jeśli skrypt znajdu
       <pubDate>Thu, 22 Oct 2020 01:35:23 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/sed-receptury/</guid>
-      <description>Wyświetlanie pierwszej linii pliku 1sed q test.txt Wyświetlenie ostatniej linii pliku 1sed -n &amp;#39;$p&amp;#39; test.txt Wyświetlenie 25 linii pliku 1sed -n &amp;#39;25p&amp;#39; test.txt Wyświetlenie 6 pierwszych linii pliku 1sed &amp;#39;6q&amp;#39; test.txt Wyświetlenie zakresu linii pliku Wyświetla linię z zakresu od 1 do 4 pliku test.txt
-1sed -n &amp;#39;1,4&amp;#39; test.txt Wyświetlenie dwóch różnych linii Wyświetlenie 4 i 6 linii pliku
-1sed -n &amp;#39;4p;6p&amp;#39; test.txt 24 | 36 lsadfjla Wyświetlenie linii od 3 do ostatniej 1sed -n &amp;#39;3,$p&amp;#39; test.</description>
+      <description>
+        
+          &lt;h1 id=&#34;wyświetlanie-pierwszej-linii-pliku&#34;&gt;Wyświetlanie pierwszej linii pliku&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sed q test.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;wyświetlenie-ostatniej-linii-pliku&#34;&gt;Wyświetlenie ostatniej linii pliku&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sed -n &amp;#39;$p&amp;#39; test.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;wyświetlenie-25-linii-pliku&#34;&gt;Wyświetlenie 25 linii pliku&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sed -n &amp;#39;25p&amp;#39; test.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;wyświetlenie-6-pierwszych-linii-pliku&#34;&gt;Wyświetlenie 6 pierwszych linii pliku&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sed &amp;#39;6q&amp;#39; test.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;wyświetlenie-zakresu-linii-pliku&#34;&gt;Wyświetlenie zakresu linii pliku&lt;/h1&gt;
+&lt;p&gt;Wyświetla linię z zakresu od 1 do 4 pliku &lt;code&gt;test.txt&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sed -n &amp;#39;1,4&amp;#39; test.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;wyświetlenie-dwóch-różnych-linii&#34;&gt;Wyświetlenie dwóch różnych linii&lt;/h1&gt;
+&lt;p&gt;Wyświetlenie 4 i 6 linii pliku&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sed -n &amp;#39;4p;6p&amp;#39; test.txt
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;4 |
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;6 lsadfjla
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;wyświetlenie-linii-od-3-do-ostatniej&#34;&gt;Wyświetlenie linii od 3 do ostatniej&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sed -n &amp;#39;3,$p&amp;#39; test.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;wyświetlenie-linii-zawierającej-wyrażenie-regularne&#34;&gt;Wyświetlenie linii zawierającej wyrażenie regularne&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sed -n &amp;#39;/regexp/p&amp;#39; test.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;wyświetla-jedną-linię-przd-linią-zawierającą-wyrażenie-regularne&#34;&gt;Wyświetla jedną linię przd linią zawierającą wyrażenie regularne&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sed -n &amp;#39;/regexp/{g;1!p;};h&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;wyświetla-jedną-linię-po-lini-zawierającej-wyrażenie-regularne&#34;&gt;Wyświetla jedną linię po lini zawierającej wyrażenie regularne&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sed -n &amp;#39;/regexp/{n;p;}&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;wyświetla-jedną-linię-przed-i-po-zawierającej-wyrażenie-regularne&#34;&gt;Wyświetla jedną linię przed i po zawierającej wyrażenie regularne&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sed -n -e &amp;#39;/regexp/{=;x;1!p;g;$!N;p;D;}&amp;#39; -e h
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;usunięcie-znaczników-html&#34;&gt;Usunięcie znaczników HTML&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sed -e &amp;#39;s/&amp;lt;[^&amp;gt;]*&amp;gt;//g&amp;#39; index.html
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;usunięcie-wybranej-linii-z-pliku&#34;&gt;Usunięcie wybranej linii z pliku&lt;/h1&gt;
+&lt;p&gt;Usunięcie pierwszej linii z pliku &lt;code&gt;.ssh/authorized_keys&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sed -i &amp;#39;1d&amp;#39; .ssh/authorized_keys
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Usunięcie pierwszych 10 linii&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sed -i &amp;#39;1,10d&amp;#39; test.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Usunięcie ostatniej linii pliku&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sed &amp;#39;$d&amp;#39; test.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Usunięcie zakresu linii np. od linii 5 do 7 z pliku &lt;code&gt;.ssh/authorized_keys&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sed -i &amp;#39;5,7d&amp;#39; .ssh/authorized_keys
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Usunięcie dwóch ostatnich linii pliku&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sed &amp;#39;N;$!P;$!D;$d&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;usunięcie-linii-zawierające-wyrażenie-regularne&#34;&gt;Usunięcie linii zawierające wyrażenie regularne&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sed &amp;#39;/regexp/d&amp;#39; test.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;usunięcie-spacji-lub-tabów-występujących-na-początku-linii&#34;&gt;Usunięcie spacji lub tabów występujących na początku linii&lt;/h1&gt;
+&lt;p&gt;Usuwa spację / tabulatory jeśli występują na początku linii&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sed &amp;#39;s/^[ \t]*//&amp;#39; test.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;usuwa-spacje--tabulatory-występujące-na-końcu-linii&#34;&gt;Usuwa spacje / tabulatory występujące na końcu linii&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sed &amp;#39;s/[ \t]*$//&amp;#39; test.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;usuwa-spacje--tabulatory-występujące-na-początku-i-na-końcu-linii&#34;&gt;Usuwa spacje / tabulatory występujące na początku i na końcu linii&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sed &amp;#39;s/^[ \t]*//;s/[ \t]*$//&amp;#39; test.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;dodanie-linii-na-początku-pliku&#34;&gt;Dodanie linii na początku pliku&lt;/h1&gt;
+&lt;p&gt;Dodanie linii &lt;code&gt;nowa pierwsza linia&lt;/code&gt; na początku pliku &lt;code&gt;README.md&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sed -i &amp;#39;1s/^/nowa pierwsza linia\n/&amp;#39; README.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;wstawia-tekst-na-początku--końcu-każdej-linii&#34;&gt;Wstawia tekst na początku / końcu każdej linii&lt;/h1&gt;
+&lt;p&gt;Wstawia &lt;code&gt;--- &lt;/code&gt; na początku każdej linii&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sed &amp;#39;s/^/--- /&amp;#39; test.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Wstawia &lt;code&gt; ---&lt;/code&gt; na końcu każdej linii&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sed &amp;#39;s/$/ ---/&amp;#39; test.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;dodanie-tekstu-na-końcu-pierwszej-linii&#34;&gt;Dodanie tekstu na końcu pierwszej linii&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt; sed &amp;#39;1s/$/ koniec lini/&amp;#39; test.txt
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;1 | koniec lini
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;2 |
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;dodanie-linii-na-końcu-pliku&#34;&gt;Dodanie linii na końcu pliku&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sed &amp;#39;$s/$/\nostatnia linia/&amp;#39; test.txt
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;1 |
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;2 |
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;3 |
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;4 |
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;5
+&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;6 lsadfjla
+&lt;span class=&#34;ln&#34;&gt;8&lt;/span&gt;ostatnia linia
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;zmiana-parametrów-w-pliku-etcsshsshd_config&#34;&gt;Zmiana parametrów w pliku /etc/ssh/sshd_config&lt;/h1&gt;
+&lt;p&gt;Umożliwienie logowania się przez użytkownika &lt;code&gt;root&lt;/code&gt;, zamienia linię
+&lt;code&gt;#PermitRootLogin no&lt;/code&gt; na &lt;code&gt;PermitRootLogin yes&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sed -i &amp;#39;s/#\(PermitRootLogin \).\+/\1yes/&amp;#39; /etc/ssh/sshd_config
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;nazwa-użytkownika-pobrana-z-polecenia-id&#34;&gt;Nazwa użytkownika pobrana z polecenia id&lt;/h1&gt;
+&lt;p&gt;Polecenie &lt;code&gt;id&lt;/code&gt; wyświetla coś takiego&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;uid=0(root) gid=0(wheel) groups=0(wheel), 2(kmem), 3(sys), 4(tty), 5(operator), 20(staff), 31(guest)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Żeby wyświetlić nazwę użytkonika użyjemy polecenia &lt;code&gt;sed&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;id | sed &amp;#39;s/^[^(]*(\([^)]*\)).*/\1/&amp;#39;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;root
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;usunięcie-ostatniego-znaku-z-wybranej-linii&#34;&gt;Usunięcie ostatniego znaku z wybranej linii&lt;/h1&gt;
+&lt;p&gt;Usuwa ostatni znak z linii numer 4 w pliku &lt;code&gt;test.txt&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sed -i &amp;#39;4s/.$//&amp;#39; test.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;usunięcie-pierwszgo-i-ostatniego-znaku-w-każdej-linii&#34;&gt;Usunięcie pierwszgo i ostatniego znaku w każdej linii&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sed -i &amp;#39;s/.//;s/.$//&amp;#39; test.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;usunięcie-dwóch-ostatnich-znaków&#34;&gt;Usunięcie dwóch ostatnich znaków&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;echo 1234 | sed &amp;#39;s/.\{2\}$//&amp;#39;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;12
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;usunięcie-wszystkich-komentarzy&#34;&gt;Usunięcie wszystkich komentarzy&lt;/h1&gt;
+&lt;p&gt;Usuwa linie zaczynające się od znaku &lt;code&gt;#&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sed &amp;#39;/^#/d&amp;#39; squid.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;usunięcie-znaków-spacji-i-tabulacji-zaczynających-wiersz&#34;&gt;Usunięcie znaków spacji i tabulacji zaczynających wiersz&lt;/h1&gt;
+&lt;p&gt;Usunięcie znaków spacji oraz tabulacji&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;cat plik.txt | sed -e &amp;#39;s/^[ \t]*//&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Usunięcie znaków spacji&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;cat plik.txt | sed -e &amp;#39;s/^[ ]*//&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;usunięcie-pustych-linii&#34;&gt;Usunięcie pustych linii&lt;/h1&gt;
+&lt;p&gt;Usuwa puste linie z pliku &lt;code&gt;squid.conf&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sed &amp;#39;/^$/d&amp;#39; squid.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ten sam efekt można uzyskać za pomocą polecenia &lt;code&gt;grep&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;cat squid.conf | grep &amp;#39;.&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;usunięcie-komentarzy-i-pustych-linii&#34;&gt;Usunięcie komentarzy i pustych linii&lt;/h1&gt;
+&lt;p&gt;W tym wypadku są użyte dwa polecenia oddzielone znakiem &lt;code&gt;;&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sed &amp;#39;/^#/d; /^$/d&amp;#39; squid.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;zmiana-w-pliku-danych-z-użyciem-bsd-sed&#34;&gt;Zmiana w pliku danych z użyciem BSD SED&lt;/h1&gt;
+&lt;p&gt;Normalne systemy posiadają wersję &lt;code&gt;sed&lt;/code&gt;, która nie posiada parametru &lt;code&gt;-i&lt;/code&gt;,
+który zmienia szukany wzorzec w pliku i od razu go zapisuje.&lt;/p&gt;
+&lt;p&gt;Dlatego użyjemy tutaj pliku tymczasowego a następnie zastąpimy nim oryginał.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sed -e &amp;#34;/^#\(PermitRootLogin\) yes/s//\1 no/&amp;#34; &amp;lt; /etc/ssh/sshd_config &amp;gt; /tmp/sshd_config
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;mv /tmp/sshd_config /etc/ssh/sshd_config
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;wyświetlenie-komend-systemu-crontab&#34;&gt;Wyświetlenie komend systemu crontab&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;crontab -l | sed &amp;#39;/^#/d&amp;#39; | awk &amp;#39;{ for (i=6; i&amp;lt;=NF; i++) printf(&amp;#34;%s &amp;#34;, $i); printf(&amp;#34;\n&amp;#34;) }&amp;#39; | sed &amp;#39;/^$/d&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;oddzielenie-linii-pustą-linią&#34;&gt;Oddzielenie linii pustą linią&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sed &amp;#39;G&amp;#39; test.txt
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;1 |
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;2 |
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;3 |
+&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
     <item>
@@ -86,8 +821,14 @@ Konstrukcja $(basename $0) jest opcjonalna, oznacza to, że jeśli skrypt znajdu
       <pubDate>Thu, 22 Oct 2020 01:31:47 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/generowanie-liczb-losowych/</guid>
-      <description>Wygenerowanie liczby losowej o określonej długości W tym wypadku jest to 20 cyfr
-1&amp;lt; /dev/urandom | tr -cd &amp;#39;[:digit:]&amp;#39; | head -c20; echo </description>
+      <description>
+        
+          &lt;h1 id=&#34;wygenerowanie-liczby-losowej-o-określonej-długości&#34;&gt;Wygenerowanie liczby losowej o określonej długości&lt;/h1&gt;
+&lt;p&gt;W tym wypadku jest to 20 cyfr&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&amp;lt; /dev/urandom | tr -cd &amp;#39;[:digit:]&amp;#39; | head -c20; echo
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
     <item>
@@ -96,8 +837,90 @@ Konstrukcja $(basename $0) jest opcjonalna, oznacza to, że jeśli skrypt znajdu
       <pubDate>Thu, 22 Oct 2020 01:20:20 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/aliasy-bash-zsh/</guid>
-      <description>Część aliasów ma ustawione parametry dla polecenia np. alias ss=&#39;ss -tumanp&#39; jeśli będziemy chcieli pominąć te parametry należy podać pełną ścieżke do polecenia ss: /usr/sbin/ss.
-Ścieżki do katalogów 1[ -d ~/bin ] &amp;amp;&amp;amp; export PATH=$PATH:~/bin 2[ -d ~/.local/bin ] &amp;amp;&amp;amp; export PATH=$PATH:~/.local/bin 3[ -d ~/.cargo/bin ] &amp;amp;&amp;amp; export PATH=$PATH:~/.cargo/bin 4[ -d ~/go/bin ] &amp;amp;&amp;amp; export PATH=$PATH:~/go/bin 5[ -d ~/node_modules/.bin ] &amp;amp;&amp;amp; export PATH=$PATH:~/node_modules/.bin Aliasy podstawowe 1alias q=exit 2alias Q=exit 3alias more=less 4alias so=&amp;#39;source&amp;#39; 5alias psgrep=&amp;#39;ps ax | grep &amp;#39; 6alias cp=&amp;#34;cp -i&amp;#34; 7alias df=&amp;#39;df -h&amp;#39; 8alias free=&amp;#39;free -m&amp;#39; 9alias mountt=&amp;#39;mount | column -t&amp;#39; Aliasy narzędzi sieciowych 1alias ip=&amp;#39;sudo ip&amp;#39; 2alias ifconfig=&amp;#39;ip a s&amp;#39; 3alias myip=&amp;#39;ip-br -c a&amp;#39; 4alias arp=&amp;#39;ip n&amp;#39; 5alias iptraf=&amp;#39;sudo iptraf-ng&amp;#39; 6alias ss=&amp;#39;sudo ss -tumanp&amp;#39; 7alias netstat=&amp;#39;sudo netstat&amp;#39; 8alias nmap=&amp;#39;sudo nmap&amp;#39; 9alias lsof=&amp;#39;sudo lsof&amp;#39; Aliasy sudo 1alias cryptsetup=&amp;#39;sudo cryptsetup&amp;#39; 2alias fdisk=&amp;#39;sudo fdisk&amp;#39; 3alias cfdisk=&amp;#39;sudo cfdisk&amp;#39; 4alias mount=&amp;#39;sudo mount&amp;#39; 5alias m=&amp;#39;sudo mount&amp;#39; 6alias umount=&amp;#39;sudo umount&amp;#39; 7alias iotop=&amp;#39;sudo iotop&amp;#39; Aliasy ls 1alias ls=&amp;#39;ls --color=auto&amp;#39; 2alias ll=&amp;#39;ls -alFh&amp;#39; 3alias la=&amp;#39;ls -Ah&amp;#39; 4alias l=&amp;#39;ls -CFh&amp;#39; Katalogi 1alias b=&amp;#34;cd ~/Books&amp;#34; 2alias h=&amp;#34;cd ~&amp;#34; 3alias .</description>
+      <description>
+        
+          &lt;p&gt;Część aliasów ma ustawione parametry dla polecenia np. &lt;code&gt;alias ss=&#39;ss -tumanp&#39;&lt;/code&gt;
+jeśli będziemy chcieli pominąć te parametry należy podać pełną ścieżke do
+polecenia &lt;code&gt;ss&lt;/code&gt;: &lt;code&gt;/usr/sbin/ss&lt;/code&gt;.&lt;/p&gt;
+&lt;h1 id=&#34;ścieżki-do-katalogów&#34;&gt;Ścieżki do katalogów&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; -d ~/bin &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;PATH&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$PATH&lt;/span&gt;:~/bin
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; -d ~/.local/bin &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;PATH&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$PATH&lt;/span&gt;:~/.local/bin
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; -d ~/.cargo/bin &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;PATH&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$PATH&lt;/span&gt;:~/.cargo/bin
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; -d ~/go/bin &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;PATH&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$PATH&lt;/span&gt;:~/go/bin
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; -d ~/node_modules/.bin &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;PATH&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$PATH&lt;/span&gt;:~/node_modules/.bin
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;aliasy-podstawowe&#34;&gt;Aliasy podstawowe&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;q&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;Q&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;more&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;less
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;so&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;source&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;psgrep&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;ps ax | grep &amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;cp&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;cp -i&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;df&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;df -h&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;free&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;free -m&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;mountt&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;mount | column -t&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;aliasy-narzędzi-sieciowych&#34;&gt;Aliasy narzędzi sieciowych&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;ip&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;sudo ip&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;ifconfig&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;ip a s&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;myip&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;ip-br -c a&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;arp&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;ip n&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;iptraf&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;sudo iptraf-ng&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;ss&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;sudo ss -tumanp&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;netstat&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;sudo netstat&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;nmap&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;sudo nmap&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;lsof&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;sudo lsof&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;aliasy-sudo&#34;&gt;Aliasy sudo&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;cryptsetup&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;sudo cryptsetup&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;fdisk&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;sudo fdisk&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;cfdisk&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;sudo cfdisk&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;mount&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;sudo mount&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;sudo mount&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;umount&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;sudo umount&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;iotop&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;sudo iotop&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;aliasy-ls&#34;&gt;Aliasy ls&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;ls&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;ls --color=auto&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;ll&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;ls -alFh&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;la&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;ls -Ah&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;ls -CFh&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;katalogi&#34;&gt;Katalogi&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;cd ~/Books&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;h&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;cd ~&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; ..&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;cd ..&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; ...&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;cd ../..&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;cd -&amp;#34;&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# poprzedni katalog&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;aliasy-git&#34;&gt;Aliasy Git&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;g&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;git
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;gl&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;git log&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;pu&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;git pull&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;pull&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;git pull&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;gp&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;~/bin/gp
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;ga&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;~/bin/ga
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;aliasy-fedora&#34;&gt;Aliasy Fedora&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; -f &lt;span class=&#34;s2&#34;&gt;&amp;#34;/etc/fedora-release&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;dnf&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;sudo dnf&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;di&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;sudo dnf install&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;dr&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;sudo dnf remove&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;ds&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;dnf search&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;dl&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;dnf list&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;ddep&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;dnf deplist&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;update&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;sudo dnf update --refresh &amp;amp;&amp;amp; rofi -e &amp;#34;Aktualizacja zakończona&amp;#34;&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;upgrade&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;sudo dnf update --refresh &amp;amp;&amp;amp; rofi -e &amp;#34;Aktualizacja zakończona&amp;#34;&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;rpm&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;sudo rpm&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;yum&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;sudo yum&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;aliasy-arch&#34;&gt;Aliasy Arch&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; -f &lt;span class=&#34;s2&#34;&gt;&amp;#34;/etc/arch-release&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;pacman&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;sudo pacman --color always&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;sudo pacman --color always&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;pi&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;sudo pacman -S&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;yaourt&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;pacup&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;sudo pacman -Syu&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;aup&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;yaourt -Syu --aur&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;upgrade&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;sudo pacman -Syu; yaourt -Syu --aur&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;upgrade&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;pacman -Syyu &amp;amp;&amp;amp; yaourt -Syyu&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
     <item>
@@ -106,9 +929,43 @@ Konstrukcja $(basename $0) jest opcjonalna, oznacza to, że jeśli skrypt znajdu
       <pubDate>Wed, 21 Oct 2020 21:56:55 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/uruchomienie-skryptu-po-wykryciu-zmian/</guid>
-      <description>Za pomocą skryptu, który operuje na sumach kontrolnych, można monitorować wybrany plik. Jeśli monitorowany plik się zmieni lub zostanie zapisany, skrypt automatycznie go uruchomi, dzięki temu nie trzeba za każdym razem uruchomiać go podczas kodowania.
-Istnieją programy, które wykonują to samo, takie jak entr czy inotifywait, niesety trzeba je doinstalować, o ile nie chcemy używać ich dodatkowych funkcji, można korzystać z tego skryptu.
-Jako parametr należy podać nazwę pliku, który chcemy monitorować.</description>
+      <description>
+        
+          &lt;p&gt;Za pomocą skryptu, który operuje na sumach kontrolnych, można monitorować wybrany
+plik. Jeśli monitorowany plik się zmieni lub zostanie zapisany, skrypt automatycznie
+go uruchomi, dzięki temu nie trzeba za każdym razem uruchomiać go podczas kodowania.&lt;/p&gt;
+&lt;p&gt;Istnieją programy, które wykonują to samo, takie jak &lt;code&gt;entr&lt;/code&gt; czy &lt;code&gt;inotifywait&lt;/code&gt;,
+niesety trzeba je doinstalować, o ile nie chcemy używać ich dodatkowych funkcji,
+można korzystać z tego skryptu.&lt;/p&gt;
+&lt;p&gt;Jako parametr należy podać nazwę pliku, który chcemy monitorować.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# zmienna TIME określa co ile sekund jest sprawdzany skrypt&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;TIME&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$#&lt;/span&gt; -lt &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Podaj nazwę skryptu do obserwacji.&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;    &lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;SCRIPT&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;readlink -f &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Zaczynam monitorować plik &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$SCRIPT&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;SUM_OLD&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;md5sum &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$SCRIPT&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;15&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;16&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;while&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;17&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;do&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;18&lt;/span&gt;    &lt;span class=&#34;nv&#34;&gt;SUM_NEW&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;md5sum &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$SCRIPT&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;19&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;20&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$SUM_NEW&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt; !&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$SUM_OLD&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;21&lt;/span&gt;        &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$SCRIPT&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;22&lt;/span&gt;        &lt;span class=&#34;nv&#34;&gt;SUM_OLD&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$SUM_NEW&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;23&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;24&lt;/span&gt;    sleep &lt;span class=&#34;nv&#34;&gt;$TIME&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;25&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;done&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
     <item>
@@ -117,8 +974,45 @@ Jako parametr należy podać nazwę pliku, który chcemy monitorować.</descript
       <pubDate>Thu, 15 Oct 2020 21:20:19 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/pobranie-ostatniego-wydania-programu-z-repozytorium-github/</guid>
-      <description>Pobranie wersji binarnej 1#!/usr/bin/env bash 2 3curl -s https://api.github.com/repos/junegunn/fzf-bin/releases/latest \ 4 | grep browser_download_url \ 5 | grep linux_amd64 \ 6 | cut -d &amp;#39;&amp;#34;&amp;#39; -f 4 \ 7 | wget -O fzf-bin.tgz -qi - 8 9tar xf fzf-bin.tgz 10rm fzf-bin.tgz Pobranie źródeł Pobranie śródeł kiedy są tworzone wydania
-1#!/usr/bin/env bash 2 3curl -s https://api.github.com/repos/lotabout/skim/releases/latest \ 4 | grep tarball_url \ 5 | cut -d &amp;#39;&amp;#34;&amp;#39; -f 4 \ 6 | wget -O skim-src.</description>
+      <description>
+        
+          &lt;h2 id=&#34;pobranie-wersji-binarnej&#34;&gt;Pobranie wersji binarnej&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#!/usr/bin/env bash
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;curl -s https://api.github.com/repos/junegunn/fzf-bin/releases/latest &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep browser_download_url &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep linux_amd64 &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; cut -d &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#34;&amp;#39;&lt;/span&gt; -f &lt;span class=&#34;m&#34;&gt;4&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; wget -O fzf-bin.tgz -qi -
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;tar xf fzf-bin.tgz
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;rm fzf-bin.tgz
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;pobranie-źródeł&#34;&gt;Pobranie źródeł&lt;/h2&gt;
+&lt;p&gt;Pobranie śródeł kiedy są tworzone wydania&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#!/usr/bin/env bash
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;curl -s https://api.github.com/repos/lotabout/skim/releases/latest &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep tarball_url &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; cut -d &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#34;&amp;#39;&lt;/span&gt; -f &lt;span class=&#34;m&#34;&gt;4&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; wget -O skim-src.tgz -qi -
+&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;8&lt;/span&gt;tar xf skim-src.tgz
+&lt;span class=&#34;ln&#34;&gt;9&lt;/span&gt;rm skim-src.tgz
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Inna sytuacja ma miejsce, kiedy w repozytorium nie mamy wydań, ale są tagi tak
+jak w repozytorium FZF.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#!/usr/bin/bash
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;TAG&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;git ls-remote --tags https://github.com/junegunn/fzf &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; cut -f &lt;span class=&#34;m&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; cut -f &lt;span class=&#34;m&#34;&gt;3&lt;/span&gt; -d &lt;span class=&#34;s1&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sort -V &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; tail -n &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sed &lt;span class=&#34;s1&#34;&gt;&amp;#39;s/\^{}//&amp;#39;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;wget -O fzf-src-&lt;span class=&#34;nv&#34;&gt;$TAG&lt;/span&gt;.tgz -q https://github.com/junegunn/fzf/archive/&lt;span class=&#34;nv&#34;&gt;$TAG&lt;/span&gt;.tar.gz
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;lub jeśli w systemie mamy zainstalowany program &lt;code&gt;jq&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#!/usr/bin/env bash
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;TAG&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;curl -s https://api.github.com/repos/junegunn/fzf/tags &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; jq -r &lt;span class=&#34;s2&#34;&gt;&amp;#34;.[0].name&amp;#34;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;wget -O fzf-src-&lt;span class=&#34;nv&#34;&gt;$TAG&lt;/span&gt;.tgz -q https://github.com/junegunn/fzf/archive/&lt;span class=&#34;nv&#34;&gt;$TAG&lt;/span&gt;.tar.gz
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
     <item>
@@ -127,10 +1021,72 @@ Jako parametr należy podać nazwę pliku, który chcemy monitorować.</descript
       <pubDate>Wed, 14 Oct 2020 15:17:50 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/nazwa-pliku-wy%C5%9Bwetlanie-nazwy-i-rozszerzenia/</guid>
-      <description>Nazwa pliku bez ścieżki Na podstawie prostego skryptu pokażę jak wyświetlić nazwę pliku bez katalogu oraz jak wyświetlić samą nazwę pliku bez rozszerzenia.
-Pętla for pokazuje wszystkie pliki w katalogu katalog wraz z nazwą tego katalogu np. katalog/nazwa-pliku.txt, chcąc uzyskać samą nazwę pliku użyjemy komendy basename.
-1for i in katalog/*.txt 2do 3 PLIK=$(basename $i | cut -d &amp;#39;.&amp;#39; -f 1) 4 echo &amp;#34;$PLIK&amp;#34; 5done Inny przykład użycia komendy basename
-1VIMRC_DIR=&amp;#34;$HOME/.vim/vimrc&amp;#34; 2VIMRC=$(basename &amp;#34;$VIMRC_DIR&amp;#34;) 3echo $VIMRC 1vimrc Użycie komendy basename</description>
+      <description>
+        
+          &lt;h2 id=&#34;nazwa-pliku-bez-ścieżki&#34;&gt;Nazwa pliku bez ścieżki&lt;/h2&gt;
+&lt;p&gt;Na podstawie prostego skryptu pokażę jak wyświetlić nazwę pliku bez katalogu
+oraz jak wyświetlić samą nazwę pliku bez rozszerzenia.&lt;/p&gt;
+&lt;p&gt;Pętla &lt;code&gt;for&lt;/code&gt; pokazuje wszystkie pliki w katalogu &lt;code&gt;katalog&lt;/code&gt; wraz z nazwą tego katalogu
+np. &lt;code&gt;katalog/nazwa-pliku.txt&lt;/code&gt;, chcąc uzyskać samą nazwę pliku użyjemy komendy
+&lt;code&gt;basename&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; i in katalog/*.txt
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;do&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;   &lt;span class=&#34;nv&#34;&gt;PLIK&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;basename &lt;span class=&#34;nv&#34;&gt;$i&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; cut -d &lt;span class=&#34;s1&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt; -f 1&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;   &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$PLIK&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;done&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Inny przykład użycia komendy &lt;code&gt;basename&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;VIMRC_DIR&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$HOME&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;/.vim/vimrc&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;VIMRC&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;basename &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$VIMRC_DIR&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$VIMRC&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;vimrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Użycie komendy &lt;code&gt;basename&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ basename katalog/plik.txt
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;plik.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;nazwa-pliku-bez-rozszerzenia&#34;&gt;Nazwa pliku bez rozszerzenia&lt;/h2&gt;
+&lt;p&gt;Skoro mamy już samą nazwę pliku &lt;code&gt;plik.txt&lt;/code&gt;, to teraz spróbujemy uzyskać nazwę
+pliku bez rozszerzenia. Używając polecenia &lt;code&gt;cut&lt;/code&gt; oraz parametru &lt;code&gt;-d &#39;.&#39;&lt;/code&gt;, który
+określa separator pomiędzy polami, wyświetlimy pole numer 1 czyli nazwę pliku,
+służy do tego parametr &lt;code&gt;-f 1&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ basename katalog/plik.txt &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; cut -d &lt;span class=&#34;s1&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt; -f &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;plik
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ten sam rezultat możemy uzyskać używając wyłącznie polecenia basename jednak
+musimy znać rozszerzenie pliku.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ basename katalog/plik.txt .txt
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;plik
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;samo-rozszerzenie&#34;&gt;Samo rozszerzenie&lt;/h2&gt;
+&lt;p&gt;Jeśli chcemy wyświetlić samą nazwę rozszerzenia, to należy użyć polecenia &lt;code&gt;cut&lt;/code&gt;,
+gdzie parametr &lt;code&gt;-f1&lt;/code&gt; należy zastąpić &lt;code&gt;-f2&lt;/code&gt; lub &lt;code&gt;-f2,3&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Dla powłoki &lt;strong&gt;BASH&lt;/strong&gt; można użyć innego rozwiązania, &lt;a href=&#34;https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html#Shell-Parameter-Expansion&#34;&gt;shell parameters expansion&lt;/a&gt;,
+w zmiennej wyszukujemy wzoru np. &lt;code&gt;.*&lt;/code&gt; a następnie cała reszta zostaje usunięta.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;FILE&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;plik.conf
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;EXT&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;FILE&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;##.*&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$EXT&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;W przypadku plików zaczynających od &lt;code&gt;.&lt;/code&gt; trzeba zastosować inny wzór &lt;code&gt;FILE##*.&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;FILE&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;.tmux.conf
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;EXT&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;FILE&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;##*.&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$EXT&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;przykłady-użycia-wzorców-na-zmiennych&#34;&gt;Przykłady użycia wzorców na zmiennych&lt;/h3&gt;
+&lt;p&gt;Ucięcie wszystkiego na prawo od wystąpienia wzorca czyli Wielkiej litery &lt;code&gt;[[:upper]]&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ZM=&amp;#34;terefere/234/234234małaDuża&amp;#34;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;echo &amp;#34;${ZM%%[[:upper:]]*}&amp;#34;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;terefere/234/234234mała
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ucięcie od wystąpienia wzoraca do końca zmiennej, czyli w tym przypadku pokazuje
+wszystko na prawo od wystąpienia cyfry.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ZM=&amp;#34;terefere/234/234234małaDuża&amp;#34;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;echo &amp;#34;${ZM##*[[:digit:]]}&amp;#34;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;małaDuża
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Dodatkowe informacje:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html&#34;&gt;Shell Parameter Expansion&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html&#34;&gt;Pattern Matching&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+        
+      </description>
     </item>
     
   </channel>

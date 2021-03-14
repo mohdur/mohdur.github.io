@@ -12,8 +12,18 @@
       <pubDate>Sat, 24 Oct 2020 15:50:31 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/konwertowanie-dokument%C3%B3w-markdown-do-pdf/</guid>
-      <description>Skrypt do konwertowania dokumentów
-1#!/bin/bash 2 3nazwa=$(basename &amp;#34;$1&amp;#34; .md) 4 5pandoc -V geometry:margin=1.5cm &amp;#34;$1&amp;#34; --pdf-engine=xelatex \ 6--variable fontsize=10.5pt -s -o &amp;#34;$nazwa&amp;#34;.pdf --toc --toc-depth 2 </description>
+      <description>
+        
+          &lt;p&gt;Skrypt do konwertowania dokumentów&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;nazwa&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;basename &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt; .md&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;pandoc -V geometry:margin&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;1.5cm &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt; --pdf-engine&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;xelatex &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;--variable &lt;span class=&#34;nv&#34;&gt;fontsize&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;10.5pt -s -o &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$nazwa&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;.pdf --toc --toc-depth &lt;span class=&#34;m&#34;&gt;2&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
   </channel>

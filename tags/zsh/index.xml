@@ -12,7 +12,117 @@
       <pubDate>Sat, 24 Oct 2020 16:34:48 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/skr%C3%B3ty-klawiszowe-zsh/</guid>
-      <description>   Skrót Opis     Tab Auto complete   ^a Beginning of line   ^e End of line   ^f Forward one character   ^b Back one character   ^h Delete one character (backw­ards)   %f Forward one word   %b Back one word   ^w Delete one word (backw­ards)   ^u Clear to beginning of line   ^k Clear to end of line   ^y Paste from Kill Ring   ^t Swap cursor with previous character   %t Swap cursor with previous word   ^p Previous line in history   ^n Next line in history   ^r Search backwards in history   ^l Clear screen   ^o Execute command but keep line   ^z Suspend process   fg restore process   bg continue process in background   ^c Kill current process   ^d Exit shell    </description>
+      <description>
+        
+          &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Skrót&lt;/th&gt;
+&lt;th&gt;Opis&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Tab&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Auto complete&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;^a&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Beginning of line&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;^e&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;End of line&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;^f&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Forward one character&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;^b&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Back one character&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;^h&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Delete one character (backw­ards)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;%f&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Forward one word&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;%b&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Back one word&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;^w&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Delete one word (backw­ards)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;^u&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Clear to beginning of line&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;^k&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Clear to end of line&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;^y&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Paste from Kill Ring&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;^t&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Swap cursor with previous character&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;%t&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Swap cursor with previous word&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;^p&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Previous line in history&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;^n&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Next line in history&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;^r&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Search backwards in history&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;^l&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Clear screen&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;^o&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Execute command but keep line&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;^z&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Suspend process&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;fg&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;restore process&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;bg&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;continue process in background&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;^c&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Kill current process&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;^d&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Exit shell&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+        
+      </description>
     </item>
     
   </channel>

@@ -12,8 +12,39 @@
       <pubDate>Wed, 14 Oct 2020 21:01:41 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/konfiguracja-us%C5%82ugi-ssh-w-routeros-mikrotik/</guid>
-      <description>Ustawienie mocniejszej kryptografi i kluczy dla hosta o większej długości 1/ip ssh set strong-crypto=yes Zmiana długości klucza hosta wymaga wygenerowania ponownie klucza, ta operacja może potrwać do kilkudziesięciu minut w zależności od długości klucza oraz mocy obliczeniowych procesora.
-1/ip ssh set host-key-size=4096 2/ip ssh regenerate-host-key Wygenerowanie klucza RSA w systemie Linux 1$ ssh-keygen -t RSA -b 4096 -f mikrotik-rsa Autoryzacja za pomocą klucza RSA i hasła Najpierw należy wygenerować taki klucz, następnie przesłać na urządzenie i dopisać do konkretnego użytkownika.</description>
+      <description>
+        
+          &lt;h2 id=&#34;ustawienie-mocniejszej-kryptografi-i-kluczy-dla-hosta-o-większej-długości&#34;&gt;Ustawienie mocniejszej kryptografi i kluczy dla hosta o większej długości&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;/ip ssh set strong-crypto=yes
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Zmiana długości klucza hosta wymaga wygenerowania ponownie klucza, ta operacja
+może potrwać do kilkudziesięciu minut w zależności od długości klucza oraz
+mocy obliczeniowych procesora.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;/ip ssh set host-key-size=4096
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;/ip ssh regenerate-host-key
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;wygenerowanie-klucza-rsa-w-systemie-linux&#34;&gt;Wygenerowanie klucza RSA w systemie Linux&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ ssh-keygen -t RSA -b 4096 -f mikrotik-rsa
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;autoryzacja-za-pomocą-klucza-rsa-i-hasła&#34;&gt;Autoryzacja za pomocą klucza RSA i hasła&lt;/h2&gt;
+&lt;p&gt;Najpierw należy wygenerować taki klucz, następnie przesłać na urządzenie
+i dopisać do konkretnego użytkownika. Ustawienie logowania za pomocą klucza
+wyłącza możliwość logowania bez hasła. Istnieją dwa sposoby na rozwiązanie
+tego problemu. Pierwszy to dodanie innego użytkownika z odpowiednio trudnym
+hasłem. Drugi sposób to ustawienie możliwości logowania za pomocą hasła
+pomimo ustawienia klucza RSA.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;/ip ssh set always-allow-password-login=yes
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;ustawienie-autoryzacji-za-pomocą-klucza-rsa&#34;&gt;Ustawienie autoryzacji za pomocą klucza RSA&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;/usr ssh-keys import public-key-file=klucz-rsa.pub user admin
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Lista użytkowników z ustawionym kluczem RSA&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;/user ssh-keys print
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;wyświetlenie-ustawień-serwera-ssh&#34;&gt;Wyświetlenie ustawień serwera SSH&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;/ip ssh print
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;           forwarding-enabled: no
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;  always-allow-password-login: yes
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;                strong-crypto: yes
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;            allow-none-crypto: no
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;                host-key-size: 4096
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
     <item>
@@ -22,8 +53,100 @@
       <pubDate>Wed, 14 Oct 2020 14:03:25 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/mikrotik-i-wireguard-vpn/</guid>
-      <description>Od kilku tygodni jest dostępna wersja 7.1beta2 (Developmend) systemu RouterOS głównie przeznaczonych dla urządzeń Mikrotik. Od tej wersji istnieje wsparcie dla usługi Wireguard VPN. Należy zaznaczyć iż jest to wersja, której nie należy używać w środowisku produkcyjnym.
-Na razie w wersji 7.1beta2 nie ma możliwości zestawienia takiego połączenia za pomocą programu WinBox ani interfejsu WWW. Problem występuje w polu endpoint, które nie przyjmuje numeru portu dla zdalnego hosta. Jedyna możliwość to użyć linii komend.</description>
+      <description>
+        
+          &lt;p&gt;Od kilku tygodni jest dostępna wersja 7.1beta2 (Developmend) systemu RouterOS
+głównie przeznaczonych dla urządzeń Mikrotik. Od tej wersji istnieje wsparcie
+dla usługi Wireguard VPN. Należy zaznaczyć iż jest to wersja, której nie należy
+używać w środowisku produkcyjnym.&lt;/p&gt;
+&lt;p&gt;Na razie w wersji 7.1beta2 nie ma możliwości zestawienia takiego połączenia
+za pomocą programu WinBox ani interfejsu WWW. Problem występuje w polu
+endpoint, które nie przyjmuje numeru portu dla zdalnego hosta. Jedyna możliwość
+to użyć linii komend.&lt;/p&gt;
+&lt;p&gt;Dla celów testowych zestawimy tunel pomiędzy dwoma urządzeniami Mikrotik, które
+działają w tej samej sieci LAN.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Nazwa urządzenia&lt;/th&gt;
+&lt;th&gt;Adres IP LAN&lt;/th&gt;
+&lt;th&gt;Adres IP Wireguard&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;MT-R1&lt;/td&gt;
+&lt;td&gt;192.168.88.101&lt;/td&gt;
+&lt;td&gt;10.0.0.101&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MT-R2&lt;/td&gt;
+&lt;td&gt;192.168.88.102&lt;/td&gt;
+&lt;td&gt;10.0.0.102&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;dodanie-nowego-interfejsu-dla-usługi-wireguard&#34;&gt;Dodanie nowego interfejsu dla usługi Wireguard&lt;/h2&gt;
+&lt;p&gt;Po dodaniu interfejsu Wireguard zostaną automatycznie wygenerowane klucze. Klucz
+publiczny oraz prywatny.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;/interface wireguard add name=wireguard1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;wyświetlenie-kluczy-szyfrujących&#34;&gt;Wyświetlenie kluczy szyfrujących&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;/interface wireguard print
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Żeby pobrać klucz publiczny / prywatny można użyć polecenia&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:put [/interface/wireguard get wireguard1 private-key]
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;oGwMsty/RMY9oHUywxKsn9ov6cLh4W8xU8FpqQOkeFs=
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;:put [/interface/wireguard get wireguard1 public-key]
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;N5rCJmUwj2BrN87j5s2npyh/m6ZP8J0VGYbjVbNerkE=
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;nadanie-adresu-ip-dla-interfejsu-wireguard1&#34;&gt;Nadanie adresu IP dla interfejsu wireguard1&lt;/h2&gt;
+&lt;p&gt;Jak już mamy interfejs wireguard, to kolejnym krokiem jest nadanie mu adresu IP.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;/ip address add address=10.0.0.X/24 interface=wireguard1 network=10.0.0.0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;pełna-konfiguracja-urządzenia-mt-r1&#34;&gt;Pełna konfiguracja urządzenia MT-R1&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;IP LAN: 192.168.88.101&lt;/li&gt;
+&lt;li&gt;IP Wireguard: 10.0.0.101&lt;/li&gt;
+&lt;li&gt;Klucz prywatny: &lt;code&gt;oGwMsty/RMY9oHUywxKsn9ov6cLh4W8xU8FpqQOkeFs=&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Klucz publiczny: &lt;code&gt;N5rCJmUwj2BrN87j5s2npyh/m6ZP8J0VGYbjVbNerkE=&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Numer portu Wireguard: 24680/UDP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;/interface wireguard add name=wireguard1
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;/ip address add address=10.0.0.101/24 interface=wireguard1 network=10.0.0.0
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;/interface wireguard
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;add listen-port=24680 mtu=1420 name=wireguard1 private-key=&amp;#34;oGwMsty/RMY9oHUywxKsn9ov6cLh4W8xU8FpqQOkeFs=&amp;#34;
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;/interface wireguard peers
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;add allowed-address=10.0.0.0/24 endpoint=192.168.88.102:24680 interface=wireguard1 public-key=\
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;    &amp;#34;hFAmrgxz4bDRmTaCbOyrvNQzVEwI4uctKyCy+zUJoGE=&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;pełna-konfiguracja-urządzenia-mt-r2&#34;&gt;Pełna konfiguracja urządzenia MT-R2&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;IP LAN: 192.168.88.102&lt;/li&gt;
+&lt;li&gt;IP Wireguard: 10.0.0.102&lt;/li&gt;
+&lt;li&gt;Klucz prywatny: &lt;code&gt;YIRU+EYysLwHcQRWEoz4qjGIWjLvenTQ4WgjBbWVp0o=&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Klucz publiczny: &lt;code&gt;hFAmrgxz4bDRmTaCbOyrvNQzVEwI4uctKyCy+zUJoGE=&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Numer portu Wireguard: 24680/UDP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;/interface wireguard add name=wireguard1
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;/ip address add address=10.0.0.102/24 interface=wireguard1 network=10.0.0.0
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;/interface wireguard
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;add listen-port=24680 mtu=1420 name=wireguard1 private-key=&amp;#34;YIRU+EYysLwHcQRWEoz4qjGIWjLvenTQ4WgjBbWVp0o=&amp;#34;
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;/interface wireguard peers
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;add allowed-address=10.0.0.0/24 endpoint=192.168.88.101:24680 interface=wireguard1 public-key=\
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;    &amp;#34;N5rCJmUwj2BrN87j5s2npyh/m6ZP8J0VGYbjVbNerkE=&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;test-połączenia-można-wykonać-za-pomocą-polecenia-ping&#34;&gt;Test połączenia można wykonać za pomocą polecenia ping&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;/tool/ping 10.0.0.102 count=4 interface=wireguard1
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;  SEQ HOST                                     SIZE TTL TIME  STATUS
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;    0 10.0.0.102                                 56  64 1ms
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;    1 10.0.0.102                                 56  64 1ms
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;    2 10.0.0.102                                 56  64 1ms
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;    3 10.0.0.102                                 56  64 1ms
+&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;    sent=4 received=4 packet-loss=0% min-rtt=1ms avg-rtt=1ms max-rtt=1ms
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
   </channel>

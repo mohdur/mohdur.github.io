@@ -12,8 +12,17 @@
       <pubDate>Sat, 24 Oct 2020 17:39:30 +0200</pubDate>
       
       <guid>https://mohdur.github.io/post/wykonanie-kopii-zapasowej-us%C5%82ugi-nextcloud/</guid>
-      <description>Skrypt do wykonania kopii zapasowej Nextcloud, w celu zwiększenia bezpieczeństwa, hasło do bazy danych jest przechowywane w bazie programu pass.
-1tar --exclude=&amp;#39;/var/www/html/nc/data&amp;#39; -czvf nextcloud-$(date -I).tgz /var/www/html/nc 2mysqldump --hex-blob -u nextcloud -p$(pass show nc@mysql) nextcloud &amp;gt; nextcloud-$(date -I).sql 3gzip -9 nextcloud-$(date -I).sql </description>
+      <description>
+        
+          &lt;p&gt;Skrypt do wykonania kopii zapasowej Nextcloud, w celu zwiększenia
+bezpieczeństwa, hasło do bazy danych jest przechowywane w bazie programu
+&lt;code&gt;pass&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;tar --exclude=&amp;#39;/var/www/html/nc/data&amp;#39; -czvf nextcloud-$(date -I).tgz /var/www/html/nc
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;mysqldump --hex-blob -u nextcloud -p$(pass show nc@mysql) nextcloud &amp;gt; nextcloud-$(date -I).sql
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;gzip -9 nextcloud-$(date -I).sql
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
     </item>
     
   </channel>

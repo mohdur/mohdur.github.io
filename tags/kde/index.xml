@@ -12,8 +12,16 @@
       <pubDate>Sat, 21 Nov 2020 10:46:43 +0100</pubDate>
       
       <guid>https://mohdur.github.io/post/kde-caps-lock-jako-esc/</guid>
-      <description>W środowisku KDE działanie klawisza Caps Lock można ustawić w różny sposób.
-Przechodzimy do System Settings następnie wyszukujemy Keyboard na zakładce Advanced wyszukujemy Caps Lock behavior tutaj mamy różne możliwości jedną z nich jest Make Caps Lock an additinal Esc.</description>
+      <description>
+        
+          &lt;p&gt;W środowisku KDE działanie klawisza Caps Lock można ustawić w różny sposób.&lt;/p&gt;
+&lt;p&gt;Przechodzimy do System Settings następnie wyszukujemy Keyboard na zakładce
+Advanced wyszukujemy Caps Lock behavior tutaj mamy różne możliwości jedną z nich
+jest Make Caps Lock an additinal Esc.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://mohdur.github.io/images/kde-caps-lock.png&#34; alt=&#34;KDE Caps Lock&#34;&gt;&lt;/p&gt;
+
+        
+      </description>
     </item>
     
   </channel>
