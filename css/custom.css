@@ -1,0 +1,19 @@
+code.noClass {
+    --inlineColor: rgb(14, 140, 200);
+    color: var(--inlineColor);
+    font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+    font-size: 1.1rem;
+    box-shadow: none !important;
+    margin: 0.1rem;
+    padding: 0.1rem 0.1rem;
+    background-color: rgba(0,119,184,0.15);
+    border: 1px solid transparent;
+    align-items: center;
+    display: inline;
+    line-break: anywhere;
+}
+
+code {
+    font-size: 1rem;
+	font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+}

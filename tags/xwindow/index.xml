@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>XWindow on MOHDUR</title>
+    <link>https://mohdur.github.io/tags/xwindow/</link>
+    <description>Recent content in XWindow on MOHDUR</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 24 Oct 2020 19:56:37 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/xwindow/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Zmiana częstotliwości powtarzania klawiszy</title>
+      <link>https://mohdur.github.io/post/zmiana-cz%C4%99stotliwo%C5%9Bci-powtarzania-klawiszy/</link>
+      <pubDate>Sat, 24 Oct 2020 19:56:37 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/zmiana-cz%C4%99stotliwo%C5%9Bci-powtarzania-klawiszy/</guid>
+      <description>
+        
+          &lt;p&gt;Jeśli jesteś niecierpliwy i nie lubisz czekać, aż linia wypełni się jednym znakiem,
+lub skasujesz dużą część tekstu klawiszem Backspace, to pomoże Ci komenda &lt;code&gt;xset&lt;/code&gt;,
+która potrafi zmienić częstotliwość powtarzania klawiszy, oraz czas do uruchomienia tej procedury.&lt;/p&gt;
+&lt;h2 id=&#34;składnia&#34;&gt;Składnia&lt;/h2&gt;
+&lt;p&gt;Ogólna składnia polecenia &lt;code&gt;xset&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;xset r rate [deleay [rate]]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Kiedy przyciśniemy klawisz na klawiaturze i cały czas będziemy go trzymać,
+to po chwili przyciśnięty znak zacznie się powtarzać. Ten czas kiedy należy
+odczekać zanim znak zacznie się powtarzać można ustawić za pomocą parametru
+&lt;code&gt;deleay&lt;/code&gt; komendy &lt;code&gt;xset&lt;/code&gt;. Parametr &lt;code&gt;deleay&lt;/code&gt; podajemy w milisekundach.&lt;/p&gt;
+&lt;p&gt;Istnije jeszcze parametr &lt;code&gt;rate&lt;/code&gt;, który określa ilość powtórzeń znaków na
+sekundę.&lt;/p&gt;
+&lt;p&gt;Jeśli użyjemy tylko jednego parametru np. &lt;code&gt;xset r rate 10000&lt;/code&gt;, będzie to
+parametr &lt;code&gt;deleay&lt;/code&gt; określający opóźnienie. Jego maksymalna wartość to
+10000 milisekund, standardowa wartość to 660 milisekund.&lt;/p&gt;
+&lt;p&gt;Parametr &lt;code&gt;rate&lt;/code&gt; przyjmuje maksymalną wartość 255 znaków na sekundę. Jego
+standardowa wartość to 25 znaków na sekundę.&lt;/p&gt;
+&lt;h2 id=&#34;kilka-przykładów&#34;&gt;Kilka przykładów&lt;/h2&gt;
+&lt;p&gt;Na przykład &lt;code&gt;xset r rate 1000 50&lt;/code&gt; ustawia &lt;code&gt;1&lt;/code&gt; sekundowy czas opóźnienia
+i &lt;code&gt;50&lt;/code&gt; znaków na sekundę.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;xset r rate 1000 50
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Teraz ustawimy czas opóźnienia na &lt;code&gt;100 ms&lt;/code&gt;, natomiast prędkość powtarzania
+pozostanie standardowa i będzie wynosiła &lt;code&gt;25&lt;/code&gt; znaków na sekundę.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;xset r rate 100
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;włączenie--wyłączenie-powtarzania&#34;&gt;Włączenie / wyłączenie powtarzania&lt;/h2&gt;
+&lt;p&gt;Możemy też, wrócić do trybu maszyny do pisania i wyłączyć powtarzanie klawiszy.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;xset -r
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ponownie włączenie powtarzania klawiszy.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;xset r
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;przywrócenie-wartości-standardowych&#34;&gt;Przywrócenie wartości standardowych&lt;/h2&gt;
+&lt;p&gt;Ustawienie wartości standardowych czyli 660 ms czas opóźnienia i 25 znaków na sekundę.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;xset r rate
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;ustawienie-powtarzania-klawiszy-przy-logowaniu&#34;&gt;Ustawienie powtarzania klawiszy przy logowaniu&lt;/h2&gt;
+&lt;p&gt;Ustawienie odpowiednich wartości przy uruchomieniu środowiska graficznego
+można wykonać dodając odpowiednie wpisy w pliku &lt;code&gt;~/.xprofile&lt;/code&gt; lub &lt;code&gt;~/.xinitrc&lt;/code&gt;.&lt;/p&gt;
+
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Zmiana rozdzielczości ekranu</title>
+      <link>https://mohdur.github.io/post/zmiana-rozdzielczo%C5%9Bci-ekranu/</link>
+      <pubDate>Wed, 21 Oct 2020 21:52:41 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/zmiana-rozdzielczo%C5%9Bci-ekranu/</guid>
+      <description>
+        
+          &lt;p&gt;Kiedy chcemy zmienić rozdzielczość, ale okazuje się, mimo że w specyfikacji nasz
+ekran obsługuje taką rozdzielczość to jej nie ma :( Ma to często miejsce przy
+wirtualizacji. Tak więc musimy taką rozdzielczość dodać do listy.&lt;/p&gt;
+&lt;p&gt;Sprawdzamy ustawienia dla nowej rozdzielczości za pomocą polecenia &lt;code&gt;gtf&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ gtf 1920 1080 60
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;# 1920x1080 @ 60.00 Hz (GTF) hsync: 67.08 kHz; pclk: 172.80 MHz
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;Modeline &amp;#34;1920x1080_60.00&amp;#34;  172.80  1920 2040 2248 2576  1080 1081 1084 1118  -HSync +Vsync
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Dodajemy nową rozdzielczość i ustawiamy ją na ekranie &lt;code&gt;Virtual1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Pierwsza linia &lt;code&gt;--newmode&lt;/code&gt; dodaje nową rozdzielczość i parametry, które
+uzyskaliśmy za pomocą polecenia &lt;code&gt;gtf&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;xrandr --newmode &amp;#34;1920x1080_60.00&amp;#34;  172.80  1920 2040 2248 2576  1080 1081 1084 1118  -HSync +Vsync
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;xrandr --addmode Virtual1 &amp;#34;1920x1080_60.00&amp;#34;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;xrandr --output Virtual1 --primary --mode &amp;#34;1920x1080_60.00&amp;#34; --pos 0x0 --rotate normal
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SELinux on MOHDUR</title>
+    <link>https://mohdur.github.io/tags/selinux/</link>
+    <description>Recent content in SELinux on MOHDUR</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 22 Oct 2020 01:27:57 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/selinux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Konfiguracja serwera OpenSSH</title>
+      <link>https://mohdur.github.io/post/konfiguracja-serwera-openssh/</link>
+      <pubDate>Thu, 22 Oct 2020 01:27:57 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/konfiguracja-serwera-openssh/</guid>
+      <description>
+        
+          &lt;h1 id=&#34;instalacja&#34;&gt;Instalacja&lt;/h1&gt;
+&lt;p&gt;Instalacja w systemie Fedora&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ sudo dnf install openssh-server
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;plik-konfiguracyjny&#34;&gt;Plik konfiguracyjny&lt;/h1&gt;
+&lt;p&gt;Znajduje się w &lt;code&gt;/etc/ssh/sshd_config&lt;/code&gt;&lt;/p&gt;
+&lt;h1 id=&#34;zmiana-numeru-portu&#34;&gt;Zmiana numeru portu&lt;/h1&gt;
+&lt;p&gt;Serwer SSH normalnie nasłuchuje na porcie 22, możemy to zmienić ustawiając parametr &lt;code&gt;Port&lt;/code&gt;, parametr &lt;code&gt;Port&lt;/code&gt; może występować kilkukrotnie, czyli serwer SSH może nasłuchiwać na wielu portach jednocześnie.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;Port 22
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;Port 23034
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Możemy użyć parametru &lt;code&gt;ListenAddress&lt;/code&gt;, dzięki któremu możemy określić adres IP i port, na którym serwer SSH będzie nasłuchiwał.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ListenAddress 0.0.0.0:22
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;ListenAddress 192.168.0.201:23034
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;ListenAddress 192.168.0.202:22222
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Po zmianie numeru portu w &lt;code&gt;/etc/ssh/sshd_config&lt;/code&gt; na np. &lt;code&gt;23034&lt;/code&gt;, musimy dodać regułę SELinux, oraz wpuścić połączenia przychodzące na firewallu na ten port.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ sudo semanage port -a -t ssh_port_t -p tcp 23034
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ sudo firewall-cmd --permanent --add-port=23034/tcp
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ sudo firewall-cmd --reload
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;$ sudo systemctl restart sshd
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;generowanie-kluczy-serwera-ssh&#34;&gt;Generowanie kluczy serwera SSH&lt;/h1&gt;
+&lt;p&gt;Jeśli przy próbie uruchomienia serwera SSH otrzymamy taki komunikat:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ sudo /usr/sbin/sshd 
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;Could not load host key: /etc/ssh/ssh_host_rsa_key
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;Could not load host key: /etc/ssh/ssh_host_dsa_key
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;Could not load host key: /etc/ssh/ssh_host_ecdsa_key
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;Disabling protocol version 2. Could not load host key
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;sshd: no hostkeys available -- exiting.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Oznacza to, że brakuje kluczy RSA, DSA i ECDSA serwera&lt;/p&gt;
+&lt;p&gt;Możemy je wygenerować używając polecenia &lt;code&gt;ssh-keygen&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ sudo ssh-keygen -A
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;ssh-keygen: generating new host keys: RSA DSA ECDSA ED25519
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>
