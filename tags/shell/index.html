@@ -133,7 +133,6 @@ W pętli for możemy użyć maski zawężając wynik wyszukiwania np.
 1for i in $(ls -A); do 1#!/usr/bin/env bash 2 3clear 4 5echo 6echo …
             
           </p>
-          <a href="https://mohdur.github.io/post/archiwizacja-podkatalogow/" title="Read More" class="excerpt_more button">Read More</a>
         </div>
       </div>
     </div>
@@ -168,7 +167,6 @@ W pętli for możemy użyć maski zawężając wynik wyszukiwania np.
                  Skrót Opis     Tab Auto complete   ^a Beginning of line   ^e End of line   ^f Forward one character   ^b Back one character   ^h Delete one character (backw­ards)   %f Forward one word   %b Back one word   ^w Delete one word (backw­ards)   ^u Clear to beginning of line   ^k Clear to end of line   ^y Paste from Kill …
             
           </p>
-          <a href="https://mohdur.github.io/post/skr%C3%B3ty-klawiszowe-zsh/" title="Read More" class="excerpt_more button">Read More</a>
         </div>
       </div>
     </div>
@@ -201,7 +199,6 @@ W pętli for możemy użyć maski zawężając wynik wyszukiwania np.
               Porówanie Opis     &lt;INTEGER1&gt; -eq &lt;INTEGER2&gt; Prawda jeśli liczby są równe.   &lt;INTEGER1&gt; -ne &lt;INTEGER2&gt; Prawda jeśli liczby nie są równe.   &lt;INTEGER1&gt; -le &lt;INTEGER2&gt; Prawda jeśli pierwsza liczba jest mniejsza lub równa od drugiej.   &lt;INTEGER1&gt; -ge &lt;INTEGER2&gt; Prawda jeśli …
             
           </p>
-          <a href="https://mohdur.github.io/post/komenda-if-w-skryptach-bash.md/" title="Read More" class="excerpt_more button">Read More</a>
         </div>
       </div>
     </div>
@@ -235,7 +232,6 @@ W pętli for możemy użyć maski zawężając wynik wyszukiwania np.
 Skrypt zawiera instrukcję case, która operuje na nazwie skryptu za pomocą polecenia $(basename $0) gdzie $0 to nazwa skryptu, polecenie …
             
           </p>
-          <a href="https://mohdur.github.io/post/zmiana-funkcjonalno%C5%9Bci-przez-zmian%C4%99-nazwy-skryptu/" title="Read More" class="excerpt_more button">Read More</a>
         </div>
       </div>
     </div>
@@ -269,7 +265,6 @@ Skrypt zawiera instrukcję case, która operuje na nazwie skryptu za pomocą pol
 1$ date -r nazwa_pliku.txt &#34;+%F %s&#34; 22019-04-19 1555656071 Działania arytmetyczne na datach …
             
           </p>
-          <a href="https://mohdur.github.io/post/skrypty-bash-receptury/" title="Read More" class="excerpt_more button">Read More</a>
         </div>
       </div>
     </div>
@@ -305,7 +300,6 @@ Skrypt zawiera instrukcję case, która operuje na nazwie skryptu za pomocą pol
 1cat plik.md | xurls 
             
           </p>
-          <a href="https://mohdur.github.io/post/kompilacja-xurls/" title="Read More" class="excerpt_more button">Read More</a>
         </div>
       </div>
     </div>
@@ -338,7 +332,6 @@ Skrypt zawiera instrukcję case, która operuje na nazwie skryptu za pomocą pol
               Wyświetlanie pierwszej linii pliku 1sed q test.txt Wyświetlenie ostatniej linii pliku 1sed -n &#39;$p&#39; test.txt Wyświetlenie 25 linii pliku 1sed -n &#39;25p&#39; test.txt Wyświetlenie 6 pierwszych linii pliku 1sed &#39;6q&#39; test.txt Wyświetlenie zakresu linii pliku Wyświetla linię z zakresu od 1 do 4 pliku …
             
           </p>
-          <a href="https://mohdur.github.io/post/sed-receptury/" title="Read More" class="excerpt_more button">Read More</a>
         </div>
       </div>
     </div>
@@ -372,7 +365,6 @@ Skrypt zawiera instrukcję case, która operuje na nazwie skryptu za pomocą pol
 1&lt; /dev/urandom | tr -cd &#39;[:digit:]&#39; | head -c20; echo 
             
           </p>
-          <a href="https://mohdur.github.io/post/generowanie-liczb-losowych/" title="Read More" class="excerpt_more button">Read More</a>
         </div>
       </div>
     </div>
@@ -404,7 +396,6 @@ Skrypt zawiera instrukcję case, która operuje na nazwie skryptu za pomocą pol
 Ścieżki do katalogów 1[ -d ~/bin ] &amp;&amp; export PATH=$PATH:~/bin 2[ -d ~/.local/bin ] &amp;&amp; export PATH=$PATH:~/.local/bin 3[ -d …
             
           </p>
-          <a href="https://mohdur.github.io/post/aliasy-bash-zsh/" title="Read More" class="excerpt_more button">Read More</a>
         </div>
       </div>
     </div>
@@ -436,7 +427,6 @@ Skrypt zawiera instrukcję case, która operuje na nazwie skryptu za pomocą pol
 Istnieją programy, które wykonują to samo, takie jak entr czy …
             
           </p>
-          <a href="https://mohdur.github.io/post/uruchomienie-skryptu-po-wykryciu-zmian/" title="Read More" class="excerpt_more button">Read More</a>
         </div>
       </div>
     </div>
@@ -469,7 +459,6 @@ Istnieją programy, które wykonują to samo, takie jak entr czy …
               Pobranie wersji binarnej 1#!/usr/bin/env bash 2 3curl -s https://api.github.com/repos/junegunn/fzf-bin/releases/latest \ 4 | grep browser_download_url \ 5 | grep linux_amd64 \ 6 | cut -d &#39;&#34;&#39; -f 4 \ 7 | wget -O fzf-bin.tgz -qi - 8 9tar xf fzf-bin.tgz 10rm fzf-bin.tgz Pobranie źródeł Pobranie śródeł kiedy są …
             
           </p>
-          <a href="https://mohdur.github.io/post/pobranie-ostatniego-wydania-programu-z-repozytorium-github/" title="Read More" class="excerpt_more button">Read More</a>
         </div>
       </div>
     </div>
@@ -503,7 +492,6 @@ Istnieją programy, które wykonują to samo, takie jak entr czy …
 Pętla for pokazuje wszystkie pliki w katalogu katalog wraz z nazwą tego katalogu np. katalog/nazwa-pliku.txt, chcąc uzyskać samą nazwę pliku użyjemy komendy …
             
           </p>
-          <a href="https://mohdur.github.io/post/nazwa-pliku-wy%C5%9Bwetlanie-nazwy-i-rozszerzenia/" title="Read More" class="excerpt_more button">Read More</a>
         </div>
       </div>
     </div>

@@ -129,7 +129,6 @@
 1#!/bin/bash 2 3USERNAME=test1 4PASSWORD_PLAIN=test1 5PASSWORD=$(mkpasswd -m sha-512 -S $(&lt; /dev/urandom tr -cd &#34;[:alnum:]&#34; | head -c${1:-16}; echo) -s &lt;&lt;&lt; $PASSWORD_PLAIN) 6groupadd $USERNAME 7adduser -g $USERNAME -G wheel -m -p …
             
           </p>
-          <a href="https://mohdur.github.io/post/dodanie-konta-w-systemie-linux-skrypt/" title="Read More" class="excerpt_more button">Read More</a>
         </div>
       </div>
     </div>

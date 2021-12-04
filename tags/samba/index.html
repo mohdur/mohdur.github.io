@@ -127,7 +127,6 @@
 1if [ $# -eq 0 ]; then 2 echo Podaj nazwę konta, które chcesz dodać. 3 echo $0 nazwa_użytkownika 4 exit 5fi 6 7useradd -d /home/samba/$1 -s /sbin/nologin $1 8chmod 0770 /home/samba/$1 9cd /home/samba/$1 10ls -A /home/samba/$1 | xargs rm 11smbpasswd -a $1 
             
           </p>
-          <a href="https://mohdur.github.io/post/dodanie-konta-samba/" title="Read More" class="excerpt_more button">Read More</a>
         </div>
       </div>
     </div>
@@ -160,7 +159,6 @@
               1sudo mount.cifs //192.168.0.1/share /mnt/share -o user=nazwa-uzytkownika 
             
           </p>
-          <a href="https://mohdur.github.io/post/pod%C5%82%C4%85czenie-do-zasobu-samba/" title="Read More" class="excerpt_more button">Read More</a>
         </div>
       </div>
     </div>

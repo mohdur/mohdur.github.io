@@ -129,7 +129,6 @@
 1#!/usr/bin/env bash 2 3declare -a menu_list=( 4 &#34;Suspend&#34; 5 &#34;Reboot&#34; 6 &#34;Monitor Off&#34; 7 &#34;Pass ROFI&#34; 8 &#34;Wyczyść hasło do agenta GPG&#34; 9 &#34;Wyczyść historię schowka&#34; 10 &#34;CPU GHz&#34; 11 &#34;Stan baterii&#34; 12 &#34;Edytuj Menu&#34; 13) 14 …
             
           </p>
-          <a href="https://mohdur.github.io/post/w%C5%82asne-menu-rofi/" title="Read More" class="excerpt_more button">Read More</a>
         </div>
       </div>
     </div>
@@ -169,7 +168,6 @@ W pętli for możemy użyć maski zawężając wynik wyszukiwania np.
 1for i in $(ls -A); do 1#!/usr/bin/env bash 2 3clear 4 5echo 6echo …
             
           </p>
-          <a href="https://mohdur.github.io/post/archiwizacja-podkatalogow/" title="Read More" class="excerpt_more button">Read More</a>
         </div>
       </div>
     </div>
@@ -203,7 +201,6 @@ W pętli for możemy użyć maski zawężając wynik wyszukiwania np.
 Wymagania:  ripgrep skim (sk) fzf preview.sh część pluginu fzf.vim https://github.com/junegunn/fzf.vim/blob/master/bin/preview.sh vim plugin Vimwiki xclip  Opis użycia: W przypadku wyszukiwania z użyciem parametrów -s i -f, istnieje skrót Ctrl+p, …
             
           </p>
-          <a href="https://mohdur.github.io/post/skrypt-u%C5%82atwiaj%C4%85cy-prac%C4%99-z-pluginem-vimwiki-i-dziennikiem/" title="Read More" class="excerpt_more button">Read More</a>
         </div>
       </div>
     </div>
@@ -236,7 +233,6 @@ Wymagania:  ripgrep skim (sk) fzf preview.sh część pluginu fzf.vim https://gi
               Porówanie Opis     &lt;INTEGER1&gt; -eq &lt;INTEGER2&gt; Prawda jeśli liczby są równe.   &lt;INTEGER1&gt; -ne &lt;INTEGER2&gt; Prawda jeśli liczby nie są równe.   &lt;INTEGER1&gt; -le &lt;INTEGER2&gt; Prawda jeśli pierwsza liczba jest mniejsza lub równa od drugiej.   &lt;INTEGER1&gt; -ge &lt;INTEGER2&gt; Prawda jeśli …
             
           </p>
-          <a href="https://mohdur.github.io/post/komenda-if-w-skryptach-bash.md/" title="Read More" class="excerpt_more button">Read More</a>
         </div>
       </div>
     </div>
@@ -272,7 +268,6 @@ Wymagania:  ripgrep skim (sk) fzf preview.sh część pluginu fzf.vim https://gi
 Przykładowy plik …
             
           </p>
-          <a href="https://mohdur.github.io/post/backup-danych-na-szyfrowanym-nosniku.md/" title="Read More" class="excerpt_more button">Read More</a>
         </div>
       </div>
     </div>
@@ -306,7 +301,6 @@ Przykładowy plik …
 Skrypt zawiera instrukcję case, która operuje na nazwie skryptu za pomocą polecenia $(basename $0) gdzie $0 to nazwa skryptu, polecenie …
             
           </p>
-          <a href="https://mohdur.github.io/post/zmiana-funkcjonalno%C5%9Bci-przez-zmian%C4%99-nazwy-skryptu/" title="Read More" class="excerpt_more button">Read More</a>
         </div>
       </div>
     </div>
@@ -340,7 +334,6 @@ Skrypt zawiera instrukcję case, która operuje na nazwie skryptu za pomocą pol
 1$ date -r nazwa_pliku.txt &#34;+%F %s&#34; 22019-04-19 1555656071 Działania arytmetyczne na datach …
             
           </p>
-          <a href="https://mohdur.github.io/post/skrypty-bash-receptury/" title="Read More" class="excerpt_more button">Read More</a>
         </div>
       </div>
     </div>
@@ -377,7 +370,6 @@ Uzyskanie identyfikatora UUID dysku /dev/sdb1
 1# blkid /dev/sdb1 2/dev/sdb1: UUID=&#34;359d90df-f17a-42f6-ab13-df13bf356de7&#34; TYPE=&#34;ext4&#34; PARTUUID=&#34;2a01&#34; 1#!/bin/bash 2 3# przykładowy wpis w /etc/fstab 4# echo …
             
           </p>
-          <a href="https://mohdur.github.io/post/pod%C5%82%C4%85czenie-dysku-po-identyfikatorze-uuid/" title="Read More" class="excerpt_more button">Read More</a>
         </div>
       </div>
     </div>
@@ -413,7 +405,6 @@ Uzyskanie identyfikatora UUID dysku /dev/sdb1
 1#!/bin/bash 2 3USERNAME=test1 4PASSWORD_PLAIN=test1 5PASSWORD=$(mkpasswd -m sha-512 -S $(&lt; /dev/urandom tr -cd &#34;[:alnum:]&#34; | head -c${1:-16}; echo) -s &lt;&lt;&lt; $PASSWORD_PLAIN) 6groupadd $USERNAME 7adduser -g $USERNAME -G wheel -m -p …
             
           </p>
-          <a href="https://mohdur.github.io/post/dodanie-konta-w-systemie-linux-skrypt/" title="Read More" class="excerpt_more button">Read More</a>
         </div>
       </div>
     </div>
@@ -447,7 +438,6 @@ Uzyskanie identyfikatora UUID dysku /dev/sdb1
 Pętla for pokazuje wszystkie pliki w katalogu katalog wraz z nazwą tego katalogu np. katalog/nazwa-pliku.txt, chcąc uzyskać samą nazwę pliku użyjemy komendy …
             
           </p>
-          <a href="https://mohdur.github.io/post/nazwa-pliku-wy%C5%9Bwetlanie-nazwy-i-rozszerzenia/" title="Read More" class="excerpt_more button">Read More</a>
         </div>
       </div>
     </div>
