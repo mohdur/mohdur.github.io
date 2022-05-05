@@ -2126,7 +2126,7 @@ Instalacja za pomocą menadżera vim-plug https://github.com/junegunn/vim-plug
         <div>
           <p class="pale">
             
-              Wyświetlenie dostępnych sieci Wi-Fi 1sudo nmcli device wifi 1# nmcli radio 2WIFI-HW WIFI WWAN-HW WWAN 3enabled enabled enabled enabled 4# nmcli device 5DEVICE TYPE STATE CONNECTION 6wlan0 wifi disconnected -- 7eth0 ethernet unavailable -- 8lo loopback unmanaged -- 910# nmcli device wifi rescan 11# nmcli device wifi …
+              Wyświetlenie urządzeń sieciowych 1sudo nmcli device 23DEVICE TYPE STATE CONNECTION 4wlp59s0 wifi połączono wifi-home 5enp0s31f6 ethernet niedostępne -- 6lo loopback niezarządzane -- Wyświetlenie informaci o podłączeniu 1sudo nmcli device wifi 23IN-USE BSSID SSID MODE CHAN RATE SIGNAL BARS SECURITY 4* AA:BB:CC:DD:EE:FF …
             
           </p>
         </div>

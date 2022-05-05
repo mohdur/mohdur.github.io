@@ -130,22 +130,29 @@
   </div>
 
     
-    <h1 id="wyświetlenie-dostępnych-sieci-wi-fi">Wyświetlenie dostępnych sieci Wi-Fi</h1>
+    <h1 id="wyświetlenie-urządzeń-sieciowych">Wyświetlenie urządzeń sieciowych</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sudo nmcli device
+</span></span><span class="line"><span class="ln">2</span><span class="cl">
+</span></span><span class="line"><span class="ln">3</span><span class="cl">DEVICE           TYPE      STATE                   CONNECTION
+</span></span><span class="line"><span class="ln">4</span><span class="cl">wlp59s0          wifi      połączono               wifi-home
+</span></span><span class="line"><span class="ln">5</span><span class="cl">enp0s31f6        ethernet  niedostępne             --
+</span></span><span class="line"><span class="ln">6</span><span class="cl">lo               loopback  niezarządzane           --
+</span></span></code></pre></div><h1 id="wyświetlenie-informaci-o-podłączeniu">Wyświetlenie informaci o podłączeniu</h1>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sudo nmcli device wifi
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln"> 1</span><span class="cl"># nmcli radio
-</span></span><span class="line"><span class="ln"> 2</span><span class="cl">WIFI-HW  WIFI     WWAN-HW  WWAN
-</span></span><span class="line"><span class="ln"> 3</span><span class="cl">enabled  enabled  enabled  enabled
-</span></span><span class="line"><span class="ln"> 4</span><span class="cl"># nmcli device
-</span></span><span class="line"><span class="ln"> 5</span><span class="cl">DEVICE  TYPE      STATE         CONNECTION
-</span></span><span class="line"><span class="ln"> 6</span><span class="cl">wlan0   wifi      disconnected  --
-</span></span><span class="line"><span class="ln"> 7</span><span class="cl">eth0    ethernet  unavailable   --
-</span></span><span class="line"><span class="ln"> 8</span><span class="cl">lo      loopback  unmanaged     --
-</span></span><span class="line"><span class="ln"> 9</span><span class="cl">
-</span></span><span class="line"><span class="ln">10</span><span class="cl"># nmcli device wifi rescan
-</span></span><span class="line"><span class="ln">11</span><span class="cl"># nmcli device wifi list
-</span></span><span class="line"><span class="ln">12</span><span class="cl"># nmcli device wifi connect SSID-Name password wireless-password
-</span></span><span class="line"><span class="ln">13</span><span class="cl"># nmcli -ask device wifi connect SSID-Name
-</span></span></code></pre></div><div id="disqus_thread"></div>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">
+</span></span><span class="line"><span class="ln">3</span><span class="cl">IN-USE  BSSID              SSID       MODE            CHAN  RATE      SIGNAL  BARS  SECURITY
+</span></span><span class="line"><span class="ln">4</span><span class="cl">*       AA:BB:CC:DD:EE:FF  wifi-home  Infrastruktura  1     270 Mb/s  75      ▂▄▆_  WPA1 WPA2
+</span></span></code></pre></div><h1 id="wyświetlenie-dostępnych-sieci-wifi">Wyświetlenie dostępnych sieci WiFi</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl"># nmcli radio
+</span></span><span class="line"><span class="ln">2</span><span class="cl">WIFI-HW  WIFI     WWAN-HW  WWAN
+</span></span><span class="line"><span class="ln">3</span><span class="cl">enabled  enabled  enabled  enabled
+</span></span><span class="line"><span class="ln">4</span><span class="cl">
+</span></span><span class="line"><span class="ln">5</span><span class="cl"># nmcli device wifi rescan
+</span></span><span class="line"><span class="ln">6</span><span class="cl"># nmcli device wifi list
+</span></span><span class="line"><span class="ln">7</span><span class="cl"># nmcli device wifi connect SSID-Name password wireless-password
+</span></span><span class="line"><span class="ln">8</span><span class="cl"># nmcli -ask device wifi connect SSID-Name
+</span></span></code></pre></div><h1 id="podłączenie-się-do-ukrytej-sieci-wifi">Podłączenie się do ukrytej sieci WiFi</h1>
+<div id="disqus_thread"></div>
 <script type="application/javascript">
     window.disqus_config = function () {
     
