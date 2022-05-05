@@ -5,7 +5,26 @@
     <link>https://mohdur.github.io/post/</link>
     <description>Recent content in Posts on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 27 Jun 2021 22:02:46 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 05 May 2022 18:16:35 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dziwna przypadłość instalatora Void Linux i partycjonowania</title>
+      <link>https://mohdur.github.io/post/dziwna-przypad%C5%82o%C5%9B%C4%87-instalatora-void-linux-i-partycjonowania/</link>
+      <pubDate>Thu, 05 May 2022 18:16:35 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/dziwna-przypad%C5%82o%C5%9B%C4%87-instalatora-void-linux-i-partycjonowania/</guid>
+      <description>
+        
+          &lt;p&gt;Void linux posiada instalator tekstowy, działa on bez problemu, jednak gdy dochodzimy do
+partycjonowania systemu plików, czasami może pojawić się problem, kiedy chcemy wydzielić partycję
+&lt;code&gt;/boot&lt;/code&gt; i użyć UEFI, rozwiązaniem jest odpowiednia kolejność wybierania punktów podłączenia
+poszczególnych partycji: najpierw należy wybrać partycję &lt;code&gt;/&lt;/code&gt; następnie partycję &lt;code&gt;/boot&lt;/code&gt; a na końcu
+&lt;code&gt;/boot/efi&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Jeśli nie zachowamy odpowiedniej kolejności to instalator zwróci błąd instalacji &lt;code&gt;grub&lt;/code&gt; na dysku.&lt;/p&gt;
+
+        
+      </description>
+    </item>
+    
     <item>
       <title>Własne menu ROFI</title>
       <link>https://mohdur.github.io/post/w%C5%82asne-menu-rofi/</link>
