@@ -4,7 +4,7 @@
   <head>
 <title>Skrypty BASH receptury | MOHDUR</title>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.94.2" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta property="og:locale" content="en" />
@@ -32,8 +32,8 @@
     
     
     <link rel="preload" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity = "sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" as="script" integrity=
-    "sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous">
+    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" as="script" integrity=
+    "sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity="sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" crossorigin="anonymous"><link rel="stylesheet" href="https://mohdur.github.io/css/custom.css">
@@ -129,15 +129,15 @@
 
     
     <h2 id="sprawdzenie-daty-ostatniej-modyfikaji-pliku">Sprawdzenie daty ostatniej modyfikaji pliku</h2>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ date -r nazwa_pliku.txt
-<span class="ln">2</span>Fri 19 Apr 2019 08:41:11 AM CEST
-</code></pre></div><p>Do wyświetlenia możemy użyć standardowego formatowania polecenia <code>data</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ date -r nazwa_pliku.txt &#34;+%F %s&#34;
-<span class="ln">2</span>2019-04-19 1555656071
-</code></pre></div><h2 id="działania-arytmetyczne-na-datach">Działania arytmetyczne na datach</h2>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>date_-d_&#34;09/27/2019_08:53:52_AM_CEST_+2_days_+2_hours&#34;_&#34;+%F_%T&#34;
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>date_-d_&#34;Tue_22_Oct_2019_08:53:52_AM_CEST_+2_days_+2_hours&#34;_&#34;+%F_%T&#34;
-</code></pre></div><h2 id="argumenty-wywołania-skryptu">Argumenty wywołania skryptu</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">$ date -r nazwa_pliku.txt
+</span></span><span class="line"><span class="ln">2</span><span class="cl">Fri 19 Apr 2019 08:41:11 AM CEST
+</span></span></code></pre></div><p>Do wyświetlenia możemy użyć standardowego formatowania polecenia <code>data</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">$ date -r nazwa_pliku.txt &#34;+%F %s&#34;
+</span></span><span class="line"><span class="ln">2</span><span class="cl">2019-04-19 1555656071
+</span></span></code></pre></div><h2 id="działania-arytmetyczne-na-datach">Działania arytmetyczne na datach</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">date_-d_&#34;09/27/2019_08:53:52_AM_CEST_+2_days_+2_hours&#34;_&#34;+%F_%T&#34;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">date_-d_&#34;Tue_22_Oct_2019_08:53:52_AM_CEST_+2_days_+2_hours&#34;_&#34;+%F_%T&#34;
+</span></span></code></pre></div><h2 id="argumenty-wywołania-skryptu">Argumenty wywołania skryptu</h2>
 <table>
 <thead>
 <tr>
@@ -166,140 +166,140 @@
 </table>
 <p>Przykłady:</p>
 <p>Wyświetlenie katalogu w którym znajduje się skrypt</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>dirname $(readlink -f $0)
-</code></pre></div><h2 id="porównanie-dwoch-ciągów-znaków">Porównanie dwoch ciągów znaków</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">dirname $(readlink -f $0)
+</span></span></code></pre></div><h2 id="porównanie-dwoch-ciągów-znaków">Porównanie dwoch ciągów znaków</h2>
 <p>Tutaj sprawdzenie czy wynik polecenia <code>type ls</code> zawiera słowo <code>alias</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="k">if</span> <span class="o">[[</span> <span class="k">$(</span><span class="nb">type</span> ls<span class="k">)</span> <span class="o">==</span> *<span class="s2">&#34;alias&#34;</span>* <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln">2</span>  <span class="nb">echo</span> <span class="nb">alias</span>
-<span class="ln">3</span><span class="k">fi</span>
-</code></pre></div><h2 id="wywołanie-konkretnej-funkcji-w-zależności-od-nazwy-skryptu">Wywołanie konkretnej funkcji w zależności od nazwy skryptu</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="k">case</span> <span class="k">$(</span>basename <span class="nv">$0</span><span class="k">)</span> in
-<span class="ln"> 2</span>  bc2sd.mount<span class="o">)</span>
-<span class="ln"> 3</span>    mount_sd
-<span class="ln"> 4</span>    <span class="p">;;</span>
-<span class="ln"> 5</span>  bc2sd.umount<span class="o">)</span>
-<span class="ln"> 6</span>    umount_sd
-<span class="ln"> 7</span>    <span class="p">;;</span>
-<span class="ln"> 8</span>  bc2sd.include<span class="p">|</span>bc2sd.inc<span class="o">)</span>
-<span class="ln"> 9</span>    backup_sd include
-<span class="ln">10</span>    <span class="p">;;</span>
-<span class="ln">11</span>  bc2sd.exclude<span class="p">|</span>bc2sd.exc<span class="o">)</span>
-<span class="ln">12</span>    backup2sd exclude
-<span class="ln">13</span>    <span class="p">;;</span>
-<span class="ln">14</span>  bc2sd<span class="p">|</span>backup2sd<span class="p">|</span>backup2sd.sh<span class="o">)</span>
-<span class="ln">15</span>    run
-<span class="ln">16</span>    <span class="p">;;</span>
-<span class="ln">17</span><span class="k">esac</span>
-</code></pre></div><h2 id="usunięcie-rozszerzenia-pliku">Usunięcie rozszerzenia pliku</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">if</span> <span class="o">[[</span> <span class="k">$(</span><span class="nb">type</span> ls<span class="k">)</span> <span class="o">==</span> *<span class="s2">&#34;alias&#34;</span>* <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">  <span class="nb">echo</span> <span class="nb">alias</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="k">fi</span>
+</span></span></code></pre></div><h2 id="wywołanie-konkretnej-funkcji-w-zależności-od-nazwy-skryptu">Wywołanie konkretnej funkcji w zależności od nazwy skryptu</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">case</span> <span class="k">$(</span>basename <span class="nv">$0</span><span class="k">)</span> in
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">  bc2sd.mount<span class="o">)</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">    mount_sd
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="p">;;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">  bc2sd.umount<span class="o">)</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    umount_sd
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="p">;;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">  bc2sd.include<span class="p">|</span>bc2sd.inc<span class="o">)</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    backup_sd include
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="p">;;</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">  bc2sd.exclude<span class="p">|</span>bc2sd.exc<span class="o">)</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    backup2sd exclude
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    <span class="p">;;</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">  bc2sd<span class="p">|</span>backup2sd<span class="p">|</span>backup2sd.sh<span class="o">)</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">    run
+</span></span><span class="line"><span class="ln">16</span><span class="cl">    <span class="p">;;</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="k">esac</span>
+</span></span></code></pre></div><h2 id="usunięcie-rozszerzenia-pliku">Usunięcie rozszerzenia pliku</h2>
 <p>Polecenie <code>find</code> wyszukuje wszystkich plików w katalogu <code>~/.password-store/otp/</code> a następnie
 wyświetla znalezione pliki usuwając rozszerzenie <code>.gpg</code>. Polecenie wyświetla wyłącznie
 nazwę pliku.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>find ~/.password-store/otp/ -name &#34;.gpg&#34; -exec basename {} .gpg \;
-</code></pre></div><p>Wersja wyświetlająca pełną ścieżkę pliku</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>find ~/.password-store -name &#34;*.gpg&#34; -exec sh -c &#39;printf &#34;%s\n&#34; &#34;${0%.*}&#34;&#39; {} \;
-</code></pre></div><p>Ten sam efekt uzyskamy za pomocą komendy <code>sed</code>, pytanie co łatwiej zapamiętać :D</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>find ~/.password-store -type f -iname &#34;*.gpg&#34; | sed &#39;s/\.gpg$//1&#39;
-</code></pre></div><h2 id="rozszerzenie-i-nazwa-pliku-bez-rozszerzenia">Rozszerzenie i nazwa pliku bez rozszerzenia</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">find ~/.password-store/otp/ -name &#34;.gpg&#34; -exec basename {} .gpg \;
+</span></span></code></pre></div><p>Wersja wyświetlająca pełną ścieżkę pliku</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">find ~/.password-store -name &#34;*.gpg&#34; -exec sh -c &#39;printf &#34;%s\n&#34; &#34;${0%.*}&#34;&#39; {} \;
+</span></span></code></pre></div><p>Ten sam efekt uzyskamy za pomocą komendy <code>sed</code>, pytanie co łatwiej zapamiętać :D</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">find ~/.password-store -type f -iname &#34;*.gpg&#34; | sed &#39;s/\.gpg$//1&#39;
+</span></span></code></pre></div><h2 id="rozszerzenie-i-nazwa-pliku-bez-rozszerzenia">Rozszerzenie i nazwa pliku bez rozszerzenia</h2>
 <p>Nazwa pliku</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>file=~/bin/backup2sd.config
-<span class="ln">2</span>echo ${file%.*}
-<span class="ln">3</span>&gt;&gt;&gt; /home/user/bin/backup2sd
-</code></pre></div><p>inny przykład</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>file=backup2sd.config
-<span class="ln">2</span>echo ${file%.*}
-<span class="ln">3</span>&gt;&gt;&gt; backup2sd
-</code></pre></div><p>Rozszerzenie pliku</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>file=~/bin/backup2sd.config
-<span class="ln">2</span>echo ${file##*.}
-<span class="ln">3</span>&gt;&gt;&gt; config
-</code></pre></div><h2 id="wyszukanie-plików-rekursywnie">Wyszukanie plików rekursywnie</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">file=~/bin/backup2sd.config
+</span></span><span class="line"><span class="ln">2</span><span class="cl">echo ${file%.*}
+</span></span><span class="line"><span class="ln">3</span><span class="cl">&gt;&gt;&gt; /home/user/bin/backup2sd
+</span></span></code></pre></div><p>inny przykład</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">file=backup2sd.config
+</span></span><span class="line"><span class="ln">2</span><span class="cl">echo ${file%.*}
+</span></span><span class="line"><span class="ln">3</span><span class="cl">&gt;&gt;&gt; backup2sd
+</span></span></code></pre></div><p>Rozszerzenie pliku</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">file=~/bin/backup2sd.config
+</span></span><span class="line"><span class="ln">2</span><span class="cl">echo ${file##*.}
+</span></span><span class="line"><span class="ln">3</span><span class="cl">&gt;&gt;&gt; config
+</span></span></code></pre></div><h2 id="wyszukanie-plików-rekursywnie">Wyszukanie plików rekursywnie</h2>
 <p>Wyszukanie plików z rozszerzeniem <code>*.md</code> w bieżącej lokalizacji</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>find $PWD -type f -name &#34;*.md&#34;
-</code></pre></div><p>Wersja bez użycia parametru <code>-name</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">find $PWD -type f -name &#34;*.md&#34;
+</span></span></code></pre></div><p>Wersja bez użycia parametru <code>-name</code></p>
 <p>Zapis <code>/*/</code> określa że w danej ścieżce bedą przetwarzane wszystkie podkatalogi, polecenie
 wyświetla pełną ścieżkę pliku np. <code>/home/user/.passord-store/email@example.pl</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>find ~/.password-store/*/*.gpg -type f
-</code></pre></div><h2 id="data-w-formacie-iso">Data w formacie ISO</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">find ~/.password-store/*/*.gpg -type f
+</span></span></code></pre></div><h2 id="data-w-formacie-iso">Data w formacie ISO</h2>
 <p>Wyświetlenie daty w formacie YYYY-MM-DD</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>date +%F
-</code></pre></div><h2 id="warunkowe-utworzenie-katalogu">Warunkowe utworzenie katalogu</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">date +%F
+</span></span></code></pre></div><h2 id="warunkowe-utworzenie-katalogu">Warunkowe utworzenie katalogu</h2>
 <p>Polecenie <code>mkdir</code> zostaje wykonane jeśli podany katalog nie istnieje</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="nv">DATE</span><span class="o">=</span><span class="k">$(</span>date +%y%m%d<span class="k">)</span>
-<span class="ln">2</span><span class="o">[</span> -d /mnt/nfs/sarg/<span class="nv">$DATE</span> <span class="o">]</span> <span class="o">||</span> mkdir /mnt/nfs/sarg/<span class="nv">$DATE</span>
-</code></pre></div><h2 id="sprawdzenie-czy-użytkownikiem-wykonującym-skrypt-jest-root">Sprawdzenie czy użytkownikiem wykonującym skrypt jest root</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="k">if</span> <span class="o">[[</span> <span class="nv">$EUID</span> -ne <span class="m">0</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln">2</span>  <span class="nb">echo</span> <span class="s2">&#34;Skrypt musi być uruchomiony z uprawnieniami użytkownika root&#34;</span> 1&gt;<span class="p">&amp;</span><span class="m">2</span>
-<span class="ln">3</span>  <span class="nb">exit</span> <span class="m">1</span>
-<span class="ln">4</span><span class="k">fi</span>
-</code></pre></div><p>lub wersja sprawdzająca czy skrypt jest wykonany za pomocą <code>sudo</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="k">if</span> <span class="o">[</span> <span class="k">$(</span>id -u<span class="k">)</span> <span class="o">=</span> <span class="m">0</span> <span class="o">]</span>
-<span class="ln"> 2</span><span class="k">then</span>
-<span class="ln"> 3</span>  <span class="k">if</span> <span class="o">[</span> ! -z <span class="nv">$SUDO_COMMAND</span> <span class="o">]</span>
-<span class="ln"> 4</span>  <span class="k">then</span>
-<span class="ln"> 5</span>    <span class="nb">echo</span> <span class="s1">&#39;---                                   ---&#39;</span>
-<span class="ln"> 6</span>    <span class="nb">echo</span> Skrypt uruchomiony za pomocą komendy sudo
-<span class="ln"> 7</span>    <span class="nb">echo</span> Uruchom skrypt jako użytkownik root
-<span class="ln"> 8</span>    <span class="nb">echo</span> <span class="s1">&#39;---                                   ---&#39;</span>
-<span class="ln"> 9</span>    <span class="nb">exit</span> <span class="m">1</span>
-<span class="ln">10</span>  <span class="k">fi</span>
-<span class="ln">11</span><span class="k">else</span>
-<span class="ln">12</span>  <span class="nb">echo</span> <span class="s1">&#39;---                              ---&#39;</span>
-<span class="ln">13</span>  <span class="nb">echo</span> Uruchom skrypt jako użytkownik root!
-<span class="ln">14</span>  <span class="nb">echo</span> <span class="s1">&#39;---                              ---&#39;</span>
-<span class="ln">15</span>  <span class="nb">exit</span> <span class="m">1</span>
-<span class="ln">16</span><span class="k">fi</span>
-</code></pre></div><h2 id="wyszukiwanie-kilku-wyrażeń-na-raz">Wyszukiwanie kilku wyrażeń na raz</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl"><span class="nv">DATE</span><span class="o">=</span><span class="k">$(</span>date +%y%m%d<span class="k">)</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="o">[</span> -d /mnt/nfs/sarg/<span class="nv">$DATE</span> <span class="o">]</span> <span class="o">||</span> mkdir /mnt/nfs/sarg/<span class="nv">$DATE</span>
+</span></span></code></pre></div><h2 id="sprawdzenie-czy-użytkownikiem-wykonującym-skrypt-jest-root">Sprawdzenie czy użytkownikiem wykonującym skrypt jest root</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">if</span> <span class="o">[[</span> <span class="nv">$EUID</span> -ne <span class="m">0</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;Skrypt musi być uruchomiony z uprawnieniami użytkownika root&#34;</span> 1&gt;<span class="p">&amp;</span><span class="m">2</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">  <span class="nb">exit</span> <span class="m">1</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="k">fi</span>
+</span></span></code></pre></div><p>lub wersja sprawdzająca czy skrypt jest wykonany za pomocą <code>sudo</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="k">$(</span>id -u<span class="k">)</span> <span class="o">=</span> <span class="m">0</span> <span class="o">]</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="k">then</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">  <span class="k">if</span> <span class="o">[</span> ! -z <span class="nv">$SUDO_COMMAND</span> <span class="o">]</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">  <span class="k">then</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="nb">echo</span> <span class="s1">&#39;---                                   ---&#39;</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="nb">echo</span> Skrypt uruchomiony za pomocą komendy sudo
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="nb">echo</span> Uruchom skrypt jako użytkownik root
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="nb">echo</span> <span class="s1">&#39;---                                   ---&#39;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="nb">exit</span> <span class="m">1</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">  <span class="k">fi</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">  <span class="nb">echo</span> <span class="s1">&#39;---                              ---&#39;</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">  <span class="nb">echo</span> Uruchom skrypt jako użytkownik root!
+</span></span><span class="line"><span class="ln">14</span><span class="cl">  <span class="nb">echo</span> <span class="s1">&#39;---                              ---&#39;</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">  <span class="nb">exit</span> <span class="m">1</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="k">fi</span>
+</span></span></code></pre></div><h2 id="wyszukiwanie-kilku-wyrażeń-na-raz">Wyszukiwanie kilku wyrażeń na raz</h2>
 <p>Komenda wyświetli wszystkie wiersze zawierające ls oraz ntfs</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>ls /bin | grep -e ls -e ntfs
-</code></pre></div><h2 id="usunięcie-starszych-plików-niż-x-dni">Usunięcie starszych plików niż X dni</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">ls /bin | grep -e ls -e ntfs
+</span></span></code></pre></div><h2 id="usunięcie-starszych-plików-niż-x-dni">Usunięcie starszych plików niż X dni</h2>
 <p><strong>Uwaga polecenie usuwa pliki rekursywnie</strong></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>find /home/user/tmp/* -mtime +14 -exec rm {} \;
-</code></pre></div><h2 id="zapisanie-wyniku-polecenia-do-pliku-oraz-wyświetlenie-na-ekranie">Zapisanie wyniku polecenia do pliku oraz wyświetlenie na ekranie</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">find /home/user/tmp/* -mtime +14 -exec rm {} \;
+</span></span></code></pre></div><h2 id="zapisanie-wyniku-polecenia-do-pliku-oraz-wyświetlenie-na-ekranie">Zapisanie wyniku polecenia do pliku oraz wyświetlenie na ekranie</h2>
 <p>Przykład użycia polecenia tee</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>watch -n 15 &#39;skrypty/proc_temp.sh | tee -a cpu_temp.txt &amp;&amp; date | tee -a cpu_temp.txt&#39;
-</code></pre></div><p>Wynik:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>Sat Mar 26 17:05:49 UTC 2019
-<span class="ln">2</span>temp=38.5&#39;C
-</code></pre></div><p>Wersja zapisująca wynik dwóch poleceń do pliku w jednej linii.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>watch -n 15 &#34;echo -n &#39;$(date): &#39; | tee -a cpu_temp.txt &amp;&amp; skrypty/proc_temp.sh | tee -a cpu_temp.txt&#34;
-</code></pre></div><p>Wynik:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>Sat Mar 26 17:10:58 UTC 2019: temp=39.0&#39;C
-</code></pre></div><h2 id="sprawdzanie-zawartości-pliku">Sprawdzanie zawartości pliku</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">watch -n 15 &#39;skrypty/proc_temp.sh | tee -a cpu_temp.txt &amp;&amp; date | tee -a cpu_temp.txt&#39;
+</span></span></code></pre></div><p>Wynik:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">Sat Mar 26 17:05:49 UTC 2019
+</span></span><span class="line"><span class="ln">2</span><span class="cl">temp=38.5&#39;C
+</span></span></code></pre></div><p>Wersja zapisująca wynik dwóch poleceń do pliku w jednej linii.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">watch -n 15 &#34;echo -n &#39;$(date): &#39; | tee -a cpu_temp.txt &amp;&amp; skrypty/proc_temp.sh | tee -a cpu_temp.txt&#34;
+</span></span></code></pre></div><p>Wynik:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">Sat Mar 26 17:10:58 UTC 2019: temp=39.0&#39;C
+</span></span></code></pre></div><h2 id="sprawdzanie-zawartości-pliku">Sprawdzanie zawartości pliku</h2>
 <p>Często w plikach systemowych jest zapisywana tylko wartość 0 lub 1 aby sprawdzić tą wartość
 można wykonać następujący test. W tym przykładzie sprawdzana jest zawartość pliku test.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="k">if</span> <span class="o">[</span> <span class="k">$(</span>&lt; <span class="nb">test</span><span class="k">)</span> <span class="o">==</span> <span class="m">0</span> <span class="o">]</span>
-<span class="ln">2</span><span class="k">then</span>
-<span class="ln">3</span>    <span class="nb">echo</span> Wartosc <span class="m">0</span>
-<span class="ln">4</span><span class="k">else</span>
-<span class="ln">5</span>    <span class="nb">echo</span> Inna wartosc
-<span class="ln">6</span><span class="k">fi</span>
-</code></pre></div><h2 id="usunięcie-zawartości-pliku">Usunięcie zawartości pliku</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="k">$(</span>&lt; <span class="nb">test</span><span class="k">)</span> <span class="o">==</span> <span class="m">0</span> <span class="o">]</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="k">then</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="nb">echo</span> Wartosc <span class="m">0</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">    <span class="nb">echo</span> Inna wartosc
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="k">fi</span>
+</span></span></code></pre></div><h2 id="usunięcie-zawartości-pliku">Usunięcie zawartości pliku</h2>
 <p>Ten rodzaj komendy nie działa w ZSH, a raczej wymaga naciśnięcia <code>Ctrl-d</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>&gt; plik.txt
-</code></pre></div><p>lub dłuższa wersja, działa również w ZSH</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>:&gt; plik.txt
-</code></pre></div><p>Za pomocą komendy <code>&gt;</code> lub <code>:&gt;</code> możemy nie tylko wyczyścić zawartość pliku, ale również
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">&gt; plik.txt
+</span></span></code></pre></div><p>lub dłuższa wersja, działa również w ZSH</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">:&gt; plik.txt
+</span></span></code></pre></div><p>Za pomocą komendy <code>&gt;</code> lub <code>:&gt;</code> możemy nie tylko wyczyścić zawartość pliku, ale również
 utworzymy nowy plik.</p>
 <h2 id="wyszukanie-ostatnio-edytowanych-plików">Wyszukanie ostatnio edytowanych plików</h2>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>find $HOME/git -type f -mtime -12 -mtime +3
-</code></pre></div><h2 id="listy---wyświetlanie-elementów-w-osobnych-liniach">Listy - wyświetlanie elementów w osobnych liniach</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">find $HOME/git -type f -mtime -12 -mtime +3
+</span></span></code></pre></div><h2 id="listy---wyświetlanie-elementów-w-osobnych-liniach">Listy - wyświetlanie elementów w osobnych liniach</h2>
 <p>Za pomocą komendy <code>printf</code> możemy formatować wyświetlany tekst, tutaj dodajemy
 znak końca linii <code>\n</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="nb">printf</span> <span class="s1">&#39;%s\n&#39;</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">LISTA</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&#34;</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="nv">LISTA</span> <span class="o">=</span> <span class="o">(</span>
-<span class="ln"> 2</span>  <span class="nv">$HOME</span>/.aliases
-<span class="ln"> 3</span>  <span class="nv">$HOME</span>/.config/alacritty/alacritty.yml
-<span class="ln"> 4</span>  <span class="nv">$HOME</span>/.bashrc
-<span class="ln"> 5</span>  <span class="nv">$HOME</span>/.ssh/config
-<span class="ln"> 6</span><span class="o">)</span>
-<span class="ln"> 7</span>
-<span class="ln"> 8</span><span class="nv">ZMIENNA</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span> <span class="s1">&#39;%s\n&#39;</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">LISTA</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">|</span>fzf<span class="k">)</span>
-<span class="ln"> 9</span><span class="k">if</span> <span class="o">[</span> <span class="nv">$ZMIENNA</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln">10</span>  vim <span class="nv">$ZMIENNA</span>
-<span class="ln">11</span><span class="k">fi</span>
-</code></pre></div><div id="disqus_thread"></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl"><span class="nb">printf</span> <span class="s1">&#39;%s\n&#39;</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">LISTA</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nv">LISTA</span> <span class="o">=</span> <span class="o">(</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">  <span class="nv">$HOME</span>/.aliases
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">  <span class="nv">$HOME</span>/.config/alacritty/alacritty.yml
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">  <span class="nv">$HOME</span>/.bashrc
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">  <span class="nv">$HOME</span>/.ssh/config
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="o">)</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="nv">ZMIENNA</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span> <span class="s1">&#39;%s\n&#39;</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">LISTA</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">|</span>fzf<span class="k">)</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="nv">$ZMIENNA</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">  vim <span class="nv">$ZMIENNA</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="k">fi</span>
+</span></span></code></pre></div><div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -696,7 +696,7 @@ znak końca linii <code>\n</code>.</p>
   </div>
 </footer>
 
-    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" integrity="sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" integrity="sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous"></script>
     
   </body>
 </html>

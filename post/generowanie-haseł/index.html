@@ -4,7 +4,7 @@
   <head>
 <title>Generowanie haseł | MOHDUR</title>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.94.2" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta property="og:locale" content="en" />
@@ -32,8 +32,8 @@
     
     
     <link rel="preload" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity = "sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" as="script" integrity=
-    "sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous">
+    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" as="script" integrity=
+    "sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity="sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" crossorigin="anonymous"><link rel="stylesheet" href="https://mohdur.github.io/css/custom.css">
@@ -130,22 +130,22 @@
     
     <p>Parametr <code>-S</code> to zarodek (salt), który jest generowany za pomocą polecenia
 <code>pwgen</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>mkpasswd -m sha-512 -S $(pwgen -n 16 | cut -f 1 -d &#39; &#39;) -s &lt;&lt;&lt; Hasło
-</code></pre></div><p>Wersja z wykorzystaniem urządzenia <code>/dev/urandom</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ mkpasswd -m sha-512 -S $(&lt; /dev/urandom tr -cd &#34;[:alnum:]&#34; | head -c${1:-16}; echo) -s &lt;&lt;&lt; hasło
-<span class="ln">2</span>$6$AnSw5avmi6cwpxzG$bnLa8cWs5FhdDU49jzdyxR4Fw0p3MGWcDLzwOd1x564I4iKJFmNwdq3BgkpBo/fSG1YCYbYMD9eE993GpTRQq0
-</code></pre></div><p>Generowanie hasła za pomocą <a href="OpenSSL">OpenSSL</a></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>openssl rand -base64 36
-<span class="ln">2</span>3WC8BpncVVQyzdHHWlULV1VzW7LnHs0erGIuCHTZ+Zt9YU/t
-</code></pre></div><p>Użycie <code>dd</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>dd if=/dev/urandom bs=10 count=30 | tr -cd &#39;[:alnum:]&#39;
-<span class="ln">2</span>30+0 records in
-<span class="ln">3</span>30+0 records out
-<span class="ln">4</span>300 bytes (300 B) copied, 0.000336587 s, 891 kB/s
-<span class="ln">5</span>5VCT1sSL9MyviBTacEcAwUVFC4UeTIaMjPaPG5134LFNNHMgcBIoYsx1mDEFe76roWQO5tqL
-</code></pre></div><div id="disqus_thread"></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">mkpasswd -m sha-512 -S $(pwgen -n 16 | cut -f 1 -d &#39; &#39;) -s &lt;&lt;&lt; Hasło
+</span></span></code></pre></div><p>Wersja z wykorzystaniem urządzenia <code>/dev/urandom</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">$ mkpasswd -m sha-512 -S $(&lt; /dev/urandom tr -cd &#34;[:alnum:]&#34; | head -c${1:-16}; echo) -s &lt;&lt;&lt; hasło
+</span></span><span class="line"><span class="ln">2</span><span class="cl">$6$AnSw5avmi6cwpxzG$bnLa8cWs5FhdDU49jzdyxR4Fw0p3MGWcDLzwOd1x564I4iKJFmNwdq3BgkpBo/fSG1YCYbYMD9eE993GpTRQq0
+</span></span></code></pre></div><p>Generowanie hasła za pomocą <a href="OpenSSL">OpenSSL</a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">openssl rand -base64 36
+</span></span><span class="line"><span class="ln">2</span><span class="cl">3WC8BpncVVQyzdHHWlULV1VzW7LnHs0erGIuCHTZ+Zt9YU/t
+</span></span></code></pre></div><p>Użycie <code>dd</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">dd if=/dev/urandom bs=10 count=30 | tr -cd &#39;[:alnum:]&#39;
+</span></span><span class="line"><span class="ln">2</span><span class="cl">30+0 records in
+</span></span><span class="line"><span class="ln">3</span><span class="cl">30+0 records out
+</span></span><span class="line"><span class="ln">4</span><span class="cl">300 bytes (300 B) copied, 0.000336587 s, 891 kB/s
+</span></span><span class="line"><span class="ln">5</span><span class="cl">5VCT1sSL9MyviBTacEcAwUVFC4UeTIaMjPaPG5134LFNNHMgcBIoYsx1mDEFe76roWQO5tqL
+</span></span></code></pre></div><div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -542,7 +542,7 @@
   </div>
 </footer>
 
-    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" integrity="sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" integrity="sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous"></script>
     
   </body>
 </html>

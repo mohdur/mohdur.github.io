@@ -4,7 +4,7 @@
   <head>
 <title>Praca z klientem OpenSSH | MOHDUR</title>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.94.2" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta property="og:locale" content="en" />
@@ -32,8 +32,8 @@
     
     
     <link rel="preload" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity = "sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" as="script" integrity=
-    "sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous">
+    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" as="script" integrity=
+    "sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity="sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" crossorigin="anonymous"><link rel="stylesheet" href="https://mohdur.github.io/css/custom.css">
@@ -127,94 +127,94 @@
 
     
     <h2 id="nawiązanie-połączenia-ze-zdalnym-hostem">Nawiązanie połączenia ze zdalnym hostem</h2>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>ssh user@nazwa_serwera
-</code></pre></div><h2 id="autoryzacja-za-pomocą-klucza">Autoryzacja za pomocą klucza</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">ssh user@nazwa_serwera
+</span></span></code></pre></div><h2 id="autoryzacja-za-pomocą-klucza">Autoryzacja za pomocą klucza</h2>
 <p>Dwiema podstawowymi metodami autoryzacji do serwera SSH jest hasło oraz klucz
 prywatny. Dzięki pary kluczy to znaczy klucza prywatnego oraz klucza
 publicznego można zwiększyć bezpieczeństwo serwera SSH. Klucz publiczny można
 udostępniać publicznie i nie stanowi to zagrożenia, natomiast klucz prywatny
 należy zabezpieczyć dobrym hasłem i przechowywać go zdala od ciekawskich.</p>
 <h2 id="generowanie-pary-kluczy">Generowanie pary kluczy</h2>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>ssh-keygen
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span>usage: ssh-keygen [-q] [-b bits] [-t dsa | ecdsa | ed25519 | rsa]
-<span class="ln"> 2</span>                  [-N new_passphrase] [-C comment] [-f output_keyfile]
-<span class="ln"> 3</span>       ssh-keygen -p [-P old_passphrase] [-N new_passphrase] [-f keyfile]
-<span class="ln"> 4</span>       ssh-keygen -i [-m key_format] [-f input_keyfile]
-<span class="ln"> 5</span>       ssh-keygen -e [-m key_format] [-f input_keyfile]
-<span class="ln"> 6</span>       ssh-keygen -y [-f input_keyfile]
-<span class="ln"> 7</span>       ssh-keygen -c [-P passphrase] [-C comment] [-f keyfile]
-<span class="ln"> 8</span>       ssh-keygen -l [-v] [-E fingerprint_hash] [-f input_keyfile]
-<span class="ln"> 9</span>       ssh-keygen -B [-f input_keyfile]
-<span class="ln">10</span>       ssh-keygen -D pkcs11
-<span class="ln">11</span>       ssh-keygen -F hostname [-f known_hosts_file] [-l]
-<span class="ln">12</span>       ssh-keygen -H [-f known_hosts_file]
-<span class="ln">13</span>       ssh-keygen -R hostname [-f known_hosts_file]
-<span class="ln">14</span>       ssh-keygen -r hostname [-f input_keyfile] [-g]
-<span class="ln">15</span>       ssh-keygen -G output_file [-v] [-b bits] [-M memory] [-S start_point]
-<span class="ln">16</span>       ssh-keygen -T output_file -f input_file [-v] [-a rounds] [-J num_lines]
-<span class="ln">17</span>                  [-j start_line] [-K checkpt] [-W generator]
-<span class="ln">18</span>       ssh-keygen -s ca_key -I certificate_identity [-h] [-U]
-<span class="ln">19</span>                  [-D pkcs11_provider] [-n principals] [-O option]
-<span class="ln">20</span>                  [-V validity_interval] [-z serial_number] file ...
-<span class="ln">21</span>       ssh-keygen -L [-f input_keyfile]
-<span class="ln">22</span>       ssh-keygen -A
-<span class="ln">23</span>       ssh-keygen -k -f krl_file [-u] [-s ca_public] [-z version_number]
-<span class="ln">24</span>                  file ...
-<span class="ln">25</span>       ssh-keygen -Q -f krl_file file ...
-</code></pre></div><p>Tworzymy katalog przeznaczony na klucze</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>mkdir ~/.ssh/klucze
-</code></pre></div><p>Generujemy parę kluczy o wielkości 4096 bitów i nazwie <code>klucz-rsa</code> w katalogu
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">ssh-keygen
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln"> 1</span><span class="cl">usage: ssh-keygen [-q] [-b bits] [-t dsa | ecdsa | ed25519 | rsa]
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">                  [-N new_passphrase] [-C comment] [-f output_keyfile]
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">       ssh-keygen -p [-P old_passphrase] [-N new_passphrase] [-f keyfile]
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">       ssh-keygen -i [-m key_format] [-f input_keyfile]
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">       ssh-keygen -e [-m key_format] [-f input_keyfile]
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">       ssh-keygen -y [-f input_keyfile]
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">       ssh-keygen -c [-P passphrase] [-C comment] [-f keyfile]
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">       ssh-keygen -l [-v] [-E fingerprint_hash] [-f input_keyfile]
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">       ssh-keygen -B [-f input_keyfile]
+</span></span><span class="line"><span class="ln">10</span><span class="cl">       ssh-keygen -D pkcs11
+</span></span><span class="line"><span class="ln">11</span><span class="cl">       ssh-keygen -F hostname [-f known_hosts_file] [-l]
+</span></span><span class="line"><span class="ln">12</span><span class="cl">       ssh-keygen -H [-f known_hosts_file]
+</span></span><span class="line"><span class="ln">13</span><span class="cl">       ssh-keygen -R hostname [-f known_hosts_file]
+</span></span><span class="line"><span class="ln">14</span><span class="cl">       ssh-keygen -r hostname [-f input_keyfile] [-g]
+</span></span><span class="line"><span class="ln">15</span><span class="cl">       ssh-keygen -G output_file [-v] [-b bits] [-M memory] [-S start_point]
+</span></span><span class="line"><span class="ln">16</span><span class="cl">       ssh-keygen -T output_file -f input_file [-v] [-a rounds] [-J num_lines]
+</span></span><span class="line"><span class="ln">17</span><span class="cl">                  [-j start_line] [-K checkpt] [-W generator]
+</span></span><span class="line"><span class="ln">18</span><span class="cl">       ssh-keygen -s ca_key -I certificate_identity [-h] [-U]
+</span></span><span class="line"><span class="ln">19</span><span class="cl">                  [-D pkcs11_provider] [-n principals] [-O option]
+</span></span><span class="line"><span class="ln">20</span><span class="cl">                  [-V validity_interval] [-z serial_number] file ...
+</span></span><span class="line"><span class="ln">21</span><span class="cl">       ssh-keygen -L [-f input_keyfile]
+</span></span><span class="line"><span class="ln">22</span><span class="cl">       ssh-keygen -A
+</span></span><span class="line"><span class="ln">23</span><span class="cl">       ssh-keygen -k -f krl_file [-u] [-s ca_public] [-z version_number]
+</span></span><span class="line"><span class="ln">24</span><span class="cl">                  file ...
+</span></span><span class="line"><span class="ln">25</span><span class="cl">       ssh-keygen -Q -f krl_file file ...
+</span></span></code></pre></div><p>Tworzymy katalog przeznaczony na klucze</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">mkdir ~/.ssh/klucze
+</span></span></code></pre></div><p>Generujemy parę kluczy o wielkości 4096 bitów i nazwie <code>klucz-rsa</code> w katalogu
 <code>~/.ssh/klucze/</code>, jeśli nie podamy nazwy klucza zostanie wygenerowany klucz
 o nazwie <code>id_rsa</code> i <code>id_rsa.pub</code>, tak wygenerowane klucze będą użyte jako
 standardowe.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span>ssh-keygen -b 4096 -f ~/.ssh/klucze/klucz-rsa
-<span class="ln"> 2</span>Generating public/private rsa key pair.
-<span class="ln"> 3</span>Enter passphrase (empty for no passphrase):
-<span class="ln"> 4</span>Enter same passphrase again:
-<span class="ln"> 5</span>Your identification has been saved in /home/user/.ssh/klucze/klucz-rsa.
-<span class="ln"> 6</span>Your public key has been saved in /home/user/.ssh/klucze/klucz-rsa.pub.
-<span class="ln"> 7</span>The key fingerprint is:
-<span class="ln"> 8</span>SHA256:ETL9Q77azhtBr8jhxOR0bh6HguZXlmHApqWqWDosg90 user@hostname
-<span class="ln"> 9</span>The key&#39;s randomart image is:
-<span class="ln">10</span>+---[RSA 4096]----+
-<span class="ln">11</span>|      ooo        |
-<span class="ln">12</span>|       o=o.      |
-<span class="ln">13</span>|       =++=      |
-<span class="ln">14</span>|      o* *+=     |
-<span class="ln">15</span>|     .o S Xoo    |
-<span class="ln">16</span>|  . .o + O.=     |
-<span class="ln">17</span>|o= o  . =o+      |
-<span class="ln">18</span>|B.o E  .....     |
-<span class="ln">19</span>|.o       .+.     |
-<span class="ln">20</span>+----[SHA256]-----+
-</code></pre></div><p>Klucz publiczzny</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>cat .ssh/klucze/klucz-rsa.pub
-<span class="ln">2</span>ssh-rsa AAAAB3NzaC1yc2EAAAAD6q3LoFyRZ1dyVtvlxJNxyLDg22rIgby8R6SatHkQ== user@hostname
-</code></pre></div><p>Klucz prywatny</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span>cat .ssh/klucze/klucz-rsa
-<span class="ln"> 2</span>-----BEGIN OPENSSH PRIVATE KEY-----
-<span class="ln"> 3</span>UWobH5nA/W7JaxBpzQiKexWng5Lr5kWpQki1zoWO1lVBi0UdUE2WPQ0g1EfmtDedTD1xO5
-<span class="ln"> 4</span>sBi8ZLABCPTnbZzovR41vKunZPkGWoci4/RTksQW9vebzc6q3LoFyRZ1dyVtvlxJVqMxlm
-<span class="ln"> 5</span>z3A0OsXrGEQ+93pzo5L9fUNxyLDg22rIgby8R6SatHkQAAB1D80VqMAnYgsdfSXwQYoev2
-<span class="ln"> 6</span>1d4pOZsQ/cVweIvXpJ0UClScqMRjrxwBylZ5vHQLWZIXiZ41Fg89ey/xjCTgmh9+3/1eXg
-<span class="ln"> 7</span>URygVuWRTTV/4FbhJf7tOsR8sPXqkeGyKoL3uQs7YSgOxngm/FzgoHShSEHF+Qyssyx796
-<span class="ln"> 8</span>CO4yC/pVLucH2uS9phDfoIOBTaIx4yzMmZoEgUQlJCc37ZJ+GB9urXDqDazKugnORGb04i
-<span class="ln"> 9</span>9KROom25cMHL/OBZfbsLitwUgcSRRpt3JVHqxKmcTo6Edb4N9qAdJMqOruemDhBHThe89V
-<span class="ln">10</span>KcJ5ZGoSESe8ZAVX73qCN9OqXbojG5TVwrudB/7QidCsDNmrIRyNp0auCEkyAPPpSo8V1e
-<span class="ln">11</span>m3yZe9Q33iKMvgFJ2S30SS5+dAtVPNrKnavL0gzxLuBt2rFpecUOjmAKzYgRw+A8NDVbp0
-<span class="ln">12</span>sdzZIcxILDM/YrTMpo648sJJo=
-<span class="ln">13</span>
-<span class="ln">14</span>-----END OPENSSH PRIVATE KEY-----
-</code></pre></div><h2 id="przygotowanie-konta-po-stronie-serwera-do-autoryzacji-za-pomocą-klucza">Przygotowanie konta po stronie serwera do autoryzacji za pomocą klucza.</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln"> 1</span><span class="cl">ssh-keygen -b 4096 -f ~/.ssh/klucze/klucz-rsa
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">Generating public/private rsa key pair.
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">Enter passphrase (empty for no passphrase):
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">Enter same passphrase again:
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">Your identification has been saved in /home/user/.ssh/klucze/klucz-rsa.
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">Your public key has been saved in /home/user/.ssh/klucze/klucz-rsa.pub.
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">The key fingerprint is:
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">SHA256:ETL9Q77azhtBr8jhxOR0bh6HguZXlmHApqWqWDosg90 user@hostname
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">The key&#39;s randomart image is:
+</span></span><span class="line"><span class="ln">10</span><span class="cl">+---[RSA 4096]----+
+</span></span><span class="line"><span class="ln">11</span><span class="cl">|      ooo        |
+</span></span><span class="line"><span class="ln">12</span><span class="cl">|       o=o.      |
+</span></span><span class="line"><span class="ln">13</span><span class="cl">|       =++=      |
+</span></span><span class="line"><span class="ln">14</span><span class="cl">|      o* *+=     |
+</span></span><span class="line"><span class="ln">15</span><span class="cl">|     .o S Xoo    |
+</span></span><span class="line"><span class="ln">16</span><span class="cl">|  . .o + O.=     |
+</span></span><span class="line"><span class="ln">17</span><span class="cl">|o= o  . =o+      |
+</span></span><span class="line"><span class="ln">18</span><span class="cl">|B.o E  .....     |
+</span></span><span class="line"><span class="ln">19</span><span class="cl">|.o       .+.     |
+</span></span><span class="line"><span class="ln">20</span><span class="cl">+----[SHA256]-----+
+</span></span></code></pre></div><p>Klucz publiczzny</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">cat .ssh/klucze/klucz-rsa.pub
+</span></span><span class="line"><span class="ln">2</span><span class="cl">ssh-rsa AAAAB3NzaC1yc2EAAAAD6q3LoFyRZ1dyVtvlxJNxyLDg22rIgby8R6SatHkQ== user@hostname
+</span></span></code></pre></div><p>Klucz prywatny</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln"> 1</span><span class="cl">cat .ssh/klucze/klucz-rsa
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">-----BEGIN OPENSSH PRIVATE KEY-----
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">UWobH5nA/W7JaxBpzQiKexWng5Lr5kWpQki1zoWO1lVBi0UdUE2WPQ0g1EfmtDedTD1xO5
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">sBi8ZLABCPTnbZzovR41vKunZPkGWoci4/RTksQW9vebzc6q3LoFyRZ1dyVtvlxJVqMxlm
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">z3A0OsXrGEQ+93pzo5L9fUNxyLDg22rIgby8R6SatHkQAAB1D80VqMAnYgsdfSXwQYoev2
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">1d4pOZsQ/cVweIvXpJ0UClScqMRjrxwBylZ5vHQLWZIXiZ41Fg89ey/xjCTgmh9+3/1eXg
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">URygVuWRTTV/4FbhJf7tOsR8sPXqkeGyKoL3uQs7YSgOxngm/FzgoHShSEHF+Qyssyx796
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">CO4yC/pVLucH2uS9phDfoIOBTaIx4yzMmZoEgUQlJCc37ZJ+GB9urXDqDazKugnORGb04i
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">9KROom25cMHL/OBZfbsLitwUgcSRRpt3JVHqxKmcTo6Edb4N9qAdJMqOruemDhBHThe89V
+</span></span><span class="line"><span class="ln">10</span><span class="cl">KcJ5ZGoSESe8ZAVX73qCN9OqXbojG5TVwrudB/7QidCsDNmrIRyNp0auCEkyAPPpSo8V1e
+</span></span><span class="line"><span class="ln">11</span><span class="cl">m3yZe9Q33iKMvgFJ2S30SS5+dAtVPNrKnavL0gzxLuBt2rFpecUOjmAKzYgRw+A8NDVbp0
+</span></span><span class="line"><span class="ln">12</span><span class="cl">sdzZIcxILDM/YrTMpo648sJJo=
+</span></span><span class="line"><span class="ln">13</span><span class="cl">
+</span></span><span class="line"><span class="ln">14</span><span class="cl">-----END OPENSSH PRIVATE KEY-----
+</span></span></code></pre></div><h2 id="przygotowanie-konta-po-stronie-serwera-do-autoryzacji-za-pomocą-klucza">Przygotowanie konta po stronie serwera do autoryzacji za pomocą klucza.</h2>
 <p>W plikku <code>~/.ssh/authorized_keys</code> umieszczamy swój klucz publiczny, w pliku można
 umieścić kilka kluczy jeden klucz na linię.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>touch ~/.ssh/authorized_keys
-<span class="ln">2</span>chmod 0600 ~/.ssh/authorized_keys
-</code></pre></div><h1 id="przeskoczenie-na-kolejnego-hosta">Przeskoczenie na kolejnego hosta</h1>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>ssh -J user@server 192.168.0.1
-</code></pre></div><div id="disqus_thread"></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">touch ~/.ssh/authorized_keys
+</span></span><span class="line"><span class="ln">2</span><span class="cl">chmod 0600 ~/.ssh/authorized_keys
+</span></span></code></pre></div><h1 id="przeskoczenie-na-kolejnego-hosta">Przeskoczenie na kolejnego hosta</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">ssh -J user@server 192.168.0.1
+</span></span></code></pre></div><div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -611,7 +611,7 @@ umieścić kilka kluczy jeden klucz na linię.</p>
   </div>
 </footer>
 
-    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" integrity="sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" integrity="sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous"></script>
     
   </body>
 </html>

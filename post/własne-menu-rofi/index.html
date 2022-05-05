@@ -4,7 +4,7 @@
   <head>
 <title>Własne menu ROFI | MOHDUR</title>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.94.2" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta property="og:locale" content="en" />
@@ -32,8 +32,8 @@
     
     
     <link rel="preload" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity = "sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" as="script" integrity=
-    "sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous">
+    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" as="script" integrity=
+    "sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity="sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" crossorigin="anonymous"><link rel="stylesheet" href="https://mohdur.github.io/css/custom.css">
@@ -131,124 +131,124 @@
 
     
     <p>Przykład menu napisanego w BASH.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">  1</span><span class="cp">#!/usr/bin/env bash
-</span><span class="ln">  2</span><span class="cp"></span>
-<span class="ln">  3</span><span class="nb">declare</span> -a <span class="nv">menu_list</span><span class="o">=(</span>
-<span class="ln">  4</span>    <span class="s2">&#34;Suspend&#34;</span>
-<span class="ln">  5</span>    <span class="s2">&#34;Reboot&#34;</span>
-<span class="ln">  6</span>    <span class="s2">&#34;Monitor Off&#34;</span>
-<span class="ln">  7</span>    <span class="s2">&#34;Pass ROFI&#34;</span>
-<span class="ln">  8</span>    <span class="s2">&#34;Wyczyść hasło do agenta GPG&#34;</span>
-<span class="ln">  9</span>    <span class="s2">&#34;Wyczyść historię schowka&#34;</span>
-<span class="ln"> 10</span>    <span class="s2">&#34;CPU GHz&#34;</span>
-<span class="ln"> 11</span>    <span class="s2">&#34;Stan baterii&#34;</span>
-<span class="ln"> 12</span>    <span class="s2">&#34;Edytuj Menu&#34;</span>
-<span class="ln"> 13</span><span class="o">)</span>
-<span class="ln"> 14</span>
-<span class="ln"> 15</span><span class="nv">menu</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span> <span class="s1">&#39;%s\n&#39;</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">menu_list</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&#34;</span> <span class="p">|</span> rofi -lines <span class="m">12</span> -dmenu -i -p <span class="s2">&#34;Wybierz coś&#34;</span> <span class="s2">&#34;</span><span class="si">${</span><span class="p">@</span><span class="si">}</span><span class="s2">&#34;</span><span class="k">)</span>
-<span class="ln"> 16</span>
-<span class="ln"> 17</span><span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Suspend&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> sudo /usr/bin/systemctl <span class="nb">suspend</span>
-<span class="ln"> 18</span>
-<span class="ln"> 19</span><span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Reboot&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> sudo reboot
-<span class="ln"> 20</span>
-<span class="ln"> 21</span><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Stan baterii&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln"> 22</span>    <span class="nv">batt</span><span class="o">=</span><span class="k">$(</span>upower -i <span class="k">$(</span>upower -e <span class="p">|</span> grep BAT<span class="k">)</span> <span class="p">|</span> grep --color<span class="o">=</span>never -E <span class="s2">&#34;state|to\ full|to\ empty|percentage&#34;</span><span class="k">)</span>
-<span class="ln"> 23</span>    rofi -e <span class="s2">&#34;</span><span class="nv">$batt</span><span class="s2">&#34;</span>
-<span class="ln"> 24</span><span class="k">fi</span>
-<span class="ln"> 25</span>
-<span class="ln"> 26</span><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Monitor Off&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln"> 27</span>    notify-send <span class="s2">&#34;Za kilka chwil wyłączę monitor...&#34;</span>
-<span class="ln"> 28</span>    sleep <span class="m">1</span>
-<span class="ln"> 29</span>    xset dpms force off
-<span class="ln"> 30</span><span class="k">fi</span>
-<span class="ln"> 31</span>
-<span class="ln"> 32</span><span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Wyczyść hasło do agenta GPG&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> gpg-connect-agent reloadagent /bye
-<span class="ln"> 33</span>
-<span class="ln"> 34</span><span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Wyczyść historię schowka&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nv">$HOME</span>/bin/clipdel -d <span class="s2">&#34;.*&#34;</span>
-<span class="ln"> 35</span>
-<span class="ln"> 36</span><span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Pass ROFI&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nv">$HOME</span>/bin/passr
-<span class="ln"> 37</span>
-<span class="ln"> 38</span>check_cpu_exit_status<span class="o">()</span> <span class="o">{</span>
-<span class="ln"> 39</span>    <span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> <span class="o">==</span> <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln"> 40</span>        notify-send <span class="s2">&#34;Ustawiłem maksymalną częstotliwość na </span><span class="nv">$1</span><span class="s2">&#34;</span>
-<span class="ln"> 41</span>    <span class="k">else</span>
-<span class="ln"> 42</span>        rofi -e <span class="s2">&#34;Ustawienie częstotliwości (</span><span class="nv">$1</span><span class="s2">) NIE powiodło się (zmień ustawienia sudo).&#34;</span>
-<span class="ln"> 43</span>    <span class="k">fi</span>
-<span class="ln"> 44</span><span class="o">}</span>
-<span class="ln"> 45</span>
-<span class="ln"> 46</span>cpu<span class="o">()</span> <span class="o">{</span>
-<span class="ln"> 47</span>    <span class="nb">declare</span> -a <span class="nv">cpu_hz</span><span class="o">=(</span>
-<span class="ln"> 48</span>        <span class="s2">&#34;Max 400&#34;</span>
-<span class="ln"> 49</span>        <span class="s2">&#34;Max 800&#34;</span>
-<span class="ln"> 50</span>        <span class="s2">&#34;Max 1.4&#34;</span>
-<span class="ln"> 51</span>        <span class="s2">&#34;Max 1.8&#34;</span>
-<span class="ln"> 52</span>        <span class="s2">&#34;Max 2.4&#34;</span>
-<span class="ln"> 53</span>        <span class="s2">&#34;Max 3.3&#34;</span>
-<span class="ln"> 54</span>        <span class="s2">&#34;Max 4.0&#34;</span>
-<span class="ln"> 55</span>    <span class="o">)</span>
-<span class="ln"> 56</span>
-<span class="ln"> 57</span>    <span class="nv">GHZ</span><span class="o">=</span><span class="k">$(</span>cpupower frequency-info -f -m<span class="p">|</span>tail -n 1<span class="p">|</span>cut -f 6,7 -d <span class="s1">&#39; &#39;</span><span class="k">)</span>
-<span class="ln"> 58</span>
-<span class="ln"> 59</span>    <span class="nv">cpu</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span> <span class="s1">&#39;%s\n&#39;</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">cpu_hz</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&#34;</span> <span class="p">|</span> rofi -dmenu -i -p <span class="s2">&#34;Ustaw częstotliwość (teraz: </span><span class="nv">$GHZ</span><span class="s2">)&#34;</span> <span class="s2">&#34;</span><span class="si">${</span><span class="p">@</span><span class="si">}</span><span class="s2">&#34;</span><span class="k">)</span>
-<span class="ln"> 60</span>
-<span class="ln"> 61</span>    <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$cpu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Max 400&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln"> 62</span>        /usr/bin/sudo cpupower frequency-set -u <span class="m">400000</span> -g powersave
-<span class="ln"> 63</span>        check_cpu_exit_status <span class="s2">&#34;0.4 GHz&#34;</span>
-<span class="ln"> 64</span>    <span class="k">fi</span>
-<span class="ln"> 65</span>
-<span class="ln"> 66</span>    <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$cpu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Max 800&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln"> 67</span>        /usr/bin/sudo cpupower frequency-set -u <span class="m">800000</span> -g powersave
-<span class="ln"> 68</span>        check_cpu_exit_status <span class="s2">&#34;0.8 GHz&#34;</span>
-<span class="ln"> 69</span>    <span class="k">fi</span>
-<span class="ln"> 70</span>
-<span class="ln"> 71</span>    <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$cpu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Max 1.4&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln"> 72</span>        /usr/bin/sudo cpupower frequency-set -u <span class="m">1400000</span> -g powersave
-<span class="ln"> 73</span>        check_cpu_exit_status <span class="s2">&#34;1.4 GHz&#34;</span>
-<span class="ln"> 74</span>    <span class="k">fi</span>
-<span class="ln"> 75</span>
-<span class="ln"> 76</span>    <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$cpu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Max 1.8&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln"> 77</span>        /usr/bin/sudo cpupower frequency-set -u <span class="m">1800000</span> -g powersave
-<span class="ln"> 78</span>        check_cpu_exit_status <span class="s2">&#34;1.8 GHz&#34;</span>
-<span class="ln"> 79</span>    <span class="k">fi</span>
-<span class="ln"> 80</span>
-<span class="ln"> 81</span>    <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$cpu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Max 2.4&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln"> 82</span>        /usr/bin/sudo cpupower frequency-set -u <span class="m">2400000</span> -g powersave
-<span class="ln"> 83</span>        check_cpu_exit_status <span class="s2">&#34;2.4 GHz&#34;</span>
-<span class="ln"> 84</span>    <span class="k">fi</span>
-<span class="ln"> 85</span>
-<span class="ln"> 86</span>    <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$cpu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Max 3.3&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln"> 87</span>        /usr/bin/sudo cpupower frequency-set -u <span class="m">3300000</span> -g powersave
-<span class="ln"> 88</span>        check_cpu_exit_status <span class="s2">&#34;3.3 GHz&#34;</span>
-<span class="ln"> 89</span>    <span class="k">fi</span>
-<span class="ln"> 90</span>
-<span class="ln"> 91</span>    <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$cpu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Max 4.0&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln"> 92</span>        /usr/bin/sudo cpupower frequency-set -u <span class="m">4000000</span> -g powersave
-<span class="ln"> 93</span>        check_cpu_exit_status <span class="s2">&#34;4.0 GHz&#34;</span>
-<span class="ln"> 94</span>    <span class="k">fi</span>
-<span class="ln"> 95</span><span class="o">}</span>
-<span class="ln"> 96</span>
-<span class="ln"> 97</span><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;CPU GHz&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln"> 98</span>    cpu
-<span class="ln"> 99</span><span class="k">fi</span>
-<span class="ln">100</span>
-<span class="ln">101</span><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Edytuj Menu&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln">102</span>    st -e vim ~/bin/menu
-<span class="ln">103</span><span class="k">fi</span>
-</code></pre></div><p>Menu z listą książek, po wybraniu pozycji, zostaje uruchomiona przeglądarka plików PDF <strong>zathura</strong>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="cp">#!/usr/bin/env bash
-</span><span class="ln"> 2</span><span class="cp"></span>
-<span class="ln"> 3</span><span class="nv">APP</span><span class="o">=</span>zathura
-<span class="ln"> 4</span><span class="nv">BOOKS_DIR</span><span class="o">=</span>~/Books
-<span class="ln"> 5</span>
-<span class="ln"> 6</span><span class="nv">BOOK</span><span class="o">=</span><span class="s2">&#34;</span><span class="k">$(</span> <span class="nb">cd</span> <span class="nv">$BOOKS_DIR</span><span class="p">;</span> find * -name <span class="se">\*</span>.pdf -print <span class="p">|</span> rofi -dmenu <span class="se">\
-</span><span class="ln"> 7</span><span class="se"></span>        -i -l <span class="m">20</span> -matching glob -p <span class="s2">&#34;Books (</span><span class="nv">$APP</span><span class="s2">)&#34;</span> <span class="k">)</span><span class="s2">&#34;</span>
-<span class="ln"> 8</span>
-<span class="ln"> 9</span><span class="k">if</span> <span class="o">[</span> -n <span class="s2">&#34;</span><span class="nv">$BOOK</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln">10</span>    <span class="nv">$APP</span> <span class="nv">$BOOKS_DIR</span>/<span class="s2">&#34;</span><span class="nv">$BOOK</span><span class="s2">&#34;</span>
-<span class="ln">11</span><span class="k">fi</span>
-</code></pre></div><div id="disqus_thread"></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">  1</span><span class="cl"><span class="cp">#!/usr/bin/env bash
+</span></span></span><span class="line"><span class="ln">  2</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="nb">declare</span> -a <span class="nv">menu_list</span><span class="o">=(</span>
+</span></span><span class="line"><span class="ln">  4</span><span class="cl">    <span class="s2">&#34;Suspend&#34;</span>
+</span></span><span class="line"><span class="ln">  5</span><span class="cl">    <span class="s2">&#34;Reboot&#34;</span>
+</span></span><span class="line"><span class="ln">  6</span><span class="cl">    <span class="s2">&#34;Monitor Off&#34;</span>
+</span></span><span class="line"><span class="ln">  7</span><span class="cl">    <span class="s2">&#34;Pass ROFI&#34;</span>
+</span></span><span class="line"><span class="ln">  8</span><span class="cl">    <span class="s2">&#34;Wyczyść hasło do agenta GPG&#34;</span>
+</span></span><span class="line"><span class="ln">  9</span><span class="cl">    <span class="s2">&#34;Wyczyść historię schowka&#34;</span>
+</span></span><span class="line"><span class="ln"> 10</span><span class="cl">    <span class="s2">&#34;CPU GHz&#34;</span>
+</span></span><span class="line"><span class="ln"> 11</span><span class="cl">    <span class="s2">&#34;Stan baterii&#34;</span>
+</span></span><span class="line"><span class="ln"> 12</span><span class="cl">    <span class="s2">&#34;Edytuj Menu&#34;</span>
+</span></span><span class="line"><span class="ln"> 13</span><span class="cl"><span class="o">)</span>
+</span></span><span class="line"><span class="ln"> 14</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 15</span><span class="cl"><span class="nv">menu</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span> <span class="s1">&#39;%s\n&#39;</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">menu_list</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&#34;</span> <span class="p">|</span> rofi -lines <span class="m">12</span> -dmenu -i -p <span class="s2">&#34;Wybierz coś&#34;</span> <span class="s2">&#34;</span><span class="si">${</span><span class="p">@</span><span class="si">}</span><span class="s2">&#34;</span><span class="k">)</span>
+</span></span><span class="line"><span class="ln"> 16</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 17</span><span class="cl"><span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Suspend&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> sudo /usr/bin/systemctl <span class="nb">suspend</span>
+</span></span><span class="line"><span class="ln"> 18</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 19</span><span class="cl"><span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Reboot&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> sudo reboot
+</span></span><span class="line"><span class="ln"> 20</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 21</span><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Stan baterii&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln"> 22</span><span class="cl">    <span class="nv">batt</span><span class="o">=</span><span class="k">$(</span>upower -i <span class="k">$(</span>upower -e <span class="p">|</span> grep BAT<span class="k">)</span> <span class="p">|</span> grep --color<span class="o">=</span>never -E <span class="s2">&#34;state|to\ full|to\ empty|percentage&#34;</span><span class="k">)</span>
+</span></span><span class="line"><span class="ln"> 23</span><span class="cl">    rofi -e <span class="s2">&#34;</span><span class="nv">$batt</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="ln"> 24</span><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="ln"> 25</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 26</span><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Monitor Off&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln"> 27</span><span class="cl">    notify-send <span class="s2">&#34;Za kilka chwil wyłączę monitor...&#34;</span>
+</span></span><span class="line"><span class="ln"> 28</span><span class="cl">    sleep <span class="m">1</span>
+</span></span><span class="line"><span class="ln"> 29</span><span class="cl">    xset dpms force off
+</span></span><span class="line"><span class="ln"> 30</span><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="ln"> 31</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 32</span><span class="cl"><span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Wyczyść hasło do agenta GPG&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> gpg-connect-agent reloadagent /bye
+</span></span><span class="line"><span class="ln"> 33</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 34</span><span class="cl"><span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Wyczyść historię schowka&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nv">$HOME</span>/bin/clipdel -d <span class="s2">&#34;.*&#34;</span>
+</span></span><span class="line"><span class="ln"> 35</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 36</span><span class="cl"><span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Pass ROFI&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nv">$HOME</span>/bin/passr
+</span></span><span class="line"><span class="ln"> 37</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 38</span><span class="cl">check_cpu_exit_status<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="ln"> 39</span><span class="cl">    <span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> <span class="o">==</span> <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln"> 40</span><span class="cl">        notify-send <span class="s2">&#34;Ustawiłem maksymalną częstotliwość na </span><span class="nv">$1</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="ln"> 41</span><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="ln"> 42</span><span class="cl">        rofi -e <span class="s2">&#34;Ustawienie częstotliwości (</span><span class="nv">$1</span><span class="s2">) NIE powiodło się (zmień ustawienia sudo).&#34;</span>
+</span></span><span class="line"><span class="ln"> 43</span><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="ln"> 44</span><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="ln"> 45</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 46</span><span class="cl">cpu<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="ln"> 47</span><span class="cl">    <span class="nb">declare</span> -a <span class="nv">cpu_hz</span><span class="o">=(</span>
+</span></span><span class="line"><span class="ln"> 48</span><span class="cl">        <span class="s2">&#34;Max 400&#34;</span>
+</span></span><span class="line"><span class="ln"> 49</span><span class="cl">        <span class="s2">&#34;Max 800&#34;</span>
+</span></span><span class="line"><span class="ln"> 50</span><span class="cl">        <span class="s2">&#34;Max 1.4&#34;</span>
+</span></span><span class="line"><span class="ln"> 51</span><span class="cl">        <span class="s2">&#34;Max 1.8&#34;</span>
+</span></span><span class="line"><span class="ln"> 52</span><span class="cl">        <span class="s2">&#34;Max 2.4&#34;</span>
+</span></span><span class="line"><span class="ln"> 53</span><span class="cl">        <span class="s2">&#34;Max 3.3&#34;</span>
+</span></span><span class="line"><span class="ln"> 54</span><span class="cl">        <span class="s2">&#34;Max 4.0&#34;</span>
+</span></span><span class="line"><span class="ln"> 55</span><span class="cl">    <span class="o">)</span>
+</span></span><span class="line"><span class="ln"> 56</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 57</span><span class="cl">    <span class="nv">GHZ</span><span class="o">=</span><span class="k">$(</span>cpupower frequency-info -f -m<span class="p">|</span>tail -n 1<span class="p">|</span>cut -f 6,7 -d <span class="s1">&#39; &#39;</span><span class="k">)</span>
+</span></span><span class="line"><span class="ln"> 58</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 59</span><span class="cl">    <span class="nv">cpu</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span> <span class="s1">&#39;%s\n&#39;</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">cpu_hz</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&#34;</span> <span class="p">|</span> rofi -dmenu -i -p <span class="s2">&#34;Ustaw częstotliwość (teraz: </span><span class="nv">$GHZ</span><span class="s2">)&#34;</span> <span class="s2">&#34;</span><span class="si">${</span><span class="p">@</span><span class="si">}</span><span class="s2">&#34;</span><span class="k">)</span>
+</span></span><span class="line"><span class="ln"> 60</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 61</span><span class="cl">    <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$cpu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Max 400&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln"> 62</span><span class="cl">        /usr/bin/sudo cpupower frequency-set -u <span class="m">400000</span> -g powersave
+</span></span><span class="line"><span class="ln"> 63</span><span class="cl">        check_cpu_exit_status <span class="s2">&#34;0.4 GHz&#34;</span>
+</span></span><span class="line"><span class="ln"> 64</span><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="ln"> 65</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 66</span><span class="cl">    <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$cpu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Max 800&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln"> 67</span><span class="cl">        /usr/bin/sudo cpupower frequency-set -u <span class="m">800000</span> -g powersave
+</span></span><span class="line"><span class="ln"> 68</span><span class="cl">        check_cpu_exit_status <span class="s2">&#34;0.8 GHz&#34;</span>
+</span></span><span class="line"><span class="ln"> 69</span><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="ln"> 70</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 71</span><span class="cl">    <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$cpu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Max 1.4&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln"> 72</span><span class="cl">        /usr/bin/sudo cpupower frequency-set -u <span class="m">1400000</span> -g powersave
+</span></span><span class="line"><span class="ln"> 73</span><span class="cl">        check_cpu_exit_status <span class="s2">&#34;1.4 GHz&#34;</span>
+</span></span><span class="line"><span class="ln"> 74</span><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="ln"> 75</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 76</span><span class="cl">    <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$cpu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Max 1.8&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln"> 77</span><span class="cl">        /usr/bin/sudo cpupower frequency-set -u <span class="m">1800000</span> -g powersave
+</span></span><span class="line"><span class="ln"> 78</span><span class="cl">        check_cpu_exit_status <span class="s2">&#34;1.8 GHz&#34;</span>
+</span></span><span class="line"><span class="ln"> 79</span><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="ln"> 80</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 81</span><span class="cl">    <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$cpu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Max 2.4&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln"> 82</span><span class="cl">        /usr/bin/sudo cpupower frequency-set -u <span class="m">2400000</span> -g powersave
+</span></span><span class="line"><span class="ln"> 83</span><span class="cl">        check_cpu_exit_status <span class="s2">&#34;2.4 GHz&#34;</span>
+</span></span><span class="line"><span class="ln"> 84</span><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="ln"> 85</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 86</span><span class="cl">    <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$cpu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Max 3.3&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln"> 87</span><span class="cl">        /usr/bin/sudo cpupower frequency-set -u <span class="m">3300000</span> -g powersave
+</span></span><span class="line"><span class="ln"> 88</span><span class="cl">        check_cpu_exit_status <span class="s2">&#34;3.3 GHz&#34;</span>
+</span></span><span class="line"><span class="ln"> 89</span><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="ln"> 90</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 91</span><span class="cl">    <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$cpu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Max 4.0&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln"> 92</span><span class="cl">        /usr/bin/sudo cpupower frequency-set -u <span class="m">4000000</span> -g powersave
+</span></span><span class="line"><span class="ln"> 93</span><span class="cl">        check_cpu_exit_status <span class="s2">&#34;4.0 GHz&#34;</span>
+</span></span><span class="line"><span class="ln"> 94</span><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="ln"> 95</span><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="ln"> 96</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 97</span><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;CPU GHz&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln"> 98</span><span class="cl">    cpu
+</span></span><span class="line"><span class="ln"> 99</span><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="ln">100</span><span class="cl">
+</span></span><span class="line"><span class="ln">101</span><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Edytuj Menu&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln">102</span><span class="cl">    st -e vim ~/bin/menu
+</span></span><span class="line"><span class="ln">103</span><span class="cl"><span class="k">fi</span>
+</span></span></code></pre></div><p>Menu z listą książek, po wybraniu pozycji, zostaje uruchomiona przeglądarka plików PDF <strong>zathura</strong>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">#!/usr/bin/env bash
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="nv">APP</span><span class="o">=</span>zathura
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="nv">BOOKS_DIR</span><span class="o">=</span>~/Books
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="nv">BOOK</span><span class="o">=</span><span class="s2">&#34;</span><span class="k">$(</span> <span class="nb">cd</span> <span class="nv">$BOOKS_DIR</span><span class="p">;</span> find * -name <span class="se">\*</span>.pdf -print <span class="p">|</span> rofi -dmenu <span class="se">\
+</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="se"></span>        -i -l <span class="m">20</span> -matching glob -p <span class="s2">&#34;Books (</span><span class="nv">$APP</span><span class="s2">)&#34;</span> <span class="k">)</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="k">if</span> <span class="o">[</span> -n <span class="s2">&#34;</span><span class="nv">$BOOK</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="nv">$APP</span> <span class="nv">$BOOKS_DIR</span>/<span class="s2">&#34;</span><span class="nv">$BOOK</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="k">fi</span>
+</span></span></code></pre></div><div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -645,7 +645,7 @@
   </div>
 </footer>
 
-    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" integrity="sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" integrity="sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous"></script>
     
   </body>
 </html>

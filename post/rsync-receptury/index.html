@@ -4,7 +4,7 @@
   <head>
 <title>rsync receptury | MOHDUR</title>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.94.2" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta property="og:locale" content="en" />
@@ -32,8 +32,8 @@
     
     
     <link rel="preload" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity = "sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" as="script" integrity=
-    "sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous">
+    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" as="script" integrity=
+    "sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity="sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" crossorigin="anonymous"><link rel="stylesheet" href="https://mohdur.github.io/css/custom.css">
@@ -129,23 +129,23 @@
 
     
     <h1 id="synchronizacja-przez-ssh">Synchronizacja przez SSH</h1>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span>-e ssh          | połączenie przez SSH np. -e &#34;ssh -l ssh-user -p 22&#34;
-<span class="ln"> 2</span>-a              | zastępuje kilka parametrów -r -l -p -t -g -o -D
-<span class="ln"> 3</span>-v              | wyświetla bieżącą operację
-<span class="ln"> 4</span>-z              | włącza kompresję
-<span class="ln"> 5</span>--delete-before | kasuje pliki w docelowej lokalizacji jeśli te nie istnieją w źródłowej lokalizacji
-<span class="ln"> 6</span>-n              | --dry-run - testowa synchronizacja
-<span class="ln"> 7</span>-r              | synchronizuje podkatalogi
-<span class="ln"> 8</span>-l              | kopiuje linki symboliczne jako linki symboliczne
-<span class="ln"> 9</span>-p              | zachowuje uprawnienia
-<span class="ln">10</span>-t              | zachowuje uprawnienia dla grupy
-<span class="ln">11</span>-o              | zachowuje uprawnienia dla użytkownika
-<span class="ln">12</span>-D              | zachowuje pliki urządzeń (tylko root)
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>cd ~/Nextcloud
-<span class="ln">2</span>rsync -avz --delete-before -e ssh Instrukcje/ użytkownik@hostname:/opt/backup-rsync/Instrukcje
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>cd ~/Książki
-<span class="ln">2</span>rsync -avz --delete-before -e ssh . użytkownik@hostname:/opt/backup-rsync/Books
-</code></pre></div><p>Oprócz oczywistej różnicy pomiędzy tymi dwoma poleceniami, jest jeszcze taka
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln"> 1</span><span class="cl">-e ssh          | połączenie przez SSH np. -e &#34;ssh -l ssh-user -p 22&#34;
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">-a              | zastępuje kilka parametrów -r -l -p -t -g -o -D
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">-v              | wyświetla bieżącą operację
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">-z              | włącza kompresję
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">--delete-before | kasuje pliki w docelowej lokalizacji jeśli te nie istnieją w źródłowej lokalizacji
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">-n              | --dry-run - testowa synchronizacja
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">-r              | synchronizuje podkatalogi
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">-l              | kopiuje linki symboliczne jako linki symboliczne
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">-p              | zachowuje uprawnienia
+</span></span><span class="line"><span class="ln">10</span><span class="cl">-t              | zachowuje uprawnienia dla grupy
+</span></span><span class="line"><span class="ln">11</span><span class="cl">-o              | zachowuje uprawnienia dla użytkownika
+</span></span><span class="line"><span class="ln">12</span><span class="cl">-D              | zachowuje pliki urządzeń (tylko root)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">cd ~/Nextcloud
+</span></span><span class="line"><span class="ln">2</span><span class="cl">rsync -avz --delete-before -e ssh Instrukcje/ użytkownik@hostname:/opt/backup-rsync/Instrukcje
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">cd ~/Książki
+</span></span><span class="line"><span class="ln">2</span><span class="cl">rsync -avz --delete-before -e ssh . użytkownik@hostname:/opt/backup-rsync/Books
+</span></span></code></pre></div><p>Oprócz oczywistej różnicy pomiędzy tymi dwoma poleceniami, jest jeszcze taka
 mniej oczywista, mianowicie znak <code>/</code> na końcu źródłowego katalogu:
 <code>Instrukcje/</code>, można uznać, że taki zapis oznacza użycie polecenia <code>cd Instrukcje</code> a następnie przejść do synchronizacji.</p>
 <h1 id="synchronizacja-na-zewnętrznym-udziale-samba-plików-utworzonych-po-wybranej-dacie">Synchronizacja na zewnętrznym udziale SAMBA plików utworzonych po wybranej dacie</h1>
@@ -155,48 +155,48 @@ mniej oczywista, mianowicie znak <code>/</code> na końcu źródłowego katalogu
 <li>Dodatkowo skrypt jest zabezpieczony przed kilkukrotnym uruchomieniem, za pomocą pliku PID.</li>
 </ul>
 <p>Źródło skryptu:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="cp">#!/bin/bash
-</span><span class="ln"> 2</span><span class="cp"></span>
-<span class="ln"> 3</span><span class="nv">SKRYPT</span><span class="o">=</span><span class="k">$(</span>basename <span class="nv">$0</span><span class="k">)</span>
-<span class="ln"> 4</span><span class="nv">PIDFILE</span><span class="o">=</span>/var/run/user/<span class="k">$(</span>id -u<span class="k">)</span>/<span class="nv">$SKRYPT</span>.pid
-<span class="ln"> 5</span><span class="c1">#PID=&#34;$(&lt;&#34;$PIDFILE&#34;)&#34;</span>
-<span class="ln"> 6</span>
-<span class="ln"> 7</span><span class="o">[</span> -f <span class="nv">$PIDFILE</span> <span class="o">]</span> <span class="o">||</span> <span class="nb">echo</span> <span class="m">9999999</span> &gt; <span class="nv">$PIDFILE</span>
-<span class="ln"> 8</span>
-<span class="ln"> 9</span><span class="nv">PID_OLD</span><span class="o">=</span><span class="k">$(</span>pgrep -F <span class="nv">$PIDFILE</span><span class="k">)</span>
-<span class="ln">10</span><span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -eq <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln">11</span>    <span class="nb">echo</span> Poprzedni proces skryptu <span class="se">\&#34;</span><span class="nv">$SKRYPT</span><span class="se">\&#34;</span> nadal działa.
-<span class="ln">12</span>    <span class="nb">exit</span>
-<span class="ln">13</span><span class="k">fi</span>
-<span class="ln">14</span>
-<span class="ln">15</span><span class="nb">echo</span> <span class="nv">$$</span> &gt; <span class="nv">$PIDFILE</span>
-<span class="ln">16</span>
-<span class="ln">17</span>umount /mnt/wd-nowy
-<span class="ln">18</span>mount.cifs //10.1.1.223/udzial /mnt/wd-nowy -o <span class="nv">user</span><span class="o">=</span>uzytkownik,passwd<span class="o">=</span>tajne-haslo
-<span class="ln">19</span>
-<span class="ln">20</span>mount <span class="p">|</span> grep /mnt/wd-nowy &gt; /dev/null
-<span class="ln">21</span><span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> <span class="o">==</span> <span class="m">1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln">22</span>    <span class="nb">echo</span> Dysk sieciowy nie jest podłączony!
-<span class="ln">23</span>    <span class="nb">exit</span>
-<span class="ln">24</span><span class="k">fi</span>
-<span class="ln">25</span>
-<span class="ln">26</span>find /home/user/ -newermt <span class="s2">&#34;2018-11-10 00:00:00&#34;</span> -type f -print0 <span class="p">|</span> rsync -a -0 -stats --files-from<span class="o">=</span>- / /mnt/wd-nowy
-<span class="ln">27</span>
-<span class="ln">28</span>sleep <span class="m">12</span>
-<span class="ln">29</span>umount /mnt/wd-nowy
-</code></pre></div><h1 id="rsync-z-pominięciem-wybranych-plików-lub-katalogów">rsync z pominięciem wybranych plików lub katalogów</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="nv">SKRYPT</span><span class="o">=</span><span class="k">$(</span>basename <span class="nv">$0</span><span class="k">)</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="nv">PIDFILE</span><span class="o">=</span>/var/run/user/<span class="k">$(</span>id -u<span class="k">)</span>/<span class="nv">$SKRYPT</span>.pid
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="c1">#PID=&#34;$(&lt;&#34;$PIDFILE&#34;)&#34;</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="o">[</span> -f <span class="nv">$PIDFILE</span> <span class="o">]</span> <span class="o">||</span> <span class="nb">echo</span> <span class="m">9999999</span> &gt; <span class="nv">$PIDFILE</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="nv">PID_OLD</span><span class="o">=</span><span class="k">$(</span>pgrep -F <span class="nv">$PIDFILE</span><span class="k">)</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -eq <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="nb">echo</span> Poprzedni proces skryptu <span class="se">\&#34;</span><span class="nv">$SKRYPT</span><span class="se">\&#34;</span> nadal działa.
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    <span class="nb">exit</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">
+</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="nb">echo</span> <span class="nv">$$</span> &gt; <span class="nv">$PIDFILE</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">
+</span></span><span class="line"><span class="ln">17</span><span class="cl">umount /mnt/wd-nowy
+</span></span><span class="line"><span class="ln">18</span><span class="cl">mount.cifs //10.1.1.223/udzial /mnt/wd-nowy -o <span class="nv">user</span><span class="o">=</span>uzytkownik,passwd<span class="o">=</span>tajne-haslo
+</span></span><span class="line"><span class="ln">19</span><span class="cl">
+</span></span><span class="line"><span class="ln">20</span><span class="cl">mount <span class="p">|</span> grep /mnt/wd-nowy &gt; /dev/null
+</span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> <span class="o">==</span> <span class="m">1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">    <span class="nb">echo</span> Dysk sieciowy nie jest podłączony!
+</span></span><span class="line"><span class="ln">23</span><span class="cl">    <span class="nb">exit</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">
+</span></span><span class="line"><span class="ln">26</span><span class="cl">find /home/user/ -newermt <span class="s2">&#34;2018-11-10 00:00:00&#34;</span> -type f -print0 <span class="p">|</span> rsync -a -0 -stats --files-from<span class="o">=</span>- / /mnt/wd-nowy
+</span></span><span class="line"><span class="ln">27</span><span class="cl">
+</span></span><span class="line"><span class="ln">28</span><span class="cl">sleep <span class="m">12</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">umount /mnt/wd-nowy
+</span></span></code></pre></div><h1 id="rsync-z-pominięciem-wybranych-plików-lub-katalogów">rsync z pominięciem wybranych plików lub katalogów</h1>
 <ul>
 <li>do wykluczeń jest używany parametr <code>--exclude</code></li>
 </ul>
 <hr>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>DATA=$(date +%F-%T)
-<span class="ln">2</span>
-<span class="ln">3</span>rsync -avz -e &#39;ssh -p 12345&#39; /home/samba/ root@192.168.0.222:/home/samba \
-<span class="ln">4</span>    --exclude=samba.tar --exclude=backup \
-<span class="ln">5</span>    --log-file=rsync-samba-$DATA.log
-</code></pre></div><div id="disqus_thread"></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">DATA=$(date +%F-%T)
+</span></span><span class="line"><span class="ln">2</span><span class="cl">
+</span></span><span class="line"><span class="ln">3</span><span class="cl">rsync -avz -e &#39;ssh -p 12345&#39; /home/samba/ root@192.168.0.222:/home/samba \
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    --exclude=samba.tar --exclude=backup \
+</span></span><span class="line"><span class="ln">5</span><span class="cl">    --log-file=rsync-samba-$DATA.log
+</span></span></code></pre></div><div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -593,7 +593,7 @@ mniej oczywista, mianowicie znak <code>/</code> na końcu źródłowego katalogu
   </div>
 </footer>
 
-    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" integrity="sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" integrity="sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous"></script>
     
   </body>
 </html>

@@ -34,76 +34,76 @@
 &lt;li&gt;sqlite-devel&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;instalacja-pakietów&#34;&gt;Instalacja pakietów&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo dnf install docbook-utils docbook-style-xsl gpgme-devel cyrus-sasl-devel \
-&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;  notmuch-devel gnutls-devel libidn-devel libdb-devel compat-gdbm-devel \
-&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;  lmdb-devel kyotocabinet-devel qdbm-devel krb5-devel lua-devel sqlite-devel \
-&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;  ncurses-devel
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;pobranie-źródeł&#34;&gt;Pobranie źródeł&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#!/usr/bin/env bash
-&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;URL&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;https://api.github.com/repos/neomutt/neomutt/releases/latest
-&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;NAME&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;neomutt
-&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;mkdir &lt;span class=&#34;nv&#34;&gt;$NAME&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;curl -s &lt;span class=&#34;nv&#34;&gt;$URL&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
-&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep tarball_url &lt;span class=&#34;se&#34;&gt;\
-&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; cut -d &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#34;&amp;#39;&lt;/span&gt; -f &lt;span class=&#34;m&#34;&gt;4&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
-&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; wget -O &lt;span class=&#34;nv&#34;&gt;$NAME&lt;/span&gt;.tgz -qi -
-&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;tar zxvf &lt;span class=&#34;nv&#34;&gt;$NAME&lt;/span&gt;.tgz -C &lt;span class=&#34;nv&#34;&gt;$NAME&lt;/span&gt; --strip-components&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;rm &lt;span class=&#34;nv&#34;&gt;$NAME&lt;/span&gt;.tgz
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;kompilacja&#34;&gt;Kompilacja&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;./configure --enable-ssl --enable-gpgme --notmuch \
-&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;  --gnutls --enable-gss --sasl --bdb --gdbm \
-&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;  --kyotocabinet --lmdb --qdbm --sqlite --autocrypt \
-&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;  --lua --homespool
-&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;make clean
-&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;make
-&lt;span class=&#34;ln&#34;&gt;8&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt;9&lt;/span&gt;sudo make install
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;neomutt-version&#34;&gt;Neomutt version&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;neomutt -v
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;NeoMutt 20200925
-&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;Copyright (C) 1996-2020 Michael R. Elkins and others.
-&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;NeoMutt comes with ABSOLUTELY NO WARRANTY; for details type &amp;#39;neomutt -vv&amp;#39;.
-&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;NeoMutt is free software, and you are welcome to redistribute it
-&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;under certain conditions; type &amp;#39;neomutt -vv&amp;#39; for details.
-&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;System: Linux 5.9.8-200.fc33.x86_64 (x86_64)
-&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;ncurses: ncurses 6.2.20200222 (compiled with 6.1.20191109)
-&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;libidn: 1.36 (compiled with 1.35)
-&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;GPGME: 1.14.0
-&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;GnuTLS: 3.6.15
-&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;libnotmuch: 5.2.0
-&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;storage: kyotocabinet, qdbm, gdbm, bdb, lmdb
-&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt;15&lt;/span&gt;Configure options: --enable-ssl --enable-gpgme --notmuch --gnutls --enable-gss --sasl --bdb --gdbm --kyotocabinet --lmdb --qdbm --sqlite --autocrypt --lua --homespool
-&lt;span class=&#34;ln&#34;&gt;16&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt;17&lt;/span&gt;Compilation CFLAGS: -g -O2 -std=c99 -fno-delete-null-pointer-checks -D_ALL_SOURCE=1 -D_GNU_SOURCE=1 -D__EXTENSIONS__ -I/usr/include -DNCURSES_WIDECHAR -I/include -I/usr/include/ -I/usr/include/qdbm/
-&lt;span class=&#34;ln&#34;&gt;18&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt;19&lt;/span&gt;Default options:
-&lt;span class=&#34;ln&#34;&gt;20&lt;/span&gt;  +attach_headers_color +compose_to_sender +compress +cond_date +debug 
-&lt;span class=&#34;ln&#34;&gt;21&lt;/span&gt;  +encrypt_to_self +forgotten_attachments +forwref +ifdef +imap +index_color 
-&lt;span class=&#34;ln&#34;&gt;22&lt;/span&gt;  +initials +limit_current_thread +multiple_fcc +nested_if +new_mail +nntp +pop 
-&lt;span class=&#34;ln&#34;&gt;23&lt;/span&gt;  +progress +quasi_delete +regcomp +reply_with_xorig +sensible_browser +sidebar 
-&lt;span class=&#34;ln&#34;&gt;24&lt;/span&gt;  +skip_quoted +smtp +status_color +timeout +tls_sni +trash 
-&lt;span class=&#34;ln&#34;&gt;25&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt;26&lt;/span&gt;Compile options:
-&lt;span class=&#34;ln&#34;&gt;27&lt;/span&gt;  +autocrypt +bkgdset +color +curs_set +fcntl -flock -fmemopen +futimens 
-&lt;span class=&#34;ln&#34;&gt;28&lt;/span&gt;  +getaddrinfo +gnutls +gpgme +gss +hcache +homespool +idn +inotify 
-&lt;span class=&#34;ln&#34;&gt;29&lt;/span&gt;  -locales_hack +lua +meta -mixmaster +nls +notmuch -openssl +pgp +regex +sasl 
-&lt;span class=&#34;ln&#34;&gt;30&lt;/span&gt;  +smime +sqlite +start_color +sun_attachment +typeahead 
-&lt;span class=&#34;ln&#34;&gt;31&lt;/span&gt;MAILPATH=&amp;#34;mailbox&amp;#34;
-&lt;span class=&#34;ln&#34;&gt;32&lt;/span&gt;PKGDATADIR=&amp;#34;/usr/share/neomutt&amp;#34;
-&lt;span class=&#34;ln&#34;&gt;33&lt;/span&gt;SENDMAIL=&amp;#34;/usr/sbin/sendmail&amp;#34;
-&lt;span class=&#34;ln&#34;&gt;34&lt;/span&gt;SYSCONFDIR=&amp;#34;/etc&amp;#34;
-&lt;span class=&#34;ln&#34;&gt;35&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt;36&lt;/span&gt;To learn more about NeoMutt, visit: https://neomutt.org
-&lt;span class=&#34;ln&#34;&gt;37&lt;/span&gt;If you find a bug in NeoMutt, please raise an issue at:
-&lt;span class=&#34;ln&#34;&gt;38&lt;/span&gt;    https://github.com/neomutt/neomutt/issues
-&lt;span class=&#34;ln&#34;&gt;39&lt;/span&gt;or send an email to: &amp;lt;neomutt-devel@neomutt.org&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;sudo dnf install docbook-utils docbook-style-xsl gpgme-devel cyrus-sasl-devel \
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;  notmuch-devel gnutls-devel libidn-devel libdb-devel compat-gdbm-devel \
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;  lmdb-devel kyotocabinet-devel qdbm-devel krb5-devel lua-devel sqlite-devel \
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;  ncurses-devel
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;pobranie-źródeł&#34;&gt;Pobranie źródeł&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#!/usr/bin/env bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;URL&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;https://api.github.com/repos/neomutt/neomutt/releases/latest
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;NAME&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;neomutt
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;mkdir &lt;span class=&#34;nv&#34;&gt;$NAME&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;curl -s &lt;span class=&#34;nv&#34;&gt;$URL&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep tarball_url &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; cut -d &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#34;&amp;#39;&lt;/span&gt; -f &lt;span class=&#34;m&#34;&gt;4&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; wget -O &lt;span class=&#34;nv&#34;&gt;$NAME&lt;/span&gt;.tgz -qi -
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;tar zxvf &lt;span class=&#34;nv&#34;&gt;$NAME&lt;/span&gt;.tgz -C &lt;span class=&#34;nv&#34;&gt;$NAME&lt;/span&gt; --strip-components&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;rm &lt;span class=&#34;nv&#34;&gt;$NAME&lt;/span&gt;.tgz
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;kompilacja&#34;&gt;Kompilacja&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;./configure --enable-ssl --enable-gpgme --notmuch \
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;  --gnutls --enable-gss --sasl --bdb --gdbm \
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;  --kyotocabinet --lmdb --qdbm --sqlite --autocrypt \
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;  --lua --homespool
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;make clean
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;make
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;sudo make install
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;neomutt-version&#34;&gt;Neomutt version&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;neomutt -v
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;NeoMutt 20200925
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;Copyright (C) 1996-2020 Michael R. Elkins and others.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;NeoMutt comes with ABSOLUTELY NO WARRANTY; for details type &amp;#39;neomutt -vv&amp;#39;.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;NeoMutt is free software, and you are welcome to redistribute it
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;under certain conditions; type &amp;#39;neomutt -vv&amp;#39; for details.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;System: Linux 5.9.8-200.fc33.x86_64 (x86_64)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;ncurses: ncurses 6.2.20200222 (compiled with 6.1.20191109)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;libidn: 1.36 (compiled with 1.35)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;GPGME: 1.14.0
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;GnuTLS: 3.6.15
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;libnotmuch: 5.2.0
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;storage: kyotocabinet, qdbm, gdbm, bdb, lmdb
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;15&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;Configure options: --enable-ssl --enable-gpgme --notmuch --gnutls --enable-gss --sasl --bdb --gdbm --kyotocabinet --lmdb --qdbm --sqlite --autocrypt --lua --homespool
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;16&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;17&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;Compilation CFLAGS: -g -O2 -std=c99 -fno-delete-null-pointer-checks -D_ALL_SOURCE=1 -D_GNU_SOURCE=1 -D__EXTENSIONS__ -I/usr/include -DNCURSES_WIDECHAR -I/include -I/usr/include/ -I/usr/include/qdbm/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;18&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;19&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;Default options:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;20&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;  +attach_headers_color +compose_to_sender +compress +cond_date +debug 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;21&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;  +encrypt_to_self +forgotten_attachments +forwref +ifdef +imap +index_color 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;22&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;  +initials +limit_current_thread +multiple_fcc +nested_if +new_mail +nntp +pop 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;23&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;  +progress +quasi_delete +regcomp +reply_with_xorig +sensible_browser +sidebar 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;24&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;  +skip_quoted +smtp +status_color +timeout +tls_sni +trash 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;25&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;26&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;Compile options:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;27&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;  +autocrypt +bkgdset +color +curs_set +fcntl -flock -fmemopen +futimens 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;28&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;  +getaddrinfo +gnutls +gpgme +gss +hcache +homespool +idn +inotify 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;29&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;  -locales_hack +lua +meta -mixmaster +nls +notmuch -openssl +pgp +regex +sasl 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;30&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;  +smime +sqlite +start_color +sun_attachment +typeahead 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;31&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;MAILPATH=&amp;#34;mailbox&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;32&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;PKGDATADIR=&amp;#34;/usr/share/neomutt&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;33&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;SENDMAIL=&amp;#34;/usr/sbin/sendmail&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;34&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;SYSCONFDIR=&amp;#34;/etc&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;35&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;36&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;To learn more about NeoMutt, visit: https://neomutt.org
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;37&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;If you find a bug in NeoMutt, please raise an issue at:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;38&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;    https://github.com/neomutt/neomutt/issues
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;39&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;or send an email to: &amp;lt;neomutt-devel@neomutt.org&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
         
       </description>
     </item>

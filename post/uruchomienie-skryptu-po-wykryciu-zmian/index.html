@@ -4,7 +4,7 @@
   <head>
 <title>Uruchomienie skryptu po wykryciu zmian | MOHDUR</title>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.94.2" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta property="og:locale" content="en" />
@@ -32,8 +32,8 @@
     
     
     <link rel="preload" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity = "sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" as="script" integrity=
-    "sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous">
+    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" as="script" integrity=
+    "sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity="sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" crossorigin="anonymous"><link rel="stylesheet" href="https://mohdur.github.io/css/custom.css">
@@ -133,34 +133,34 @@ go uruchomi, dzięki temu nie trzeba za każdym razem uruchomiać go podczas kod
 niesety trzeba je doinstalować, o ile nie chcemy używać ich dodatkowych funkcji,
 można korzystać z tego skryptu.</p>
 <p>Jako parametr należy podać nazwę pliku, który chcemy monitorować.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="cp">#!/bin/bash
-</span><span class="ln"> 2</span><span class="cp"></span>
-<span class="ln"> 3</span><span class="c1"># zmienna TIME określa co ile sekund jest sprawdzany skrypt</span>
-<span class="ln"> 4</span><span class="nv">TIME</span><span class="o">=</span><span class="m">1</span>
-<span class="ln"> 5</span>
-<span class="ln"> 6</span><span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> -lt <span class="m">1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln"> 7</span>    <span class="nb">echo</span> <span class="s2">&#34;Podaj nazwę skryptu do obserwacji.&#34;</span>
-<span class="ln"> 8</span>    <span class="nb">exit</span>
-<span class="ln"> 9</span><span class="k">fi</span>
-<span class="ln">10</span>
-<span class="ln">11</span><span class="nv">SCRIPT</span><span class="o">=</span><span class="k">$(</span>readlink -f <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span><span class="k">)</span>
-<span class="ln">12</span><span class="nb">echo</span> <span class="s2">&#34;Zaczynam monitorować plik </span><span class="nv">$SCRIPT</span><span class="s2">&#34;</span>
-<span class="ln">13</span>
-<span class="ln">14</span><span class="nv">SUM_OLD</span><span class="o">=</span><span class="k">$(</span>md5sum <span class="s2">&#34;</span><span class="nv">$SCRIPT</span><span class="s2">&#34;</span><span class="k">)</span>
-<span class="ln">15</span>
-<span class="ln">16</span><span class="k">while</span> <span class="nb">true</span>
-<span class="ln">17</span><span class="k">do</span>
-<span class="ln">18</span>    <span class="nv">SUM_NEW</span><span class="o">=</span><span class="k">$(</span>md5sum <span class="s2">&#34;</span><span class="nv">$SCRIPT</span><span class="s2">&#34;</span><span class="k">)</span>
-<span class="ln">19</span>
-<span class="ln">20</span>    <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$SUM_NEW</span><span class="s2">&#34;</span> !<span class="o">=</span> <span class="s2">&#34;</span><span class="nv">$SUM_OLD</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln">21</span>        <span class="s2">&#34;</span><span class="nv">$SCRIPT</span><span class="s2">&#34;</span>
-<span class="ln">22</span>        <span class="nv">SUM_OLD</span><span class="o">=</span><span class="nv">$SUM_NEW</span>
-<span class="ln">23</span>    <span class="k">fi</span>
-<span class="ln">24</span>    sleep <span class="nv">$TIME</span>
-<span class="ln">25</span><span class="k">done</span>
-</code></pre></div><div id="disqus_thread"></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="c1"># zmienna TIME określa co ile sekund jest sprawdzany skrypt</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="nv">TIME</span><span class="o">=</span><span class="m">1</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> -lt <span class="m">1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Podaj nazwę skryptu do obserwacji.&#34;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="nb">exit</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="nv">SCRIPT</span><span class="o">=</span><span class="k">$(</span>readlink -f <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span><span class="k">)</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Zaczynam monitorować plik </span><span class="nv">$SCRIPT</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">
+</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="nv">SUM_OLD</span><span class="o">=</span><span class="k">$(</span>md5sum <span class="s2">&#34;</span><span class="nv">$SCRIPT</span><span class="s2">&#34;</span><span class="k">)</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">
+</span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="k">while</span> <span class="nb">true</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="k">do</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">    <span class="nv">SUM_NEW</span><span class="o">=</span><span class="k">$(</span>md5sum <span class="s2">&#34;</span><span class="nv">$SCRIPT</span><span class="s2">&#34;</span><span class="k">)</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">
+</span></span><span class="line"><span class="ln">20</span><span class="cl">    <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$SUM_NEW</span><span class="s2">&#34;</span> !<span class="o">=</span> <span class="s2">&#34;</span><span class="nv">$SUM_OLD</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">        <span class="s2">&#34;</span><span class="nv">$SCRIPT</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">        <span class="nv">SUM_OLD</span><span class="o">=</span><span class="nv">$SUM_NEW</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">    sleep <span class="nv">$TIME</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl"><span class="k">done</span>
+</span></span></code></pre></div><div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -557,7 +557,7 @@ można korzystać z tego skryptu.</p>
   </div>
 </footer>
 
-    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" integrity="sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" integrity="sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous"></script>
     
   </body>
 </html>

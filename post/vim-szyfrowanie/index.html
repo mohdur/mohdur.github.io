@@ -4,7 +4,7 @@
   <head>
 <title>Vim szyfrowanie | MOHDUR</title>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.94.2" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta property="og:locale" content="en" />
@@ -32,8 +32,8 @@
     
     
     <link rel="preload" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity = "sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" as="script" integrity=
-    "sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous">
+    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" as="script" integrity=
+    "sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity="sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" crossorigin="anonymous"><link rel="stylesheet" href="https://mohdur.github.io/css/custom.css">
@@ -134,28 +134,28 @@ szyfrować wyłącznie metodą <code>zip</code>, nowsze wersje potrafią szyfrow
 która jest najtrudniejszą do złamania. Nie zaleca się używania szyfrowania za
 pomocą metody <code>zip</code>. Szyfrowanie tą metodą nie jest możliwe w edytorze Neovim.</p>
 <p>W celu lepszego zabezpieczenia możemy użyć dodatkowo następujących komend</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>:set viminfo=
-<span class="ln">2</span>:set noswapfile noundofile nobackup
-<span class="ln">3</span>:edit tajny_plik.txt
-</code></pre></div><p>Żeby sprawdzić aktualną metodę szyfrowania należy wydać polecenie</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>:set cm?
-</code></pre></div><p>W pliku konfiguracyjnym <code>.vimrc</code> dodajemy</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>set cm=blowfish2
-</code></pre></div><h2 id="szyfrowanie">Szyfrowanie</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">:set viminfo=
+</span></span><span class="line"><span class="ln">2</span><span class="cl">:set noswapfile noundofile nobackup
+</span></span><span class="line"><span class="ln">3</span><span class="cl">:edit tajny_plik.txt
+</span></span></code></pre></div><p>Żeby sprawdzić aktualną metodę szyfrowania należy wydać polecenie</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">:set cm?
+</span></span></code></pre></div><p>W pliku konfiguracyjnym <code>.vimrc</code> dodajemy</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">set cm=blowfish2
+</span></span></code></pre></div><h2 id="szyfrowanie">Szyfrowanie</h2>
 <p>Kiedy chcemy zaszyfrować plik należy uruchomić polecenie</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>:X
-<span class="ln">2</span>Enter encryption key: **********
-<span class="ln">3</span>Enter same key again: **********
-</code></pre></div><p>i podać dwukrotnie hasło, następnie trzeba zapisać plik</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>:w
-</code></pre></div><p>Plik zostanie zaszyfrowany, kiedy będziemy chcieli go ponownie edytować Vim sam
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">:X
+</span></span><span class="line"><span class="ln">2</span><span class="cl">Enter encryption key: **********
+</span></span><span class="line"><span class="ln">3</span><span class="cl">Enter same key again: **********
+</span></span></code></pre></div><p>i podać dwukrotnie hasło, następnie trzeba zapisać plik</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">:w
+</span></span></code></pre></div><p>Plik zostanie zaszyfrowany, kiedy będziemy chcieli go ponownie edytować Vim sam
 poprosi o hasło do odszyfrowania pliku.</p>
 <p>Inną metodą jest uruchomienie edytora z parametrem <code>-x</code> parametr ten należy
 użyć wyłącznie przy szyfrowaniu. Ponowne otworzenie pliku z parametrem <code>-x</code>
 wyświetli zaszyfrowany wcześniej plik chyba że podamy poprzednio ustalone
 hasło.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ vim -x plik.txt
-</code></pre></div><h2 id="deszyfrowanie-plików">Deszyfrowanie plików</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">$ vim -x plik.txt
+</span></span></code></pre></div><h2 id="deszyfrowanie-plików">Deszyfrowanie plików</h2>
 <p>Odszyfrowanie pliku polega na wprowadzeniu komendy <code>:X</code> i podaniu dwukrotnie
 pustego hasła, czyli 2 x Enter, po tym należy zapisać plik <code>:w</code></p>
 <p>Jeśli zajdzie potrzeba wyrzucenia zawartości pliku na standardowe wyjście
@@ -163,14 +163,14 @@ możemy skorzystać z metody którą znalazłem w wątku
 <a href="https://superuser.com/questions/1086598/print-decrypt-a-vim-encrypted-file">https://superuser.com/questions/1086598/print-decrypt-a-vim-encrypted-file</a>
 skrypt odrobinę zmodyfikowałem na własne potrzeby</p>
 <p>Skrypt <code>~/bin/cryptocat</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="cp">#!/usr/bin/env bash
-</span><span class="ln">2</span><span class="cp"></span>
-<span class="ln">3</span><span class="nv">filename</span><span class="o">=</span><span class="nv">$1</span>
-<span class="ln">4</span>
-<span class="ln">5</span>vim -R -c <span class="s2">&#34;:set key= | sav </span><span class="si">${</span><span class="nv">filename</span><span class="si">}</span><span class="s2">.plain | q&#34;</span> -- <span class="si">${</span><span class="nv">filename</span><span class="si">}</span> <span class="o">&amp;&amp;</span> cat <span class="si">${</span><span class="nv">filename</span><span class="si">}</span>.plain <span class="o">&amp;&amp;</span> shred <span class="si">${</span><span class="nv">filename</span><span class="si">}</span>.plain <span class="o">&amp;&amp;</span> rm <span class="si">${</span><span class="nv">filename</span><span class="si">}</span>.plain
-</code></pre></div><div id="disqus_thread"></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl"><span class="cp">#!/usr/bin/env bash
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="nv">filename</span><span class="o">=</span><span class="nv">$1</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">
+</span></span><span class="line"><span class="ln">5</span><span class="cl">vim -R -c <span class="s2">&#34;:set key= | sav </span><span class="si">${</span><span class="nv">filename</span><span class="si">}</span><span class="s2">.plain | q&#34;</span> -- <span class="si">${</span><span class="nv">filename</span><span class="si">}</span> <span class="o">&amp;&amp;</span> cat <span class="si">${</span><span class="nv">filename</span><span class="si">}</span>.plain <span class="o">&amp;&amp;</span> shred <span class="si">${</span><span class="nv">filename</span><span class="si">}</span>.plain <span class="o">&amp;&amp;</span> rm <span class="si">${</span><span class="nv">filename</span><span class="si">}</span>.plain
+</span></span></code></pre></div><div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -567,7 +567,7 @@ skrypt odrobinę zmodyfikowałem na własne potrzeby</p>
   </div>
 </footer>
 
-    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" integrity="sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" integrity="sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous"></script>
     
   </body>
 </html>

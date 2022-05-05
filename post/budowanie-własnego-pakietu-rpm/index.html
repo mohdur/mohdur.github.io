@@ -4,7 +4,7 @@
   <head>
 <title>Budowanie własnego pakietu RPM | MOHDUR</title>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.94.2" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta property="og:locale" content="en" />
@@ -32,8 +32,8 @@
     
     
     <link rel="preload" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity = "sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" as="script" integrity=
-    "sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous">
+    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" as="script" integrity=
+    "sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity="sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" crossorigin="anonymous"><link rel="stylesheet" href="https://mohdur.github.io/css/custom.css">
@@ -135,53 +135,53 @@
 </ul>
 <p>Do budowy pakietu będzie potrzebny pakiet <code>rpm-build</code>.</p>
 <p>Dla systemu Fedora i CentOS 8</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sudo dnf install gcc rpm-build rpm-devel rpmlint make python bash coreutils \
-<span class="ln">2</span>diffutils patch rpmdevtools
-</code></pre></div><p>Dla systemu CentOS 7</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sudo yum install gcc rpm-build rpm-devel rpmlint make python bash coreutils \
-<span class="ln">2</span>diffutils patch rpmdevtools
-</code></pre></div><p>Przygotowanie środowiska do budowy pakietów</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>mkdir -p rpmbuild/SPECS
-</code></pre></div><p>Najważniejszą częścią jest plik <code>spec</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>touch SPECS/utils.spec
-</code></pre></div><p>Przykładowy plik <code>spec</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span>Name:       hello-world
-<span class="ln"> 2</span>Version:    <span class="m">1</span>
-<span class="ln"> 3</span>Release:    <span class="m">1</span>
-<span class="ln"> 4</span>Summary:    Most simple RPM package
-<span class="ln"> 5</span>License:    FIXME
-<span class="ln"> 6</span>
-<span class="ln"> 7</span>%description
-<span class="ln"> 8</span>This is my first RPM package, which does nothing.
-<span class="ln"> 9</span>
-<span class="ln">10</span>%prep
-<span class="ln">11</span><span class="c1"># we have no source, so nothing here</span>
-<span class="ln">12</span>
-<span class="ln">13</span>%build
-<span class="ln">14</span>cat &gt; hello-world.sh <span class="s">&lt;&lt;EOF
-</span><span class="ln">15</span><span class="s">#!/usr/bin/bash
-</span><span class="ln">16</span><span class="s">echo Hello world
-</span><span class="ln">17</span><span class="s">EOF</span>
-<span class="ln">18</span>
-<span class="ln">19</span>%install
-<span class="ln">20</span>mkdir -p %<span class="o">{</span>buildroot<span class="o">}</span>/usr/bin/
-<span class="ln">21</span>install -m <span class="m">755</span> hello-world.sh %<span class="o">{</span>buildroot<span class="o">}</span>/usr/bin/hello-world.sh
-<span class="ln">22</span>
-<span class="ln">23</span>%files
-<span class="ln">24</span>/usr/bin/hello-world.sh
-<span class="ln">25</span>
-<span class="ln">26</span>%changelog
-<span class="ln">27</span><span class="c1"># let&#39;s skip this for now</span>
-</code></pre></div><p>Skrypt do budowy</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="cp">#!/usr/bin/env bash
-</span><span class="ln">2</span><span class="cp"></span> 
-<span class="ln">3</span>sed -i -e <span class="s2">&#34;s/Version:.*/Version: 1.9_</span><span class="k">$(</span>date +%s<span class="k">)</span><span class="s2">/g&#34;</span> SPECS/utils.spec
-<span class="ln">4</span> 
-<span class="ln">5</span><span class="nb">cd</span> SPECS
-<span class="ln">6</span>rpmbuild --target x86_64 -bb utils.spec
-</code></pre></div><div id="disqus_thread"></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sudo dnf install gcc rpm-build rpm-devel rpmlint make python bash coreutils \
+</span></span><span class="line"><span class="ln">2</span><span class="cl">diffutils patch rpmdevtools
+</span></span></code></pre></div><p>Dla systemu CentOS 7</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sudo yum install gcc rpm-build rpm-devel rpmlint make python bash coreutils \
+</span></span><span class="line"><span class="ln">2</span><span class="cl">diffutils patch rpmdevtools
+</span></span></code></pre></div><p>Przygotowanie środowiska do budowy pakietów</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">mkdir -p rpmbuild/SPECS
+</span></span></code></pre></div><p>Najważniejszą częścią jest plik <code>spec</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">touch SPECS/utils.spec
+</span></span></code></pre></div><p>Przykładowy plik <code>spec</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl">Name:       hello-world
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">Version:    <span class="m">1</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">Release:    <span class="m">1</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">Summary:    Most simple RPM package
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">License:    FIXME
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">%description
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">This is my first RPM package, which does nothing.
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">
+</span></span><span class="line"><span class="ln">10</span><span class="cl">%prep
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="c1"># we have no source, so nothing here</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">
+</span></span><span class="line"><span class="ln">13</span><span class="cl">%build
+</span></span><span class="line"><span class="ln">14</span><span class="cl">cat &gt; hello-world.sh <span class="s">&lt;&lt;EOF
+</span></span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="s">#!/usr/bin/bash
+</span></span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="s">echo Hello world
+</span></span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="s">EOF</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">
+</span></span><span class="line"><span class="ln">19</span><span class="cl">%install
+</span></span><span class="line"><span class="ln">20</span><span class="cl">mkdir -p %<span class="o">{</span>buildroot<span class="o">}</span>/usr/bin/
+</span></span><span class="line"><span class="ln">21</span><span class="cl">install -m <span class="m">755</span> hello-world.sh %<span class="o">{</span>buildroot<span class="o">}</span>/usr/bin/hello-world.sh
+</span></span><span class="line"><span class="ln">22</span><span class="cl">
+</span></span><span class="line"><span class="ln">23</span><span class="cl">%files
+</span></span><span class="line"><span class="ln">24</span><span class="cl">/usr/bin/hello-world.sh
+</span></span><span class="line"><span class="ln">25</span><span class="cl">
+</span></span><span class="line"><span class="ln">26</span><span class="cl">%changelog
+</span></span><span class="line"><span class="ln">27</span><span class="cl"><span class="c1"># let&#39;s skip this for now</span>
+</span></span></code></pre></div><p>Skrypt do budowy</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl"><span class="cp">#!/usr/bin/env bash
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="cp"></span> 
+</span></span><span class="line"><span class="ln">3</span><span class="cl">sed -i -e <span class="s2">&#34;s/Version:.*/Version: 1.9_</span><span class="k">$(</span>date +%s<span class="k">)</span><span class="s2">/g&#34;</span> SPECS/utils.spec
+</span></span><span class="line"><span class="ln">4</span><span class="cl"> 
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="nb">cd</span> SPECS
+</span></span><span class="line"><span class="ln">6</span><span class="cl">rpmbuild --target x86_64 -bb utils.spec
+</span></span></code></pre></div><div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -578,7 +578,7 @@
   </div>
 </footer>
 
-    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" integrity="sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" integrity="sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous"></script>
     
   </body>
 </html>

@@ -4,7 +4,7 @@
   <head>
 <title>Wysyłanie wiadomość za pomocą GMail i Python 3 | MOHDUR</title>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.94.2" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta property="og:locale" content="en" />
@@ -32,8 +32,8 @@
     
     
     <link rel="preload" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity = "sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" as="script" integrity=
-    "sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous">
+    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" as="script" integrity=
+    "sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity="sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" crossorigin="anonymous"><link rel="stylesheet" href="https://mohdur.github.io/css/custom.css">
@@ -130,65 +130,65 @@
     
     <p>Wiadomości można wysyłać po utworzeniu hasła aplikacji lub zezwolenie na mniej bezpieczne logowanie w poczcie GMail.</p>
 <p>Skrypt wymaga biblioteki SMTPEmail</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ pip3 install smtpemail --user
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="ln"> 1</span><span class="ch">#!/usr/bin/env python3</span>
-<span class="ln"> 2</span><span class="c1"># coding=utf-8</span>
-<span class="ln"> 3</span>
-<span class="ln"> 4</span><span class="c1"># File Name : mail.py</span>
-<span class="ln"> 5</span><span class="c1"># Creation Date : 2019-03-07 23:37:09</span>
-<span class="ln"> 6</span><span class="c1"># Last Modified : 2019-03-07 23:48:29</span>
-<span class="ln"> 7</span>
-<span class="ln"> 8</span>
-<span class="ln"> 9</span><span class="kn">import</span> <span class="nn">smtplib</span>
-<span class="ln">10</span><span class="kn">import</span> <span class="nn">ssl</span>
-<span class="ln">11</span><span class="kn">from</span> <span class="nn">email.mime.text</span> <span class="kn">import</span> <span class="n">MIMEText</span>
-<span class="ln">12</span><span class="kn">from</span> <span class="nn">email.utils</span> <span class="kn">import</span> <span class="n">COMMASPACE</span><span class="p">,</span> <span class="n">formatdate</span>
-<span class="ln">13</span>
-<span class="ln">14</span><span class="n">smtp_server</span> <span class="o">=</span> <span class="s1">&#39;smtp.gmail.com&#39;</span>
-<span class="ln">15</span><span class="n">port</span> <span class="o">=</span> <span class="mi">587</span>
-<span class="ln">16</span><span class="n">fromaddr</span> <span class="o">=</span> <span class="s2">&#34;user@gmail.com&#34;</span>
-<span class="ln">17</span><span class="n">toaddrs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;user1@gmail.com&#39;</span><span class="p">,</span> <span class="s1">&#39;user2@gmail.com&#39;</span><span class="p">]</span>
-<span class="ln">18</span><span class="n">username</span> <span class="o">=</span> <span class="s2">&#34;user@gmail.com&#34;</span>
-<span class="ln">19</span><span class="n">password</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
-<span class="ln">20</span>
-<span class="ln">21</span><span class="n">subject</span> <span class="o">=</span> <span class="s2">&#34;Temat wiadomości&#34;</span>
-<span class="ln">22</span><span class="n">message</span> <span class="o">=</span> <span class="s2">&#34;&#34;&#34;Wiadomość testowa
-</span><span class="ln">23</span><span class="s2">halo
-</span><span class="ln">24</span><span class="s2">
-</span><span class="ln">25</span><span class="s2">Data: {data}
-</span><span class="ln">26</span><span class="s2">Test: {test}
-</span><span class="ln">27</span><span class="s2">
-</span><span class="ln">28</span><span class="s2">-- 
-</span><span class="ln">29</span><span class="s2">Wiadomość wysłana przez Pythona 3</span><span class="se">\n</span><span class="s2">&#34;&#34;&#34;</span>
-<span class="ln">30</span>
-<span class="ln">31</span><span class="n">message</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">formatdate</span><span class="p">(</span><span class="n">localtime</span><span class="o">=</span><span class="bp">True</span><span class="p">),</span> <span class="n">test</span><span class="o">=</span><span class="s1">&#39;Test wiadomości&#39;</span><span class="p">)</span>
-<span class="ln">32</span>
-<span class="ln">33</span><span class="n">msg</span> <span class="o">=</span> <span class="n">MIMEText</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
-<span class="ln">34</span><span class="n">msg</span><span class="p">[</span><span class="s1">&#39;From&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fromaddr</span>
-<span class="ln">35</span><span class="n">msg</span><span class="p">[</span><span class="s1">&#39;To&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">COMMASPACE</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">toaddrs</span><span class="p">)</span>
-<span class="ln">36</span><span class="n">msg</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">formatdate</span><span class="p">(</span><span class="n">localtime</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="ln">37</span><span class="n">msg</span><span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">subject</span>
-<span class="ln">38</span>
-<span class="ln">39</span><span class="n">context</span> <span class="o">=</span> <span class="n">ssl</span><span class="o">.</span><span class="n">create_default_context</span><span class="p">()</span>
-<span class="ln">40</span>
-<span class="ln">41</span><span class="k">try</span><span class="p">:</span>
-<span class="ln">42</span>    <span class="n">server</span> <span class="o">=</span> <span class="n">smtplib</span><span class="o">.</span><span class="n">SMTP</span><span class="p">(</span><span class="n">smtp_server</span><span class="p">,</span> <span class="n">port</span><span class="p">)</span>
-<span class="ln">43</span>    <span class="n">server</span><span class="o">.</span><span class="n">ehlo_or_helo_if_needed</span><span class="p">()</span>
-<span class="ln">44</span>    <span class="n">server</span><span class="o">.</span><span class="n">starttls</span><span class="p">(</span><span class="n">context</span><span class="o">=</span><span class="n">context</span><span class="p">)</span>
-<span class="ln">45</span>    <span class="n">server</span><span class="o">.</span><span class="n">ehlo_or_helo_if_needed</span><span class="p">()</span>
-<span class="ln">46</span>    <span class="n">server</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
-<span class="ln">47</span>    <span class="n">server</span><span class="o">.</span><span class="n">sendmail</span><span class="p">(</span><span class="n">fromaddr</span><span class="p">,</span> <span class="n">COMMASPACE</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">toaddrs</span><span class="p">),</span> <span class="n">msg</span><span class="o">.</span><span class="n">as_string</span><span class="p">())</span>
-<span class="ln">48</span><span class="k">except</span> <span class="n">smtplib</span><span class="o">.</span><span class="n">SMTPAuthenticationError</span><span class="p">:</span>
-<span class="ln">49</span>    <span class="k">print</span><span class="p">(</span><span class="sa">u</span><span class="s2">&#34;UWAGA! Błąd autoryzacji: nieprawidłowa nazwa użytkownika lub hasło.&#34;</span><span class="p">)</span>
-<span class="ln">50</span><span class="k">except</span> <span class="n">smtplib</span><span class="o">.</span><span class="n">SMTPSenderRefused</span><span class="p">:</span>
-<span class="ln">51</span>    <span class="k">print</span><span class="p">(</span><span class="sa">u</span><span class="s2">&#34;UWAGA! Nadawca odrzucony.&#34;</span><span class="p">)</span>
-<span class="ln">52</span><span class="k">except</span> <span class="n">smtplib</span><span class="o">.</span><span class="n">SMTPException</span><span class="p">:</span>
-<span class="ln">53</span>    <span class="k">print</span><span class="p">(</span><span class="sa">u</span><span class="s2">&#34;UWAGA! Błąd SMTP&#34;</span><span class="p">)</span>
-<span class="ln">54</span><span class="k">finally</span><span class="p">:</span>
-<span class="ln">55</span>    <span class="n">server</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre></div><div id="disqus_thread"></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">$ pip3 install smtpemail --user
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="ch">#!/usr/bin/env python3</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="c1"># coding=utf-8</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="c1"># File Name : mail.py</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="c1"># Creation Date : 2019-03-07 23:37:09</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="c1"># Last Modified : 2019-03-07 23:48:29</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="kn">import</span> <span class="nn">smtplib</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="kn">import</span> <span class="nn">ssl</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="kn">from</span> <span class="nn">email.mime.text</span> <span class="kn">import</span> <span class="n">MIMEText</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="kn">from</span> <span class="nn">email.utils</span> <span class="kn">import</span> <span class="n">COMMASPACE</span><span class="p">,</span> <span class="n">formatdate</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">
+</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="n">smtp_server</span> <span class="o">=</span> <span class="s1">&#39;smtp.gmail.com&#39;</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="n">port</span> <span class="o">=</span> <span class="mi">587</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="n">fromaddr</span> <span class="o">=</span> <span class="s2">&#34;user@gmail.com&#34;</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="n">toaddrs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;user1@gmail.com&#39;</span><span class="p">,</span> <span class="s1">&#39;user2@gmail.com&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="n">username</span> <span class="o">=</span> <span class="s2">&#34;user@gmail.com&#34;</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="n">password</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">
+</span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="n">subject</span> <span class="o">=</span> <span class="s2">&#34;Temat wiadomości&#34;</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="n">message</span> <span class="o">=</span> <span class="s2">&#34;&#34;&#34;Wiadomość testowa
+</span></span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="s2">halo
+</span></span></span><span class="line"><span class="ln">24</span><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="ln">25</span><span class="cl"><span class="s2">Data: </span><span class="si">{data}</span><span class="s2">
+</span></span></span><span class="line"><span class="ln">26</span><span class="cl"><span class="s2">Test: </span><span class="si">{test}</span><span class="s2">
+</span></span></span><span class="line"><span class="ln">27</span><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="ln">28</span><span class="cl"><span class="s2">-- 
+</span></span></span><span class="line"><span class="ln">29</span><span class="cl"><span class="s2">Wiadomość wysłana przez Pythona 3</span><span class="se">\n</span><span class="s2">&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">
+</span></span><span class="line"><span class="ln">31</span><span class="cl"><span class="n">message</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">formatdate</span><span class="p">(</span><span class="n">localtime</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">test</span><span class="o">=</span><span class="s1">&#39;Test wiadomości&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">32</span><span class="cl">
+</span></span><span class="line"><span class="ln">33</span><span class="cl"><span class="n">msg</span> <span class="o">=</span> <span class="n">MIMEText</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl"><span class="n">msg</span><span class="p">[</span><span class="s1">&#39;From&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fromaddr</span>
+</span></span><span class="line"><span class="ln">35</span><span class="cl"><span class="n">msg</span><span class="p">[</span><span class="s1">&#39;To&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">COMMASPACE</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">toaddrs</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">36</span><span class="cl"><span class="n">msg</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">formatdate</span><span class="p">(</span><span class="n">localtime</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">37</span><span class="cl"><span class="n">msg</span><span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">subject</span>
+</span></span><span class="line"><span class="ln">38</span><span class="cl">
+</span></span><span class="line"><span class="ln">39</span><span class="cl"><span class="n">context</span> <span class="o">=</span> <span class="n">ssl</span><span class="o">.</span><span class="n">create_default_context</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">40</span><span class="cl">
+</span></span><span class="line"><span class="ln">41</span><span class="cl"><span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">42</span><span class="cl">    <span class="n">server</span> <span class="o">=</span> <span class="n">smtplib</span><span class="o">.</span><span class="n">SMTP</span><span class="p">(</span><span class="n">smtp_server</span><span class="p">,</span> <span class="n">port</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">43</span><span class="cl">    <span class="n">server</span><span class="o">.</span><span class="n">ehlo_or_helo_if_needed</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">44</span><span class="cl">    <span class="n">server</span><span class="o">.</span><span class="n">starttls</span><span class="p">(</span><span class="n">context</span><span class="o">=</span><span class="n">context</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">45</span><span class="cl">    <span class="n">server</span><span class="o">.</span><span class="n">ehlo_or_helo_if_needed</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">46</span><span class="cl">    <span class="n">server</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">47</span><span class="cl">    <span class="n">server</span><span class="o">.</span><span class="n">sendmail</span><span class="p">(</span><span class="n">fromaddr</span><span class="p">,</span> <span class="n">COMMASPACE</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">toaddrs</span><span class="p">),</span> <span class="n">msg</span><span class="o">.</span><span class="n">as_string</span><span class="p">())</span>
+</span></span><span class="line"><span class="ln">48</span><span class="cl"><span class="k">except</span> <span class="n">smtplib</span><span class="o">.</span><span class="n">SMTPAuthenticationError</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">49</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">u</span><span class="s2">&#34;UWAGA! Błąd autoryzacji: nieprawidłowa nazwa użytkownika lub hasło.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">50</span><span class="cl"><span class="k">except</span> <span class="n">smtplib</span><span class="o">.</span><span class="n">SMTPSenderRefused</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">51</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">u</span><span class="s2">&#34;UWAGA! Nadawca odrzucony.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">52</span><span class="cl"><span class="k">except</span> <span class="n">smtplib</span><span class="o">.</span><span class="n">SMTPException</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">53</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">u</span><span class="s2">&#34;UWAGA! Błąd SMTP&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">54</span><span class="cl"><span class="k">finally</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">55</span><span class="cl">    <span class="n">server</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span></code></pre></div><div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -585,7 +585,7 @@
   </div>
 </footer>
 
-    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" integrity="sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" integrity="sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous"></script>
     
   </body>
 </html>

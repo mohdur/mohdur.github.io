@@ -4,7 +4,7 @@
   <head>
 <title>SED receptury | MOHDUR</title>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.94.2" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta property="og:locale" content="en" />
@@ -32,8 +32,8 @@
     
     
     <link rel="preload" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity = "sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" as="script" integrity=
-    "sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous">
+    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" as="script" integrity=
+    "sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity="sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" crossorigin="anonymous"><link rel="stylesheet" href="https://mohdur.github.io/css/custom.css">
@@ -129,127 +129,126 @@
 
     
     <h1 id="wyświetlanie-pierwszej-linii-pliku">Wyświetlanie pierwszej linii pliku</h1>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed q test.txt
-</code></pre></div><h1 id="wyświetlenie-ostatniej-linii-pliku">Wyświetlenie ostatniej linii pliku</h1>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed -n &#39;$p&#39; test.txt
-</code></pre></div><h1 id="wyświetlenie-25-linii-pliku">Wyświetlenie 25 linii pliku</h1>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed -n &#39;25p&#39; test.txt
-</code></pre></div><h1 id="wyświetlenie-6-pierwszych-linii-pliku">Wyświetlenie 6 pierwszych linii pliku</h1>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed &#39;6q&#39; test.txt
-</code></pre></div><h1 id="wyświetlenie-zakresu-linii-pliku">Wyświetlenie zakresu linii pliku</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sed q test.txt
+</span></span></code></pre></div><h1 id="wyświetlenie-ostatniej-linii-pliku">Wyświetlenie ostatniej linii pliku</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sed -n &#39;$p&#39; test.txt
+</span></span></code></pre></div><h1 id="wyświetlenie-25-linii-pliku">Wyświetlenie 25 linii pliku</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sed -n &#39;25p&#39; test.txt
+</span></span></code></pre></div><h1 id="wyświetlenie-6-pierwszych-linii-pliku">Wyświetlenie 6 pierwszych linii pliku</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sed &#39;6q&#39; test.txt
+</span></span></code></pre></div><h1 id="wyświetlenie-zakresu-linii-pliku">Wyświetlenie zakresu linii pliku</h1>
 <p>Wyświetla linię z zakresu od 1 do 4 pliku <code>test.txt</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed -n &#39;1,4&#39; test.txt
-</code></pre></div><h1 id="wyświetlenie-dwóch-różnych-linii">Wyświetlenie dwóch różnych linii</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sed -n &#39;1,4&#39; test.txt
+</span></span></code></pre></div><h1 id="wyświetlenie-dwóch-różnych-linii">Wyświetlenie dwóch różnych linii</h1>
 <p>Wyświetlenie 4 i 6 linii pliku</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed -n &#39;4p;6p&#39; test.txt
-<span class="ln">2</span>4 |
-<span class="ln">3</span>6 lsadfjla
-</code></pre></div><h1 id="wyświetlenie-linii-od-3-do-ostatniej">Wyświetlenie linii od 3 do ostatniej</h1>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed -n &#39;3,$p&#39; test.txt
-</code></pre></div><h1 id="wyświetlenie-linii-zawierającej-wyrażenie-regularne">Wyświetlenie linii zawierającej wyrażenie regularne</h1>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed -n &#39;/regexp/p&#39; test.txt
-</code></pre></div><h1 id="wyświetla-jedną-linię-przd-linią-zawierającą-wyrażenie-regularne">Wyświetla jedną linię przd linią zawierającą wyrażenie regularne</h1>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed -n &#39;/regexp/{g;1!p;};h&#39;
-</code></pre></div><h1 id="wyświetla-jedną-linię-po-lini-zawierającej-wyrażenie-regularne">Wyświetla jedną linię po lini zawierającej wyrażenie regularne</h1>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed -n &#39;/regexp/{n;p;}&#39;
-</code></pre></div><h1 id="wyświetla-jedną-linię-przed-i-po-zawierającej-wyrażenie-regularne">Wyświetla jedną linię przed i po zawierającej wyrażenie regularne</h1>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed -n -e &#39;/regexp/{=;x;1!p;g;$!N;p;D;}&#39; -e h
-</code></pre></div><h1 id="usunięcie-znaczników-html">Usunięcie znaczników HTML</h1>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed -e &#39;s/&lt;[^&gt;]*&gt;//g&#39; index.html
-</code></pre></div><h1 id="usunięcie-wybranej-linii-z-pliku">Usunięcie wybranej linii z pliku</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sed -n &#39;4p;6p&#39; test.txt
+</span></span><span class="line"><span class="ln">2</span><span class="cl">4 |
+</span></span><span class="line"><span class="ln">3</span><span class="cl">6 lsadfjla
+</span></span></code></pre></div><h1 id="wyświetlenie-linii-od-3-do-ostatniej">Wyświetlenie linii od 3 do ostatniej</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sed -n &#39;3,$p&#39; test.txt
+</span></span></code></pre></div><h1 id="wyświetlenie-linii-zawierającej-wyrażenie-regularne">Wyświetlenie linii zawierającej wyrażenie regularne</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sed -n &#39;/regexp/p&#39; test.txt
+</span></span></code></pre></div><h1 id="wyświetla-jedną-linię-przd-linią-zawierającą-wyrażenie-regularne">Wyświetla jedną linię przd linią zawierającą wyrażenie regularne</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sed -n &#39;/regexp/{g;1!p;};h&#39;
+</span></span></code></pre></div><h1 id="wyświetla-jedną-linię-po-lini-zawierającej-wyrażenie-regularne">Wyświetla jedną linię po lini zawierającej wyrażenie regularne</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sed -n &#39;/regexp/{n;p;}&#39;
+</span></span></code></pre></div><h1 id="wyświetla-jedną-linię-przed-i-po-zawierającej-wyrażenie-regularne">Wyświetla jedną linię przed i po zawierającej wyrażenie regularne</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sed -n -e &#39;/regexp/{=;x;1!p;g;$!N;p;D;}&#39; -e h
+</span></span></code></pre></div><h1 id="usunięcie-znaczników-html">Usunięcie znaczników HTML</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sed -e &#39;s/&lt;[^&gt;]*&gt;//g&#39; index.html
+</span></span></code></pre></div><h1 id="usunięcie-wybranej-linii-z-pliku">Usunięcie wybranej linii z pliku</h1>
 <p>Usunięcie pierwszej linii z pliku <code>.ssh/authorized_keys</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed -i &#39;1d&#39; .ssh/authorized_keys
-</code></pre></div><p>Usunięcie pierwszych 10 linii</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed -i &#39;1,10d&#39; test.txt
-</code></pre></div><p>Usunięcie ostatniej linii pliku</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed &#39;$d&#39; test.txt
-</code></pre></div><p>Usunięcie zakresu linii np. od linii 5 do 7 z pliku <code>.ssh/authorized_keys</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed -i &#39;5,7d&#39; .ssh/authorized_keys
-</code></pre></div><p>Usunięcie dwóch ostatnich linii pliku</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed &#39;N;$!P;$!D;$d&#39;
-</code></pre></div><h1 id="usunięcie-linii-zawierające-wyrażenie-regularne">Usunięcie linii zawierające wyrażenie regularne</h1>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed &#39;/regexp/d&#39; test.txt
-</code></pre></div><h1 id="usunięcie-spacji-lub-tabów-występujących-na-początku-linii">Usunięcie spacji lub tabów występujących na początku linii</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sed -i &#39;1d&#39; .ssh/authorized_keys
+</span></span></code></pre></div><p>Usunięcie pierwszych 10 linii</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sed -i &#39;1,10d&#39; test.txt
+</span></span></code></pre></div><p>Usunięcie ostatniej linii pliku</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sed &#39;$d&#39; test.txt
+</span></span></code></pre></div><p>Usunięcie zakresu linii np. od linii 5 do 7 z pliku <code>.ssh/authorized_keys</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sed -i &#39;5,7d&#39; .ssh/authorized_keys
+</span></span></code></pre></div><p>Usunięcie dwóch ostatnich linii pliku</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sed &#39;N;$!P;$!D;$d&#39;
+</span></span></code></pre></div><h1 id="usunięcie-linii-zawierające-wyrażenie-regularne">Usunięcie linii zawierające wyrażenie regularne</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sed &#39;/regexp/d&#39; test.txt
+</span></span></code></pre></div><h1 id="usunięcie-spacji-lub-tabów-występujących-na-początku-linii">Usunięcie spacji lub tabów występujących na początku linii</h1>
 <p>Usuwa spację / tabulatory jeśli występują na początku linii</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed &#39;s/^[ \t]*//&#39; test.txt
-</code></pre></div><h1 id="usuwa-spacje--tabulatory-występujące-na-końcu-linii">Usuwa spacje / tabulatory występujące na końcu linii</h1>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed &#39;s/[ \t]*$//&#39; test.txt
-</code></pre></div><h1 id="usuwa-spacje--tabulatory-występujące-na-początku-i-na-końcu-linii">Usuwa spacje / tabulatory występujące na początku i na końcu linii</h1>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed &#39;s/^[ \t]*//;s/[ \t]*$//&#39; test.txt
-</code></pre></div><h1 id="dodanie-linii-na-początku-pliku">Dodanie linii na początku pliku</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sed &#39;s/^[ \t]*//&#39; test.txt
+</span></span></code></pre></div><h1 id="usuwa-spacje--tabulatory-występujące-na-końcu-linii">Usuwa spacje / tabulatory występujące na końcu linii</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sed &#39;s/[ \t]*$//&#39; test.txt
+</span></span></code></pre></div><h1 id="usuwa-spacje--tabulatory-występujące-na-początku-i-na-końcu-linii">Usuwa spacje / tabulatory występujące na początku i na końcu linii</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sed &#39;s/^[ \t]*//;s/[ \t]*$//&#39; test.txt
+</span></span></code></pre></div><h1 id="dodanie-linii-na-początku-pliku">Dodanie linii na początku pliku</h1>
 <p>Dodanie linii <code>nowa pierwsza linia</code> na początku pliku <code>README.md</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed -i &#39;1s/^/nowa pierwsza linia\n/&#39; README.md
-</code></pre></div><h1 id="wstawia-tekst-na-początku--końcu-każdej-linii">Wstawia tekst na początku / końcu każdej linii</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sed -i &#39;1s/^/nowa pierwsza linia\n/&#39; README.md
+</span></span></code></pre></div><h1 id="wstawia-tekst-na-początku--końcu-każdej-linii">Wstawia tekst na początku / końcu każdej linii</h1>
 <p>Wstawia <code>--- </code> na początku każdej linii</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed &#39;s/^/--- /&#39; test.txt
-</code></pre></div><p>Wstawia <code> ---</code> na końcu każdej linii</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed &#39;s/$/ ---/&#39; test.txt
-</code></pre></div><h1 id="dodanie-tekstu-na-końcu-pierwszej-linii">Dodanie tekstu na końcu pierwszej linii</h1>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span> sed &#39;1s/$/ koniec lini/&#39; test.txt
-<span class="ln">2</span>1 | koniec lini
-<span class="ln">3</span>2 |
-</code></pre></div><h1 id="dodanie-linii-na-końcu-pliku">Dodanie linii na końcu pliku</h1>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed &#39;$s/$/\nostatnia linia/&#39; test.txt
-<span class="ln">2</span>1 |
-<span class="ln">3</span>2 |
-<span class="ln">4</span>3 |
-<span class="ln">5</span>4 |
-<span class="ln">6</span>5
-<span class="ln">7</span>6 lsadfjla
-<span class="ln">8</span>ostatnia linia
-</code></pre></div><h1 id="zmiana-parametrów-w-pliku-etcsshsshd_config">Zmiana parametrów w pliku /etc/ssh/sshd_config</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sed &#39;s/^/--- /&#39; test.txt
+</span></span></code></pre></div><p>Wstawia <code> ---</code> na końcu każdej linii</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sed &#39;s/$/ ---/&#39; test.txt
+</span></span></code></pre></div><h1 id="dodanie-tekstu-na-końcu-pierwszej-linii">Dodanie tekstu na końcu pierwszej linii</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl"> sed &#39;1s/$/ koniec lini/&#39; test.txt
+</span></span><span class="line"><span class="ln">2</span><span class="cl">1 | koniec lini
+</span></span><span class="line"><span class="ln">3</span><span class="cl">2 |
+</span></span></code></pre></div><h1 id="dodanie-linii-na-końcu-pliku">Dodanie linii na końcu pliku</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sed &#39;$s/$/\nostatnia linia/&#39; test.txt
+</span></span><span class="line"><span class="ln">2</span><span class="cl">1 |
+</span></span><span class="line"><span class="ln">3</span><span class="cl">2 |
+</span></span><span class="line"><span class="ln">4</span><span class="cl">3 |
+</span></span><span class="line"><span class="ln">5</span><span class="cl">4 |
+</span></span><span class="line"><span class="ln">6</span><span class="cl">5
+</span></span><span class="line"><span class="ln">7</span><span class="cl">6 lsadfjla
+</span></span><span class="line"><span class="ln">8</span><span class="cl">ostatnia linia
+</span></span></code></pre></div><h1 id="zmiana-parametrów-w-pliku-etcsshsshd_config">Zmiana parametrów w pliku /etc/ssh/sshd_config</h1>
 <p>Umożliwienie logowania się przez użytkownika <code>root</code>, zamienia linię
 <code>#PermitRootLogin no</code> na <code>PermitRootLogin yes</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed -i &#39;s/#\(PermitRootLogin \).\+/\1yes/&#39; /etc/ssh/sshd_config
-</code></pre></div><h1 id="nazwa-użytkownika-pobrana-z-polecenia-id">Nazwa użytkownika pobrana z polecenia id</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sed -i &#39;s/#\(PermitRootLogin \).\+/\1yes/&#39; /etc/ssh/sshd_config
+</span></span></code></pre></div><h1 id="nazwa-użytkownika-pobrana-z-polecenia-id">Nazwa użytkownika pobrana z polecenia id</h1>
 <p>Polecenie <code>id</code> wyświetla coś takiego</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>uid=0(root) gid=0(wheel) groups=0(wheel), 2(kmem), 3(sys), 4(tty), 5(operator), 20(staff), 31(guest)
-</code></pre></div><p>Żeby wyświetlić nazwę użytkonika użyjemy polecenia <code>sed</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>id | sed &#39;s/^[^(]*(\([^)]*\)).*/\1/&#39;
-<span class="ln">2</span>root
-</code></pre></div><h1 id="usunięcie-ostatniego-znaku-z-wybranej-linii">Usunięcie ostatniego znaku z wybranej linii</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">uid=0(root) gid=0(wheel) groups=0(wheel), 2(kmem), 3(sys), 4(tty), 5(operator), 20(staff), 31(guest)
+</span></span></code></pre></div><p>Żeby wyświetlić nazwę użytkonika użyjemy polecenia <code>sed</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">id | sed &#39;s/^[^(]*(\([^)]*\)).*/\1/&#39;
+</span></span><span class="line"><span class="ln">2</span><span class="cl">root
+</span></span></code></pre></div><h1 id="usunięcie-ostatniego-znaku-z-wybranej-linii">Usunięcie ostatniego znaku z wybranej linii</h1>
 <p>Usuwa ostatni znak z linii numer 4 w pliku <code>test.txt</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed -i &#39;4s/.$//&#39; test.txt
-</code></pre></div><h1 id="usunięcie-pierwszgo-i-ostatniego-znaku-w-każdej-linii">Usunięcie pierwszgo i ostatniego znaku w każdej linii</h1>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed -i &#39;s/.//;s/.$//&#39; test.txt
-</code></pre></div><h1 id="usunięcie-dwóch-ostatnich-znaków">Usunięcie dwóch ostatnich znaków</h1>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>echo 1234 | sed &#39;s/.\{2\}$//&#39;
-<span class="ln">2</span>12
-</code></pre></div><h1 id="usunięcie-wszystkich-komentarzy">Usunięcie wszystkich komentarzy</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sed -i &#39;4s/.$//&#39; test.txt
+</span></span></code></pre></div><h1 id="usunięcie-pierwszgo-i-ostatniego-znaku-w-każdej-linii">Usunięcie pierwszgo i ostatniego znaku w każdej linii</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sed -i &#39;s/.//;s/.$//&#39; test.txt
+</span></span></code></pre></div><h1 id="usunięcie-dwóch-ostatnich-znaków">Usunięcie dwóch ostatnich znaków</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">echo 1234 | sed &#39;s/.\{2\}$//&#39;
+</span></span><span class="line"><span class="ln">2</span><span class="cl">12
+</span></span></code></pre></div><h1 id="usunięcie-wszystkich-komentarzy">Usunięcie wszystkich komentarzy</h1>
 <p>Usuwa linie zaczynające się od znaku <code>#</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed &#39;/^#/d&#39; squid.conf
-</code></pre></div><h1 id="usunięcie-znaków-spacji-i-tabulacji-zaczynających-wiersz">Usunięcie znaków spacji i tabulacji zaczynających wiersz</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sed &#39;/^#/d&#39; squid.conf
+</span></span></code></pre></div><h1 id="usunięcie-znaków-spacji-i-tabulacji-zaczynających-wiersz">Usunięcie znaków spacji i tabulacji zaczynających wiersz</h1>
 <p>Usunięcie znaków spacji oraz tabulacji</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>cat plik.txt | sed -e &#39;s/^[ \t]*//&#39;
-</code></pre></div><p>Usunięcie znaków spacji</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>cat plik.txt | sed -e &#39;s/^[ ]*//&#39;
-</code></pre></div><h1 id="usunięcie-pustych-linii">Usunięcie pustych linii</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">cat plik.txt | sed -e &#39;s/^[ \t]*//&#39;
+</span></span></code></pre></div><p>Usunięcie znaków spacji</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">cat plik.txt | sed -e &#39;s/^[ ]*//&#39;
+</span></span></code></pre></div><h1 id="usunięcie-pustych-linii">Usunięcie pustych linii</h1>
 <p>Usuwa puste linie z pliku <code>squid.conf</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed &#39;/^$/d&#39; squid.conf
-</code></pre></div><p>Ten sam efekt można uzyskać za pomocą polecenia <code>grep</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>cat squid.conf | grep &#39;.&#39;
-</code></pre></div><h1 id="usunięcie-komentarzy-i-pustych-linii">Usunięcie komentarzy i pustych linii</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sed &#39;/^$/d&#39; squid.conf
+</span></span></code></pre></div><p>Ten sam efekt można uzyskać za pomocą polecenia <code>grep</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">cat squid.conf | grep &#39;.&#39;
+</span></span></code></pre></div><h1 id="usunięcie-komentarzy-i-pustych-linii">Usunięcie komentarzy i pustych linii</h1>
 <p>W tym wypadku są użyte dwa polecenia oddzielone znakiem <code>;</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed &#39;/^#/d; /^$/d&#39; squid.conf
-</code></pre></div><h1 id="zmiana-w-pliku-danych-z-użyciem-bsd-sed">Zmiana w pliku danych z użyciem BSD SED</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sed &#39;/^#/d; /^$/d&#39; squid.conf
+</span></span></code></pre></div><h1 id="zmiana-w-pliku-danych-z-użyciem-bsd-sed">Zmiana w pliku danych z użyciem BSD SED</h1>
 <p>Normalne systemy posiadają wersję <code>sed</code>, która nie posiada parametru <code>-i</code>,
 który zmienia szukany wzorzec w pliku i od razu go zapisuje.</p>
 <p>Dlatego użyjemy tutaj pliku tymczasowego a następnie zastąpimy nim oryginał.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed -e &#34;/^#\(PermitRootLogin\) yes/s//\1 no/&#34; &lt; /etc/ssh/sshd_config &gt; /tmp/sshd_config
-<span class="ln">2</span>mv /tmp/sshd_config /etc/ssh/sshd_config
-</code></pre></div><h1 id="wyświetlenie-komend-systemu-crontab">Wyświetlenie komend systemu crontab</h1>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>crontab -l | sed &#39;/^#/d&#39; | awk &#39;{ for (i=6; i&lt;=NF; i++) printf(&#34;%s &#34;, $i); printf(&#34;\n&#34;) }&#39; | sed &#39;/^$/d&#39;
-</code></pre></div><h1 id="oddzielenie-linii-pustą-linią">Oddzielenie linii pustą linią</h1>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sed &#39;G&#39; test.txt
-<span class="ln">2</span>1 |
-<span class="ln">3</span>
-<span class="ln">4</span>2 |
-<span class="ln">5</span>
-<span class="ln">6</span>3 |
-<span class="ln">7</span>
-</code></pre></div><div id="disqus_thread"></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sed -e &#34;/^#\(PermitRootLogin\) yes/s//\1 no/&#34; &lt; /etc/ssh/sshd_config &gt; /tmp/sshd_config
+</span></span><span class="line"><span class="ln">2</span><span class="cl">mv /tmp/sshd_config /etc/ssh/sshd_config
+</span></span></code></pre></div><h1 id="wyświetlenie-komend-systemu-crontab">Wyświetlenie komend systemu crontab</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">crontab -l | sed &#39;/^#/d&#39; | awk &#39;{ for (i=6; i&lt;=NF; i++) printf(&#34;%s &#34;, $i); printf(&#34;\n&#34;) }&#39; | sed &#39;/^$/d&#39;
+</span></span></code></pre></div><h1 id="oddzielenie-linii-pustą-linią">Oddzielenie linii pustą linią</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sed &#39;G&#39; test.txt
+</span></span><span class="line"><span class="ln">2</span><span class="cl">1 |
+</span></span><span class="line"><span class="ln">3</span><span class="cl">
+</span></span><span class="line"><span class="ln">4</span><span class="cl">2 |
+</span></span><span class="line"><span class="ln">5</span><span class="cl">
+</span></span><span class="line"><span class="ln">6</span><span class="cl">3 |
+</span></span></code></pre></div><div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -646,7 +645,7 @@ który zmienia szukany wzorzec w pliku i od razu go zapisuje.</p>
   </div>
 </footer>
 
-    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" integrity="sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" integrity="sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous"></script>
     
   </body>
 </html>

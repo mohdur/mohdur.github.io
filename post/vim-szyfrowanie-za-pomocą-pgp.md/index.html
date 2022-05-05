@@ -4,7 +4,7 @@
   <head>
 <title>Vim szyfrowanie za pomocą PGP | MOHDUR</title>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.94.2" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta property="og:locale" content="en" />
@@ -32,8 +32,8 @@
     
     
     <link rel="preload" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity = "sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" as="script" integrity=
-    "sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous">
+    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" as="script" integrity=
+    "sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity="sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" crossorigin="anonymous"><link rel="stylesheet" href="https://mohdur.github.io/css/custom.css">
@@ -132,49 +132,49 @@
     
     <h2 id="szyfrowanie-wybranej-linii">Szyfrowanie wybranej linii</h2>
 <p>Tutaj zaszyfrujemy tekst z linii 117 za pomocą <code>gpg</code> i hasła <code>tajnehaslo</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>Tekst niezaszyfrowany w linii 117
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>:117 ! gpg -q -a -c -
-<span class="ln">2</span>-----BEGIN PGP MESSAGE-----
-<span class="ln">3</span>
-<span class="ln">4</span>jA0EBwMC8MJMzMCMn+Lp0lcBi6dx1AYRx9OE/xXZSHWTpbi2Zy9Rt5AVw2IIjyYS
-<span class="ln">5</span>n3hobFW418P8IDXL0swMT7ljaZBFujd/axC18CaGXixXfBgosIW4QcVoVhyOublG
-<span class="ln">6</span>2r4YGqJ0Ip8=
-<span class="ln">7</span>=Dlnx
-<span class="ln">8</span>-----END PGP MESSAGE-----
-</code></pre></div><h2 id="odszyfrowanie">Odszyfrowanie</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">Tekst niezaszyfrowany w linii 117
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">:117 ! gpg -q -a -c -
+</span></span><span class="line"><span class="ln">2</span><span class="cl">-----BEGIN PGP MESSAGE-----
+</span></span><span class="line"><span class="ln">3</span><span class="cl">
+</span></span><span class="line"><span class="ln">4</span><span class="cl">jA0EBwMC8MJMzMCMn+Lp0lcBi6dx1AYRx9OE/xXZSHWTpbi2Zy9Rt5AVw2IIjyYS
+</span></span><span class="line"><span class="ln">5</span><span class="cl">n3hobFW418P8IDXL0swMT7ljaZBFujd/axC18CaGXixXfBgosIW4QcVoVhyOublG
+</span></span><span class="line"><span class="ln">6</span><span class="cl">2r4YGqJ0Ip8=
+</span></span><span class="line"><span class="ln">7</span><span class="cl">=Dlnx
+</span></span><span class="line"><span class="ln">8</span><span class="cl">-----END PGP MESSAGE-----
+</span></span></code></pre></div><h2 id="odszyfrowanie">Odszyfrowanie</h2>
 <p>Spróbujmy to odszyfrować, tekst odszyfrowany pojawi się w miejscu
 zaszyfrowanego.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>:121,127 ! gpg -q -d -
-<span class="ln">2</span>gpg: dane zaszyfrowano za pomocą AES
-<span class="ln">3</span>gpg: zaszyfrowane jednym hasłem
-<span class="ln">4</span>Tekst niezaszyfrowany w linii 117
-</code></pre></div><h2 id="zaszyfrowanie-całego-pliku">Zaszyfrowanie całego pliku</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">:121,127 ! gpg -q -d -
+</span></span><span class="line"><span class="ln">2</span><span class="cl">gpg: dane zaszyfrowano za pomocą AES
+</span></span><span class="line"><span class="ln">3</span><span class="cl">gpg: zaszyfrowane jednym hasłem
+</span></span><span class="line"><span class="ln">4</span><span class="cl">Tekst niezaszyfrowany w linii 117
+</span></span></code></pre></div><h2 id="zaszyfrowanie-całego-pliku">Zaszyfrowanie całego pliku</h2>
 <p>Zaszyfrowanie całego pliku, efektem tego polecenia będzie plik o tej samej nazwie
 z rozszrzeniem <code>asc</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>:!gpg -q -a -c %
-</code></pre></div><p>Oczywiście możemy go zaszyfrować i wstawić w tym pliku</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>:r!gpg -q -a -c -o- %
-<span class="ln">2</span>-----BEGIN PGP MESSAGE-----
-<span class="ln">3</span>
-<span class="ln">4</span>jA0EBwMCmYkAj1CGFMHp0uoBolAcFPD74Z4Qys7dxDbMrZcoOr1Z3ZBF/+w7LJrS
-<span class="ln">5</span>A3sn0Ak53nELNapZV6jwCnmo434Zb9gD2/HWTrOlHobzwClKOd86Ab+Xjtisky9g
-<span class="ln">6</span>...
-<span class="ln">7</span>NLS5j4KP7rXMHy1tmaZ8tG1C2vX0MKm79QwFpYfiPyeRcpSR5nLDYggzISPMeg==
-<span class="ln">8</span>=Ad2e
-<span class="ln">9</span>-----END PGP MESSAGE-----
-</code></pre></div><p>Teraz spróbujmy zaszyfrować inny plik i wstawić go w to miejsce</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>:r!gpg -q -a -c -o- /etc/i3/config
-<span class="ln">2</span>-----BEGIN PGP MESSAGE-----
-<span class="ln">3</span>
-<span class="ln">4</span>jA0EBwMCExkKVsCLc1Lp0usBCPZMKh0ifLBSJ7SFC9jQPOk+03IyJasyZJauhP4U
-<span class="ln">5</span>...
-<span class="ln">6</span>LBtyCuv0E2b3pWISP8qRo0+QLkecP1sofGnQu9ZUlszCaeL/VBpf8Sz6dm6Vecuh
-<span class="ln">7</span>DzEKXmBsQ1Dw
-<span class="ln">8</span>=ipfY
-<span class="ln">9</span>-----END PGP MESSAGE-----
-</code></pre></div><div id="disqus_thread"></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">:!gpg -q -a -c %
+</span></span></code></pre></div><p>Oczywiście możemy go zaszyfrować i wstawić w tym pliku</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">:r!gpg -q -a -c -o- %
+</span></span><span class="line"><span class="ln">2</span><span class="cl">-----BEGIN PGP MESSAGE-----
+</span></span><span class="line"><span class="ln">3</span><span class="cl">
+</span></span><span class="line"><span class="ln">4</span><span class="cl">jA0EBwMCmYkAj1CGFMHp0uoBolAcFPD74Z4Qys7dxDbMrZcoOr1Z3ZBF/+w7LJrS
+</span></span><span class="line"><span class="ln">5</span><span class="cl">A3sn0Ak53nELNapZV6jwCnmo434Zb9gD2/HWTrOlHobzwClKOd86Ab+Xjtisky9g
+</span></span><span class="line"><span class="ln">6</span><span class="cl">...
+</span></span><span class="line"><span class="ln">7</span><span class="cl">NLS5j4KP7rXMHy1tmaZ8tG1C2vX0MKm79QwFpYfiPyeRcpSR5nLDYggzISPMeg==
+</span></span><span class="line"><span class="ln">8</span><span class="cl">=Ad2e
+</span></span><span class="line"><span class="ln">9</span><span class="cl">-----END PGP MESSAGE-----
+</span></span></code></pre></div><p>Teraz spróbujmy zaszyfrować inny plik i wstawić go w to miejsce</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">:r!gpg -q -a -c -o- /etc/i3/config
+</span></span><span class="line"><span class="ln">2</span><span class="cl">-----BEGIN PGP MESSAGE-----
+</span></span><span class="line"><span class="ln">3</span><span class="cl">
+</span></span><span class="line"><span class="ln">4</span><span class="cl">jA0EBwMCExkKVsCLc1Lp0usBCPZMKh0ifLBSJ7SFC9jQPOk+03IyJasyZJauhP4U
+</span></span><span class="line"><span class="ln">5</span><span class="cl">...
+</span></span><span class="line"><span class="ln">6</span><span class="cl">LBtyCuv0E2b3pWISP8qRo0+QLkecP1sofGnQu9ZUlszCaeL/VBpf8Sz6dm6Vecuh
+</span></span><span class="line"><span class="ln">7</span><span class="cl">DzEKXmBsQ1Dw
+</span></span><span class="line"><span class="ln">8</span><span class="cl">=ipfY
+</span></span><span class="line"><span class="ln">9</span><span class="cl">-----END PGP MESSAGE-----
+</span></span></code></pre></div><div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -571,7 +571,7 @@ z rozszrzeniem <code>asc</code></p>
   </div>
 </footer>
 
-    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" integrity="sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" integrity="sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous"></script>
     
   </body>
 </html>

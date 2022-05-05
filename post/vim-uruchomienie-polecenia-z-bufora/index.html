@@ -4,7 +4,7 @@
   <head>
 <title>Vim uruchomienie polecenia z bufora | MOHDUR</title>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.94.2" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta property="og:locale" content="en" />
@@ -32,8 +32,8 @@
     
     
     <link rel="preload" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity = "sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" as="script" integrity=
-    "sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous">
+    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" as="script" integrity=
+    "sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity="sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" crossorigin="anonymous"><link rel="stylesheet" href="https://mohdur.github.io/css/custom.css">
@@ -132,51 +132,51 @@ rejestrów można dowiedzieć się z pomocy <code>:help registers</code>. Żeby 
 w rejestrze możemy użyć polecenia <code>:registers</code> lub <code>:display</code> w skrócie <code>:reg</code>
 i <code>:dis</code>. Standardowo pod znakiem <code>&quot;</code> jest ostatni wpis. Żeby użyć polecenia
 z rejestru pod numerem 5 wprowadzamy następującą kombinację klawiszy:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>:Ctrl+r5
-</code></pre></div><p>Oto przykład użycia polecenia <code>:reg</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span>:reg
-<span class="ln"> 2</span>--- Rejestry ---
-<span class="ln"> 3</span>&#34;&#34;   2
-<span class="ln"> 4</span>&#34;0   date -u^J
-<span class="ln"> 5</span>&#34;1   ^J
-<span class="ln"> 6</span>&#34;2   ^J
-<span class="ln"> 7</span>&#34;3   ^J
-<span class="ln"> 8</span>&#34;4   #find ~/tmp -type l -ctime +2 | xargs rm -f^J
-<span class="ln"> 9</span>&#34;5   #find ~/tmp -type d -mtime +2 -exec rm -rf &#39;{}&#39; \;^J
-<span class="ln">10</span>&#34;6   #find ~/tmp -type f -atime +2 -mtime +2 | xargs rm -f ^J
-<span class="ln">11</span>&#34;7   find ~/tmp -type f -atime +2 -mtime +2 -print^J
-<span class="ln">12</span>&#34;8   ^J
-<span class="ln">13</span>&#34;9   wto, 3 lip 2018, 12:12:07 UTC^J
-<span class="ln">14</span>&#34;-   2
-<span class="ln">15</span>clipboard: error: no buffers
-<span class="ln">16</span>&#34;/   tmp
-</code></pre></div><p>Przejdźmy do przykładu użycia rejestrów, powiedzmy że mamy plik o treści:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="cp">#!/bin/bash
-</span><span class="ln">2</span><span class="cp"></span>
-<span class="ln">3</span>date -u
-</code></pre></div><p>i chcemy wykonać polecenie <code>date -u</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>:!date -u
-</code></pre></div><p>Najpierw musimy skopiować linię zawierającą polecenie za pomocą skrótu <code>Y</code>,
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">:Ctrl+r5
+</span></span></code></pre></div><p>Oto przykład użycia polecenia <code>:reg</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln"> 1</span><span class="cl">:reg
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">--- Rejestry ---
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">&#34;&#34;   2
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">&#34;0   date -u^J
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">&#34;1   ^J
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">&#34;2   ^J
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">&#34;3   ^J
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">&#34;4   #find ~/tmp -type l -ctime +2 | xargs rm -f^J
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">&#34;5   #find ~/tmp -type d -mtime +2 -exec rm -rf &#39;{}&#39; \;^J
+</span></span><span class="line"><span class="ln">10</span><span class="cl">&#34;6   #find ~/tmp -type f -atime +2 -mtime +2 | xargs rm -f ^J
+</span></span><span class="line"><span class="ln">11</span><span class="cl">&#34;7   find ~/tmp -type f -atime +2 -mtime +2 -print^J
+</span></span><span class="line"><span class="ln">12</span><span class="cl">&#34;8   ^J
+</span></span><span class="line"><span class="ln">13</span><span class="cl">&#34;9   wto, 3 lip 2018, 12:12:07 UTC^J
+</span></span><span class="line"><span class="ln">14</span><span class="cl">&#34;-   2
+</span></span><span class="line"><span class="ln">15</span><span class="cl">clipboard: error: no buffers
+</span></span><span class="line"><span class="ln">16</span><span class="cl">&#34;/   tmp
+</span></span></code></pre></div><p>Przejdźmy do przykładu użycia rejestrów, powiedzmy że mamy plik o treści:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">date -u
+</span></span></code></pre></div><p>i chcemy wykonać polecenie <code>date -u</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">:!date -u
+</span></span></code></pre></div><p>Najpierw musimy skopiować linię zawierającą polecenie za pomocą skrótu <code>Y</code>,
 następnie przechodzimy do wprowadzania komend:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>:
-</code></pre></div><p>Po wejściu w tryb komend wprowadzamy znak <code>!</code>, który mówi o tym, że wszystko co
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">:
+</span></span></code></pre></div><p>Po wejściu w tryb komend wprowadzamy znak <code>!</code>, który mówi o tym, że wszystko co
 po nim następuje jest poleceniem systemowym. Teraz należy użyć <code>Ctrl+r</code> a po nim
 wprowadzić znak <code>&quot;</code>. Czego efektem powinno być automatyczne wprowadzenie
 polecenia w linię komend - <code>:!date -u</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>:!&#34;&#34;
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>:!date -u
-</code></pre></div><p>Teraz możemy spróbować wkleić wynik polecenia do bufora</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>:r !Ctrl+r&#34;
-</code></pre></div><p>czyli</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>:r !date -u
-</code></pre></div><p>wynik powinien wyglądać mniej więcej tak:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>wto, 3 lip 2018, 12:13:32 UTC
-</code></pre></div><h2 id="wklejanie-z-rejestru-i-inne-skróty-dla-crtl-r">Wklejanie z rejestru i inne skróty dla Crtl-r</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">:!&#34;&#34;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">:!date -u
+</span></span></code></pre></div><p>Teraz możemy spróbować wkleić wynik polecenia do bufora</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">:r !Ctrl+r&#34;
+</span></span></code></pre></div><p>czyli</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">:r !date -u
+</span></span></code></pre></div><p>wynik powinien wyglądać mniej więcej tak:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">wto, 3 lip 2018, 12:13:32 UTC
+</span></span></code></pre></div><h2 id="wklejanie-z-rejestru-i-inne-skróty-dla-crtl-r">Wklejanie z rejestru i inne skróty dla Crtl-r</h2>
 <p>Przykładowy tekst:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>./configure --enable-ssl --enable-gpgme --notmuch \
-<span class="ln">2</span>  --gnutls --enable-gss --sasl --bdb --gdbm \
-<span class="ln">3</span>  --kyotocabinet --lmdb --qdbm
-</code></pre></div><p>Przechodzimy kursorem do <code>--enable-ssl</code>, teraz wchodzimy w tryb komend :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">./configure --enable-ssl --enable-gpgme --notmuch \
+</span></span><span class="line"><span class="ln">2</span><span class="cl">  --gnutls --enable-gss --sasl --bdb --gdbm \
+</span></span><span class="line"><span class="ln">3</span><span class="cl">  --kyotocabinet --lmdb --qdbm
+</span></span></code></pre></div><p>Przechodzimy kursorem do <code>--enable-ssl</code>, teraz wchodzimy w tryb komend :</p>
 <ul>
 <li><code>&lt;Ctrl-r&gt;&lt;Ctrl-w&gt;</code> - wkleji do linii komend <code>enable</code></li>
 <li><code>&lt;Ctrl-r&gt;&lt;Ctrl-a&gt;</code> - wkleji <code>--enable-ssl</code></li>
@@ -187,10 +187,10 @@ polecenia w linię komend - <code>:!date -u</code></p>
 <h2 id="zamiana-słowa-pod-kursorem">Zamiana słowa pod kursorem</h2>
 <p>Komenda zmieniająca słowo pod kursorem za pomocą <code>&lt;ctrl-r&gt;&lt;ctrl-w&gt;</code> na słowo foo
 w całym pliku</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>:%s/&lt;ctl-r&gt;&lt;ctl-w&gt;/foo/g
-</code></pre></div><div id="disqus_thread"></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">:%s/&lt;ctl-r&gt;&lt;ctl-w&gt;/foo/g
+</span></span></code></pre></div><div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -587,7 +587,7 @@ w całym pliku</p>
   </div>
 </footer>
 
-    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" integrity="sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" integrity="sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous"></script>
     
   </body>
 </html>

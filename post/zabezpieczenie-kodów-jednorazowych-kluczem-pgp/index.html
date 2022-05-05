@@ -4,7 +4,7 @@
   <head>
 <title>Zabezpieczenie kodów jednorazowych kluczem PGP | MOHDUR</title>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.94.2" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta property="og:locale" content="en" />
@@ -32,8 +32,8 @@
     
     
     <link rel="preload" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity = "sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" as="script" integrity=
-    "sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous">
+    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" as="script" integrity=
+    "sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity="sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" crossorigin="anonymous"><link rel="stylesheet" href="https://mohdur.github.io/css/custom.css">
@@ -141,53 +141,53 @@ razem trzeba podać tajny kod, wię jest to dość uciążliwe. Dlatego do
 przechowywania kodów użyjemy programu <code>pass</code>, który potrafi szyfrować hasła
 za pomocą klucza PGP.</p>
 <p>Instalacja niezbędnych programów</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>dnf install oathtool gnupg2 pass fzf
-</code></pre></div><p>Jeśli posiadamy już klucz PGP możemy sprawdzić jego nazwę oraz jego ID w innym
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">dnf install oathtool gnupg2 pass fzf
+</span></span></code></pre></div><p>Jeśli posiadamy już klucz PGP możemy sprawdzić jego nazwę oraz jego ID w innym
 przypadku należy wygenerować klucz PGP za pomocą polecenia
 <code>gpg2 --full-generate-key</code>. Proces generowania klucza jest opisany na stronie
 <a href="https://sebmd.github.io/posts/generowanie-klucza-gnupg-pgp/">https://sebmd.github.io/posts/generowanie-klucza-gnupg-pgp/</a></p>
 <p>Sprawdźmy jakie posiadamy klucze za pomocą polecenia <code>gpg2 --list-secret-keys</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>gpg2 --list-secret-keys
-<span class="ln">2</span>/home/testowy/.gnupg/pubring.kbx
-<span class="ln">3</span>--------------------------------
-<span class="ln">4</span>sec   rsa2048 2019-04-19 [SC]
-<span class="ln">5</span>      4E70814B987ECB1AC675A5BD9B76BB5DDC8ADBE0
-<span class="ln">6</span>uid    [   absolutne   ] testowy (komentarz) &lt;testowy@example.com&gt;
-<span class="ln">7</span>ssb   rsa2048 2019-04-19 [E]
-</code></pre></div><p>Inicjalizacja programu <code>pass</code>, wymaga podania ID tajnego klucza PGP</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>pass init 4E70814B987ECB1AC675A5BD9B76BB5DDC8ADBE0
-<span class="ln">2</span>mkdir: utworzony katalog &#39;/home/testowy/.password-store/&#39;
-<span class="ln">3</span>Password store initialized for 4E70814B987ECB1AC675A5BD9B76BB5DDC8ADBE0
-</code></pre></div><p>Jak widać dane będą przechowywane w katalogu <code>~/.password-store/</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">gpg2 --list-secret-keys
+</span></span><span class="line"><span class="ln">2</span><span class="cl">/home/testowy/.gnupg/pubring.kbx
+</span></span><span class="line"><span class="ln">3</span><span class="cl">--------------------------------
+</span></span><span class="line"><span class="ln">4</span><span class="cl">sec   rsa2048 2019-04-19 [SC]
+</span></span><span class="line"><span class="ln">5</span><span class="cl">      4E70814B987ECB1AC675A5BD9B76BB5DDC8ADBE0
+</span></span><span class="line"><span class="ln">6</span><span class="cl">uid    [   absolutne   ] testowy (komentarz) &lt;testowy@example.com&gt;
+</span></span><span class="line"><span class="ln">7</span><span class="cl">ssb   rsa2048 2019-04-19 [E]
+</span></span></code></pre></div><p>Inicjalizacja programu <code>pass</code>, wymaga podania ID tajnego klucza PGP</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">pass init 4E70814B987ECB1AC675A5BD9B76BB5DDC8ADBE0
+</span></span><span class="line"><span class="ln">2</span><span class="cl">mkdir: utworzony katalog &#39;/home/testowy/.password-store/&#39;
+</span></span><span class="line"><span class="ln">3</span><span class="cl">Password store initialized for 4E70814B987ECB1AC675A5BD9B76BB5DDC8ADBE0
+</span></span></code></pre></div><p>Jak widać dane będą przechowywane w katalogu <code>~/.password-store/</code></p>
 <p>Dodanie konta do <code>pass</code> najlepiej poprzedzić jakimś wyrazem np. <code>otp</code> spowoduje to,
 że tajne klucze będą przechowywane w podkatalogu <code>otp</code>, dzięki czemu można będzie
 łatwiej je znaleźć.</p>
 <p>Dodanie konta <a href="mailto:testowy@gmail.com">testowy@gmail.com</a></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>pass edit otp/testowy@gmail.com
-</code></pre></div><p>Wyświetlenie hasła dla konta <a href="mailto:testowy@gmail.com">testowy@gmail.com</a></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>pass otp/testowy@gmail.com
-<span class="ln">2</span>RWNLFJJNKP2B2VS4
-</code></pre></div><p>Wygenerowanie kodu jednorazowego dla tajnego klucza <code>RWNLFJJNKP2B2VS4</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>oathtool --base32 RWNLFJJNKP2B2VS4 --totp
-<span class="ln">2</span>091421
-</code></pre></div><p>Teraz złóżmy to wszystko razem:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>oathtool --base32 --totp <span class="s2">&#34;</span><span class="k">$(</span>pass <span class="s2">&#34;otp/</span><span class="k">$(</span>find ~/.password-store/otp/* -exec basename <span class="o">{}</span> .gpg <span class="se">\;</span> <span class="p">|</span> fzf<span class="k">)</span><span class="s2">&#34;</span><span class="k">)</span><span class="s2">&#34;</span>
-</code></pre></div><p>Żeby było jeszcze łatwiej proponuję stworzyć aliasy <code>otp</code> i <code>otp-add</code> w pliku <code>~/.bashrc</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="nb">alias</span> <span class="nv">otp</span><span class="o">=</span><span class="s1">&#39;oathtool --base32 --totp &#34;$(pass &#34;otp/$(find ~/.password-store/otp/* -exec basename {} .gpg \; | fzf)&#34;)&#34;&#39;</span>
-</code></pre></div><p>Dla aliasu <code>otp-add</code> stworzymy funkcję o tej samej nazwie, dodatkową zaletą funkcji
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">pass edit otp/testowy@gmail.com
+</span></span></code></pre></div><p>Wyświetlenie hasła dla konta <a href="mailto:testowy@gmail.com">testowy@gmail.com</a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">pass otp/testowy@gmail.com
+</span></span><span class="line"><span class="ln">2</span><span class="cl">RWNLFJJNKP2B2VS4
+</span></span></code></pre></div><p>Wygenerowanie kodu jednorazowego dla tajnego klucza <code>RWNLFJJNKP2B2VS4</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">oathtool --base32 RWNLFJJNKP2B2VS4 --totp
+</span></span><span class="line"><span class="ln">2</span><span class="cl">091421
+</span></span></code></pre></div><p>Teraz złóżmy to wszystko razem:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">oathtool --base32 --totp <span class="s2">&#34;</span><span class="k">$(</span>pass <span class="s2">&#34;otp/</span><span class="k">$(</span>find ~/.password-store/otp/* -exec basename <span class="o">{}</span> .gpg <span class="se">\;</span> <span class="p">|</span> fzf<span class="k">)</span><span class="s2">&#34;</span><span class="k">)</span><span class="s2">&#34;</span>
+</span></span></code></pre></div><p>Żeby było jeszcze łatwiej proponuję stworzyć aliasy <code>otp</code> i <code>otp-add</code> w pliku <code>~/.bashrc</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl"><span class="nb">alias</span> <span class="nv">otp</span><span class="o">=</span><span class="s1">&#39;oathtool --base32 --totp &#34;$(pass &#34;otp/$(find ~/.password-store/otp/* -exec basename {} .gpg \; | fzf)&#34;)&#34;&#39;</span>
+</span></span></code></pre></div><p>Dla aliasu <code>otp-add</code> stworzymy funkcję o tej samej nazwie, dodatkową zaletą funkcji
 jest to, że jeśli podamy nazwę konta ze spacjami to zostaną one zastąpione znakiem <code>-</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="k">function</span> otp-add<span class="o">()</span> <span class="o">{</span>
-<span class="ln"> 2</span>    <span class="k">if</span> <span class="o">[</span> -z <span class="nv">$1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln"> 3</span>        <span class="nb">echo</span>
-<span class="ln"> 4</span>        <span class="nb">echo</span> Podaj nazwę konta.
-<span class="ln"> 5</span>        <span class="nb">echo</span>
-<span class="ln"> 6</span>    <span class="k">else</span>
-<span class="ln"> 7</span>        <span class="nv">nazwa</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$@</span><span class="s2">&#34;</span> <span class="p">|</span> tr <span class="s1">&#39; &#39;</span> <span class="s1">&#39;-&#39;</span><span class="k">)</span>
-<span class="ln"> 8</span>        pass edit otp/<span class="nv">$nazwa</span>
-<span class="ln"> 9</span>    <span class="k">fi</span>
-<span class="ln">10</span><span class="o">}</span>
-<span class="ln">11</span><span class="nb">alias</span> otp-add<span class="o">=</span>otp-add
-</code></pre></div><p>W skrócie działa to tak:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">function</span> otp-add<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="k">if</span> <span class="o">[</span> -z <span class="nv">$1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">        <span class="nb">echo</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">        <span class="nb">echo</span> Podaj nazwę konta.
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">        <span class="nb">echo</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">        <span class="nv">nazwa</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$@</span><span class="s2">&#34;</span> <span class="p">|</span> tr <span class="s1">&#39; &#39;</span> <span class="s1">&#39;-&#39;</span><span class="k">)</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">        pass edit otp/<span class="nv">$nazwa</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="nb">alias</span> otp-add<span class="o">=</span>otp-add
+</span></span></code></pre></div><p>W skrócie działa to tak:</p>
 <ul>
 <li><code>pass</code> przechowuje tajne kody zaszyfrowane kluczem PGP</li>
 <li><code>oathtool</code> generuje kody jednorazowe podawane przez <code>pass</code></li>
@@ -195,7 +195,7 @@ jest to, że jeśli podamy nazwę konta ze spacjami to zostaną one zastąpione 
 </ul>
 <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -592,7 +592,7 @@ jest to, że jeśli podamy nazwę konta ze spacjami to zostaną one zastąpione 
   </div>
 </footer>
 
-    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" integrity="sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" integrity="sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous"></script>
     
   </body>
 </html>

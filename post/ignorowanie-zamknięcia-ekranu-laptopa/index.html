@@ -4,7 +4,7 @@
   <head>
 <title>Ignorowanie zamknięcia ekranu laptopa | MOHDUR</title>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.94.2" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta property="og:locale" content="en" />
@@ -32,8 +32,8 @@
     
     
     <link rel="preload" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity = "sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" as="script" integrity=
-    "sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous">
+    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" as="script" integrity=
+    "sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity="sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" crossorigin="anonymous"><link rel="stylesheet" href="https://mohdur.github.io/css/custom.css">
@@ -133,21 +133,21 @@
 odnaleść wpis: <code>#HandleLidSwitch=suspend</code> i usunąć znak <code>#</code>, następnie zmienić
 słowo <code>suspend</code> na <code>ignore</code></p>
 <p>Tak powinien wyglądać prawidłowy wpis w pliku <code>/etc/systemd/logind.conf</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>HandleLidSwitch=ignore
-</code></pre></div><p>Teraz pozostało zrestartować usługę systemd-logind, restart usługi spowoduje
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">HandleLidSwitch=ignore
+</span></span></code></pre></div><p>Teraz pozostało zrestartować usługę systemd-logind, restart usługi spowoduje
 zamknięcie wszystkich programów i wylogowanie się z bieżącej sesji.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sudo systemctl restart systemd-logind
-</code></pre></div><p>Z uwagi na to że modyfikacji zachowania systemu, wiąże się z każdorazowym
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sudo systemctl restart systemd-logind
+</span></span></code></pre></div><p>Z uwagi na to że modyfikacji zachowania systemu, wiąże się z każdorazowym
 zamknięciem bieżącej sesji, nie jest to idealne rozwiązanie. Dlatego posłużymy
 się <code>acpid</code>.</p>
 <p>Najpierw zainstalujemy <code>acpid</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sudo dnf install acpid
-</code></pre></div><p>Po instalacji trzeba skonfigurować reguły monitorowania zmiany stanu przycisku
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sudo dnf install acpid
+</span></span></code></pre></div><p>Po instalacji trzeba skonfigurować reguły monitorowania zmiany stanu przycisku
 zamknięcia ekranu.</p>
 <p>W pliku <code>/etc/acpi/events/lm_lid</code> dodajemy</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>event=button/lid.*
-<span class="ln">2</span>action=https://mohdur.github.io/etc/acpi/actions/lid.sh
-</code></pre></div><p>ACPI będzie monitorował pliki w <code>/proc/acpi/button/lid/</code>, jeśli zauważy zmianę
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">event=button/lid.*
+</span></span><span class="line"><span class="ln">2</span><span class="cl">action=https://mohdur.github.io/etc/acpi/actions/lid.sh
+</span></span></code></pre></div><p>ACPI będzie monitorował pliki w <code>/proc/acpi/button/lid/</code>, jeśli zauważy zmianę
 to uruchomi skrypt <code>/etc/acpi/actions/lid.sh</code>.</p>
 <p>Przykładowy skrypt <code>/etc/acpi/actions/lid.sh</code></p>
 <p>Skrypt jest przygotowany dla systemów gdzie jest uruchomiona jedna sesja XWindow,
@@ -155,19 +155,19 @@ jeśli Twój system przewiduje więcej niż jedną sesję jednocześnie warto
 zainteresować się poleceniem <code>loginctl list-sessions</code> oraz
 <code>loginctl show session #sesji</code>. Można też skorzystać z przykładowego skryptu
 <code>/etc/acpi/actions/power.sh</code>, w którym są użyte oba polecenia.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="cp">#!/usr/bin/env bash
-</span><span class="ln"> 2</span><span class="cp"></span>
-<span class="ln"> 3</span><span class="nv">USERNAME</span><span class="o">=</span>user
-<span class="ln"> 4</span>
-<span class="ln"> 5</span>grep -q closed /proc/acpi/button/lid/LID/state
-<span class="ln"> 6</span><span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> <span class="o">=</span> <span class="m">0</span> <span class="o">]</span>
-<span class="ln"> 7</span><span class="k">then</span>
-<span class="ln"> 8</span>    grep <span class="m">1</span> /home/<span class="nv">$USERNAME</span>/.config/suspend.conf
-<span class="ln"> 9</span>    <span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> <span class="o">=</span> <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln">10</span>        systemctl <span class="nb">suspend</span>
-<span class="ln">11</span>    <span class="k">fi</span>
-<span class="ln">12</span><span class="k">fi</span>
-</code></pre></div><p>Skrypt przy uruchomieniu sprawdza czy ekran został zamknięty oraz wartość <code>[0|1]</code>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">#!/usr/bin/env bash
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="nv">USERNAME</span><span class="o">=</span>user
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">grep -q closed /proc/acpi/button/lid/LID/state
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> <span class="o">=</span> <span class="m">0</span> <span class="o">]</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="k">then</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    grep <span class="m">1</span> /home/<span class="nv">$USERNAME</span>/.config/suspend.conf
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> <span class="o">=</span> <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">        systemctl <span class="nb">suspend</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="k">fi</span>
+</span></span></code></pre></div><p>Skrypt przy uruchomieniu sprawdza czy ekran został zamknięty oraz wartość <code>[0|1]</code>
 w pliku <code>/home/$USERNAME/.config/suspend.conf</code> dla wartości <code>1</code> po zamknięciu
 ekranu system przejdzie w tryb suspend dla wartości <code>0</code> system działa dalej bez
 uśpienia.</p>
@@ -176,39 +176,39 @@ uruchomieniu <code>acpid</code> jako usługa, <code>acpid</code> nie monitoruje 
 jednak jeśli uruchomimy <code>acpid</code> przy starcie sesji XWindow monitorowanie
 zmian działa prawidłowo.</p>
 <p>Dla i3 wm w pliku konfiguracyjnym dodajemy wpis:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>exec --no-startup-id sudo /uar/sbin/acpid
-</code></pre></div><p>Należy pamiętać żeby dostosować <code>sudo</code> do uruchamiania <code>/usr/sbin/acpid</code> bez
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">exec --no-startup-id sudo /uar/sbin/acpid
+</span></span></code></pre></div><p>Należy pamiętać żeby dostosować <code>sudo</code> do uruchamiania <code>/usr/sbin/acpid</code> bez
 hasła.</p>
 <p>No tak, ale może zamist grzebać w plikach, lepiej wykorzystać rofi do wprowadzania
 zmian wartości w pliku <code>.config/suspend.conf</code>. Skrypt umieścimy w <code>~/bin/menu</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="cp">#!/usr/bin/env bash
-</span><span class="ln"> 2</span><span class="cp"></span>
-<span class="ln"> 3</span><span class="nv">menu</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> -e <span class="s2">&#34;Ignoruj zamknięcie ekranu\nUśpij po zamknięciu ekranu\nMonitor Off\nEdit Menu&#34;</span> <span class="se">\
-</span><span class="ln"> 4</span><span class="se"></span>    <span class="p">|</span> rofi -lines <span class="m">19</span> -dmenu -i -p <span class="s2">&#34;Wybierz coś&#34;</span><span class="k">)</span>
-<span class="ln"> 5</span>
-<span class="ln"> 6</span><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Edit Menu&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln"> 7</span>    st -e vim ~/bin/menu
-<span class="ln"> 8</span><span class="k">fi</span>
-<span class="ln"> 9</span>
-<span class="ln">10</span><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Monitor Off&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln">11</span>    notify-send <span class="s2">&#34;Za kilka chwil wyłączę monitor...&#34;</span>
-<span class="ln">12</span>    sleep <span class="m">1</span>
-<span class="ln">13</span>    xset dpms force <span class="o">[[</span>off<span class="o">]]</span>
-<span class="ln">14</span><span class="k">fi</span>
-<span class="ln">15</span>
-<span class="ln">16</span><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Ignoruj zamknięcie ekranu&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln">17</span>    <span class="nb">echo</span> <span class="m">0</span> &gt; ~/.config/suspend.conf
-<span class="ln">18</span><span class="k">fi</span>
-<span class="ln">19</span>
-<span class="ln">20</span><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Uśpij po zamknięciu ekranu&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln">21</span>    <span class="nb">echo</span> <span class="m">1</span> &gt; ~/.config/suspend.conf
-<span class="ln">22</span><span class="k">fi</span>
-</code></pre></div><p>Jeśli używasz i3 WM, to można dodać skrót klawiszowy do uruchomienia menu, w pliku
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">#!/usr/bin/env bash
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="nv">menu</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> -e <span class="s2">&#34;Ignoruj zamknięcie ekranu\nUśpij po zamknięciu ekranu\nMonitor Off\nEdit Menu&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="se"></span>    <span class="p">|</span> rofi -lines <span class="m">19</span> -dmenu -i -p <span class="s2">&#34;Wybierz coś&#34;</span><span class="k">)</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Edit Menu&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    st -e vim ~/bin/menu
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Monitor Off&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    notify-send <span class="s2">&#34;Za kilka chwil wyłączę monitor...&#34;</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    sleep <span class="m">1</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    xset dpms force <span class="o">[[</span>off<span class="o">]]</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">
+</span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Ignoruj zamknięcie ekranu&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">    <span class="nb">echo</span> <span class="m">0</span> &gt; ~/.config/suspend.conf
+</span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">
+</span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Uśpij po zamknięciu ekranu&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">    <span class="nb">echo</span> <span class="m">1</span> &gt; ~/.config/suspend.conf
+</span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="k">fi</span>
+</span></span></code></pre></div><p>Jeśli używasz i3 WM, to można dodać skrót klawiszowy do uruchomienia menu, w pliku
 <code>.config/i3/config</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$mod+m  exec ~/bin/menu
-</code></pre></div><div id="disqus_thread"></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">$mod+m  exec ~/bin/menu
+</span></span></code></pre></div><div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -605,7 +605,7 @@ zmian wartości w pliku <code>.config/suspend.conf</code>. Skrypt umieścimy w <
   </div>
 </footer>
 
-    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" integrity="sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" integrity="sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous"></script>
     
   </body>
 </html>

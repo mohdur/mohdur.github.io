@@ -15,21 +15,21 @@
       <description>
         
           &lt;h1 id=&#34;wyświetlenie-dostępnych-sieci-wi-fi&#34;&gt;Wyświetlenie dostępnych sieci Wi-Fi&lt;/h1&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sudo nmcli device wifi
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;# nmcli radio
-&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;WIFI-HW  WIFI     WWAN-HW  WWAN
-&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;enabled  enabled  enabled  enabled
-&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;# nmcli device
-&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;DEVICE  TYPE      STATE         CONNECTION
-&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;wlan0   wifi      disconnected  --
-&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;eth0    ethernet  unavailable   --
-&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;lo      loopback  unmanaged     --
-&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;# nmcli device wifi rescan
-&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;# nmcli device wifi list
-&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;# nmcli device wifi connect SSID-Name password wireless-password
-&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;# nmcli -ask device wifi connect SSID-Name
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;sudo nmcli device wifi
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;# nmcli radio
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;WIFI-HW  WIFI     WWAN-HW  WWAN
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;enabled  enabled  enabled  enabled
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;# nmcli device
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;DEVICE  TYPE      STATE         CONNECTION
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;wlan0   wifi      disconnected  --
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;eth0    ethernet  unavailable   --
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;lo      loopback  unmanaged     --
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;# nmcli device wifi rescan
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;# nmcli device wifi list
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;# nmcli device wifi connect SSID-Name password wireless-password
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;# nmcli -ask device wifi connect SSID-Name
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
         
       </description>
     </item>

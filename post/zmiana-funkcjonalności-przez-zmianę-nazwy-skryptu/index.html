@@ -4,7 +4,7 @@
   <head>
 <title>Zmiana funkcjonalności przez zmianę nazwy skryptu | MOHDUR</title>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.94.2" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta property="og:locale" content="en" />
@@ -32,8 +32,8 @@
     
     
     <link rel="preload" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity = "sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" as="script" integrity=
-    "sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous">
+    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" as="script" integrity=
+    "sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity="sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" crossorigin="anonymous"><link rel="stylesheet" href="https://mohdur.github.io/css/custom.css">
@@ -142,39 +142,39 @@ katalog <code>bin</code> dodaję w pliku stardowym powłoki do zmiennej <code>$P
 powłoki <strong>bash</strong> jest to plik <code>.bashrc</code> a dla powłoki <strong>zsh</strong> jest to plik <code>.zshrc</code>.</p>
 <p>Dobrym zwyczajem jest sprawdzenie, czy katalog <code>~/bin</code> istnieje zanim go dodamy
 do ścieżki.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="k">if</span> <span class="o">[</span> -d ~/bin <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln">2</span>    <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:~/bin
-<span class="ln">3</span><span class="k">fi</span>
-</code></pre></div><p>można to zapisać w jednej linii bez konstrukcji <code>if</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="o">[</span> -d ~/bin <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:~/bin
-</code></pre></div><p>Skrypt <code>funkcje</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="k">function</span> nowy<span class="o">()</span> <span class="o">{</span>
-<span class="ln"> 2</span>    <span class="nb">echo</span> funkcja nowy
-<span class="ln"> 3</span><span class="o">}</span>
-<span class="ln"> 4</span>
-<span class="ln"> 5</span><span class="k">function</span> delete<span class="o">()</span> <span class="o">{</span>
-<span class="ln"> 6</span>    <span class="nb">echo</span> funkcja delete
-<span class="ln"> 7</span><span class="o">}</span>
-<span class="ln"> 8</span>
-<span class="ln"> 9</span><span class="k">case</span> <span class="k">$(</span>basename <span class="nv">$0</span><span class="k">)</span> in
-<span class="ln">10</span>    new<span class="o">)</span>
-<span class="ln">11</span>        nowy
-<span class="ln">12</span>        <span class="p">;;</span>
-<span class="ln">13</span>    delete<span class="o">)</span>
-<span class="ln">14</span>        delete
-<span class="ln">15</span>        <span class="p">;;</span>
-<span class="ln">16</span><span class="k">esac</span>
-</code></pre></div><p>Utworzenie linków symbolicznych:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ ln -s funkcje new
-<span class="ln">2</span>$ ln -s funkcje delete
-</code></pre></div><p>Wywołanie skryptu</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ ./new
-<span class="ln">2</span>funkcja nowy
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$ ./delete
-<span class="ln">2</span>funkcja delete
-</code></pre></div><div id="disqus_thread"></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">if</span> <span class="o">[</span> -d ~/bin <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:~/bin
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="k">fi</span>
+</span></span></code></pre></div><p>można to zapisać w jednej linii bez konstrukcji <code>if</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl"><span class="o">[</span> -d ~/bin <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:~/bin
+</span></span></code></pre></div><p>Skrypt <code>funkcje</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">function</span> nowy<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="nb">echo</span> funkcja nowy
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="k">function</span> delete<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="nb">echo</span> funkcja delete
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="k">case</span> <span class="k">$(</span>basename <span class="nv">$0</span><span class="k">)</span> in
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    new<span class="o">)</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">        nowy
+</span></span><span class="line"><span class="ln">12</span><span class="cl">        <span class="p">;;</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    delete<span class="o">)</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">        delete
+</span></span><span class="line"><span class="ln">15</span><span class="cl">        <span class="p">;;</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="k">esac</span>
+</span></span></code></pre></div><p>Utworzenie linków symbolicznych:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">$ ln -s funkcje new
+</span></span><span class="line"><span class="ln">2</span><span class="cl">$ ln -s funkcje delete
+</span></span></code></pre></div><p>Wywołanie skryptu</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">$ ./new
+</span></span><span class="line"><span class="ln">2</span><span class="cl">funkcja nowy
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">$ ./delete
+</span></span><span class="line"><span class="ln">2</span><span class="cl">funkcja delete
+</span></span></code></pre></div><div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -571,7 +571,7 @@ do ścieżki.</p>
   </div>
 </footer>
 
-    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" integrity="sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" integrity="sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous"></script>
     
   </body>
 </html>

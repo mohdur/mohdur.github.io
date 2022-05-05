@@ -4,7 +4,7 @@
   <head>
 <title>Zarządzanie pakietami w Fedora Linux | MOHDUR</title>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.94.2" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta property="og:locale" content="en" />
@@ -32,8 +32,8 @@
     
     
     <link rel="preload" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity = "sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" as="script" integrity=
-    "sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous">
+    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" as="script" integrity=
+    "sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity="sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" crossorigin="anonymous"><link rel="stylesheet" href="https://mohdur.github.io/css/custom.css">
@@ -129,175 +129,175 @@
 
     
     <h2 id="instalacja-pakietów">Instalacja pakietów</h2>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sudo dnf install &lt;nazwa-pakietu&gt;
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sudo dnf install borgbackup
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span>Last metadata expiration check: 0:16:01 ago on Mon 25 Mar 2019 02:58:33 PM CET
-<span class="ln"> 2</span>Dependencies resolved.
-<span class="ln"> 3</span>==============================================================================
-<span class="ln"> 4</span> Package                Architecture  Version             Repository      Size
-<span class="ln"> 5</span>==============================================================================
-<span class="ln"> 6</span>Installing:
-<span class="ln"> 7</span> borgbackup             x86_64        1.1.7-2.fc30        rawhide        980 k
-<span class="ln"> 8</span>Installing dependencies:
-<span class="ln"> 9</span> python3-llfuse         x86_64        1.3.5-2.fc30        rawhide        373 k
-<span class="ln">10</span> python3-msgpack        x86_64        0.6.1-2.fc30        rawhide         90 k
-<span class="ln">11</span>
-<span class="ln">12</span>Transaction Summary
-<span class="ln">13</span>==============================================================================
-<span class="ln">14</span>Install  3 Packages
-<span class="ln">15</span>
-<span class="ln">16</span>Total download size: 1.4 M
-<span class="ln">17</span>Installed size: 5.9 M
-<span class="ln">18</span>Is this ok [y/N]: y
-<span class="ln">19</span>Downloading Packages:
-<span class="ln">20</span>(1/3): python3-msgpack-0.6.1-2.fc30.x86_64.rpm 276 kB/s |  90 kB     00:00
-<span class="ln">21</span>(2/3): python3-llfuse-1.3.5-2.fc30.x86_64.rpm  438 kB/s | 373 kB     00:00
-<span class="ln">22</span>(3/3): borgbackup-1.1.7-2.fc30.x86_64.rpm      901 kB/s | 980 kB     00:01
-<span class="ln">23</span>------------------------------------------------------------------------------
-<span class="ln">24</span>Total                                          661 kB/s | 1.4 MB     00:02
-<span class="ln">25</span>Running transaction check
-<span class="ln">26</span>Transaction check succeeded.
-<span class="ln">27</span>Running transaction test
-<span class="ln">28</span>Transaction test succeeded.
-<span class="ln">29</span>Running transaction
-<span class="ln">30</span>  Preparing        :                                                       1/1
-<span class="ln">31</span>  Installing       : python3-msgpack-0.6.1-2.fc30.x86_64                   1/3
-<span class="ln">32</span>  Installing       : python3-llfuse-1.3.5-2.fc30.x86_64                    2/3
-<span class="ln">33</span>  Installing       : borgbackup-1.1.7-2.fc30.x86_64                        3/3
-<span class="ln">34</span>  Running scriptlet: borgbackup-1.1.7-2.fc30.x86_64                        3/3
-<span class="ln">35</span>  Verifying        : borgbackup-1.1.7-2.fc30.x86_64                        1/3
-<span class="ln">36</span>  Verifying        : python3-llfuse-1.3.5-2.fc30.x86_64                    2/3
-<span class="ln">37</span>  Verifying        : python3-msgpack-0.6.1-2.fc30.x86_64                   3/3
-<span class="ln">38</span>
-<span class="ln">39</span>Installed:
-<span class="ln">40</span>  borgbackup-1.1.7-2.fc30.x86_64         python3-llfuse-1.3.5-2.fc30.x86_64
-<span class="ln">41</span>  python3-msgpack-0.6.1-2.fc30.x86_64
-<span class="ln">42</span>
-<span class="ln">43</span>Complete!
-</code></pre></div><h2 id="instalacja-pakietów-z-pliku">Instalacja pakietów z pliku</h2>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sudo dnf install $(cat userinstalled.txt)
-</code></pre></div><h2 id="usunięcie-pakietu">Usunięcie pakietu</h2>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sudo dnf remove borgbackup
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span>Dependencies resolved.
-<span class="ln"> 2</span>=============================================================================
-<span class="ln"> 3</span> Package               Architecture Version              Repository      Size
-<span class="ln"> 4</span>=============================================================================
-<span class="ln"> 5</span>Removing:
-<span class="ln"> 6</span> borgbackup            x86_64       1.1.7-2.fc30         @rawhide       4.1 M
-<span class="ln"> 7</span>Removing unused dependencies:
-<span class="ln"> 8</span> python3-llfuse        x86_64       1.3.5-2.fc30         @rawhide       1.5 M
-<span class="ln"> 9</span> python3-msgpack       x86_64       0.6.1-2.fc30         @rawhide       283 k
-<span class="ln">10</span>
-<span class="ln">11</span>Transaction Summary
-<span class="ln">12</span>=============================================================================
-<span class="ln">13</span>Remove  3 Packages
-<span class="ln">14</span>
-<span class="ln">15</span>Freed space: 5.9 M
-<span class="ln">16</span>Is this ok [y/N]: y
-<span class="ln">17</span>Running transaction check
-<span class="ln">18</span>Transaction check succeeded.
-<span class="ln">19</span>Running transaction test
-<span class="ln">20</span>Transaction test succeeded.
-<span class="ln">21</span>Running transaction
-<span class="ln">22</span>  Preparing        :                                                      1/1
-<span class="ln">23</span>  Erasing          : borgbackup-1.1.7-2.fc30.x86_64                       1/3
-<span class="ln">24</span>  Erasing          : python3-llfuse-1.3.5-2.fc30.x86_64                   2/3
-<span class="ln">25</span>  Erasing          : python3-msgpack-0.6.1-2.fc30.x86_64                  3/3
-<span class="ln">26</span>  Running scriptlet: python3-msgpack-0.6.1-2.fc30.x86_64                  3/3
-<span class="ln">27</span>  Verifying        : borgbackup-1.1.7-2.fc30.x86_64                       1/3
-<span class="ln">28</span>  Verifying        : python3-llfuse-1.3.5-2.fc30.x86_64                   2/3
-<span class="ln">29</span>  Verifying        : python3-msgpack-0.6.1-2.fc30.x86_64                  3/3
-<span class="ln">30</span>
-<span class="ln">31</span>Removed:
-<span class="ln">32</span>  borgbackup-1.1.7-2.fc30.x86_64         python3-llfuse-1.3.5-2.fc30.x86_64
-<span class="ln">33</span>  python3-msgpack-0.6.1-2.fc30.x86_64
-<span class="ln">34</span>
-<span class="ln">35</span>Complete!
-</code></pre></div><h2 id="wyszukanie-pakietu">Wyszukanie pakietu</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sudo dnf install &lt;nazwa-pakietu&gt;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sudo dnf install borgbackup
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln"> 1</span><span class="cl">Last metadata expiration check: 0:16:01 ago on Mon 25 Mar 2019 02:58:33 PM CET
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">Dependencies resolved.
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">==============================================================================
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"> Package                Architecture  Version             Repository      Size
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">==============================================================================
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">Installing:
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"> borgbackup             x86_64        1.1.7-2.fc30        rawhide        980 k
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">Installing dependencies:
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"> python3-llfuse         x86_64        1.3.5-2.fc30        rawhide        373 k
+</span></span><span class="line"><span class="ln">10</span><span class="cl"> python3-msgpack        x86_64        0.6.1-2.fc30        rawhide         90 k
+</span></span><span class="line"><span class="ln">11</span><span class="cl">
+</span></span><span class="line"><span class="ln">12</span><span class="cl">Transaction Summary
+</span></span><span class="line"><span class="ln">13</span><span class="cl">==============================================================================
+</span></span><span class="line"><span class="ln">14</span><span class="cl">Install  3 Packages
+</span></span><span class="line"><span class="ln">15</span><span class="cl">
+</span></span><span class="line"><span class="ln">16</span><span class="cl">Total download size: 1.4 M
+</span></span><span class="line"><span class="ln">17</span><span class="cl">Installed size: 5.9 M
+</span></span><span class="line"><span class="ln">18</span><span class="cl">Is this ok [y/N]: y
+</span></span><span class="line"><span class="ln">19</span><span class="cl">Downloading Packages:
+</span></span><span class="line"><span class="ln">20</span><span class="cl">(1/3): python3-msgpack-0.6.1-2.fc30.x86_64.rpm 276 kB/s |  90 kB     00:00
+</span></span><span class="line"><span class="ln">21</span><span class="cl">(2/3): python3-llfuse-1.3.5-2.fc30.x86_64.rpm  438 kB/s | 373 kB     00:00
+</span></span><span class="line"><span class="ln">22</span><span class="cl">(3/3): borgbackup-1.1.7-2.fc30.x86_64.rpm      901 kB/s | 980 kB     00:01
+</span></span><span class="line"><span class="ln">23</span><span class="cl">------------------------------------------------------------------------------
+</span></span><span class="line"><span class="ln">24</span><span class="cl">Total                                          661 kB/s | 1.4 MB     00:02
+</span></span><span class="line"><span class="ln">25</span><span class="cl">Running transaction check
+</span></span><span class="line"><span class="ln">26</span><span class="cl">Transaction check succeeded.
+</span></span><span class="line"><span class="ln">27</span><span class="cl">Running transaction test
+</span></span><span class="line"><span class="ln">28</span><span class="cl">Transaction test succeeded.
+</span></span><span class="line"><span class="ln">29</span><span class="cl">Running transaction
+</span></span><span class="line"><span class="ln">30</span><span class="cl">  Preparing        :                                                       1/1
+</span></span><span class="line"><span class="ln">31</span><span class="cl">  Installing       : python3-msgpack-0.6.1-2.fc30.x86_64                   1/3
+</span></span><span class="line"><span class="ln">32</span><span class="cl">  Installing       : python3-llfuse-1.3.5-2.fc30.x86_64                    2/3
+</span></span><span class="line"><span class="ln">33</span><span class="cl">  Installing       : borgbackup-1.1.7-2.fc30.x86_64                        3/3
+</span></span><span class="line"><span class="ln">34</span><span class="cl">  Running scriptlet: borgbackup-1.1.7-2.fc30.x86_64                        3/3
+</span></span><span class="line"><span class="ln">35</span><span class="cl">  Verifying        : borgbackup-1.1.7-2.fc30.x86_64                        1/3
+</span></span><span class="line"><span class="ln">36</span><span class="cl">  Verifying        : python3-llfuse-1.3.5-2.fc30.x86_64                    2/3
+</span></span><span class="line"><span class="ln">37</span><span class="cl">  Verifying        : python3-msgpack-0.6.1-2.fc30.x86_64                   3/3
+</span></span><span class="line"><span class="ln">38</span><span class="cl">
+</span></span><span class="line"><span class="ln">39</span><span class="cl">Installed:
+</span></span><span class="line"><span class="ln">40</span><span class="cl">  borgbackup-1.1.7-2.fc30.x86_64         python3-llfuse-1.3.5-2.fc30.x86_64
+</span></span><span class="line"><span class="ln">41</span><span class="cl">  python3-msgpack-0.6.1-2.fc30.x86_64
+</span></span><span class="line"><span class="ln">42</span><span class="cl">
+</span></span><span class="line"><span class="ln">43</span><span class="cl">Complete!
+</span></span></code></pre></div><h2 id="instalacja-pakietów-z-pliku">Instalacja pakietów z pliku</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sudo dnf install $(cat userinstalled.txt)
+</span></span></code></pre></div><h2 id="usunięcie-pakietu">Usunięcie pakietu</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sudo dnf remove borgbackup
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln"> 1</span><span class="cl">Dependencies resolved.
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">=============================================================================
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"> Package               Architecture Version              Repository      Size
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">=============================================================================
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">Removing:
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"> borgbackup            x86_64       1.1.7-2.fc30         @rawhide       4.1 M
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">Removing unused dependencies:
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"> python3-llfuse        x86_64       1.3.5-2.fc30         @rawhide       1.5 M
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"> python3-msgpack       x86_64       0.6.1-2.fc30         @rawhide       283 k
+</span></span><span class="line"><span class="ln">10</span><span class="cl">
+</span></span><span class="line"><span class="ln">11</span><span class="cl">Transaction Summary
+</span></span><span class="line"><span class="ln">12</span><span class="cl">=============================================================================
+</span></span><span class="line"><span class="ln">13</span><span class="cl">Remove  3 Packages
+</span></span><span class="line"><span class="ln">14</span><span class="cl">
+</span></span><span class="line"><span class="ln">15</span><span class="cl">Freed space: 5.9 M
+</span></span><span class="line"><span class="ln">16</span><span class="cl">Is this ok [y/N]: y
+</span></span><span class="line"><span class="ln">17</span><span class="cl">Running transaction check
+</span></span><span class="line"><span class="ln">18</span><span class="cl">Transaction check succeeded.
+</span></span><span class="line"><span class="ln">19</span><span class="cl">Running transaction test
+</span></span><span class="line"><span class="ln">20</span><span class="cl">Transaction test succeeded.
+</span></span><span class="line"><span class="ln">21</span><span class="cl">Running transaction
+</span></span><span class="line"><span class="ln">22</span><span class="cl">  Preparing        :                                                      1/1
+</span></span><span class="line"><span class="ln">23</span><span class="cl">  Erasing          : borgbackup-1.1.7-2.fc30.x86_64                       1/3
+</span></span><span class="line"><span class="ln">24</span><span class="cl">  Erasing          : python3-llfuse-1.3.5-2.fc30.x86_64                   2/3
+</span></span><span class="line"><span class="ln">25</span><span class="cl">  Erasing          : python3-msgpack-0.6.1-2.fc30.x86_64                  3/3
+</span></span><span class="line"><span class="ln">26</span><span class="cl">  Running scriptlet: python3-msgpack-0.6.1-2.fc30.x86_64                  3/3
+</span></span><span class="line"><span class="ln">27</span><span class="cl">  Verifying        : borgbackup-1.1.7-2.fc30.x86_64                       1/3
+</span></span><span class="line"><span class="ln">28</span><span class="cl">  Verifying        : python3-llfuse-1.3.5-2.fc30.x86_64                   2/3
+</span></span><span class="line"><span class="ln">29</span><span class="cl">  Verifying        : python3-msgpack-0.6.1-2.fc30.x86_64                  3/3
+</span></span><span class="line"><span class="ln">30</span><span class="cl">
+</span></span><span class="line"><span class="ln">31</span><span class="cl">Removed:
+</span></span><span class="line"><span class="ln">32</span><span class="cl">  borgbackup-1.1.7-2.fc30.x86_64         python3-llfuse-1.3.5-2.fc30.x86_64
+</span></span><span class="line"><span class="ln">33</span><span class="cl">  python3-msgpack-0.6.1-2.fc30.x86_64
+</span></span><span class="line"><span class="ln">34</span><span class="cl">
+</span></span><span class="line"><span class="ln">35</span><span class="cl">Complete!
+</span></span></code></pre></div><h2 id="wyszukanie-pakietu">Wyszukanie pakietu</h2>
 <p>Do wyszukiwania służy komenda <code>search</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>dnf search borg
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span>Fedora - Modular Rawhide - Dev 502 kB/s | 1.0 MB
-<span class="ln"> 2</span>Fedora - Rawhide - Developmental packages for the next Fe 1.5 MB/s |  61 MB     00:39
-<span class="ln"> 3</span>Last metadata expiration check: 0:00:01 ago on Mon 25 Mar 2019 11:50:32 AM CET.
-<span class="ln"> 4</span>============================== Name &amp; Summary Matched: borg ==============================
-<span class="ln"> 5</span>borgmatic.x86_64 : Simple Python wrapper script for borgbackup
-<span class="ln"> 6</span>=================================== Name Matched: borg ===================================
-<span class="ln"> 7</span>borgbackup.x86_64 : A deduplicating backup program with compression and authenticated
-<span class="ln"> 8</span>                  : encryption
-<span class="ln"> 9</span>borgbackup.x86_64 : A deduplicating backup program with compression and authenticated
-<span class="ln">10</span>                  : encryption
-</code></pre></div><h2 id="informacje-o-wersji-pakietu-który-jest-zainstalowany-lub-chcemy-zainstalować">Informacje o wersji pakietu, który jest zainstalowany lub chcemy zainstalować</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">dnf search borg
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln"> 1</span><span class="cl">Fedora - Modular Rawhide - Dev 502 kB/s | 1.0 MB
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">Fedora - Rawhide - Developmental packages for the next Fe 1.5 MB/s |  61 MB     00:39
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">Last metadata expiration check: 0:00:01 ago on Mon 25 Mar 2019 11:50:32 AM CET.
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">============================== Name &amp; Summary Matched: borg ==============================
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">borgmatic.x86_64 : Simple Python wrapper script for borgbackup
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">=================================== Name Matched: borg ===================================
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">borgbackup.x86_64 : A deduplicating backup program with compression and authenticated
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">                  : encryption
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">borgbackup.x86_64 : A deduplicating backup program with compression and authenticated
+</span></span><span class="line"><span class="ln">10</span><span class="cl">                  : encryption
+</span></span></code></pre></div><h2 id="informacje-o-wersji-pakietu-który-jest-zainstalowany-lub-chcemy-zainstalować">Informacje o wersji pakietu, który jest zainstalowany lub chcemy zainstalować</h2>
 <p>W tym przypadku musimy podać dokładną nazwę pakietu np. <code>borgbackup</code> lub użyć
 wyrażeń regularnych np. <code>kernel-core*5.1*</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>dnf info borgbackup
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span>Last metadata expiration check: 0:02:40 ago on Mon 25 Mar 2019 11:50:32 AM CET.
-<span class="ln"> 2</span>Installed Packages
-<span class="ln"> 3</span>Name         : borgbackup
-<span class="ln"> 4</span>Version      : 1.1.7
-<span class="ln"> 5</span>Release      : 2.fc30
-<span class="ln"> 6</span>Architecture : x86_64
-<span class="ln"> 7</span>Size         : 4.1 M
-<span class="ln"> 8</span>Source       : borgbackup-1.1.7-2.fc30.src.rpm
-<span class="ln"> 9</span>Repository   : @System
-<span class="ln">10</span>From repo    : rawhide
-<span class="ln">11</span>Summary      : A deduplicating backup program with compression and authenticated
-<span class="ln">12</span>             : encryption
-<span class="ln">13</span>URL          : https://borgbackup.readthedocs.org
-<span class="ln">14</span>License      : BSD
-<span class="ln">15</span>Description  : BorgBackup (short: Borg) is a deduplicating backup program. Optionally, it
-<span class="ln">16</span>             : supports compression and authenticated encryption.
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>dnf info kernel-core*5.1*
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span>Last metadata expiration check: 0:16:28 ago on Mon 25 Mar 2019 11:50:32 AM CET.
-<span class="ln"> 2</span>Installed Packages
-<span class="ln"> 3</span>Name         : kernel
-<span class="ln"> 4</span>Version      : 5.1.0
-<span class="ln"> 5</span>Release      : 0.rc1.git1.1.fc31
-<span class="ln"> 6</span>Architecture : x86_64
-<span class="ln"> 7</span>Size         : 0.0
-<span class="ln"> 8</span>Source       : kernel-5.1.0-0.rc1.git1.1.fc31.src.rpm
-<span class="ln"> 9</span>Repository   : @System
-<span class="ln">10</span>From repo    : rawhide
-<span class="ln">11</span>Summary      : The Linux kernel
-<span class="ln">12</span>URL          : https://www.kernel.org/
-<span class="ln">13</span>License      : GPLv2 and Redistributable, no modification permitted
-<span class="ln">14</span>Description  : The kernel meta package
-</code></pre></div><p>Komenda <code>list</code> wyświetla mniej informacji, a mianowicie, czy pakiet jest
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">dnf info borgbackup
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln"> 1</span><span class="cl">Last metadata expiration check: 0:02:40 ago on Mon 25 Mar 2019 11:50:32 AM CET.
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">Installed Packages
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">Name         : borgbackup
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">Version      : 1.1.7
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">Release      : 2.fc30
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">Architecture : x86_64
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">Size         : 4.1 M
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">Source       : borgbackup-1.1.7-2.fc30.src.rpm
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">Repository   : @System
+</span></span><span class="line"><span class="ln">10</span><span class="cl">From repo    : rawhide
+</span></span><span class="line"><span class="ln">11</span><span class="cl">Summary      : A deduplicating backup program with compression and authenticated
+</span></span><span class="line"><span class="ln">12</span><span class="cl">             : encryption
+</span></span><span class="line"><span class="ln">13</span><span class="cl">URL          : https://borgbackup.readthedocs.org
+</span></span><span class="line"><span class="ln">14</span><span class="cl">License      : BSD
+</span></span><span class="line"><span class="ln">15</span><span class="cl">Description  : BorgBackup (short: Borg) is a deduplicating backup program. Optionally, it
+</span></span><span class="line"><span class="ln">16</span><span class="cl">             : supports compression and authenticated encryption.
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">dnf info kernel-core*5.1*
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln"> 1</span><span class="cl">Last metadata expiration check: 0:16:28 ago on Mon 25 Mar 2019 11:50:32 AM CET.
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">Installed Packages
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">Name         : kernel
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">Version      : 5.1.0
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">Release      : 0.rc1.git1.1.fc31
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">Architecture : x86_64
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">Size         : 0.0
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">Source       : kernel-5.1.0-0.rc1.git1.1.fc31.src.rpm
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">Repository   : @System
+</span></span><span class="line"><span class="ln">10</span><span class="cl">From repo    : rawhide
+</span></span><span class="line"><span class="ln">11</span><span class="cl">Summary      : The Linux kernel
+</span></span><span class="line"><span class="ln">12</span><span class="cl">URL          : https://www.kernel.org/
+</span></span><span class="line"><span class="ln">13</span><span class="cl">License      : GPLv2 and Redistributable, no modification permitted
+</span></span><span class="line"><span class="ln">14</span><span class="cl">Description  : The kernel meta package
+</span></span></code></pre></div><p>Komenda <code>list</code> wyświetla mniej informacji, a mianowicie, czy pakiet jest
 zainstalowany czy po prostu dostępny, nazwę pakietu / architekturę, wersję oraz
 nazwę repozytorium, które zawiera ten pakiet.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>dnf list i3lock
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>Last metadata expiration check: 0:24:25 ago on Mon 25 Mar 2019 11:50:32 AM CET.
-<span class="ln">2</span>Available Packages
-<span class="ln">3</span>i3lock.x86_64                             2.11.1-2.fc30                             rawhide
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>dnf list dwm-user
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>Last metadata expiration check: 0:24:07 ago on Mon 25 Mar 2019 11:50:32 AM CET.
-<span class="ln">2</span>Installed Packages
-<span class="ln">3</span>dwm-user.x86_64               6.2-2.module_f31+3286+e6bdb11e               @rawhide-modular
-</code></pre></div><h2 id="lista-zainstalowanych-pakietów-przez-użytkownika-bez-zależności">Lista zainstalowanych pakietów przez użytkownika bez zależności</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">dnf list i3lock
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">Last metadata expiration check: 0:24:25 ago on Mon 25 Mar 2019 11:50:32 AM CET.
+</span></span><span class="line"><span class="ln">2</span><span class="cl">Available Packages
+</span></span><span class="line"><span class="ln">3</span><span class="cl">i3lock.x86_64                             2.11.1-2.fc30                             rawhide
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">dnf list dwm-user
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">Last metadata expiration check: 0:24:07 ago on Mon 25 Mar 2019 11:50:32 AM CET.
+</span></span><span class="line"><span class="ln">2</span><span class="cl">Installed Packages
+</span></span><span class="line"><span class="ln">3</span><span class="cl">dwm-user.x86_64               6.2-2.module_f31+3286+e6bdb11e               @rawhide-modular
+</span></span></code></pre></div><h2 id="lista-zainstalowanych-pakietów-przez-użytkownika-bez-zależności">Lista zainstalowanych pakietów przez użytkownika bez zależności</h2>
 <h3 id="lista-pakietów-polecenie-wyświetla-wersję-zainstalowanych-pakietów">Lista pakietów, polecenie wyświetla wersję zainstalowanych pakietów</h3>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sudo dnf history userinstalled
-</code></pre></div><h3 id="lista-pakietów-polecenie-wyświetlana-tylko-nazwę-pakietu">Lista pakietów, polecenie wyświetlana tylko nazwę pakietu</h3>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sudo dnf repoquery --qf &#34;%{name}&#34; --userinstalled &gt; userinstalled.txt
-</code></pre></div><h2 id="lista-pakietów-w-repozytorium">Lista pakietów w repozytorium</h2>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sudo dnf repository-packages fedora-cisco-openh264 list
-</code></pre></div><h2 id="aktualizacja-po-jednym-pakiecie-na-raz">Aktualizacja po jednym pakiecie na raz</h2>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sudo dnf list updates | sed -n &#39;3,$p&#39; | awk &#39;{ print $1 }&#39; | xargs -I{} sudo dnf update -y {}
-</code></pre></div><h2 id="aliasy-dla-komendy-dnf">Aliasy dla komendy dnf</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sudo dnf history userinstalled
+</span></span></code></pre></div><h3 id="lista-pakietów-polecenie-wyświetlana-tylko-nazwę-pakietu">Lista pakietów, polecenie wyświetlana tylko nazwę pakietu</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sudo dnf repoquery --qf &#34;%{name}&#34; --userinstalled &gt; userinstalled.txt
+</span></span></code></pre></div><h2 id="lista-pakietów-w-repozytorium">Lista pakietów w repozytorium</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sudo dnf repository-packages fedora-cisco-openh264 list
+</span></span></code></pre></div><h2 id="aktualizacja-po-jednym-pakiecie-na-raz">Aktualizacja po jednym pakiecie na raz</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sudo dnf list updates | sed -n &#39;3,$p&#39; | awk &#39;{ print $1 }&#39; | xargs -I{} sudo dnf update -y {}
+</span></span></code></pre></div><h2 id="aliasy-dla-komendy-dnf">Aliasy dla komendy dnf</h2>
 <p>Do pliku <code>.bashrc</code> lub <code>.zshrc</code> dodajemy</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="ln"> 1</span><span class="k">if</span> <span class="o">[</span> -f <span class="s2">&#34;/etc/fedora-release&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln"> 2</span>    <span class="nb">alias</span> <span class="nv">dnf</span><span class="o">=</span><span class="s1">&#39;sudo dnf&#39;</span>
-<span class="ln"> 3</span>    <span class="nb">alias</span> <span class="nv">di</span><span class="o">=</span><span class="s1">&#39;sudo dnf install&#39;</span>
-<span class="ln"> 4</span>    <span class="nb">alias</span> <span class="nv">dr</span><span class="o">=</span><span class="s1">&#39;sudo dnf remove&#39;</span>
-<span class="ln"> 5</span>    <span class="nb">alias</span> <span class="nv">ds</span><span class="o">=</span><span class="s1">&#39;dnf search&#39;</span>
-<span class="ln"> 6</span>    <span class="nb">alias</span> <span class="nv">dl</span><span class="o">=</span><span class="s1">&#39;dnf list&#39;</span>
-<span class="ln"> 7</span>    <span class="nb">alias</span> <span class="nv">ddep</span><span class="o">=</span><span class="s1">&#39;dnf deplist&#39;</span>
-<span class="ln"> 8</span>    <span class="nb">alias</span> <span class="nv">update</span><span class="o">=</span><span class="s1">&#39;sudo dnf update --refresh&#39;</span>
-<span class="ln"> 9</span>    <span class="nb">alias</span> <span class="nv">upgrade</span><span class="o">=</span>update
-<span class="ln">10</span>    <span class="nb">alias</span> <span class="nv">rpm</span><span class="o">=</span><span class="s1">&#39;sudo rpm&#39;</span>
-<span class="ln">11</span>    <span class="nb">alias</span> <span class="nv">yum</span><span class="o">=</span><span class="s1">&#39;sudo yum&#39;</span>
-<span class="ln">12</span><span class="k">fi</span>
-</code></pre></div><div id="disqus_thread"></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">if</span> <span class="o">[</span> -f <span class="s2">&#34;/etc/fedora-release&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="nb">alias</span> <span class="nv">dnf</span><span class="o">=</span><span class="s1">&#39;sudo dnf&#39;</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">    <span class="nb">alias</span> <span class="nv">di</span><span class="o">=</span><span class="s1">&#39;sudo dnf install&#39;</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="nb">alias</span> <span class="nv">dr</span><span class="o">=</span><span class="s1">&#39;sudo dnf remove&#39;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="nb">alias</span> <span class="nv">ds</span><span class="o">=</span><span class="s1">&#39;dnf search&#39;</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="nb">alias</span> <span class="nv">dl</span><span class="o">=</span><span class="s1">&#39;dnf list&#39;</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="nb">alias</span> <span class="nv">ddep</span><span class="o">=</span><span class="s1">&#39;dnf deplist&#39;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="nb">alias</span> <span class="nv">update</span><span class="o">=</span><span class="s1">&#39;sudo dnf update --refresh&#39;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="nb">alias</span> <span class="nv">upgrade</span><span class="o">=</span>update
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="nb">alias</span> <span class="nv">rpm</span><span class="o">=</span><span class="s1">&#39;sudo rpm&#39;</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="nb">alias</span> <span class="nv">yum</span><span class="o">=</span><span class="s1">&#39;sudo yum&#39;</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="k">fi</span>
+</span></span></code></pre></div><div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -694,7 +694,7 @@ nazwę repozytorium, które zawiera ten pakiet.</p>
   </div>
 </footer>
 
-    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" integrity="sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" integrity="sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous"></script>
     
   </body>
 </html>

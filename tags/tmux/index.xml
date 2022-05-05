@@ -17,24 +17,24 @@
           &lt;h2 id=&#34;podstawowe-informacje&#34;&gt;Podstawowe informacje&lt;/h2&gt;
 &lt;p&gt;Tmux posiada trzy obiekty, tj. sesje, okna i panele, sesje są to osobne procesy, czyli każde kolejne uruchomienie programu tmux, które następnie możemy dzielić na okna a te na panele.&lt;/p&gt;
 &lt;p&gt;Uruchomienie nowej sesji&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ tmux
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Więcej na temat tmux &lt;a href=&#34;https://github.com/tmux/tmux/wiki&#34;&gt;https://github.com/tmux/tmux/wiki&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;$ tmux
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Więcej na temat tmux &lt;a href=&#34;https://github.com/tmux/tmux/wiki&#34;&gt;https://github.com/tmux/tmux/wiki&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;zmiana-prefiksu-ctrl-b-na-ctrl-a&#34;&gt;Zmiana prefiksu ctrl-b na ctrl-a&lt;/h2&gt;
 &lt;p&gt;Tmux jako prefiks czyli skrót do uruchamiania poleceń używa &lt;code&gt;Ctrl+b&lt;/code&gt; w odróżnieniu do programu screen, w którym używany jest skrót &lt;code&gt;Ctrl+a&lt;/code&gt;. Pierwszą rzeczą jaką robię w konfiguracji tmux to właśnie zamiana &lt;code&gt;Ctrl+b&lt;/code&gt; na &lt;code&gt;Ctrl+a&lt;/code&gt;.
 W pliku konfiguracyjnym &lt;code&gt;~/.tmux.conf&lt;/code&gt; dodajemy na początku&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;set-option -g prefix C-a
-&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;unbind-key C-a
-&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;bind-key C-a send-prefix
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;zmiana-ustawień-klawiszy-na-vim-zamiast-emacs&#34;&gt;Zmiana ustawień klawiszy na Vim zamiast Emacs&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;set-option -g prefix C-a
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;unbind-key C-a
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;bind-key C-a send-prefix
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;zmiana-ustawień-klawiszy-na-vim-zamiast-emacs&#34;&gt;Zmiana ustawień klawiszy na Vim zamiast Emacs&lt;/h2&gt;
 &lt;p&gt;Szczególnie przydatne w trybie COPY
 W pliku konfiguracyjnym &lt;code&gt;~/.tmux.conf&lt;/code&gt; dodajemy&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;setw -g mode-keys vi
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;tryb-copy&#34;&gt;Tryb COPY&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;setw -g mode-keys vi
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;tryb-copy&#34;&gt;Tryb COPY&lt;/h2&gt;
 &lt;p&gt;Tryb COPY umożliwia poruszanie się po buforze, czyli mówiąc inaczej przewijamy tekst oglądając wcześniej wykonane komendy. Wejście do trybu COPY &lt;code&gt;Copy-a-[&lt;/code&gt;. Wyjście z trybu COPY &lt;code&gt;2 x ESC&lt;/code&gt; lub &lt;code&gt;q&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Poruszanie się w trybie COPY&lt;/p&gt;
 &lt;p&gt;Istnieją dwa tryby – tryb vi oraz tryb emacs zmianę trybu wykonujemy poleceniem&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;setw -g mode-keys vi
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Poruszanie się po trybie COPY w dwóch trybach vi i emacs&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;setw -g mode-keys vi
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Poruszanie się po trybie COPY w dwóch trybach vi i emacs&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -202,13 +202,13 @@ W pliku konfiguracyjnym &lt;code&gt;~/.tmux.conf&lt;/code&gt; dodajemy&lt;/p&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;Operacja kopiuj wklej w trybie COPY&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;- Wejście do trybu COPY   - Ctrl-a-[
-&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;- Zaznaczenie tekstu      - Ctrl-Space
-&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;- Skopiowanie tekstu      - Alt-w
-&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;- Wklejenie tekstu        - Ctrl-a-]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;zamknięcie-wszystkich-sesji-tmux&#34;&gt;Zamknięcie wszystkich sesji tmux&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;tmux ls | grep : | cut -d. -f1 | awk &amp;#39;{print substr($1, 0, length($1)-1)}&amp;#39; | xargs kill
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;- Wejście do trybu COPY   - Ctrl-a-[
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;- Zaznaczenie tekstu      - Ctrl-Space
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;- Skopiowanie tekstu      - Alt-w
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;- Wklejenie tekstu        - Ctrl-a-]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;zamknięcie-wszystkich-sesji-tmux&#34;&gt;Zamknięcie wszystkich sesji tmux&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;tmux ls | grep : | cut -d. -f1 | awk &amp;#39;{print substr($1, 0, length($1)-1)}&amp;#39; | xargs kill
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
         
       </description>
     </item>

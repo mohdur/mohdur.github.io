@@ -4,7 +4,7 @@
   <head>
 <title>Vim wstawienie X znaków | MOHDUR</title>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.94.2" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta property="og:locale" content="en" />
@@ -32,8 +32,8 @@
     
     
     <link rel="preload" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity = "sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" as="script" integrity=
-    "sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous">
+    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" as="script" integrity=
+    "sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity="sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" crossorigin="anonymous"><link rel="stylesheet" href="https://mohdur.github.io/css/custom.css">
@@ -128,83 +128,83 @@
     
     <p>Wstawienie X razy dowolnego znaku w Vim wymaga następującej składni w trybie
 <strong>NORMAL</strong>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>[ilość][tryb][znak]&lt;ESC&gt;
-</code></pre></div><p>Tryby wprowadzania:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>i - wprowadza znak przed kursorem
-<span class="ln">2</span>a - wprowadza znak za kursorem
-<span class="ln">3</span>I - wprowadza znak na początku linii
-<span class="ln">4</span>A - wprowadza znak na końcu linii
-<span class="ln">5</span>o - wprowadza znak w kolejnych wierszach linię poniżej
-<span class="ln">6</span>O - wprowadza znak w kolejnych wierszach linię powyżej
-<span class="ln">7</span>r - zamiana znaku wybraną ilość razy
-</code></pre></div><p>Przykład wprowadzenia 80 znaków <code>=</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>80i=&lt;ESC&gt;
-<span class="ln">2</span>================================================================================
-</code></pre></div><p>Przykład wprowadzenia 3 znaków <code>=</code> w kolejnych liniach</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>3o=&lt;ESC&gt;
-<span class="ln">2</span>
-<span class="ln">3</span>=
-<span class="ln">4</span>=
-<span class="ln">5</span>=
-</code></pre></div><p>Wstawianie znaku dowolną ilość razy jest możliwe również w trybie <strong>VISUAL</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">[ilość][tryb][znak]&lt;ESC&gt;
+</span></span></code></pre></div><p>Tryby wprowadzania:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">i - wprowadza znak przed kursorem
+</span></span><span class="line"><span class="ln">2</span><span class="cl">a - wprowadza znak za kursorem
+</span></span><span class="line"><span class="ln">3</span><span class="cl">I - wprowadza znak na początku linii
+</span></span><span class="line"><span class="ln">4</span><span class="cl">A - wprowadza znak na końcu linii
+</span></span><span class="line"><span class="ln">5</span><span class="cl">o - wprowadza znak w kolejnych wierszach linię poniżej
+</span></span><span class="line"><span class="ln">6</span><span class="cl">O - wprowadza znak w kolejnych wierszach linię powyżej
+</span></span><span class="line"><span class="ln">7</span><span class="cl">r - zamiana znaku wybraną ilość razy
+</span></span></code></pre></div><p>Przykład wprowadzenia 80 znaków <code>=</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">80i=&lt;ESC&gt;
+</span></span><span class="line"><span class="ln">2</span><span class="cl">================================================================================
+</span></span></code></pre></div><p>Przykład wprowadzenia 3 znaków <code>=</code> w kolejnych liniach</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">3o=&lt;ESC&gt;
+</span></span><span class="line"><span class="ln">2</span><span class="cl">
+</span></span><span class="line"><span class="ln">3</span><span class="cl">=
+</span></span><span class="line"><span class="ln">4</span><span class="cl">=
+</span></span><span class="line"><span class="ln">5</span><span class="cl">=
+</span></span></code></pre></div><p>Wstawianie znaku dowolną ilość razy jest możliwe również w trybie <strong>VISUAL</strong>
 na przykład wstawienie znaku <code>|</code> w 6 kolejnych liniach.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>6o|&lt;ESC&gt;
-<span class="ln">2</span>
-<span class="ln">3</span>|
-<span class="ln">4</span>|
-<span class="ln">5</span>|
-<span class="ln">6</span>|
-<span class="ln">7</span>|
-<span class="ln">8</span>|
-</code></pre></div><p>Teraz w tych 6 wierszach dodajmy 78 spacji. Zaznaczamy wierwsze za pomocą
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">6o|&lt;ESC&gt;
+</span></span><span class="line"><span class="ln">2</span><span class="cl">
+</span></span><span class="line"><span class="ln">3</span><span class="cl">|
+</span></span><span class="line"><span class="ln">4</span><span class="cl">|
+</span></span><span class="line"><span class="ln">5</span><span class="cl">|
+</span></span><span class="line"><span class="ln">6</span><span class="cl">|
+</span></span><span class="line"><span class="ln">7</span><span class="cl">|
+</span></span><span class="line"><span class="ln">8</span><span class="cl">|
+</span></span></code></pre></div><p>Teraz w tych 6 wierszach dodajmy 78 spacji. Zaznaczamy wierwsze za pomocą
 <code>&lt;Ctrl-v&gt;</code>. W celu wizualizacji zamienimy znak spacji znakiem podkreślenia
 <code>_</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>&lt;Ctrl-v&gt;jjjjj78A&lt;spacja&gt;&lt;ESC&gt;
-<span class="ln">2</span>|______________________________________________________________________________
-<span class="ln">3</span>|______________________________________________________________________________
-<span class="ln">4</span>|______________________________________________________________________________
-<span class="ln">5</span>|______________________________________________________________________________
-<span class="ln">6</span>|______________________________________________________________________________
-<span class="ln">7</span>|______________________________________________________________________________
-</code></pre></div><p>Dodajmy na końcu każdego wiersza znak <code>|</code>. Przechodzimy na koniec pierwszej
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">&lt;Ctrl-v&gt;jjjjj78A&lt;spacja&gt;&lt;ESC&gt;
+</span></span><span class="line"><span class="ln">2</span><span class="cl">|______________________________________________________________________________
+</span></span><span class="line"><span class="ln">3</span><span class="cl">|______________________________________________________________________________
+</span></span><span class="line"><span class="ln">4</span><span class="cl">|______________________________________________________________________________
+</span></span><span class="line"><span class="ln">5</span><span class="cl">|______________________________________________________________________________
+</span></span><span class="line"><span class="ln">6</span><span class="cl">|______________________________________________________________________________
+</span></span><span class="line"><span class="ln">7</span><span class="cl">|______________________________________________________________________________
+</span></span></code></pre></div><p>Dodajmy na końcu każdego wiersza znak <code>|</code>. Przechodzimy na koniec pierwszej
 linii zapomocą <code>$</code>. Zaznaczamy wszystkie linie za pomocą <code>&lt;Ctrl-v&gt;</code> teraz
 użyjemy komedny <code>A</code> i znaku <code>|</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>$&lt;Ctrl-v&gt;jjjjjA|&lt;ESC&gt;
-<span class="ln">2</span>|                                                                              |
-<span class="ln">3</span>|                                                                              |
-<span class="ln">4</span>|                                                                              |
-<span class="ln">5</span>|                                                                              |
-<span class="ln">6</span>|                                                                              |
-<span class="ln">7</span>|                                                                              |
-</code></pre></div><p>Zmiennmy spacje w pierwszej linii na znak <code>-</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>77r-
-<span class="ln">2</span>|------------------------------------------------------------------------------|
-<span class="ln">3</span>|                                                                              |
-<span class="ln">4</span>|                                                                              |
-<span class="ln">5</span>|                                                                              |
-<span class="ln">6</span>|                                                                              |
-<span class="ln">7</span>|                                                                              |
-</code></pre></div><p>Zamiana spacji w ostatniej linii na znak <code>=</code>, tutaj użyjemy komendy <code>s</code> do
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">$&lt;Ctrl-v&gt;jjjjjA|&lt;ESC&gt;
+</span></span><span class="line"><span class="ln">2</span><span class="cl">|                                                                              |
+</span></span><span class="line"><span class="ln">3</span><span class="cl">|                                                                              |
+</span></span><span class="line"><span class="ln">4</span><span class="cl">|                                                                              |
+</span></span><span class="line"><span class="ln">5</span><span class="cl">|                                                                              |
+</span></span><span class="line"><span class="ln">6</span><span class="cl">|                                                                              |
+</span></span><span class="line"><span class="ln">7</span><span class="cl">|                                                                              |
+</span></span></code></pre></div><p>Zmiennmy spacje w pierwszej linii na znak <code>-</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">77r-
+</span></span><span class="line"><span class="ln">2</span><span class="cl">|------------------------------------------------------------------------------|
+</span></span><span class="line"><span class="ln">3</span><span class="cl">|                                                                              |
+</span></span><span class="line"><span class="ln">4</span><span class="cl">|                                                                              |
+</span></span><span class="line"><span class="ln">5</span><span class="cl">|                                                                              |
+</span></span><span class="line"><span class="ln">6</span><span class="cl">|                                                                              |
+</span></span><span class="line"><span class="ln">7</span><span class="cl">|                                                                              |
+</span></span></code></pre></div><p>Zamiana spacji w ostatniej linii na znak <code>=</code>, tutaj użyjemy komendy <code>s</code> do
 zamiany tekstu. Użycie komendy <code>s</code> należy wykonać będąc w linii, którą
 chcemy objąć tą komendą.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>:s/ /=/g&lt;ENTER&gt;
-<span class="ln">2</span>|------------------------------------------------------------------------------|
-<span class="ln">3</span>|                                                                              |
-<span class="ln">4</span>|                                                                              |
-<span class="ln">5</span>|                                                                              |
-<span class="ln">6</span>|                                                                              |
-<span class="ln">7</span>|==============================================================================|
-</code></pre></div><p>Ostatnim krokiem będzie podzielenie tabeli na dwie kolumny w trybie <strong>VISUAL</strong></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>&lt;Ctrl-v&gt;jjjjjr|
-<span class="ln">2</span>|----------------------|-------------------------------------------------------|
-<span class="ln">3</span>|                      |                                                       |
-<span class="ln">4</span>|                      |                                                       |
-<span class="ln">5</span>|                      |                                                       |
-<span class="ln">6</span>|                      |                                                       |
-<span class="ln">7</span>|======================|=======================================================|
-</code></pre></div><div id="disqus_thread"></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">:s/ /=/g&lt;ENTER&gt;
+</span></span><span class="line"><span class="ln">2</span><span class="cl">|------------------------------------------------------------------------------|
+</span></span><span class="line"><span class="ln">3</span><span class="cl">|                                                                              |
+</span></span><span class="line"><span class="ln">4</span><span class="cl">|                                                                              |
+</span></span><span class="line"><span class="ln">5</span><span class="cl">|                                                                              |
+</span></span><span class="line"><span class="ln">6</span><span class="cl">|                                                                              |
+</span></span><span class="line"><span class="ln">7</span><span class="cl">|==============================================================================|
+</span></span></code></pre></div><p>Ostatnim krokiem będzie podzielenie tabeli na dwie kolumny w trybie <strong>VISUAL</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">&lt;Ctrl-v&gt;jjjjjr|
+</span></span><span class="line"><span class="ln">2</span><span class="cl">|----------------------|-------------------------------------------------------|
+</span></span><span class="line"><span class="ln">3</span><span class="cl">|                      |                                                       |
+</span></span><span class="line"><span class="ln">4</span><span class="cl">|                      |                                                       |
+</span></span><span class="line"><span class="ln">5</span><span class="cl">|                      |                                                       |
+</span></span><span class="line"><span class="ln">6</span><span class="cl">|                      |                                                       |
+</span></span><span class="line"><span class="ln">7</span><span class="cl">|======================|=======================================================|
+</span></span></code></pre></div><div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -601,7 +601,7 @@ chcemy objąć tą komendą.</p>
   </div>
 </footer>
 
-    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" integrity="sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" integrity="sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous"></script>
     
   </body>
 </html>

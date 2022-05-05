@@ -4,7 +4,7 @@
   <head>
 <title>Mikrotik i Wireguard VPN | MOHDUR</title>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.94.2" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta property="og:locale" content="en" />
@@ -32,8 +32,8 @@
     
     
     <link rel="preload" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity = "sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" as="script" integrity=
-    "sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous">
+    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" as="script" integrity=
+    "sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity="sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" crossorigin="anonymous"><link rel="stylesheet" href="https://mohdur.github.io/css/custom.css">
@@ -164,18 +164,18 @@ działają w tej samej sieci LAN.</p>
 <h2 id="dodanie-nowego-interfejsu-dla-usługi-wireguard">Dodanie nowego interfejsu dla usługi Wireguard</h2>
 <p>Po dodaniu interfejsu Wireguard zostaną automatycznie wygenerowane klucze. Klucz
 publiczny oraz prywatny.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>/interface wireguard add name=wireguard1
-</code></pre></div><h2 id="wyświetlenie-kluczy-szyfrujących">Wyświetlenie kluczy szyfrujących</h2>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>/interface wireguard print
-</code></pre></div><p>Żeby pobrać klucz publiczny / prywatny można użyć polecenia</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>:put [/interface/wireguard get wireguard1 private-key]
-<span class="ln">2</span>oGwMsty/RMY9oHUywxKsn9ov6cLh4W8xU8FpqQOkeFs=
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>:put [/interface/wireguard get wireguard1 public-key]
-<span class="ln">2</span>N5rCJmUwj2BrN87j5s2npyh/m6ZP8J0VGYbjVbNerkE=
-</code></pre></div><h2 id="nadanie-adresu-ip-dla-interfejsu-wireguard1">Nadanie adresu IP dla interfejsu wireguard1</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">/interface wireguard add name=wireguard1
+</span></span></code></pre></div><h2 id="wyświetlenie-kluczy-szyfrujących">Wyświetlenie kluczy szyfrujących</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">/interface wireguard print
+</span></span></code></pre></div><p>Żeby pobrać klucz publiczny / prywatny można użyć polecenia</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">:put [/interface/wireguard get wireguard1 private-key]
+</span></span><span class="line"><span class="ln">2</span><span class="cl">oGwMsty/RMY9oHUywxKsn9ov6cLh4W8xU8FpqQOkeFs=
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">:put [/interface/wireguard get wireguard1 public-key]
+</span></span><span class="line"><span class="ln">2</span><span class="cl">N5rCJmUwj2BrN87j5s2npyh/m6ZP8J0VGYbjVbNerkE=
+</span></span></code></pre></div><h2 id="nadanie-adresu-ip-dla-interfejsu-wireguard1">Nadanie adresu IP dla interfejsu wireguard1</h2>
 <p>Jak już mamy interfejs wireguard, to kolejnym krokiem jest nadanie mu adresu IP.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>/ip address add address=10.0.0.X/24 interface=wireguard1 network=10.0.0.0
-</code></pre></div><h2 id="pełna-konfiguracja-urządzenia-mt-r1">Pełna konfiguracja urządzenia MT-R1</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">/ip address add address=10.0.0.X/24 interface=wireguard1 network=10.0.0.0
+</span></span></code></pre></div><h2 id="pełna-konfiguracja-urządzenia-mt-r1">Pełna konfiguracja urządzenia MT-R1</h2>
 <ul>
 <li>IP LAN: 192.168.88.101</li>
 <li>IP Wireguard: 10.0.0.101</li>
@@ -183,17 +183,17 @@ publiczny oraz prywatny.</p>
 <li>Klucz publiczny: <code>N5rCJmUwj2BrN87j5s2npyh/m6ZP8J0VGYbjVbNerkE=</code></li>
 <li>Numer portu Wireguard: 24680/UDP</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span>/interface wireguard add name=wireguard1
-<span class="ln"> 2</span>
-<span class="ln"> 3</span>/ip address add address=10.0.0.101/24 interface=wireguard1 network=10.0.0.0
-<span class="ln"> 4</span>
-<span class="ln"> 5</span>/interface wireguard
-<span class="ln"> 6</span>add listen-port=24680 mtu=1420 name=wireguard1 private-key=&#34;oGwMsty/RMY9oHUywxKsn9ov6cLh4W8xU8FpqQOkeFs=&#34;
-<span class="ln"> 7</span>
-<span class="ln"> 8</span>/interface wireguard peers
-<span class="ln"> 9</span>add allowed-address=10.0.0.0/24 endpoint=192.168.88.102:24680 interface=wireguard1 public-key=\
-<span class="ln">10</span>    &#34;hFAmrgxz4bDRmTaCbOyrvNQzVEwI4uctKyCy+zUJoGE=&#34;
-</code></pre></div><h2 id="pełna-konfiguracja-urządzenia-mt-r2">Pełna konfiguracja urządzenia MT-R2</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln"> 1</span><span class="cl">/interface wireguard add name=wireguard1
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">/ip address add address=10.0.0.101/24 interface=wireguard1 network=10.0.0.0
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">/interface wireguard
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">add listen-port=24680 mtu=1420 name=wireguard1 private-key=&#34;oGwMsty/RMY9oHUywxKsn9ov6cLh4W8xU8FpqQOkeFs=&#34;
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">/interface wireguard peers
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">add allowed-address=10.0.0.0/24 endpoint=192.168.88.102:24680 interface=wireguard1 public-key=\
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    &#34;hFAmrgxz4bDRmTaCbOyrvNQzVEwI4uctKyCy+zUJoGE=&#34;
+</span></span></code></pre></div><h2 id="pełna-konfiguracja-urządzenia-mt-r2">Pełna konfiguracja urządzenia MT-R2</h2>
 <ul>
 <li>IP LAN: 192.168.88.102</li>
 <li>IP Wireguard: 10.0.0.102</li>
@@ -201,27 +201,27 @@ publiczny oraz prywatny.</p>
 <li>Klucz publiczny: <code>hFAmrgxz4bDRmTaCbOyrvNQzVEwI4uctKyCy+zUJoGE=</code></li>
 <li>Numer portu Wireguard: 24680/UDP</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span>/interface wireguard add name=wireguard1
-<span class="ln"> 2</span>
-<span class="ln"> 3</span>/ip address add address=10.0.0.102/24 interface=wireguard1 network=10.0.0.0
-<span class="ln"> 4</span>
-<span class="ln"> 5</span>/interface wireguard
-<span class="ln"> 6</span>add listen-port=24680 mtu=1420 name=wireguard1 private-key=&#34;YIRU+EYysLwHcQRWEoz4qjGIWjLvenTQ4WgjBbWVp0o=&#34;
-<span class="ln"> 7</span>
-<span class="ln"> 8</span>/interface wireguard peers
-<span class="ln"> 9</span>add allowed-address=10.0.0.0/24 endpoint=192.168.88.101:24680 interface=wireguard1 public-key=\
-<span class="ln">10</span>    &#34;N5rCJmUwj2BrN87j5s2npyh/m6ZP8J0VGYbjVbNerkE=&#34;
-</code></pre></div><h2 id="test-połączenia-można-wykonać-za-pomocą-polecenia-ping">Test połączenia można wykonać za pomocą polecenia ping</h2>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>/tool/ping 10.0.0.102 count=4 interface=wireguard1
-<span class="ln">2</span>  SEQ HOST                                     SIZE TTL TIME  STATUS
-<span class="ln">3</span>    0 10.0.0.102                                 56  64 1ms
-<span class="ln">4</span>    1 10.0.0.102                                 56  64 1ms
-<span class="ln">5</span>    2 10.0.0.102                                 56  64 1ms
-<span class="ln">6</span>    3 10.0.0.102                                 56  64 1ms
-<span class="ln">7</span>    sent=4 received=4 packet-loss=0% min-rtt=1ms avg-rtt=1ms max-rtt=1ms
-</code></pre></div><div id="disqus_thread"></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln"> 1</span><span class="cl">/interface wireguard add name=wireguard1
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">/ip address add address=10.0.0.102/24 interface=wireguard1 network=10.0.0.0
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">/interface wireguard
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">add listen-port=24680 mtu=1420 name=wireguard1 private-key=&#34;YIRU+EYysLwHcQRWEoz4qjGIWjLvenTQ4WgjBbWVp0o=&#34;
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">/interface wireguard peers
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">add allowed-address=10.0.0.0/24 endpoint=192.168.88.101:24680 interface=wireguard1 public-key=\
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    &#34;N5rCJmUwj2BrN87j5s2npyh/m6ZP8J0VGYbjVbNerkE=&#34;
+</span></span></code></pre></div><h2 id="test-połączenia-można-wykonać-za-pomocą-polecenia-ping">Test połączenia można wykonać za pomocą polecenia ping</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">/tool/ping 10.0.0.102 count=4 interface=wireguard1
+</span></span><span class="line"><span class="ln">2</span><span class="cl">  SEQ HOST                                     SIZE TTL TIME  STATUS
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    0 10.0.0.102                                 56  64 1ms
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    1 10.0.0.102                                 56  64 1ms
+</span></span><span class="line"><span class="ln">5</span><span class="cl">    2 10.0.0.102                                 56  64 1ms
+</span></span><span class="line"><span class="ln">6</span><span class="cl">    3 10.0.0.102                                 56  64 1ms
+</span></span><span class="line"><span class="ln">7</span><span class="cl">    sent=4 received=4 packet-loss=0% min-rtt=1ms avg-rtt=1ms max-rtt=1ms
+</span></span></code></pre></div><div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -618,7 +618,7 @@ publiczny oraz prywatny.</p>
   </div>
 </footer>
 
-    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" integrity="sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" integrity="sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous"></script>
     
   </body>
 </html>

@@ -4,7 +4,7 @@
   <head>
 <title>Podłączenie dysku po identyfikatorze UUID | MOHDUR</title>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.94.2" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta property="og:locale" content="en" />
@@ -32,8 +32,8 @@
     
     
     <link rel="preload" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity = "sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" as="script" integrity=
-    "sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous">
+    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" as="script" integrity=
+    "sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity="sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" crossorigin="anonymous"><link rel="stylesheet" href="https://mohdur.github.io/css/custom.css">
@@ -132,41 +132,41 @@
     
     <p>Skrypt montujący dysk po identyfikatorze UUID.</p>
 <p>Uzyskanie identyfikatora UUID dysku /dev/sdb1</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># blkid /dev/sdb1</span>
-<span class="ln">2</span>/dev/sdb1: <span class="nv">UUID</span><span class="o">=</span><span class="s2">&#34;359d90df-f17a-42f6-ab13-df13bf356de7&#34;</span> <span class="nv">TYPE</span><span class="o">=</span><span class="s2">&#34;ext4&#34;</span> <span class="nv">PARTUUID</span><span class="o">=</span><span class="s2">&#34;2a01&#34;</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="cp">#!/bin/bash
-</span><span class="ln"> 2</span><span class="cp"></span>
-<span class="ln"> 3</span><span class="c1"># przykładowy wpis w /etc/fstab</span>
-<span class="ln"> 4</span><span class="c1"># echo &#34;UUID=359d90df-f17a-42f6-ab13-df13bf356de7 /disk2 ext4  errors=remount-ro 0 1&#34; &gt;&gt; /etc/fstab</span>
-<span class="ln"> 5</span>
-<span class="ln"> 6</span><span class="nv">BLKID</span><span class="o">=</span><span class="k">$(</span>which blkid<span class="k">)</span>
-<span class="ln"> 7</span>
-<span class="ln"> 8</span><span class="c1"># odświeżenie pamięci podręcznej blkid</span>
-<span class="ln"> 9</span>sudo <span class="nv">$BLKID</span> -g
-<span class="ln">10</span>
-<span class="ln">11</span><span class="nv">UUID</span><span class="o">=</span>db979ede-d90f-4207-ac3e-e9efbe76f052
-<span class="ln">12</span>
-<span class="ln">13</span><span class="nv">DEVICE</span><span class="o">=</span><span class="k">$(</span><span class="nv">$BLKID</span> -U <span class="nv">$UUID</span><span class="k">)</span>  <span class="c1"># nazwa urządzenia np. /dev/sda1</span>
-<span class="ln">14</span>
-<span class="ln">15</span>montowanie<span class="o">()</span>
-<span class="ln">16</span><span class="o">{</span>
-<span class="ln">17</span>	mount <span class="p">|</span> grep <span class="nv">$DEVICE</span> &gt; /dev/null
-<span class="ln">18</span>	<span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> <span class="o">==</span> <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln">19</span>		<span class="nb">echo</span> <span class="s2">&#34;UUID: </span><span class="nv">$UUID</span><span class="s2"> jest już zamontowany.&#34;</span>
-<span class="ln">20</span>	<span class="k">else</span>
-<span class="ln">21</span>		sudo mount -U <span class="nv">$UUID</span> /opt/usb
-<span class="ln">22</span>	<span class="k">fi</span>
-<span class="ln">23</span><span class="o">}</span>
-<span class="ln">24</span>
-<span class="ln">25</span><span class="nv">$BLKID</span> -U <span class="nv">$UUID</span> &gt; /dev/null
-<span class="ln">26</span><span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> <span class="o">==</span> <span class="m">1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln">27</span>	<span class="nb">echo</span> <span class="s2">&#34;Brak urzadzenia </span><span class="nv">$UUID</span><span class="s2">&#34;</span>
-<span class="ln">28</span><span class="k">else</span>
-<span class="ln">29</span>	montowanie
-<span class="ln">30</span><span class="k">fi</span>
-</code></pre></div><div id="disqus_thread"></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl"><span class="c1"># blkid /dev/sdb1</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">/dev/sdb1: <span class="nv">UUID</span><span class="o">=</span><span class="s2">&#34;359d90df-f17a-42f6-ab13-df13bf356de7&#34;</span> <span class="nv">TYPE</span><span class="o">=</span><span class="s2">&#34;ext4&#34;</span> <span class="nv">PARTUUID</span><span class="o">=</span><span class="s2">&#34;2a01&#34;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="c1"># przykładowy wpis w /etc/fstab</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="c1"># echo &#34;UUID=359d90df-f17a-42f6-ab13-df13bf356de7 /disk2 ext4  errors=remount-ro 0 1&#34; &gt;&gt; /etc/fstab</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="nv">BLKID</span><span class="o">=</span><span class="k">$(</span>which blkid<span class="k">)</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="c1"># odświeżenie pamięci podręcznej blkid</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">sudo <span class="nv">$BLKID</span> -g
+</span></span><span class="line"><span class="ln">10</span><span class="cl">
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="nv">UUID</span><span class="o">=</span>db979ede-d90f-4207-ac3e-e9efbe76f052
+</span></span><span class="line"><span class="ln">12</span><span class="cl">
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="nv">DEVICE</span><span class="o">=</span><span class="k">$(</span><span class="nv">$BLKID</span> -U <span class="nv">$UUID</span><span class="k">)</span>  <span class="c1"># nazwa urządzenia np. /dev/sda1</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">
+</span></span><span class="line"><span class="ln">15</span><span class="cl">montowanie<span class="o">()</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">	mount <span class="p">|</span> grep <span class="nv">$DEVICE</span> &gt; /dev/null
+</span></span><span class="line"><span class="ln">18</span><span class="cl">	<span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> <span class="o">==</span> <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">		<span class="nb">echo</span> <span class="s2">&#34;UUID: </span><span class="nv">$UUID</span><span class="s2"> jest już zamontowany.&#34;</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">	<span class="k">else</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">		sudo mount -U <span class="nv">$UUID</span> /opt/usb
+</span></span><span class="line"><span class="ln">22</span><span class="cl">	<span class="k">fi</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">
+</span></span><span class="line"><span class="ln">25</span><span class="cl"><span class="nv">$BLKID</span> -U <span class="nv">$UUID</span> &gt; /dev/null
+</span></span><span class="line"><span class="ln">26</span><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> <span class="o">==</span> <span class="m">1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;Brak urzadzenia </span><span class="nv">$UUID</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">	montowanie
+</span></span><span class="line"><span class="ln">30</span><span class="cl"><span class="k">fi</span>
+</span></span></code></pre></div><div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -563,7 +563,7 @@
   </div>
 </footer>
 
-    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" integrity="sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" integrity="sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous"></script>
     
   </body>
 </html>

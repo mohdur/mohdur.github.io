@@ -4,7 +4,7 @@
   <head>
 <title>Archiwizacja podkatalogów | MOHDUR</title>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.94.2" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta property="og:locale" content="en" />
@@ -32,8 +32,8 @@
     
     
     <link rel="preload" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity = "sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" as="script" integrity=
-    "sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous">
+    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" as="script" integrity=
+    "sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity="sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" crossorigin="anonymous"><link rel="stylesheet" href="https://mohdur.github.io/css/custom.css">
@@ -135,58 +135,58 @@
     <p>Skrypt przetwarza podkatalogi w bieżącej lokalizacji, tworząc archiwa <code>tar</code>
 a następnie usuwa przetworzony katalog.</p>
 <p>W pętli <code>for</code> możemy użyć maski zawężając wynik wyszukiwania np.</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span><span class="k">for</span> i in *dump*<span class="p">;</span> <span class="k">do</span>
-</code></pre></div><p>lub użyć polecenia <code>ls</code> np.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="ln">1</span><span class="k">for</span> i in <span class="k">$(</span>ls -A<span class="k">)</span><span class="p">;</span> <span class="k">do</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="cp">#!/usr/bin/env bash
-</span><span class="ln"> 2</span><span class="cp"></span>
-<span class="ln"> 3</span>clear
-<span class="ln"> 4</span>
-<span class="ln"> 5</span><span class="nb">echo</span>
-<span class="ln"> 6</span><span class="nb">echo</span> -----------------------------------------------
-<span class="ln"> 7</span><span class="nb">echo</span> <span class="s2">&#34;Znajdujesz się w katalogu </span><span class="nv">$PWD</span><span class="s2">&#34;</span>
-<span class="ln"> 8</span><span class="nb">echo</span>
-<span class="ln"> 9</span><span class="nb">echo</span> <span class="s2">&#34;!!!UWAGA! Niebezpieczenstwo!!!&#34;</span>
-<span class="ln">10</span><span class="nb">echo</span>
-<span class="ln">11</span><span class="nb">echo</span> -n <span class="s2">&#34;Czy usunac katalogi po archiwizacji? [N/t]: &#34;</span>
-<span class="ln">12</span><span class="nb">read</span> usunac
-<span class="ln">13</span>
-<span class="ln">14</span><span class="k">case</span> <span class="s2">&#34;</span><span class="nv">$usunac</span><span class="s2">&#34;</span> in
-<span class="ln">15</span>    <span class="s2">&#34;N&#34;</span><span class="p">|</span><span class="s2">&#34;n&#34;</span><span class="o">)</span> <span class="nv">usunac</span><span class="o">=</span><span class="nb">false</span> <span class="p">;;</span>
-<span class="ln">16</span>    <span class="s2">&#34;T&#34;</span><span class="p">|</span><span class="s2">&#34;t&#34;</span><span class="o">)</span> <span class="nv">usunac</span><span class="o">=</span><span class="nb">true</span>  <span class="p">;;</span>
-<span class="ln">17</span>    *<span class="o">)</span>       <span class="nv">usunac</span><span class="o">=</span><span class="nb">false</span> <span class="p">;;</span>
-<span class="ln">18</span><span class="k">esac</span>
-<span class="ln">19</span>
-<span class="ln">20</span><span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> -gt <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln">21</span>    <span class="k">case</span> <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span> in
-<span class="ln">22</span>        <span class="s2">&#34;tar&#34;</span><span class="o">)</span>                  <span class="nv">ext</span><span class="o">=</span>tar <span class="p">;;</span>
-<span class="ln">23</span>        <span class="s2">&#34;tgz&#34;</span><span class="p">|</span><span class="s2">&#34;tar.gz&#34;</span><span class="o">)</span>         <span class="nv">ext</span><span class="o">=</span>tgz <span class="p">;;</span>
-<span class="ln">24</span>        <span class="s2">&#34;tbz&#34;</span><span class="p">|</span><span class="s2">&#34;tbz2&#34;</span><span class="p">|</span><span class="s2">&#34;tar.bz2&#34;</span><span class="o">)</span> <span class="nv">ext</span><span class="o">=</span>tbz <span class="p">;;</span>
-<span class="ln">25</span>        <span class="s2">&#34;txz&#34;</span><span class="p">|</span><span class="s2">&#34;tar.xz&#34;</span><span class="o">)</span>         <span class="nv">ext</span><span class="o">=</span>txz <span class="p">;;</span>
-<span class="ln">26</span>    <span class="k">esac</span>
-<span class="ln">27</span><span class="k">else</span>
-<span class="ln">28</span>    <span class="nv">ext</span><span class="o">=</span>tar
-<span class="ln">29</span><span class="k">fi</span>
-<span class="ln">30</span>
-<span class="ln">31</span><span class="k">for</span> i in *
-<span class="ln">32</span><span class="k">do</span>
-<span class="ln">33</span>    <span class="k">if</span> <span class="o">[</span> -d <span class="nv">$i</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln">34</span>        <span class="nb">echo</span> Archiwizuje <span class="nv">$i</span>
-<span class="ln">35</span>        tar -cavf <span class="nv">$i</span>.<span class="nv">$ext</span> <span class="nv">$i</span>
-<span class="ln">36</span>        <span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> <span class="o">=</span> <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln">37</span>            <span class="k">if</span> <span class="o">[</span> <span class="nv">$usunac</span> <span class="o">==</span> <span class="s1">&#39;true&#39;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln">38</span>                <span class="nb">echo</span> <span class="s2">&#34;!!! Usuwam: </span><span class="nv">$i</span><span class="s2">&#34;</span>
-<span class="ln">39</span>                rm -rf <span class="s2">&#34;</span><span class="nv">$i</span><span class="s2">&#34;</span>
-<span class="ln">40</span>            <span class="k">fi</span>
-<span class="ln">41</span>        <span class="k">else</span>
-<span class="ln">42</span>            <span class="nb">echo</span> <span class="s2">&#34;Wystąpił BŁĄD: </span><span class="nv">$?</span><span class="s2">&#34;</span>
-<span class="ln">43</span>            <span class="nb">exit</span> <span class="m">1</span>
-<span class="ln">44</span>        <span class="k">fi</span>
-<span class="ln">45</span>    <span class="k">fi</span>
-<span class="ln">46</span><span class="k">done</span>
-</code></pre></div><div id="disqus_thread"></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">for</span> i in *dump*<span class="p">;</span> <span class="k">do</span>
+</span></span></code></pre></div><p>lub użyć polecenia <code>ls</code> np.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">for</span> i in <span class="k">$(</span>ls -A<span class="k">)</span><span class="p">;</span> <span class="k">do</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">#!/usr/bin/env bash
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">clear
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="nb">echo</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="nb">echo</span> -----------------------------------------------
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Znajdujesz się w katalogu </span><span class="nv">$PWD</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="nb">echo</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;!!!UWAGA! Niebezpieczenstwo!!!&#34;</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="nb">echo</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="nb">echo</span> -n <span class="s2">&#34;Czy usunac katalogi po archiwizacji? [N/t]: &#34;</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="nb">read</span> usunac
+</span></span><span class="line"><span class="ln">13</span><span class="cl">
+</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="k">case</span> <span class="s2">&#34;</span><span class="nv">$usunac</span><span class="s2">&#34;</span> in
+</span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="s2">&#34;N&#34;</span><span class="p">|</span><span class="s2">&#34;n&#34;</span><span class="o">)</span> <span class="nv">usunac</span><span class="o">=</span><span class="nb">false</span> <span class="p">;;</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">    <span class="s2">&#34;T&#34;</span><span class="p">|</span><span class="s2">&#34;t&#34;</span><span class="o">)</span> <span class="nv">usunac</span><span class="o">=</span><span class="nb">true</span>  <span class="p">;;</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">    *<span class="o">)</span>       <span class="nv">usunac</span><span class="o">=</span><span class="nb">false</span> <span class="p">;;</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="k">esac</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">
+</span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> -gt <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">    <span class="k">case</span> <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span> in
+</span></span><span class="line"><span class="ln">22</span><span class="cl">        <span class="s2">&#34;tar&#34;</span><span class="o">)</span>                  <span class="nv">ext</span><span class="o">=</span>tar <span class="p">;;</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">        <span class="s2">&#34;tgz&#34;</span><span class="p">|</span><span class="s2">&#34;tar.gz&#34;</span><span class="o">)</span>         <span class="nv">ext</span><span class="o">=</span>tgz <span class="p">;;</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">        <span class="s2">&#34;tbz&#34;</span><span class="p">|</span><span class="s2">&#34;tbz2&#34;</span><span class="p">|</span><span class="s2">&#34;tar.bz2&#34;</span><span class="o">)</span> <span class="nv">ext</span><span class="o">=</span>tbz <span class="p">;;</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">        <span class="s2">&#34;txz&#34;</span><span class="p">|</span><span class="s2">&#34;tar.xz&#34;</span><span class="o">)</span>         <span class="nv">ext</span><span class="o">=</span>txz <span class="p">;;</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">    <span class="k">esac</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">    <span class="nv">ext</span><span class="o">=</span>tar
+</span></span><span class="line"><span class="ln">29</span><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">
+</span></span><span class="line"><span class="ln">31</span><span class="cl"><span class="k">for</span> i in *
+</span></span><span class="line"><span class="ln">32</span><span class="cl"><span class="k">do</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">    <span class="k">if</span> <span class="o">[</span> -d <span class="nv">$i</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl">        <span class="nb">echo</span> Archiwizuje <span class="nv">$i</span>
+</span></span><span class="line"><span class="ln">35</span><span class="cl">        tar -cavf <span class="nv">$i</span>.<span class="nv">$ext</span> <span class="nv">$i</span>
+</span></span><span class="line"><span class="ln">36</span><span class="cl">        <span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> <span class="o">=</span> <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln">37</span><span class="cl">            <span class="k">if</span> <span class="o">[</span> <span class="nv">$usunac</span> <span class="o">==</span> <span class="s1">&#39;true&#39;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln">38</span><span class="cl">                <span class="nb">echo</span> <span class="s2">&#34;!!! Usuwam: </span><span class="nv">$i</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="ln">39</span><span class="cl">                rm -rf <span class="s2">&#34;</span><span class="nv">$i</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="ln">40</span><span class="cl">            <span class="k">fi</span>
+</span></span><span class="line"><span class="ln">41</span><span class="cl">        <span class="k">else</span>
+</span></span><span class="line"><span class="ln">42</span><span class="cl">            <span class="nb">echo</span> <span class="s2">&#34;Wystąpił BŁĄD: </span><span class="nv">$?</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="ln">43</span><span class="cl">            <span class="nb">exit</span> <span class="m">1</span>
+</span></span><span class="line"><span class="ln">44</span><span class="cl">        <span class="k">fi</span>
+</span></span><span class="line"><span class="ln">45</span><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="ln">46</span><span class="cl"><span class="k">done</span>
+</span></span></code></pre></div><div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -583,7 +583,7 @@ a następnie usuwa przetworzony katalog.</p>
   </div>
 </footer>
 
-    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" integrity="sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" integrity="sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous"></script>
     
   </body>
 </html>

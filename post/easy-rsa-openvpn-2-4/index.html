@@ -4,7 +4,7 @@
   <head>
 <title>Easy RSA i OpenVPN 2.4 | MOHDUR</title>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.94.2" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta property="og:locale" content="en" />
@@ -32,8 +32,8 @@
     
     
     <link rel="preload" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity = "sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" as="script" integrity=
-    "sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous">
+    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" as="script" integrity=
+    "sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity="sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" crossorigin="anonymous"><link rel="stylesheet" href="https://mohdur.github.io/css/custom.css">
@@ -133,85 +133,85 @@
     <p>Easy RSA 3 jest ciutkę inne od jego poprzednich wersji, powinieneś to przejść
 bez większych problemów.</p>
 <p>Zaczynamy od pobrania ostatniej wersji <a href="https://github.com/OpenVPN/easy-rsa/releases">https://github.com/OpenVPN/easy-rsa/releases</a></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span># cd /etc/openvpn
-<span class="ln">2</span># tar zxvf EASY_RSA.tar.gz
-<span class="ln">3</span># cd Easy_RSA
-</code></pre></div><h2 id="skrypt-tworzący-ca">Skrypt tworzący CA</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl"># cd /etc/openvpn
+</span></span><span class="line"><span class="ln">2</span><span class="cl"># tar zxvf EASY_RSA.tar.gz
+</span></span><span class="line"><span class="ln">3</span><span class="cl"># cd Easy_RSA
+</span></span></code></pre></div><h2 id="skrypt-tworzący-ca">Skrypt tworzący CA</h2>
 <p>Pierwszy skrypt <code>01_init</code> tworzy CA</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="cp">#!/bin/bash
-</span><span class="ln"> 2</span><span class="cp"></span>
-<span class="ln"> 3</span><span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> -ne <span class="m">1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln"> 4</span>    <span class="nb">echo</span> Podaj jako parametr nazwę certyfikatu dla serwera np. nazwę DNS lub adres IP.
-<span class="ln"> 5</span>    <span class="nb">exit</span>
-<span class="ln"> 6</span><span class="k">fi</span>
-<span class="ln"> 7</span>
-<span class="ln"> 8</span><span class="nb">echo</span> Inicjuje PKI
-<span class="ln"> 9</span>./easyrsa init-pki
-<span class="ln">10</span>
-<span class="ln">11</span><span class="nb">echo</span> Generuje CA
-<span class="ln">12</span>./easyrsa build-ca
-<span class="ln">13</span>
-<span class="ln">14</span><span class="nb">echo</span> Generuje request dla serwera <span class="nv">$1</span>
-<span class="ln">15</span>./easyrsa gen-req <span class="nv">$1</span> nopass
-<span class="ln">16</span>
-<span class="ln">17</span><span class="nb">echo</span> Kopiuję plik ./vars
-<span class="ln">18</span><span class="k">if</span> <span class="o">[</span> ! -e ./vars <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln">19</span>    cp ./vars.example ./vars
-<span class="ln">20</span><span class="k">fi</span>
-<span class="ln">21</span>
-<span class="ln">22</span><span class="nb">echo</span> Ustawiam parametry w ./vars
-<span class="ln">23</span><span class="c1"># Ustawia parametry</span>
-<span class="ln">24</span><span class="c1"># set_var EASYRSA_KEY_SIZE        4096</span>
-<span class="ln">25</span><span class="c1"># set_var EASYRSA_CRL_DAYS        3650</span>
-<span class="ln">26</span><span class="c1"># set_var EASYRSA_DIGEST          &#34;sha512&#34;</span>
-<span class="ln">27</span>
-<span class="ln">28</span>sed -e <span class="s2">&#34;/^#\(set_var EASYRSA_KEY_SIZE\)\t2048/s//\1\t4096/&#34;</span> &lt; ./vars &gt; ./vars_0
-<span class="ln">29</span>sed -e <span class="s2">&#34;/^#\(set_var EASYRSA_CRL_DAYS\)\t180/s//\1\t3650/&#34;</span> &lt; ./vars_0 &gt; ./vars_1
-<span class="ln">30</span>sed -e <span class="s2">&#34;/^#\(set_var EASYRSA_DIGEST\)\t\t\&#34;sha256\&#34;/s//\1\t\t\&#34;sha512\&#34;/&#34;</span> &lt; ./vars_1 &gt; ./vars_2
-<span class="ln">31</span>mv ./vars_2 ./vars
-<span class="ln">32</span>rm ./vars_*
-</code></pre></div><h2 id="generujemy-certyfikat-dla-serwera">Generujemy certyfikat dla serwera</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> -ne <span class="m">1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="nb">echo</span> Podaj jako parametr nazwę certyfikatu dla serwera np. nazwę DNS lub adres IP.
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="nb">exit</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="nb">echo</span> Inicjuje PKI
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">./easyrsa init-pki
+</span></span><span class="line"><span class="ln">10</span><span class="cl">
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="nb">echo</span> Generuje CA
+</span></span><span class="line"><span class="ln">12</span><span class="cl">./easyrsa build-ca
+</span></span><span class="line"><span class="ln">13</span><span class="cl">
+</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="nb">echo</span> Generuje request dla serwera <span class="nv">$1</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">./easyrsa gen-req <span class="nv">$1</span> nopass
+</span></span><span class="line"><span class="ln">16</span><span class="cl">
+</span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="nb">echo</span> Kopiuję plik ./vars
+</span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="k">if</span> <span class="o">[</span> ! -e ./vars <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">    cp ./vars.example ./vars
+</span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">
+</span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="nb">echo</span> Ustawiam parametry w ./vars
+</span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="c1"># Ustawia parametry</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl"><span class="c1"># set_var EASYRSA_KEY_SIZE        4096</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl"><span class="c1"># set_var EASYRSA_CRL_DAYS        3650</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl"><span class="c1"># set_var EASYRSA_DIGEST          &#34;sha512&#34;</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">
+</span></span><span class="line"><span class="ln">28</span><span class="cl">sed -e <span class="s2">&#34;/^#\(set_var EASYRSA_KEY_SIZE\)\t2048/s//\1\t4096/&#34;</span> &lt; ./vars &gt; ./vars_0
+</span></span><span class="line"><span class="ln">29</span><span class="cl">sed -e <span class="s2">&#34;/^#\(set_var EASYRSA_CRL_DAYS\)\t180/s//\1\t3650/&#34;</span> &lt; ./vars_0 &gt; ./vars_1
+</span></span><span class="line"><span class="ln">30</span><span class="cl">sed -e <span class="s2">&#34;/^#\(set_var EASYRSA_DIGEST\)\t\t\&#34;sha256\&#34;/s//\1\t\t\&#34;sha512\&#34;/&#34;</span> &lt; ./vars_1 &gt; ./vars_2
+</span></span><span class="line"><span class="ln">31</span><span class="cl">mv ./vars_2 ./vars
+</span></span><span class="line"><span class="ln">32</span><span class="cl">rm ./vars_*
+</span></span></code></pre></div><h2 id="generujemy-certyfikat-dla-serwera">Generujemy certyfikat dla serwera</h2>
 <p>Drugi skrypt <code>02_gen-server</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="cp">#!/bin/bash
-</span><span class="ln">2</span><span class="cp"></span>
-<span class="ln">3</span><span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> -ne <span class="m">1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln">4</span>    <span class="nb">echo</span> Podaj jako parametr nazwę certyfikatu dla serwera np. nazwę DNS lub adres IP.
-<span class="ln">5</span>    <span class="nb">exit</span>
-<span class="ln">6</span><span class="k">fi</span>
-<span class="ln">7</span>
-<span class="ln">8</span>./easyrsa sign-req server <span class="nv">$1</span> nopass
-</code></pre></div><h2 id="generowanie-crl">Generowanie CRL</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> -ne <span class="m">1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="nb">echo</span> Podaj jako parametr nazwę certyfikatu dla serwera np. nazwę DNS lub adres IP.
+</span></span><span class="line"><span class="ln">5</span><span class="cl">    <span class="nb">exit</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl">
+</span></span><span class="line"><span class="ln">8</span><span class="cl">./easyrsa sign-req server <span class="nv">$1</span> nopass
+</span></span></code></pre></div><h2 id="generowanie-crl">Generowanie CRL</h2>
 <p>Skrypt <code>04_gen-crl</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="cp">#!/bin/bash
-</span><span class="ln">2</span><span class="cp"></span>
-<span class="ln">3</span>./easyrsa gen-crl
-</code></pre></div><h2 id="generowanie-dh">Generowanie DH</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">./easyrsa gen-crl
+</span></span></code></pre></div><h2 id="generowanie-dh">Generowanie DH</h2>
 <p>Skrypt <code>05_gen_dh</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="cp">#!/bin/bash
-</span><span class="ln">2</span><span class="cp"></span>
-<span class="ln">3</span>./easyrsa gen-dh
-<span class="ln">4</span><span class="c1"># openssl dhparam -out pki/dh.pem 4096</span>
-</code></pre></div><h2 id="generowanie-ta">Generowanie TA</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">./easyrsa gen-dh
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="c1"># openssl dhparam -out pki/dh.pem 4096</span>
+</span></span></code></pre></div><h2 id="generowanie-ta">Generowanie TA</h2>
 <p>Skrypt <code>06_gen-ta</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="cp">#!/bin/bash
-</span><span class="ln">2</span><span class="cp"></span>
-<span class="ln">3</span>openvpn --genkey --secret pki/ta.key
-</code></pre></div><h2 id="kopiowanie-plików">Kopiowanie plików</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">openvpn --genkey --secret pki/ta.key
+</span></span></code></pre></div><h2 id="kopiowanie-plików">Kopiowanie plików</h2>
 <p>Skrypt <code>07_copy-files</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="cp">#!/bin/bash
-</span><span class="ln"> 2</span><span class="cp"></span><span class="k">if</span> <span class="o">[</span> ! -d /etc/openvpn/ssl <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln"> 3</span>  mkdir /etc/openvpn/ssl
-<span class="ln"> 4</span><span class="k">fi</span>
-<span class="ln"> 5</span>
-<span class="ln"> 6</span>cp pki/ca.crt /etc/openvpn/ssl/
-<span class="ln"> 7</span>cp pki/issued/domena.org.crt /etc/openvpn/ssl/
-<span class="ln"> 8</span>cp pki/private/domena.org.key /etc/openvpn/ssl/
-<span class="ln"> 9</span>cp pki/crl.pem /etc/openvpn/ssl/
-<span class="ln">10</span>cp pki/ta.key /etc/openvpn/ssl/
-<span class="ln">11</span>cp pki/dh.pem /etc/openvpn/ssl/
-</code></pre></div><div id="disqus_thread"></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="cp"></span><span class="k">if</span> <span class="o">[</span> ! -d /etc/openvpn/ssl <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">  mkdir /etc/openvpn/ssl
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">cp pki/ca.crt /etc/openvpn/ssl/
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">cp pki/issued/domena.org.crt /etc/openvpn/ssl/
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">cp pki/private/domena.org.key /etc/openvpn/ssl/
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">cp pki/crl.pem /etc/openvpn/ssl/
+</span></span><span class="line"><span class="ln">10</span><span class="cl">cp pki/ta.key /etc/openvpn/ssl/
+</span></span><span class="line"><span class="ln">11</span><span class="cl">cp pki/dh.pem /etc/openvpn/ssl/
+</span></span></code></pre></div><div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -608,7 +608,7 @@ bez większych problemów.</p>
   </div>
 </footer>
 
-    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" integrity="sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" integrity="sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous"></script>
     
   </body>
 </html>

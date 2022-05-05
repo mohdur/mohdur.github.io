@@ -4,7 +4,7 @@
   <head>
 <title>Vim Różności | MOHDUR</title>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.94.2" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta property="og:locale" content="en" />
@@ -32,8 +32,8 @@
     
     
     <link rel="preload" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity = "sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" as="script" integrity=
-    "sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous">
+    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" as="script" integrity=
+    "sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity="sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" crossorigin="anonymous"><link rel="stylesheet" href="https://mohdur.github.io/css/custom.css">
@@ -127,41 +127,41 @@
 
     
     <h2 id="poruszanie-się-w-trybie-insert">Poruszanie się w trybie INSERT</h2>
-<div class="highlight"><pre class="chroma"><code class="language-vim" data-lang="vim"><span class="ln">1</span><span class="nx">inoremap</span> <span class="p">&lt;</span><span class="nx">C</span><span class="p">-</span><span class="nx">h</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nx">Left</span><span class="p">&gt;</span>   <span class="c">&#34; przemieszcza kursor w lewo</span><span class="err">
-</span><span class="ln">2</span><span class="err"></span><span class="nx">inoremap</span> <span class="p">&lt;</span><span class="nx">C</span><span class="p">-</span><span class="nx">j</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nx">Down</span><span class="p">&gt;</span>   <span class="c">&#34; przemieszcza kursor w dół</span><span class="err">
-</span><span class="ln">3</span><span class="err"></span><span class="nx">inoremap</span> <span class="p">&lt;</span><span class="nx">C</span><span class="p">-</span><span class="nx">k</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nx">Up</span><span class="p">&gt;</span>     <span class="c">&#34; przemieszcza kursor w górę</span><span class="err">
-</span><span class="ln">4</span><span class="err"></span><span class="nx">inoremap</span> <span class="p">&lt;</span><span class="nx">C</span><span class="p">-</span><span class="nx">l</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nx">Right</span><span class="p">&gt;</span>  <span class="c">&#34; przemieszcza kursor w prawo</span><span class="err">
-</span></code></pre></div><h2 id="poruszanie-się-w-trybie-command">Poruszanie się w trybie COMMAND</h2>
-<div class="highlight"><pre class="chroma"><code class="language-vim" data-lang="vim"><span class="ln">1</span><span class="nx">cnoremap</span> <span class="p">&lt;</span><span class="nx">C</span><span class="p">-</span><span class="nx">h</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nx">Left</span><span class="p">&gt;</span>   <span class="c">&#34; przemieszcza kursor w lewo</span><span class="err">
-</span><span class="ln">2</span><span class="err"></span><span class="nx">cnoremap</span> <span class="p">&lt;</span><span class="nx">C</span><span class="p">-</span><span class="nx">j</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nx">Down</span><span class="p">&gt;</span>   <span class="c">&#34; przemieszcza kursor w dół</span><span class="err">
-</span><span class="ln">3</span><span class="err"></span><span class="nx">cnoremap</span> <span class="p">&lt;</span><span class="nx">C</span><span class="p">-</span><span class="nx">k</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nx">Up</span><span class="p">&gt;</span>     <span class="c">&#34; przemieszcza kursor w górę</span><span class="err">
-</span><span class="ln">4</span><span class="err"></span><span class="nx">cnoremap</span> <span class="p">&lt;</span><span class="nx">C</span><span class="p">-</span><span class="nx">l</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nx">Right</span><span class="p">&gt;</span>  <span class="c">&#34; przemieszcza kursor w prawo</span><span class="err">
-</span></code></pre></div><h2 id="zapisanie-pliku-z-użyciem-sudo">Zapisanie pliku z użyciem sudo</h2>
-<div class="highlight"><pre class="chroma"><code class="language-vim" data-lang="vim"><span class="ln">1</span><span class="nx">cnoremap</span> <span class="nx">sudow</span> <span class="nx">w</span> <span class="p">!</span><span class="nx">sudo</span> <span class="nx">tee</span> % <span class="p">&gt;</span><span class="sr">/dev/</span><span class="nx">null</span><span class="err">
-</span></code></pre></div><p>Teraz w trybie komand można użyć polecenia <code>sudow</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-vim" data-lang="vim"><span class="ln">1</span><span class="p">:</span><span class="nx">sudow</span><span class="err">
-</span></code></pre></div><h2 id="przeładowanie-pliku-konfiguracyjnego-vimvimrc">Przeładowanie pliku konfiguracyjnego <code>~/.vim/vimrc</code></h2>
-<div class="highlight"><pre class="chroma"><code class="language-vim" data-lang="vim"><span class="ln">1</span><span class="nx">map</span> <span class="p">&lt;</span><span class="nx">leader</span><span class="p">&gt;</span><span class="nx">r</span> :<span class="nx">so</span> <span class="p">~</span><span class="sr">/.vim/</span><span class="nx">vimrc</span><span class="p">&lt;</span><span class="nx">cr</span><span class="p">&gt;</span><span class="err">
-</span></code></pre></div><h2 id="utworzenie-katalogu-jeśli-go-nie-ma">Utworzenie katalogu jeśli go nie ma</h2>
-<div class="highlight"><pre class="chroma"><code class="language-vim" data-lang="vim"><span class="ln">1</span><span class="k">if</span> <span class="p">!</span><span class="nx">isdirectory</span><span class="p">(</span><span class="s1">&#39;~/.vim/viminfo&#39;</span><span class="p">)</span><span class="err">
-</span><span class="ln">2</span><span class="err"></span>    <span class="nx">call</span> <span class="nx">mkdir</span><span class="p">(</span>$<span class="nx">HOME</span> . <span class="s1">&#39;/.vim/viminfo&#39;</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">)</span><span class="err">
-</span><span class="ln">3</span><span class="err"></span><span class="k">endif</span><span class="err">
-</span></code></pre></div><h2 id="łatwiejsze-poruszanie-się-po-zawijanych-liniach">Łatwiejsze poruszanie się po zawijanych liniach</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="ln">1</span><span class="cl"><span class="nx">inoremap</span> <span class="p">&lt;</span><span class="nx">C</span><span class="p">-</span><span class="nx">h</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nx">Left</span><span class="p">&gt;</span>   <span class="c">&#34; przemieszcza kursor w lewo</span><span class="err">
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="err"></span><span class="nx">inoremap</span> <span class="p">&lt;</span><span class="nx">C</span><span class="p">-</span><span class="nx">j</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nx">Down</span><span class="p">&gt;</span>   <span class="c">&#34; przemieszcza kursor w dół</span><span class="err">
+</span></span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="err"></span><span class="nx">inoremap</span> <span class="p">&lt;</span><span class="nx">C</span><span class="p">-</span><span class="nx">k</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nx">Up</span><span class="p">&gt;</span>     <span class="c">&#34; przemieszcza kursor w górę</span><span class="err">
+</span></span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="err"></span><span class="nx">inoremap</span> <span class="p">&lt;</span><span class="nx">C</span><span class="p">-</span><span class="nx">l</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nx">Right</span><span class="p">&gt;</span>  <span class="c">&#34; przemieszcza kursor w prawo</span><span class="err">
+</span></span></span></code></pre></div><h2 id="poruszanie-się-w-trybie-command">Poruszanie się w trybie COMMAND</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="ln">1</span><span class="cl"><span class="nx">cnoremap</span> <span class="p">&lt;</span><span class="nx">C</span><span class="p">-</span><span class="nx">h</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nx">Left</span><span class="p">&gt;</span>   <span class="c">&#34; przemieszcza kursor w lewo</span><span class="err">
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="err"></span><span class="nx">cnoremap</span> <span class="p">&lt;</span><span class="nx">C</span><span class="p">-</span><span class="nx">j</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nx">Down</span><span class="p">&gt;</span>   <span class="c">&#34; przemieszcza kursor w dół</span><span class="err">
+</span></span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="err"></span><span class="nx">cnoremap</span> <span class="p">&lt;</span><span class="nx">C</span><span class="p">-</span><span class="nx">k</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nx">Up</span><span class="p">&gt;</span>     <span class="c">&#34; przemieszcza kursor w górę</span><span class="err">
+</span></span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="err"></span><span class="nx">cnoremap</span> <span class="p">&lt;</span><span class="nx">C</span><span class="p">-</span><span class="nx">l</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nx">Right</span><span class="p">&gt;</span>  <span class="c">&#34; przemieszcza kursor w prawo</span><span class="err">
+</span></span></span></code></pre></div><h2 id="zapisanie-pliku-z-użyciem-sudo">Zapisanie pliku z użyciem sudo</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="ln">1</span><span class="cl"><span class="nx">cnoremap</span> <span class="nx">sudow</span> <span class="nx">w</span> <span class="p">!</span><span class="nx">sudo</span> <span class="nx">tee</span> % <span class="p">&gt;</span><span class="sr">/dev/</span><span class="nx">null</span><span class="err">
+</span></span></span></code></pre></div><p>Teraz w trybie komand można użyć polecenia <code>sudow</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="ln">1</span><span class="cl"><span class="p">:</span><span class="nx">sudow</span><span class="err">
+</span></span></span></code></pre></div><h2 id="przeładowanie-pliku-konfiguracyjnego-vimvimrc">Przeładowanie pliku konfiguracyjnego <code>~/.vim/vimrc</code></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="ln">1</span><span class="cl"><span class="nx">map</span> <span class="p">&lt;</span><span class="nx">leader</span><span class="p">&gt;</span><span class="nx">r</span> :<span class="nx">so</span> <span class="p">~</span><span class="sr">/.vim/</span><span class="nx">vimrc</span><span class="p">&lt;</span><span class="nx">cr</span><span class="p">&gt;</span><span class="err">
+</span></span></span></code></pre></div><h2 id="utworzenie-katalogu-jeśli-go-nie-ma">Utworzenie katalogu jeśli go nie ma</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">if</span> <span class="p">!</span><span class="nx">isdirectory</span><span class="p">(</span><span class="s1">&#39;~/.vim/viminfo&#39;</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="err"></span>    <span class="nx">call</span> <span class="nx">mkdir</span><span class="p">(</span>$<span class="nx">HOME</span> . <span class="s1">&#39;/.vim/viminfo&#39;</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="err"></span><span class="k">endif</span><span class="err">
+</span></span></span></code></pre></div><h2 id="łatwiejsze-poruszanie-się-po-zawijanych-liniach">Łatwiejsze poruszanie się po zawijanych liniach</h2>
 <p>Zawijanie długich linii, rozkłada jedną linię na kilka linii, nieoddiezlonych znakiem końca linii, żeby poruszać się pomiędzy nimi można użyć klawiszy <code>gj</code> i <code>gk</code>, stąd zmapowanie tych skrótów do <code>j</code> i <code>k</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-vim" data-lang="vim"><span class="ln">1</span><span class="nx">nnore</span> <span class="nx">j</span> <span class="nx">gj</span><span class="err">
-</span><span class="ln">2</span><span class="err"></span><span class="nx">nnore</span> <span class="nx">k</span> <span class="nx">gk</span><span class="err">
-</span></code></pre></div><h2 id="usunięcie-tabów-z-pliku">Usunięcie Tabów z pliku</h2>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>:set expandtab
-<span class="ln">2</span>:retab
-</code></pre></div><h2 id="łatwiejszy-dostęp-do-trybu-komend">Łatwiejszy dostęp do trybu komend</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="ln">1</span><span class="cl"><span class="nx">nnore</span> <span class="nx">j</span> <span class="nx">gj</span><span class="err">
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="err"></span><span class="nx">nnore</span> <span class="nx">k</span> <span class="nx">gk</span><span class="err">
+</span></span></span></code></pre></div><h2 id="usunięcie-tabów-z-pliku">Usunięcie Tabów z pliku</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">:set expandtab
+</span></span><span class="line"><span class="ln">2</span><span class="cl">:retab
+</span></span></code></pre></div><h2 id="łatwiejszy-dostęp-do-trybu-komend">Łatwiejszy dostęp do trybu komend</h2>
 <p>Standardowo do trybu komend można dostać się za pomocą <code>:</code> czyli <code>&lt;Shift-;&gt;</code>
 ten <code>Shift</code> jest dodatkowym klawiszem, którego chcemy się pozbyć, dlatego
 zamiast <code>&lt;Shift-;&gt;</code> użyję <code>;</code>, tutaj pojawia się mała komplikacja, gdyż znak
 <code>;</code> jest używany do powtórzenia wyszukiwania w linii, za pomocą komend <code>f</code>,
 <code>t</code>, <code>F</code> i <code>T</code>, do tego zadania zmapuję kombinację klawiszy <code>f;</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>map ; :
-<span class="ln">2</span>noremap f; ;
-</code></pre></div><h2 id="less-vim">less vim</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">map ; :
+</span></span><span class="line"><span class="ln">2</span><span class="cl">noremap f; ;
+</span></span></code></pre></div><h2 id="less-vim">less vim</h2>
 <p>Polecenie <code>less</code> służy do przeglądania zawartości pliku, czyli możemy się
 poruszać po jego treści, co jeśli zdecydujemy się na edycję takiego pliku?
 Normalnie powinniśmy zakończyć pracę z programem <code>less</code> i uruchomić edycję
@@ -171,26 +171,26 @@ standardowego edytora. To oznacza, że nie musi to być edytor <code>Vim</code> 
 na przykład edytor <code>nvi</code>. Standardowy edytor jest ustawiany w zmiennej
 <code>EDITOR</code>. W BASH ustawiamy w pliku <code>~/.bashrc</code> natomiast w powłoces ZSH
 zmienną należy ustawić w pliku <code>~/.zshrc</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>export EDITOR=vim
-</code></pre></div><p>żeby sprawdzić jaki edytor jest ustawiony jako domyślny można wyświetlić
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">export EDITOR=vim
+</span></span></code></pre></div><p>żeby sprawdzić jaki edytor jest ustawiony jako domyślny można wyświetlić
 wartość zmiennej <code>EDITOR</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>echo $EDITOR
-</code></pre></div><p>Zawsze warto sprawdzić czy dany program istnieje zanim go użyjemy.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>[ -f /usr/bin/vim ] &amp;&amp; export EDITOR=/usr/bin/vim
-</code></pre></div><h2 id="kopiowanie-polecenia-z-bufora">Kopiowanie polecenia z bufora</h2>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>&#34; &lt;leader&gt;v - kopiuje bieżącą linię i wykonuje w linii komend
-<span class="ln">2</span>nnoremap &lt;leader&gt;v yy:@&#34;&lt;cr&gt;
-<span class="ln">3</span>
-<span class="ln">4</span>&#34; &lt;leader&gt;e - kopiuje bieżącą linię i uruchamia polecenie systemowe,
-<span class="ln">5</span>&#34; następnie wynik wkleja do bufora
-<span class="ln">6</span>nnoremap &lt;leader&gt;e !!$SHELL&lt;cr&gt;
-</code></pre></div><h2 id="skopiowanie-zawartości-linii-komend">Skopiowanie zawartości linii komend</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">echo $EDITOR
+</span></span></code></pre></div><p>Zawsze warto sprawdzić czy dany program istnieje zanim go użyjemy.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">[ -f /usr/bin/vim ] &amp;&amp; export EDITOR=/usr/bin/vim
+</span></span></code></pre></div><h2 id="kopiowanie-polecenia-z-bufora">Kopiowanie polecenia z bufora</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">&#34; &lt;leader&gt;v - kopiuje bieżącą linię i wykonuje w linii komend
+</span></span><span class="line"><span class="ln">2</span><span class="cl">nnoremap &lt;leader&gt;v yy:@&#34;&lt;cr&gt;
+</span></span><span class="line"><span class="ln">3</span><span class="cl">
+</span></span><span class="line"><span class="ln">4</span><span class="cl">&#34; &lt;leader&gt;e - kopiuje bieżącą linię i uruchamia polecenie systemowe,
+</span></span><span class="line"><span class="ln">5</span><span class="cl">&#34; następnie wynik wkleja do bufora
+</span></span><span class="line"><span class="ln">6</span><span class="cl">nnoremap &lt;leader&gt;e !!$SHELL&lt;cr&gt;
+</span></span></code></pre></div><h2 id="skopiowanie-zawartości-linii-komend">Skopiowanie zawartości linii komend</h2>
 <p>Po wejściu w tryb komend <code>:</code>, naciskamy <code>&lt;Ctrl-f&gt;</code> i pokazuje się historia
 wykonanych komend wraz z bieżącą komendą, tutaj możemy użyć <code>yy</code>, żeby
 skopiować komendę. Do wyjścia z historii służy komenda <code>:q</code>.</p>
 <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -587,7 +587,7 @@ skopiować komendę. Do wyjścia z historii służy komenda <code>:q</code>.</p>
   </div>
 </footer>
 
-    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" integrity="sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" integrity="sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous"></script>
     
   </body>
 </html>

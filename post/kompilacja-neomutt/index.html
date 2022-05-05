@@ -4,7 +4,7 @@
   <head>
 <title>Kompilacja Neomutt | MOHDUR</title>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.94.2" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta property="og:locale" content="en" />
@@ -32,8 +32,8 @@
     
     
     <link rel="preload" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity = "sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" as="script" integrity=
-    "sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous">
+    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" as="script" integrity=
+    "sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity="sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" crossorigin="anonymous"><link rel="stylesheet" href="https://mohdur.github.io/css/custom.css">
@@ -148,78 +148,78 @@
 <li>sqlite-devel</li>
 </ul>
 <h2 id="instalacja-pakietów">Instalacja pakietów</h2>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sudo dnf install docbook-utils docbook-style-xsl gpgme-devel cyrus-sasl-devel \
-<span class="ln">2</span>  notmuch-devel gnutls-devel libidn-devel libdb-devel compat-gdbm-devel \
-<span class="ln">3</span>  lmdb-devel kyotocabinet-devel qdbm-devel krb5-devel lua-devel sqlite-devel \
-<span class="ln">4</span>  ncurses-devel
-</code></pre></div><h2 id="pobranie-źródeł">Pobranie źródeł</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="cp">#!/usr/bin/env bash
-</span><span class="ln"> 2</span><span class="cp"></span>
-<span class="ln"> 3</span><span class="nv">URL</span><span class="o">=</span>https://api.github.com/repos/neomutt/neomutt/releases/latest
-<span class="ln"> 4</span><span class="nv">NAME</span><span class="o">=</span>neomutt
-<span class="ln"> 5</span>
-<span class="ln"> 6</span>mkdir <span class="nv">$NAME</span>
-<span class="ln"> 7</span>curl -s <span class="nv">$URL</span> <span class="se">\
-</span><span class="ln"> 8</span><span class="se"></span>  <span class="p">|</span> grep tarball_url <span class="se">\
-</span><span class="ln"> 9</span><span class="se"></span>  <span class="p">|</span> cut -d <span class="s1">&#39;&#34;&#39;</span> -f <span class="m">4</span> <span class="se">\
-</span><span class="ln">10</span><span class="se"></span>  <span class="p">|</span> wget -O <span class="nv">$NAME</span>.tgz -qi -
-<span class="ln">11</span>
-<span class="ln">12</span>tar zxvf <span class="nv">$NAME</span>.tgz -C <span class="nv">$NAME</span> --strip-components<span class="o">=</span><span class="m">1</span>
-<span class="ln">13</span>rm <span class="nv">$NAME</span>.tgz
-</code></pre></div><h2 id="kompilacja">Kompilacja</h2>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>./configure --enable-ssl --enable-gpgme --notmuch \
-<span class="ln">2</span>  --gnutls --enable-gss --sasl --bdb --gdbm \
-<span class="ln">3</span>  --kyotocabinet --lmdb --qdbm --sqlite --autocrypt \
-<span class="ln">4</span>  --lua --homespool
-<span class="ln">5</span>
-<span class="ln">6</span>make clean
-<span class="ln">7</span>make
-<span class="ln">8</span>
-<span class="ln">9</span>sudo make install
-</code></pre></div><h2 id="neomutt-version">Neomutt version</h2>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>neomutt -v
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span>NeoMutt 20200925
-<span class="ln"> 2</span>Copyright (C) 1996-2020 Michael R. Elkins and others.
-<span class="ln"> 3</span>NeoMutt comes with ABSOLUTELY NO WARRANTY; for details type &#39;neomutt -vv&#39;.
-<span class="ln"> 4</span>NeoMutt is free software, and you are welcome to redistribute it
-<span class="ln"> 5</span>under certain conditions; type &#39;neomutt -vv&#39; for details.
-<span class="ln"> 6</span>
-<span class="ln"> 7</span>System: Linux 5.9.8-200.fc33.x86_64 (x86_64)
-<span class="ln"> 8</span>ncurses: ncurses 6.2.20200222 (compiled with 6.1.20191109)
-<span class="ln"> 9</span>libidn: 1.36 (compiled with 1.35)
-<span class="ln">10</span>GPGME: 1.14.0
-<span class="ln">11</span>GnuTLS: 3.6.15
-<span class="ln">12</span>libnotmuch: 5.2.0
-<span class="ln">13</span>storage: kyotocabinet, qdbm, gdbm, bdb, lmdb
-<span class="ln">14</span>
-<span class="ln">15</span>Configure options: --enable-ssl --enable-gpgme --notmuch --gnutls --enable-gss --sasl --bdb --gdbm --kyotocabinet --lmdb --qdbm --sqlite --autocrypt --lua --homespool
-<span class="ln">16</span>
-<span class="ln">17</span>Compilation CFLAGS: -g -O2 -std=c99 -fno-delete-null-pointer-checks -D_ALL_SOURCE=1 -D_GNU_SOURCE=1 -D__EXTENSIONS__ -I/usr/include -DNCURSES_WIDECHAR -I/include -I/usr/include/ -I/usr/include/qdbm/
-<span class="ln">18</span>
-<span class="ln">19</span>Default options:
-<span class="ln">20</span>  +attach_headers_color +compose_to_sender +compress +cond_date +debug 
-<span class="ln">21</span>  +encrypt_to_self +forgotten_attachments +forwref +ifdef +imap +index_color 
-<span class="ln">22</span>  +initials +limit_current_thread +multiple_fcc +nested_if +new_mail +nntp +pop 
-<span class="ln">23</span>  +progress +quasi_delete +regcomp +reply_with_xorig +sensible_browser +sidebar 
-<span class="ln">24</span>  +skip_quoted +smtp +status_color +timeout +tls_sni +trash 
-<span class="ln">25</span>
-<span class="ln">26</span>Compile options:
-<span class="ln">27</span>  +autocrypt +bkgdset +color +curs_set +fcntl -flock -fmemopen +futimens 
-<span class="ln">28</span>  +getaddrinfo +gnutls +gpgme +gss +hcache +homespool +idn +inotify 
-<span class="ln">29</span>  -locales_hack +lua +meta -mixmaster +nls +notmuch -openssl +pgp +regex +sasl 
-<span class="ln">30</span>  +smime +sqlite +start_color +sun_attachment +typeahead 
-<span class="ln">31</span>MAILPATH=&#34;mailbox&#34;
-<span class="ln">32</span>PKGDATADIR=&#34;/usr/share/neomutt&#34;
-<span class="ln">33</span>SENDMAIL=&#34;/usr/sbin/sendmail&#34;
-<span class="ln">34</span>SYSCONFDIR=&#34;/etc&#34;
-<span class="ln">35</span>
-<span class="ln">36</span>To learn more about NeoMutt, visit: https://neomutt.org
-<span class="ln">37</span>If you find a bug in NeoMutt, please raise an issue at:
-<span class="ln">38</span>    https://github.com/neomutt/neomutt/issues
-<span class="ln">39</span>or send an email to: &lt;neomutt-devel@neomutt.org&gt;
-</code></pre></div><div id="disqus_thread"></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sudo dnf install docbook-utils docbook-style-xsl gpgme-devel cyrus-sasl-devel \
+</span></span><span class="line"><span class="ln">2</span><span class="cl">  notmuch-devel gnutls-devel libidn-devel libdb-devel compat-gdbm-devel \
+</span></span><span class="line"><span class="ln">3</span><span class="cl">  lmdb-devel kyotocabinet-devel qdbm-devel krb5-devel lua-devel sqlite-devel \
+</span></span><span class="line"><span class="ln">4</span><span class="cl">  ncurses-devel
+</span></span></code></pre></div><h2 id="pobranie-źródeł">Pobranie źródeł</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">#!/usr/bin/env bash
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="nv">URL</span><span class="o">=</span>https://api.github.com/repos/neomutt/neomutt/releases/latest
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="nv">NAME</span><span class="o">=</span>neomutt
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">mkdir <span class="nv">$NAME</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">curl -s <span class="nv">$URL</span> <span class="se">\
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="se"></span>  <span class="p">|</span> grep tarball_url <span class="se">\
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="se"></span>  <span class="p">|</span> cut -d <span class="s1">&#39;&#34;&#39;</span> -f <span class="m">4</span> <span class="se">\
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="se"></span>  <span class="p">|</span> wget -O <span class="nv">$NAME</span>.tgz -qi -
+</span></span><span class="line"><span class="ln">11</span><span class="cl">
+</span></span><span class="line"><span class="ln">12</span><span class="cl">tar zxvf <span class="nv">$NAME</span>.tgz -C <span class="nv">$NAME</span> --strip-components<span class="o">=</span><span class="m">1</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">rm <span class="nv">$NAME</span>.tgz
+</span></span></code></pre></div><h2 id="kompilacja">Kompilacja</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">./configure --enable-ssl --enable-gpgme --notmuch \
+</span></span><span class="line"><span class="ln">2</span><span class="cl">  --gnutls --enable-gss --sasl --bdb --gdbm \
+</span></span><span class="line"><span class="ln">3</span><span class="cl">  --kyotocabinet --lmdb --qdbm --sqlite --autocrypt \
+</span></span><span class="line"><span class="ln">4</span><span class="cl">  --lua --homespool
+</span></span><span class="line"><span class="ln">5</span><span class="cl">
+</span></span><span class="line"><span class="ln">6</span><span class="cl">make clean
+</span></span><span class="line"><span class="ln">7</span><span class="cl">make
+</span></span><span class="line"><span class="ln">8</span><span class="cl">
+</span></span><span class="line"><span class="ln">9</span><span class="cl">sudo make install
+</span></span></code></pre></div><h2 id="neomutt-version">Neomutt version</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">neomutt -v
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln"> 1</span><span class="cl">NeoMutt 20200925
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">Copyright (C) 1996-2020 Michael R. Elkins and others.
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">NeoMutt comes with ABSOLUTELY NO WARRANTY; for details type &#39;neomutt -vv&#39;.
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">NeoMutt is free software, and you are welcome to redistribute it
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">under certain conditions; type &#39;neomutt -vv&#39; for details.
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">System: Linux 5.9.8-200.fc33.x86_64 (x86_64)
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">ncurses: ncurses 6.2.20200222 (compiled with 6.1.20191109)
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">libidn: 1.36 (compiled with 1.35)
+</span></span><span class="line"><span class="ln">10</span><span class="cl">GPGME: 1.14.0
+</span></span><span class="line"><span class="ln">11</span><span class="cl">GnuTLS: 3.6.15
+</span></span><span class="line"><span class="ln">12</span><span class="cl">libnotmuch: 5.2.0
+</span></span><span class="line"><span class="ln">13</span><span class="cl">storage: kyotocabinet, qdbm, gdbm, bdb, lmdb
+</span></span><span class="line"><span class="ln">14</span><span class="cl">
+</span></span><span class="line"><span class="ln">15</span><span class="cl">Configure options: --enable-ssl --enable-gpgme --notmuch --gnutls --enable-gss --sasl --bdb --gdbm --kyotocabinet --lmdb --qdbm --sqlite --autocrypt --lua --homespool
+</span></span><span class="line"><span class="ln">16</span><span class="cl">
+</span></span><span class="line"><span class="ln">17</span><span class="cl">Compilation CFLAGS: -g -O2 -std=c99 -fno-delete-null-pointer-checks -D_ALL_SOURCE=1 -D_GNU_SOURCE=1 -D__EXTENSIONS__ -I/usr/include -DNCURSES_WIDECHAR -I/include -I/usr/include/ -I/usr/include/qdbm/
+</span></span><span class="line"><span class="ln">18</span><span class="cl">
+</span></span><span class="line"><span class="ln">19</span><span class="cl">Default options:
+</span></span><span class="line"><span class="ln">20</span><span class="cl">  +attach_headers_color +compose_to_sender +compress +cond_date +debug 
+</span></span><span class="line"><span class="ln">21</span><span class="cl">  +encrypt_to_self +forgotten_attachments +forwref +ifdef +imap +index_color 
+</span></span><span class="line"><span class="ln">22</span><span class="cl">  +initials +limit_current_thread +multiple_fcc +nested_if +new_mail +nntp +pop 
+</span></span><span class="line"><span class="ln">23</span><span class="cl">  +progress +quasi_delete +regcomp +reply_with_xorig +sensible_browser +sidebar 
+</span></span><span class="line"><span class="ln">24</span><span class="cl">  +skip_quoted +smtp +status_color +timeout +tls_sni +trash 
+</span></span><span class="line"><span class="ln">25</span><span class="cl">
+</span></span><span class="line"><span class="ln">26</span><span class="cl">Compile options:
+</span></span><span class="line"><span class="ln">27</span><span class="cl">  +autocrypt +bkgdset +color +curs_set +fcntl -flock -fmemopen +futimens 
+</span></span><span class="line"><span class="ln">28</span><span class="cl">  +getaddrinfo +gnutls +gpgme +gss +hcache +homespool +idn +inotify 
+</span></span><span class="line"><span class="ln">29</span><span class="cl">  -locales_hack +lua +meta -mixmaster +nls +notmuch -openssl +pgp +regex +sasl 
+</span></span><span class="line"><span class="ln">30</span><span class="cl">  +smime +sqlite +start_color +sun_attachment +typeahead 
+</span></span><span class="line"><span class="ln">31</span><span class="cl">MAILPATH=&#34;mailbox&#34;
+</span></span><span class="line"><span class="ln">32</span><span class="cl">PKGDATADIR=&#34;/usr/share/neomutt&#34;
+</span></span><span class="line"><span class="ln">33</span><span class="cl">SENDMAIL=&#34;/usr/sbin/sendmail&#34;
+</span></span><span class="line"><span class="ln">34</span><span class="cl">SYSCONFDIR=&#34;/etc&#34;
+</span></span><span class="line"><span class="ln">35</span><span class="cl">
+</span></span><span class="line"><span class="ln">36</span><span class="cl">To learn more about NeoMutt, visit: https://neomutt.org
+</span></span><span class="line"><span class="ln">37</span><span class="cl">If you find a bug in NeoMutt, please raise an issue at:
+</span></span><span class="line"><span class="ln">38</span><span class="cl">    https://github.com/neomutt/neomutt/issues
+</span></span><span class="line"><span class="ln">39</span><span class="cl">or send an email to: &lt;neomutt-devel@neomutt.org&gt;
+</span></span></code></pre></div><div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -616,7 +616,7 @@
   </div>
 </footer>
 
-    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" integrity="sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" integrity="sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous"></script>
     
   </body>
 </html>

@@ -4,7 +4,7 @@
   <head>
 <title>Kopia zapasowa Minio &#43; Restic | MOHDUR</title>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.94.2" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta property="og:locale" content="en" />
@@ -32,8 +32,8 @@
     
     
     <link rel="preload" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity = "sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" as="script" integrity=
-    "sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous">
+    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" as="script" integrity=
+    "sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity="sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" crossorigin="anonymous"><link rel="stylesheet" href="https://mohdur.github.io/css/custom.css">
@@ -130,31 +130,31 @@
   </div>
 
     
-    <p>Kopie zapasową możemy przechowywać na serwerze MinIO <a href="https://min.io/,">https://min.io/,</a> jest to
+    <p>Kopie zapasową możemy przechowywać na serwerze MinIO <a href="https://min.io/">https://min.io/</a>, jest to
 serwer służący do przechowywania danych kompatybilny z Amazon S3.</p>
 <p>Serwer można uruchomić z pliku binarnego na lokalnymsystemie lub w dockerze.</p>
 <h1 id="uruchomienie-serwera">Uruchomienie serwera</h1>
 <p>Po pobraniu pliku <code>minio</code> tworzymy katalog gdzie będą przechowywane dane:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>mkdir data
-</code></pre></div><p>Uruchomieni serwera</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span>minio server data
-<span class="ln"> 2</span>Endpoint:  http://192.168.122.1:9000  http://127.0.0.1:9000
-<span class="ln"> 3</span>AccessKey: HWSZL5OL9X37S0DSC3EW
-<span class="ln"> 4</span>SecretKey: d5ByBS50pffe90s9bKqWxxse4jBmEp9Zp5sv0c4c
-<span class="ln"> 5</span>
-<span class="ln"> 6</span>Browser Access:
-<span class="ln"> 7</span>   http://192.168.122.1:9000  http://127.0.0.1:9000
-<span class="ln"> 8</span>
-<span class="ln"> 9</span>Command-line Access: https://docs.min.io/docs/minio-client-quickstart-guide
-<span class="ln">10</span>   $ mc config host add myminio http://192.168.122.1:9000 HWSZL5OL9X37S0DSC3EW d5ByBS50pffe90s9bKqWxxse4jBmEp9Zp5sv0c4c
-<span class="ln">11</span>
-<span class="ln">12</span>Object API (Amazon S3 compatible):
-<span class="ln">13</span>   Go:         https://docs.min.io/docs/golang-client-quickstart-guide
-<span class="ln">14</span>   Java:       https://docs.min.io/docs/java-client-quickstart-guide
-<span class="ln">15</span>   Python:     https://docs.min.io/docs/python-client-quickstart-guide
-<span class="ln">16</span>   JavaScript: https://docs.min.io/docs/javascript-client-quickstart-guide
-<span class="ln">17</span>   .NET:       https://docs.min.io/docs/dotnet-client-quickstart-guide
-</code></pre></div><p>W tym listingu interesują nas cztery wartości:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">mkdir data
+</span></span></code></pre></div><p>Uruchomieni serwera</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln"> 1</span><span class="cl">minio server data
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">Endpoint:  http://192.168.122.1:9000  http://127.0.0.1:9000
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">AccessKey: HWSZL5OL9X37S0DSC3EW
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">SecretKey: d5ByBS50pffe90s9bKqWxxse4jBmEp9Zp5sv0c4c
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">Browser Access:
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">   http://192.168.122.1:9000  http://127.0.0.1:9000
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">Command-line Access: https://docs.min.io/docs/minio-client-quickstart-guide
+</span></span><span class="line"><span class="ln">10</span><span class="cl">   $ mc config host add myminio http://192.168.122.1:9000 HWSZL5OL9X37S0DSC3EW d5ByBS50pffe90s9bKqWxxse4jBmEp9Zp5sv0c4c
+</span></span><span class="line"><span class="ln">11</span><span class="cl">
+</span></span><span class="line"><span class="ln">12</span><span class="cl">Object API (Amazon S3 compatible):
+</span></span><span class="line"><span class="ln">13</span><span class="cl">   Go:         https://docs.min.io/docs/golang-client-quickstart-guide
+</span></span><span class="line"><span class="ln">14</span><span class="cl">   Java:       https://docs.min.io/docs/java-client-quickstart-guide
+</span></span><span class="line"><span class="ln">15</span><span class="cl">   Python:     https://docs.min.io/docs/python-client-quickstart-guide
+</span></span><span class="line"><span class="ln">16</span><span class="cl">   JavaScript: https://docs.min.io/docs/javascript-client-quickstart-guide
+</span></span><span class="line"><span class="ln">17</span><span class="cl">   .NET:       https://docs.min.io/docs/dotnet-client-quickstart-guide
+</span></span></code></pre></div><p>W tym listingu interesują nas cztery wartości:</p>
 <ul>
 <li>AcessKey</li>
 <li>SecretKey</li>
@@ -164,113 +164,113 @@ serwer służący do przechowywania danych kompatybilny z Amazon S3.</p>
 <p>Korzystając z klienta utworzymy bukiet, na powyszym listingu możemy znaleźć
 polecenie <code>$ mc config ...</code> to polecenie doda serwer pod nazwą <code>myminio</code>
 oczywiście możemy zmienić nazwę.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>./mc config host add myminio http://192.168.122.1:9000 HWSZL5OL9X37S0DSC3EW d5ByBS50pffe90s9bKqWxxse4jBmEp9Zp5sv0c4c
-</code></pre></div><p>Dodanie bukietu</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>./mc mb myminio/nazwabukietu
-</code></pre></div><h1 id="skrypt-do-obsługi-kopii-zapasowych-wykonywanych-przez-restic">Skrypt do obsługi kopii zapasowych wykonywanych przez Restic</h1>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">  1</span><span class="cp">#!/bin/bash
-</span><span class="ln">  2</span><span class="cp"></span>
-<span class="ln">  3</span><span class="c1"># Dostęp do serwera MinIO.</span>
-<span class="ln">  4</span><span class="nb">export</span> <span class="nv">AWS_ACCESS_KEY_ID</span><span class="o">=</span>HWSZL5OL9X37S0DSC3EW
-<span class="ln">  5</span><span class="nb">export</span> <span class="nv">AWS_SECRET_ACCESS_KEY</span><span class="o">=</span>d5ByBS50pffe90s9bKqWxxse4jBmEp9Zp5sv0c4c
-<span class="ln">  6</span>
-<span class="ln">  7</span><span class="c1"># Dostęp do serwera MinIO + integracja z programem pass</span>
-<span class="ln">  8</span><span class="c1"># export AWS_ACCESS_KEY_ID=$(pass show restic/x230/key)</span>
-<span class="ln">  9</span><span class="c1"># export AWS_SECRET_ACCESS_KEY=$(pass show restic/x230/access)</span>
-<span class="ln"> 10</span>
-<span class="ln"> 11</span><span class="c1"># Integracja restic i pass dostęp do haseł.</span>
-<span class="ln"> 12</span><span class="nb">export</span> <span class="nv">RESTIC_PASSWORD_COMMAND</span><span class="o">=</span><span class="s1">&#39;pass show restic/x230&#39;</span>
-<span class="ln"> 13</span>
-<span class="ln"> 14</span><span class="c1"># Adres repozytorium.</span>
-<span class="ln"> 15</span><span class="nv">REPO</span><span class="o">=</span><span class="s2">&#34;s3:http://192.168.122.1:9000/backup-x230&#34;</span>
-<span class="ln"> 16</span><span class="nv">RESTORE_DIR</span><span class="o">=</span><span class="nv">$HOME</span>/restic/restore
-<span class="ln"> 17</span><span class="nv">MOUNT_DIR</span><span class="o">=</span><span class="nv">$HOME</span>/restic/mount
-<span class="ln"> 18</span><span class="nv">FILES</span><span class="o">=</span><span class="nv">$HOME</span>/restic/files.txt
-<span class="ln"> 19</span>
-<span class="ln"> 20</span>init<span class="o">()</span> <span class="o">{</span>
-<span class="ln"> 21</span>    restic -r <span class="nv">$REPO</span> init
-<span class="ln"> 22</span><span class="o">}</span>
-<span class="ln"> 23</span>
-<span class="ln"> 24</span>backup<span class="o">()</span> <span class="o">{</span>
-<span class="ln"> 25</span>    restic -r <span class="nv">$REPO</span> backup --files-from <span class="nv">$FILES</span>
-<span class="ln"> 26</span><span class="o">}</span>
-<span class="ln"> 27</span>
-<span class="ln"> 28</span>snapshots<span class="o">()</span> <span class="o">{</span>
-<span class="ln"> 29</span>    restic -r <span class="nv">$REPO</span> snapshots --cleanup-cache -c
-<span class="ln"> 30</span><span class="o">}</span>
-<span class="ln"> 31</span>
-<span class="ln"> 32</span>restore<span class="o">()</span> <span class="o">{</span>
-<span class="ln"> 33</span>    <span class="k">if</span> <span class="o">[</span> -z <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="ln"> 34</span>        <span class="nb">read</span> -p <span class="s2">&#34;Brak ID migawki, wyświetlić listę? [T/n]: &#34;</span> SNAPSHOT
-<span class="ln"> 35</span>        <span class="k">case</span> <span class="nv">$SNAPSHOT</span> in
-<span class="ln"> 36</span>            t<span class="p">|</span>T<span class="o">)</span>
-<span class="ln"> 37</span>                snapshots
-<span class="ln"> 38</span>                <span class="p">;;</span>
-<span class="ln"> 39</span>            n<span class="p">|</span>N<span class="o">)</span>
-<span class="ln"> 40</span>                <span class="nb">exit</span>
-<span class="ln"> 41</span>                <span class="p">;;</span>
-<span class="ln"> 42</span>            *<span class="o">)</span>
-<span class="ln"> 43</span>                snapshots
-<span class="ln"> 44</span>                <span class="p">;;</span>
-<span class="ln"> 45</span>        <span class="k">esac</span>
-<span class="ln"> 46</span>    <span class="k">else</span>
-<span class="ln"> 47</span>        restic -r <span class="nv">$REPO</span> restore <span class="nv">$1</span> <span class="se">\
-</span><span class="ln"> 48</span><span class="se"></span>            --target <span class="nv">$RESTORE_DIR</span>
-<span class="ln"> 49</span>    <span class="k">fi</span>
-<span class="ln"> 50</span><span class="o">}</span>
-<span class="ln"> 51</span>
-<span class="ln"> 52</span>restore-latest<span class="o">()</span> <span class="o">{</span>
-<span class="ln"> 53</span>    restic -r <span class="nv">$REPO</span> restore -v latest <span class="se">\
-</span><span class="ln"> 54</span><span class="se"></span>        --target <span class="nv">$RESTORE_DIR</span>
-<span class="ln"> 55</span><span class="o">}</span>
-<span class="ln"> 56</span>
-<span class="ln"> 57</span>mount<span class="o">()</span> <span class="o">{</span>
-<span class="ln"> 58</span>    restic -r <span class="nv">$REPO</span> mount <span class="nv">$MOUNT_DIR</span>
-<span class="ln"> 59</span><span class="o">}</span>
-<span class="ln"> 60</span>
-<span class="ln"> 61</span>pomoc<span class="o">()</span> <span class="o">{</span>
-<span class="ln"> 62</span>    <span class="nb">echo</span>
-<span class="ln"> 63</span>    <span class="nb">echo</span> <span class="s2">&#34;------------------------------------------------------&#34;</span>
-<span class="ln"> 64</span>    <span class="nb">echo</span> <span class="s2">&#34;| init           - inicjuje repozytorium             |&#34;</span>
-<span class="ln"> 65</span>    <span class="nb">echo</span> <span class="s2">&#34;| backup         - wykonanie kopii zapasowej         |&#34;</span>
-<span class="ln"> 66</span>    <span class="nb">echo</span> <span class="s2">&#34;| snapshots      - lista backupów                    |&#34;</span>
-<span class="ln"> 67</span>    <span class="nb">echo</span> <span class="s2">&#34;| restore        - odtworzenie konkretnego snapshota |&#34;</span>
-<span class="ln"> 68</span>    <span class="nb">echo</span> <span class="s2">&#34;| restore-latest - odtwarza ostatni snapshot         |&#34;</span>
-<span class="ln"> 69</span>    <span class="nb">echo</span> <span class="s2">&#34;| mount          - podmontowuje repozytorium         |&#34;</span>
-<span class="ln"> 70</span>    <span class="nb">echo</span> <span class="s2">&#34;| help           - wyświetla pomoc                   |&#34;</span>
-<span class="ln"> 71</span>    <span class="nb">echo</span> <span class="s2">&#34;------------------------------------------------------&#34;</span>
-<span class="ln"> 72</span>    <span class="nb">echo</span>
-<span class="ln"> 73</span><span class="o">}</span>
-<span class="ln"> 74</span>
-<span class="ln"> 75</span><span class="k">case</span> <span class="nv">$1</span> in
-<span class="ln"> 76</span>    init<span class="o">)</span>
-<span class="ln"> 77</span>        init
-<span class="ln"> 78</span>        <span class="p">;;</span>
-<span class="ln"> 79</span>    backup<span class="o">)</span>
-<span class="ln"> 80</span>        backup
-<span class="ln"> 81</span>        <span class="p">;;</span>
-<span class="ln"> 82</span>    snapshots<span class="o">)</span>
-<span class="ln"> 83</span>        snapshots
-<span class="ln"> 84</span>        <span class="p">;;</span>
-<span class="ln"> 85</span>    restore<span class="o">)</span>
-<span class="ln"> 86</span>        restore <span class="nv">$2</span>
-<span class="ln"> 87</span>        <span class="p">;;</span>
-<span class="ln"> 88</span>    restore-latest<span class="o">)</span>
-<span class="ln"> 89</span>        restore-latest
-<span class="ln"> 90</span>        <span class="p">;;</span>
-<span class="ln"> 91</span>    mount<span class="o">)</span>
-<span class="ln"> 92</span>        mount
-<span class="ln"> 93</span>        <span class="p">;;</span>
-<span class="ln"> 94</span>    help<span class="p">|</span>pomoc<span class="o">)</span>
-<span class="ln"> 95</span>        pomoc
-<span class="ln"> 96</span>        <span class="p">;;</span>
-<span class="ln"> 97</span>    *<span class="o">)</span>
-<span class="ln"> 98</span>        pomoc
-<span class="ln"> 99</span>        <span class="p">;;</span>
-<span class="ln">100</span><span class="k">esac</span>
-</code></pre></div><div id="disqus_thread"></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">./mc config host add myminio http://192.168.122.1:9000 HWSZL5OL9X37S0DSC3EW d5ByBS50pffe90s9bKqWxxse4jBmEp9Zp5sv0c4c
+</span></span></code></pre></div><p>Dodanie bukietu</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">./mc mb myminio/nazwabukietu
+</span></span></code></pre></div><h1 id="skrypt-do-obsługi-kopii-zapasowych-wykonywanych-przez-restic">Skrypt do obsługi kopii zapasowych wykonywanych przez Restic</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">  1</span><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="ln">  2</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="c1"># Dostęp do serwera MinIO.</span>
+</span></span><span class="line"><span class="ln">  4</span><span class="cl"><span class="nb">export</span> <span class="nv">AWS_ACCESS_KEY_ID</span><span class="o">=</span>HWSZL5OL9X37S0DSC3EW
+</span></span><span class="line"><span class="ln">  5</span><span class="cl"><span class="nb">export</span> <span class="nv">AWS_SECRET_ACCESS_KEY</span><span class="o">=</span>d5ByBS50pffe90s9bKqWxxse4jBmEp9Zp5sv0c4c
+</span></span><span class="line"><span class="ln">  6</span><span class="cl">
+</span></span><span class="line"><span class="ln">  7</span><span class="cl"><span class="c1"># Dostęp do serwera MinIO + integracja z programem pass</span>
+</span></span><span class="line"><span class="ln">  8</span><span class="cl"><span class="c1"># export AWS_ACCESS_KEY_ID=$(pass show restic/x230/key)</span>
+</span></span><span class="line"><span class="ln">  9</span><span class="cl"><span class="c1"># export AWS_SECRET_ACCESS_KEY=$(pass show restic/x230/access)</span>
+</span></span><span class="line"><span class="ln"> 10</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 11</span><span class="cl"><span class="c1"># Integracja restic i pass dostęp do haseł.</span>
+</span></span><span class="line"><span class="ln"> 12</span><span class="cl"><span class="nb">export</span> <span class="nv">RESTIC_PASSWORD_COMMAND</span><span class="o">=</span><span class="s1">&#39;pass show restic/x230&#39;</span>
+</span></span><span class="line"><span class="ln"> 13</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 14</span><span class="cl"><span class="c1"># Adres repozytorium.</span>
+</span></span><span class="line"><span class="ln"> 15</span><span class="cl"><span class="nv">REPO</span><span class="o">=</span><span class="s2">&#34;s3:http://192.168.122.1:9000/backup-x230&#34;</span>
+</span></span><span class="line"><span class="ln"> 16</span><span class="cl"><span class="nv">RESTORE_DIR</span><span class="o">=</span><span class="nv">$HOME</span>/restic/restore
+</span></span><span class="line"><span class="ln"> 17</span><span class="cl"><span class="nv">MOUNT_DIR</span><span class="o">=</span><span class="nv">$HOME</span>/restic/mount
+</span></span><span class="line"><span class="ln"> 18</span><span class="cl"><span class="nv">FILES</span><span class="o">=</span><span class="nv">$HOME</span>/restic/files.txt
+</span></span><span class="line"><span class="ln"> 19</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 20</span><span class="cl">init<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="ln"> 21</span><span class="cl">    restic -r <span class="nv">$REPO</span> init
+</span></span><span class="line"><span class="ln"> 22</span><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="ln"> 23</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 24</span><span class="cl">backup<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="ln"> 25</span><span class="cl">    restic -r <span class="nv">$REPO</span> backup --files-from <span class="nv">$FILES</span>
+</span></span><span class="line"><span class="ln"> 26</span><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="ln"> 27</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 28</span><span class="cl">snapshots<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="ln"> 29</span><span class="cl">    restic -r <span class="nv">$REPO</span> snapshots --cleanup-cache -c
+</span></span><span class="line"><span class="ln"> 30</span><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="ln"> 31</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 32</span><span class="cl">restore<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="ln"> 33</span><span class="cl">    <span class="k">if</span> <span class="o">[</span> -z <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln"> 34</span><span class="cl">        <span class="nb">read</span> -p <span class="s2">&#34;Brak ID migawki, wyświetlić listę? [T/n]: &#34;</span> SNAPSHOT
+</span></span><span class="line"><span class="ln"> 35</span><span class="cl">        <span class="k">case</span> <span class="nv">$SNAPSHOT</span> in
+</span></span><span class="line"><span class="ln"> 36</span><span class="cl">            t<span class="p">|</span>T<span class="o">)</span>
+</span></span><span class="line"><span class="ln"> 37</span><span class="cl">                snapshots
+</span></span><span class="line"><span class="ln"> 38</span><span class="cl">                <span class="p">;;</span>
+</span></span><span class="line"><span class="ln"> 39</span><span class="cl">            n<span class="p">|</span>N<span class="o">)</span>
+</span></span><span class="line"><span class="ln"> 40</span><span class="cl">                <span class="nb">exit</span>
+</span></span><span class="line"><span class="ln"> 41</span><span class="cl">                <span class="p">;;</span>
+</span></span><span class="line"><span class="ln"> 42</span><span class="cl">            *<span class="o">)</span>
+</span></span><span class="line"><span class="ln"> 43</span><span class="cl">                snapshots
+</span></span><span class="line"><span class="ln"> 44</span><span class="cl">                <span class="p">;;</span>
+</span></span><span class="line"><span class="ln"> 45</span><span class="cl">        <span class="k">esac</span>
+</span></span><span class="line"><span class="ln"> 46</span><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="ln"> 47</span><span class="cl">        restic -r <span class="nv">$REPO</span> restore <span class="nv">$1</span> <span class="se">\
+</span></span></span><span class="line"><span class="ln"> 48</span><span class="cl"><span class="se"></span>            --target <span class="nv">$RESTORE_DIR</span>
+</span></span><span class="line"><span class="ln"> 49</span><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="ln"> 50</span><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="ln"> 51</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 52</span><span class="cl">restore-latest<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="ln"> 53</span><span class="cl">    restic -r <span class="nv">$REPO</span> restore -v latest <span class="se">\
+</span></span></span><span class="line"><span class="ln"> 54</span><span class="cl"><span class="se"></span>        --target <span class="nv">$RESTORE_DIR</span>
+</span></span><span class="line"><span class="ln"> 55</span><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="ln"> 56</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 57</span><span class="cl">mount<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="ln"> 58</span><span class="cl">    restic -r <span class="nv">$REPO</span> mount <span class="nv">$MOUNT_DIR</span>
+</span></span><span class="line"><span class="ln"> 59</span><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="ln"> 60</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 61</span><span class="cl">pomoc<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="ln"> 62</span><span class="cl">    <span class="nb">echo</span>
+</span></span><span class="line"><span class="ln"> 63</span><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;------------------------------------------------------&#34;</span>
+</span></span><span class="line"><span class="ln"> 64</span><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;| init           - inicjuje repozytorium             |&#34;</span>
+</span></span><span class="line"><span class="ln"> 65</span><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;| backup         - wykonanie kopii zapasowej         |&#34;</span>
+</span></span><span class="line"><span class="ln"> 66</span><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;| snapshots      - lista backupów                    |&#34;</span>
+</span></span><span class="line"><span class="ln"> 67</span><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;| restore        - odtworzenie konkretnego snapshota |&#34;</span>
+</span></span><span class="line"><span class="ln"> 68</span><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;| restore-latest - odtwarza ostatni snapshot         |&#34;</span>
+</span></span><span class="line"><span class="ln"> 69</span><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;| mount          - podmontowuje repozytorium         |&#34;</span>
+</span></span><span class="line"><span class="ln"> 70</span><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;| help           - wyświetla pomoc                   |&#34;</span>
+</span></span><span class="line"><span class="ln"> 71</span><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;------------------------------------------------------&#34;</span>
+</span></span><span class="line"><span class="ln"> 72</span><span class="cl">    <span class="nb">echo</span>
+</span></span><span class="line"><span class="ln"> 73</span><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="ln"> 74</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 75</span><span class="cl"><span class="k">case</span> <span class="nv">$1</span> in
+</span></span><span class="line"><span class="ln"> 76</span><span class="cl">    init<span class="o">)</span>
+</span></span><span class="line"><span class="ln"> 77</span><span class="cl">        init
+</span></span><span class="line"><span class="ln"> 78</span><span class="cl">        <span class="p">;;</span>
+</span></span><span class="line"><span class="ln"> 79</span><span class="cl">    backup<span class="o">)</span>
+</span></span><span class="line"><span class="ln"> 80</span><span class="cl">        backup
+</span></span><span class="line"><span class="ln"> 81</span><span class="cl">        <span class="p">;;</span>
+</span></span><span class="line"><span class="ln"> 82</span><span class="cl">    snapshots<span class="o">)</span>
+</span></span><span class="line"><span class="ln"> 83</span><span class="cl">        snapshots
+</span></span><span class="line"><span class="ln"> 84</span><span class="cl">        <span class="p">;;</span>
+</span></span><span class="line"><span class="ln"> 85</span><span class="cl">    restore<span class="o">)</span>
+</span></span><span class="line"><span class="ln"> 86</span><span class="cl">        restore <span class="nv">$2</span>
+</span></span><span class="line"><span class="ln"> 87</span><span class="cl">        <span class="p">;;</span>
+</span></span><span class="line"><span class="ln"> 88</span><span class="cl">    restore-latest<span class="o">)</span>
+</span></span><span class="line"><span class="ln"> 89</span><span class="cl">        restore-latest
+</span></span><span class="line"><span class="ln"> 90</span><span class="cl">        <span class="p">;;</span>
+</span></span><span class="line"><span class="ln"> 91</span><span class="cl">    mount<span class="o">)</span>
+</span></span><span class="line"><span class="ln"> 92</span><span class="cl">        mount
+</span></span><span class="line"><span class="ln"> 93</span><span class="cl">        <span class="p">;;</span>
+</span></span><span class="line"><span class="ln"> 94</span><span class="cl">    help<span class="p">|</span>pomoc<span class="o">)</span>
+</span></span><span class="line"><span class="ln"> 95</span><span class="cl">        pomoc
+</span></span><span class="line"><span class="ln"> 96</span><span class="cl">        <span class="p">;;</span>
+</span></span><span class="line"><span class="ln"> 97</span><span class="cl">    *<span class="o">)</span>
+</span></span><span class="line"><span class="ln"> 98</span><span class="cl">        pomoc
+</span></span><span class="line"><span class="ln"> 99</span><span class="cl">        <span class="p">;;</span>
+</span></span><span class="line"><span class="ln">100</span><span class="cl"><span class="k">esac</span>
+</span></span></code></pre></div><div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -667,7 +667,7 @@ oczywiście możemy zmienić nazwę.</p>
   </div>
 </footer>
 
-    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.0d436a248c1a5966b8bb721233be092890a28330c865e3cedc449f5f87623d35a1cc4f569e9e6b463a602ae6a1986122559e6419ff573674d77d07b8b5c73bbb.js" integrity="sha512-DUNqJIwaWWa4u3ISM74JKJCigzDIZePO3ESfX4diPTWhzE9Wnp5rRjpgKuahmGEiVZ5kGf9XNnTXfQe4tcc7uw==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" integrity="sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous"></script>
     
   </body>
 </html>
