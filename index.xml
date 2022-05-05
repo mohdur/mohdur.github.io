@@ -16,7 +16,8 @@
         
           &lt;p&gt;Void linux posiada instalator tekstowy, działa on bez problemu, jednak gdy dochodzimy do
 partycjonowania systemu plików, czasami może pojawić się problem, kiedy chcemy wydzielić partycję
-&lt;code&gt;/boot&lt;/code&gt; i użyć UEFI, rozwiązaniem jest odpowiednia kolejność wybierania punktów podłączenia
+&lt;code&gt;/boot&lt;/code&gt; i użyć UEFI.&lt;/p&gt;
+&lt;p&gt;Rozwiązaniem jest odpowiednia kolejność wybierania punktów podłączenia
 poszczególnych partycji: najpierw należy wybrać partycję &lt;code&gt;/&lt;/code&gt; następnie partycję &lt;code&gt;/boot&lt;/code&gt; a na końcu
 &lt;code&gt;/boot/efi&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Jeśli nie zachowamy odpowiedniej kolejności to instalator zwróci błąd instalacji &lt;code&gt;grub&lt;/code&gt; na dysku.&lt;/p&gt;
