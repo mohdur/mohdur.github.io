@@ -4,7 +4,7 @@
   <head>
 <title>Vim | MOHDUR</title>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.94.2" />
+<meta name="generator" content="Hugo 0.101.0" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta property="og:locale" content="en" />
@@ -33,8 +33,8 @@
     
     
     <link rel="preload" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity = "sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" as="script" integrity=
-    "sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous">
+    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.5ab6e1fc0482e6af0956c86121039ee7752464eb78922876063826927f8bba463fe17b35412a6106c58a7216a384c79571ed3094146a974fe2d142d9bbe01d5e.js" as="script" integrity=
+    "sha512-Wrbh/ASC5q8JVshhIQOe53UkZOt4kih2Bjgmkn&#43;LukY/4Xs1QSphBsWKchajhMeVce0wlBRql0/i0ULZu&#43;AdXg==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity="sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" crossorigin="anonymous"><link rel="stylesheet" href="https://mohdur.github.io/css/custom.css">
@@ -123,8 +123,8 @@
         <div>
           <p class="pale">
             
-              Skrypt $HOME/bin/man-vim.sh
-1#!/usr/bin/env bash 2 3if [ $# -eq 0 ]; then 4/usr/bin/man 5else 6if man -w $* &gt;/dev/null 2&gt;/dev/null; then 7/usr/bin/man $* |col -b|vim -u $HOME/.vim/man.vim - 8else 9echo &#34;Brak strony: $*&#34; 10fi 11fi Plik konfiguracyjny $HOME/.vim/man.vim
+              Wersja dla Vim Skrypt $HOME/bin/man-vim.sh
+1#!/usr/bin/env bash 2 3if [ $# -eq 0 ]; then 4 /usr/bin/man 5else 6 if man -w $* &gt;/dev/null 2&gt;/dev/null; then 7 /usr/bin/man $* |col -b|vim -u $HOME/.vim/man.vim - 8 else 9 echo &#34;Brak strony: $*&#34; 10 fi 11fi Plik konfiguracyjny $HOME/.vim/man.vim
 1source …
             
           </p>
@@ -190,7 +190,7 @@
               Ciąg znaków mamy taki:
 1zmienna: 25 i chcemy go zamienić na:
 1zmienna=25 Jak to zrobić?
-1f:cf =  f: - wyszukuje znak : cf  - usuwa wszystko do znaku spacji i przechodzi w tryb wprowadzania = - wprowadza znak =  
+1f:cf = f: - wyszukuje znak : cf - usuwa wszystko do znaku spacji i przechodzi w tryb wprowadzania = - wprowadza znak = 
             
           </p>
         </div>
@@ -288,7 +288,7 @@ Za pomocą skrótu gq zawijamy tekst.
 1:set spell spellang=pl Włączenie sprawdzania pisowni
 1:set spell Zmapowanie sprawdzania pisowni pod klawiszem F7
 1set spell spellang=pl 2nnore &lt;F7&gt; :setlocal spell! spell?&lt;CR&gt; Klawiszologia
- ]s – szuka kolejnego wystąpienia nieznanego słowa [s – szuka poprzedniego wystąpienia nieznanego …
+]s – szuka kolejnego wystąpienia nieznanego słowa [s – szuka poprzedniego wystąpienia nieznanego …
             
           </p>
         </div>
@@ -388,7 +388,7 @@ Dlatego należy wyłączyć ten skrót, w pliku .bashrc lub w przypadku powłoki
           <p class="pale">
             
               Szyfrowanie wybranej linii Tutaj zaszyfrujemy tekst z linii 117 za pomocą gpg i hasła tajnehaslo
-1Tekst niezaszyfrowany w linii 117 1:117 ! gpg -q -a -c - 2-----BEGIN PGP MESSAGE----- 34jA0EBwMC8MJMzMCMn+Lp0lcBi6dx1AYRx9OE/xXZSHWTpbi2Zy9Rt5AVw2IIjyYS 5n3hobFW418P8IDXL0swMT7ljaZBFujd/axC18CaGXixXfBgosIW4QcVoVhyOublG …
+1Tekst niezaszyfrowany w linii 117 1:117 ! gpg -q -a -c - 2-----BEGIN PGP MESSAGE----- 3 4jA0EBwMC8MJMzMCMn+Lp0lcBi6dx1AYRx9OE/xXZSHWTpbi2Zy9Rt5AVw2IIjyYS 5n3hobFW418P8IDXL0swMT7ljaZBFujd/axC18CaGXixXfBgosIW4QcVoVhyOublG …
             
           </p>
         </div>
@@ -418,7 +418,7 @@ Dlatego należy wyłączyć ten skrót, w pliku .bashrc lub w przypadku powłoki
         <div>
           <p class="pale">
             
-              Poruszanie się w trybie INSERT 1inoremap &lt;C-h&gt; &lt;Left&gt; &#34; przemieszcza kursor w lewo2inoremap &lt;C-j&gt; &lt;Down&gt; &#34; przemieszcza kursor w dół3inoremap &lt;C-k&gt; &lt;Up&gt; &#34; przemieszcza kursor w górę4inoremap &lt;C-l&gt; &lt;Right&gt; &#34; przemieszcza kursor w prawoPoruszanie się w …
+              Poruszanie się w trybie INSERT 1inoremap &lt;C-h&gt; &lt;Left&gt; &#34; przemieszcza kursor w lewo 2inoremap &lt;C-j&gt; &lt;Down&gt; &#34; przemieszcza kursor w dół 3inoremap &lt;C-k&gt; &lt;Up&gt; &#34; przemieszcza kursor w górę 4inoremap &lt;C-l&gt; &lt;Right&gt; &#34; przemieszcza kursor w prawo Poruszanie się w …
             
           </p>
         </div>
@@ -480,7 +480,7 @@ Dlatego należy wyłączyć ten skrót, w pliku .bashrc lub w przypadku powłoki
           <p class="pale">
             
               Skróty :h ^w
-   Skrót Opis     c-w w przeskakuje pomiędzy dwoma ostation używanymi oknami   c-w s dzieli okno w poziomie :split   c-w v dzieli okno w pionie :vsplit   c-w h przechodzi do okna po lewo   c-w l przechodzi do okna po prawej   c-w H przenosi aktywne okno na lewo   c-w L przenosi aktywne okno na prawo   c-w …
+Skrót Opis c-w w przeskakuje pomiędzy dwoma ostation używanymi oknami c-w s dzieli okno w poziomie :split c-w v dzieli okno w pionie :vsplit c-w h przechodzi do okna po lewo c-w l przechodzi do okna po prawej c-w H przenosi aktywne okno na lewo c-w L przenosi aktywne okno na prawo c-w o ustawia aktywne …
             
           </p>
         </div>
@@ -513,7 +513,7 @@ Dlatego należy wyłączyć ten skrót, w pliku .bashrc lub w przypadku powłoki
           <p class="pale">
             
               Skrypt zainspirowany https://github.com/nickjj/notes/blob/master/notes
-Wymagania:  ripgrep skim (sk) fzf preview.sh część pluginu fzf.vim https://github.com/junegunn/fzf.vim/blob/master/bin/preview.sh vim plugin Vimwiki xclip  Opis użycia: W przypadku wyszukiwania z użyciem parametrów -s i -f, istnieje skrót Ctrl+p, …
+Wymagania: ripgrep skim (sk) fzf preview.sh część pluginu fzf.vim https://github.com/junegunn/fzf.vim/blob/master/bin/preview.sh vim plugin Vimwiki xclip Opis użycia: W przypadku wyszukiwania z użyciem parametrów -s i -f, istnieje skrót Ctrl+p, …
             
           </p>
         </div>
@@ -575,8 +575,8 @@ Użycie tych dwóch …
           <p class="pale">
             
               Dla menadżera pluginów Plug składnia wyląda w ten sposób
-1Plug &#39;davidhalter/jedi-vim&#39;, { &#39;for&#39;: &#39;python&#39; }Możemy też uruchomiać plugin dla wielu typów plików
-1Plug &#39;kovisoft/paredit&#39;, { &#39;for&#39;: [&#39;clojure&#39;, &#39;scheme&#39;] }Menadżer pluginów Plug jest dostępny na stronie …
+1Plug &#39;davidhalter/jedi-vim&#39;, { &#39;for&#39;: &#39;python&#39; } Możemy też uruchomiać plugin dla wielu typów plików
+1Plug &#39;kovisoft/paredit&#39;, { &#39;for&#39;: [&#39;clojure&#39;, &#39;scheme&#39;] } Menadżer pluginów Plug jest dostępny na …
             
           </p>
         </div>
@@ -608,7 +608,7 @@ Użycie tych dwóch …
             
               Pobranie aktualnej wersji z repozytorium git
 1$ git clone https://github.com/vim/vim Skrypt do kompilacji.
-1#!/bin/env bash 2 3git pull 45make distclean 67./configure --prefix=/usr/local \ 8 --enable-python3interp=&#39;dynamic&#39; \ 9 --with-python3-command=&#39;python3&#39; \ 10 --with-x \ 11 --enable-gui=gtk3 \ 12 …
+1#!/bin/env bash 2 3git pull 4 5make distclean 6 7./configure --prefix=/usr/local \ 8 --enable-python3interp=&#39;dynamic&#39; \ 9 --with-python3-command=&#39;python3&#39; \ 10 --with-x \ 11 --enable-gui=gtk3 \ 12 …
             
           </p>
         </div>
@@ -639,7 +639,7 @@ Użycie tych dwóch …
           <p class="pale">
             
               Obiekt tekstowy to blok tekstu, obiektem może być wyraz, paragraf czy tekst pomiędzy nawiasami. Więcej na temat obiektów tekstowych w pomocy
- http://vimdoc.sourceforge.net/htmldoc/motion.html#text-objects http://vimdoc.sourceforge.net/htmldoc/motion.html#operator  Obiekty tekstowe działają również w trybie VISUAL
+http://vimdoc.sourceforge.net/htmldoc/motion.html#text-objects http://vimdoc.sourceforge.net/htmldoc/motion.html#operator Obiekty tekstowe działają również w trybie VISUAL
 Vim …
             
           </p>
@@ -671,8 +671,8 @@ Vim …
           <p class="pale">
             
               Zwiększanie, zmniejszanie liczby W trybie NORMAL przechodzimy kursorem na liczbę następnie
-   skrót opis     Ctrl-a zwiększa o 1   Ctrl-x zmniejsza o 1    Działania matematyczne w trybie komend W trybie COMMAND uruchamiamy sekwencje Ctrl-r + = następnie wprowadzamy działanie np. 2+2
-1:Ctrl-r = 2+2 2:4 Wstawienie wyniku …
+skrót opis Ctrl-a zwiększa o 1 Ctrl-x zmniejsza o 1 Działania matematyczne w trybie komend W trybie COMMAND uruchamiamy sekwencje Ctrl-r + = następnie wprowadzamy działanie np. 2+2
+1:Ctrl-r = 2+2 2:4 Wstawienie wyniku działania …
             
           </p>
         </div>
@@ -704,8 +704,7 @@ Vim …
             
               Funkcja do działania wymaga pluginu fzf.vim https://github.com/junegunn/fzf.vim
 Instalacja za pomocą menadżera vim-plug https://github.com/junegunn/vim-plug
-1Plug &#39;junegunn/fzf&#39;, { &#39;do&#39;: { -&gt; fzf#install() } }2Plug &#39;junegunn/fzf.vim&#39;Katalog z makietkami ustawiamy w zmiennej g:templates_dir
-W …
+1Plug &#39;junegunn/fzf&#39;, { &#39;do&#39;: { -&gt; fzf#install() } } 2Plug &#39;junegunn/fzf.vim&#39; Katalog z makietkami ustawiamy w zmiennej g:templates_dir …
             
           </p>
         </div>
@@ -737,7 +736,7 @@ W …
             
               Funkcja do działania wymaga pluginu fzf.vim https://github.com/junegunn/fzf.vim
 Instalacja za pomocą menadżera vim-plug https://github.com/junegunn/vim-plug
-1Plug &#39;junegunn/fzf&#39;, { &#39;do&#39;: { -&gt; fzf#install() } }2Plug &#39;junegunn/fzf.vim&#39;Dodajemy nową komendę FZFProj, która przeszukuje listę …
+1Plug &#39;junegunn/fzf&#39;, { &#39;do&#39;: { -&gt; fzf#install() } } 2Plug &#39;junegunn/fzf.vim&#39; Dodajemy nową komendę FZFProj, która przeszukuje listę …
             
           </p>
         </div>
@@ -1223,7 +1222,7 @@ W tym wypadku zostanie zmapowana kombinacja klawiszy &lt;leader&gt;sv, która wy
   </div>
 </footer>
 
-    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" integrity="sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.5ab6e1fc0482e6af0956c86121039ee7752464eb78922876063826927f8bba463fe17b35412a6106c58a7216a384c79571ed3094146a974fe2d142d9bbe01d5e.js" integrity="sha512-Wrbh/ASC5q8JVshhIQOe53UkZOt4kih2Bjgmkn&#43;LukY/4Xs1QSphBsWKchajhMeVce0wlBRql0/i0ULZu&#43;AdXg==" crossorigin="anonymous"></script>
     
   </body>
 </html>

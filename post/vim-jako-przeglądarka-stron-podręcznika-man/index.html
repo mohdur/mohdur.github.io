@@ -4,7 +4,7 @@
   <head>
 <title>Vim jako przeglądarka stron podręcznika man | MOHDUR</title>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.94.2" />
+<meta name="generator" content="Hugo 0.101.0" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta property="og:locale" content="en" />
@@ -32,8 +32,8 @@
     
     
     <link rel="preload" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity = "sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" as="script" integrity=
-    "sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous">
+    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.5ab6e1fc0482e6af0956c86121039ee7752464eb78922876063826927f8bba463fe17b35412a6106c58a7216a384c79571ed3094146a974fe2d142d9bbe01d5e.js" as="script" integrity=
+    "sha512-Wrbh/ASC5q8JVshhIQOe53UkZOt4kih2Bjgmkn&#43;LukY/4Xs1QSphBsWKchajhMeVce0wlBRql0/i0ULZu&#43;AdXg==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity="sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" crossorigin="anonymous"><link rel="stylesheet" href="https://mohdur.github.io/css/custom.css">
@@ -128,7 +128,8 @@
   </div>
 
     
-    <p>Skrypt <code>$HOME/bin/man-vim.sh</code></p>
+    <h2 id="wersja-dla-vim">Wersja dla Vim</h2>
+<p>Skrypt <code>$HOME/bin/man-vim.sh</code></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">#!/usr/bin/env bash
 </span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> -eq <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
@@ -152,6 +153,45 @@
 </span></span></span><span class="line"><span class="ln">9</span><span class="cl"><span class="err"></span><span class="nx">map</span> <span class="nx">N</span> <span class="nx">Nzz</span><span class="err">
 </span></span></span></code></pre></div><p>Alias</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl"><span class="nb">alias</span> <span class="nv">man</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">/bin/man-vim.sh&#34;</span>
+</span></span></code></pre></div><h2 id="wersja-dla-neovim">Wersja dla Neovim</h2>
+<h3 id="skrypt-homebinman-nvimsh">Skrypt <code>$HOME/bin/man-nvim.sh</code></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">#!/usr/bin/env bash
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> -eq <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    /usr/bin/man
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="k">if</span> man -w <span class="nv">$*</span> &gt;/dev/null 2&gt;/dev/null<span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">        /usr/bin/man <span class="nv">$*</span> <span class="p">|</span> col -b <span class="p">|</span> /usr/bin/nvim -u <span class="nv">$HOME</span>/.config/nvim/man.vim -
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;Brak strony: </span><span class="nv">$*</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="k">fi</span>
+</span></span></code></pre></div><h3 id="plik-konfiguracyjny-homeconfignvimmanvim">Plik konfiguracyjny <code>$HOME/.config/nvim/man.vim</code></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nx">syntax</span> <span class="nx">on</span><span class="err">
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="err"></span><span class="nx">set</span> <span class="nx">syntax</span><span class="p">=</span><span class="nx">man</span><span class="err">
+</span></span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="err"></span><span class="nx">set</span> <span class="nx">buftype</span><span class="p">=</span><span class="nx">nofile</span><span class="err">
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="err"></span><span class="nx">set</span> <span class="nx">nomodifiable</span><span class="err">
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="err"></span><span class="nx">set</span> <span class="nx">nocompatible</span><span class="err">
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="err"></span><span class="nx">set</span> <span class="nx">nolist</span><span class="err">
+</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="err"></span><span class="nx">set</span> <span class="nx">hidden</span><span class="err">
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="err"></span><span class="nx">set</span> <span class="nx">laststatus</span><span class="p">=</span><span class="m">0</span><span class="err">
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="err"></span><span class="nx">set</span> <span class="nx">background</span><span class="p">=</span><span class="nb">dark</span><span class="err">
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="err"></span><span class="nx">set</span> <span class="nx">termguicolors</span><span class="err">
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="err"></span><span class="nx">colo</span> <span class="nx">ayu</span><span class="err">
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="err"></span><span class="k">let</span> <span class="nx">ayucolor</span><span class="p">=</span><span class="s2">&#34;mirage&#34;</span>  <span class="c">&#34; light, mirage, dark</span><span class="err">
+</span></span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="err"></span><span class="c">
+</span></span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="c">&#34; mapowanie klawiszy</span><span class="err">
+</span></span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="err"></span><span class="nx">nnoremap</span> <span class="nx">q</span> :<span class="nx">qa</span><span class="p">!&lt;</span><span class="nx">cr</span><span class="p">&gt;</span><span class="err">
+</span></span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="err"></span><span class="nx">nmap</span> <span class="nx">Q</span> :<span class="nx">qa</span><span class="p">!&lt;</span><span class="nx">cr</span><span class="p">&gt;</span><span class="err">
+</span></span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="err"></span><span class="nx">map</span> <span class="nx">n</span> <span class="nx">nzz</span><span class="err">
+</span></span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="err"></span><span class="nx">map</span> <span class="nx">N</span> <span class="nx">Nzz</span><span class="err">
+</span></span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="err"></span><span class="nx">map</span> <span class="nx">d</span> <span class="p">&lt;</span><span class="nx">c</span><span class="p">-</span><span class="nx">d</span><span class="p">&gt;</span><span class="err">
+</span></span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="err"></span><span class="nx">map</span> <span class="nx">u</span> <span class="p">&lt;</span><span class="nx">c</span><span class="p">-</span><span class="nx">u</span><span class="p">&gt;</span><span class="err">
+</span></span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="err"></span><span class="nx">map</span> <span class="p">&lt;</span><span class="nx">space</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nx">c</span><span class="p">-</span><span class="nx">d</span><span class="p">&gt;</span><span class="err">
+</span></span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="err"></span><span class="nx">map</span> <span class="p">&lt;</span><span class="nx">backspace</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nx">c</span><span class="p">-</span><span class="nx">u</span><span class="p">&gt;</span><span class="err">
+</span></span></span></code></pre></div><h3 id="alias">Alias</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl"><span class="nb">alias</span> <span class="nv">man</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">/bin/man-nvim.sh&#34;</span>
 </span></span></code></pre></div><div id="disqus_thread"></div>
 <script type="application/javascript">
     window.disqus_config = function () {
@@ -555,7 +595,7 @@
   </div>
 </footer>
 
-    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" integrity="sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.5ab6e1fc0482e6af0956c86121039ee7752464eb78922876063826927f8bba463fe17b35412a6106c58a7216a384c79571ed3094146a974fe2d142d9bbe01d5e.js" integrity="sha512-Wrbh/ASC5q8JVshhIQOe53UkZOt4kih2Bjgmkn&#43;LukY/4Xs1QSphBsWKchajhMeVce0wlBRql0/i0ULZu&#43;AdXg==" crossorigin="anonymous"></script>
     
   </body>
 </html>

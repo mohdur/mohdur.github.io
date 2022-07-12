@@ -4,7 +4,7 @@
   <head>
 <title>Linux | MOHDUR</title>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.94.2" />
+<meta name="generator" content="Hugo 0.101.0" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta property="og:locale" content="en" />
@@ -33,8 +33,8 @@
     
     
     <link rel="preload" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity = "sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" as="script" integrity=
-    "sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous">
+    <link rel="preload" href="https://mohdur.github.io/js/bundle.min.5ab6e1fc0482e6af0956c86121039ee7752464eb78922876063826927f8bba463fe17b35412a6106c58a7216a384c79571ed3094146a974fe2d142d9bbe01d5e.js" as="script" integrity=
+    "sha512-Wrbh/ASC5q8JVshhIQOe53UkZOt4kih2Bjgmkn&#43;LukY/4Xs1QSphBsWKchajhMeVce0wlBRql0/i0ULZu&#43;AdXg==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="https://mohdur.github.io/css/styles.19822ef8d57c281b0ee1aa50d42585c2400da8137a121dec28cd58f48a7fec71bf92e0e20f91751c5622f183b719a2663b3c1766d877cd46e764de699307df61.css" integrity="sha512-GYIu&#43;NV8KBsO4apQ1CWFwkANqBN6Eh3sKM1Y9Ip/7HG/kuDiD5F1HFYi8YO3GaJmOzwXZth3zUbnZN5pkwffYQ==" crossorigin="anonymous"><link rel="stylesheet" href="https://mohdur.github.io/css/custom.css">
@@ -159,7 +159,7 @@ Rozwiązaniem jest odpowiednia kolejność wybierania punktów podłączenia pos
           <p class="pale">
             
               Przykład menu napisanego w BASH.
-1#!/usr/bin/env bash 2 3declare -a menu_list=( 4&#34;Suspend&#34; 5&#34;Reboot&#34; 6&#34;Monitor Off&#34; 7&#34;Pass ROFI&#34; 8&#34;Wyczyść hasło do agenta GPG&#34; 9&#34;Wyczyść historię schowka&#34; 10&#34;CPU GHz&#34; 11&#34;Stan baterii&#34; 12&#34;Edytuj Menu&#34; 13) …
+1#!/usr/bin/env bash 2 3declare -a menu_list=( 4 &#34;Suspend&#34; 5 &#34;Reboot&#34; 6 &#34;Monitor Off&#34; 7 &#34;Pass ROFI&#34; 8 &#34;Wyczyść hasło do agenta GPG&#34; 9 &#34;Wyczyść historię schowka&#34; 10 &#34;CPU GHz&#34; 11 &#34;Stan baterii&#34; 12 &#34;Edytuj Menu&#34; 13) 14 …
             
           </p>
         </div>
@@ -193,10 +193,10 @@ Rozwiązaniem jest odpowiednia kolejność wybierania punktów podłączenia pos
         <div>
           <p class="pale">
             
-              RPM Packaging Guide https://rpm-packaging-guide.github.io/  Do budowy pakietu będzie potrzebny pakiet rpm-build.
+              RPM Packaging Guide https://rpm-packaging-guide.github.io/ Do budowy pakietu będzie potrzebny pakiet rpm-build.
 Dla systemu Fedora i CentOS 8
 1sudo dnf install gcc rpm-build rpm-devel rpmlint make python bash coreutils \ 2diffutils patch rpmdevtools Dla systemu CentOS 7
-1sudo yum install gcc rpm-build rpm-devel …
+1sudo yum install gcc rpm-build rpm-devel rpmlint …
             
           </p>
         </div>
@@ -228,8 +228,8 @@ Dla systemu Fedora i CentOS 8
         <div>
           <p class="pale">
             
-              Skrypt $HOME/bin/man-vim.sh
-1#!/usr/bin/env bash 2 3if [ $# -eq 0 ]; then 4/usr/bin/man 5else 6if man -w $* &gt;/dev/null 2&gt;/dev/null; then 7/usr/bin/man $* |col -b|vim -u $HOME/.vim/man.vim - 8else 9echo &#34;Brak strony: $*&#34; 10fi 11fi Plik konfiguracyjny $HOME/.vim/man.vim
+              Wersja dla Vim Skrypt $HOME/bin/man-vim.sh
+1#!/usr/bin/env bash 2 3if [ $# -eq 0 ]; then 4 /usr/bin/man 5else 6 if man -w $* &gt;/dev/null 2&gt;/dev/null; then 7 /usr/bin/man $* |col -b|vim -u $HOME/.vim/man.vim - 8 else 9 echo &#34;Brak strony: $*&#34; 10 fi 11fi Plik konfiguracyjny $HOME/.vim/man.vim
 1source …
             
           </p>
@@ -293,7 +293,7 @@ Przechodzimy do System Settings następnie wyszukujemy Keyboard na zakładce Adv
         <div>
           <p class="pale">
             
-              1$ fc-list : family style 23NotoSerif Nerd Font Mono:style=ExtraCondensed Medium Italic,Italic 4Lekton Nerd Font Mono:style=Bold 5NotoSansMono Nerd Font:style=SemiCondensed,Regular 6Ubuntu Nerd Font Mono:style=Book 7NotoSerifDisplay Nerd Font:style=Condensed SemiBold Italic,Italic 8NotoSansMono Nerd Font …
+               1$ fc-list : family style 2 3NotoSerif Nerd Font Mono:style=ExtraCondensed Medium Italic,Italic 4Lekton Nerd Font Mono:style=Bold 5NotoSansMono Nerd Font:style=SemiCondensed,Regular 6Ubuntu Nerd Font Mono:style=Book 7NotoSerifDisplay Nerd Font:style=Condensed SemiBold Italic,Italic 8NotoSansMono Nerd Font …
             
           </p>
         </div>
@@ -325,7 +325,7 @@ Przechodzimy do System Settings następnie wyszukujemy Keyboard na zakładce Adv
         <div>
           <p class="pale">
             
-               Strona projektu https://rpmfusion.org/Configuration  1sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \ 2https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm 
+               Strona projektu https://rpmfusion.org/Configuration 1sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \ 2https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm 
             
           </p>
         </div>
@@ -396,7 +396,7 @@ Przechodzimy do System Settings następnie wyszukujemy Keyboard na zakładce Adv
               Skrypt przetwarza podkatalogi w bieżącej lokalizacji, tworząc archiwa tar a następnie usuwa przetworzony katalog.
 W pętli for możemy użyć maski zawężając wynik wyszukiwania np.
 1for i in *dump*; do lub użyć polecenia ls np.
-1for i in $(ls -A); do 1#!/usr/bin/env bash 2 3clear 45echo 6echo …
+1for i in $(ls -A); do 1#!/usr/bin/env bash 2 3clear 4 5echo 6echo …
             
           </p>
         </div>
@@ -503,7 +503,7 @@ W systemmie Linux istnieje takie …
             
               Wiadomości można wysyłać po utworzeniu hasła aplikacji lub zezwolenie na mniej bezpieczne logowanie w poczcie GMail.
 Skrypt wymaga biblioteki SMTPEmail
-1$ pip3 install smtpemail --user 1#!/usr/bin/env python3 2# coding=utf-8 34# File Name : mail.py 5# Creation Date : 2019-03-07 23:37:09 6# Last Modified : 2019-03-07 …
+1$ pip3 install smtpemail --user 1#!/usr/bin/env python3 2# coding=utf-8 3 4# File Name : mail.py 5# Creation Date : 2019-03-07 23:37:09 6# Last Modified : 2019-03-07 …
             
           </p>
         </div>
@@ -598,7 +598,7 @@ Aktualizacja grub
         <div>
           <p class="pale">
             
-              Tworzenie dokumentacji  ronn - generowanie dokumentów man pandoc - konwertowanie dokumentów między innymi z formatu Markdown mdv - przeglądarka plików Markdown mdtohtml - konwertowanie dokumentów Markdown do HTML w języku Go  Wyszukiwanie i przeszukiwanie plików  fd - alternatywa dla polecenia find, (dnf install …
+              Tworzenie dokumentacji ronn - generowanie dokumentów man pandoc - konwertowanie dokumentów między innymi z formatu Markdown mdv - przeglądarka plików Markdown mdtohtml - konwertowanie dokumentów Markdown do HTML w języku Go Wyszukiwanie i przeszukiwanie plików fd - alternatywa dla polecenia find, (dnf install fd-find) …
             
           </p>
         </div>
@@ -772,7 +772,7 @@ Zaczynamy od pobrania ostatniej wersji https://github.com/OpenVPN/easy-rsa/relea
             
               W pliku /etc/ssh/sshd_config należy dodać:
 1PermitRootLogin no Dostępne opcje:
- yes prohibit-password forced-commands-only no  Ustawienie parametru prohibit-password wyłącza opcję logowania się za pomocą hasła, natomiast można logować się za pomocą klucza.
+yes prohibit-password forced-commands-only no Ustawienie parametru prohibit-password wyłącza opcję logowania się za pomocą hasła, natomiast można logować się za pomocą klucza.
             
           </p>
         </div>
@@ -841,7 +841,7 @@ Zaczynamy od pobrania ostatniej wersji https://github.com/OpenVPN/easy-rsa/relea
         <div>
           <p class="pale">
             
-              Instalacja pakietów 1sudo dnf install &lt;nazwa-pakietu&gt; 1sudo dnf install borgbackup 1Last metadata expiration check: 0:16:01 ago on Mon 25 Mar 2019 02:58:33 PM CET 2Dependencies resolved. 3============================================================================== 4Package Architecture Version Repository Size …
+              Instalacja pakietów 1sudo dnf install &lt;nazwa-pakietu&gt; 1sudo dnf install borgbackup 1Last metadata expiration check: 0:16:01 ago on Mon 25 Mar 2019 02:58:33 PM CET 2Dependencies resolved. 3============================================================================== 4 Package Architecture Version Repository Size …
             
           </p>
         </div>
@@ -908,7 +908,7 @@ Zaczynamy od pobrania ostatniej wersji https://github.com/OpenVPN/easy-rsa/relea
         <div>
           <p class="pale">
             
-                 Skrót Opis     Tab Auto complete   ^a Beginning of line   ^e End of line   ^f Forward one character   ^b Back one character   ^h Delete one character (backw­ards)   %f Forward one word   %b Back one word   ^w Delete one word (backw­ards)   ^u Clear to beginning of line   ^k Clear to end of line   ^y Paste from Kill …
+               Skrót Opis Tab Auto complete ^a Beginning of line ^e End of line ^f Forward one character ^b Back one character ^h Delete one character (backw­ards) %f Forward one word %b Back one word ^w Delete one word (backw­ards) ^u Clear to beginning of line ^k Clear to end of line ^y Paste from Kill Ring ^t Swap cursor with …
             
           </p>
         </div>
@@ -943,7 +943,7 @@ Zaczynamy od pobrania ostatniej wersji https://github.com/OpenVPN/easy-rsa/relea
           <p class="pale">
             
               Polska klawiatura Do pliku /etc/X11/xorg.conf.d/keyboard.conf dodajemy:
-1Section &#34;InputClass&#34; 2Identifier &#34;Keyboard Defaults&#34; 3MatchIsKeyboard &#34;yes&#34; 4Option &#34;XkbLayout&#34; &#34;pl&#34; 5EndSection Polonizacja systemu w pliku /etc/locale.conf dodajemy
+1Section &#34;InputClass&#34; 2 Identifier &#34;Keyboard Defaults&#34; 3 MatchIsKeyboard &#34;yes&#34; 4 Option &#34;XkbLayout&#34; &#34;pl&#34; 5EndSection Polonizacja systemu w pliku /etc/locale.conf dodajemy
 1LANG=pl_PL.UTF-8 W pliku …
             
           </p>
@@ -1017,7 +1017,7 @@ Pierwsza cześć to pytania o parametry klucza
           <p class="pale">
             
               Skrypt do konwertowania dokumentów
-1#!/bin/bash 2 3nazwa=$(basename &#34;$1&#34; .md) 45pandoc -V geometry:margin=1.5cm &#34;$1&#34; --pdf-engine=xelatex \ 6--variable fontsize=10.5pt -s -o &#34;$nazwa&#34;.pdf --toc --toc-depth 2 
+1#!/bin/bash 2 3nazwa=$(basename &#34;$1&#34; .md) 4 5pandoc -V geometry:margin=1.5cm &#34;$1&#34; --pdf-engine=xelatex \ 6--variable fontsize=10.5pt -s -o &#34;$nazwa&#34;.pdf --toc --toc-depth 2 
             
           </p>
         </div>
@@ -1182,7 +1182,7 @@ Uzyskanie identyfikatora UUID dysku /dev/sdb1
               Wywołanie polecenia man Składnia:man sekcja temat
 Wyświetlenie pomocy dla pliku passwd
 1man 5 passwd Wyświetlenie pomocy dla polecenia passwd
-1man 1 passwd Sekcje podręcznika man    sekcja opis     1 Polecenia i aplikacje uruchamiane z poziomu użytkownika   2 Wywołania systemowe i kody blędów jądra   3 Wywołania …
+1man 1 passwd Sekcje podręcznika man sekcja opis 1 Polecenia i aplikacje uruchamiane z poziomu użytkownika 2 Wywołania systemowe i kody blędów jądra 3 Wywołania biblioteczne 4 …
             
           </p>
         </div>
@@ -1250,7 +1250,7 @@ Wyświetlenie pomocy dla pliku passwd
           <p class="pale">
             
               Skrypt dodający konto użytkownika, oraz tworzący katalog domowy
-1if [ $# -eq 0 ]; then 2echo Podaj nazwę konta, które chcesz dodać. 3echo $0 nazwa_użytkownika 4exit 5fi 67useradd -d /home/samba/$1 -s /sbin/nologin $1 8chmod 0770 /home/samba/$1 9cd /home/samba/$1 10ls -A /home/samba/$1 | xargs rm 11smbpasswd -a $1 
+1if [ $# -eq 0 ]; then 2 echo Podaj nazwę konta, które chcesz dodać. 3 echo $0 nazwa_użytkownika 4 exit 5fi 6 7useradd -d /home/samba/$1 -s /sbin/nologin $1 8chmod 0770 /home/samba/$1 9cd /home/samba/$1 10ls -A /home/samba/$1 | xargs rm 11smbpasswd -a $1 
             
           </p>
         </div>
@@ -1351,7 +1351,7 @@ Wyświetlenie pomocy dla pliku passwd
         <div>
           <p class="pale">
             
-              Wyświetlenie urządzeń sieciowych 1$ nmcli device 23DEVICE TYPE STATE CONNECTION 4wlp59s0 wifi połączono wifi-home 5enp0s31f6 ethernet niedostępne -- 6lo loopback niezarządzane -- Wyświetlenie informacje o podłączeniu 1$ nmcli device wifi 23IN-USE BSSID SSID MODE CHAN RATE SIGNAL BARS SECURITY 4* AA:BB:CC:DD:EE:FF …
+              Wyświetlenie urządzeń sieciowych 1$ nmcli device 2 3DEVICE TYPE STATE CONNECTION 4wlp59s0 wifi połączono wifi-home 5enp0s31f6 ethernet niedostępne -- 6lo loopback niezarządzane -- Wyświetlenie informacje o podłączeniu 1$ nmcli device wifi 2 3IN-USE BSSID SSID MODE CHAN RATE SIGNAL BARS SECURITY 4* AA:BB:CC:DD:EE:FF …
             
           </p>
         </div>
@@ -1417,7 +1417,7 @@ Wyświetlenie pomocy dla pliku passwd
           <p class="pale">
             
               Taka zmiana jest przydatna szczególnie dla osób, które posługują się edytorem Vim lub podobnymi gdzie używa się dość często klawisza ESC, jako że klawisz CapsLock jest bardzo rzadko używany to można go wykorzystać jako klawisz ESC.
-1stty -ixon # wyłączenie Ctrl+s 23if [ $DISPLAY ]; then 4setxkbmap -option caps:escape # …
+1stty -ixon # wyłączenie Ctrl+s 2 3if [ $DISPLAY ]; then 4 setxkbmap -option caps:escape …
             
           </p>
         </div>
@@ -1583,7 +1583,7 @@ UWAGA! Po wykonaniu …
             
               Kiedy chcemy zmienić rozdzielczość, ale okazuje się, mimo że w specyfikacji nasz ekran obsługuje taką rozdzielczość to jej nie ma :( Ma to często miejsce przy wirtualizacji. Tak więc musimy taką rozdzielczość dodać do listy.
 Sprawdzamy ustawienia dla nowej rozdzielczości za pomocą polecenia gtf
-1$ gtf 1920 1080 60 23# …
+1$ gtf 1920 1080 60 2 3# …
             
           </p>
         </div>
@@ -1652,7 +1652,7 @@ Sprawdzamy ustawienia dla nowej rozdzielczości za pomocą polecenia gtf
         <div>
           <p class="pale">
             
-              Lista pakietów potrzebnych do kompilacji w systemu Fedora  compat-gdbm-devel cyrus-sasl-devel docbook-style-xsl docbook-utils gnutls-devel gpgme-devel krb5-devel kyotocabinet-devel libdb-devel libidn-devel lmdb-devel lua-devel ncurses-devel notmuch-devel qdbm-devel sqlite-devel  Instalacja pakietów 1sudo dnf install …
+              Lista pakietów potrzebnych do kompilacji w systemu Fedora compat-gdbm-devel cyrus-sasl-devel docbook-style-xsl docbook-utils gnutls-devel gpgme-devel krb5-devel kyotocabinet-devel libdb-devel libidn-devel lmdb-devel lua-devel ncurses-devel notmuch-devel qdbm-devel sqlite-devel Instalacja pakietów 1sudo dnf install …
             
           </p>
         </div>
@@ -1687,7 +1687,7 @@ Sprawdzamy ustawienia dla nowej rozdzielczości za pomocą polecenia gtf
               Ukrycie procesów innych użytkowników wiąże się z ponownym zmapowaniem wirtualnej partycji /proc.
 1sudo mount -o remount,rw,hidepid=2 /proc Żeby ukryć procesy permanentnie należy do pliku /etc/fstab dodać:
 1proc /proc proc defaults,hidepid=2 0 0 Wartości jakie może przyjmować parametr hidepid:
-   Value Meaning     0 …
+Value Meaning 0 Everybody …
             
           </p>
         </div>
@@ -2080,7 +2080,7 @@ Sprawdzamy ustawienia dla nowej rozdzielczości za pomocą polecenia gtf
   </div>
 </footer>
 
-    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.8169f3a35b721252522cd830646d6410e5156dd9901daf02a07d2bbf2a6e2e06673893c56829ab03265626b2a09cceebe9515c009c8ab302771e992a6ce0b35e.js" integrity="sha512-gWnzo1tyElJSLNgwZG1kEOUVbdmQHa8CoH0rvypuLgZnOJPFaCmrAyZWJrKgnM7r6VFcAJyKswJ3HpkqbOCzXg==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://mohdur.github.io/js/bundle.min.5ab6e1fc0482e6af0956c86121039ee7752464eb78922876063826927f8bba463fe17b35412a6106c58a7216a384c79571ed3094146a974fe2d142d9bbe01d5e.js" integrity="sha512-Wrbh/ASC5q8JVshhIQOe53UkZOt4kih2Bjgmkn&#43;LukY/4Xs1QSphBsWKchajhMeVce0wlBRql0/i0ULZu&#43;AdXg==" crossorigin="anonymous"></script>
     
   </body>
 </html>
