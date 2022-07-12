@@ -128,8 +128,10 @@
   </div>
 
     
-    <h2 id="wersja-dla-vim">Wersja dla Vim</h2>
-<p>Skrypt <code>$HOME/bin/man-vim.sh</code></p>
+    <p>Jeśli chcemy zastąpić standardowe polecenie <code>man</code> edytorem Vim lub Neovim, to możemy skorzystać ze
+specjalnie przygotowanej konfiguracji dla tego typu składni.</p>
+<h2 id="wersja-dla-vim">Wersja dla Vim</h2>
+<h3 id="skrypt-homebinman-vimsh">Skrypt <code>$HOME/bin/man-vim.sh</code></h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">#!/usr/bin/env bash
 </span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> -eq <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
@@ -141,7 +143,7 @@
 </span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Brak strony: </span><span class="nv">$*</span><span class="s2">&#34;</span>
 </span></span><span class="line"><span class="ln">10</span><span class="cl">  <span class="k">fi</span>
 </span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="k">fi</span>
-</span></span></code></pre></div><p>Plik konfiguracyjny <code>$HOME/.vim/man.vim</code></p>
+</span></span></code></pre></div><h3 id="plik-konfiguracyjny-homevimmanvim">Plik konfiguracyjny <code>$HOME/.vim/man.vim</code></h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="ln">1</span><span class="cl"><span class="nx">source</span> $<span class="nx">VIMRUNTIME</span>/<span class="nx">defaults</span>.<span class="nx">vim</span><span class="err">
 </span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="err"></span><span class="nx">syntax</span> <span class="nx">on</span><span class="err">
 </span></span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="err"></span><span class="nx">set</span> <span class="nx">ft</span><span class="p">=</span><span class="nx">man</span><span class="err">
@@ -151,7 +153,7 @@
 </span></span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="err"></span><span class="nx">nmap</span> <span class="nx">Q</span> :<span class="nx">q</span><span class="p">&lt;</span><span class="nx">cr</span><span class="p">&gt;</span><span class="err">
 </span></span></span><span class="line"><span class="ln">8</span><span class="cl"><span class="err"></span><span class="nx">map</span> <span class="nx">n</span> <span class="nx">nzz</span><span class="err">
 </span></span></span><span class="line"><span class="ln">9</span><span class="cl"><span class="err"></span><span class="nx">map</span> <span class="nx">N</span> <span class="nx">Nzz</span><span class="err">
-</span></span></span></code></pre></div><p>Alias</p>
+</span></span></span></code></pre></div><h3 id="alias">Alias</h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl"><span class="nb">alias</span> <span class="nv">man</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">/bin/man-vim.sh&#34;</span>
 </span></span></code></pre></div><h2 id="wersja-dla-neovim">Wersja dla Neovim</h2>
 <h3 id="skrypt-homebinman-nvimsh">Skrypt <code>$HOME/bin/man-nvim.sh</code></h3>
@@ -190,7 +192,7 @@
 </span></span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="err"></span><span class="nx">map</span> <span class="nx">u</span> <span class="p">&lt;</span><span class="nx">c</span><span class="p">-</span><span class="nx">u</span><span class="p">&gt;</span><span class="err">
 </span></span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="err"></span><span class="nx">map</span> <span class="p">&lt;</span><span class="nx">space</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nx">c</span><span class="p">-</span><span class="nx">d</span><span class="p">&gt;</span><span class="err">
 </span></span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="err"></span><span class="nx">map</span> <span class="p">&lt;</span><span class="nx">backspace</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nx">c</span><span class="p">-</span><span class="nx">u</span><span class="p">&gt;</span><span class="err">
-</span></span></span></code></pre></div><h3 id="alias">Alias</h3>
+</span></span></span></code></pre></div><h3 id="alias-1">Alias</h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl"><span class="nb">alias</span> <span class="nv">man</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">/bin/man-nvim.sh&#34;</span>
 </span></span></code></pre></div><div id="disqus_thread"></div>
 <script type="application/javascript">

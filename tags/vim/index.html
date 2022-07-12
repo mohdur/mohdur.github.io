@@ -123,9 +123,8 @@
         <div>
           <p class="pale">
             
-              Wersja dla Vim Skrypt $HOME/bin/man-vim.sh
-1#!/usr/bin/env bash 2 3if [ $# -eq 0 ]; then 4 /usr/bin/man 5else 6 if man -w $* &gt;/dev/null 2&gt;/dev/null; then 7 /usr/bin/man $* |col -b|vim -u $HOME/.vim/man.vim - 8 else 9 echo &#34;Brak strony: $*&#34; 10 fi 11fi Plik konfiguracyjny $HOME/.vim/man.vim
-1source …
+              Jeśli chcemy zastąpić standardowe polecenie man edytorem Vim lub Neovim, to możemy skorzystać ze specjalnie przygotowanej konfiguracji dla tego typu składni.
+Wersja dla Vim Skrypt $HOME/bin/man-vim.sh 1#!/usr/bin/env bash 2 3if [ $# -eq 0 ]; then 4 /usr/bin/man 5else 6 if man -w $* &gt;/dev/null 2&gt;/dev/null; then 7 …
             
           </p>
         </div>
