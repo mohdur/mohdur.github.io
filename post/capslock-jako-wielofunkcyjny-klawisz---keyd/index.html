@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" data-figures="true" class="page" data-mode="dim">
   <head>
-<title>Podręcznik systemowy man | MOHDUR</title>
+<title>Capslock jako wielofunkcyjny klawisz - Keyd | MOHDUR</title>
 <meta charset="utf-8">
 <meta name="generator" content="Hugo 0.101.0" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -10,13 +10,13 @@
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="Podręcznik systemowy man">
+<meta name="description" content="Wielu użytkowników Vim, często mapuje klawisz Capslock jako klawisz ESC, jest jednak możliwość utworzenia dodatkowej funkcjonalności klawisza Capslock. Tutaj z …">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="Podręcznik systemowy man" />
-<meta property="og:url" content="https://mohdur.github.io/post/podr%C4%99cznik-systemowy-man/" />
-<meta property="og:title" content="Podręcznik systemowy man" />
-<meta property="og:description" content="Podręcznik systemowy man" />
+<meta name="twitter:title" content="Capslock jako wielofunkcyjny klawisz - Keyd" />
+<meta property="og:url" content="https://mohdur.github.io/post/capslock-jako-wielofunkcyjny-klawisz---keyd/" />
+<meta property="og:title" content="Capslock jako wielofunkcyjny klawisz - Keyd" />
+<meta property="og:description" content="Wielu użytkowników Vim, często mapuje klawisz Capslock jako klawisz ESC, jest jednak możliwość utworzenia dodatkowej funkcjonalności klawisza Capslock. Tutaj z …" />
 <meta property="og:image" content="https://mohdur.github.io/images/thumbnail.png" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://mohdur.github.io/icons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://mohdur.github.io/icons/favicon-32x32.png'>
@@ -25,7 +25,7 @@
 <meta name="msapplication-TileColor" content="#002538">
 <meta name="theme-color" content="#002538">
 
-<link rel="canonical" href="https://mohdur.github.io/post/podr%C4%99cznik-systemowy-man/">
+<link rel="canonical" href="https://mohdur.github.io/post/capslock-jako-wielofunkcyjny-klawisz---keyd/">
 
     
 
@@ -44,7 +44,7 @@
     
     
   
-  <body data-code="10" data-lines="false" id="documentTop">
+  <body data-code="200" data-lines="false" id="documentTop">
 
 <header class="nav_header" >
   <nav class="nav"><a href='https://mohdur.github.io/' class="nav_brand nav_item" title="MOHDUR">MOHDUR
@@ -99,26 +99,28 @@
   
 <div class="grid-inverse wrap content">
   <article class="post_content">
-    <h1 class="post_title">Podręcznik systemowy man</h1><div class="post_meta">
+    <h1 class="post_title">Capslock jako wielofunkcyjny klawisz - Keyd</h1><div class="post_meta">
   
     <svg class="icon">
   <use xlink:href="#calendar"></use>
 </svg>
     <span class="post_date">
-      Oct 23, 2020</span>
+      Jul 12, 2022</span>
       <a href='https://mohdur.github.io/tags/linux' title="Linux" class="post_tag button button_translucent">Linux
+      </a>
+      <a href='https://mohdur.github.io/tags/sprz%C4%99t' title="Sprzęt" class="post_tag button button_translucent">Sprzęt
       </a>
 </div>
 
     
   <div class="post_share">
     Share on:
-    <a href="https://twitter.com/intent/tweet?text=Podr%c4%99cznik%20systemowy%20man&url=https%3a%2f%2fmohdur.github.io%2fpost%2fpodr%25C4%2599cznik-systemowy-man%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
+    <a href="https://twitter.com/intent/tweet?text=Capslock%20jako%20wielofunkcyjny%20klawisz%20-%20Keyd&url=https%3a%2f%2fmohdur.github.io%2fpost%2fcapslock-jako-wielofunkcyjny-klawisz---keyd%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
       <svg class="icon">
   <use xlink:href="#twitter"></use>
 </svg>
     </a>
-    <a href="https://mohdur.github.io/post/podr%C4%99cznik-systemowy-man/" title="Copy Link" class="link link_yank">
+    <a href="https://mohdur.github.io/post/capslock-jako-wielofunkcyjny-klawisz---keyd/" title="Copy Link" class="link link_yank">
       <svg class="icon">
   <use xlink:href="#copy"></use>
 </svg>
@@ -126,66 +128,53 @@
   </div>
 
     
-    <h1 id="wywołanie-polecenia-man">Wywołanie polecenia man</h1>
-<p>Składnia:<code>man sekcja temat</code></p>
-<p>Wyświetlenie pomocy dla pliku <code>passwd</code></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">man 5 passwd
-</span></span></code></pre></div><p>Wyświetlenie pomocy dla polecenia <code>passwd</code></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">man 1 passwd
-</span></span></code></pre></div><h1 id="sekcje-podręcznika-man">Sekcje podręcznika man</h1>
-<table>
-<thead>
-<tr>
-<th>sekcja</th>
-<th>opis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Polecenia i aplikacje uruchamiane z poziomu użytkownika</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Wywołania systemowe i kody blędów jądra</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Wywołania biblioteczne</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Sterowniki urządzeń i protokoły sieciowe</td>
-</tr>
-<tr>
-<td>5</td>
-<td>Standardowe formaty plików</td>
-</tr>
-<tr>
-<td>6</td>
-<td>Gry i programy demonstracyjne</td>
-</tr>
-<tr>
-<td>7</td>
-<td>Różne pliki i dokumenty</td>
-</tr>
-<tr>
-<td>8</td>
-<td>Polecenia służące do administrowania systemem</td>
-</tr>
-<tr>
-<td>9</td>
-<td>Niestandardowe specyfikacje jądra i interfejsów</td>
-</tr>
-</tbody>
-</table>
-<h1 id="przeszukiwanie-stron-man">Przeszukiwanie stron man</h1>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">$ man -k słowo_kluczowe
-</span></span></code></pre></div><h1 id="ścieżki-przeszukiwania-podręcznika-systemowego">Ścieżki przeszukiwania podręcznika systemowego</h1>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">$ manpath
-</span></span><span class="line"><span class="ln">2</span><span class="cl">/usr/local/share/man:/usr/share/man:/home/user/src/fzf/man
-</span></span></code></pre></div><p>Dodatkowa ścieżka podręcznika man</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">$ export MANPATH=/home/user/man
+    <p>Wielu użytkowników Vim, często mapuje klawisz Capslock jako klawisz <code>ESC</code>, jest jednak
+możliwość utworzenia dodatkowej funkcjonalności klawisza Capslock. Tutaj z pomocą przychodzi program
+Keyd.</p>
+<ul>
+<li><a href="https://github.com/rvaiya/keyd">https://github.com/rvaiya/keyd</a></li>
+</ul>
+<p>Keyd możemy używać w trybie tekstowym jak i graficznym, działa on jako usługa systemowa, więc
+będziemy potrzebowali dostępu do konta administratora.</p>
+<p>Za pomocą Keyd możemy też tworzyć skróty klawiszowe dla innych klawiszy nie tylko dla klawisza
+Capslock, np: <code>insert = S-insert</code>, klawisz <code>Insert</code> zastąpimy kombinacją klawiszy <code>Shift + Insert</code>.</p>
+<h2 id="przykładowa-konfiguracja-etckeyddefaultconf">Przykładowa konfiguracja <code>/etc/keyd/default.conf</code></h2>
+<p>W sekcji <code>[main]</code> mamy informacje jak będzie wykorzystywany klawisz Capslock, czyli standardowo,
+zamienimy go jako <code>ESC</code>, plus dodamy warstwę, <code>capslock_layer</code>.</p>
+<p>Żeby wejść w tryb warstwy <code>capslock_layer</code>, należy przytrzymać klawisz Capslock a następnie nacisnąć
+kolejny przycisk np: <code>h</code>, który jest ustawiony jako strzałka w lewo.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln"> 1</span><span class="cl">[ids]
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">*
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"># 0001:0001 # ID Klawiatury
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">[main]
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">capslock = overload(capslock_layer, esc)
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">
+</span></span><span class="line"><span class="ln">10</span><span class="cl">[capslock_layer]
+</span></span><span class="line"><span class="ln">11</span><span class="cl">
+</span></span><span class="line"><span class="ln">12</span><span class="cl">h = left
+</span></span><span class="line"><span class="ln">13</span><span class="cl">j = down
+</span></span><span class="line"><span class="ln">14</span><span class="cl">k = up
+</span></span><span class="line"><span class="ln">15</span><span class="cl">l = right
+</span></span><span class="line"><span class="ln">16</span><span class="cl">w = C-right
+</span></span><span class="line"><span class="ln">17</span><span class="cl">b = C-left
+</span></span><span class="line"><span class="ln">18</span><span class="cl">0 = home
+</span></span><span class="line"><span class="ln">19</span><span class="cl">4 = end
+</span></span><span class="line"><span class="ln">20</span><span class="cl"># capslock + y, zastępuje ctrl-c
+</span></span><span class="line"><span class="ln">21</span><span class="cl">y = C-c
+</span></span><span class="line"><span class="ln">22</span><span class="cl"># capslock + v, zastępuje ctrl-v
+</span></span><span class="line"><span class="ln">23</span><span class="cl">p = C-v
+</span></span><span class="line"><span class="ln">24</span><span class="cl"># capslock + enter, zastępuje win-enter
+</span></span><span class="line"><span class="ln">25</span><span class="cl">enter = M-enter
+</span></span><span class="line"><span class="ln">26</span><span class="cl"># capslock + a, zastępuje ctrl-a przydatne w pracy z TMUX
+</span></span><span class="line"><span class="ln">27</span><span class="cl">a = C-a
+</span></span><span class="line"><span class="ln">28</span><span class="cl">v = S-insert
+</span></span><span class="line"><span class="ln">29</span><span class="cl">d = pagedown
+</span></span><span class="line"><span class="ln">30</span><span class="cl">u = pageup
+</span></span><span class="line"><span class="ln">31</span><span class="cl">c = C-c
+</span></span><span class="line"><span class="ln">32</span><span class="cl">e = enter
 </span></span></code></pre></div><div id="disqus_thread"></div>
 <script type="application/javascript">
     window.disqus_config = function () {
@@ -214,9 +203,6 @@
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
       <li>
-        <a href="https://mohdur.github.io/post/capslock-jako-wielofunkcyjny-klawisz---keyd/" class="nav-link" title="Capslock jako wielofunkcyjny klawisz - Keyd">Capslock jako wielofunkcyjny klawisz - Keyd</a>
-      </li>
-      <li>
         <a href="https://mohdur.github.io/post/dziwna-przypad%C5%82o%C5%9B%C4%87-instalatora-void-linux-i-partycjonowania/" class="nav-link" title="Dziwna przypadłość instalatora Void Linux i partycjonowania">Dziwna przypadłość instalatora Void Linux i partycjonowania</a>
       </li>
       <li>
@@ -236,6 +222,9 @@
       </li>
       <li>
         <a href="https://mohdur.github.io/post/instalacja-rpm-fusion-w-fedora-linux/" class="nav-link" title="Instalacja RPM Fusion W Fedora Linux">Instalacja RPM Fusion W Fedora Linux</a>
+      </li>
+      <li>
+        <a href="https://mohdur.github.io/post/przyspieszenie-procesu-wy%C5%82%C4%85czenia-systemu-linux/" class="nav-link" title="Przyspieszenie procesu wyłączenia systemu Linux">Przyspieszenie procesu wyłączenia systemu Linux</a>
       </li>
     </ul>
     <div>

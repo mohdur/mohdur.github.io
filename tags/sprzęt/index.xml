@@ -5,7 +5,67 @@
     <link>https://mohdur.github.io/tags/sprz%C4%99t/</link>
     <description>Recent content in Sprzęt on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 24 Oct 2020 19:56:37 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/sprz%C4%99t/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Jul 2022 20:34:22 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/sprz%C4%99t/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Capslock jako wielofunkcyjny klawisz - Keyd</title>
+      <link>https://mohdur.github.io/post/capslock-jako-wielofunkcyjny-klawisz---keyd/</link>
+      <pubDate>Tue, 12 Jul 2022 20:34:22 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/capslock-jako-wielofunkcyjny-klawisz---keyd/</guid>
+      <description>
+        
+          &lt;p&gt;Wielu użytkowników Vim, często mapuje klawisz Capslock jako klawisz &lt;code&gt;ESC&lt;/code&gt;, jest jednak
+możliwość utworzenia dodatkowej funkcjonalności klawisza Capslock. Tutaj z pomocą przychodzi program
+Keyd.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/rvaiya/keyd&#34;&gt;https://github.com/rvaiya/keyd&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Keyd możemy używać w trybie tekstowym jak i graficznym, działa on jako usługa systemowa, więc
+będziemy potrzebowali dostępu do konta administratora.&lt;/p&gt;
+&lt;p&gt;Za pomocą Keyd możemy też tworzyć skróty klawiszowe dla innych klawiszy nie tylko dla klawisza
+Capslock, np: &lt;code&gt;insert = S-insert&lt;/code&gt;, klawisz &lt;code&gt;Insert&lt;/code&gt; zastąpimy kombinacją klawiszy &lt;code&gt;Shift + Insert&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;przykładowa-konfiguracja-etckeyddefaultconf&#34;&gt;Przykładowa konfiguracja &lt;code&gt;/etc/keyd/default.conf&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;W sekcji &lt;code&gt;[main]&lt;/code&gt; mamy informacje jak będzie wykorzystywany klawisz Capslock, czyli standardowo,
+zamienimy go jako &lt;code&gt;ESC&lt;/code&gt;, plus dodamy warstwę, &lt;code&gt;capslock_layer&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Żeby wejść w tryb warstwy &lt;code&gt;capslock_layer&lt;/code&gt;, należy przytrzymać klawisz Capslock a następnie nacisnąć
+kolejny przycisk np: &lt;code&gt;h&lt;/code&gt;, który jest ustawiony jako strzałka w lewo.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;[ids]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;*
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;# 0001:0001 # ID Klawiatury
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;[main]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;capslock = overload(capslock_layer, esc)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;[capslock_layer]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;h = left
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;j = down
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;k = up
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;15&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;l = right
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;16&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;w = C-right
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;17&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;b = C-left
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;18&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;0 = home
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;19&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;4 = end
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;20&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;# capslock + y, zastępuje ctrl-c
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;21&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;y = C-c
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;22&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;# capslock + v, zastępuje ctrl-v
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;23&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;p = C-v
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;24&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;# capslock + enter, zastępuje win-enter
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;25&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;enter = M-enter
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;26&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;# capslock + a, zastępuje ctrl-a przydatne w pracy z TMUX
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;27&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;a = C-a
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;28&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;v = S-insert
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;29&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;d = pagedown
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;30&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;u = pageup
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;31&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;c = C-c
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;32&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;e = enter
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
+    </item>
+    
     <item>
       <title>Zmiana częstotliwości powtarzania klawiszy</title>
       <link>https://mohdur.github.io/post/zmiana-cz%C4%99stotliwo%C5%9Bci-powtarzania-klawiszy/</link>
