@@ -5,7 +5,40 @@
     <link>https://mohdur.github.io/tags/linux/</link>
     <description>Recent content in Linux on MOHDUR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 12 Jul 2022 20:34:22 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 16 Jul 2022 17:03:23 +0200</lastBuildDate><atom:link href="https://mohdur.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Otworzenie sejfu gocryptfs z hasłem zapisanym w szyfrowanym pliku GPG</title>
+      <link>https://mohdur.github.io/post/otworzenie-sejfu-gocryptfs-z-has%C5%82em-zapisanym-w-szyfrowanym-pliku-gpg/</link>
+      <pubDate>Sat, 16 Jul 2022 17:03:23 +0200</pubDate>
+      
+      <guid>https://mohdur.github.io/post/otworzenie-sejfu-gocryptfs-z-has%C5%82em-zapisanym-w-szyfrowanym-pliku-gpg/</guid>
+      <description>
+        
+          &lt;p&gt;Program gocryptfs służy do tworzenia zaszyfrowanych sejfów, jego zaletą jest to, że każdy plik jest
+szyfrowany z osobna, nie tak jak w innych przypadkach, gdzie szyfrowany jest obraz na dysku w postaci
+monolitycznego pliku.&lt;/p&gt;
+&lt;p&gt;Składnia jest prosta: &lt;code&gt;gocryptfs [zaszyfrowany-sejf] [rozszyfrowany-katalog]&lt;/code&gt; np:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;gocryptfs ~/.local/share/sejf-zaszyfrowany-1 ~/Vaults/sejf-1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Do odszyfrowania hasła możemy posłużyć się zewnętrznym programem np: &lt;code&gt;gopass&lt;/code&gt;, &lt;code&gt;pass&lt;/code&gt; czy &lt;code&gt;GnuPG&lt;/code&gt;,
+program &lt;code&gt;gocryptfs&lt;/code&gt; posiada parametr &lt;code&gt;-extpass&lt;/code&gt;, gdzie umieszczamy linię kodu, która zwróci nam
+hasło do odszyfrowania sejfu.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;gocryptfs -extpass &amp;#39;gpg --homedir ~/.gnupg-temp -q --decrypt /home/user/.config/gocryptfs.key.asc&amp;#39; ~/.local/share/plasma-vault/Sejf-1.enc/ ~/Vaults/Sejf-1/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Jako, że szyfruję również katalog GPG, więc skorzystałem z parametru &lt;code&gt;--homedir&lt;/code&gt; programu &lt;code&gt;gpg&lt;/code&gt;,
+dzięki czemu klucz deszyfrujący jest przechowywany w oddzielnym katalogu.&lt;/p&gt;
+&lt;p&gt;Należy zwrócić uwagę na parametr &lt;code&gt;--decrypt ...&lt;/code&gt;, tutaj należy podać pełną ścieżkę, bez użycia
+aliasów &lt;code&gt;~/&lt;/code&gt; lub &lt;code&gt;$HOME&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Żeby stworzyć osobny katalog z kluczem GPG możemy na przykład na nowo wygenerować nowy klucz w
+osobnym katalogu:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;gpg --gen-key --homedir ~/.gnupg-temp
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;No dobrze, ale po co to wszystko? Hasło do klucza GPG może być dość łatwe do zapamiętania, natomiast
+hasło do odszyfrowania sejfu może być bardzo trudne i nie musimy go pamiętać, więc jeśli prześlemy
+nasz zaszyfrowany sejf na zewnętrzny serwer, odszyfrowanie go będzie mocno utrudnione, zwłaszcza
+bez posiadania hasła do klucza i samego klucza.&lt;/p&gt;
+
+        
+      </description>
+    </item>
+    
     <item>
       <title>Capslock jako wielofunkcyjny klawisz - Keyd</title>
       <link>https://mohdur.github.io/post/capslock-jako-wielofunkcyjny-klawisz---keyd/</link>

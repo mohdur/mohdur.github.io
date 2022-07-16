@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" data-figures="true" class="page" data-mode="dim">
   <head>
-<title>Własne menu ROFI | MOHDUR</title>
+<title>Otworzenie sejfu gocryptfs z hasłem zapisanym w szyfrowanym pliku GPG | MOHDUR</title>
 <meta charset="utf-8">
 <meta name="generator" content="Hugo 0.101.0" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -10,13 +10,13 @@
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="Własne menu ROFI">
+<meta name="description" content="Program gocryptfs służy do tworzenia zaszyfrowanych sejfów, jego zaletą jest to, że każdy plik jest szyfrowany z osobna, nie tak jak w innych przypadkach, gdzie …">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="Własne menu ROFI" />
-<meta property="og:url" content="https://mohdur.github.io/post/w%C5%82asne-menu-rofi/" />
-<meta property="og:title" content="Własne menu ROFI" />
-<meta property="og:description" content="Własne menu ROFI" />
+<meta name="twitter:title" content="Otworzenie sejfu gocryptfs z hasłem zapisanym w szyfrowanym pliku GPG" />
+<meta property="og:url" content="https://mohdur.github.io/post/otworzenie-sejfu-gocryptfs-z-has%C5%82em-zapisanym-w-szyfrowanym-pliku-gpg/" />
+<meta property="og:title" content="Otworzenie sejfu gocryptfs z hasłem zapisanym w szyfrowanym pliku GPG" />
+<meta property="og:description" content="Program gocryptfs służy do tworzenia zaszyfrowanych sejfów, jego zaletą jest to, że każdy plik jest szyfrowany z osobna, nie tak jak w innych przypadkach, gdzie …" />
 <meta property="og:image" content="https://mohdur.github.io/images/thumbnail.png" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://mohdur.github.io/icons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://mohdur.github.io/icons/favicon-32x32.png'>
@@ -25,7 +25,7 @@
 <meta name="msapplication-TileColor" content="#002538">
 <meta name="theme-color" content="#002538">
 
-<link rel="canonical" href="https://mohdur.github.io/post/w%C5%82asne-menu-rofi/">
+<link rel="canonical" href="https://mohdur.github.io/post/otworzenie-sejfu-gocryptfs-z-has%C5%82em-zapisanym-w-szyfrowanym-pliku-gpg/">
 
     
 
@@ -99,30 +99,28 @@
   
 <div class="grid-inverse wrap content">
   <article class="post_content">
-    <h1 class="post_title">Własne menu ROFI</h1><div class="post_meta">
+    <h1 class="post_title">Otworzenie sejfu gocryptfs z hasłem zapisanym w szyfrowanym pliku GPG</h1><div class="post_meta">
   
     <svg class="icon">
   <use xlink:href="#calendar"></use>
 </svg>
     <span class="post_date">
-      Jun 27, 2021</span>
+      Jul 16, 2022</span>
       <a href='https://mohdur.github.io/tags/linux' title="Linux" class="post_tag button button_translucent">Linux
       </a>
-      <a href='https://mohdur.github.io/tags/rofi' title="rofi" class="post_tag button button_translucent">rofi
-      </a>
-      <a href='https://mohdur.github.io/tags/skrypty' title="Skrypty" class="post_tag button button_translucent">Skrypty
+      <a href='https://mohdur.github.io/tags/szyfrowanie' title="szyfrowanie" class="post_tag button button_translucent">szyfrowanie
       </a>
 </div>
 
     
   <div class="post_share">
     Share on:
-    <a href="https://twitter.com/intent/tweet?text=W%c5%82asne%20menu%20ROFI&url=https%3a%2f%2fmohdur.github.io%2fpost%2fw%25C5%2582asne-menu-rofi%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
+    <a href="https://twitter.com/intent/tweet?text=Otworzenie%20sejfu%20gocryptfs%20z%20has%c5%82em%20zapisanym%20w%20szyfrowanym%20pliku%20GPG&url=https%3a%2f%2fmohdur.github.io%2fpost%2fotworzenie-sejfu-gocryptfs-z-has%25C5%2582em-zapisanym-w-szyfrowanym-pliku-gpg%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
       <svg class="icon">
   <use xlink:href="#twitter"></use>
 </svg>
     </a>
-    <a href="https://mohdur.github.io/post/w%C5%82asne-menu-rofi/" title="Copy Link" class="link link_yank">
+    <a href="https://mohdur.github.io/post/otworzenie-sejfu-gocryptfs-z-has%C5%82em-zapisanym-w-szyfrowanym-pliku-gpg/" title="Copy Link" class="link link_yank">
       <svg class="icon">
   <use xlink:href="#copy"></use>
 </svg>
@@ -130,123 +128,27 @@
   </div>
 
     
-    <p>Przykład menu napisanego w BASH.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">  1</span><span class="cl"><span class="cp">#!/usr/bin/env bash
-</span></span></span><span class="line"><span class="ln">  2</span><span class="cl"><span class="cp"></span>
-</span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="nb">declare</span> -a <span class="nv">menu_list</span><span class="o">=(</span>
-</span></span><span class="line"><span class="ln">  4</span><span class="cl">    <span class="s2">&#34;Suspend&#34;</span>
-</span></span><span class="line"><span class="ln">  5</span><span class="cl">    <span class="s2">&#34;Reboot&#34;</span>
-</span></span><span class="line"><span class="ln">  6</span><span class="cl">    <span class="s2">&#34;Monitor Off&#34;</span>
-</span></span><span class="line"><span class="ln">  7</span><span class="cl">    <span class="s2">&#34;Pass ROFI&#34;</span>
-</span></span><span class="line"><span class="ln">  8</span><span class="cl">    <span class="s2">&#34;Wyczyść hasło do agenta GPG&#34;</span>
-</span></span><span class="line"><span class="ln">  9</span><span class="cl">    <span class="s2">&#34;Wyczyść historię schowka&#34;</span>
-</span></span><span class="line"><span class="ln"> 10</span><span class="cl">    <span class="s2">&#34;CPU GHz&#34;</span>
-</span></span><span class="line"><span class="ln"> 11</span><span class="cl">    <span class="s2">&#34;Stan baterii&#34;</span>
-</span></span><span class="line"><span class="ln"> 12</span><span class="cl">    <span class="s2">&#34;Edytuj Menu&#34;</span>
-</span></span><span class="line"><span class="ln"> 13</span><span class="cl"><span class="o">)</span>
-</span></span><span class="line"><span class="ln"> 14</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 15</span><span class="cl"><span class="nv">menu</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span> <span class="s1">&#39;%s\n&#39;</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">menu_list</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&#34;</span> <span class="p">|</span> rofi -lines <span class="m">12</span> -dmenu -i -p <span class="s2">&#34;Wybierz coś&#34;</span> <span class="s2">&#34;</span><span class="si">${</span><span class="p">@</span><span class="si">}</span><span class="s2">&#34;</span><span class="k">)</span>
-</span></span><span class="line"><span class="ln"> 16</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 17</span><span class="cl"><span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Suspend&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> sudo /usr/bin/systemctl <span class="nb">suspend</span>
-</span></span><span class="line"><span class="ln"> 18</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 19</span><span class="cl"><span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Reboot&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> sudo reboot
-</span></span><span class="line"><span class="ln"> 20</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 21</span><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Stan baterii&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-</span></span><span class="line"><span class="ln"> 22</span><span class="cl">    <span class="nv">batt</span><span class="o">=</span><span class="k">$(</span>upower -i <span class="k">$(</span>upower -e <span class="p">|</span> grep BAT<span class="k">)</span> <span class="p">|</span> grep --color<span class="o">=</span>never -E <span class="s2">&#34;state|to\ full|to\ empty|percentage&#34;</span><span class="k">)</span>
-</span></span><span class="line"><span class="ln"> 23</span><span class="cl">    rofi -e <span class="s2">&#34;</span><span class="nv">$batt</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="ln"> 24</span><span class="cl"><span class="k">fi</span>
-</span></span><span class="line"><span class="ln"> 25</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 26</span><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Monitor Off&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-</span></span><span class="line"><span class="ln"> 27</span><span class="cl">    notify-send <span class="s2">&#34;Za kilka chwil wyłączę monitor...&#34;</span>
-</span></span><span class="line"><span class="ln"> 28</span><span class="cl">    sleep <span class="m">1</span>
-</span></span><span class="line"><span class="ln"> 29</span><span class="cl">    xset dpms force off
-</span></span><span class="line"><span class="ln"> 30</span><span class="cl"><span class="k">fi</span>
-</span></span><span class="line"><span class="ln"> 31</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 32</span><span class="cl"><span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Wyczyść hasło do agenta GPG&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> gpg-connect-agent reloadagent /bye
-</span></span><span class="line"><span class="ln"> 33</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 34</span><span class="cl"><span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Wyczyść historię schowka&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nv">$HOME</span>/bin/clipdel -d <span class="s2">&#34;.*&#34;</span>
-</span></span><span class="line"><span class="ln"> 35</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 36</span><span class="cl"><span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Pass ROFI&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nv">$HOME</span>/bin/passr
-</span></span><span class="line"><span class="ln"> 37</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 38</span><span class="cl">check_cpu_exit_status<span class="o">()</span> <span class="o">{</span>
-</span></span><span class="line"><span class="ln"> 39</span><span class="cl">    <span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> <span class="o">==</span> <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-</span></span><span class="line"><span class="ln"> 40</span><span class="cl">        notify-send <span class="s2">&#34;Ustawiłem maksymalną częstotliwość na </span><span class="nv">$1</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="ln"> 41</span><span class="cl">    <span class="k">else</span>
-</span></span><span class="line"><span class="ln"> 42</span><span class="cl">        rofi -e <span class="s2">&#34;Ustawienie częstotliwości (</span><span class="nv">$1</span><span class="s2">) NIE powiodło się (zmień ustawienia sudo).&#34;</span>
-</span></span><span class="line"><span class="ln"> 43</span><span class="cl">    <span class="k">fi</span>
-</span></span><span class="line"><span class="ln"> 44</span><span class="cl"><span class="o">}</span>
-</span></span><span class="line"><span class="ln"> 45</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 46</span><span class="cl">cpu<span class="o">()</span> <span class="o">{</span>
-</span></span><span class="line"><span class="ln"> 47</span><span class="cl">    <span class="nb">declare</span> -a <span class="nv">cpu_hz</span><span class="o">=(</span>
-</span></span><span class="line"><span class="ln"> 48</span><span class="cl">        <span class="s2">&#34;Max 400&#34;</span>
-</span></span><span class="line"><span class="ln"> 49</span><span class="cl">        <span class="s2">&#34;Max 800&#34;</span>
-</span></span><span class="line"><span class="ln"> 50</span><span class="cl">        <span class="s2">&#34;Max 1.4&#34;</span>
-</span></span><span class="line"><span class="ln"> 51</span><span class="cl">        <span class="s2">&#34;Max 1.8&#34;</span>
-</span></span><span class="line"><span class="ln"> 52</span><span class="cl">        <span class="s2">&#34;Max 2.4&#34;</span>
-</span></span><span class="line"><span class="ln"> 53</span><span class="cl">        <span class="s2">&#34;Max 3.3&#34;</span>
-</span></span><span class="line"><span class="ln"> 54</span><span class="cl">        <span class="s2">&#34;Max 4.0&#34;</span>
-</span></span><span class="line"><span class="ln"> 55</span><span class="cl">    <span class="o">)</span>
-</span></span><span class="line"><span class="ln"> 56</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 57</span><span class="cl">    <span class="nv">GHZ</span><span class="o">=</span><span class="k">$(</span>cpupower frequency-info -f -m<span class="p">|</span>tail -n 1<span class="p">|</span>cut -f 6,7 -d <span class="s1">&#39; &#39;</span><span class="k">)</span>
-</span></span><span class="line"><span class="ln"> 58</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 59</span><span class="cl">    <span class="nv">cpu</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span> <span class="s1">&#39;%s\n&#39;</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">cpu_hz</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&#34;</span> <span class="p">|</span> rofi -dmenu -i -p <span class="s2">&#34;Ustaw częstotliwość (teraz: </span><span class="nv">$GHZ</span><span class="s2">)&#34;</span> <span class="s2">&#34;</span><span class="si">${</span><span class="p">@</span><span class="si">}</span><span class="s2">&#34;</span><span class="k">)</span>
-</span></span><span class="line"><span class="ln"> 60</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 61</span><span class="cl">    <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$cpu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Max 400&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-</span></span><span class="line"><span class="ln"> 62</span><span class="cl">        /usr/bin/sudo cpupower frequency-set -u <span class="m">400000</span> -g powersave
-</span></span><span class="line"><span class="ln"> 63</span><span class="cl">        check_cpu_exit_status <span class="s2">&#34;0.4 GHz&#34;</span>
-</span></span><span class="line"><span class="ln"> 64</span><span class="cl">    <span class="k">fi</span>
-</span></span><span class="line"><span class="ln"> 65</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 66</span><span class="cl">    <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$cpu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Max 800&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-</span></span><span class="line"><span class="ln"> 67</span><span class="cl">        /usr/bin/sudo cpupower frequency-set -u <span class="m">800000</span> -g powersave
-</span></span><span class="line"><span class="ln"> 68</span><span class="cl">        check_cpu_exit_status <span class="s2">&#34;0.8 GHz&#34;</span>
-</span></span><span class="line"><span class="ln"> 69</span><span class="cl">    <span class="k">fi</span>
-</span></span><span class="line"><span class="ln"> 70</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 71</span><span class="cl">    <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$cpu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Max 1.4&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-</span></span><span class="line"><span class="ln"> 72</span><span class="cl">        /usr/bin/sudo cpupower frequency-set -u <span class="m">1400000</span> -g powersave
-</span></span><span class="line"><span class="ln"> 73</span><span class="cl">        check_cpu_exit_status <span class="s2">&#34;1.4 GHz&#34;</span>
-</span></span><span class="line"><span class="ln"> 74</span><span class="cl">    <span class="k">fi</span>
-</span></span><span class="line"><span class="ln"> 75</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 76</span><span class="cl">    <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$cpu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Max 1.8&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-</span></span><span class="line"><span class="ln"> 77</span><span class="cl">        /usr/bin/sudo cpupower frequency-set -u <span class="m">1800000</span> -g powersave
-</span></span><span class="line"><span class="ln"> 78</span><span class="cl">        check_cpu_exit_status <span class="s2">&#34;1.8 GHz&#34;</span>
-</span></span><span class="line"><span class="ln"> 79</span><span class="cl">    <span class="k">fi</span>
-</span></span><span class="line"><span class="ln"> 80</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 81</span><span class="cl">    <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$cpu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Max 2.4&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-</span></span><span class="line"><span class="ln"> 82</span><span class="cl">        /usr/bin/sudo cpupower frequency-set -u <span class="m">2400000</span> -g powersave
-</span></span><span class="line"><span class="ln"> 83</span><span class="cl">        check_cpu_exit_status <span class="s2">&#34;2.4 GHz&#34;</span>
-</span></span><span class="line"><span class="ln"> 84</span><span class="cl">    <span class="k">fi</span>
-</span></span><span class="line"><span class="ln"> 85</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 86</span><span class="cl">    <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$cpu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Max 3.3&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-</span></span><span class="line"><span class="ln"> 87</span><span class="cl">        /usr/bin/sudo cpupower frequency-set -u <span class="m">3300000</span> -g powersave
-</span></span><span class="line"><span class="ln"> 88</span><span class="cl">        check_cpu_exit_status <span class="s2">&#34;3.3 GHz&#34;</span>
-</span></span><span class="line"><span class="ln"> 89</span><span class="cl">    <span class="k">fi</span>
-</span></span><span class="line"><span class="ln"> 90</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 91</span><span class="cl">    <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$cpu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Max 4.0&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-</span></span><span class="line"><span class="ln"> 92</span><span class="cl">        /usr/bin/sudo cpupower frequency-set -u <span class="m">4000000</span> -g powersave
-</span></span><span class="line"><span class="ln"> 93</span><span class="cl">        check_cpu_exit_status <span class="s2">&#34;4.0 GHz&#34;</span>
-</span></span><span class="line"><span class="ln"> 94</span><span class="cl">    <span class="k">fi</span>
-</span></span><span class="line"><span class="ln"> 95</span><span class="cl"><span class="o">}</span>
-</span></span><span class="line"><span class="ln"> 96</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 97</span><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;CPU GHz&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-</span></span><span class="line"><span class="ln"> 98</span><span class="cl">    cpu
-</span></span><span class="line"><span class="ln"> 99</span><span class="cl"><span class="k">fi</span>
-</span></span><span class="line"><span class="ln">100</span><span class="cl">
-</span></span><span class="line"><span class="ln">101</span><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$menu</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;Edytuj Menu&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-</span></span><span class="line"><span class="ln">102</span><span class="cl">    st -e vim ~/bin/menu
-</span></span><span class="line"><span class="ln">103</span><span class="cl"><span class="k">fi</span>
-</span></span></code></pre></div><p>Menu z listą książek, po wybraniu pozycji, zostaje uruchomiona przeglądarka plików PDF <strong>zathura</strong>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">#!/usr/bin/env bash
-</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="cp"></span>
-</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="nv">APP</span><span class="o">=</span>zathura
-</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="nv">BOOKS_DIR</span><span class="o">=</span>~/Books
-</span></span><span class="line"><span class="ln"> 5</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="nv">BOOK</span><span class="o">=</span><span class="s2">&#34;</span><span class="k">$(</span> <span class="nb">cd</span> <span class="nv">$BOOKS_DIR</span><span class="p">;</span> find * -name <span class="se">\*</span>.pdf -print <span class="p">|</span> rofi -dmenu <span class="se">\
-</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="se"></span>        -i -l <span class="m">20</span> -matching glob -p <span class="s2">&#34;Books (</span><span class="nv">$APP</span><span class="s2">)&#34;</span> <span class="k">)</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="ln"> 8</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="k">if</span> <span class="o">[</span> -n <span class="s2">&#34;</span><span class="nv">$BOOK</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="nv">$APP</span> <span class="nv">$BOOKS_DIR</span>/<span class="s2">&#34;</span><span class="nv">$BOOK</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="k">fi</span>
-</span></span></code></pre></div><div id="disqus_thread"></div>
+    <p>Program gocryptfs służy do tworzenia zaszyfrowanych sejfów, jego zaletą jest to, że każdy plik jest
+szyfrowany z osobna, nie tak jak w innych przypadkach, gdzie szyfrowany jest obraz na dysku w postaci
+monolitycznego pliku.</p>
+<p>Składnia jest prosta: <code>gocryptfs [zaszyfrowany-sejf] [rozszyfrowany-katalog]</code> np:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">gocryptfs ~/.local/share/sejf-zaszyfrowany-1 ~/Vaults/sejf-1
+</span></span></code></pre></div><p>Do odszyfrowania hasła możemy posłużyć się zewnętrznym programem np: <code>gopass</code>, <code>pass</code> czy <code>GnuPG</code>,
+program <code>gocryptfs</code> posiada parametr <code>-extpass</code>, gdzie umieszczamy linię kodu, która zwróci nam
+hasło do odszyfrowania sejfu.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">gocryptfs -extpass &#39;gpg --homedir ~/.gnupg-temp -q --decrypt /home/user/.config/gocryptfs.key.asc&#39; ~/.local/share/plasma-vault/Sejf-1.enc/ ~/Vaults/Sejf-1/
+</span></span></code></pre></div><p>Jako, że szyfruję również katalog GPG, więc skorzystałem z parametru <code>--homedir</code> programu <code>gpg</code>,
+dzięki czemu klucz deszyfrujący jest przechowywany w oddzielnym katalogu.</p>
+<p>Należy zwrócić uwagę na parametr <code>--decrypt ...</code>, tutaj należy podać pełną ścieżkę, bez użycia
+aliasów <code>~/</code> lub <code>$HOME</code>.</p>
+<p>Żeby stworzyć osobny katalog z kluczem GPG możemy na przykład na nowo wygenerować nowy klucz w
+osobnym katalogu:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">gpg --gen-key --homedir ~/.gnupg-temp
+</span></span></code></pre></div><p>No dobrze, ale po co to wszystko? Hasło do klucza GPG może być dość łatwe do zapamiętania, natomiast
+hasło do odszyfrowania sejfu może być bardzo trudne i nie musimy go pamiętać, więc jeśli prześlemy
+nasz zaszyfrowany sejf na zewnętrzny serwer, odszyfrowanie go będzie mocno utrudnione, zwłaszcza
+bez posiadania hasła do klucza i samego klucza.</p>
+<div id="disqus_thread"></div>
 <script type="application/javascript">
     window.disqus_config = function () {
     
@@ -274,13 +176,13 @@
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
       <li>
-        <a href="https://mohdur.github.io/post/otworzenie-sejfu-gocryptfs-z-has%C5%82em-zapisanym-w-szyfrowanym-pliku-gpg/" class="nav-link" title="Otworzenie sejfu gocryptfs z hasłem zapisanym w szyfrowanym pliku GPG">Otworzenie sejfu gocryptfs z hasłem zapisanym w szyfrowanym pliku GPG</a>
-      </li>
-      <li>
         <a href="https://mohdur.github.io/post/capslock-jako-wielofunkcyjny-klawisz---keyd/" class="nav-link" title="Capslock jako wielofunkcyjny klawisz - Keyd">Capslock jako wielofunkcyjny klawisz - Keyd</a>
       </li>
       <li>
         <a href="https://mohdur.github.io/post/dziwna-przypad%C5%82o%C5%9B%C4%87-instalatora-void-linux-i-partycjonowania/" class="nav-link" title="Dziwna przypadłość instalatora Void Linux i partycjonowania">Dziwna przypadłość instalatora Void Linux i partycjonowania</a>
+      </li>
+      <li>
+        <a href="https://mohdur.github.io/post/w%C5%82asne-menu-rofi/" class="nav-link" title="Własne menu ROFI">Własne menu ROFI</a>
       </li>
       <li>
         <a href="https://mohdur.github.io/post/budowanie-w%C5%82asnego-pakietu-rpm/" class="nav-link" title="Budowanie własnego pakietu RPM">Budowanie własnego pakietu RPM</a>
