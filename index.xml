@@ -1152,8 +1152,8 @@ chcemy objąć tą komendą.&lt;/p&gt;
         
           &lt;h2 id=&#34;podstawowe-informacje&#34;&gt;Podstawowe informacje&lt;/h2&gt;
 &lt;p&gt;TMUX posiada trzy obiekty, tj: sesje, okna i panele, sesje są to osobne procesy, czyli każde
-kolejne uruchomienie programu &lt;code&gt;tmux&lt;/code&gt;, które następnie możemy dzielić na okna a te na panele. TMUX
-działa w trybie client-serwer, przy pierwszym uruchomieniu &lt;code&gt;tmux&lt;/code&gt;, jest uruchamiany serwer,
+kolejne uruchomienie programu &lt;code&gt;tmux&lt;/code&gt;, w sesji możemy tworzyć okna a te możemy dzielić na panele.
+TMUX działa w trybie client-serwer, przy pierwszym uruchomieniu &lt;code&gt;tmux&lt;/code&gt;, jest uruchamiany serwer,
 zamknięcie wszystkich sesji &lt;code&gt;tmux&lt;/code&gt; kończy pracę serwera.&lt;/p&gt;
 &lt;p&gt;Uruchomienie nowej sesji&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;$ tmux
