@@ -439,6 +439,154 @@ wcześniej wykonane komendy. Wejście do trybu COPY <code>Copy-a-[</code>. Wyjś
 </span></span><span class="line"><span class="ln">108</span><span class="cl">set -g history-limit 10000
 </span></span><span class="line"><span class="ln">109</span><span class="cl">
 </span></span><span class="line"><span class="ln">110</span><span class="cl">set -g default-terminal &#34;tmux-256color&#34;
+</span></span></code></pre></div><h2 id="skróty-klawiszowe">Skróty klawiszowe</h2>
+<table>
+<thead>
+<tr>
+<th>Skrót</th>
+<th>Działanie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Ctrl-a</code> <code>d</code></td>
+<td>Odłączenie od sesji, wyjście z tmux; nie zamyka sesji</td>
+</tr>
+<tr>
+<td><code>Ctrl-a</code> <code>c</code></td>
+<td>Tworzy nowe okno</td>
+</tr>
+<tr>
+<td><code>Ctrl-a</code> <code>n</code></td>
+<td>Przechodzi do następnego okna</td>
+</tr>
+<tr>
+<td><code>Ctrl-a</code> <code>p</code></td>
+<td>Przechodzi do poprzedniego okna</td>
+</tr>
+<tr>
+<td><code>Ctrl-a</code> <code>[1-9]</code></td>
+<td>Przechodzi do wybranego okna</td>
+</tr>
+<tr>
+<td><code>Crtl-a</code> <code>\</code></td>
+<td>Dzieli okno pionowo, tworzy panel</td>
+</tr>
+<tr>
+<td><code>Ctrl-a</code> <code>-</code></td>
+<td>Dzieli okno poziomo, tworzy panel</td>
+</tr>
+<tr>
+<td><code>Ctrl-a</code> <code>hjkl</code></td>
+<td>Poruszanie się pomiędzy panelami</td>
+</tr>
+<tr>
+<td><code>Ctrl-a</code> <code>;</code></td>
+<td>Przełączanie się pomiędzy dwoma ostatnio używanymi panelami</td>
+</tr>
+<tr>
+<td><code>Ctrl-a</code> <code>o</code></td>
+<td>Przechodzi do następnego panelu</td>
+</tr>
+<tr>
+<td><code>Ctrl-a</code> <code>{</code></td>
+<td>Przenosi aktywny panel na prawo</td>
+</tr>
+<tr>
+<td><code>Ctrl-a</code> <code>}</code></td>
+<td>Przenosi aktywny panel na lewo</td>
+</tr>
+<tr>
+<td><code>Ctrl-a</code> <code>spacja</code></td>
+<td>Zmienia rozmieszczenie paneli</td>
+</tr>
+<tr>
+<td><code>Ctrl-a</code> <code>q</code></td>
+<td>Wyświetla numer panelu</td>
+</tr>
+<tr>
+<td><code>Ctrl-a</code> <code>!</code></td>
+<td>Przenosi bieżący panel do nowego okna</td>
+</tr>
+<tr>
+<td><code>Ctrl-a</code> <code>z</code></td>
+<td>Przy kilku panelach w oknie pokazuje / chowa bieżący panel na całym ekranie</td>
+</tr>
+<tr>
+<td><code>Ctrl-a</code> <code>$</code></td>
+<td>Zmiana nazwy sesji</td>
+</tr>
+<tr>
+<td><code>Ctrl-a</code> <code>,</code></td>
+<td>Zmiana nazwy okno</td>
+</tr>
+<tr>
+<td><code>Ctrl-a</code> <code>x</code></td>
+<td>Zamknięcie bieżącego panelu, jeśli okno posiada jeden panel, to zamknie okno</td>
+</tr>
+<tr>
+<td><code>Ctrl-a</code> <code>&amp;</code></td>
+<td>Zamknięcie bieżącego okna, jeśli sesja posiada jedno okno, to zamknie sesję</td>
+</tr>
+<tr>
+<td><code>Ctrl-a</code> <code>s</code></td>
+<td>Wyświetla wszystkie sesje i pozwala na przełączanie się pomiędzy nimi</td>
+</tr>
+<tr>
+<td><code>Ctrl-a</code> <code>w</code></td>
+<td>Wyświetla sesje a także znajdujące się w nich okna</td>
+</tr>
+<tr>
+<td><code>Ctrl-a</code> <code>(</code></td>
+<td>Przechodzi do poprzedniej sesji</td>
+</tr>
+<tr>
+<td><code>Ctrl-a</code> <code>)</code></td>
+<td>Przechodzi do następnej sesji</td>
+</tr>
+<tr>
+<td><code>Ctrl-a</code> <code>?</code></td>
+<td>Wyświetla listę skrótów klawiszowych</td>
+</tr>
+</tbody>
+</table>
+<h2 id="parametry-polecenia-tmux">Parametry polecenia <code>tmux</code></h2>
+<h3 id="utworzenie-nowej-sesji">Utworzenie nowej sesji</h3>
+<p>Jeśli uruchomimy program <code>tmux</code> bez parametrów, to zostanie utworzona nowa sesja. Chyba, że
+znajdujemy się już w sesji <code>tmux</code>, wtedy nie zostanie utworzona nowa sesja.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">tmux
+</span></span></code></pre></div><p>Tak samo jak dodając parametr <code>new</code> lub <code>new-session</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">tmux new-session
+</span></span><span class="line"><span class="ln">2</span><span class="cl">
+</span></span><span class="line"><span class="ln">3</span><span class="cl">tmux new
+</span></span></code></pre></div><p>Innym przykładem utworzenia nowej sesji, jest utworzenie sesji i jednocześnie odłączenie się od
+niej, taka operacja może być wykonana nawet w sytuacji, kiedy jesteśmy już w sesji <code>tmux</code>. Służy do
+tego parametr <code>-d</code>. Dodatkowo warto nazwać sesję tak, żeby ją można było łatwo zidentyfikować. Do
+ustawienia nazwy sesji służy parametr <code>-s</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">tmux new -d -s DESK-1
+</span></span></code></pre></div><h3 id="lista-istniejących-sesji">Lista istniejących sesji</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">tmux ls
+</span></span></code></pre></div><p>Przykładowy wynik polecenia <code>tmux ls</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">3: 2 windows (created Sat Jul 16 14:59:05 2022)
+</span></span><span class="line"><span class="ln">2</span><span class="cl">7: 1 windows (created Sun Jul 17 14:47:30 2022)
+</span></span><span class="line"><span class="ln">3</span><span class="cl">DESK-1: 2 windows (created Sun Jul 17 14:01:56 2022) (attached)
+</span></span><span class="line"><span class="ln">4</span><span class="cl">DESK-2: 1 windows (created Sun Jul 17 14:43:41 2022)
+</span></span><span class="line"><span class="ln">5</span><span class="cl">Notes: 1 windows (created Sat Jul 16 14:15:57 2022) (attached)
+</span></span><span class="line"><span class="ln">6</span><span class="cl">QUAKE: 2 windows (created Sat Jul 16 14:16:53 2022) (attached)
+</span></span><span class="line"><span class="ln">7</span><span class="cl">SYNCTHING: 1 windows (created Sat Jul 16 14:15:51 2022)
+</span></span></code></pre></div><p>Jak widać część z nich posiada nazwy a część możemy zidentyfikować używając cyfry / liczby.</p>
+<h3 id="podłączenie-się-do-istniejącej-sesji">Podłączenie się do istniejącej sesji</h3>
+<p>Podłączenie się do sesji jest możliwe jeśli znajdujemy się w terminalu bez aktywnej sesji <code>tmux</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">tmux attach
+</span></span><span class="line"><span class="ln">2</span><span class="cl">tmux atta
+</span></span><span class="line"><span class="ln">3</span><span class="cl">tmux a
+</span></span></code></pre></div><p>Podłączenie się do wybranej sesji za pomocą parametru <code>-t</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">tmux a -t DESK-1
+</span></span></code></pre></div><h2 id="linia-komend">Linia komend</h2>
+<p>Wejście do trybu komend realizujemy za pomocą skrótu <code>Ctrl-a</code> <code>:</code>. W tym trybie możemy wydawać
+polecenia np: uruchomić nową sesję:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">:new
+</span></span><span class="line"><span class="ln">2</span><span class="cl">:new -s NAZWA-SESJI
 </span></span></code></pre></div><div id="disqus_thread"></div>
 <script type="application/javascript">
     window.disqus_config = function () {

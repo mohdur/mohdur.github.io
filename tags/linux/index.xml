@@ -1281,6 +1281,154 @@ wcześniej wykonane komendy. Wejście do trybu COPY &lt;code&gt;Copy-a-[&lt;/cod
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;108&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;set -g history-limit 10000
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;109&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;110&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;set -g default-terminal &amp;#34;tmux-256color&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;skróty-klawiszowe&#34;&gt;Skróty klawiszowe&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Skrót&lt;/th&gt;
+&lt;th&gt;Działanie&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl-a&lt;/code&gt; &lt;code&gt;d&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Odłączenie od sesji, wyjście z tmux; nie zamyka sesji&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl-a&lt;/code&gt; &lt;code&gt;c&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Tworzy nowe okno&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl-a&lt;/code&gt; &lt;code&gt;n&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Przechodzi do następnego okna&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl-a&lt;/code&gt; &lt;code&gt;p&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Przechodzi do poprzedniego okna&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl-a&lt;/code&gt; &lt;code&gt;[1-9]&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Przechodzi do wybranego okna&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Crtl-a&lt;/code&gt; &lt;code&gt;\&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Dzieli okno pionowo, tworzy panel&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl-a&lt;/code&gt; &lt;code&gt;-&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Dzieli okno poziomo, tworzy panel&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl-a&lt;/code&gt; &lt;code&gt;hjkl&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Poruszanie się pomiędzy panelami&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl-a&lt;/code&gt; &lt;code&gt;;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Przełączanie się pomiędzy dwoma ostatnio używanymi panelami&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl-a&lt;/code&gt; &lt;code&gt;o&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Przechodzi do następnego panelu&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl-a&lt;/code&gt; &lt;code&gt;{&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Przenosi aktywny panel na prawo&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl-a&lt;/code&gt; &lt;code&gt;}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Przenosi aktywny panel na lewo&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl-a&lt;/code&gt; &lt;code&gt;spacja&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Zmienia rozmieszczenie paneli&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl-a&lt;/code&gt; &lt;code&gt;q&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Wyświetla numer panelu&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl-a&lt;/code&gt; &lt;code&gt;!&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Przenosi bieżący panel do nowego okna&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl-a&lt;/code&gt; &lt;code&gt;z&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Przy kilku panelach w oknie pokazuje / chowa bieżący panel na całym ekranie&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl-a&lt;/code&gt; &lt;code&gt;$&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Zmiana nazwy sesji&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl-a&lt;/code&gt; &lt;code&gt;,&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Zmiana nazwy okno&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl-a&lt;/code&gt; &lt;code&gt;x&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Zamknięcie bieżącego panelu, jeśli okno posiada jeden panel, to zamknie okno&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl-a&lt;/code&gt; &lt;code&gt;&amp;amp;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Zamknięcie bieżącego okna, jeśli sesja posiada jedno okno, to zamknie sesję&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl-a&lt;/code&gt; &lt;code&gt;s&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Wyświetla wszystkie sesje i pozwala na przełączanie się pomiędzy nimi&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl-a&lt;/code&gt; &lt;code&gt;w&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Wyświetla sesje a także znajdujące się w nich okna&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl-a&lt;/code&gt; &lt;code&gt;(&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Przechodzi do poprzedniej sesji&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl-a&lt;/code&gt; &lt;code&gt;)&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Przechodzi do następnej sesji&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl-a&lt;/code&gt; &lt;code&gt;?&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Wyświetla listę skrótów klawiszowych&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;parametry-polecenia-tmux&#34;&gt;Parametry polecenia &lt;code&gt;tmux&lt;/code&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;utworzenie-nowej-sesji&#34;&gt;Utworzenie nowej sesji&lt;/h3&gt;
+&lt;p&gt;Jeśli uruchomimy program &lt;code&gt;tmux&lt;/code&gt; bez parametrów, to zostanie utworzona nowa sesja. Chyba, że
+znajdujemy się już w sesji &lt;code&gt;tmux&lt;/code&gt;, wtedy nie zostanie utworzona nowa sesja.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;tmux
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Tak samo jak dodając parametr &lt;code&gt;new&lt;/code&gt; lub &lt;code&gt;new-session&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;tmux new-session
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;tmux new
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Innym przykładem utworzenia nowej sesji, jest utworzenie sesji i jednocześnie odłączenie się od
+niej, taka operacja może być wykonana nawet w sytuacji, kiedy jesteśmy już w sesji &lt;code&gt;tmux&lt;/code&gt;. Służy do
+tego parametr &lt;code&gt;-d&lt;/code&gt;. Dodatkowo warto nazwać sesję tak, żeby ją można było łatwo zidentyfikować. Do
+ustawienia nazwy sesji służy parametr &lt;code&gt;-s&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;tmux new -d -s DESK-1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;lista-istniejących-sesji&#34;&gt;Lista istniejących sesji&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;tmux ls
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Przykładowy wynik polecenia &lt;code&gt;tmux ls&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;3: 2 windows (created Sat Jul 16 14:59:05 2022)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;7: 1 windows (created Sun Jul 17 14:47:30 2022)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;DESK-1: 2 windows (created Sun Jul 17 14:01:56 2022) (attached)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;DESK-2: 1 windows (created Sun Jul 17 14:43:41 2022)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;Notes: 1 windows (created Sat Jul 16 14:15:57 2022) (attached)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;QUAKE: 2 windows (created Sat Jul 16 14:16:53 2022) (attached)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;SYNCTHING: 1 windows (created Sat Jul 16 14:15:51 2022)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Jak widać część z nich posiada nazwy a część możemy zidentyfikować używając cyfry / liczby.&lt;/p&gt;
+&lt;h3 id=&#34;podłączenie-się-do-istniejącej-sesji&#34;&gt;Podłączenie się do istniejącej sesji&lt;/h3&gt;
+&lt;p&gt;Podłączenie się do sesji jest możliwe jeśli znajdujemy się w terminalu bez aktywnej sesji &lt;code&gt;tmux&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;tmux attach
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;tmux atta
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;tmux a
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Podłączenie się do wybranej sesji za pomocą parametru &lt;code&gt;-t&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;tmux a -t DESK-1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;linia-komend&#34;&gt;Linia komend&lt;/h2&gt;
+&lt;p&gt;Wejście do trybu komend realizujemy za pomocą skrótu &lt;code&gt;Ctrl-a&lt;/code&gt; &lt;code&gt;:&lt;/code&gt;. W tym trybie możemy wydawać
+polecenia np: uruchomić nową sesję:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;:new
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;:new -s NAZWA-SESJI
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
         
       </description>
