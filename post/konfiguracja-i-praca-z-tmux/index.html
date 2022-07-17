@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" data-figures="true" class="page" data-mode="dim">
   <head>
-<title>Konfiguracja i praca z Tmux | MOHDUR</title>
+<title>Konfiguracja i praca z TMUX | MOHDUR</title>
 <meta charset="utf-8">
 <meta name="generator" content="Hugo 0.101.0" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -10,13 +10,13 @@
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="Konfiguracja i praca z Tmux">
+<meta name="description" content="Konfiguracja i praca z TMUX">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="Konfiguracja i praca z Tmux" />
+<meta name="twitter:title" content="Konfiguracja i praca z TMUX" />
 <meta property="og:url" content="https://mohdur.github.io/post/konfiguracja-i-praca-z-tmux/" />
-<meta property="og:title" content="Konfiguracja i praca z Tmux" />
-<meta property="og:description" content="Konfiguracja i praca z Tmux" />
+<meta property="og:title" content="Konfiguracja i praca z TMUX" />
+<meta property="og:description" content="Konfiguracja i praca z TMUX" />
 <meta property="og:image" content="https://mohdur.github.io/images/thumbnail.png" />
 <link rel="apple-touch-icon" sizes="180x180" href='https://mohdur.github.io/icons/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='https://mohdur.github.io/icons/favicon-32x32.png'>
@@ -99,7 +99,7 @@
   
 <div class="grid-inverse wrap content">
   <article class="post_content">
-    <h1 class="post_title">Konfiguracja i praca z Tmux</h1><div class="post_meta">
+    <h1 class="post_title">Konfiguracja i praca z TMUX</h1><div class="post_meta">
   
     <svg class="icon">
   <use xlink:href="#calendar"></use>
@@ -115,7 +115,7 @@
     
   <div class="post_share">
     Share on:
-    <a href="https://twitter.com/intent/tweet?text=Konfiguracja%20i%20praca%20z%20Tmux&url=https%3a%2f%2fmohdur.github.io%2fpost%2fkonfiguracja-i-praca-z-tmux%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
+    <a href="https://twitter.com/intent/tweet?text=Konfiguracja%20i%20praca%20z%20TMUX&url=https%3a%2f%2fmohdur.github.io%2fpost%2fkonfiguracja-i-praca-z-tmux%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
       <svg class="icon">
   <use xlink:href="#twitter"></use>
 </svg>
@@ -129,13 +129,16 @@
 
     
     <h2 id="podstawowe-informacje">Podstawowe informacje</h2>
-<p>Tmux posiada trzy obiekty, tj. sesje, okna i panele, sesje są to osobne procesy, czyli każde kolejne uruchomienie programu tmux, które następnie możemy dzielić na okna a te na panele.</p>
+<p>TMUX posiada trzy obiekty, tj. sesje, okna i panele, sesje są to osobne procesy, czyli każde
+kolejne uruchomienie programu tmux, które następnie możemy dzielić na okna a te na panele.</p>
 <p>Uruchomienie nowej sesji</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">$ tmux
 </span></span></code></pre></div><p>Więcej na temat tmux <a href="https://github.com/tmux/tmux/wiki">https://github.com/tmux/tmux/wiki</a></p>
 <h2 id="zmiana-prefiksu-ctrl-b-na-ctrl-a">Zmiana prefiksu ctrl-b na ctrl-a</h2>
-<p>Tmux jako prefiks czyli skrót do uruchamiania poleceń używa <code>Ctrl+b</code> w odróżnieniu do programu screen, w którym używany jest skrót <code>Ctrl+a</code>. Pierwszą rzeczą jaką robię w konfiguracji tmux to właśnie zamiana <code>Ctrl+b</code> na <code>Ctrl+a</code>.
-W pliku konfiguracyjnym <code>~/.tmux.conf</code> dodajemy na początku</p>
+<p>TMUX jako prefiks czyli skrót do uruchamiania poleceń używa <code>Ctrl+b</code> w odróżnieniu do programu
+screen, w którym używany jest skrót <code>Ctrl+a</code>. Pierwszą rzeczą jaką robię w konfiguracji tmux to
+właśnie zamiana <code>Ctrl+b</code> na <code>Ctrl+a</code>.</p>
+<p>W pliku konfiguracyjnym <code>~/.tmux.conf</code> dodajemy na początku</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">set-option -g prefix C-a
 </span></span><span class="line"><span class="ln">2</span><span class="cl">unbind-key C-a
 </span></span><span class="line"><span class="ln">3</span><span class="cl">bind-key C-a send-prefix
@@ -144,7 +147,8 @@ W pliku konfiguracyjnym <code>~/.tmux.conf</code> dodajemy na początku</p>
 W pliku konfiguracyjnym <code>~/.tmux.conf</code> dodajemy</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">setw -g mode-keys vi
 </span></span></code></pre></div><h2 id="tryb-copy">Tryb COPY</h2>
-<p>Tryb COPY umożliwia poruszanie się po buforze, czyli mówiąc inaczej przewijamy tekst oglądając wcześniej wykonane komendy. Wejście do trybu COPY <code>Copy-a-[</code>. Wyjście z trybu COPY <code>2 x ESC</code> lub <code>q</code></p>
+<p>Tryb COPY umożliwia poruszanie się po buforze, czyli mówiąc inaczej przewijamy tekst oglądając
+wcześniej wykonane komendy. Wejście do trybu COPY <code>Copy-a-[</code>. Wyjście z trybu COPY <code>2 x ESC</code> lub <code>q</code></p>
 <p>Poruszanie się w trybie COPY</p>
 <p>Istnieją dwa tryby – tryb vi oraz tryb emacs zmianę trybu wykonujemy poleceniem</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">setw -g mode-keys vi
@@ -322,6 +326,117 @@ W pliku konfiguracyjnym <code>~/.tmux.conf</code> dodajemy</p>
 </span></span><span class="line"><span class="ln">4</span><span class="cl">- Wklejenie tekstu        - Ctrl-a-]
 </span></span></code></pre></div><h2 id="zamknięcie-wszystkich-sesji-tmux">Zamknięcie wszystkich sesji tmux</h2>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">tmux ls | grep : | cut -d. -f1 | awk &#39;{print substr($1, 0, length($1)-1)}&#39; | xargs kill
+</span></span></code></pre></div><h2 id="przykładowa-konfiguracja">Przykładowa konfiguracja</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">  1</span><span class="cl"># Zmiana ctrl-b na ctrl-a
+</span></span><span class="line"><span class="ln">  2</span><span class="cl">set-option -g prefix C-a
+</span></span><span class="line"><span class="ln">  3</span><span class="cl">unbind-key C-a
+</span></span><span class="line"><span class="ln">  4</span><span class="cl">bind-key C-a send-prefix
+</span></span><span class="line"><span class="ln">  5</span><span class="cl">
+</span></span><span class="line"><span class="ln">  6</span><span class="cl"># start with window 1 (instead of 0)
+</span></span><span class="line"><span class="ln">  7</span><span class="cl">set -g base-index 1
+</span></span><span class="line"><span class="ln">  8</span><span class="cl">
+</span></span><span class="line"><span class="ln">  9</span><span class="cl"># start with pane 1
+</span></span><span class="line"><span class="ln"> 10</span><span class="cl">set -g pane-base-index 1
+</span></span><span class="line"><span class="ln"> 11</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 12</span><span class="cl"># shorten command delay
+</span></span><span class="line"><span class="ln"> 13</span><span class="cl">set -sg escape-time 1
+</span></span><span class="line"><span class="ln"> 14</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 15</span><span class="cl"># enable vi mode keys
+</span></span><span class="line"><span class="ln"> 16</span><span class="cl">set-window-option -g mode-keys vi
+</span></span><span class="line"><span class="ln"> 17</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 18</span><span class="cl"># Użycie Alt-Strzałki do zmiany panelu
+</span></span><span class="line"><span class="ln"> 19</span><span class="cl">bind -n M-Left select-pane -L
+</span></span><span class="line"><span class="ln"> 20</span><span class="cl">bind -n M-Right select-pane -R
+</span></span><span class="line"><span class="ln"> 21</span><span class="cl">bind -n M-Up select-pane -U
+</span></span><span class="line"><span class="ln"> 22</span><span class="cl">bind -n M-Down select-pane -D
+</span></span><span class="line"><span class="ln"> 23</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 24</span><span class="cl"># Użycie prefiksu + hjkl do zmiany panelu
+</span></span><span class="line"><span class="ln"> 25</span><span class="cl">bind h select-pane -L
+</span></span><span class="line"><span class="ln"> 26</span><span class="cl">bind j select-pane -D
+</span></span><span class="line"><span class="ln"> 27</span><span class="cl">bind k select-pane -U
+</span></span><span class="line"><span class="ln"> 28</span><span class="cl">bind l select-pane -R
+</span></span><span class="line"><span class="ln"> 29</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 30</span><span class="cl"># Użycie Ctrl-Strzałki do zmiany okna
+</span></span><span class="line"><span class="ln"> 31</span><span class="cl">bind -n C-Left previous-window
+</span></span><span class="line"><span class="ln"> 32</span><span class="cl">bind -n C-Right next-window
+</span></span><span class="line"><span class="ln"> 33</span><span class="cl">bind -n C-Up last-window          # Shift-Up  poprzednie okno
+</span></span><span class="line"><span class="ln"> 34</span><span class="cl">bind -n C-Down choose-window      # wybór okna
+</span></span><span class="line"><span class="ln"> 35</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 36</span><span class="cl"># Zamienia okna miejscami
+</span></span><span class="line"><span class="ln"> 37</span><span class="cl">bind-key m command-prompt -p &#34;move window to:&#34;  &#34;swap-window -t &#39;%%&#39;&#34;
+</span></span><span class="line"><span class="ln"> 38</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 39</span><span class="cl"># bind-key -n C-M-Space display-popup -w 80% &#34;ls ~/Downloads | fzf&#34;
+</span></span><span class="line"><span class="ln"> 40</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 41</span><span class="cl"># Zarządzanie oknami
+</span></span><span class="line"><span class="ln"> 42</span><span class="cl">bind K kill-window                                  # ctrl-a-K zamknij okno
+</span></span><span class="line"><span class="ln"> 43</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 44</span><span class="cl"># Użycie Shift-Strzałki do zmiany sesji
+</span></span><span class="line"><span class="ln"> 45</span><span class="cl">bind -n S-Left switch-client -p    # poprzednia sesja
+</span></span><span class="line"><span class="ln"> 46</span><span class="cl">bind -n S-Right switch-client -n   # następna sesja
+</span></span><span class="line"><span class="ln"> 47</span><span class="cl">bind -n S-Up switch-client -l      # ostatnia sesja
+</span></span><span class="line"><span class="ln"> 48</span><span class="cl">bind -n S-Down choose-tree         # wybór sesji
+</span></span><span class="line"><span class="ln"> 49</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 50</span><span class="cl"># Użycie myszki
+</span></span><span class="line"><span class="ln"> 51</span><span class="cl">set -g mouse on
+</span></span><span class="line"><span class="ln"> 52</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 53</span><span class="cl"># Ustawienie dzielenia panelu dodatkowo otwiera w tej samej ścieżce
+</span></span><span class="line"><span class="ln"> 54</span><span class="cl">bind \\ split-window -h -c &#34;#{pane_current_path}&#34;
+</span></span><span class="line"><span class="ln"> 55</span><span class="cl">bind - split-window -v -c &#34;#{pane_current_path}&#34;
+</span></span><span class="line"><span class="ln"> 56</span><span class="cl">unbind &#39;&#34;&#39;
+</span></span><span class="line"><span class="ln"> 57</span><span class="cl">unbind %
+</span></span><span class="line"><span class="ln"> 58</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 59</span><span class="cl"># Dodanie informacji po prawej stronie paska statusu
+</span></span><span class="line"><span class="ln"> 60</span><span class="cl">set-option -g status-right &#34;#(whoami)@#H %H:%I &#34;
+</span></span><span class="line"><span class="ln"> 61</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 62</span><span class="cl"># Przeładowanie konfiguracji tmux
+</span></span><span class="line"><span class="ln"> 63</span><span class="cl">bind-key r source-file ~/.tmux.conf \; display-message &#34;tmux.conf reloaded&#34;
+</span></span><span class="line"><span class="ln"> 64</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 65</span><span class="cl"># Prefix D uruchamia edycję pliku ./TODO.md lub ~/git/github/dotfiles/todo.md
+</span></span><span class="line"><span class="ln"> 66</span><span class="cl">bind -r D neww -c &#34;#{pane_current_path}&#34; &#34;[[ -e TODO.md ]] &amp;&amp; $EDITOR TODO.md || $EDITOR ~/git/github/dotfiles/todo.md&#34;
+</span></span><span class="line"><span class="ln"> 67</span><span class="cl"># bind -r D send-keys -t.- &#39;sudo dnf update&#39; Enter
+</span></span><span class="line"><span class="ln"> 68</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 69</span><span class="cl"># Ustawienie paska statusu
+</span></span><span class="line"><span class="ln"> 70</span><span class="cl">set-option -g set-titles on
+</span></span><span class="line"><span class="ln"> 71</span><span class="cl">set -g status-interval 1
+</span></span><span class="line"><span class="ln"> 72</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 73</span><span class="cl"># Basic status bar colors
+</span></span><span class="line"><span class="ln"> 74</span><span class="cl">set -g status-fg colour238
+</span></span><span class="line"><span class="ln"> 75</span><span class="cl">set -g status-bg colour233
+</span></span><span class="line"><span class="ln"> 76</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 77</span><span class="cl"># Left side of status bar
+</span></span><span class="line"><span class="ln"> 78</span><span class="cl">set -g status-left-length 40
+</span></span><span class="line"><span class="ln"> 79</span><span class="cl">set -g status-left &#34;#[fg=colour232,bg=colour245,bold] #S #[fg=colour240,bg=colour235]#[fg=col our240,bg=colour235] #I:#P #[fg=colour235,bg=colour233,nobold]&#34;
+</span></span><span class="line"><span class="ln"> 80</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 81</span><span class="cl"># Right side of status bar
+</span></span><span class="line"><span class="ln"> 82</span><span class="cl">set -g status-right-length 150
+</span></span><span class="line"><span class="ln"> 83</span><span class="cl">set -g status-right &#34;#[fg=colour245 ,bg=colour240]#[fg=colour232,bg=colour245,bold] #H &#34;
+</span></span><span class="line"><span class="ln"> 84</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 85</span><span class="cl"># Window status
+</span></span><span class="line"><span class="ln"> 86</span><span class="cl">set -g window-status-current-format &#34; #I:#W#F &#34;
+</span></span><span class="line"><span class="ln"> 87</span><span class="cl">set -g window-status-current-style fg=brightwhite,bg=colour237,bold,noitalics
+</span></span><span class="line"><span class="ln"> 88</span><span class="cl">set -g window-status-format &#34; #I:#W#F &#34;
+</span></span><span class="line"><span class="ln"> 89</span><span class="cl">set -g window-status-style fg=white,bg=colour235,noitalics
+</span></span><span class="line"><span class="ln"> 90</span><span class="cl">set -g window-status-separator &#34;&#34;
+</span></span><span class="line"><span class="ln"> 91</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 92</span><span class="cl"># Window separator
+</span></span><span class="line"><span class="ln"> 93</span><span class="cl">set -g window-status-separator &#34;&#34;
+</span></span><span class="line"><span class="ln"> 94</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 95</span><span class="cl"># Window status alignment
+</span></span><span class="line"><span class="ln"> 96</span><span class="cl">set -g status-justify centre
+</span></span><span class="line"><span class="ln"> 97</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 98</span><span class="cl"># Pane number indicator
+</span></span><span class="line"><span class="ln"> 99</span><span class="cl">set -g display-panes-colour colour233
+</span></span><span class="line"><span class="ln">100</span><span class="cl">set -g display-panes-active-colour colour245
+</span></span><span class="line"><span class="ln">101</span><span class="cl">
+</span></span><span class="line"><span class="ln">102</span><span class="cl"># Clock mode
+</span></span><span class="line"><span class="ln">103</span><span class="cl">set -g clock-mode-colour colour240
+</span></span><span class="line"><span class="ln">104</span><span class="cl">set -g clock-mode-style 24
+</span></span><span class="line"><span class="ln">105</span><span class="cl">
+</span></span><span class="line"><span class="ln">106</span><span class="cl"># set-option -g default-shell /usr/bin/zsh
+</span></span><span class="line"><span class="ln">107</span><span class="cl">
+</span></span><span class="line"><span class="ln">108</span><span class="cl">set -g history-limit 10000
+</span></span><span class="line"><span class="ln">109</span><span class="cl">
+</span></span><span class="line"><span class="ln">110</span><span class="cl">set -g default-terminal &#34;tmux-256color&#34;
 </span></span></code></pre></div><div id="disqus_thread"></div>
 <script type="application/javascript">
     window.disqus_config = function () {
