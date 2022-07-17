@@ -1163,10 +1163,10 @@ wcześniej wykonane komendy. Wejście do trybu COPY &lt;code&gt;Copy-a-[&lt;/cod
 &lt;/table&gt;
 &lt;h2 id=&#34;operacja-kopiuj-wklej-w-trybie-copy&#34;&gt;Operacja kopiuj wklej w trybie COPY&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Wejście do trybu COPY - Ctrl-a-[&lt;/li&gt;
-&lt;li&gt;Zaznaczenie tekstu - Spacja&lt;/li&gt;
-&lt;li&gt;Skopiowanie tekstu - Enter&lt;/li&gt;
-&lt;li&gt;Wklejenie tekstu - Ctrl-a-]&lt;/li&gt;
+&lt;li&gt;Wejście do trybu COPY - &lt;code&gt;Ctrl-a-[&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Zaznaczenie tekstu - &lt;code&gt;Spacja&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Skopiowanie tekstu - &lt;code&gt;Enter&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Wklejenie tekstu - &lt;code&gt;Ctrl-a-]&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;zamknięcie-wszystkich-sesji-tmux&#34;&gt;Zamknięcie wszystkich sesji tmux&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;tmux ls | grep : | cut -d. -f1 | awk &amp;#39;{print substr($1, 0, length($1)-1)}&amp;#39; | xargs kill

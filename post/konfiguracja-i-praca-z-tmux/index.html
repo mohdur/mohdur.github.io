@@ -321,10 +321,10 @@ wcześniej wykonane komendy. Wejście do trybu COPY <code>Copy-a-[</code>. Wyjś
 </table>
 <h2 id="operacja-kopiuj-wklej-w-trybie-copy">Operacja kopiuj wklej w trybie COPY</h2>
 <ul>
-<li>Wejście do trybu COPY - Ctrl-a-[</li>
-<li>Zaznaczenie tekstu - Spacja</li>
-<li>Skopiowanie tekstu - Enter</li>
-<li>Wklejenie tekstu - Ctrl-a-]</li>
+<li>Wejście do trybu COPY - <code>Ctrl-a-[</code></li>
+<li>Zaznaczenie tekstu - <code>Spacja</code></li>
+<li>Skopiowanie tekstu - <code>Enter</code></li>
+<li>Wklejenie tekstu - <code>Ctrl-a-]</code></li>
 </ul>
 <h2 id="zamknięcie-wszystkich-sesji-tmux">Zamknięcie wszystkich sesji tmux</h2>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">tmux ls | grep : | cut -d. -f1 | awk &#39;{print substr($1, 0, length($1)-1)}&#39; | xargs kill
