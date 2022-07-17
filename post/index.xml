@@ -1341,12 +1341,14 @@ wcześniej wykonane komendy. Wejście do trybu COPY &lt;code&gt;Copy-a-[&lt;/cod
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;Operacja kopiuj wklej w trybie COPY&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;- Wejście do trybu COPY   - Ctrl-a-[
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;- Zaznaczenie tekstu      - Ctrl-Space
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;- Skopiowanie tekstu      - Alt-w
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;- Wklejenie tekstu        - Ctrl-a-]
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;zamknięcie-wszystkich-sesji-tmux&#34;&gt;Zamknięcie wszystkich sesji tmux&lt;/h2&gt;
+&lt;h2 id=&#34;operacja-kopiuj-wklej-w-trybie-copy&#34;&gt;Operacja kopiuj wklej w trybie COPY&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Wejście do trybu COPY - Ctrl-a-[&lt;/li&gt;
+&lt;li&gt;Zaznaczenie tekstu - Spacja&lt;/li&gt;
+&lt;li&gt;Skopiowanie tekstu - Enter&lt;/li&gt;
+&lt;li&gt;Wklejenie tekstu - Ctrl-a-]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;zamknięcie-wszystkich-sesji-tmux&#34;&gt;Zamknięcie wszystkich sesji tmux&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;tmux ls | grep : | cut -d. -f1 | awk &amp;#39;{print substr($1, 0, length($1)-1)}&amp;#39; | xargs kill
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;przykładowa-konfiguracja-tmuxconf&#34;&gt;Przykładowa konfiguracja &lt;code&gt;~/.tmux.conf&lt;/code&gt;&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;  1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;# Zmiana ctrl-b na ctrl-a

@@ -319,12 +319,14 @@ wcześniej wykonane komendy. Wejście do trybu COPY <code>Copy-a-[</code>. Wyjś
 </tr>
 </tbody>
 </table>
-<p>Operacja kopiuj wklej w trybie COPY</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">- Wejście do trybu COPY   - Ctrl-a-[
-</span></span><span class="line"><span class="ln">2</span><span class="cl">- Zaznaczenie tekstu      - Ctrl-Space
-</span></span><span class="line"><span class="ln">3</span><span class="cl">- Skopiowanie tekstu      - Alt-w
-</span></span><span class="line"><span class="ln">4</span><span class="cl">- Wklejenie tekstu        - Ctrl-a-]
-</span></span></code></pre></div><h2 id="zamknięcie-wszystkich-sesji-tmux">Zamknięcie wszystkich sesji tmux</h2>
+<h2 id="operacja-kopiuj-wklej-w-trybie-copy">Operacja kopiuj wklej w trybie COPY</h2>
+<ul>
+<li>Wejście do trybu COPY - Ctrl-a-[</li>
+<li>Zaznaczenie tekstu - Spacja</li>
+<li>Skopiowanie tekstu - Enter</li>
+<li>Wklejenie tekstu - Ctrl-a-]</li>
+</ul>
+<h2 id="zamknięcie-wszystkich-sesji-tmux">Zamknięcie wszystkich sesji tmux</h2>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">tmux ls | grep : | cut -d. -f1 | awk &#39;{print substr($1, 0, length($1)-1)}&#39; | xargs kill
 </span></span></code></pre></div><h2 id="przykładowa-konfiguracja-tmuxconf">Przykładowa konfiguracja <code>~/.tmux.conf</code></h2>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">  1</span><span class="cl"># Zmiana ctrl-b na ctrl-a
