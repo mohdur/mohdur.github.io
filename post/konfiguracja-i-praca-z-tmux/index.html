@@ -326,9 +326,7 @@ wcześniej wykonane komendy. Wejście do trybu COPY <code>Copy-a-[</code>. Wyjś
 <li>Skopiowanie tekstu - <code>Enter</code></li>
 <li>Wklejenie tekstu - <code>Ctrl-a-]</code></li>
 </ul>
-<h2 id="zamknięcie-wszystkich-sesji-tmux">Zamknięcie wszystkich sesji tmux</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">tmux ls | grep : | cut -d. -f1 | awk &#39;{print substr($1, 0, length($1)-1)}&#39; | xargs kill
-</span></span></code></pre></div><h2 id="przykładowa-konfiguracja-tmuxconf">Przykładowa konfiguracja <code>~/.tmux.conf</code></h2>
+<h2 id="przykładowa-konfiguracja-tmuxconf">Przykładowa konfiguracja <code>~/.tmux.conf</code></h2>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">  1</span><span class="cl"># Zmiana ctrl-b na ctrl-a
 </span></span><span class="line"><span class="ln">  2</span><span class="cl">set-option -g prefix C-a
 </span></span><span class="line"><span class="ln">  3</span><span class="cl">unbind-key C-a
@@ -440,6 +438,8 @@ wcześniej wykonane komendy. Wejście do trybu COPY <code>Copy-a-[</code>. Wyjś
 </span></span><span class="line"><span class="ln">109</span><span class="cl">
 </span></span><span class="line"><span class="ln">110</span><span class="cl">set -g default-terminal &#34;tmux-256color&#34;
 </span></span></code></pre></div><h2 id="skróty-klawiszowe">Skróty klawiszowe</h2>
+<p>Standardowo prefix to skrót <code>Ctrl-b</code> wcześniej pokazałem jak go zamienić na skrót <code>Ctrl-a</code>, w tabelce
+poniżej takiego używam.</p>
 <table>
 <thead>
 <tr>
@@ -582,6 +582,8 @@ ustawienia nazwy sesji służy parametr <code>-s</code>.</p>
 </span></span><span class="line"><span class="ln">3</span><span class="cl">tmux a
 </span></span></code></pre></div><p>Podłączenie się do wybranej sesji za pomocą parametru <code>-t</code></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">tmux a -t DESK-1
+</span></span></code></pre></div><h3 id="zamknięcie-wszystkich-sesji-tmux">Zamknięcie wszystkich sesji tmux</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">tmux ls | grep : | cut -d. -f1 | awk &#39;{print substr($1, 0, length($1)-1)}&#39; | xargs kill
 </span></span></code></pre></div><h2 id="linia-komend">Linia komend</h2>
 <p>Wejście do trybu komend realizujemy za pomocą skrótu <code>Ctrl-a</code> <code>:</code>. W tym trybie możemy wydawać
 polecenia np: uruchomić nową sesję:</p>

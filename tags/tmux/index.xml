@@ -212,9 +212,7 @@ wcześniej wykonane komendy. Wejście do trybu COPY &lt;code&gt;Copy-a-[&lt;/cod
 &lt;li&gt;Skopiowanie tekstu - &lt;code&gt;Enter&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Wklejenie tekstu - &lt;code&gt;Ctrl-a-]&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;zamknięcie-wszystkich-sesji-tmux&#34;&gt;Zamknięcie wszystkich sesji tmux&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;tmux ls | grep : | cut -d. -f1 | awk &amp;#39;{print substr($1, 0, length($1)-1)}&amp;#39; | xargs kill
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;przykładowa-konfiguracja-tmuxconf&#34;&gt;Przykładowa konfiguracja &lt;code&gt;~/.tmux.conf&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;przykładowa-konfiguracja-tmuxconf&#34;&gt;Przykładowa konfiguracja &lt;code&gt;~/.tmux.conf&lt;/code&gt;&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;  1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;# Zmiana ctrl-b na ctrl-a
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;  2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;set-option -g prefix C-a
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;  3&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;unbind-key C-a
@@ -326,6 +324,8 @@ wcześniej wykonane komendy. Wejście do trybu COPY &lt;code&gt;Copy-a-[&lt;/cod
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;109&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;110&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;set -g default-terminal &amp;#34;tmux-256color&amp;#34;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;skróty-klawiszowe&#34;&gt;Skróty klawiszowe&lt;/h2&gt;
+&lt;p&gt;Standardowo prefix to skrót &lt;code&gt;Ctrl-b&lt;/code&gt; wcześniej pokazałem jak go zamienić na skrót &lt;code&gt;Ctrl-a&lt;/code&gt;, w tabelce
+poniżej takiego używam.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -468,6 +468,8 @@ ustawienia nazwy sesji służy parametr &lt;code&gt;-s&lt;/code&gt;.&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;tmux a
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Podłączenie się do wybranej sesji za pomocą parametru &lt;code&gt;-t&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;tmux a -t DESK-1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;zamknięcie-wszystkich-sesji-tmux&#34;&gt;Zamknięcie wszystkich sesji tmux&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;tmux ls | grep : | cut -d. -f1 | awk &amp;#39;{print substr($1, 0, length($1)-1)}&amp;#39; | xargs kill
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;linia-komend&#34;&gt;Linia komend&lt;/h2&gt;
 &lt;p&gt;Wejście do trybu komend realizujemy za pomocą skrótu &lt;code&gt;Ctrl-a&lt;/code&gt; &lt;code&gt;:&lt;/code&gt;. W tym trybie możemy wydawać
 polecenia np: uruchomić nową sesję:&lt;/p&gt;
