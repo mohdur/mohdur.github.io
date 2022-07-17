@@ -22,6 +22,10 @@ monolitycznego pliku.&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Do odszyfrowania hasła możemy posłużyć się zewnętrznym programem np: &lt;code&gt;gopass&lt;/code&gt;, &lt;code&gt;pass&lt;/code&gt; czy &lt;code&gt;GnuPG&lt;/code&gt;,
 program &lt;code&gt;gocryptfs&lt;/code&gt; posiada parametr &lt;code&gt;-extpass&lt;/code&gt;, gdzie umieszczamy linię kodu, która zwróci nam
 hasło do odszyfrowania sejfu.&lt;/p&gt;
+&lt;p&gt;Dzięki czemu hasło do klucza GPG może być dość łatwe do zapamiętania, natomiast hasło do
+odszyfrowania sejfu może być bardzo trudne i nie musimy go pamiętać, więc jeśli prześlemy nasz
+zaszyfrowany sejf na zewnętrzny serwer, odszyfrowanie go będzie mocno utrudnione, zwłaszcza bez
+posiadania hasła do klucza i samego klucza.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;gocryptfs -extpass &amp;#39;gpg --homedir ~/.gnupg-temp -q --decrypt /home/user/.config/gocryptfs.key.asc&amp;#39; ~/.local/share/plasma-vault/Sejf-1.enc/ ~/Vaults/Sejf-1/
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Jako, że szyfruję również katalog GPG, więc skorzystałem z parametru &lt;code&gt;--homedir&lt;/code&gt; programu &lt;code&gt;gpg&lt;/code&gt;,
 dzięki czemu klucz deszyfrujący jest przechowywany w oddzielnym katalogu.&lt;/p&gt;
@@ -30,11 +34,20 @@ aliasów &lt;code&gt;~/&lt;/code&gt; lub &lt;code&gt;$HOME&lt;/code&gt;.&lt;/p&g
 &lt;p&gt;Żeby stworzyć osobny katalog z kluczem GPG możemy na przykład na nowo wygenerować nowy klucz w
 osobnym katalogu:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;gpg --gen-key --homedir ~/.gnupg-temp
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;No dobrze, ale po co to wszystko? Hasło do klucza GPG może być dość łatwe do zapamiętania, natomiast
-hasło do odszyfrowania sejfu może być bardzo trudne i nie musimy go pamiętać, więc jeśli prześlemy
-nasz zaszyfrowany sejf na zewnętrzny serwer, odszyfrowanie go będzie mocno utrudnione, zwłaszcza
-bez posiadania hasła do klucza i samego klucza.&lt;/p&gt;
-
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Innym sposobem jest import istniejącego już klucza. Do tego będziemy potrzebowali klucza prywatnego,
+więc najpierw wyeksportujmy taki klucz.&lt;/p&gt;
+&lt;p&gt;Wyświetlmy wszystkie klucze prywatne:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;gpg -K
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Eksport klucza prywatnego:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;gpg  -o ~/klucz --export-secret-keys adres@email.pl
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Tworzymy nowy katalog&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;mkdir ~/.gnupg-gcfs
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;chmod 0700 ~/.gnupg-gcfs
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Importujemy wcześniej wyeksportowany klucz&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;gpg --homedir ~/.gnupg-gcfs --import ~/klucz
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Teraz sprawdźmy listę kluczy w nowej lokalizacji&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;gpg --homedir ~/.gnupg-gcfs --list-secret-keys
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
         
       </description>
     </item>

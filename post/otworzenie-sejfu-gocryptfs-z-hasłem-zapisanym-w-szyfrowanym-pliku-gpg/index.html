@@ -136,6 +136,10 @@ monolitycznego pliku.</p>
 </span></span></code></pre></div><p>Do odszyfrowania hasła możemy posłużyć się zewnętrznym programem np: <code>gopass</code>, <code>pass</code> czy <code>GnuPG</code>,
 program <code>gocryptfs</code> posiada parametr <code>-extpass</code>, gdzie umieszczamy linię kodu, która zwróci nam
 hasło do odszyfrowania sejfu.</p>
+<p>Dzięki czemu hasło do klucza GPG może być dość łatwe do zapamiętania, natomiast hasło do
+odszyfrowania sejfu może być bardzo trudne i nie musimy go pamiętać, więc jeśli prześlemy nasz
+zaszyfrowany sejf na zewnętrzny serwer, odszyfrowanie go będzie mocno utrudnione, zwłaszcza bez
+posiadania hasła do klucza i samego klucza.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">gocryptfs -extpass &#39;gpg --homedir ~/.gnupg-temp -q --decrypt /home/user/.config/gocryptfs.key.asc&#39; ~/.local/share/plasma-vault/Sejf-1.enc/ ~/Vaults/Sejf-1/
 </span></span></code></pre></div><p>Jako, że szyfruję również katalog GPG, więc skorzystałem z parametru <code>--homedir</code> programu <code>gpg</code>,
 dzięki czemu klucz deszyfrujący jest przechowywany w oddzielnym katalogu.</p>
@@ -144,11 +148,20 @@ aliasów <code>~/</code> lub <code>$HOME</code>.</p>
 <p>Żeby stworzyć osobny katalog z kluczem GPG możemy na przykład na nowo wygenerować nowy klucz w
 osobnym katalogu:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">gpg --gen-key --homedir ~/.gnupg-temp
-</span></span></code></pre></div><p>No dobrze, ale po co to wszystko? Hasło do klucza GPG może być dość łatwe do zapamiętania, natomiast
-hasło do odszyfrowania sejfu może być bardzo trudne i nie musimy go pamiętać, więc jeśli prześlemy
-nasz zaszyfrowany sejf na zewnętrzny serwer, odszyfrowanie go będzie mocno utrudnione, zwłaszcza
-bez posiadania hasła do klucza i samego klucza.</p>
-<div id="disqus_thread"></div>
+</span></span></code></pre></div><p>Innym sposobem jest import istniejącego już klucza. Do tego będziemy potrzebowali klucza prywatnego,
+więc najpierw wyeksportujmy taki klucz.</p>
+<p>Wyświetlmy wszystkie klucze prywatne:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">gpg -K
+</span></span></code></pre></div><p>Eksport klucza prywatnego:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">gpg  -o ~/klucz --export-secret-keys adres@email.pl
+</span></span></code></pre></div><p>Tworzymy nowy katalog</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">mkdir ~/.gnupg-gcfs
+</span></span><span class="line"><span class="ln">2</span><span class="cl">chmod 0700 ~/.gnupg-gcfs
+</span></span></code></pre></div><p>Importujemy wcześniej wyeksportowany klucz</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">gpg --homedir ~/.gnupg-gcfs --import ~/klucz
+</span></span></code></pre></div><p>Teraz sprawdźmy listę kluczy w nowej lokalizacji</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">gpg --homedir ~/.gnupg-gcfs --list-secret-keys
+</span></span></code></pre></div><div id="disqus_thread"></div>
 <script type="application/javascript">
     window.disqus_config = function () {
     
