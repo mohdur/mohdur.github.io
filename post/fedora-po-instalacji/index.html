@@ -342,8 +342,6 @@
 </span></span><span class="line"><span class="ln">2</span><span class="cl">mkdir workspace/<span class="o">{</span>src,git<span class="o">}</span>
 </span></span><span class="line"><span class="ln">3</span><span class="cl">ln -s ~/workspace/src/ ~/src
 </span></span><span class="line"><span class="ln">4</span><span class="cl">ln -s ~/workspace/git/ ~/git
-</span></span></code></pre></div><h3 id="neovim">Neovim</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">git clone https://github.com/sebmd/neovim-lua
 </span></span></code></pre></div><h2 id="kompilacja-keyd">Kompilacja Keyd</h2>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">mkdir -p ~/src
 </span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="nb">cd</span> ~/src
@@ -362,10 +360,10 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">[program:keyd]</span>
 </span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="na">autorestart</span> <span class="o">=</span> <span class="s">true</span>
 </span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="na">autostart</span> <span class="o">=</span> <span class="s">true</span>
-</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="na">directory</span> <span class="o">=</span> <span class="s">/home/red</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="na">directory</span> <span class="o">=</span> <span class="s">/tmp</span>
 </span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="na">user</span> <span class="o">=</span> <span class="s">root</span>
-</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="na">command</span> <span class="o">=</span> <span class="s">/home/red/bin/keyd</span>
-</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="na">environment</span> <span class="o">=</span> <span class="s">STNORESTART=&#34;1&#34;, HOME=&#34;/home/red&#34;</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="na">command</span> <span class="o">=</span> <span class="s">/usr/bin/keyd</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="na">environment</span> <span class="o">=</span> <span class="s">STNORESTART=&#34;1&#34;, HOME=&#34;/tmp&#34;</span>
 </span></span><span class="line"><span class="ln">8</span><span class="cl"><span class="na">stderr_logfile</span> <span class="o">=</span> <span class="s">/var/log/keyd-err.log</span>
 </span></span><span class="line"><span class="ln">9</span><span class="cl"><span class="na">stdout_logfile</span> <span class="o">=</span> <span class="s">/var/log/keyd-out.log</span>
 </span></span></code></pre></div><p>Dodanie usługi</p>
