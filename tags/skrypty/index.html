@@ -4,7 +4,7 @@
   <head>
 <title>Skrypty | MOHDUR</title>
 <meta charset="utf-8">
-<meta name="generator" content="Hugo 0.101.0" />
+<meta name="generator" content="Hugo 0.98.0" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta property="og:locale" content="en" />
@@ -126,7 +126,7 @@
           <p class="pale">
             
               Przykład menu napisanego w BASH.
-1#!/usr/bin/env bash 2 3declare -a menu_list=( 4 &#34;Suspend&#34; 5 &#34;Reboot&#34; 6 &#34;Monitor Off&#34; 7 &#34;Pass ROFI&#34; 8 &#34;Wyczyść hasło do agenta GPG&#34; 9 &#34;Wyczyść historię schowka&#34; 10 &#34;CPU GHz&#34; 11 &#34;Stan baterii&#34; 12 &#34;Edytuj Menu&#34; 13) 14 …
+1#!/usr/bin/env bash 2 3declare -a menu_list=( 4&#34;Suspend&#34; 5&#34;Reboot&#34; 6&#34;Monitor Off&#34; 7&#34;Pass ROFI&#34; 8&#34;Wyczyść hasło do agenta GPG&#34; 9&#34;Wyczyść historię schowka&#34; 10&#34;CPU GHz&#34; 11&#34;Stan baterii&#34; 12&#34;Edytuj Menu&#34; 13) …
             
           </p>
         </div>
@@ -165,7 +165,7 @@
               Skrypt przetwarza podkatalogi w bieżącej lokalizacji, tworząc archiwa tar a następnie usuwa przetworzony katalog.
 W pętli for możemy użyć maski zawężając wynik wyszukiwania np.
 1for i in *dump*; do lub użyć polecenia ls np.
-1for i in $(ls -A); do 1#!/usr/bin/env bash 2 3clear 4 5echo 6echo …
+1for i in $(ls -A); do 1#!/usr/bin/env bash 2 3clear 45echo 6echo …
             
           </p>
         </div>
@@ -198,7 +198,7 @@ W pętli for możemy użyć maski zawężając wynik wyszukiwania np.
           <p class="pale">
             
               Skrypt zainspirowany https://github.com/nickjj/notes/blob/master/notes
-Wymagania: ripgrep skim (sk) fzf preview.sh część pluginu fzf.vim https://github.com/junegunn/fzf.vim/blob/master/bin/preview.sh vim plugin Vimwiki xclip Opis użycia: W przypadku wyszukiwania z użyciem parametrów -s i -f, istnieje skrót Ctrl+p, …
+Wymagania:  ripgrep skim (sk) fzf preview.sh część pluginu fzf.vim https://github.com/junegunn/fzf.vim/blob/master/bin/preview.sh vim plugin Vimwiki xclip  Opis użycia: W przypadku wyszukiwania z użyciem parametrów -s i -f, istnieje skrót Ctrl+p, …
             
           </p>
         </div>
@@ -230,7 +230,7 @@ Wymagania: ripgrep skim (sk) fzf preview.sh część pluginu fzf.vim https://git
         <div>
           <p class="pale">
             
-              Porówanie Opis &lt;INTEGER1&gt; -eq &lt;INTEGER2&gt; Prawda jeśli liczby są równe. &lt;INTEGER1&gt; -ne &lt;INTEGER2&gt; Prawda jeśli liczby nie są równe. &lt;INTEGER1&gt; -le &lt;INTEGER2&gt; Prawda jeśli pierwsza liczba jest mniejsza lub równa od drugiej. &lt;INTEGER1&gt; -ge &lt;INTEGER2&gt; Prawda jeśli pierwsza …
+              Porówanie Opis     &lt;INTEGER1&gt; -eq &lt;INTEGER2&gt; Prawda jeśli liczby są równe.   &lt;INTEGER1&gt; -ne &lt;INTEGER2&gt; Prawda jeśli liczby nie są równe.   &lt;INTEGER1&gt; -le &lt;INTEGER2&gt; Prawda jeśli pierwsza liczba jest mniejsza lub równa od drugiej.   &lt;INTEGER1&gt; -ge &lt;INTEGER2&gt; Prawda jeśli …
             
           </p>
         </div>
@@ -452,6 +452,9 @@ Pętla for pokazuje wszystkie pliki w katalogu katalog wraz z nazwą tego katalo
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
       <li>
+        <a href="https://mohdur.github.io/post/fedora-po-instalacji/" class="nav-link" title="Fedora po instalacji">Fedora po instalacji</a>
+      </li>
+      <li>
         <a href="https://mohdur.github.io/post/otworzenie-sejfu-gocryptfs-z-has%C5%82em-zapisanym-w-szyfrowanym-pliku-gpg/" class="nav-link" title="Otworzenie sejfu gocryptfs z hasłem zapisanym w szyfrowanym pliku GPG">Otworzenie sejfu gocryptfs z hasłem zapisanym w szyfrowanym pliku GPG</a>
       </li>
       <li>
@@ -472,16 +475,13 @@ Pętla for pokazuje wszystkie pliki w katalogu katalog wraz z nazwą tego katalo
       <li>
         <a href="https://mohdur.github.io/post/kde-caps-lock-jako-esc/" class="nav-link" title="KDE Caps Lock jako ESC">KDE Caps Lock jako ESC</a>
       </li>
-      <li>
-        <a href="https://mohdur.github.io/post/lista-zainstalowanych-czcionek/" class="nav-link" title="Lista zainstalowanych czcionek">Lista zainstalowanych czcionek</a>
-      </li>
     </ul>
     <div>
       <h2 class="mt-4 taxonomy" id="tags-section">Tags</h2>
       <nav class="tags_nav">
         <a href='https://mohdur.github.io/tags/linux/' class="post_tag button button_translucent" title="linux">
           LINUX
-          <span class="button_tally">49</span>
+          <span class="button_tally">50</span>
         </a>
         
         <a href='https://mohdur.github.io/tags/vim/' class="post_tag button button_translucent" title="vim">
@@ -516,7 +516,7 @@ Pętla for pokazuje wszystkie pliki w katalogu katalog wraz z nazwą tego katalo
         
         <a href='https://mohdur.github.io/tags/fedora/' class="post_tag button button_translucent" title="fedora">
           FEDORA
-          <span class="button_tally">5</span>
+          <span class="button_tally">6</span>
         </a>
         
         <a href='https://mohdur.github.io/tags/sieci/' class="post_tag button button_translucent" title="sieci">
@@ -575,7 +575,7 @@ Pętla for pokazuje wszystkie pliki w katalogu katalog wraz z nazwą tego katalo
             </a>
             
             
-            <a href='https://mohdur.github.io/tags/fedora/' class=" post_tag button button_translucent" data-position=5 title="fedora">FEDORA<span class="button_tally">5</span>
+            <a href='https://mohdur.github.io/tags/fedora/' class=" post_tag button button_translucent" data-position=6 title="fedora">FEDORA<span class="button_tally">6</span>
             </a>
             
             
@@ -599,7 +599,7 @@ Pętla for pokazuje wszystkie pliki w katalogu katalog wraz z nazwą tego katalo
             </a>
             
             
-            <a href='https://mohdur.github.io/tags/linux/' class=" post_tag button button_translucent" data-position=49 title="linux">LINUX<span class="button_tally">49</span>
+            <a href='https://mohdur.github.io/tags/linux/' class=" post_tag button button_translucent" data-position=50 title="linux">LINUX<span class="button_tally">50</span>
             </a>
             
             
