@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.20">
-<title>Index</title>
+<title>Nazwa pliku, wyśwetlanie nazwy i rozszerzenia</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -435,299 +435,169 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
-<h1>Index</h1>
+<h1>Nazwa pliku, wyśwetlanie nazwy i rozszerzenia</h1>
 </div>
 <div id="content">
+<div class="sect1">
+<h2 id="_nazwa_pliku_bez_ścieżki">Nazwa pliku bez ścieżki</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Na podstawie prostego skryptu pokażę jak wyświetlić nazwę pliku bez katalogu
+oraz jak wyświetlić samą nazwę pliku bez rozszerzenia.</p>
+</div>
+<div class="paragraph">
+<p>Pętla <code>for</code> pokazuje wszystkie pliki w katalogu <code>katalog</code> wraz z nazwą tego katalogu
+np. <code>katalog/nazwa-pliku.txt</code>, chcąc uzyskać samą nazwę pliku użyjemy komendy
+<code>basename</code>.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>for i in katalog/*.txt
+do
+   PLIK=$(basename $i | cut -d '.' -f 1)
+   echo "$PLIK"
+done</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Inny przykład użycia komendy <code>basename</code></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>VIMRC_DIR="$HOME/.vim/vimrc"
+VIMRC=$(basename "$VIMRC_DIR")
+echo $VIMRC</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>vimrc</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Użycie komendy <code>basename</code></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>basename katalog/plik.txt
+
+plik.txt</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_nazwa_pliku_bez_rozszerzenia">Nazwa pliku bez rozszerzenia</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Skoro mamy już samą nazwę pliku <code>plik.txt</code>, to teraz spróbujemy uzyskać nazwę
+pliku bez rozszerzenia. Używając polecenia <code>cut</code> oraz parametru <code>-d '.'</code>, który
+określa separator pomiędzy polami, wyświetlimy pole numer 1 czyli nazwę pliku,
+służy do tego parametr <code>-f 1</code>.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>basename katalog/plik.txt | cut -d '.' -f 1
+
+plik</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ten sam rezultat możemy uzyskać używając wyłącznie polecenia basename jednak
+musimy znać rozszerzenie pliku.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>basename katalog/plik.txt .txt
+
+plik</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_samo_rozszerzenie">Samo rozszerzenie</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Jeśli chcemy wyświetlić samą nazwę rozszerzenia, to należy użyć polecenia <code>cut</code>,
+gdzie parametr <code>-f1</code> należy zastąpić <code>-f2</code> lub <code>-f2,3</code>.</p>
+</div>
+<div class="paragraph">
+<p>Dla powłoki <strong>BASH</strong> można użyć innego rozwiązania, [shell parameters expansion](<a href="https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html#Shell-Parameter-Expansion" class="bare">https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html#Shell-Parameter-Expansion</a>),
+w zmiennej wyszukujemy wzoru np. <code>.*</code> a następnie cała reszta zostaje usunięta.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>FILE=plik.conf
+EXT="${FILE##.*}"
+echo $EXT</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>conf</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>W przypadku plików zaczynających od <code>.</code> trzeba zastosować inny wzór <code>FILE##*.</code></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>FILE=.tmux.conf
+EXT="${FILE##*.}"
+echo $EXT</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>conf</pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_przykłady_użycia_wzorców_na_zmiennych">Przykłady użycia wzorców na zmiennych</h3>
+<div class="paragraph">
+<p>Ucięcie wszystkiego na prawo od wystąpienia wzorca czyli Wielkiej litery <code><a id=":upper"></a></code></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ZM="terefere/234/234234małaDuża"
+echo "${ZM%%[[:upper:]]*}"
+
+terefere/234/234234mała</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ucięcie od wystąpienia wzoraca do końca zmiennej, czyli w tym przypadku pokazuje
+wszystko na prawo od wystąpienia cyfry.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ZM="terefere/234/234234małaDuża"
+echo "${ZM##*[[:digit:]]}"
+
+małaDuża</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Dodatkowe informacje:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="Aktualizacja-Fedora-Linux-do-nowego-wydania.html">Aktualizacja Fedora Linux do nowego wydania</a></p>
+<p>[Shell Parameter Expansion](<a href="https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html" class="bare">https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html</a>)</p>
 </li>
 <li>
-<p><a href="Aliasy-BASH-ZSH.html">Aliasy BASH ZSH</a></p>
-</li>
-<li>
-<p><a href="Archiwizacja-plików-za-pomocą-polecenia-tar.html">Archiwizacja plików za pomocą polecenia tar</a></p>
-</li>
-<li>
-<p><a href="Archiwizacja-podkatalogow.html">Archiwizacja podkatalogow</a></p>
-</li>
-<li>
-<p><a href="Arch-różności.html">Arch różności</a></p>
-</li>
-<li>
-<p><a href="Backup-danych-na-szyfrowanym-nosniku.html">Backup danych na szyfrowanym nosniku</a></p>
-</li>
-<li>
-<p><a href="Budowanie-własnego-pakietu-RPM.html">Budowanie własnego pakietu RPM</a></p>
-</li>
-<li>
-<p><a href="Capslock-jako-wielofunkcyjny-klawisz-Keyd.html">Capslock jako wielofunkcyjny klawisz Keyd</a></p>
-</li>
-<li>
-<p><a href="Dodanie-konta-SAMBA.html">Dodanie konta SAMBA</a></p>
-</li>
-<li>
-<p><a href="Dodanie-konta-w-systemie-Linux-skrypt.html">Dodanie konta w systemie Linux skrypt</a></p>
-</li>
-<li>
-<p><a href="Dziwna-przypadłość-instalatora-Void-Linux-i-partycjonowania.html">Dziwna przypadłość instalatora Void Linux i partycjonowania</a></p>
-</li>
-<li>
-<p><a href="Easy-RSA-OpenVPN-2-4.html">Easy RSA OpenVPN 2 4</a></p>
-</li>
-<li>
-<p><a href="Fedora-po-instalacji.html">Fedora po instalacji</a></p>
-</li>
-<li>
-<p><a href="Formatowanie-daty-i-godziny.html">Formatowanie daty i godziny</a></p>
-</li>
-<li>
-<p><a href="Generowanie-haseł.html">Generowanie haseł</a></p>
-</li>
-<li>
-<p><a href="Generowanie-klucza-GnuPG-PGP.html">Generowanie klucza GnuPG PGP</a></p>
-</li>
-<li>
-<p><a href="Generowanie-kodu-QR-dla-autoryzacj-2FA.html">Generowanie kodu QR dla autoryzacj 2FA</a></p>
-</li>
-<li>
-<p><a href="Generowanie-liczb-losowych.html">Generowanie liczb losowych</a></p>
-</li>
-<li>
-<p><a href="Ignorowanie-zamknięcia-ekranu-laptopa.html">Ignorowanie zamknięcia ekranu laptopa</a></p>
-</li>
-<li>
-<p><a href="index.html">index</a></p>
-</li>
-<li>
-<p><a href="Instalacja-RPM-Fusion-w-Fedora-Linux.html">Instalacja RPM Fusion w Fedora Linux</a></p>
-</li>
-<li>
-<p><a href="KDE-Caps-Lock-jako-ESC.html">KDE Caps Lock jako ESC</a></p>
-</li>
-<li>
-<p><a href="Komenda-if-w-skryptach-BASH.md.html">Komenda if w skryptach BASH.md</a></p>
-</li>
-<li>
-<p><a href="Kompilacja-neomutt.html">Kompilacja neomutt</a></p>
-</li>
-<li>
-<p><a href="Kompilacja-xurls.html">Kompilacja xurls</a></p>
-</li>
-<li>
-<p><a href="Konfiguracja-interfejsu-sieciowego-za-pomocą-polecenia-ip-w-systemie-Linux.html">Konfiguracja interfejsu sieciowego za pomocą polecenia ip w systemie Linux</a></p>
-</li>
-<li>
-<p><a href="Konfiguracja-i-praca-z-tmux.html">Konfiguracja i praca z tmux</a></p>
-</li>
-<li>
-<p><a href="Konfiguracja-serwera-OpenSSH.html">Konfiguracja serwera OpenSSH</a></p>
-</li>
-<li>
-<p><a href="Konfiguracja-usługi-SSH-w-RouterOS-Mikrotik.html">Konfiguracja usługi SSH w RouterOS Mikrotik</a></p>
-</li>
-<li>
-<p><a href="Konwertowanie-dokumentów-Markdown-do-PDF.html">Konwertowanie dokumentów Markdown do PDF</a></p>
-</li>
-<li>
-<p><a href="Kopia-zapasowa-informacji-o-repozytoriach-Git.html">Kopia zapasowa informacji o repozytoriach Git</a></p>
-</li>
-<li>
-<p><a href="Kopia-zapasowa-Minio-Restic.html">Kopia zapasowa Minio Restic</a></p>
-</li>
-<li>
-<p><a href="Lista-zainstalowanych-czcionek.html">Lista zainstalowanych czcionek</a></p>
-</li>
-<li>
-<p><a href="Lokalna-kopia-zapasowa-z-wykorzystaniem-restic.html">Lokalna kopia zapasowa z wykorzystaniem restic</a></p>
-</li>
-<li>
-<p><a href="Mikrotik-i-Wireguard-VPN.html">Mikrotik i Wireguard VPN</a></p>
-</li>
-<li>
-<p><a href="Naprawienie-SSH-Too-Many-Authentication-Failures.html">Naprawienie SSH Too Many Authentication Failures</a></p>
-</li>
-<li>
-<p><a href="Nazwa-pliku,-wyśwetlanie-nazwy-i-rozszerzenia.html">Nazwa pliku, wyśwetlanie nazwy i rozszerzenia</a></p>
-</li>
-<li>
-<p><a href="NMCLI-i-OpenVPN.html">NMCLI i OpenVPN</a></p>
-</li>
-<li>
-<p><a href="Otworzenie-sejfu-gocryptfs-z-hasłem-zapisanym-w-szyfrowanym-pliku-GPG.html">Otworzenie sejfu gocryptfs z hasłem zapisanym w szyfrowanym pliku GPG</a></p>
-</li>
-<li>
-<p><a href="PF_pfctl_cheat_sheet.html">PF_pfctl_cheat_sheet</a></p>
-</li>
-<li>
-<p><a href="Pobranie-ostatniego-wydania-programu-z-repozytorium-Github.html">Pobranie ostatniego wydania programu z repozytorium Github</a></p>
-</li>
-<li>
-<p><a href="Podłączenie-do-zasobu-SAMBA.html">Podłączenie do zasobu SAMBA</a></p>
-</li>
-<li>
-<p><a href="Podłączenie-dysku-po-identyfikatorze-UUID.html">Podłączenie dysku po identyfikatorze UUID</a></p>
-</li>
-<li>
-<p><a href="Podłączenie-się-do-sieci-Wi-Fi.html">Podłączenie się do sieci Wi Fi</a></p>
-</li>
-<li>
-<p><a href="Podręcznik-systemowy-man.html">Podręcznik systemowy man</a></p>
-</li>
-<li>
-<p><a href="Polecenie-find-w-przykładach.html">Polecenie find w przykładach</a></p>
-</li>
-<li>
-<p><a href="Polecenie-grep-w-przykładach.html">Polecenie grep w przykładach</a></p>
-</li>
-<li>
-<p><a href="Polska-klawiatura-i-polonizacja-w-Arch-Linux.html">Polska klawiatura i polonizacja w Arch Linux</a></p>
-</li>
-<li>
-<p><a href="Praca-z-klientem-OpenSSH.html">Praca z klientem OpenSSH</a></p>
-</li>
-<li>
-<p><a href="Przydatne-programy-dla-systemu-Linux.html">Przydatne programy dla systemu Linux</a></p>
-</li>
-<li>
-<p><a href="Przyspieszenie-procesu-wyłączenia-systemu-Linux.html">Przyspieszenie procesu wyłączenia systemu Linux</a></p>
-</li>
-<li>
-<p><a href="Rsync-receptury.html">Rsync receptury</a></p>
-</li>
-<li>
-<p><a href="SED-receptury.html">SED receptury</a></p>
-</li>
-<li>
-<p><a href="Skróty-klawiszowe-ZSH.html">Skróty klawiszowe ZSH</a></p>
-</li>
-<li>
-<p><a href="Skrypt-ułatwiający-pracę-z-pluginem-Vimwiki-i-dziennikiem.html">Skrypt ułatwiający pracę z pluginem Vimwiki i dziennikiem</a></p>
-</li>
-<li>
-<p><a href="Skrypty-BASH-receptury.html">Skrypty BASH receptury</a></p>
-</li>
-<li>
-<p><a href="Sprawdzanie-pisowni-w-edytorze-Vim.html">Sprawdzanie pisowni w edytorze Vim</a></p>
-</li>
-<li>
-<p><a href="Ukrycie-procesów-innych-użytkowników-w-systemie-Linux.html">Ukrycie procesów innych użytkowników w systemie Linux</a></p>
-</li>
-<li>
-<p><a href="Uruchomienie-skryptu-po-wykryciu-zmian.html">Uruchomienie skryptu po wykryciu zmian</a></p>
-</li>
-<li>
-<p><a href="Ustawienie-klawiatury-w-systemie-Linux.html">Ustawienie klawiatury w systemie Linux</a></p>
-</li>
-<li>
-<p><a href="Vim-działania-arytmetyczne.html">Vim działania arytmetyczne</a></p>
-</li>
-<li>
-<p><a href="Vim-jako-przeglądarka-stron-podręcznika-man.html">Vim jako przeglądarka stron podręcznika man</a></p>
-</li>
-<li>
-<p><a href="Vim_jak_zamienic_dwukropek_na_znak_rownosci.html">Vim_jak_zamienic_dwukropek_na_znak_rownosci</a></p>
-</li>
-<li>
-<p><a href="Vim-kompilacja-ze-zrodel.html">Vim kompilacja ze zrodel</a></p>
-</li>
-<li>
-<p><a href="Vim-lista-projektów-i-FZF.html">Vim lista projektów i FZF</a></p>
-</li>
-<li>
-<p><a href="Vim-obiekty-tekstowe.html">Vim obiekty tekstowe</a></p>
-</li>
-<li>
-<p><a href="Vim-okna.html">Vim okna</a></p>
-</li>
-<li>
-<p><a href="Vim-otworzenie-pliku-pod-kursorem.html">Vim otworzenie pliku pod kursorem</a></p>
-</li>
-<li>
-<p><a href="Vim-otworzenie-pliku-tam-gdzie-skończyliśmy-pracę.html">Vim otworzenie pliku tam gdzie skończyliśmy pracę</a></p>
-</li>
-<li>
-<p><a href="Vim-podróże-w-czasie.html">Vim podróże w czasie</a></p>
-</li>
-<li>
-<p><a href="Vim-praca-z-powłoką-systemową.html">Vim praca z powłoką systemową</a></p>
-</li>
-<li>
-<p><a href="Vim-różności.html">Vim różności</a></p>
-</li>
-<li>
-<p><a href="Vim-szyfrowanie.html">Vim szyfrowanie</a></p>
-</li>
-<li>
-<p><a href="Vim-szyfrowanie-za-pomocą-PGP.html">Vim szyfrowanie za pomocą PGP</a></p>
-</li>
-<li>
-<p><a href="Vim-uruchomienie-polecenia-z-bufora.html">Vim uruchomienie polecenia z bufora</a></p>
-</li>
-<li>
-<p><a href="Vim-uzycie-Ctrl-s-do-zapisania-pliku.html">Vim uzycie Ctrl s do zapisania pliku</a></p>
-</li>
-<li>
-<p><a href="Vim-wlaczenie-pluginu-dla-wybranych-typow-plikow.html">Vim wlaczenie pluginu dla wybranych typow plikow</a></p>
-</li>
-<li>
-<p><a href="Vim-wstawienie-makietki.html">Vim wstawienie makietki</a></p>
-</li>
-<li>
-<p><a href="Vim-wstawienie-X-znaków.html">Vim wstawienie X znaków</a></p>
-</li>
-<li>
-<p><a href="Vim-wysyłanie-bieżącej-linii-do-innego-pliku.html">Vim wysyłanie bieżącej linii do innego pliku</a></p>
-</li>
-<li>
-<p><a href="Vim-zawijanie-tekstu-na-80-znakow.html">Vim zawijanie tekstu na 80 znakow</a></p>
-</li>
-<li>
-<p><a href="Wireshark-zdalnie-przez-SSH.html">Wireshark zdalnie przez SSH</a></p>
-</li>
-<li>
-<p><a href="Własne-menu-ROFI.html">Własne menu ROFI</a></p>
-</li>
-<li>
-<p><a href="Wykonanie-kopii-zapasowej-usługi-Nextcloud.html">Wykonanie kopii zapasowej usługi Nextcloud</a></p>
-</li>
-<li>
-<p><a href="Wyłączenie-IPv6-w-Arch.html">Wyłączenie IPv6 w Arch</a></p>
-</li>
-<li>
-<p><a href="Wyłączenie-szyfrowania-vino-vnc.html">Wyłączenie szyfrowania vino vnc</a></p>
-</li>
-<li>
-<p><a href="Wysyłanie-wiadomość-za-pomocą-GMail-i-Python-3.html">Wysyłanie wiadomość za pomocą GMail i Python 3</a></p>
-</li>
-<li>
-<p><a href="Zabezpieczenie-kodów-jednorazowych-kluczem-PGP.html">Zabezpieczenie kodów jednorazowych kluczem PGP</a></p>
-</li>
-<li>
-<p><a href="Zablokowania-logowania-użytkownika-root-przez-SSH.html">Zablokowania logowania użytkownika root przez SSH</a></p>
-</li>
-<li>
-<p><a href="Zarządzanie-pakietami-w-Fedora-Linux.html">Zarządzanie pakietami w Fedora Linux</a></p>
-</li>
-<li>
-<p><a href="Zmiana-częstotliwości-powtarzania-klawiszy.html">Zmiana częstotliwości powtarzania klawiszy</a></p>
-</li>
-<li>
-<p><a href="Zmiana-funkcjonalności-przez-zmianę-nazwy-skryptu.html">Zmiana funkcjonalności przez zmianę nazwy skryptu</a></p>
-</li>
-<li>
-<p><a href="Zmiana-hasła-w-kluczu-prywatnym-RSA-OpenVPN.html">Zmiana hasła w kluczu prywatnym RSA OpenVPN</a></p>
-</li>
-<li>
-<p><a href="Zmiana-rozdzielczości-ekranu.html">Zmiana rozdzielczości ekranu</a></p>
+<p>[Pattern Matching](<a href="https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html" class="bare">https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html</a>)</p>
 </li>
 </ul>
 </div>
 </div>
+</div>
+</div>
+</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-03-27 19:27:11 +0100
+Last updated 2024-03-27 06:19:12 +0100
 </div>
 </div>
 </body>

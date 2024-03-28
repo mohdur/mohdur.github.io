@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.20">
-<title>Index</title>
+<title>Konfiguracja i praca z TMUX</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -435,299 +435,631 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
-<h1>Index</h1>
+<h1>Konfiguracja i praca z TMUX</h1>
 </div>
 <div id="content">
+<div class="sect1">
+<h2 id="_podstawowe_informacje">Podstawowe informacje</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>TMUX posiada trzy obiekty, tj: sesje, okna i panele, sesje są to osobne procesy, czyli każde
+kolejne uruchomienie programu <code>tmux</code>, w sesji możemy tworzyć okna a te możemy dzielić na panele.
+TMUX działa w trybie client-serwer, przy pierwszym uruchomieniu <code>tmux</code>, jest uruchamiany serwer,
+zamknięcie wszystkich sesji <code>tmux</code> kończy pracę serwera.</p>
+</div>
+<div class="paragraph">
+<p>Uruchomienie nowej sesji</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>tmux</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Więcej na temat tmux <a href="https://github.com/tmux/tmux/wiki" class="bare">https://github.com/tmux/tmux/wiki</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_zmiana_prefiksu_ctrl_b_na_ctrl_a">Zmiana prefiksu ctrl-b na ctrl-a</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>TMUX jako prefiks czyli skrót do uruchamiania poleceń używa <code>Ctrl+b</code> w odróżnieniu do programu
+screen, w którym używany jest skrót <code>Ctrl+a</code>. Pierwszą rzeczą jaką robię w konfiguracji tmux to
+właśnie zamiana <code>Ctrl+b</code> na <code>Ctrl+a</code>.</p>
+</div>
+<div class="paragraph">
+<p>W pliku konfiguracyjnym <code>~/.tmux.conf</code> dodajemy na początku</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>set-option -g prefix C-a
+unbind-key C-a
+bind-key C-a send-prefix</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_zmiana_ustawień_klawiszy_na_vim_zamiast_emacs">Zmiana ustawień klawiszy na Vim zamiast Emacs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Szczególnie przydatne w trybie COPY
+W pliku konfiguracyjnym <code>~/.tmux.conf</code> dodajemy</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>setw -g mode-keys vi</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tryb_copy">Tryb COPY</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Tryb COPY umożliwia poruszanie się po buforze, czyli mówiąc inaczej przewijamy tekst oglądając
+wcześniej wykonane komendy. Wejście do trybu COPY <code>Copy-a-[</code>. Wyjście z trybu COPY <code>2 x ESC</code> lub <code>q</code></p>
+</div>
+<div class="paragraph">
+<p>Poruszanie się w trybie COPY</p>
+</div>
+<div class="paragraph">
+<p>Istnieją dwa tryby – tryb vi oraz tryb emacs zmianę trybu wykonujemy poleceniem</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>setw -g mode-keys vi</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Poruszanie się po trybie COPY w dwóch trybach vi i emacs</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Funkcja</th>
+<th class="tableblock halign-left valign-top">vi</th>
+<th class="tableblock halign-left valign-top">emacs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wejście do trybu COPY</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Copy-a-[</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Copy-a-[</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Back to indentation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">^</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M-m</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Clear selection</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Escape</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">C-g</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Copy selection</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M-w</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cursor down</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">j</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Down</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cursor left</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Left</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cursor right</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">l</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Right</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cursor to bottom line</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">L</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cursor to middle line</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M-r</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cursor to top line</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">H</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M-R</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cursor up</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">k</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Up</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete entire line</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">d</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">C-u</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete to end of line</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">D</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">C-k</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">End of line</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">C-e</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Goto line</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">g</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Half page down</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">C-d</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M-Down</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Half page up</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">C-u</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M-Up</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Next page</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">C-f</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Page down</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Next word</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">w</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M-f</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Paste buffer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">p</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">C-y</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Previous page</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">C-b</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Page up</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Previous word</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">b</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M-b</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Quit mode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">q</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Escape</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scroll down</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">C-Down or J</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">C-Down</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scroll up</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">C-Up or K</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">C-Up</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Search again</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>n</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>n</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Search backward</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>?</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>C-r</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Search forward</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>C-s</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Start of line</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">C-a</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Start selection</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Space</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">C-Space</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transpose chars</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">C-t</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_operacja_kopiuj_wklej_w_trybie_copy">Operacja kopiuj wklej w trybie COPY</h2>
+<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p><a href="Aktualizacja-Fedora-Linux-do-nowego-wydania.html">Aktualizacja Fedora Linux do nowego wydania</a></p>
+<p>Wejście do trybu COPY - <code>Ctrl-a-[</code></p>
 </li>
 <li>
-<p><a href="Aliasy-BASH-ZSH.html">Aliasy BASH ZSH</a></p>
+<p>Zaznaczenie tekstu - <code>Spacja</code></p>
 </li>
 <li>
-<p><a href="Archiwizacja-plików-za-pomocą-polecenia-tar.html">Archiwizacja plików za pomocą polecenia tar</a></p>
+<p>Skopiowanie tekstu - <code>Enter</code></p>
 </li>
 <li>
-<p><a href="Archiwizacja-podkatalogow.html">Archiwizacja podkatalogow</a></p>
-</li>
-<li>
-<p><a href="Arch-różności.html">Arch różności</a></p>
-</li>
-<li>
-<p><a href="Backup-danych-na-szyfrowanym-nosniku.html">Backup danych na szyfrowanym nosniku</a></p>
-</li>
-<li>
-<p><a href="Budowanie-własnego-pakietu-RPM.html">Budowanie własnego pakietu RPM</a></p>
-</li>
-<li>
-<p><a href="Capslock-jako-wielofunkcyjny-klawisz-Keyd.html">Capslock jako wielofunkcyjny klawisz Keyd</a></p>
-</li>
-<li>
-<p><a href="Dodanie-konta-SAMBA.html">Dodanie konta SAMBA</a></p>
-</li>
-<li>
-<p><a href="Dodanie-konta-w-systemie-Linux-skrypt.html">Dodanie konta w systemie Linux skrypt</a></p>
-</li>
-<li>
-<p><a href="Dziwna-przypadłość-instalatora-Void-Linux-i-partycjonowania.html">Dziwna przypadłość instalatora Void Linux i partycjonowania</a></p>
-</li>
-<li>
-<p><a href="Easy-RSA-OpenVPN-2-4.html">Easy RSA OpenVPN 2 4</a></p>
-</li>
-<li>
-<p><a href="Fedora-po-instalacji.html">Fedora po instalacji</a></p>
-</li>
-<li>
-<p><a href="Formatowanie-daty-i-godziny.html">Formatowanie daty i godziny</a></p>
-</li>
-<li>
-<p><a href="Generowanie-haseł.html">Generowanie haseł</a></p>
-</li>
-<li>
-<p><a href="Generowanie-klucza-GnuPG-PGP.html">Generowanie klucza GnuPG PGP</a></p>
-</li>
-<li>
-<p><a href="Generowanie-kodu-QR-dla-autoryzacj-2FA.html">Generowanie kodu QR dla autoryzacj 2FA</a></p>
-</li>
-<li>
-<p><a href="Generowanie-liczb-losowych.html">Generowanie liczb losowych</a></p>
-</li>
-<li>
-<p><a href="Ignorowanie-zamknięcia-ekranu-laptopa.html">Ignorowanie zamknięcia ekranu laptopa</a></p>
-</li>
-<li>
-<p><a href="index.html">index</a></p>
-</li>
-<li>
-<p><a href="Instalacja-RPM-Fusion-w-Fedora-Linux.html">Instalacja RPM Fusion w Fedora Linux</a></p>
-</li>
-<li>
-<p><a href="KDE-Caps-Lock-jako-ESC.html">KDE Caps Lock jako ESC</a></p>
-</li>
-<li>
-<p><a href="Komenda-if-w-skryptach-BASH.md.html">Komenda if w skryptach BASH.md</a></p>
-</li>
-<li>
-<p><a href="Kompilacja-neomutt.html">Kompilacja neomutt</a></p>
-</li>
-<li>
-<p><a href="Kompilacja-xurls.html">Kompilacja xurls</a></p>
-</li>
-<li>
-<p><a href="Konfiguracja-interfejsu-sieciowego-za-pomocą-polecenia-ip-w-systemie-Linux.html">Konfiguracja interfejsu sieciowego za pomocą polecenia ip w systemie Linux</a></p>
-</li>
-<li>
-<p><a href="Konfiguracja-i-praca-z-tmux.html">Konfiguracja i praca z tmux</a></p>
-</li>
-<li>
-<p><a href="Konfiguracja-serwera-OpenSSH.html">Konfiguracja serwera OpenSSH</a></p>
-</li>
-<li>
-<p><a href="Konfiguracja-usługi-SSH-w-RouterOS-Mikrotik.html">Konfiguracja usługi SSH w RouterOS Mikrotik</a></p>
-</li>
-<li>
-<p><a href="Konwertowanie-dokumentów-Markdown-do-PDF.html">Konwertowanie dokumentów Markdown do PDF</a></p>
-</li>
-<li>
-<p><a href="Kopia-zapasowa-informacji-o-repozytoriach-Git.html">Kopia zapasowa informacji o repozytoriach Git</a></p>
-</li>
-<li>
-<p><a href="Kopia-zapasowa-Minio-Restic.html">Kopia zapasowa Minio Restic</a></p>
-</li>
-<li>
-<p><a href="Lista-zainstalowanych-czcionek.html">Lista zainstalowanych czcionek</a></p>
-</li>
-<li>
-<p><a href="Lokalna-kopia-zapasowa-z-wykorzystaniem-restic.html">Lokalna kopia zapasowa z wykorzystaniem restic</a></p>
-</li>
-<li>
-<p><a href="Mikrotik-i-Wireguard-VPN.html">Mikrotik i Wireguard VPN</a></p>
-</li>
-<li>
-<p><a href="Naprawienie-SSH-Too-Many-Authentication-Failures.html">Naprawienie SSH Too Many Authentication Failures</a></p>
-</li>
-<li>
-<p><a href="Nazwa-pliku,-wyśwetlanie-nazwy-i-rozszerzenia.html">Nazwa pliku, wyśwetlanie nazwy i rozszerzenia</a></p>
-</li>
-<li>
-<p><a href="NMCLI-i-OpenVPN.html">NMCLI i OpenVPN</a></p>
-</li>
-<li>
-<p><a href="Otworzenie-sejfu-gocryptfs-z-hasłem-zapisanym-w-szyfrowanym-pliku-GPG.html">Otworzenie sejfu gocryptfs z hasłem zapisanym w szyfrowanym pliku GPG</a></p>
-</li>
-<li>
-<p><a href="PF_pfctl_cheat_sheet.html">PF_pfctl_cheat_sheet</a></p>
-</li>
-<li>
-<p><a href="Pobranie-ostatniego-wydania-programu-z-repozytorium-Github.html">Pobranie ostatniego wydania programu z repozytorium Github</a></p>
-</li>
-<li>
-<p><a href="Podłączenie-do-zasobu-SAMBA.html">Podłączenie do zasobu SAMBA</a></p>
-</li>
-<li>
-<p><a href="Podłączenie-dysku-po-identyfikatorze-UUID.html">Podłączenie dysku po identyfikatorze UUID</a></p>
-</li>
-<li>
-<p><a href="Podłączenie-się-do-sieci-Wi-Fi.html">Podłączenie się do sieci Wi Fi</a></p>
-</li>
-<li>
-<p><a href="Podręcznik-systemowy-man.html">Podręcznik systemowy man</a></p>
-</li>
-<li>
-<p><a href="Polecenie-find-w-przykładach.html">Polecenie find w przykładach</a></p>
-</li>
-<li>
-<p><a href="Polecenie-grep-w-przykładach.html">Polecenie grep w przykładach</a></p>
-</li>
-<li>
-<p><a href="Polska-klawiatura-i-polonizacja-w-Arch-Linux.html">Polska klawiatura i polonizacja w Arch Linux</a></p>
-</li>
-<li>
-<p><a href="Praca-z-klientem-OpenSSH.html">Praca z klientem OpenSSH</a></p>
-</li>
-<li>
-<p><a href="Przydatne-programy-dla-systemu-Linux.html">Przydatne programy dla systemu Linux</a></p>
-</li>
-<li>
-<p><a href="Przyspieszenie-procesu-wyłączenia-systemu-Linux.html">Przyspieszenie procesu wyłączenia systemu Linux</a></p>
-</li>
-<li>
-<p><a href="Rsync-receptury.html">Rsync receptury</a></p>
-</li>
-<li>
-<p><a href="SED-receptury.html">SED receptury</a></p>
-</li>
-<li>
-<p><a href="Skróty-klawiszowe-ZSH.html">Skróty klawiszowe ZSH</a></p>
-</li>
-<li>
-<p><a href="Skrypt-ułatwiający-pracę-z-pluginem-Vimwiki-i-dziennikiem.html">Skrypt ułatwiający pracę z pluginem Vimwiki i dziennikiem</a></p>
-</li>
-<li>
-<p><a href="Skrypty-BASH-receptury.html">Skrypty BASH receptury</a></p>
-</li>
-<li>
-<p><a href="Sprawdzanie-pisowni-w-edytorze-Vim.html">Sprawdzanie pisowni w edytorze Vim</a></p>
-</li>
-<li>
-<p><a href="Ukrycie-procesów-innych-użytkowników-w-systemie-Linux.html">Ukrycie procesów innych użytkowników w systemie Linux</a></p>
-</li>
-<li>
-<p><a href="Uruchomienie-skryptu-po-wykryciu-zmian.html">Uruchomienie skryptu po wykryciu zmian</a></p>
-</li>
-<li>
-<p><a href="Ustawienie-klawiatury-w-systemie-Linux.html">Ustawienie klawiatury w systemie Linux</a></p>
-</li>
-<li>
-<p><a href="Vim-działania-arytmetyczne.html">Vim działania arytmetyczne</a></p>
-</li>
-<li>
-<p><a href="Vim-jako-przeglądarka-stron-podręcznika-man.html">Vim jako przeglądarka stron podręcznika man</a></p>
-</li>
-<li>
-<p><a href="Vim_jak_zamienic_dwukropek_na_znak_rownosci.html">Vim_jak_zamienic_dwukropek_na_znak_rownosci</a></p>
-</li>
-<li>
-<p><a href="Vim-kompilacja-ze-zrodel.html">Vim kompilacja ze zrodel</a></p>
-</li>
-<li>
-<p><a href="Vim-lista-projektów-i-FZF.html">Vim lista projektów i FZF</a></p>
-</li>
-<li>
-<p><a href="Vim-obiekty-tekstowe.html">Vim obiekty tekstowe</a></p>
-</li>
-<li>
-<p><a href="Vim-okna.html">Vim okna</a></p>
-</li>
-<li>
-<p><a href="Vim-otworzenie-pliku-pod-kursorem.html">Vim otworzenie pliku pod kursorem</a></p>
-</li>
-<li>
-<p><a href="Vim-otworzenie-pliku-tam-gdzie-skończyliśmy-pracę.html">Vim otworzenie pliku tam gdzie skończyliśmy pracę</a></p>
-</li>
-<li>
-<p><a href="Vim-podróże-w-czasie.html">Vim podróże w czasie</a></p>
-</li>
-<li>
-<p><a href="Vim-praca-z-powłoką-systemową.html">Vim praca z powłoką systemową</a></p>
-</li>
-<li>
-<p><a href="Vim-różności.html">Vim różności</a></p>
-</li>
-<li>
-<p><a href="Vim-szyfrowanie.html">Vim szyfrowanie</a></p>
-</li>
-<li>
-<p><a href="Vim-szyfrowanie-za-pomocą-PGP.html">Vim szyfrowanie za pomocą PGP</a></p>
-</li>
-<li>
-<p><a href="Vim-uruchomienie-polecenia-z-bufora.html">Vim uruchomienie polecenia z bufora</a></p>
-</li>
-<li>
-<p><a href="Vim-uzycie-Ctrl-s-do-zapisania-pliku.html">Vim uzycie Ctrl s do zapisania pliku</a></p>
-</li>
-<li>
-<p><a href="Vim-wlaczenie-pluginu-dla-wybranych-typow-plikow.html">Vim wlaczenie pluginu dla wybranych typow plikow</a></p>
-</li>
-<li>
-<p><a href="Vim-wstawienie-makietki.html">Vim wstawienie makietki</a></p>
-</li>
-<li>
-<p><a href="Vim-wstawienie-X-znaków.html">Vim wstawienie X znaków</a></p>
-</li>
-<li>
-<p><a href="Vim-wysyłanie-bieżącej-linii-do-innego-pliku.html">Vim wysyłanie bieżącej linii do innego pliku</a></p>
-</li>
-<li>
-<p><a href="Vim-zawijanie-tekstu-na-80-znakow.html">Vim zawijanie tekstu na 80 znakow</a></p>
-</li>
-<li>
-<p><a href="Wireshark-zdalnie-przez-SSH.html">Wireshark zdalnie przez SSH</a></p>
-</li>
-<li>
-<p><a href="Własne-menu-ROFI.html">Własne menu ROFI</a></p>
-</li>
-<li>
-<p><a href="Wykonanie-kopii-zapasowej-usługi-Nextcloud.html">Wykonanie kopii zapasowej usługi Nextcloud</a></p>
-</li>
-<li>
-<p><a href="Wyłączenie-IPv6-w-Arch.html">Wyłączenie IPv6 w Arch</a></p>
-</li>
-<li>
-<p><a href="Wyłączenie-szyfrowania-vino-vnc.html">Wyłączenie szyfrowania vino vnc</a></p>
-</li>
-<li>
-<p><a href="Wysyłanie-wiadomość-za-pomocą-GMail-i-Python-3.html">Wysyłanie wiadomość za pomocą GMail i Python 3</a></p>
-</li>
-<li>
-<p><a href="Zabezpieczenie-kodów-jednorazowych-kluczem-PGP.html">Zabezpieczenie kodów jednorazowych kluczem PGP</a></p>
-</li>
-<li>
-<p><a href="Zablokowania-logowania-użytkownika-root-przez-SSH.html">Zablokowania logowania użytkownika root przez SSH</a></p>
-</li>
-<li>
-<p><a href="Zarządzanie-pakietami-w-Fedora-Linux.html">Zarządzanie pakietami w Fedora Linux</a></p>
-</li>
-<li>
-<p><a href="Zmiana-częstotliwości-powtarzania-klawiszy.html">Zmiana częstotliwości powtarzania klawiszy</a></p>
-</li>
-<li>
-<p><a href="Zmiana-funkcjonalności-przez-zmianę-nazwy-skryptu.html">Zmiana funkcjonalności przez zmianę nazwy skryptu</a></p>
-</li>
-<li>
-<p><a href="Zmiana-hasła-w-kluczu-prywatnym-RSA-OpenVPN.html">Zmiana hasła w kluczu prywatnym RSA OpenVPN</a></p>
-</li>
-<li>
-<p><a href="Zmiana-rozdzielczości-ekranu.html">Zmiana rozdzielczości ekranu</a></p>
+<p>Wklejenie tekstu - <code>Ctrl-a-]</code></p>
 </li>
 </ul>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_przykładowa_konfiguracja_tmux_conf">Przykładowa konfiguracja <code>~/.tmux.conf</code></h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre># Zmiana ctrl-b na ctrl-a
+set-option -g prefix C-a
+unbind-key C-a
+bind-key C-a send-prefix
+
+# start with window 1 (instead of 0)
+set -g base-index 1
+
+# start with pane 1
+set -g pane-base-index 1
+
+# shorten command delay
+set -sg escape-time 1
+
+# enable vi mode keys
+set-window-option -g mode-keys vi
+
+# Użycie Alt-Strzałki do zmiany panelu
+bind -n M-Left select-pane -L
+bind -n M-Right select-pane -R
+bind -n M-Up select-pane -U
+bind -n M-Down select-pane -D
+
+# Użycie prefiksu + hjkl do zmiany panelu
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+# Użycie Ctrl-Strzałki do zmiany okna
+bind -n C-Left previous-window
+bind -n C-Right next-window
+bind -n C-Up last-window          # Shift-Up  poprzednie okno
+bind -n C-Down choose-window      # wybór okna
+
+# Zamienia okna miejscami
+bind-key m command-prompt -p "move window to:"  "swap-window -t '%%'"
+
+# bind-key -n C-M-Space display-popup -w 80% "ls ~/Downloads | fzf"
+
+# Zarządzanie oknami
+bind K kill-window                                  # ctrl-a-K zamknij okno
+
+# Użycie Shift-Strzałki do zmiany sesji
+bind -n S-Left switch-client -p    # poprzednia sesja
+bind -n S-Right switch-client -n   # następna sesja
+bind -n S-Up switch-client -l      # ostatnia sesja
+bind -n S-Down choose-tree         # wybór sesji
+
+# Użycie myszki
+set -g mouse on
+
+# Ustawienie dzielenia panelu dodatkowo otwiera w tej samej ścieżce
+bind \\ split-window -h -c "#{pane_current_path}"
+bind - split-window -v -c "#{pane_current_path}"
+unbind '"'
+unbind %
+
+# Dodanie informacji po prawej stronie paska statusu
+set-option -g status-right "#(whoami)@#H %H:%I "
+
+# Przeładowanie konfiguracji tmux
+bind-key r source-file ~/.tmux.conf \; display-message "tmux.conf reloaded"
+
+# Prefix D uruchamia edycję pliku ./TODO.md lub ~/git/github/dotfiles/todo.md
+bind -r D neww -c "#{pane_current_path}" "[[ -e TODO.md ]] &amp;&amp; $EDITOR TODO.md || $EDITOR ~/git/github/dotfiles/todo.md"
+# bind -r D send-keys -t.- 'sudo dnf update' Enter
+
+# Ustawienie paska statusu
+set-option -g set-titles on
+set -g status-interval 1
+
+# Basic status bar colors
+set -g status-fg colour238
+set -g status-bg colour233
+
+# Left side of status bar
+set -g status-left-length 40
+set -g status-left "#[fg=colour232,bg=colour245,bold] #S #[fg=colour240,bg=colour235]#[fg=col our240,bg=colour235] #I:#P #[fg=colour235,bg=colour233,nobold]"
+
+# Right side of status bar
+set -g status-right-length 150
+set -g status-right "#[fg=colour245 ,bg=colour240]#[fg=colour232,bg=colour245,bold] #H "
+
+# Window status
+set -g window-status-current-format " #I:#W#F "
+set -g window-status-current-style fg=brightwhite,bg=colour237,bold,noitalics
+set -g window-status-format " #I:#W#F "
+set -g window-status-style fg=white,bg=colour235,noitalics
+set -g window-status-separator ""
+
+# Window separator
+set -g window-status-separator ""
+
+# Window status alignment
+set -g status-justify centre
+
+# Pane number indicator
+set -g display-panes-colour colour233
+set -g display-panes-active-colour colour245
+
+# Clock mode
+set -g clock-mode-colour colour240
+set -g clock-mode-style 24
+
+# set-option -g default-shell /usr/bin/zsh
+
+set -g history-limit 10000
+
+set -g default-terminal "tmux-256color"</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_skróty_klawiszowe">Skróty klawiszowe</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Standardowo prefix to skrót <code>Ctrl-b</code> wcześniej pokazałem jak go zamienić na skrót <code>Ctrl-a</code>, w tabelce
+poniżej takiego używam.</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Skrót</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Działanie</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Ctrl-a</code> <code>d</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Odłączenie od sesji, wyjście z tmux; nie zamyka sesji</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Ctrl-a</code> <code>c</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tworzy nowe okno</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Ctrl-a</code> <code>n</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Przechodzi do następnego okna</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Ctrl-a</code> <code>p</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Przechodzi do poprzedniego okna</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Ctrl-a</code> <code>[1-9]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Przechodzi do wybranego okna</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Crtl-a</code> <code>\</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dzieli okno pionowo, tworzy panel</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Ctrl-a</code> <code>-</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dzieli okno poziomo, tworzy panel</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Ctrl-a</code> <code>hjkl</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Poruszanie się pomiędzy panelami</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Ctrl-a</code> <code>;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Przełączanie się pomiędzy dwoma ostatnio używanymi panelami</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Ctrl-a</code> <code>o</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Przechodzi do następnego panelu</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Ctrl-a</code> <code>{</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Przenosi aktywny panel na prawo</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Ctrl-a</code> <code>}</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Przenosi aktywny panel na lewo</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Ctrl-a</code> <code>spacja</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zmienia rozmieszczenie paneli</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Ctrl-a</code> <code>q</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wyświetla numer panelu</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Ctrl-a</code> <code>!</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Przenosi bieżący panel do nowego okna</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Ctrl-a</code> <code>z</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Przy kilku panelach w oknie pokazuje / chowa bieżący panel na całym ekranie</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Ctrl-a</code> <code>$</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zmiana nazwy sesji</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Ctrl-a</code> <code>,</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zmiana nazwy okno</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Ctrl-a</code> <code>x</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zamknięcie bieżącego panelu, jeśli okno posiada jeden panel, to zamknie okno</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Ctrl-a</code> <code>&amp;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zamknięcie bieżącego okna, jeśli sesja posiada jedno okno, to zamknie sesję</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Ctrl-a</code> <code>s</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wyświetla wszystkie sesje i pozwala na przełączanie się pomiędzy nimi</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Ctrl-a</code> <code>w</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wyświetla sesje a także znajdujące się w nich okna</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Ctrl-a</code> <code>(</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Przechodzi do poprzedniej sesji</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Ctrl-a</code> <code>)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Przechodzi do następnej sesji</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Ctrl-a</code> <code>?</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wyświetla listę skrótów klawiszowych</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_parametry_polecenia_tmux">Parametry polecenia <code>tmux</code></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_utworzenie_nowej_sesji">Utworzenie nowej sesji</h3>
+<div class="paragraph">
+<p>Jeśli uruchomimy program <code>tmux</code> bez parametrów, to zostanie utworzona nowa sesja. Chyba, że
+znajdujemy się już w sesji <code>tmux</code>, wtedy nie zostanie utworzona nowa sesja.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>tmux</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Tak samo jak dodając parametr <code>new</code> lub <code>new-session</code></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>tmux new-session
+
+tmux new</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Innym przykładem utworzenia nowej sesji, jest utworzenie sesji i jednocześnie odłączenie się od
+niej, taka operacja może być wykonana nawet w sytuacji, kiedy jesteśmy już w sesji <code>tmux</code>. Służy do
+tego parametr <code>-d</code>. Dodatkowo warto nazwać sesję tak, żeby ją można było łatwo zidentyfikować. Do
+ustawienia nazwy sesji służy parametr <code>-s</code>.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>tmux new -d -s DESK-1</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_lista_istniejących_sesji">Lista istniejących sesji</h3>
+<div class="literalblock">
+<div class="content">
+<pre>tmux ls</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Przykładowy wynik polecenia <code>tmux ls</code></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>3: 2 windows (created Sat Jul 16 14:59:05 2022)
+7: 1 windows (created Sun Jul 17 14:47:30 2022)
+DESK-1: 2 windows (created Sun Jul 17 14:01:56 2022) (attached)
+DESK-2: 1 windows (created Sun Jul 17 14:43:41 2022)
+Notes: 1 windows (created Sat Jul 16 14:15:57 2022) (attached)
+QUAKE: 2 windows (created Sat Jul 16 14:16:53 2022) (attached)
+SYNCTHING: 1 windows (created Sat Jul 16 14:15:51 2022)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Jak widać część z nich posiada nazwy a część możemy zidentyfikować używając cyfry / liczby.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_podłączenie_się_do_istniejącej_sesji">Podłączenie się do istniejącej sesji</h3>
+<div class="paragraph">
+<p>Podłączenie się do sesji jest możliwe jeśli znajdujemy się w terminalu bez aktywnej sesji <code>tmux</code></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>tmux attach
+tmux atta
+tmux a</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Podłączenie się do wybranej sesji za pomocą parametru <code>-t</code></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>tmux a -t DESK-1</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_zamknięcie_wszystkich_sesji_tmux">Zamknięcie wszystkich sesji tmux</h3>
+<div class="literalblock">
+<div class="content">
+<pre>tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_linia_komend">Linia komend</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Wejście do trybu komend realizujemy za pomocą skrótu <code>Ctrl-a</code> <code>:</code>. W tym trybie możemy wydawać
+polecenia np: uruchomić nową sesję:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>:new
+:new -s NAZWA-SESJI</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-03-27 19:27:11 +0100
+Last updated 2024-03-27 01:43:20 +0100
 </div>
 </div>
 </body>

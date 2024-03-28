@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.20">
-<title>Index</title>
+<title>Zabezpieczenie kodów jednorazowych kluczem PGP</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -432,302 +432,265 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
+<style>
+pre.rouge table td { padding: 5px; }
+pre.rouge table pre { margin: 0; }
+pre.rouge, pre.rouge .w {
+  color: #24292f;
+  background-color: #f6f8fa;
+}
+pre.rouge .k, pre.rouge .kd, pre.rouge .kn, pre.rouge .kp, pre.rouge .kr, pre.rouge .kt, pre.rouge .kv {
+  color: #cf222e;
+}
+pre.rouge .gr {
+  color: #f6f8fa;
+}
+pre.rouge .gd {
+  color: #82071e;
+  background-color: #ffebe9;
+}
+pre.rouge .nb {
+  color: #953800;
+}
+pre.rouge .nc {
+  color: #953800;
+}
+pre.rouge .no {
+  color: #953800;
+}
+pre.rouge .nn {
+  color: #953800;
+}
+pre.rouge .sr {
+  color: #116329;
+}
+pre.rouge .na {
+  color: #116329;
+}
+pre.rouge .nt {
+  color: #116329;
+}
+pre.rouge .gi {
+  color: #116329;
+  background-color: #dafbe1;
+}
+pre.rouge .kc {
+  color: #0550ae;
+}
+pre.rouge .l, pre.rouge .ld, pre.rouge .m, pre.rouge .mb, pre.rouge .mf, pre.rouge .mh, pre.rouge .mi, pre.rouge .il, pre.rouge .mo, pre.rouge .mx {
+  color: #0550ae;
+}
+pre.rouge .sb {
+  color: #0550ae;
+}
+pre.rouge .bp {
+  color: #0550ae;
+}
+pre.rouge .ne {
+  color: #0550ae;
+}
+pre.rouge .nl {
+  color: #0550ae;
+}
+pre.rouge .py {
+  color: #0550ae;
+}
+pre.rouge .nv, pre.rouge .vc, pre.rouge .vg, pre.rouge .vi, pre.rouge .vm {
+  color: #0550ae;
+}
+pre.rouge .o, pre.rouge .ow {
+  color: #0550ae;
+}
+pre.rouge .gh {
+  color: #0550ae;
+  font-weight: bold;
+}
+pre.rouge .gu {
+  color: #0550ae;
+  font-weight: bold;
+}
+pre.rouge .s, pre.rouge .sa, pre.rouge .sc, pre.rouge .dl, pre.rouge .sd, pre.rouge .s2, pre.rouge .se, pre.rouge .sh, pre.rouge .sx, pre.rouge .s1, pre.rouge .ss {
+  color: #0a3069;
+}
+pre.rouge .nd {
+  color: #8250df;
+}
+pre.rouge .nf, pre.rouge .fm {
+  color: #8250df;
+}
+pre.rouge .err {
+  color: #f6f8fa;
+  background-color: #82071e;
+}
+pre.rouge .c, pre.rouge .ch, pre.rouge .cd, pre.rouge .cm, pre.rouge .cp, pre.rouge .cpf, pre.rouge .c1, pre.rouge .cs {
+  color: #6e7781;
+}
+pre.rouge .gl {
+  color: #6e7781;
+}
+pre.rouge .gt {
+  color: #6e7781;
+}
+pre.rouge .ni {
+  color: #24292f;
+}
+pre.rouge .si {
+  color: #24292f;
+}
+pre.rouge .ge {
+  color: #24292f;
+  font-style: italic;
+}
+pre.rouge .gs {
+  color: #24292f;
+  font-weight: bold;
+}
+</style>
 </head>
 <body class="article">
 <div id="header">
-<h1>Index</h1>
+<h1>Zabezpieczenie kodów jednorazowych kluczem PGP</h1>
 </div>
 <div id="content">
+<div class="paragraph">
+<p>Kody jednorazowe czyli One Time Password (OTP) służą jako dodatkowe
+zabezpieczenie np. konta e-mail. Do generowania kodów przeważnie używa się
+aplikacji na telefon typu Google Authenticator. Do wygenerowania kodu OTP
+jest potrzebny tajny kod w postaci ciągu znaków Base32 lub Hex.</p>
+</div>
+<div class="paragraph">
+<p>W systemmie Linux istnieje takie narzędzie jak <code>oathtool</code>, jednak za każdym
+razem trzeba podać tajny kod, wię jest to dość uciążliwe. Dlatego do
+przechowywania kodów użyjemy programu <code>pass</code>, który potrafi szyfrować hasła
+za pomocą klucza PGP.</p>
+</div>
+<div class="paragraph">
+<p>Instalacja niezbędnych programów</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>dnf install oathtool gnupg2 pass fzf</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Jeśli posiadamy już klucz PGP możemy sprawdzić jego nazwę oraz jego ID w innym
+przypadku należy wygenerować klucz PGP za pomocą polecenia
+<code>gpg2 --full-generate-key</code>. Proces generowania klucza jest opisany na stronie
+<a href="https://sebmd.github.io/posts/generowanie-klucza-gnupg-pgp/" class="bare">https://sebmd.github.io/posts/generowanie-klucza-gnupg-pgp/</a></p>
+</div>
+<div class="paragraph">
+<p>Sprawdźmy jakie posiadamy klucze za pomocą polecenia <code>gpg2 --list-secret-keys</code></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>gpg2 --list-secret-keys
+/home/testowy/.gnupg/pubring.kbx
+--------------------------------
+sec   rsa2048 2019-04-19 [SC]
+      4E70814B987ECB1AC675A5BD9B76BB5DDC8ADBE0
+uid    [   absolutne   ] testowy (komentarz) &lt;testowy@example.com&gt;
+ssb   rsa2048 2019-04-19 [E]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Inicjalizacja programu <code>pass</code>, wymaga podania ID tajnego klucza PGP</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>pass init 4E70814B987ECB1AC675A5BD9B76BB5DDC8ADBE0
+mkdir: utworzony katalog '/home/testowy/.password-store/'
+Password store initialized for 4E70814B987ECB1AC675A5BD9B76BB5DDC8ADBE0</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Jak widać dane będą przechowywane w katalogu <code>~/.password-store/</code></p>
+</div>
+<div class="paragraph">
+<p>Dodanie konta do <code>pass</code> najlepiej poprzedzić jakimś wyrazem np. <code>otp</code> spowoduje to,
+że tajne klucze będą przechowywane w podkatalogu <code>otp</code>, dzięki czemu można będzie
+łatwiej je znaleźć.</p>
+</div>
+<div class="paragraph">
+<p>Dodanie konta <a href="mailto:testowy@gmail.com">testowy@gmail.com</a></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>pass edit otp/testowy@gmail.com</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Wyświetlenie hasła dla konta <a href="mailto:testowy@gmail.com">testowy@gmail.com</a></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>pass otp/testowy@gmail.com
+RWNLFJJNKP2B2VS4</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Wygenerowanie kodu jednorazowego dla tajnego klucza <code>RWNLFJJNKP2B2VS4</code>.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>oathtool --base32 RWNLFJJNKP2B2VS4 --totp
+091421</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Teraz złóżmy to wszystko razem:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>oathtool --base32 --totp "$(pass "otp/$(find ~/.password-store/otp/* -exec basename {} .gpg \; | fzf)")"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Żeby było jeszcze łatwiej proponuję stworzyć aliasy <code>otp</code> i <code>otp-add</code> w pliku <code>~/.bashrc</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sh"><span class="nb">alias </span><span class="nv">otp</span><span class="o">=</span><span class="s1">'oathtool --base32 --totp "$(pass "otp/$(find ~/.password-store/otp/* -exec basename {} .gpg \; | fzf)")"'</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Dla aliasu <code>otp-add</code> stworzymy funkcję o tej samej nazwie, dodatkową zaletą funkcji
+jest to, że jeśli podamy nazwę konta ze spacjami to zostaną one zastąpione znakiem <code>-</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sh"><span class="k">function </span>otp-add<span class="o">()</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">[</span> <span class="nt">-z</span> <span class="nv">$1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+        </span><span class="nb">echo
+        echo </span>Podaj nazwę konta.
+        <span class="nb">echo
+    </span><span class="k">else
+        </span><span class="nv">nazwa</span><span class="o">=</span><span class="si">$(</span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span> | <span class="nb">tr</span> <span class="s1">' '</span> <span class="s1">'-'</span><span class="si">)</span>
+        pass edit otp/<span class="nv">$nazwa</span>
+    <span class="k">fi</span>
+<span class="o">}</span>
+<span class="nb">alias </span>otp-add<span class="o">=</span>otp-add</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>W skrócie działa to tak:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="Aktualizacja-Fedora-Linux-do-nowego-wydania.html">Aktualizacja Fedora Linux do nowego wydania</a></p>
+<p><code>pass</code> przechowuje tajne kody zaszyfrowane kluczem PGP</p>
 </li>
 <li>
-<p><a href="Aliasy-BASH-ZSH.html">Aliasy BASH ZSH</a></p>
+<p><code>oathtool</code> generuje kody jednorazowe podawane przez <code>pass</code></p>
 </li>
 <li>
-<p><a href="Archiwizacja-plików-za-pomocą-polecenia-tar.html">Archiwizacja plików za pomocą polecenia tar</a></p>
-</li>
-<li>
-<p><a href="Archiwizacja-podkatalogow.html">Archiwizacja podkatalogow</a></p>
-</li>
-<li>
-<p><a href="Arch-różności.html">Arch różności</a></p>
-</li>
-<li>
-<p><a href="Backup-danych-na-szyfrowanym-nosniku.html">Backup danych na szyfrowanym nosniku</a></p>
-</li>
-<li>
-<p><a href="Budowanie-własnego-pakietu-RPM.html">Budowanie własnego pakietu RPM</a></p>
-</li>
-<li>
-<p><a href="Capslock-jako-wielofunkcyjny-klawisz-Keyd.html">Capslock jako wielofunkcyjny klawisz Keyd</a></p>
-</li>
-<li>
-<p><a href="Dodanie-konta-SAMBA.html">Dodanie konta SAMBA</a></p>
-</li>
-<li>
-<p><a href="Dodanie-konta-w-systemie-Linux-skrypt.html">Dodanie konta w systemie Linux skrypt</a></p>
-</li>
-<li>
-<p><a href="Dziwna-przypadłość-instalatora-Void-Linux-i-partycjonowania.html">Dziwna przypadłość instalatora Void Linux i partycjonowania</a></p>
-</li>
-<li>
-<p><a href="Easy-RSA-OpenVPN-2-4.html">Easy RSA OpenVPN 2 4</a></p>
-</li>
-<li>
-<p><a href="Fedora-po-instalacji.html">Fedora po instalacji</a></p>
-</li>
-<li>
-<p><a href="Formatowanie-daty-i-godziny.html">Formatowanie daty i godziny</a></p>
-</li>
-<li>
-<p><a href="Generowanie-haseł.html">Generowanie haseł</a></p>
-</li>
-<li>
-<p><a href="Generowanie-klucza-GnuPG-PGP.html">Generowanie klucza GnuPG PGP</a></p>
-</li>
-<li>
-<p><a href="Generowanie-kodu-QR-dla-autoryzacj-2FA.html">Generowanie kodu QR dla autoryzacj 2FA</a></p>
-</li>
-<li>
-<p><a href="Generowanie-liczb-losowych.html">Generowanie liczb losowych</a></p>
-</li>
-<li>
-<p><a href="Ignorowanie-zamknięcia-ekranu-laptopa.html">Ignorowanie zamknięcia ekranu laptopa</a></p>
-</li>
-<li>
-<p><a href="index.html">index</a></p>
-</li>
-<li>
-<p><a href="Instalacja-RPM-Fusion-w-Fedora-Linux.html">Instalacja RPM Fusion w Fedora Linux</a></p>
-</li>
-<li>
-<p><a href="KDE-Caps-Lock-jako-ESC.html">KDE Caps Lock jako ESC</a></p>
-</li>
-<li>
-<p><a href="Komenda-if-w-skryptach-BASH.md.html">Komenda if w skryptach BASH.md</a></p>
-</li>
-<li>
-<p><a href="Kompilacja-neomutt.html">Kompilacja neomutt</a></p>
-</li>
-<li>
-<p><a href="Kompilacja-xurls.html">Kompilacja xurls</a></p>
-</li>
-<li>
-<p><a href="Konfiguracja-interfejsu-sieciowego-za-pomocą-polecenia-ip-w-systemie-Linux.html">Konfiguracja interfejsu sieciowego za pomocą polecenia ip w systemie Linux</a></p>
-</li>
-<li>
-<p><a href="Konfiguracja-i-praca-z-tmux.html">Konfiguracja i praca z tmux</a></p>
-</li>
-<li>
-<p><a href="Konfiguracja-serwera-OpenSSH.html">Konfiguracja serwera OpenSSH</a></p>
-</li>
-<li>
-<p><a href="Konfiguracja-usługi-SSH-w-RouterOS-Mikrotik.html">Konfiguracja usługi SSH w RouterOS Mikrotik</a></p>
-</li>
-<li>
-<p><a href="Konwertowanie-dokumentów-Markdown-do-PDF.html">Konwertowanie dokumentów Markdown do PDF</a></p>
-</li>
-<li>
-<p><a href="Kopia-zapasowa-informacji-o-repozytoriach-Git.html">Kopia zapasowa informacji o repozytoriach Git</a></p>
-</li>
-<li>
-<p><a href="Kopia-zapasowa-Minio-Restic.html">Kopia zapasowa Minio Restic</a></p>
-</li>
-<li>
-<p><a href="Lista-zainstalowanych-czcionek.html">Lista zainstalowanych czcionek</a></p>
-</li>
-<li>
-<p><a href="Lokalna-kopia-zapasowa-z-wykorzystaniem-restic.html">Lokalna kopia zapasowa z wykorzystaniem restic</a></p>
-</li>
-<li>
-<p><a href="Mikrotik-i-Wireguard-VPN.html">Mikrotik i Wireguard VPN</a></p>
-</li>
-<li>
-<p><a href="Naprawienie-SSH-Too-Many-Authentication-Failures.html">Naprawienie SSH Too Many Authentication Failures</a></p>
-</li>
-<li>
-<p><a href="Nazwa-pliku,-wyśwetlanie-nazwy-i-rozszerzenia.html">Nazwa pliku, wyśwetlanie nazwy i rozszerzenia</a></p>
-</li>
-<li>
-<p><a href="NMCLI-i-OpenVPN.html">NMCLI i OpenVPN</a></p>
-</li>
-<li>
-<p><a href="Otworzenie-sejfu-gocryptfs-z-hasłem-zapisanym-w-szyfrowanym-pliku-GPG.html">Otworzenie sejfu gocryptfs z hasłem zapisanym w szyfrowanym pliku GPG</a></p>
-</li>
-<li>
-<p><a href="PF_pfctl_cheat_sheet.html">PF_pfctl_cheat_sheet</a></p>
-</li>
-<li>
-<p><a href="Pobranie-ostatniego-wydania-programu-z-repozytorium-Github.html">Pobranie ostatniego wydania programu z repozytorium Github</a></p>
-</li>
-<li>
-<p><a href="Podłączenie-do-zasobu-SAMBA.html">Podłączenie do zasobu SAMBA</a></p>
-</li>
-<li>
-<p><a href="Podłączenie-dysku-po-identyfikatorze-UUID.html">Podłączenie dysku po identyfikatorze UUID</a></p>
-</li>
-<li>
-<p><a href="Podłączenie-się-do-sieci-Wi-Fi.html">Podłączenie się do sieci Wi Fi</a></p>
-</li>
-<li>
-<p><a href="Podręcznik-systemowy-man.html">Podręcznik systemowy man</a></p>
-</li>
-<li>
-<p><a href="Polecenie-find-w-przykładach.html">Polecenie find w przykładach</a></p>
-</li>
-<li>
-<p><a href="Polecenie-grep-w-przykładach.html">Polecenie grep w przykładach</a></p>
-</li>
-<li>
-<p><a href="Polska-klawiatura-i-polonizacja-w-Arch-Linux.html">Polska klawiatura i polonizacja w Arch Linux</a></p>
-</li>
-<li>
-<p><a href="Praca-z-klientem-OpenSSH.html">Praca z klientem OpenSSH</a></p>
-</li>
-<li>
-<p><a href="Przydatne-programy-dla-systemu-Linux.html">Przydatne programy dla systemu Linux</a></p>
-</li>
-<li>
-<p><a href="Przyspieszenie-procesu-wyłączenia-systemu-Linux.html">Przyspieszenie procesu wyłączenia systemu Linux</a></p>
-</li>
-<li>
-<p><a href="Rsync-receptury.html">Rsync receptury</a></p>
-</li>
-<li>
-<p><a href="SED-receptury.html">SED receptury</a></p>
-</li>
-<li>
-<p><a href="Skróty-klawiszowe-ZSH.html">Skróty klawiszowe ZSH</a></p>
-</li>
-<li>
-<p><a href="Skrypt-ułatwiający-pracę-z-pluginem-Vimwiki-i-dziennikiem.html">Skrypt ułatwiający pracę z pluginem Vimwiki i dziennikiem</a></p>
-</li>
-<li>
-<p><a href="Skrypty-BASH-receptury.html">Skrypty BASH receptury</a></p>
-</li>
-<li>
-<p><a href="Sprawdzanie-pisowni-w-edytorze-Vim.html">Sprawdzanie pisowni w edytorze Vim</a></p>
-</li>
-<li>
-<p><a href="Ukrycie-procesów-innych-użytkowników-w-systemie-Linux.html">Ukrycie procesów innych użytkowników w systemie Linux</a></p>
-</li>
-<li>
-<p><a href="Uruchomienie-skryptu-po-wykryciu-zmian.html">Uruchomienie skryptu po wykryciu zmian</a></p>
-</li>
-<li>
-<p><a href="Ustawienie-klawiatury-w-systemie-Linux.html">Ustawienie klawiatury w systemie Linux</a></p>
-</li>
-<li>
-<p><a href="Vim-działania-arytmetyczne.html">Vim działania arytmetyczne</a></p>
-</li>
-<li>
-<p><a href="Vim-jako-przeglądarka-stron-podręcznika-man.html">Vim jako przeglądarka stron podręcznika man</a></p>
-</li>
-<li>
-<p><a href="Vim_jak_zamienic_dwukropek_na_znak_rownosci.html">Vim_jak_zamienic_dwukropek_na_znak_rownosci</a></p>
-</li>
-<li>
-<p><a href="Vim-kompilacja-ze-zrodel.html">Vim kompilacja ze zrodel</a></p>
-</li>
-<li>
-<p><a href="Vim-lista-projektów-i-FZF.html">Vim lista projektów i FZF</a></p>
-</li>
-<li>
-<p><a href="Vim-obiekty-tekstowe.html">Vim obiekty tekstowe</a></p>
-</li>
-<li>
-<p><a href="Vim-okna.html">Vim okna</a></p>
-</li>
-<li>
-<p><a href="Vim-otworzenie-pliku-pod-kursorem.html">Vim otworzenie pliku pod kursorem</a></p>
-</li>
-<li>
-<p><a href="Vim-otworzenie-pliku-tam-gdzie-skończyliśmy-pracę.html">Vim otworzenie pliku tam gdzie skończyliśmy pracę</a></p>
-</li>
-<li>
-<p><a href="Vim-podróże-w-czasie.html">Vim podróże w czasie</a></p>
-</li>
-<li>
-<p><a href="Vim-praca-z-powłoką-systemową.html">Vim praca z powłoką systemową</a></p>
-</li>
-<li>
-<p><a href="Vim-różności.html">Vim różności</a></p>
-</li>
-<li>
-<p><a href="Vim-szyfrowanie.html">Vim szyfrowanie</a></p>
-</li>
-<li>
-<p><a href="Vim-szyfrowanie-za-pomocą-PGP.html">Vim szyfrowanie za pomocą PGP</a></p>
-</li>
-<li>
-<p><a href="Vim-uruchomienie-polecenia-z-bufora.html">Vim uruchomienie polecenia z bufora</a></p>
-</li>
-<li>
-<p><a href="Vim-uzycie-Ctrl-s-do-zapisania-pliku.html">Vim uzycie Ctrl s do zapisania pliku</a></p>
-</li>
-<li>
-<p><a href="Vim-wlaczenie-pluginu-dla-wybranych-typow-plikow.html">Vim wlaczenie pluginu dla wybranych typow plikow</a></p>
-</li>
-<li>
-<p><a href="Vim-wstawienie-makietki.html">Vim wstawienie makietki</a></p>
-</li>
-<li>
-<p><a href="Vim-wstawienie-X-znaków.html">Vim wstawienie X znaków</a></p>
-</li>
-<li>
-<p><a href="Vim-wysyłanie-bieżącej-linii-do-innego-pliku.html">Vim wysyłanie bieżącej linii do innego pliku</a></p>
-</li>
-<li>
-<p><a href="Vim-zawijanie-tekstu-na-80-znakow.html">Vim zawijanie tekstu na 80 znakow</a></p>
-</li>
-<li>
-<p><a href="Wireshark-zdalnie-przez-SSH.html">Wireshark zdalnie przez SSH</a></p>
-</li>
-<li>
-<p><a href="Własne-menu-ROFI.html">Własne menu ROFI</a></p>
-</li>
-<li>
-<p><a href="Wykonanie-kopii-zapasowej-usługi-Nextcloud.html">Wykonanie kopii zapasowej usługi Nextcloud</a></p>
-</li>
-<li>
-<p><a href="Wyłączenie-IPv6-w-Arch.html">Wyłączenie IPv6 w Arch</a></p>
-</li>
-<li>
-<p><a href="Wyłączenie-szyfrowania-vino-vnc.html">Wyłączenie szyfrowania vino vnc</a></p>
-</li>
-<li>
-<p><a href="Wysyłanie-wiadomość-za-pomocą-GMail-i-Python-3.html">Wysyłanie wiadomość za pomocą GMail i Python 3</a></p>
-</li>
-<li>
-<p><a href="Zabezpieczenie-kodów-jednorazowych-kluczem-PGP.html">Zabezpieczenie kodów jednorazowych kluczem PGP</a></p>
-</li>
-<li>
-<p><a href="Zablokowania-logowania-użytkownika-root-przez-SSH.html">Zablokowania logowania użytkownika root przez SSH</a></p>
-</li>
-<li>
-<p><a href="Zarządzanie-pakietami-w-Fedora-Linux.html">Zarządzanie pakietami w Fedora Linux</a></p>
-</li>
-<li>
-<p><a href="Zmiana-częstotliwości-powtarzania-klawiszy.html">Zmiana częstotliwości powtarzania klawiszy</a></p>
-</li>
-<li>
-<p><a href="Zmiana-funkcjonalności-przez-zmianę-nazwy-skryptu.html">Zmiana funkcjonalności przez zmianę nazwy skryptu</a></p>
-</li>
-<li>
-<p><a href="Zmiana-hasła-w-kluczu-prywatnym-RSA-OpenVPN.html">Zmiana hasła w kluczu prywatnym RSA OpenVPN</a></p>
-</li>
-<li>
-<p><a href="Zmiana-rozdzielczości-ekranu.html">Zmiana rozdzielczości ekranu</a></p>
+<p><code>fzf</code> ułatwia wyszukiwanie</p>
 </li>
 </ul>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-03-27 19:27:11 +0100
+Last updated 2024-03-27 16:20:51 +0100
 </div>
 </div>
 </body>
