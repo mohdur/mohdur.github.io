@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.20">
-<title>Nazwa pliku, wyśwetlanie nazwy i rozszerzenia</title>
+<title>General PFCTL Commands</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -432,182 +432,289 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body class="article">
 <div id="header">
-<h1>Nazwa pliku, wyśwetlanie nazwy i rozszerzenia</h1>
 </div>
 <div id="content">
-<div class="sect1">
-<h2 id="_nazwa_pliku_bez_ścieżki">Nazwa pliku bez ścieżki</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>Na podstawie prostego skryptu pokażę jak wyświetlić nazwę pliku bez katalogu
-oraz jak wyświetlić samą nazwę pliku bez rozszerzenia.</p>
+<p>PF pfctl cheat sheet
+:source-highlighter: rouge
+:rouge-style: igor_pro
+:icons: font</p>
 </div>
 <div class="paragraph">
-<p>Pętla <code>for</code> pokazuje wszystkie pliki w katalogu <code>katalog</code> wraz z nazwą tego katalogu
-np. <code>katalog/nazwa-pliku.txt</code>, chcąc uzyskać samą nazwę pliku użyjemy komendy
-<code>basename</code>.</p>
+<p>Pobrane z <a href="https://gist.github.com/tracphil/4353170" class="bare">https://gist.github.com/tracphil/4353170</a> (źródło niedostępne)</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>for i in katalog/*.txt
-do
-   PLIK=$(basename $i | cut -d '.' -f 1)
-   echo "$PLIK"
-done</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Inny przykład użycia komendy <code>basename</code></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>VIMRC_DIR="$HOME/.vim/vimrc"
-VIMRC=$(basename "$VIMRC_DIR")
-echo $VIMRC</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>vimrc</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Użycie komendy <code>basename</code></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>basename katalog/plik.txt
-
-plik.txt</pre>
-</div>
-</div>
+<pre>basic pfctl control
+==
+Related: http://www.OpenBSD.org
+Last update: Tue Dec 28, 2004
+==
+Note:
+this document is only provided as a basic overview
+for some common pfctl commands and is by no means
+a replacement for the pfctl and pf manual pages.</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_nazwa_pliku_bez_rozszerzenia">Nazwa pliku bez rozszerzenia</h2>
+<h2 id="_general_pfctl_commands">General PFCTL Commands</h2>
 <div class="sectionbody">
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Polecenie</th>
+<th class="tableblock halign-left valign-top">Opis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pfctl -d</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">disable packet-filtering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pfctl -e</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">enable packet-filtering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pfctl -q</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">run quiet</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pfctl -v</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-v run even more verbose</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_loading_pf_rules">Loading PF Rules</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Polecenie</th>
+<th class="tableblock halign-left valign-top">Opis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pfctl -f /etc/pf.conf</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">load /etc/pf.conf</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pfctl -n -f /etc/pf.conf</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">parse /etc/pf.conf, but dont load it</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pfctl -R -f /etc/pf.conf</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">load only the FILTER rules</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pfctl -N -f /etc/pf.conf</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">load only the NAT rules</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pfctl -O -f /etc/pf.conf</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">load only the OPTION rules</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_clearing_pf_rules_counters">Clearing PF Rules &amp; Counters</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Polecenie</th>
+<th class="tableblock halign-left valign-top">Opis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pfctl -F all</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">flush ALL</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pfctl -F rules</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">flush only the RULES</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pfctl -F queue</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">flush only queue’s</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pfctl -F nat</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">flush only NAT</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pfctl -F info</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">flush all stats that are not part of any rule.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pfctl -z clear</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">all counters</p></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
-<p>Skoro mamy już samą nazwę pliku <code>plik.txt</code>, to teraz spróbujemy uzyskać nazwę
-pliku bez rozszerzenia. Używając polecenia <code>cut</code> oraz parametru <code>-d '.'</code>, który
-określa separator pomiędzy polami, wyświetlimy pole numer 1 czyli nazwę pliku,
-służy do tego parametr <code>-f 1</code>.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>basename katalog/plik.txt | cut -d '.' -f 1
-
-plik</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Ten sam rezultat możemy uzyskać używając wyłącznie polecenia basename jednak
-musimy znać rozszerzenie pliku.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>basename katalog/plik.txt .txt
-
-plik</pre>
-</div>
+<p>note: flushing rules do not touch any existing stateful connections</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_samo_rozszerzenie">Samo rozszerzenie</h2>
+<h2 id="_output_pf_information">Output PF Information</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Jeśli chcemy wyświetlić samą nazwę rozszerzenia, to należy użyć polecenia <code>cut</code>,
-gdzie parametr <code>-f1</code> należy zastąpić <code>-f2</code> lub <code>-f2,3</code>.</p>
-</div>
-<div class="paragraph">
-<p>Dla powłoki <strong>BASH</strong> można użyć innego rozwiązania, [shell parameters expansion](<a href="https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html#Shell-Parameter-Expansion" class="bare">https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html#Shell-Parameter-Expansion</a>),
-w zmiennej wyszukujemy wzoru np. <code>.*</code> a następnie cała reszta zostaje usunięta.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>FILE=plik.conf
-EXT="${FILE##.*}"
-echo $EXT</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>conf</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>W przypadku plików zaczynających od <code>.</code> trzeba zastosować inny wzór <code>FILE##*.</code></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>FILE=.tmux.conf
-EXT="${FILE##*.}"
-echo $EXT</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>conf</pre>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_przykłady_użycia_wzorców_na_zmiennych">Przykłady użycia wzorców na zmiennych</h3>
-<div class="paragraph">
-<p>Ucięcie wszystkiego na prawo od wystąpienia wzorca czyli Wielkiej litery <code><a id=":upper"></a></code></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>ZM="terefere/234/234234małaDuża"
-echo "${ZM%%[[:upper:]]*}"
-
-terefere/234/234234mała</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Ucięcie od wystąpienia wzoraca do końca zmiennej, czyli w tym przypadku pokazuje
-wszystko na prawo od wystąpienia cyfry.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>ZM="terefere/234/234234małaDuża"
-echo "${ZM##*[[:digit:]]}"
-
-małaDuża</pre>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Polecenie</th>
+<th class="tableblock halign-left valign-top">Opis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pfctl -s rules</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">show filter information</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pfctl -v -s rules</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">show filter information for what FILTER rules hit..</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pfctl -vvsr</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">show filter information as above and prepend rule numbers</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pfctl -v -s nat</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">show NAT information, for which NAT rules hit..</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pfctl -s nat -i xl1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">show NAT information for interface xl1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pfctl -s queue</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">show QUEUE information</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pfctl -s label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">show LABEL information</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pfctl -s state</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">show contents of the STATE table</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pfctl -s info</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">show statistics for state tables and packet normalization</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pfctl -s all</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">show everything</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
-<div class="paragraph">
-<p>Dodatkowe informacje:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>[Shell Parameter Expansion](<a href="https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html" class="bare">https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html</a>)</p>
-</li>
-<li>
-<p>[Pattern Matching](<a href="https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html" class="bare">https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html</a>)</p>
-</li>
-</ul>
-</div>
+<div class="sect1">
+<h2 id="_maintaining_pf_tables">Maintaining PF Tables</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Polecenie</th>
+<th class="tableblock halign-left valign-top">Opis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pfctl -t addvhosts -T show</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">show table addvhosts</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pfctl -vvsTables</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view global information about all tables</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pfctl -t addvhosts -T add 192.168.1.50</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add entry to table addvhosts</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pfctl -t addvhosts -T add 192.168.1.0/16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add a network to table addvhosts</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pfctl -t addvhosts -T delete 192.168.1.0/16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete nework from table addvhosts</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pfctl -t addvhosts -T flush</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">remove all entries from table addvhosts</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pfctl -t addvhosts -T kill</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete table addvhosts entirely</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pfctl -t addvhosts -T replace -f /etc/addvhosts</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">reload table addvhosts on the fly</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pfctl -t addvhosts -T test 192.168.1.40</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find ip address 192.168.1.40 in table addvhosts</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pfctl -T load -f /etc/pf.conf</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">load a new table definition</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pfctl -t addvhosts -T show -v output</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stats for each ip address in table addvhosts</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pfctl -t addvhosts -T zero</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">reset all counters for table addvhosts</p></td>
+</tr>
+</tbody>
+</table>
 <hr>
-<div class="ulist">
-<ul>
-<li>
+<div class="paragraph text-center">
 <p><a href="index.html">wstecz</a></p>
-</li>
-</ul>
 </div>
 <div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
-Date: 2020-10-14T15:17:50+02:00
+Date: 2020-10-22T01:53:14+02:00
 </td>
 </tr>
 </table>
@@ -615,10 +722,9 @@ Date: 2020-10-14T15:17:50+02:00
 </div>
 </div>
 </div>
-</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-03-29 21:51:37 +0100
+Last updated 2024-03-29 22:03:54 +0100
 </div>
 </div>
 </body>
