@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.20">
-<title>Wyłączenie szyfrowania vino Vnc</title>
+<title>Vim jak zamienić dwukropek na znak równości</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -436,95 +436,44 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
-<h1>Wyłączenie szyfrowania vino Vnc</h1>
+<h1>Vim jak zamienić dwukropek na znak równości</h1>
 </div>
 <div id="content">
 <div class="paragraph">
-<p>Należy zaznaczyć, że nie jest to najlepszy pomysł, żeby wyłączać
-szyfrowanie czegokolwiek. Niestety Ubuntu wprowadziło szyfrowanie, którego
-nie obsługuje żaden klient VNC pod systemy Windows, przynajmniej ja nic o tym
-nie wiem, raz mi się udało podłączyć za pomocą UltraVNC + plugin DSM, ale to
-tylko raz. Alternatywnym rozwiązaniem może być skorzystanie z innego serwera
-VNC np: <code>x11vnc</code>.</p>
+<p>Ciąg znaków mamy taki:</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>gsettings set org.gnome.Vino require-encryption false</pre>
+<pre>zmienna: 25</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Jeśli już zdecydujemy się na wyłączenie szyfrowania, to warto skorzystać
-z tunelowania połączenia protokołem SSH.</p>
-</div>
-<div class="paragraph">
-<p>W systemie Linuks wydajemy polecenie</p>
+<p>i chcemy go zamienić na:</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>ssh -f -p 22 user@192.168.0.222 -L 5901:127.0.0.1:5900 -N</pre>
+<pre>zmienna=25</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Jak to zrobić?</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>f:cf =</pre>
 </div>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Parametr <code>-f</code> przenosi działanie <code>ssh</code> w tle</p>
+<p><code>f:</code> - wyszukuje znak <code>:</code></p>
 </li>
 <li>
-<p>Parametr <code>-N</code> nie wykonuje żadnej komendy na zdalnym hoście</p>
+<p>`cf ` - usuwa wszystko do znaku spacji i przechodzi w tryb wprowadzania</p>
 </li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Po wykonaniu polecenia będziemy mogli się połączyć za pomocą VNC na adres</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>localhost:5901</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>W systemie Windows najczęściej wykorzystuję klienta PuTTY</p>
-</div>
-<div class="paragraph">
-<p>Na pierwszym ekranie widzimy klienta PuTTY i wprowadzony adres IP z którym
-będziemy się łączyć czyli <code>192.168.0.222</code>.</p>
-</div>
-<div class="paragraph">
-<p>Opcjonalnie możemy wstawić nazwę użytkownika w Connection &#8594; Data</p>
-</div>
-<div class="paragraph">
-<p>Na kolejnym ekranie widać konfigurację tunelu SSH (Connection &#8594; SSH &#8594;
-Tunnels), w pole <code>Source port</code>, wpisujemy numer portu, który będzie dostępny
-na naszym systemie np. <code>5901</code>. W polu <code>Destination</code> wprowadzamy adres IP i
-numer portu, na który mają być przekierowanie połączenia. W naszym przypadku
-będzie to adres <code>127.0.0.1</code> i numer portu <code>5900</code>, jest to adres lokalny
-<code>localhost</code> lub <code>127.0.0.1</code> systemu, z którym się łączymy, czyli w naszym
-przypadku <code>192.168.0.222</code>. Po wprowadzeniu niezbędnych informacji należy
-kliknąć przycisk <code>Add</code>.</p>
-</div>
-<div class="paragraph">
-<p>Na obrazku poniżej mamy okno przekierowania portów / tunelowania z dodanym
-naszym wpisem.</p>
-</div>
-<div class="paragraph">
-<p>Teraz należy nacisnąć przycisk <code>Open</code> i powinno pokazać się okno terminala z
-prośbą o podanie nazwy użytkownika i hasła.</p>
-</div>
-<div class="paragraph">
-<p>Pozostało nawiązać połączeniem ze zdalnym hostem używajpodobnymipodobnymiąc właśnie
-skonfigurowanego tunelu za pomocą SSH i PuTTY.</p>
-</div>
-<div class="paragraph">
-<p>Będziemy potrzebowali klienta VNC, w którym należy wpisać jako adres
-<code>localhost:5901</code></p>
-</div>
-<div class="paragraph">
-<p>Kończąc wspomnę, że taka konfigurację można zabezpieczyć zablokowaniem portów
-VNC (5900-590X) na systemie zdalnym, dzięki temu unikniemy podsłuchania
-transmisji nieszyfrowanej oraz ataków na serwer VNC.</p>
-</div>
-<div class="ulist">
-<ul>
+<li>
+<p><code>=</code> - wprowadza znak <code>=</code></p>
+</li>
 <li>
 <p><a href="index.html">wstecz</a></p>
 </li>
@@ -537,7 +486,7 @@ transmisji nieszyfrowanej oraz ataków na serwer VNC.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Date: 2020-10-24T19:46:38+02:00
+Date: 2020-10-24T19:41:57+02:00
 </td>
 </tr>
 </table>
@@ -545,7 +494,7 @@ Date: 2020-10-24T19:46:38+02:00
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-03-29 21:40:13 +0100
+Last updated 2024-03-29 21:38:24 +0100
 </div>
 </div>
 </body>
