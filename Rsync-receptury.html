@@ -556,22 +556,68 @@ pre.rouge .gs {
 <div class="sect1">
 <h2 id="_synchronizacja_przez_ssh">Synchronizacja przez SSH</h2>
 <div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>-e ssh          | połączenie przez SSH np. -e "ssh -l ssh-user -p 22"
--a              | zastępuje kilka parametrów -r -l -p -t -g -o -D
--v              | wyświetla bieżącą operację
--z              | włącza kompresję
---delete-before | kasuje pliki w docelowej lokalizacji jeśli te nie istnieją w źródłowej lokalizacji
--n              | --dry-run - testowa synchronizacja
--r              | synchronizuje podkatalogi
--l              | kopiuje linki symboliczne jako linki symboliczne
--p              | zachowuje uprawnienia
--t              | zachowuje uprawnienia dla grupy
--o              | zachowuje uprawnienia dla użytkownika
--D              | zachowuje pliki urządzeń (tylko root)</pre>
-</div>
-</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parametr</th>
+<th class="tableblock halign-left valign-top">Opis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-e ssh</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">połączenie przez SSH np. -e "ssh -l ssh-user -p 22"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-a</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">zastępuje kilka parametrów <code>-r -l -p -t -g -o -D</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-v</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">wyświetla bieżącą operację</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-z</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">włącza kompresję</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--delete-before</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kasuje pliki w docelowej lokalizacji jeśli te nie istnieją w źródłowej lokalizacji</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-n</code>, <code>--dry-run</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">testowa synchronizacja</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-r</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">synchronizuje podkatalogi</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-l</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kopiuje linki symboliczne jako linki symboliczne</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-p</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">zachowuje uprawnienia</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-t</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">zachowuje uprawnienia dla grupy</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-o</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">zachowuje uprawnienia dla użytkownika</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-D</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">zachowuje pliki urządzeń (tylko root)</p></td>
+</tr>
+</tbody>
+</table>
 <div class="literalblock">
 <div class="content">
 <pre>cd ~/Nextcloud
@@ -687,7 +733,7 @@ Date: 2020-10-21T21:51:21+02:00
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-03-29 22:05:01 +0100
+Last updated 2024-04-11 18:26:05 +0200
 </div>
 </div>
 </body>
