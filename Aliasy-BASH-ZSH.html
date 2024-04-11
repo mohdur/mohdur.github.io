@@ -558,7 +558,7 @@ pre.rouge .gs {
 <div class="paragraph">
 <p>Część aliasów ma ustawione parametry dla polecenia np. <code>alias ss='ss -tumanp'</code>
 jeśli będziemy chcieli pominąć te parametry należy podać pełną ścieżke do
-polecenia <code>ss</code>: <code>/usr/sbin/ss</code>.</p>
+polecenia <code>ss</code>: <code>/usr/sbin/ss</code>, lub poprzedzić polecenie znakiem <code>\</code> np: <code>\cat /etc/group</code>.</p>
 </div>
 </div>
 </div>
@@ -637,6 +637,16 @@ alias </span><span class="nv">more</span><span class="o">=</span>less
 <span class="nb">alias </span><span class="nv">ll</span><span class="o">=</span><span class="s1">'ls -alFh'</span>
 <span class="nb">alias </span><span class="nv">la</span><span class="o">=</span><span class="s1">'ls -Ah'</span>
 <span class="nb">alias </span><span class="nv">l</span><span class="o">=</span><span class="s1">'ls -CFh'</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_przetwarzanie_tekstu">Przetwarzanie tekstu</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sh"><span class="nb">alias cat</span><span class="o">=</span><span class="s2">"bat --wrap character --paging=always --plain --pager 'less -FXR'"</span></code></pre>
 </div>
 </div>
 </div>
@@ -760,7 +770,7 @@ Data: 2020-10-22T01:20:20+02:00
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-03-29 21:59:55 +0100
+Last updated 2024-04-11 16:45:09 +0200
 </div>
 </div>
 </body>
