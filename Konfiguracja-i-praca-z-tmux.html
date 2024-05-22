@@ -1055,6 +1055,54 @@ polecenia np: uruchomić nową sesję:</p>
 :new -s NAZWA-SESJI</pre>
 </div>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_menadżer_pluginów_tpm">Menadżer pluginów TPM</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Instalacja</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>W pliku <code>.tmux.conf</code> dodajemy na początku listę wtyczek, które chcemy używać</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-yank'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @plugin 'fcsonline/tmux-thumbs'
+set -g @plugin 'sainnhe/tmux-fzf'
+set -g @plugin 'omerxx/tmux-sessionx'</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Na końcu pliku <code>.tmux.conf</code> dodajemy</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>run '~/.tmux/plugins/tpm/tpm'</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Teraz należy przeładować konfigurację za pomocą skrótu <code>C-a :</code> wchodzimy do trybu COMMAND, następnie
+wydajemy komendę:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>source-file ~/.tmux.conf</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Na koniec instalujemy wtyczki używając skrótu <code>C-a I</code>.</p>
+</div>
 <hr>
 <div class="paragraph text-center">
 <p><a href="index.html">wstecz</a></p>
@@ -1076,7 +1124,7 @@ Date: 2020-10-24T19:30:00+02:00
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-03-29 22:02:08 +0100
+Last updated 2024-05-22 08:25:37 +0200
 </div>
 </div>
 </body>
