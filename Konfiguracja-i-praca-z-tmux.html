@@ -715,16 +715,44 @@ wcześniej wykonane komendy. Wejście do trybu COPY <code>Copy-a-[</code>. Wyjś
 <div class="sectionbody">
 <div class="literalblock">
 <div class="content">
-<pre># Zmiana ctrl-b na ctrl-a
+<pre># List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-yank'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @plugin 'fcsonline/tmux-thumbs'
+set -g @plugin 'sainnhe/tmux-fzf'
+set -g @plugin 'wfxr/tmux-fzf-url'
+# set -g @plugin 'omerxx/catppuccin-tmux' # My fork that holds the meetings script bc I'm lazy af
+set -g @plugin 'omerxx/tmux-sessionx'
+
+set -g @sessionx-bind 'o'
+
+# Zmiana ctrl-b na ctrl-a
 set-option -g prefix C-a
 unbind-key C-a
 bind-key C-a send-prefix
+
+# Zmienia ctrl-b na ctrl-space
+# unbind C-b
+# set -g prefix C-Space
+# bind C-Space send-prefix
+
+# unbind-key C-f
+# TMUX_FZF_LAUNCH_KEY="C-f"
+TMUX_FZF_ORDER="window|session|pane|command|keybinding|clipboard|process"
+
+set -s set-clipboard on
 
 # start with window 1 (instead of 0)
 set -g base-index 1
 
 # start with pane 1
 set -g pane-base-index 1
+
+set-window-option -g pane-base-index 1
+set-option -g renumber-windows on
 
 # shorten command delay
 set -sg escape-time 1
@@ -738,33 +766,65 @@ bind -n M-Right select-pane -R
 bind -n M-Up select-pane -U
 bind -n M-Down select-pane -D
 
+bind -n M-H select-pane -L
+bind -n M-J select-pane -D
+bind -n M-K select-pane -U
+bind -n M-L select-pane -R
+
 # Użycie prefiksu + hjkl do zmiany panelu
 bind h select-pane -L
 bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
 
-# Użycie Ctrl-Strzałki do zmiany okna
-bind -n C-Left previous-window
-bind -n C-Right next-window
-bind -n C-Up last-window          # Shift-Up  poprzednie okno
-bind -n C-Down choose-window      # wybór okna
+# Użycie Shift-Strzałki do zmiany okna
+bind -n S-Left previous-window
+bind -n S-Right next-window
+bind -n S-Up last-window          # Shift-Up  poprzednie okno
+bind -n S-Down choose-window      # wybór okna
 
-# Zamienia okna miejscami
+# zmiana okna lewy alt-h, alt-l
+bind -n M-h previous-window
+bind -n M-l next-window
+bind -n M-j switch-client -l      # ostatnia sesja
+bind -n M-k choose-tree           # wybór sesji
+
+# zamienia okna miejscami
 bind-key m command-prompt -p "move window to:"  "swap-window -t '%%'"
 
 # bind-key -n C-M-Space display-popup -w 80% "ls ~/Downloads | fzf"
 
+# bind -n C-h previous-window
+# bind -n C-l next-window
+
 # Zarządzanie oknami
+# bind -n C-t new-window -c "#{pane_current_path}"    # ctrl-t otwiera nowe okno
+# bind k confirm kill-window                          # ctrl-a-k zamknij okno - wymaga potwierdzenia
 bind K kill-window                                  # ctrl-a-K zamknij okno
+# unbind c
+# unbind p
+# unbind n
 
 # Użycie Shift-Strzałki do zmiany sesji
-bind -n S-Left switch-client -p    # poprzednia sesja
-bind -n S-Right switch-client -n   # następna sesja
-bind -n S-Up switch-client -l      # ostatnia sesja
-bind -n S-Down choose-tree         # wybór sesji
+bind -n C-Left switch-client -p    # poprzednia sesja
+bind -n C-Right switch-client -n   # następna sesja
+bind -n C-Up switch-client -l      # ostatnia sesja
+bind -n C-Down choose-tree         # wybór sesji
+
+# w trybie COPY 'v' zaczyna zaznaczanie tak jak spacja
+bind-key -T copy-mode-vi v send-keys -X begin-selection
+# w trybie COPY 'Ctrl-v' zmienia tryb zaznaczania z liniowego na blokowy
+bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
+# w trybie COPY 'y' kopiuje zaznaczony tekst lub jeśli nie jest nic zaznaczone wychodzi z trybu COPY
+bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
 
 # Użycie myszki
+# wersja dla tmux &lt; 2.1
+#set -g mode-mouse on
+#set -g mouse-resize-pane on
+#set -g mouse-select-pane on
+#set -g mouse-select-window on
+# wersja dla tmux &gt; 2.1
 set -g mouse on
 
 # Ustawienie dzielenia panelu dodatkowo otwiera w tej samej ścieżce
@@ -781,8 +841,12 @@ bind-key r source-file ~/.tmux.conf \; display-message "tmux.conf reloaded"
 
 # Prefix D uruchamia edycję pliku ./TODO.md lub ~/git/github/dotfiles/todo.md
 bind -r D neww -c "#{pane_current_path}" "[[ -e TODO.md ]] &amp;&amp; $EDITOR TODO.md || $EDITOR ~/git/github/dotfiles/todo.md"
-# bind -r D send-keys -t.- 'sudo dnf update' Enter
+# bind -r D send-keys -t.- 'doas dnf update' Enter
 
+set -g pane-active-border-style 'fg=green,bg=default'
+set -g pane-border-style 'fg=brightblack,bg=default'
+
+# http://www.hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf/¬
 # Ustawienie paska statusu
 set-option -g set-titles on
 set -g status-interval 1
@@ -793,11 +857,13 @@ set -g status-bg colour233
 
 # Left side of status bar
 set -g status-left-length 40
-set -g status-left "#[fg=colour232,bg=colour245,bold] #S #[fg=colour240,bg=colour235]#[fg=col our240,bg=colour235] #I:#P #[fg=colour235,bg=colour233,nobold]"
+set -g status-left "#[fg=colour232,bg=colour245,bold] #S #[fg=colour240,bg=colour235]#[fg=colour240,bg=colour235] #I:#P #[fg=colour235,bg=colour233,nobold]"
+# set -g status-left "#[fg=colour232,bg=colour245,bold] #S #[fg=colour245,bg=colour240,nobold]#[fg=colour233,bg=colour240] #(whoami) #[fg=colour240,bg=colour235]#[fg=col our240,bg=colour235] #I:#P #[fg=colour235,bg=colour233,nobold]"
 
 # Right side of status bar
 set -g status-right-length 150
 set -g status-right "#[fg=colour245 ,bg=colour240]#[fg=colour232,bg=colour245,bold] #H "
+# set -g status-right "#[fg=colour235,bg=colour233]#[fg=colour240,bg=colour235] %H:%M:%S #[fg=colour240,bg=colour235]#[fg=colour233,bg=colour240] %d-%b-%y #[fg=colour245 ,bg=colour240]#[fg=colour232,bg=colour245,bold] #H "
 
 # Window status
 set -g window-status-current-format " #I:#W#F "
@@ -820,11 +886,32 @@ set -g display-panes-active-colour colour245
 set -g clock-mode-colour colour240
 set -g clock-mode-style 24
 
+# set-option -g default-shell /usr/bin/fish
 # set-option -g default-shell /usr/bin/zsh
+set-option -g default-shell /usr/bin/zsh
 
 set -g history-limit 10000
 
-set -g default-terminal "tmux-256color"</pre>
+# set -g default-terminal "screen-256color"
+# set -g default-terminal "tmux-256color"
+# set -g default-terminal "xterm-256color"
+# set-default colorset-option -ga terminal-overrides ",xterm-256color:Tc"
+# set -g default-terminal 'screen-256color'
+# set -g default-terminal 'screen-256color'
+# set -ga terminal-overrides ',xterm-256color:Tc'
+# set -as terminal-overrides ',xterm*:sitm=\E[3m'
+# set -g terminal-overrides ',xterm-256color:Tc'
+# set -g default-terminal "xterm-256color"
+# set-option -ga terminal-overrides ",xterm-256color:Tc"
+
+# działa
+# set-option -sa terminal-overrides ",xterm*:Tc"
+
+set -g default-terminal "tmux-256color"
+set -ag terminal-overrides ",xterm-256color:RGB"
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'</pre>
 </div>
 </div>
 </div>
@@ -1124,7 +1211,7 @@ Date: 2020-10-24T19:30:00+02:00
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-05-22 08:25:37 +0200
+Last updated 2024-05-22 08:34:18 +0200
 </div>
 </div>
 </body>
