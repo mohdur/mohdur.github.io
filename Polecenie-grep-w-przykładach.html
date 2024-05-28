@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.20">
-<title>Polecenie grep w przykładach' # Title of the blog post.</title>
+<title>Polecenie grep w przykładach</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -436,9 +436,48 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
-<h1>Polecenie grep w przykładach' # Title of the blog post.</h1>
+<h1>Polecenie grep w przykładach</h1>
 </div>
 <div id="content">
+<div class="sect1">
+<h2 id="_przydatne_parametry">Przydatne parametry</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><code>-v</code> - wyświetla tylko te wiersze, które nie pasują do wyrażenia regularnego.</p>
+</li>
+<li>
+<p><code>-l</code> - wyświetla nazwy plików, które zawierają podane wyrażenie</p>
+</li>
+<li>
+<p><code>-L</code> - wypisuje nazwy plików, które nie zawierają podanego wyrażenia</p>
+</li>
+<li>
+<p><code>-c</code> - wypisuje jedynie liczbę wierszy spełniających warunek zgodności z podanym wyrażeniem</p>
+</li>
+<li>
+<p><code>-n</code> - wypisuje numer linii pliku gdzie występuje wzorzec</p>
+</li>
+<li>
+<p><code>-b</code> - wypisuje wynik przesunięcia w bajtach danego wiersza, pasujący do wyrażenie regularnego</p>
+</li>
+<li>
+<p><code>-i</code> - nie uwzględnia wielkości liter</p>
+</li>
+<li>
+<p><code>-w</code> - będą brane pod uwagę jedynie całe słowa</p>
+</li>
+<li>
+<p><code>-x</code> - bedą brane pod uwagę całe wiersze nie działa z <code>-w</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_przykłady_użycia">Przykłady użycia</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Wyszukanie wszystkich pakietów zawierających słowa <code>vim</code> i <code>common</code></p>
 </div>
@@ -473,6 +512,673 @@ również pakiety, którchy częścią nazwy jest słowo <code>vim</code> lub <c
 <pre>grep -i [wyraz] *</pre>
 </div>
 </div>
+<div class="paragraph">
+<p>Paramter -x</p>
+</div>
+<div class="paragraph">
+<p>Bedą brane pod uwagę całe wiersze nie działa z <code>-w</code></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>grep [[:upper:]] -x plik.txt</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Parametr -A, -B i -C</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>-A liczba</code> - wyświetla linię, w której występuje wzorzec a także linie niżej</p>
+</li>
+<li>
+<p><code>-B liczba</code> - wyświetla linię, w której występuje wyrażenie a także linie powyżej</p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>grep [[:alpha:]] -B 2 plik.txt</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>-C liczba</code> - wyświetla szukaną linię oraz linie przed i po wyszukiwanej</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Wyszukiwanie rekursywne</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>-r</code> - wyszukiwanie rekursywne</p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>grep [[:alpha:]] -r katalog</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wyszukanie_plików_nie_zawierających_podanego_ciągu_znaków">Wyszukanie plików nie zawierających podanego ciągu znaków</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Polecenie wyszukuje plików nie zawierających ciągu znaków <code>All</code>. Polecenie rozpoznaje wielkość znaków.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>grep -rL All .
+
+./wiki/welcome.txt
+./playground/playground.txt</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wyświetlenie_wyrażenia_pomiędzy_dwoma_patternami">Wyświetlenie wyrażenia pomiędzy dwoma patternami</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Polecenie wyświetla zawartość pomiędzy <code>-auth</code> a <code>-background</code> znajdujące się w jednej linii</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>grep -o -P '(?&lt;=-auth).*(?=-background)'</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_usunięcie_komentarzy_z_pliku">Usunięcie komentarzy z pliku</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Polecenie usuwa wszystkie linie zaczynające się od znaku <code>#</code> lub <code>;</code>.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>more /etc/pf.conf | egrep -v '(#|;)' | grep '[a-z]'</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wyszukanie_dwóch_różnych_wartości">Wyszukanie dwóch różnych wartości</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Parametr <code>-e</code> wyszukuje wszystkich linii w których występuje choć jeden z szukanych wyrażeń, jeśli
+chcemy znaleźć linie w których występują wszystkie parametry trzeba użyć kilku poleceń <code>grep</code> po
+kolei np. <code>grep pierwszy | grep drugi</code></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>pkg_info | grep -e "nmap" -e "ncftp'
+
+ncftp-3.2.2         ftp replacement with advanced user interface
+nmap-4.76           scan ports and fingerprint stack of network hosts</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wyświetlenie_2_linii_po_znalezionym_ciągu_znaków">Wyświetlenie 2 linii po znalezionym ciągu znaków</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Polecenie wyświetli w sumie 3 linie.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>cat /var/log/messages | grep -A 2 -e "pid=767"
+grep -A 1 "nmbd" nazwa_pliku</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wyświetlenie_2_linii_przed_znalezionym_ciągem_znaków">Wyświetlenie 2 linii przed znalezionym ciągem znaków</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Polecenie wyświetli w sumie 3 linie.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>cat /var/log/messages | grep -B 2 -e "pid=767"
+grep -B 2 "pid=767" /var/log/messages</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_szukamy_słowa_sshd_w_plikach_znajdujących_się_w_katalogu_etc">Szukamy słowa sshd w plikach znajdujących się w katalogu /etc</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>grep sshd /etc/*
+
+/etc/rc:if [ X"${sshd_flags}" != X"NO" ]; then
+/etc/rc:        echo -n ' sshd';                /usr/sbin/sshd ${sshd_flags};
+/etc/rc.conf:sshd_flags=""              # for normal use: ""</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wyszukanie_dokładnego_ciągu_znaków_oddzielonego_znakami_spacji">Wyszukanie dokładnego ciągu znaków oddzielonego znakami spacji</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Jeśli chcemy wyszukać np. słowo internet ale już nie internet6 możemy zastosować parametr <code>-w</code>.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>fstat | grep -w internet
+
+red      sshd        5510    5* internet stream tcp 0xd4392e10 192.168.6.66:65535 &lt;-- 192.168.6.77:4853
+root     sshd       10758    5* internet stream tcp 0xd4392e10 192.168.6.66:65535 &lt;-- 192.168.6.77:4853
+www      httpd       8536   16* internet stream tcp 0xd4392640 *:443
+www      httpd       8536   17* internet stream tcp 0xd43927d0 *:80
+www      httpd       1085   16* internet stream tcp 0xd4392640 *:443
+www      httpd       1085   17* internet stream tcp 0xd43927d0 *:80
+www      httpd      25969   16* internet stream tcp 0xd4392640 *:443
+www      httpd      25969   17* internet stream tcp 0xd43927d0 *:80</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ten sam efekt uzyskamy za pomocą polecenia</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>fstat | grep "[[:space:]]internet[[:space:]]"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Również ten sam efekt da nam polecenie fstat i awk.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>fstat | awk '$5 ~ /^internet$/'</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wyszukanie_ciągu_znaków_w_pliku">Wyszukanie ciągu znaków w pliku</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>grep :1000: /etc/passwd
+
+red:*:1000:10:red:/home/red:/bin/ksh</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_inne_przykłady">Inne przykłady</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://www.robelle.com/smugbook/regexpr.html" class="bare">http://www.robelle.com/smugbook/regexpr.html</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wyszukanie_wzorca_w_pliku">Wyszukanie wzorca w pliku</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>grep pattern file</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_case_insensitive_search_with_line_numbers">Case insensitive search (with line numbers)</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>grep -in pattern file</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_recursively_grep_for_string_pattern_in_folder">Recursively grep for string <code>&lt;pattern&gt;</code> in folder:</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>grep -R pattern folder</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wyszukiwanie_linii_z_wzorcami_znajdującymi_się_w_pliku_linia_po_linii">Wyszukiwanie linii z wzorcami znajdującymi się w pliku (linia po linii)</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>grep -f pattern_file file</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wyszukiwanie_linii_nie_zawierających_wzorca">Wyszukiwanie linii nie zawierających wzorca</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>grep -v pattern file</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wyszukiwanie_za_pomocą_wyrażenia_regularnego">Wyszukiwanie za pomocą wyrażenia regularnego</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>grep "^00" file  #Match lines starting with 00
+grep -E "[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}" file  #Find IP add</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_find_all_files_which_match_pattern_in_directory">Find all files which match {pattern} in {directory}</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This will show: "file:line my research"</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>grep -rnw 'directory' -e "pattern"</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exclude_grep_from_your_grepped_output_of_ps">Exclude grep from your grepped output of ps.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Add [] to the first letter. Ex: sshd &#8594; [s]shd</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ps aux | grep '[h]ttpd'</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_colour_in_red_bash_and_keep_all_other_lines">Colour in red {bash} and keep all other lines</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>ps aux | grep -E --color 'bash|$'</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wyszukanie_słowo_w_pliku_plik_txt">Wyszukanie słowo w pliku plik.txt</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Polecenie grep zawsze wyszukuje z rozróżnianiem wielkości liter</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>grep słowo plik.txt</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Parametr -i wyłącza rozróżnianie wielkości liter</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>grep -i "słowo" plik.txt</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Parametr -v wyświetla linie które nie zawierają słowa "słowo"</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>grep -v "słowo" plik.txt</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Połączenie parametrów -v i -i wyświetli linie które nie zawierają szukanego
+słowa niezależnie od wielkości liter</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>grep -v -i "słowo" plik.txt</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Wyszukanie dwóch słów jednocześnie z wykorzystaniem parametru -e</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>grep -i -e "słowo1" -e "słowo2" plik.txt</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Użycie w tym przypadku parametru -i ma zastosowoanie do obu szukanych wyrazów</p>
+</div>
+<div class="paragraph">
+<p>Zliczanie linii wystąpienia danego wyrazu</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>grep -i -c "wyraz" plik.txt</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Należy zwrócić uwagę, że zostanie wyświetlona liczba linii w których
+wystąpi słowo nie liczba wystąpień słowa czyli linia, w której będzie
+szukane słowo więcej niż raz bedzie i tak zliczona jako jedno wystąpienie.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wyszukiwanie_dwóch_lub_więcej_znaków">Wyszukiwanie dwóch lub więcej znaków</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>grep [1a] plik.txt</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wyszukiwanie_linii_które_nie_zawierają_znaków">Wyszukiwanie linii które nie zawierają znaków</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>grep [^1] plik.txt</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wyszukiwanie_linii_zaczynających_się_od_wzorca">Wyszukiwanie linii zaczynających się od wzorca</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>grep ^początek plik.txt</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wyszukiwanie_linii_kończących_się_wzorcem">Wyszukiwanie linii kończących się wzorcem</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>grep koniec$ plik.txt</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wyszukiwanie_linii_zawierających_alfanumerycznych">Wyszukiwanie linii zawierających alfanumerycznych</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>grep [[:alnum:]] plik.txt</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wyszukiwanie_linii_zawierających_znaki_alfabetu">Wyszukiwanie linii zawierających znaki alfabetu</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>grep [[:alpha:]] plik.txt</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wyszukiwanie_linii_zawierających_znaki_kontrolne">Wyszukiwanie linii zawierających znaki kontrolne</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>grep [[:cntrl:]] plik.txt</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wyszukiwanie_cyfr">Wyszukiwanie cyfr</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>grep [[:digit:]] plik.txt</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wyszukiwanie_znaku_graficznego">Wyszukiwanie znaku graficznego</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>grep [[:graph:]] plik.txt</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wyszukiwanie_małych_znaków">Wyszukiwanie małych znaków</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>grep [[:lower:]] plik.txt</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wyszukiwanie_dowolnego_znaku_drukowanego">Wyszukiwanie dowolnego znaku drukowanego</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>grep [[:print:]] plik.txt</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wyszukiwanie_dowolnego_znaku_interpunkcyjnego">Wyszukiwanie dowolnego znaku interpunkcyjnego</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>grep [[:punct:]] plik.txt</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wyszukiwanie_dowolny_znak_biały_spacja_tabulator">Wyszukiwanie dowolny znak biały (spacja, tabulator)</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>grep [[:space:]] plik.txt</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wyszukuje_linie_w_których_występują_duże_litery">Wyszukuje linie w których występują duże litery</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>grep [[:upper:]] plik.txt</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wyszukuje_znaki_zawierające_liczby_heksadecymalne">Wyszukuje znaki zawierające liczby heksadecymalne</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>grep [[:xdigit:]] plik.txt</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_podstawowe_i_rozszerzone_wyrażenia_regularne">Podstawowe i rozszerzone wyrażenia regularne</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Podstawowy</th>
+<th class="tableblock halign-left valign-top">Rozszerzony</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Znaczenie</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>|</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">`</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">`</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Suma logiczna lub</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>\+</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>+</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Jedno powtórzenie lub więcej powtórzeń wyrażenia regularnego</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>\?</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>?</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zero powtórzeń lub jedno powtórzenie wyrażenia regularnego</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>{n}</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>{n}</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dokładnie n powtórzeń wyrażenia regularnego</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>\{n,\}</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>{n}</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n lub większa liczba powtórzeń wyrażenia regularnego</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>\{n,m\}</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>{n,m}</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Od n do m powtórzeń wyrażenia regularnego</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maska</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Znaczenie</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>.</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">any on character</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">match any number of previous (including 0)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>+</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">match any number of previous</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>$</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">end of the line</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>^</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">begining of the line</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>\S</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">any non-whitespace character</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>\s</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">any whitespace character</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>?</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[a-z]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">any lowercase character</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[A-Z]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">any upercase character</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[A-Za-z]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">any letter</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[0-9]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">any number</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>\</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">escape sometihng</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wyszukiwanie_adresu_url">Wyszukiwanie adresu URL</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>grep "https\?://\S*\.[A-Za-z]\+\S*" plik.html</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wyszukiwanie_adresu_e_mail">Wyszukiwanie adresu e-mail</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>grep "\S\+@\S\+\.[A-Za-z]\+" plik.txt</pre>
+</div>
+</div>
 <hr>
 <div class="paragraph text-center">
 <p><a href="index.html">wstecz</a></p>
@@ -490,9 +1196,11 @@ Date: 2020-10-24T13:17:22+02:00
 </table>
 </div>
 </div>
+</div>
+</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-05-24 00:21:06 +0200
+Last updated 2024-05-28 12:01:51 +0200
 </div>
 </div>
 </body>
