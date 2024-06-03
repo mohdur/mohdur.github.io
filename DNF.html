@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.20">
-<title>Polecenie grep w przykładach</title>
+<title>DNF</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -436,739 +436,1112 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
-<h1>Polecenie grep w przykładach</h1>
+<h1>DNF</h1>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_przydatne_parametry">Przydatne parametry</h2>
+<h2 id="_sprawdzenie_czy_ostatnia_aktualizacja_zawierała_aktualizację_kernela">Sprawdzenie czy ostatnia aktualizacja zawierała aktualizację kernela</h2>
 <div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>dnf history info last|grep kernel-core</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_instalacja_pakietu">Instalacja pakietu</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>dnf install &lt;package name&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_instalacja_pakietów_z_listy_zawartej_w_pliku">Instalacja pakietów z listy zawartej w pliku</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Nazwa pliku podana jako parametr</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>sudo dnf install $(grep "^[^#]" "$1")</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Nazwa pliku podana w poleceniu</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>sudo dnf install $(grep "^[^#]" pakiety.txt)</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wyszukiwanie_pakietu_i_informacji_o_nim">Wyszukiwanie pakietu i informacji o nim</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>dnf search &lt;string&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wyszukiwanie_który_pakiet_zawiera_szukany_plik">Wyszukiwanie który pakiet zawiera szukany plik</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>dnf provides &lt;path to binary&gt;</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>dnf provides ifconfig
+Ostatnio sprawdzono ważność metadanych: 0:09:33 temu w dniu sob, 21 wrz 2019, 10:37:17.
+net-tools-2.0-0.54.20160912git.fc30.x86_64 : Basic networking tools
+Repozytorium       : @System
+Dopasowano z:
+Nazwa pliku : /usr/sbin/ifconfig
+
+net-tools-2.0-0.54.20160912git.fc30.x86_64 : Basic networking tools
+Repozytorium       : fedora
+Dopasowano z:
+Nazwa pliku : /usr/sbin/ifconfig</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_lista_zainstalowanych_pakietów">Lista zainstalowanych pakietów</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Komenda <code>list</code> wyświetla mniej informacji, a mianowicie, czy pakiet jest zainstalowany czy po prostu dostępny, nazwę pakietu / architekturę, wersję oraz nazwę repozytorium, które zawiera ten pakiet.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>dnf list i3lock</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Last metadata expiration check: 0:24:25 ago on Mon 25 Mar 2019 11:50:32 AM CET.
+Available Packages
+i3lock.x86_64                             2.11.1-2.fc30                             rawhide</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>dnf list dwm-user</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Last metadata expiration check: 0:24:07 ago on Mon 25 Mar 2019 11:50:32 AM CET.
+Installed Packages
+dwm-user.x86_64               6.2-2.module_f31+3286+e6bdb11e               @rawhide-modular</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>dnf list installed | grep &lt;package&gt;</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>rpm -qa | grep -i foo</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>yum list available *plymouth* will</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_lista_zainstalowanych_pakietów_2">Lista zainstalowanych pakietów</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>sudo dnf list installed</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_lista_zainstalowanych_pakietów_przez_użytkownika">Lista zainstalowanych pakietów przez użytkownika</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>sudo dnf history userinstalled</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_lista_wszystkich_dostępnych_i_zainstalowanych_pakietów">Lista wszystkich dostępnych i zainstalowanych pakietów</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>dnf list</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_lista_dostępnych_pakietów">Lista dostępnych pakietów</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>dnf list available</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_lista_repozytoriów">Lista repozytoriów</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>dnf repolist</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_lista_pakietów_w_repozytorium">Lista pakietów w repozytorium</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>dnf repository-pkgs rpmfusion-free list</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_kolejne_polecenia_są_dostępne_po_instalacji_pakietu_dnf_plugins_core">Kolejne polecenia są dostępne po instalacji pakietu "dnf-plugins-core"</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_pobranie_pakietu">Pobranie pakietu</h3>
+<div class="literalblock">
+<div class="content">
+<pre>dnf download &lt;package name&gt;</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_install_the_build_dependencies_for_a_srpm_or_from_a_spec_file">install the build dependencies for a SRPM or from a .spec file</h3>
+<div class="literalblock">
+<div class="content">
+<pre>dnf builddep &lt;srpm/.spec file&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_aktualizacja_pakietu">Aktualizacja pakietu</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>dnf update vim-enhanced</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_instalacja_wcześniejszej_wersji">Instalacja wcześniejszej wersji</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>dnf downgrade vim-enhanced</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_reinstalacja_pakietu">Reinstalacja pakietu</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>dnf reinstall vim-enhaced</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_aktualizacja_do_nowego_wydania">Aktualizacja do nowego wydania</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>dnf upgrade --refresh
+dnf install dnf-plugin-system-upgrade
+dnf system-upgrade download --relasever=30
+dnf system-upgrade reboot</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_informacje_o_pakiecie">Informacje o pakiecie</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>dnf info vim-enhanced
+Ostatnio sprawdzono ważność metadanych: 0:02:00 temu w dniu sob, 21 wrz 2019, 10:29:37.
+Zainstalowane pakiety
+Nazwa        : vim-enhanced
+Epoka        : 2
+Wersja       : 8.1.1991
+Wydanie      : 2.fc30
+Architektura : x86_64
+Rozmiar      : 4.8 M
+Źródło       : vim-8.1.1991-2.fc30.src.rpm
+Repozytorium : @System
+Z repoz.     : updates
+Podsumowanie : A version of the VIM editor which includes recent enhancements
+Adres URL    : http://www.vim.org/
+Licencja     : Vim and MIT
+Opis         : VIM (VIsual editor iMproved) is an updated and improved version of the
+             : vi editor.  Vi was the first real screen-based editor for UNIX, and is
+             : still very popular.  VIM improves on vi by adding new features:
+             : multiple windows, multi-level undo, block highlighting and more.  The
+             : vim-enhanced package contains a version of VIM with extra, recently
+             : introduced features like Python and Perl interpreters.
+             :
+             : Install the vim-enhanced package if you'd like to use a version of the
+             : VIM editor which includes recently added enhancements like
+             : interpreters for the Python and Perl scripting languages.  You'll also
+             : need to install the vim-common package.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Można użyć znaków <code>*</code> aby wyświetlić pakiety nie znając ich dokładnej wersji lub nazwy:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>dnf info kernel-core*5.1*</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_lista_aktywnych_repozytoriów">Lista aktywnych repozytoriów</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>dnf repolist
+Ostatnio sprawdzono ważność metadanych: 0:04:36 temu w dniu sob, 21 wrz 2019, 10:37:17.
+identyfikator repozytorium                        nazwa repozytorium      stan
+copr:copr.fedorainfracloud.org:dawid:better_fonts Copr repo for better_fo     32
+*fedora                                           Fedora 30 - x86_64      56 582
+*fedora-modular                                   Fedora Modular 30 - x86    135
+*rpmfusion-free                                   RPM Fusion for Fedora 3    616
+*rpmfusion-free-updates                           RPM Fusion for Fedora 3    272
+*rpmfusion-nonfree                                RPM Fusion for Fedora 3    227
+*rpmfusion-nonfree-updates                        RPM Fusion for Fedora 3     65
+*updates                                          Fedora 30 - x86_64 - Up 12 768
+*updates-modular                                  Fedora Modular 30 - x86    144</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_lista_wszystkich_repozytoriów">Lista wszystkich repozytoriów</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>dnf repolist all
+
+Ostatnio sprawdzono ważność metadanych: 0:05:24 temu w dniu sob, 21 wrz 2019, 10:37:17.
+identyfikator repozytorium                        nazwa repozyt stan
+copr:copr.fedorainfracloud.org:dawid:better_fonts Copr repo for włączone:     32
+*fedora                                           Fedora 30 - x włączone: 56 582
+fedora-cisco-openh264                             Fedora 30 ope wyłączone
+fedora-cisco-openh264-debuginfo                   Fedora 30 ope wyłączone
+fedora-debuginfo                                  Fedora 30 - x wyłączone
+*fedora-modular                                   Fedora Modula włączone:    135
+fedora-modular-debuginfo                          Fedora Modula wyłączone
+fedora-modular-source                             Fedora Modula wyłączone
+fedora-source                                     Fedora 30 - S wyłączone
+google-chrome                                     google-chrome wyłączone
+phracek-PyCharm                                   Copr repo for wyłączone
+*rpmfusion-free                                   RPM Fusion fo włączone:    616
+rpmfusion-free-debuginfo                          RPM Fusion fo wyłączone
+rpmfusion-free-source                             RPM Fusion fo wyłączone
+*rpmfusion-free-updates                           RPM Fusion fo włączone:    272
+rpmfusion-free-updates-debuginfo                  RPM Fusion fo wyłączone
+rpmfusion-free-updates-source                     RPM Fusion fo wyłączone
+rpmfusion-free-updates-testing                    RPM Fusion fo wyłączone
+rpmfusion-free-updates-testing-debuginfo          RPM Fusion fo wyłączone
+rpmfusion-free-updates-testing-source             RPM Fusion fo wyłączone
+*rpmfusion-nonfree                                RPM Fusion fo włączone:    227
+rpmfusion-nonfree-debuginfo                       RPM Fusion fo wyłączone
+rpmfusion-nonfree-nvidia-driver                   RPM Fusion fo wyłączone
+rpmfusion-nonfree-nvidia-driver-debuginfo         RPM Fusion fo wyłączone
+rpmfusion-nonfree-nvidia-driver-source            RPM Fusion fo wyłączone
+rpmfusion-nonfree-source                          RPM Fusion fo wyłączone
+rpmfusion-nonfree-steam                           RPM Fusion fo wyłączone
+rpmfusion-nonfree-steam-debuginfo                 RPM Fusion fo wyłączone
+rpmfusion-nonfree-steam-source                    RPM Fusion fo wyłączone
+*rpmfusion-nonfree-updates                        RPM Fusion fo włączone:     65
+rpmfusion-nonfree-updates-debuginfo               RPM Fusion fo wyłączone
+rpmfusion-nonfree-updates-source                  RPM Fusion fo wyłączone
+rpmfusion-nonfree-updates-testing                 RPM Fusion fo wyłączone
+rpmfusion-nonfree-updates-testing-debuginfo       RPM Fusion fo wyłączone
+rpmfusion-nonfree-updates-testing-source          RPM Fusion fo wyłączone
+*updates                                          Fedora 30 - x włączone: 12 768
+updates-debuginfo                                 Fedora 30 - x wyłączone
+*updates-modular                                  Fedora Modula włączone:    144
+updates-modular-debuginfo                         Fedora Modula wyłączone
+updates-modular-source                            Fedora Modula wyłączone
+updates-source                                    Fedora 30 - U wyłączone
+updates-testing                                   Fedora 30 - x wyłączone
+updates-testing-debuginfo                         Fedora 30 - x wyłączone
+updates-testing-modular                           Fedora Modula wyłączone
+updates-testing-modular-debuginfo                 Fedora Modula wyłączone
+updates-testing-modular-source                    Fedora Modula wyłączone
+updates-testing-source                            Fedora 30 - T wyłączone</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dodanie_repozytorium">Dodanie repozytorium</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>dnf config-manager --add-repo repository_url</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_włączenie_repozytorium">Włączenie repozytorium</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>dnf config-manager --set-enabled &lt;repo-id&gt;</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>dnf config-manager --set-enabled epel</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wyłączenie_repozytorium">Wyłączenie repozytorium</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>dnf config-manager --set-disabled epel</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_włączenie_i_wyłączenie_repozytorium">Włączenie i wyłączenie repozytorium</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>dnf --enablerepo=epel --disablerepo=updates</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_historia_zmian">Historia zmian</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Wyświetlenie akcji które miały miejsce, są to tylko przykładowe polecenia, należy zwrócić uwagę na kolumnę <code>Zmien.</code> gdzie jest wyświetlana liczba pakietów obiętych akcją.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>dnf history
+Ident. | Wiersz poleceń           | Data i czas      | Działania      | Zmien.
+-------------------------------------------------------------------------------
+    68 | -y install --disablerepo | 2019-09-21 10:27 | Install        |    1
+    67 | -y install --disablerepo | 2019-09-21 10:27 | Install        |    1
+    65 |                          | 2019-09-20 22:17 | Install        |    1
+    64 | install selinux-policy-m | 2019-09-15 22:27 | Install        |    3
+    63 | install gns3-server gns3 | 2019-09-15 10:02 | Install        |   20
+    62 | update --refresh         | 2019-09-15 09:00 | I, U           |   77 EE
+    61 |                          | 2019-09-15 00:01 | Install        |    1
+    60 | install arpwatch         | 2019-09-14 16:39 | Install        |    1</pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_wyświetlenie_konkretnego_wiersza_historii">Wyświetlenie konkretnego wiersza historii</h3>
+<div class="literalblock">
+<div class="content">
+<pre>dnf history list 63
+Ident. | Wiersz poleceń           | Data i czas      | Działania      | Zmien.
+-------------------------------------------------------------------------------
+    63 | install gns3-server gns3 | 2019-09-15 10:02 | Install        |   20</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_informacje_dotyczące_akcji">Informacje dotyczące akcji</h3>
+<div class="literalblock">
+<div class="content">
+<pre>dnf history info 63
+Identyfikator transakcji   : 63
+Czas rozpoczęcia           : nie, 15 wrz 2019, 10:02:31
+Rozpoczęcie bazy danych RPM: 3033:2d01ed75e78591409df14f3ece472c449f10be15
+Czas ukończenia            : nie, 15 wrz 2019, 10:02:45 (14 s)
+Ukończenie bazy danych RPM : 3053:fb81cdde33326fcd8c2c105b112a068d847d15ba
+Użytkownik                 : red &lt;red&gt;
+Kod zwrotny                : Powodzenie
+Releasever     : 30
+Wiersz poleceń : install gns3-server gns3-gui wireshark
+Zmienione pakiety:
+    Instalacja gns3-gui-2.1.16-2.fc30.noarch                   @updates
+    Instalacja gns3-server-2.1.16-3.fc30.x86_64                @updates
+    Instalacja python3-jsonschema-3.0.2-1.fc30.noarch          @updates
+    Instalacja python3-pyrsistent-0.15.4-1.fc30.x86_64         @updates
+    Instalacja python3-sip-4.19.17-1.fc30.x86_64               @updates
+    Instalacja wireshark-1:3.0.3-1.fc30.x86_64                 @updates
+    Instalacja cpulimit-1:0.2-8.20151118gitf4d2682.fc30.x86_64 @fedora
+    Instalacja gns3-net-converter-1.3.0-9.fc30.noarch          @fedora
+    Instalacja iniparser-4.1-3.fc30.x86_64                     @fedora
+    Instalacja python3-aiodns-1.1.1-6.fc30.noarch              @fedora
+    Instalacja python3-aiohttp-3.5.4-2.fc30.x86_64             @fedora
+    Instalacja python3-aiohttp-cors-0.7.0-4.fc30.noarch        @fedora
+    Instalacja python3-async-timeout-3.0.0-4.fc30.noarch       @fedora
+    Instalacja python3-configobj-5.0.6-15.fc30.noarch          @fedora
+    Instalacja python3-multidict-4.3.1-3.fc30.x86_64           @fedora
+    Instalacja python3-pycares-2.3.0-5.fc30.x86_64             @fedora
+    Instalacja python3-raven-6.9.0-4.fc30.noarch               @fedora
+    Instalacja python3-yarl-1.3.0-2.fc30.x86_64                @fedora
+    Instalacja python3-zipstream-1.1.4-13.fc30.noarch          @fedora
+    Instalacja ubridge-0.9.14-5.fc30.x86_64                    @fedora</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_cofnięcie_akcji">Cofnięcie akcji</h3>
+<div class="literalblock">
+<div class="content">
+<pre>dnf history undo 63</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_powtórzenie_akcji">Powtórzenie akcji</h3>
+<div class="literalblock">
+<div class="content">
+<pre>dnf history redo 63</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_lista_pakietów_które_wymagają_aktualizacji">Lista pakietów które wymagają aktualizacji</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>dnf list updates | cut -f 1 -d " " | sed -n '3,$p'</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wyświetlenie_informacji_o_nadchodzącej_aktualizacji">Wyświetlenie informacji o nadchodzącej aktualizacji</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>dnf updateinfo
+Ostatnio sprawdzono ważność metadanych: 0:06:51 temu w dniu nie, 8
+gru 2019, 13:36:47.
+Podsumowanie informacji o aktualizacjach: dostępne
+     1 Uwagi nowych pakietów
+     4 Uwagi o bezpieczeństwie
+         1 Krytyczne uwagi o bezpieczeństwie
+         1 Umiarkowanie ważne uwagi o bezpieczeństwie
+    24 Uwagi o poprawkach błędów
+     5 Uwagi o ulepszeniach
+     6 inne uwagi</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Wyświetlenie informacji o każdym aktualizowanym pakiecie</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>dnf updateinfo info
+
+===============================================================================
+  kernel-5.3.14-300.fc31
+===============================================================================
+  Update ID: FEDORA-2019-b86a7bdba0
+       Type: security
+    Updated: 2019-12-08 01:07:29
+       Bugs: 1760351 - CVE-2019-16232 kernel: null-pointer dereference in drivers/net/wireless/marvell/libertas/if_sdio.c
+           : 1760352 - CVE-2019-16232 kernel: null-pointer dereference in drivers/net/wireless/marvell/libertas/if_sdio.c [fedora-all]
+           : 1777418 - CVE-2019-18808 kernel: memory leak in ccp_run_sha_cmd() function in drivers/crypto/ccp/ccp-ops.c
+           : 1777421 - CVE-2019-18808 kernel: memory leak in ccp_run_sha_cmd() function in drivers/crypto/ccp/ccp-ops.c [fedora-all]
+           : 1777449 - CVE-2019-18809 kernel: memory leak in  af9005_identify_state() function in drivers/media/usb/dvb-usb/af9005.c
+           : 1777451 - CVE-2019-18809 kernel: memory leak in  af9005_identify_state() function in drivers/media/usb/dvb-usb/af9005.c [fe dora-all]
+           : 1777455 - CVE-2019-18811 kernel: memory leak in sof_set_get_large_ctrl_data() function in sound/soc/sof/ipc.c
+           : 1777456 - CVE-2019-18811 kernel: memory leak in sof_set_get_large_ctrl_data() function in sound/soc/sof/ipc.c [fedora-all]
+           : 1777458 - CVE-2019-18812 kernel: memory leak in sof_dfsentry_write() function in sound/soc/sof/debug.c
+           : 1777459 - CVE-2019-18812 kernel: memory leak in sof_dfsentry_write() function in sound/soc/sof/debug.c [fedora-all]
+           : 1777825 - CVE-2019-18660 kernel: incomplete Spectre-RSB mitigation leads to information exposure
+           : 1777826 - CVE-2019-18660 kernel: incomplete Spectre-RSB mitigation leads to information exposure [fedora-all]
+Description: The 5.3.14 update contains a number of important fixes across the tree
+   Severity: None</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Wyświetlenie informacji o aktualizacjach bezpieczeństwa</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>dnf updateinfo list sec
+Last metadata expiration check: 0:50:44 ago on Sun 08 Dec 2019 01:37:51 PM CET.
+FEDORA-2019-b86a7bdba0 Unknown/Sec. kernel-5.3.14-300.fc31.x86_64
+FEDORA-2019-b86a7bdba0 Unknown/Sec. kernel-core-5.3.14-300.fc31.x86_64
+FEDORA-2019-b86a7bdba0 Unknown/Sec. kernel-debug-devel-5.3.14-300.fc31.x86_64
+FEDORA-2019-b86a7bdba0 Unknown/Sec. kernel-devel-5.3.14-300.fc31.x86_64
+FEDORA-2019-b86a7bdba0 Unknown/Sec. kernel-modules-5.3.14-300.fc31.x86_64
+FEDORA-2019-7443ebda4b Unknown/Sec. libuv-1:1.33.1-1.fc31.x86_64</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Inne dostępne parametry dla ''dnf updateinfo list'':</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>-v</code> - wyświetla tylko te wiersze, które nie pasują do wyrażenia regularnego.</p>
+<p>bugfix</p>
 </li>
 <li>
-<p><code>-l</code> - wyświetla nazwy plików, które zawierają podane wyrażenie</p>
+<p>security/sec</p>
 </li>
 <li>
-<p><code>-L</code> - wypisuje nazwy plików, które nie zawierają podanego wyrażenia</p>
-</li>
-<li>
-<p><code>-c</code> - wypisuje jedynie liczbę wierszy spełniających warunek zgodności z podanym wyrażeniem</p>
-</li>
-<li>
-<p><code>-n</code> - wypisuje numer linii pliku gdzie występuje wzorzec</p>
-</li>
-<li>
-<p><code>-b</code> - wypisuje wynik przesunięcia w bajtach danego wiersza, pasujący do wyrażenie regularnego</p>
-</li>
-<li>
-<p><code>-i</code> - nie uwzględnia wielkości liter</p>
-</li>
-<li>
-<p><code>-w</code> - będą brane pod uwagę jedynie całe słowa</p>
-</li>
-<li>
-<p><code>-x</code> - bedą brane pod uwagę całe wiersze nie działa z <code>-w</code></p>
+<p>enhancement</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_przykłady_użycia">Przykłady użycia</h2>
+<h2 id="_usunięcie_pakietu">Usunięcie pakietu</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Wyszukanie wszystkich pakietów zawierających słowa <code>vim</code> i <code>common</code></p>
-</div>
 <div class="literalblock">
 <div class="content">
-<pre>dnf search vim | grep -wE "vim|common"</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Wyszukanie wszystkich pakietów zawierających słowa <code>vim</code> i <code>common</code>, ale pokaże
-również pakiety, którchy częścią nazwy jest słowo <code>vim</code> lub <code>common</code> np.
-<code>neovim</code>.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>dnf search vim | grep -E "vim|common"</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Wyszukiwanie słowa we wszystkich plikach i podkatalogach bieżącej lokalizacji</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>grep -r [wyraz] *</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Wyszukiwanie ignorując wielkość znaków</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>grep -i [wyraz] *</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Paramter -x</p>
-</div>
-<div class="paragraph">
-<p>Bedą brane pod uwagę całe wiersze nie działa z <code>-w</code></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>grep [[:upper:]] -x plik.txt</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Parametr -A, -B i -C</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>-A liczba</code> - wyświetla linię, w której występuje wzorzec a także linie niżej</p>
-</li>
-<li>
-<p><code>-B liczba</code> - wyświetla linię, w której występuje wyrażenie a także linie powyżej</p>
-</li>
-</ul>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>grep [[:alpha:]] -B 2 plik.txt</pre>
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>-C liczba</code> - wyświetla szukaną linię oraz linie przed i po wyszukiwanej</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Wyszukiwanie rekursywne</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>-r</code> - wyszukiwanie rekursywne</p>
-</li>
-</ul>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>grep [[:alpha:]] -r katalog</pre>
+<pre>dnf remove nazwa-pakietu</pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_wyszukanie_plików_nie_zawierających_podanego_ciągu_znaków">Wyszukanie plików nie zawierających podanego ciągu znaków</h2>
+<h2 id="_pobiera_listę_pakietów_do_aktualizacji">Pobiera listę pakietów do aktualizacji</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Polecenie wyszukuje plików nie zawierających ciągu znaków <code>All</code>. Polecenie rozpoznaje wielkość znaków.</p>
+<p>Polecenie nie wykonuje aktualizacji</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>grep -rL All .
+<pre>dnf check-update</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_to_install_a_package">To install a package</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>rpm -ivh &lt;rpm&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_to_remove_a_package">To remove a package</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>rpm -e &lt;package&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_to_remove_a_package_but_not_its_dependencies">To remove a package, but not its dependencies</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>rpm -e --nodeps &lt;package&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_to_find_what_package_installs_a_file">To find what package installs a file</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>rpm -qf &lt;/path/to/file&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_to_find_what_files_are_installed_by_a_package">To find what files are installed by a package</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>rpm -ql &lt;package&gt;
+rpm -qpl &lt;rpm&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_to_find_what_packages_require_a_package_or_file">To find what packages require a package or file</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>rpm -q --whatrequires &lt;package&gt;
+rpm -q --whatrequires &lt;file&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_lista_zainstalowanych_pakietow">Lista zainstalowanych pakietow</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>rpm -qa</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_lista_zainstalowanych_pakietów_tylko_nazwa">Lista zainstalowanych pakietów (tylko nazwa)</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>rpm -qa --qf "%{NAME}\n" | sort</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_data_instalacji_aktualizacji_pakietu">Data instalacji / aktualizacji pakietu</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>rpm -qa --last
 
-./wiki/welcome.txt
-./playground/playground.txt</pre>
+adobe-mappings-cmap-20171205-9.fc33.noarch    Tue 20 Oct 2020 01:36:21 AM CEST
+xkeyboard-config-2.30-3.fc33.noarch           Tue 20 Oct 2020 01:36:20 AM CEST
+fonts-filesystem-2.0.5-4.fc33.noarch          Tue 20 Oct 2020 01:36:20 AM CEST</pre>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_wyświetlenie_wyrażenia_pomiędzy_dwoma_patternami">Wyświetlenie wyrażenia pomiędzy dwoma patternami</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>Polecenie wyświetla zawartość pomiędzy <code>-auth</code> a <code>-background</code> znajdujące się w jednej linii</p>
+<p>Wersja z formatowaniem wyjścia</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>grep -o -P '(?&lt;=-auth).*(?=-background)'</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_usunięcie_komentarzy_z_pliku">Usunięcie komentarzy z pliku</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Polecenie usuwa wszystkie linie zaczynające się od znaku <code>#</code> lub <code>;</code>.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>more /etc/pf.conf | egrep -v '(#|;)' | grep '[a-z]'</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_wyszukanie_dwóch_różnych_wartości">Wyszukanie dwóch różnych wartości</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Parametr <code>-e</code> wyszukuje wszystkich linii w których występuje choć jeden z szukanych wyrażeń, jeśli
-chcemy znaleźć linie w których występują wszystkie parametry trzeba użyć kilku poleceń <code>grep</code> po
-kolei np. <code>grep pierwszy | grep drugi</code></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>pkg_info | grep -e "nmap" -e "ncftp'
+<pre>rpm -qa --qf '%{INSTALLTIME} (%{INSTALLTIME:date}): %{NAME}-%{VERSION}-%{RELEASE}.%{ARCH}\n' | sort -n
 
-ncftp-3.2.2         ftp replacement with advanced user interface
-nmap-4.76           scan ports and fingerprint stack of network hosts</pre>
+1612355793 (Wed 03 Feb 2021 01:36:33 PM CET): firefox-85.0-8.fc33.x86_64
+1612355793 (Wed 03 Feb 2021 01:36:33 PM CET): firefox-wayland-85.0-8.fc33.x86_64
+1612355795 (Wed 03 Feb 2021 01:36:35 PM CET): qt5-qtwebengine-5.15.2-8.fc33.x86_64
+1612750321 (Mon 08 Feb 2021 03:12:01 AM CET): gpg-pubkey-c2d4e821-5e7252b8.(none)</pre>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_wyświetlenie_2_linii_po_znalezionym_ciągu_znaków">Wyświetlenie 2 linii po znalezionym ciągu znaków</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>Polecenie wyświetli w sumie 3 linie.</p>
+<p>Informacje o konkretnym pakiecie</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>cat /var/log/messages | grep -A 2 -e "pid=767"
-grep -A 1 "nmbd" nazwa_pliku</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_wyświetlenie_2_linii_przed_znalezionym_ciągem_znaków">Wyświetlenie 2 linii przed znalezionym ciągem znaków</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Polecenie wyświetli w sumie 3 linie.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>cat /var/log/messages | grep -B 2 -e "pid=767"
-grep -B 2 "pid=767" /var/log/messages</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_szukamy_słowa_sshd_w_plikach_znajdujących_się_w_katalogu_etc">Szukamy słowa sshd w plikach znajdujących się w katalogu /etc</h2>
-<div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>grep sshd /etc/*
+<pre>rpm -q --last rsync
 
-/etc/rc:if [ X"${sshd_flags}" != X"NO" ]; then
-/etc/rc:        echo -n ' sshd';                /usr/sbin/sshd ${sshd_flags};
-/etc/rc.conf:sshd_flags=""              # for normal use: ""</pre>
+rsync-3.2.3-3.fc33.x86_64                     Wed 23 Dec 2020 12:27:11 PM CET</pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_wyszukanie_dokładnego_ciągu_znaków_oddzielonego_znakami_spacji">Wyszukanie dokładnego ciągu znaków oddzielonego znakami spacji</h2>
+<h2 id="_to_find_a_pkgs_dependencies">To find a pkg&#8217;s dependencies</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>rpm -i --test &lt;package&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_display_checksum_against_source">Display checksum against source</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>rpm -K &lt;package&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_verify_a_package">Verify a package</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>rpm -V &lt;package&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_rpm2cpio">rpm2cpio</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Jeśli chcemy wyszukać np. słowo internet ale już nie internet6 możemy zastosować parametr <code>-w</code>.</p>
+<p>List contents of RPM</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>fstat | grep -w internet
+<pre>rpm2cpio foo.rpm | cpio -vt</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Extract contents of RPM</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>rpm2cpio foo.rpm | cpio -vid</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_instalacja_pakietu_yum">Instalacja pakietu YUM</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>yum install &lt;package name&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pobranie_pakietu_2">Pobranie pakietu</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>yum install --downloadonly --downloaddir=. &lt;package name&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_to_perform_a_local_install">To perform a local install</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>yum localinstall &lt;package name&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_usunięcie_pakietu_2">Usunięcie pakietu</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>yum remove &lt;package name&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_proste_wyszukiwanie_pakietów">Proste wyszukiwanie pakietów</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Wyszukanie pakietów których nazwa kończy się znakami ''rdp''.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>yum list \*rdp
+Ostatnio sprawdzono ważność metadanych: 0:01:12 temu w dniu sob, 14 wrz 2019, 18:58:45.
+Zainstalowane pakiety
+freerdp.x86_64               2:2.0.0-53.20190820git6015229.fc30    @updates
+remmina-plugins-rdp.x86_64   1.3.5-2.fc30                          @updates
+Dostępne pakiety
+gnome-rdp.x86_64             0.3.1.0-22.fc30                       fedora
+libguac-client-rdp.i686      1.1.0-1.20190711git1a9d1e8.fc30       updates
+libguac-client-rdp.x86_64    1.1.0-1.20190711git1a9d1e8.fc30       updates
+nrdp.noarch                  1.5.2-3.fc30                          rpmfusion-nonfree
+xorgxrdp.x86_64              0.2.11-1.fc30                         updates
+xrdp.i686                    1:0.9.11-1.fc30                       updates
+xrdp.x86_64                  1:0.9.11-1.fc30                       updates</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Jeśli chcemy wyszukać pakietów zawierających znaki ''rdp'' należy użyć wyszukiwania <code>*rdp\*</code>.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>yum list \*rdp*\
 
-red      sshd        5510    5* internet stream tcp 0xd4392e10 192.168.6.66:65535 &lt;-- 192.168.6.77:4853
-root     sshd       10758    5* internet stream tcp 0xd4392e10 192.168.6.66:65535 &lt;-- 192.168.6.77:4853
-www      httpd       8536   16* internet stream tcp 0xd4392640 *:443
-www      httpd       8536   17* internet stream tcp 0xd43927d0 *:80
-www      httpd       1085   16* internet stream tcp 0xd4392640 *:443
-www      httpd       1085   17* internet stream tcp 0xd43927d0 *:80
-www      httpd      25969   16* internet stream tcp 0xd4392640 *:443
-www      httpd      25969   17* internet stream tcp 0xd43927d0 *:80</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Ten sam efekt uzyskamy za pomocą polecenia</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>fstat | grep "[[:space:]]internet[[:space:]]"</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Również ten sam efekt da nam polecenie fstat i awk.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>fstat | awk '$5 ~ /^internet$/'</pre>
+Ostatnio sprawdzono ważność metadanych: 0:01:12 temu w dniu sob, 14 wrz 2019, 18:58:45.
+Zainstalowane pakiety
+freerdp.x86_64               2:2.0.0-53.20190820git6015229.fc30    @updates
+remmina-plugins-rdp.x86_64   1.3.5-2.fc30                          @updates
+Dostępne pakiety
+gnome-rdp.x86_64             0.3.1.0-22.fc30                       fedora
+libguac-client-rdp.i686      1.1.0-1.20190711git1a9d1e8.fc30       updates
+libguac-client-rdp.x86_64    1.1.0-1.20190711git1a9d1e8.fc30       updates
+nrdp.noarch                  1.5.2-3.fc30                          rpmfusion-nonfree
+xorgxrdp.x86_64              0.2.11-1.fc30                         updates
+xrdp.i686                    1:0.9.11-1.fc30                       updates
+xrdp.x86_64                  1:0.9.11-1.fc30                       updates</pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_wyszukanie_ciągu_znaków_w_pliku">Wyszukanie ciągu znaków w pliku</h2>
+<h2 id="_wyszukiwanie_pakietów">Wyszukiwanie pakietów</h2>
 <div class="sectionbody">
 <div class="literalblock">
 <div class="content">
-<pre>grep :1000: /etc/passwd
+<pre>yum search &lt;package name&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_znalezienie_paketów_zawierających_konkretny_plik">Znalezienie paketów zawierających konkretny plik</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>yum provides &lt;/path/to/program&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wyszukiwanie_pakietów_dostarczających_oprogramowania_mta">Wyszukiwanie pakietów dostarczających oprogramowania MTA</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>yum provides MTA</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wyświetlenie_zależności_pakietu">Wyświetlenie zależności pakietu</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>yum deplist &lt;package name&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wyświetlenie_informacji_o_pakiecie">Wyświetlenie informacji o pakiecie</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>yum info &lt;package name&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_lista_aktywnych_repozytoriów_2">Lista aktywnych repozytoriów</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>yum repolist</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pobranie_pakietu_źródłowego">Pobranie pakietu źródłowego</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>yumdownloader --source &lt;package name&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>(You have to install yumdownloader first, which is installed by the yum-utils package)</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_lista_grup_pakietów">Lista grup pakietów</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>yum grouplist -v
 
-red:*:1000:10:red:/home/red:/bin/ksh</pre>
+Dostępne grupy środowisk:
+   Minimalna instalacja
+   Serwer infrastruktury
+   Węzeł obliczeniowy
+   Serwer plików i druku
+   Podstawowy serwer WWW
+   Gospodarz wirtualizacji
+   Serwer z graficznym interfejsem użytkownika
+   Środowisko GNOME
+   Środowisko KDE Plasma
+   Stacja robocza programowania i kreatywności
+Dostępne grupy:
+   Biblioteki zgodności
+   Graficzne narzędzia administracyjne
+   Narzędzia bezpieczeństwa
+   Narzędzia dostępu do Internetu w konsoli
+   Narzędzia programistyczne
+   Obsługa aplikacji naukowych
+   Obsługa smart card
+   Systemowe narzędzia administracyjne
+   Zarządzanie systemem
+   Zgodność z przestarzałym systemem UNIX
+Ukończono</pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_inne_przykłady">Inne przykłady</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="http://www.robelle.com/smugbook/regexpr.html" class="bare">http://www.robelle.com/smugbook/regexpr.html</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_wyszukanie_wzorca_w_pliku">Wyszukanie wzorca w pliku</h2>
-<div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>grep pattern file</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_case_insensitive_search_with_line_numbers">Case insensitive search (with line numbers)</h2>
-<div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>grep -in pattern file</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_recursively_grep_for_string_pattern_in_folder">Recursively grep for string <code>&lt;pattern&gt;</code> in folder:</h2>
+<h2 id="_instalacja_grupy_pakietów">Instalacja grupy pakietów</h2>
 <div class="sectionbody">
 <div class="literalblock">
 <div class="content">
-<pre>grep -R pattern folder</pre>
+<pre>yum groupinstall development</pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_wyszukiwanie_linii_z_wzorcami_znajdującymi_się_w_pliku_linia_po_linii">Wyszukiwanie linii z wzorcami znajdującymi się w pliku (linia po linii)</h2>
-<div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>grep -f pattern_file file</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_wyszukiwanie_linii_nie_zawierających_wzorca">Wyszukiwanie linii nie zawierających wzorca</h2>
-<div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>grep -v pattern file</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_wyszukiwanie_za_pomocą_wyrażenia_regularnego">Wyszukiwanie za pomocą wyrażenia regularnego</h2>
-<div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>grep "^00" file  #Match lines starting with 00
-grep -E "[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}" file  #Find IP add</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_find_all_files_which_match_pattern_in_directory">Find all files which match {pattern} in {directory}</h2>
+<h2 id="_instalacja_środowiska_graficznego">Instalacja środowiska graficznego</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This will show: "file:line my research"</p>
+<p>Instalacja KDE</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>grep -rnw 'directory' -e "pattern"</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_exclude_grep_from_your_grepped_output_of_ps">Exclude grep from your grepped output of ps.</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Add [] to the first letter. Ex: sshd &#8594; [s]shd</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>ps aux | grep '[h]ttpd'</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_colour_in_red_bash_and_keep_all_other_lines">Colour in red {bash} and keep all other lines</h2>
-<div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>ps aux | grep -E --color 'bash|$'</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_wyszukanie_słowo_w_pliku_plik_txt">Wyszukanie słowo w pliku plik.txt</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Polecenie grep zawsze wyszukuje z rozróżnianiem wielkości liter</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>grep słowo plik.txt</pre>
+<pre>yum groupinstall "X Window System" "KDE (K Desktop Environment)"</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Parametr -i wyłącza rozróżnianie wielkości liter</p>
+<p>Instalacja Gnome</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>grep -i "słowo" plik.txt</pre>
+<pre>yum groupinstall "X Window System" "GNOME Desktop Environment"</pre>
 </div>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_usunięcie_środowiska_xwindow">Usunięcie środowiska XWindow</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>yum groupremove "X Window System"</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_lista_zainstalowanych_pakietów_3">Lista zainstalowanych pakietów</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>yum list installed &gt; zainstalowane.txt</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_lista_zainstalowanych_pakietów_przez_użytkownika_2">Lista zainstalowanych pakietów przez użytkownika</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>yum history</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_aliasy_dla_komendy_dnf">Aliasy dla komendy dnf</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Parametr -v wyświetla linie które nie zawierają słowa "słowo"</p>
+<p>Do pliku <code>.bashrc</code> lub <code>.zshrc</code> dodajemy</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>grep -v "słowo" plik.txt</pre>
+<pre>if [ -f "/etc/fedora-release" ]; then
+    alias dnf='sudo dnf'
+    alias di='sudo dnf install'
+    alias dr='sudo dnf remove'
+    alias ds='dnf search'
+    alias dl='dnf list'
+    alias ddep='dnf deplist'
+    alias update='sudo dnf update --refresh'
+    alias upgrade=update
+    alias rpm='sudo rpm'
+    alias yum='sudo yum'
+fi</pre>
 </div>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ostatnio_zainstalowany_kernel">Ostatnio zainstalowany kernel</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>dnf info kernel-core | grep Version | tail -1
+Version          : 5.11.20</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_restart_jeśli_potrzebny">Restart jeśli potrzebny</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Połączenie parametrów -v i -i wyświetli linie które nie zawierają szukanego
-słowa niezależnie od wielkości liter</p>
+<p>Koncepcja skryptu, do tego pakiet <code>dnf-automatic</code> oraz do sprawdzenia <code>needrestart</code>.</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>grep -v -i "słowo" plik.txt</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Wyszukanie dwóch słów jednocześnie z wykorzystaniem parametru -e</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>grep -i -e "słowo1" -e "słowo2" plik.txt</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Użycie w tym przypadku parametru -i ma zastosowoanie do obu szukanych wyrazów</p>
-</div>
-<div class="paragraph">
-<p>Zliczanie linii wystąpienia danego wyrazu</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>grep -i -c "wyraz" plik.txt</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Należy zwrócić uwagę, że zostanie wyświetlona liczba linii w których
-wystąpi słowo nie liczba wystąpień słowa czyli linia, w której będzie
-szukane słowo więcej niż raz bedzie i tak zliczona jako jedno wystąpienie.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_wyszukiwanie_dwóch_lub_więcej_znaków">Wyszukiwanie dwóch lub więcej znaków</h2>
-<div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>grep [1a] plik.txt</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_wyszukiwanie_linii_które_nie_zawierają_znaków">Wyszukiwanie linii które nie zawierają znaków</h2>
-<div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>grep [^1] plik.txt</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_wyszukiwanie_linii_zaczynających_się_od_wzorca">Wyszukiwanie linii zaczynających się od wzorca</h2>
-<div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>grep ^początek plik.txt</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_wyszukiwanie_linii_kończących_się_wzorcem">Wyszukiwanie linii kończących się wzorcem</h2>
-<div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>grep koniec$ plik.txt</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_wyszukiwanie_linii_zawierających_alfanumerycznych">Wyszukiwanie linii zawierających alfanumerycznych</h2>
-<div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>grep [[:alnum:]] plik.txt</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_wyszukiwanie_linii_zawierających_znaki_alfabetu">Wyszukiwanie linii zawierających znaki alfabetu</h2>
-<div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>grep [[:alpha:]] plik.txt</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_wyszukiwanie_linii_zawierających_znaki_kontrolne">Wyszukiwanie linii zawierających znaki kontrolne</h2>
-<div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>grep [[:cntrl:]] plik.txt</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_wyszukiwanie_cyfr">Wyszukiwanie cyfr</h2>
-<div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>grep [[:digit:]] plik.txt</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_wyszukiwanie_znaku_graficznego">Wyszukiwanie znaku graficznego</h2>
-<div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>grep [[:graph:]] plik.txt</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_wyszukiwanie_małych_znaków">Wyszukiwanie małych znaków</h2>
-<div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>grep [[:lower:]] plik.txt</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_wyszukiwanie_dowolnego_znaku_drukowanego">Wyszukiwanie dowolnego znaku drukowanego</h2>
-<div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>grep [[:print:]] plik.txt</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_wyszukiwanie_dowolnego_znaku_interpunkcyjnego">Wyszukiwanie dowolnego znaku interpunkcyjnego</h2>
-<div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>grep [[:punct:]] plik.txt</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_wyszukiwanie_dowolny_znak_biały_spacja_tabulator">Wyszukiwanie dowolny znak biały (spacja, tabulator)</h2>
-<div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>grep [[:space:]] plik.txt</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_wyszukuje_linie_w_których_występują_duże_litery">Wyszukuje linie w których występują duże litery</h2>
-<div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>grep [[:upper:]] plik.txt</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_wyszukuje_znaki_zawierające_liczby_heksadecymalne">Wyszukuje znaki zawierające liczby heksadecymalne</h2>
-<div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>grep [[:xdigit:]] plik.txt</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_podstawowe_i_rozszerzone_wyrażenia_regularne">Podstawowe i rozszerzone wyrażenia regularne</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all fit-content">
-<colgroup>
-<col>
-<col>
-<col>
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Podstawowy</th>
-<th class="tableblock halign-left valign-top">Rozszerzony</th>
-<th class="tableblock halign-left valign-top">Znaczenie</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>|</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">`</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">`</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Suma logiczna lub</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>\+</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>+</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Jedno powtórzenie lub więcej powtórzeń wyrażenia regularnego</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>\?</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>?</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Zero powtórzeń lub jedno powtórzenie wyrażenia regularnego</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>{n}</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>{n}</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Dokładnie n powtórzeń wyrażenia regularnego</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>\{n,\}</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>{n}</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">n lub większa liczba powtórzeń wyrażenia regularnego</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>\{n,m\}</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>{n,m}</code></p></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all fit-content">
-<colgroup>
-<col>
-<col>
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maska</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Znaczenie</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>.</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">any on character</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">match any number of previous (including 0)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>+</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">match any number of previous</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>$</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">end of the line</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>^</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">begining of the line</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>\S</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">any non-whitespace character</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>\s</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">any whitespace character</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>?</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[a-z]</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">any lowercase character</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[A-Z]</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">any upercase character</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[A-Za-z]</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">any letter</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[0-9]</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">any number</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>\</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">escape sometihng</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_wyszukiwanie_adresu_url">Wyszukiwanie adresu URL</h2>
-<div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>grep "https\?://\S*\.[A-Za-z]\+\S*" plik.html</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_wyszukiwanie_adresu_e_mail">Wyszukiwanie adresu e-mail</h2>
-<div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>grep "\S\+@\S\+\.[A-Za-z]\+" plik.txt</pre>
+<pre>#!/usr/bin/env bash
+
+# Wyświetla numer ostatniej aktualizacji
+LAST_UPDATE=$(dnf history list | grep update | head -1 | tr -d [:alpha:][:space:] | cut -f 1 -d "|")
+# Wyświetla informacje czy ostatnia aktualizacja $LAST_UPDATE miała aktualizację
+# kernela
+LAST_UPDATE_KERNEL=$(dnf history info $LAST_UPDATE | grep kernel-core | grep Install | tr -d [:space:] | cut -f 3 -d '-')
+# Wyświetla ostatnio zainstalowany kernel-core
+LAST_INSTALLED_KERNEL=$(dnf info kernel-core | grep Version | tail -1 | tr -d [:space:] | cut -f 2 -d ':')
+UNAME_KERNEL=$(uname -r | cut -f 1 -d '-')
+echo "LAST_UPDATE_KERNEL: $LAST_UPDATE_KERNEL"
+echo "UNAME_KERNEL: $UNAME_KERNEL"
+echo "LAST_INSTALLED_KERNEL: $LAST_INSTALLED_KERNEL"
+
+if [ "$UNAME_KERNEL" == "$LAST_UPDATE_KERNEL" ]; then
+    echo nie wymaga restartu
+else
+    echo wymaga restartu
+fi</pre>
 </div>
 </div>
 <hr>
@@ -1182,7 +1555,7 @@ szukane słowo więcej niż raz bedzie i tak zliczona jako jedno wystąpienie.</
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Date: 2020-10-24T13:17:22+02:00
+Date: 2024-06-03-13:03:12
 </td>
 </tr>
 </table>
@@ -1192,7 +1565,7 @@ Date: 2020-10-24T13:17:22+02:00
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-06-03 13:01:35 +0200
+Last updated 2024-06-03 13:12:07 +0200
 </div>
 </div>
 </body>
