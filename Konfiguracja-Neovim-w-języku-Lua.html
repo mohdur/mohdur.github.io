@@ -558,7 +558,17 @@ pre.rouge .gs {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="lua"><span class="nb">require</span> <span class="s2">"mappings"</span></code></pre>
+<pre class="rouge highlight"><code data-lang="lua"><span class="nb">require</span> <span class="s2">"mappings"</span>
+<span class="nb">require</span> <span class="s2">"core.mappings"</span>
+<span class="nb">require</span> <span class="s2">"core/mappings"</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Mapowanie klawiszy</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="lua"><span class="n">vim</span><span class="p">.</span><span class="n">keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s2">"n"</span><span class="p">,</span> <span class="s">[[&lt;s-enter&gt;]]</span><span class="p">,</span> <span class="s2">"mzO&lt;esc&gt;`z"</span><span class="p">,</span> <span class="p">{</span> <span class="n">desc</span> <span class="o">=</span> <span class="s2">"Dodaje pustą linię powyżej bieżącej"</span> <span class="p">})</span></code></pre>
 </div>
 </div>
 <hr>
@@ -580,7 +590,7 @@ Date: 2024-03-30-06:31:00
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-05-21 10:28:48 +0200
+Last updated 2024-06-17 11:56:50 +0200
 </div>
 </div>
 </body>
