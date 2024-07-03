@@ -440,11 +440,180 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="content">
 <div class="paragraph">
-<p>Otworzenie portu TCP w firewallu</p>
+<p>Sprawdzenie stanu usuługi firewalld</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>firewall-cmd --state
+
+running</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Przeładownie reguł firewalla</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>firewall-cmd --reload</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Wyświetlenie aktywnych stref</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>firewall-cmd  --get-active-zones
+
+public
+  interfaces: eth0 wlan0
+wireguard
+  interfaces: wg0</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Lista wszystkich stref</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>firewall-cmd --list-all-zones | sed "/^ /d;/^$/d" | sed "/^\t/d"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Wyświetlenie reguł we wszystkich strefach</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>firewall-cmd --list-all
+
+public (default, active)
+  target: default
+  ingress-priority: 0
+  egress-priority: 0
+  icmp-block-inversion: no
+  interfaces: enp0s31f6 p1p1
+  sources:
+  services: dhcpv6-client
+  ports: 22/tcp 5900/tcp 22/tcp
+  protocols:
+  forward: yes
+  masquerade: no
+  forward-ports:
+  source-ports:
+  icmp-blocks:
+  rich rules:</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Wyświetlenie reguł we wskazanej strefie</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>firewall-cmd --list-all --zone=public
+
+public (default, active)
+  target: default
+  ingress-priority: 0
+  egress-priority: 0
+  icmp-block-inversion: no
+  interfaces: enp0s31f6 p1p1
+  sources:
+  services: dhcpv6-client
+  ports: 22/tcp 5900/tcp 22/tcp
+  protocols:
+  forward: yes
+  masquerade: no
+  forward-ports:
+  source-ports:
+  icmp-blocks:
+  rich rules:</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Otworzenie portu TCP</p>
 </div>
 <div class="literalblock">
 <div class="content">
 <pre>firewall-cmd --add-port=80/TCP --permanent
+firewall-cmd --reload</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Otworzenie portu TCP w wybranej strefie</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>firewall-cmd --permanent --zone=public --add-service=https
+firewall-cmd --reload</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Otworzenie kilku portów w wybranej strefie</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>firewall-cmd --permanent --zone=public --add-port=25565/tcp --add-port=12343/udp
+firewall-cmd --reload</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Usunięcie otwartego portu</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>fierwall-cmd --permanent --remove-port=22/tcp
+firewall-cmd --reload</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Dodanie interfejsu sieciowego do strefy</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>firewall-cmd --zone=public --add-interface=eth0
+firewall-cmd --reload</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Usunięcie usługi w wybranej strefie</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>firewall-cmd --permanent --zone=public --remove-service=http
+firewall-cmd --reload</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Przeniesienie interfejsu do strefy 'block'</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>firewall-cmd --permanent --zone=block --change-interface=eth0
+firewall-cmd --reload</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Dodanie nowej strefy, należy zwrócić uwagę na wielkość liter w nazwie strefy</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>firewall-cmd --permanent --new-zone=wireguard
+firewall-cmd --reload</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Dodanie interfejsu wireguard</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>firewall-cmd --permanent --add-interface=wg0 zone=wireguard</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Dodanie portu do wybranej strefy</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>firewall-cmd --add-port=22/tcp --zone=wireguard --permanent
 firewall-cmd --reload</pre>
 </div>
 </div>
@@ -467,7 +636,7 @@ Date: 2024-05-20-20:13:19
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-05-21 10:28:48 +0200
+Last updated 2024-07-03 07:48:27 +0200
 </div>
 </div>
 </body>
