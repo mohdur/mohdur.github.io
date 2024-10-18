@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.20">
-<title>Praca z klientem OpenSSH</title>
+<title>Kopilacja Neovim w OpenBSD</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -433,162 +433,148 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+pre.rouge table td { padding: 5px; }
+pre.rouge table pre { margin: 0; }
+pre.rouge, pre.rouge .w {
+  color: #24292f;
+  background-color: #f6f8fa;
+}
+pre.rouge .k, pre.rouge .kd, pre.rouge .kn, pre.rouge .kp, pre.rouge .kr, pre.rouge .kt, pre.rouge .kv {
+  color: #cf222e;
+}
+pre.rouge .gr {
+  color: #f6f8fa;
+}
+pre.rouge .gd {
+  color: #82071e;
+  background-color: #ffebe9;
+}
+pre.rouge .nb {
+  color: #953800;
+}
+pre.rouge .nc {
+  color: #953800;
+}
+pre.rouge .no {
+  color: #953800;
+}
+pre.rouge .nn {
+  color: #953800;
+}
+pre.rouge .sr {
+  color: #116329;
+}
+pre.rouge .na {
+  color: #116329;
+}
+pre.rouge .nt {
+  color: #116329;
+}
+pre.rouge .gi {
+  color: #116329;
+  background-color: #dafbe1;
+}
+pre.rouge .kc {
+  color: #0550ae;
+}
+pre.rouge .l, pre.rouge .ld, pre.rouge .m, pre.rouge .mb, pre.rouge .mf, pre.rouge .mh, pre.rouge .mi, pre.rouge .il, pre.rouge .mo, pre.rouge .mx {
+  color: #0550ae;
+}
+pre.rouge .sb {
+  color: #0550ae;
+}
+pre.rouge .bp {
+  color: #0550ae;
+}
+pre.rouge .ne {
+  color: #0550ae;
+}
+pre.rouge .nl {
+  color: #0550ae;
+}
+pre.rouge .py {
+  color: #0550ae;
+}
+pre.rouge .nv, pre.rouge .vc, pre.rouge .vg, pre.rouge .vi, pre.rouge .vm {
+  color: #0550ae;
+}
+pre.rouge .o, pre.rouge .ow {
+  color: #0550ae;
+}
+pre.rouge .gh {
+  color: #0550ae;
+  font-weight: bold;
+}
+pre.rouge .gu {
+  color: #0550ae;
+  font-weight: bold;
+}
+pre.rouge .s, pre.rouge .sa, pre.rouge .sc, pre.rouge .dl, pre.rouge .sd, pre.rouge .s2, pre.rouge .se, pre.rouge .sh, pre.rouge .sx, pre.rouge .s1, pre.rouge .ss {
+  color: #0a3069;
+}
+pre.rouge .nd {
+  color: #8250df;
+}
+pre.rouge .nf, pre.rouge .fm {
+  color: #8250df;
+}
+pre.rouge .err {
+  color: #f6f8fa;
+  background-color: #82071e;
+}
+pre.rouge .c, pre.rouge .ch, pre.rouge .cd, pre.rouge .cm, pre.rouge .cp, pre.rouge .cpf, pre.rouge .c1, pre.rouge .cs {
+  color: #6e7781;
+}
+pre.rouge .gl {
+  color: #6e7781;
+}
+pre.rouge .gt {
+  color: #6e7781;
+}
+pre.rouge .ni {
+  color: #24292f;
+}
+pre.rouge .si {
+  color: #24292f;
+}
+pre.rouge .ge {
+  color: #24292f;
+  font-style: italic;
+}
+pre.rouge .gs {
+  color: #24292f;
+  font-weight: bold;
+}
+</style>
 </head>
 <body class="article">
 <div id="header">
-<h1>Praca z klientem OpenSSH</h1>
+<h1>Kopilacja Neovim w OpenBSD</h1>
 </div>
 <div id="content">
-<div class="sect1">
-<h2 id="_nawiązanie_połączenia_ze_zdalnym_hostem">Nawiązanie połączenia ze zdalnym hostem</h2>
-<div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>ssh user@nazwa_serwera</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_autoryzacja_za_pomocą_klucza">Autoryzacja za pomocą klucza</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>Dwiema podstawowymi metodami autoryzacji do serwera SSH jest hasło oraz klucz
-prywatny. Dzięki pary kluczy to znaczy klucza prywatnego oraz klucza
-publicznego można zwiększyć bezpieczeństwo serwera SSH. Klucz publiczny można
-udostępniać publicznie i nie stanowi to zagrożenia, natomiast klucz prywatny
-należy zabezpieczyć dobrym hasłem i przechowywać go zdala od ciekawskich.</p>
+<p>Dodatkowe pakiety</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_generowanie_pary_kluczy">Generowanie pary kluczy</h2>
-<div class="sectionbody">
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>ssh-keygen</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>usage: ssh-keygen [-q] [-b bits] [-t dsa | ecdsa | ed25519 | rsa]
-                  [-N new_passphrase] [-C comment] [-f output_keyfile]
-       ssh-keygen -p [-P old_passphrase] [-N new_passphrase] [-f keyfile]
-       ssh-keygen -i [-m key_format] [-f input_keyfile]
-       ssh-keygen -e [-m key_format] [-f input_keyfile]
-       ssh-keygen -y [-f input_keyfile]
-       ssh-keygen -c [-P passphrase] [-C comment] [-f keyfile]
-       ssh-keygen -l [-v] [-E fingerprint_hash] [-f input_keyfile]
-       ssh-keygen -B [-f input_keyfile]
-       ssh-keygen -D pkcs11
-       ssh-keygen -F hostname [-f known_hosts_file] [-l]
-       ssh-keygen -H [-f known_hosts_file]
-       ssh-keygen -R hostname [-f known_hosts_file]
-       ssh-keygen -r hostname [-f input_keyfile] [-g]
-       ssh-keygen -G output_file [-v] [-b bits] [-M memory] [-S start_point]
-       ssh-keygen -T output_file -f input_file [-v] [-a rounds] [-J num_lines]
-                  [-j start_line] [-K checkpt] [-W generator]
-       ssh-keygen -s ca_key -I certificate_identity [-h] [-U]
-                  [-D pkcs11_provider] [-n principals] [-O option]
-                  [-V validity_interval] [-z serial_number] file ...
-       ssh-keygen -L [-f input_keyfile]
-       ssh-keygen -A
-       ssh-keygen -k -f krl_file [-u] [-s ca_public] [-z version_number]
-                  file ...
-       ssh-keygen -Q -f krl_file file ...</pre>
+<pre class="rouge highlight"><code data-lang="sh">pkg_add gmake cmake libtool unzip autoconf automake curl git gettext-tools</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Tworzymy katalog przeznaczony na klucze</p>
+<p>Skrypt</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>mkdir ~/.ssh/klucze</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Generujemy parę kluczy o wielkości 4096 bitów i nazwie <code>klucz-rsa</code> w katalogu
-<code>~/.ssh/klucze/</code>, jeśli nie podamy nazwy klucza zostanie wygenerowany klucz
-o nazwie <code>id_rsa</code> i <code>id_rsa.pub</code>, tak wygenerowane klucze będą użyte jako
-standardowe.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>ssh-keygen -b 4096 -f ~/.ssh/klucze/klucz-rsa
-Generating public/private rsa key pair.
-Enter passphrase (empty for no passphrase):
-Enter same passphrase again:
-Your identification has been saved in /home/user/.ssh/klucze/klucz-rsa.
-Your public key has been saved in /home/user/.ssh/klucze/klucz-rsa.pub.
-The key fingerprint is:
-SHA256:ETL9Q77azhtBr8jhxOR0bh6HguZXlmHApqWqWDosg90 user@hostname
-The key's randomart image is:
-+---[RSA 4096]----+
-|      ooo        |
-|       o=o.      |
-|       =++=      |
-|      o* *+=     |
-|     .o S Xoo    |
-|  . .o + O.=     |
-|o= o  . =o+      |
-|B.o E  .....     |
-|.o       .+.     |
-+----[SHA256]-----+</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Klucz publiczzny</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>cat .ssh/klucze/klucz-rsa.pub
-ssh-rsa AAAAB3NzaC1yc2EAAAAD6q3LoFyRZ1dyVtvlxJNxyLDg22rIgby8R6SatHkQ== user@hostname</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Klucz prywatny</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>cat .ssh/klucze/klucz-rsa
------BEGIN OPENSSH PRIVATE KEY-----
-UWobH5nA/W7JaxBpzQiKexWng5Lr5kWpQki1zoWO1lVBi0UdUE2WPQ0g1EfmtDedTD1xO5
-sBi8ZLABCPTnbZzovR41vKunZPkGWoci4/RTksQW9vebzc6q3LoFyRZ1dyVtvlxJVqMxlm
-z3A0OsXrGEQ+93pzo5L9fUNxyLDg22rIgby8R6SatHkQAAB1D80VqMAnYgsdfSXwQYoev2
-1d4pOZsQ/cVweIvXpJ0UClScqMRjrxwBylZ5vHQLWZIXiZ41Fg89ey/xjCTgmh9+3/1eXg
-URygVuWRTTV/4FbhJf7tOsR8sPXqkeGyKoL3uQs7YSgOxngm/FzgoHShSEHF+Qyssyx796
-CO4yC/pVLucH2uS9phDfoIOBTaIx4yzMmZoEgUQlJCc37ZJ+GB9urXDqDazKugnORGb04i
-9KROom25cMHL/OBZfbsLitwUgcSRRpt3JVHqxKmcTo6Edb4N9qAdJMqOruemDhBHThe89V
-KcJ5ZGoSESe8ZAVX73qCN9OqXbojG5TVwrudB/7QidCsDNmrIRyNp0auCEkyAPPpSo8V1e
-m3yZe9Q33iKMvgFJ2S30SS5+dAtVPNrKnavL0gzxLuBt2rFpecUOjmAKzYgRw+A8NDVbp0
-sdzZIcxILDM/YrTMpo648sJJo=
+<pre class="rouge highlight"><code data-lang="sh"><span class="nv">AUTOMAKE</span><span class="o">=</span><span class="si">$(</span>pkg_info |grep automake|tail <span class="nt">-n1</span>|awk <span class="s1">'{print $1}'</span>|cut <span class="nt">-f</span> 2 <span class="nt">-d</span> -|cut <span class="nt">-f1</span>,2 <span class="nt">-d</span>.<span class="si">)</span>
+<span class="nv">AUTOCONF</span><span class="o">=</span><span class="si">$(</span>pkg_info |grep autoconf|tail <span class="nt">-n1</span>|awk <span class="s1">'{print $1}'</span>|cut <span class="nt">-f</span> 2 <span class="nt">-d</span> -|cut <span class="nt">-f1</span>,2 <span class="nt">-d</span>.<span class="si">)</span>
 
------END OPENSSH PRIVATE KEY-----</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_przygotowanie_konta_po_stronie_serwera_do_autoryzacji_za_pomocą_klucza">Przygotowanie konta po stronie serwera do autoryzacji za pomocą klucza.</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>W plikku <code>~/.ssh/authorized_keys</code> umieszczamy swój klucz publiczny, w pliku można
-umieścić kilka kluczy jeden klucz na linię.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>touch ~/.ssh/authorized_keys
-chmod 0600 ~/.ssh/authorized_keys</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_przeskoczenie_na_kolejnego_hosta">Przeskoczenie na kolejnego hosta</h2>
-<div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>ssh -J user@server 192.168.0.1</pre>
+<span class="nb">export </span><span class="nv">AUTOCONF_VERSION</span><span class="o">=</span><span class="nv">$AUTOCONF</span>
+<span class="nb">export </span><span class="nv">AUTOMAKE_VERSION</span><span class="o">=</span><span class="nv">$AUTOMAKE</span>
+
+gmake clean
+gmake <span class="nv">CMAKE_BUILD_TYPE</span><span class="o">=</span>Release <span class="nv">CMAKE_INSTALL_PREFIX</span><span class="o">=</span><span class="nv">$HOME</span>/.local/nvim
+gmake <span class="nb">install</span></code></pre>
 </div>
 </div>
 <hr>
@@ -602,17 +588,15 @@ chmod 0600 ~/.ssh/authorized_keys</pre>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Date: 2020-10-24T15:22:01+02:00
+Date: 2024-10-18-19:12:05
 </td>
 </tr>
 </table>
 </div>
 </div>
-</div>
-</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-05-28 11:24:42 +0200
+Last updated 2024-10-18 19:15:03 +0200
 </div>
 </div>
 </body>
